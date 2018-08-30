@@ -37,7 +37,18 @@ else
 			$parent_id = $request['parent_id'];
 
 }
-		if(isset($request['combo']))
+
+		if(isset($request['esquema'])&&isset($request['model']))
+		{   $modelo = $request['model'];
+			if(isset($request['asociados']))
+			{$aux =	explode('_',$modelo);
+		 
+			$modelo = $aux[0];
+			}
+			$tb = $request['esquema'].'_'.$modelo;  
+			
+
+			if(isset($request['combo']))
 			{
 
 				if($request['combo']=='combo')
@@ -57,18 +68,10 @@ else
 		}
            	}
 			}
+			return $this->db->get("$tb");
 		}
 
 			}
-		if(isset($request['esquema'])&&isset($request['model']))
-		{   $modelo = $request['model'];
-			if(isset($request['asociados']))
-			{$aux =	explode('_',$modelo);
-		 
-			$modelo = $aux[0];
-			}
-			$tb = $request['esquema'].'_'.$modelo;  
-		
 		if($limit)
 		{         
         $this->load->model($request['model'],'', TRUE);
@@ -243,6 +246,7 @@ $idasociadoDos = $request['asociados'].'_id';
 		{
 		 if($nodo['checked']!='')
 		 {unset($nodo['checked']);
+		    
 			$tree->addChild($nodo,$nodo["parent_id"],$parent_id);
 	     }
 		 

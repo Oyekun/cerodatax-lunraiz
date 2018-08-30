@@ -74,7 +74,8 @@ class Migration_Init_entidades extends CI_Migration {
     $datosentidad["$reeup"]['sub']= $sub;
     $datosentidad["$reeup"]['org']= $org;
     $datosentidad["$reeup"]['union']= $union;
- 		$datosentidad["$reeup"]['ffi']= $ffi;
+    $datosentidad["$reeup"]['ffi']= $ffi;
+ 		$datosentidad["$reeup"]['leaf']= 1;
    		 //if($reeup=='00211')
       // {
        // print_r($reeup);die;
@@ -99,7 +100,7 @@ if(isset($datosentidad[$sub]))
          $parent_id = $uuid = $this->uuid->v5($sub,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
        //   print_r($parent_id);die;
     
-    $datosentidad["$key"]['leaf']= 1;
+    //$datosentidad["$key"]['leaf']= 1;
     // $datosentidad["$key"]['parent']= $parent;
     $datosentidad["$key"]['parent_id']= $parent_id;
 
@@ -532,6 +533,7 @@ $sub = $value['sub'];
     if(isset($value['fecha_alta']))
     $dataArray['fecha_alta']= $fecha_alta;
     
+
     $dataArray['leaf']= $leaf;
     // if(isset($value['parent']))
     //$dataArray['parent']= $parent;

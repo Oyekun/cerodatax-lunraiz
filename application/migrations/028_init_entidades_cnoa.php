@@ -75,6 +75,7 @@ class Migration_Init_entidades_cnoa extends CI_Migration {
     $datosentidad["$reeup"]['org']= $org;
     $datosentidad["$reeup"]['union']= $union;
     $datosentidad["$reeup"]['ffi']= $ffi;
+    $datosentidad["$reeup"]['leaf']= 1;
 
         if($sub!='')
          {  $tb='estructura_entidad';
@@ -113,7 +114,7 @@ if(isset($datosentidad["$sub"]))
          $parent_id = $uuid = $this->uuid->v5($sub,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
           
     
-    $datosentidad["$key"]['leaf']= 1;
+    //$datosentidad["$key"]['leaf']= 1;
    //  $datosentidad["$key"]['parent']= $parent;
     $datosentidad["$key"]['parent_id']= $parent_id;
 

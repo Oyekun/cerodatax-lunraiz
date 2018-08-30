@@ -48,7 +48,7 @@ class TreeExtJS  {
 			//added to the root
 			
 			$this->index[$key] =& $child;
-			if($parentKey=='root'||$parent_id!='root' &&$parent_id!='')
+			if($parentKey==''||$parent_id!='' &&$parent_id!='')
 			$this->tree[] =& $child;
 		}
 		$this->cont++;
