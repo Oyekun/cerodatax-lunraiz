@@ -1,0 +1,22 @@
+{
+    "name": "ext-theme-aria-e0913542-0189-4e9d-a1c8-47ebf7cc7de3",
+    "type": "theme",
+    "creator": "Architect",
+    "summary": "Architect created theme. Edit through Architect. Manual edits here will likely be discarded.",
+    "detailedDescription": "Architect created theme. Edit through Architect. Manual edits here will likely be discarded.",
+    "version": "1.0.0",
+    "compatVersion": "1.0.0",
+    "format": "1",
+    "slicer": {
+        "js": [
+            {
+                "path": "${package.dir}/sass/example/custom.js",
+                "isWidgetManifest": true
+            }
+        ]
+    },
+    "output": "${package.dir}/build",
+    "local": true,
+    "requires": [],
+    "extend": "ext-theme-aria"
+}

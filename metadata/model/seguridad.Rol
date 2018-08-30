@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rol",
+        "designer|userClassName": "seguridad.Rol"
+    },
+    "designerId": "c417d64f-367e-48da-94d9-80467280fd4a",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString6",
+            "designerId": "56a9003e-d0f9-4bef-9f1b-b5736de3c5f5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rol"
+            },
+            "name": "MyString7",
+            "designerId": "08deae07-62df-4735-a07f-c27cc9ec016c"
+        }
+    ]
+}

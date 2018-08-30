@@ -1,0 +1,640 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": null,
+        "designer|userClassName": "Escritorio"
+    },
+    "name": "MyController",
+    "designerId": "1e05e5b2-2451-4b87-90f8-0a4f149d2569",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuSeguridad",
+                "designer|params": [
+                    "item",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuSeguridadClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuSeguridadClick",
+            "designerId": "2bd9abcb-d031-4284-ab65-688806dff9b4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuEstructuras",
+                "designer|params": [
+                    "item",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuEstructuraClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuEstructuraClick",
+            "designerId": "4c35ccd4-ecd8-41f3-bad2-3d9406d37f97"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuPersonas",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuPersonasClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuPersonasClick",
+            "designerId": "1adeb00c-fdf6-44a4-ae71-d05e3d007523"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuActualizaciones",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuActualizacionesClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuActualizacionesClick",
+            "designerId": "7750e56f-4b48-4559-9080-e2f415d20a02"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuSexos",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuSexosClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuSexosClick",
+            "designerId": "aaa7d2c2-e5d2-4d79-86d4-44fa96e308e2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuMunicipios",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuMunicipiosClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuMunicipiosClick",
+            "designerId": "30f327b6-4c27-4c31-ab0f-0891afa845cc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuProvincias",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuProvinciasClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuProvinciasClick",
+            "designerId": "f269e9b3-bb24-4fa4-9bb0-6fa89ca16ab8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuPaises",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuPaisesClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuPaisesClick",
+            "designerId": "2fefeffc-e3b7-4fa3-a46d-5a7ed3f8359b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuOrganismos",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuOrganismosClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuOrganismosClick",
+            "designerId": "3b6c3b99-8a4d-4ff6-a4d0-1240092dc296"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuClasificaciones",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuClasificacionesClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuClasificacionesClick",
+            "designerId": "d32cba3f-1dca-4b13-848c-8307bee61e3c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuCategorias",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuCategoriasClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuCategoriasClick",
+            "designerId": "cfb02584-2130-43e7-8019-3e47c7e2a5a7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuTipos",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuTiposClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuTiposClick",
+            "designerId": "82f1c412-46ed-433b-9622-288e974853ef"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuGruposSanguineos",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuGruposSanguineosClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuGruposSanguineosClick",
+            "designerId": "c2add5c8-a2b9-4993-a509-05cd0fc3e73e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuColoresPiel",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuColoresPielClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuColoresPielClick",
+            "designerId": "0c94ff04-6b6f-431e-9f56-edae96992899"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuEstadosCiviles",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuEstadosCivilesClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuEstadosCivilesClick",
+            "designerId": "51ae6ea3-99f5-48d2-a3f0-8faf2c75f297"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuDefensas",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuDefensasClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuDefensasClick",
+            "designerId": "e59c746c-f3a9-4b7c-9d98-a0e3a2d37ffd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuNivelesEducacionales",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuNivelesEducacionalesClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuNivelesEducacionalesClick",
+            "designerId": "13da2e7c-99e4-43c2-9989-99457c6d0d8f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuCalificadores",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuCalificadoresClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuCalificadoresClick",
+            "designerId": "bbbfd01d-e7ae-487a-95e6-79ca5932408a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuGruposEscalas",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuGruposEscalasClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuGruposEscalasClick",
+            "designerId": "bd956aed-ce3e-4be2-941a-faa0f20e2be1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuCategoriasEntidades",
+                "designer|params": [
+                    "item",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onMenuCategoriasEntidadesClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click"
+            },
+            "name": "onMenuCategoriasEntidadesClick",
+            "designerId": "159da0f5-183e-43df-b7b4-749fa4d70007"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "item"
+                ],
+                "fn": "selectMenu",
+                "implHandler": [
+                    "",
+                    "",
+                    "",
+                    "var obj = item.itemId.split('menu');",
+                    "var search = obj[1];",
+                    "",
+                    "var panelPrincipal = Ext.ComponentQuery.query('#panelPrincipal')[0];",
+                    "panelPrincipal.items.each(function(itemPanel){",
+                    "    searchPanel = 'panel'+search;",
+                    "",
+                    "    if(itemPanel.itemId==searchPanel)",
+                    "    { itemPanel.setHidden(false);",
+                    "     var tree = itemPanel.down('treepanel');",
+                    "     var grid = itemPanel.down('grid');",
+                    "",
+                    "     var display = itemPanel.down('panel[reference=display]');",
+                    "",
+                    "     if(display)",
+                    "     {",
+                    "",
+                    "         var layout = display.getLayout();",
+                    "",
+                    "         var select = itemPanel.down('panel[reference=selectMessage]');",
+                    "",
+                    "         layout.setActiveItem(select);",
+                    "",
+                    "     }",
+                    "     if(grid)",
+                    "     {if(grid.store.extraParams!==undefined)",
+                    "         grid.store.extraParams.combo = '';",
+                    "      grid.store.load();",
+                    "      grid.getSelectionModel().deselectAll();",
+                    "",
+                    "     }",
+                    "     if(tree)",
+                    "     {tree.store.proxy.extraParams.parent_id = '';",
+                    "      tree.store.load();",
+                    "      tree.getSelectionModel().deselectAll();",
+                    "",
+                    "     }",
+                    "     if(itemPanel.down('toolbar').down('button[itemId=btnEdit]'))",
+                    "         itemPanel.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);",
+                    "     if(itemPanel.down('toolbar').down('button[itemId=btnRemove]'))",
+                    "         itemPanel.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);",
+                    "     if(itemPanel.down('toolbar').down('button[itemId=btnAssociate]'))",
+                    "         itemPanel.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);",
+                    "",
+                    "    }",
+                    "    else itemPanel.setHidden(true);",
+                    "});"
+                ]
+            },
+            "name": "selectMenu",
+            "designerId": "a546a2fe-2340-4315-b4b2-9233ffd4561a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuContinentes",
+                "designer|params": [
+                    "item"
+                ],
+                "designer|targetType": "nomenclador.Continente",
+                "fn": "onMenuContinentesClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuContinentesClick",
+            "designerId": "cfe0e4be-1b56-4aa3-90a1-ade0cb3b01e0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuNAE",
+                "designer|params": [
+                    "item"
+                ],
+                "designer|targetType": "nomenclador.NAE",
+                "fn": "onMenuNAEClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuNAEClick",
+            "designerId": "22ee0ea8-da76-4a65-a432-1791a4934602"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuSeccionNAE",
+                "designer|params": [
+                    "item"
+                ],
+                "designer|targetType": "nomenclador.SeccionNAE",
+                "fn": "onMenuSeccionNAEClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuSeccionNAEClick",
+            "designerId": "32f42900-3ebf-4d12-9b12-5558457e303b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuDivisionNAE",
+                "designer|params": [
+                    "item"
+                ],
+                "designer|targetType": "nomenclador.DivisionNAE",
+                "fn": "onMenuDivisionNAEClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuDivisionNAEClick",
+            "designerId": "66416c35-b7a8-41a4-ad76-a7ad7d9cc624"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuUnion",
+                "designer|params": [
+                    "item,e,eOpts"
+                ],
+                "designer|targetType": "nomenclador.Union",
+                "fn": "onMenuUnionClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuUnionClick",
+            "designerId": "f6e6e75b-bdeb-4093-a766-df77e2737678"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuTipoRegistro",
+                "designer|params": [
+                    "item"
+                ],
+                "designer|targetType": "nomenclador.TipoRegistro",
+                "fn": "onMenuTipoRegistroClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuTipoRegistroClick",
+            "designerId": "fcb4be01-a02e-40a7-b2a1-8ba1b51833ad"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuMoneda",
+                "designer|params": [
+                    "item,e,eOpts"
+                ],
+                "designer|targetType": "nomenclador.Moneda",
+                "fn": "onMenuMonedaClick",
+                "implHandler": [
+                    "this.selectMenu(item);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuMonedaClick",
+            "designerId": "090c7b00-a5a6-41bb-befc-efc98af20985"
+        }
+    ]
+}

@@ -1,0 +1,368 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": null,
+        "designer|userAlias": "crud",
+        "designer|userClassName": "nomenclador.CRUD",
+        "height": null,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": null
+    },
+    "name": "nomenclador.CRUD",
+    "designerId": "bd790f85-b07d-428c-92dc-e9e741b65294",
+    "viewControllerInstanceId": "69bf6b71-2fe5-49f9-bf78-620d2935514b",
+    "viewModelInstanceId": "746c36c2-7719-4daa-94ea-3c39ab7f62da",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "itemId": "gridPanelNivel",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "nomenclador.NivelEducacional",
+                "title": ""
+            },
+            "name": "MyGridPanel6",
+            "designerId": "3bdeb69d-3db4-4b33-add6-f3ba2135ba07",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Nombre"
+                    },
+                    "name": "MyColumn22",
+                    "designerId": "d64d59ec-fc9f-4519-aa7f-4f8369cc7c7c"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "nomenclador.NivelEducacional",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar11",
+                    "designerId": "b94040bb-7b33-4fa2-9418-717387bc5a59"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel",
+                    "designerId": "a82c7d14-0c7b-4135-83fb-41b3bad3cc70"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "toolbar",
+                "dock": "top"
+            },
+            "name": "MyToolbar13",
+            "designerId": "85d2aa41-e66a-466b-a813-d222cb114bfc",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnAdd",
+                        "layout|flex": null,
+                        "text": "Adicionar"
+                    },
+                    "name": "MyButton64",
+                    "designerId": "a174836c-71f9-4546-b322-171e86246574"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "glyph": 47,
+                        "hidden": [
+                            "{!record}"
+                        ],
+                        "itemId": "btnEdit",
+                        "layout|flex": null,
+                        "text": "Editar"
+                    },
+                    "name": "MyButton65",
+                    "configAlternates": {
+                        "hidden": "binding"
+                    },
+                    "designerId": "72f08c6b-e29f-401b-a3ee-ebbd1ea8df6a"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "glyph": 88,
+                        "hidden": [
+                            "{!record}"
+                        ],
+                        "itemId": "btnRemove",
+                        "layout|flex": null,
+                        "text": "Eliminar"
+                    },
+                    "name": "MyButton66",
+                    "configAlternates": {
+                        "hidden": "binding"
+                    },
+                    "designerId": "d59ed717-4d44-402d-8390-5d67f1ab80cd"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "hidden": [
+                            "{!record}"
+                        ],
+                        "itemId": "btnRefresh",
+                        "layout|flex": null,
+                        "text": "Actualizar"
+                    },
+                    "name": "MyButton",
+                    "configAlternates": {
+                        "hidden": "binding"
+                    },
+                    "designerId": "d3777148-8c98-440f-a8ad-dec727ef137f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "layout": "card",
+                "layout|flex": 1,
+                "layout|region": "east",
+                "layout|split": true,
+                "reference": "display",
+                "width": 150
+            },
+            "name": "MyPanel33",
+            "designerId": "9f3f9918-fb0c-48aa-8fe8-02c26960d00f",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "layout": "vbox",
+                        "reference": "selectMessage"
+                    },
+                    "name": "MyPanel37",
+                    "designerId": "6a65b778-5107-4024-ac13-f08a0f66b924",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "message",
+                                "html": [
+                                    "\"<h1>Seleccione el Nivel Educacional</h1>\""
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer32",
+                            "designerId": "abcc0077-c5af-4e1f-9bd2-8a44e4796b23"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "details"
+                    },
+                    "name": "MyPanel42",
+                    "designerId": "6219ca27-d654-41bb-ac12-b16f775c796c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Nombre",
+                                "value": [
+                                    "{record.nombre}"
+                                ]
+                            },
+                            "name": "MyDisplayField57",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "15acfcce-ea07-41a0-86ec-2f673050b8fb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "form",
+                        "title": "Editar Nivel Educacional"
+                    },
+                    "name": "MyForm13",
+                    "designerId": "6db53e02-892c-45ea-adce-1c7a214ed9d8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "name": "nombre"
+                            },
+                            "name": "MyTextField27",
+                            "designerId": "2ee309c4-352e-48cf-b14b-9b7ea0aad4a0"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "designer|displayName": "buttons",
+                                "dock": "bottom",
+                                "layout": "hbox",
+                                "padding": 10
+                            },
+                            "name": "MyContainer33",
+                            "designerId": "c96e951b-aa8c-494d-8c4b-d2964dd62537",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "formBind": true,
+                                        "itemId": "saveButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Guardar"
+                                    },
+                                    "name": "MyButton62",
+                                    "designerId": "f3315e4e-da2c-49a8-a918-ff479899b69f"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "cancelButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Cancelar"
+                                    },
+                                    "name": "MyButton63",
+                                    "designerId": "100a0a19-02c7-4594-8df5-8bdbe3acd898"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

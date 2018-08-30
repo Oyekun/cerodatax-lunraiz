@@ -1,0 +1,2036 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controller": null,
+        "designer|initialView": true,
+        "designer|userAlias": "escritorioescritorio",
+        "designer|userClassName": "escritorio.Escritorio",
+        "itemId": "viewportEscritorio",
+        "layout": "border"
+    },
+    "configAlternates": {
+        "controller": "binding"
+    },
+    "designerId": "ccf11f1b-c72a-44fc-9803-344ace6f3349",
+    "viewControllerInstanceId": "4611ed12-d628-4ff4-91cd-baa29154d036",
+    "viewModelInstanceId": "f4941368-9963-4383-b809-d66d6516ffe3",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": false,
+                "collapseDirection": "top",
+                "collapsed": true,
+                "collapsible": true,
+                "height": 150,
+                "itemId": "headerPanel",
+                "layout|collapseMode": "mini",
+                "layout|region": "north",
+                "title": ""
+            },
+            "name": "MyPanel1",
+            "designerId": "d12ff238-6d23-4f16-b276-6ecc63966fbf",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "left",
+                        "height": 80,
+                        "hidden": null,
+                        "src": "resources/images/logoASEGURA.png",
+                        "title": "Logo",
+                        "weight": null,
+                        "width": 185
+                    },
+                    "name": "MyImg1",
+                    "designerId": "73b6eb73-1ca2-4c3e-8cba-bfcaa37078a3"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "designer|uiInterfaceName": "default",
+                        "dock": "right",
+                        "height": null,
+                        "hidden": null,
+                        "layout": "vbox",
+                        "title": "Perfil del Usuario",
+                        "width": 130
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "e94ee5b0-313c-4474-946e-e86d9ad7b497",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 100,
+                                "src": "resources/images/avatarHombre.png",
+                                "title": "Usuario",
+                                "width": 100
+                            },
+                            "name": "MyImg2",
+                            "designerId": "1851e877-5a98-4c3a-b4e5-ae2868a09055"
+                        },
+                        {
+                            "type": "Ext.button.Segmented",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySegmentedButton",
+                            "designerId": "c68be625-0a11-4408-87e1-f9c080467713",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnEdit",
+                                        "text": "Editar"
+                                    },
+                                    "name": "MyButton6",
+                                    "designerId": "1eb9d729-4d44-4e83-98c3-6a9120696a7f"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Cerrar"
+                                    },
+                                    "name": "MyButton7",
+                                    "designerId": "19bd619f-c4b8-41cf-b82e-0e7ed2bb0f16"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseDirection": "left",
+                "collapsed": false,
+                "collapsible": true,
+                "container|hideCollapseTool": true,
+                "itemId": "menuPanel",
+                "layout": "accordion",
+                "layout|collapseMode": null,
+                "layout|region": "west",
+                "layout|split": true,
+                "title": "Operaciones",
+                "width": 180
+            },
+            "name": "MyPanel2",
+            "designerId": "ec429cf4-e38a-4872-a33d-5a8029944736",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": true,
+                        "collapseDirection": null,
+                        "collapseFirst": null,
+                        "collapsed": true,
+                        "collapsible": false,
+                        "itemId": null,
+                        "layout": "accordion",
+                        "title": "Administración",
+                        "titleCollapse": false,
+                        "width": 165
+                    },
+                    "name": "MyPanel3",
+                    "designerId": "e84deeed-6215-4aca-a04d-0914b9702e93",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapsed": true,
+                                "floating": false,
+                                "itemId": "menuAdministracion",
+                                "title": "Generales",
+                                "width": null
+                            },
+                            "name": "MyMenu",
+                            "designerId": "5a8b8303-a313-4e47-b17a-5a32abd91d8d",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuSeguridad",
+                                        "text": "Seguridad"
+                                    },
+                                    "name": "MyMenuItem",
+                                    "designerId": "8e7d8619-35b1-4071-a445-94d64931dc8d"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuEstructuras",
+                                        "text": "Estructuras"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "e34d3196-d2b5-4c4e-96b1-c5b9d2b5b6c7"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuPersonas",
+                                        "text": "Personas"
+                                    },
+                                    "name": "MyMenuItem2",
+                                    "designerId": "07bde0bb-39ef-401d-9e40-e940d68af3be"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuActualizaciones",
+                                        "text": "Actualizaciónes"
+                                    },
+                                    "name": "MyMenuItem10",
+                                    "designerId": "8cfa536d-c93b-401b-aacc-6222570d0055"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": false,
+                        "collapseFirst": false,
+                        "collapsed": true,
+                        "collapsible": false,
+                        "designer|displayName": null,
+                        "layout": "accordion",
+                        "title": "Nomencladores",
+                        "titleCollapse": false,
+                        "width": 144
+                    },
+                    "name": "MyPanel4",
+                    "designerId": "bba14e45-2837-4d8e-a872-662c5091881c",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "animCollapse": true,
+                                "collapseFirst": null,
+                                "collapsed": true,
+                                "collapsible": null,
+                                "designer|displayName": null,
+                                "floating": false,
+                                "frameHeader": null,
+                                "headerOverCls": null,
+                                "headerPosition": null,
+                                "hidden": false,
+                                "itemId": "menuGenerales",
+                                "title": "Generales",
+                                "titleAlign": null,
+                                "titleCollapse": null,
+                                "width": null
+                            },
+                            "name": "MyMenu4",
+                            "designerId": "17cbd799-b577-44d7-8643-481cc3b95d31",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuMunicipios",
+                                        "text": "Municipios"
+                                    },
+                                    "name": "MyMenuItem14",
+                                    "designerId": "4c91e72a-115c-493c-84db-3085325143fa"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuProvincias",
+                                        "text": "Provincias"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "2f19fb0d-4afb-483d-b297-b5f75c33330f"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuPaises",
+                                        "text": "Países"
+                                    },
+                                    "name": "MyMenuItem",
+                                    "designerId": "0734e389-2a0c-4110-a1ae-f3e60f5100ba"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuContinentes",
+                                        "text": "Continentes"
+                                    },
+                                    "name": "MyMenuItem3",
+                                    "designerId": "9bd4ef59-764e-4ce7-a2c5-53df748672f8"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuMoneda",
+                                        "text": "Monedas"
+                                    },
+                                    "name": "MyMenuItem20",
+                                    "designerId": "90f00bfa-eaa8-42dc-8b80-1079db731137"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "animCollapse": true,
+                                "collapseFirst": null,
+                                "collapsed": null,
+                                "collapsible": null,
+                                "floating": false,
+                                "hidden": false,
+                                "itemId": "menuEntidad",
+                                "title": "Entidades",
+                                "titleAlign": null,
+                                "width": null
+                            },
+                            "name": "MyMenu3",
+                            "designerId": "06fe71cd-752a-4a47-b792-ad75cf7a45a6",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuOrganismos",
+                                        "text": "Organismos"
+                                    },
+                                    "name": "MyMenuItem12",
+                                    "designerId": "e7750c0e-e3c5-450e-93b2-33aa9706bc83"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuClasificaciones",
+                                        "text": "Clasificaciónes"
+                                    },
+                                    "name": "MyMenuItem11",
+                                    "designerId": "8ebb5871-de82-42ff-9e84-84bf3644bc50"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuTipoRegistro",
+                                        "text": "Tipos Registro"
+                                    },
+                                    "name": "MyMenuItem19",
+                                    "designerId": "d7b7ab84-ff53-4ac5-a70c-efe0b1c3f202"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuCategoriasEntidades",
+                                        "text": "Categorías"
+                                    },
+                                    "name": "MyMenuItem",
+                                    "designerId": "7c3d2d0c-8361-4459-bbbb-b1000ee309d8"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuSeccionNAE",
+                                        "text": "Seccion NAE"
+                                    },
+                                    "name": "MyMenuItem9",
+                                    "designerId": "a464b495-fd27-41fc-a0ce-050970d8898e"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuDivisionNAE",
+                                        "text": "Division NAE"
+                                    },
+                                    "name": "MyMenuItem5",
+                                    "designerId": "43089d0f-ee7c-43c3-8d5c-cda40ee8e0b7"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuNAE",
+                                        "text": "NAE"
+                                    },
+                                    "name": "MyMenuItem4",
+                                    "designerId": "ff533144-1ff9-40d4-92a2-bd797e8d4d68"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuTipos",
+                                        "text": "Tipos"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "9caab2c4-dc99-4465-aace-1ce403d3e99d"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuUnion",
+                                        "text": "Unión"
+                                    },
+                                    "name": "MyMenuItem13",
+                                    "designerId": "065c9d01-3ad7-4e30-9202-2de00e349583"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "animCollapse": true,
+                                "collapseFirst": null,
+                                "designer|displayName": null,
+                                "floating": false,
+                                "frameHeader": false,
+                                "headerOverCls": null,
+                                "headerPosition": null,
+                                "hidden": false,
+                                "itemId": "menuPersona",
+                                "title": "Personas",
+                                "titleAlign": null,
+                                "titleCollapse": null,
+                                "width": null
+                            },
+                            "name": "MyMenu5",
+                            "designerId": "71237051-a7b4-4306-b062-75e3f0db7d10",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuNivelesEducacionales",
+                                        "text": "Niveles Educacionales"
+                                    },
+                                    "name": "MyMenuItem",
+                                    "designerId": "d147510f-e451-4733-8fb6-74b47db70d91"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuGruposSanguineos",
+                                        "text": "Grupos Sanguíneos"
+                                    },
+                                    "name": "MyMenuItem18",
+                                    "designerId": "bf98f54a-6633-42ea-86dc-1a54a858cce9"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuColoresPiel",
+                                        "text": "Colores de Piel"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "f67e4af6-7515-4f84-8e47-7b3b0d631b3b"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuEstadosCiviles",
+                                        "text": "Estados Civil"
+                                    },
+                                    "name": "MyMenuItem15",
+                                    "designerId": "0948d4db-030f-4957-9d1a-b5942b54b9a8"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuDefensas",
+                                        "text": "Defensas"
+                                    },
+                                    "name": "MyMenuItem17",
+                                    "designerId": "e296e9fd-2fee-471a-9f70-bfc1a3cc1b76"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuSexos",
+                                        "text": "Sexos"
+                                    },
+                                    "name": "MyMenuItem16",
+                                    "designerId": "bdda47c0-4421-43b8-80f1-99d9d9593c6b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "animCollapse": true,
+                                "collapseFirst": null,
+                                "collapsed": null,
+                                "collapsible": null,
+                                "floating": false,
+                                "hidden": false,
+                                "itemId": "menuCargos",
+                                "title": "Cargos",
+                                "titleAlign": null,
+                                "width": null
+                            },
+                            "name": "MyMenu6",
+                            "designerId": "22e41ee8-3e01-425e-8326-84b8c17fceed",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuGruposEscalas",
+                                        "text": "Grupos Escalas"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "1df3aef9-b80b-4ad7-b416-88dcd1530a9c"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuCalificadores",
+                                        "text": "Calificadores"
+                                    },
+                                    "name": "MyMenuItem11",
+                                    "designerId": "b3788dde-e872-49e5-be43-2d4c3ac0aa06"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "itemId": "menuCategorias",
+                                        "text": "Categorías"
+                                    },
+                                    "name": "MyMenuItem",
+                                    "designerId": "8a93612e-d7d2-4947-8e4c-dbc1f3b5ae54"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": true,
+                        "collapseFirst": false,
+                        "title": "Configuraciónes"
+                    },
+                    "name": "MyPanel5",
+                    "designerId": "75661fc3-906d-4861-8b6b-3f46f5df3d1b",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "floating": false,
+                                "itemId": "menuConfiguraciones",
+                                "width": null
+                            },
+                            "name": "MyMenu2",
+                            "designerId": "0b76075d-71c5-4330-b36a-2f20b79602f9",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "text": "Menu Item"
+                                    },
+                                    "name": "MyMenuItem6",
+                                    "designerId": "58af5433-8fcd-4e1e-8b72-393dacbac634"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "text": "Menu Item"
+                                    },
+                                    "name": "MyMenuItem7",
+                                    "designerId": "3475efc3-9da5-4513-a311-15ae6e8cfbee"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "text": "Menu Item"
+                                    },
+                                    "name": "MyMenuItem8",
+                                    "designerId": "6dc1aefe-13fa-4d16-85c0-2a2b3d86ebf7"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": null,
+                "id": null,
+                "itemId": "panelPrincipal",
+                "layout": "fit",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "title": null
+            },
+            "name": "MyPanel6",
+            "designerId": "3a200be7-aa02-4bfa-bc13-05b3cebcdf9c",
+            "cn": [
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "animCollapse": true,
+                        "closeAction": "hide",
+                        "collapseFirst": false,
+                        "hidden": true,
+                        "id": null,
+                        "itemId": "panelSeguridad",
+                        "title": "Seguridad"
+                    },
+                    "name": "MyTabPanel",
+                    "designerId": "61c7860e-e5f6-47c4-a645-c24c61cf267a",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelUsuarios",
+                                "title": "Usuarios"
+                            },
+                            "name": "seguridad.usuario",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "a4376775-ba7f-4526-b079-2b8142fb362a",
+                            "masterInstanceId": "65c90145-665d-44f3-b403-302e4b1c8dff",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig3",
+                                    "designerId": "abdee267-59b4-4819-ad0a-8908d573d8c7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelRoles",
+                                "title": "Roles"
+                            },
+                            "name": "seguridad.rol",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "3088afb1-aabf-4ee4-bc0f-3555eb03fcd4",
+                            "masterInstanceId": "4c81badd-a114-43d1-9375-ca778b3b595b",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig4",
+                                    "designerId": "2b5f4cd5-46b7-41b3-bf10-a4017ee6a46a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelAcciones",
+                                "title": "Acciones"
+                            },
+                            "name": "seguridad.accion",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "3e599416-725c-4e02-af0f-d3cc7eaa6958",
+                            "masterInstanceId": "80126414-7615-42fb-a423-b7a6400a4589",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig2",
+                                    "designerId": "d1633d2e-4db7-425c-838f-7e18a1bceee3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "animCollapse": true,
+                        "collapseFirst": false,
+                        "hidden": true,
+                        "itemId": "panelEstructuras",
+                        "title": "Estructura"
+                    },
+                    "name": "MyTabPanel1",
+                    "designerId": "ae494738-c611-48d5-9f0c-98cb73c06c64",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelEntidades",
+                                "title": "Entidades",
+                                "width": "80%"
+                            },
+                            "name": "estructura.entidad",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "8db5e27e-2b45-45df-9976-db9c9b895331",
+                            "masterInstanceId": "5e16cb60-92db-48f1-b1aa-57af2fc4f667",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig5",
+                                    "designerId": "e19d7fdb-c9e3-4a86-899d-6c7352e1c785"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelAreas",
+                                "title": "Áreas"
+                            },
+                            "name": "estructura.area",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "3d489979-7070-4636-bfa4-bc1dc3e30d2b",
+                            "masterInstanceId": "df299778-c07f-4461-90d1-e21dfa254cbd",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig6",
+                                    "designerId": "6d46e4b0-3480-456a-8741-71f6bfb8b045"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "animCollapse": true,
+                        "collapseFirst": false,
+                        "itemId": "panelPersonas",
+                        "title": "Personas"
+                    },
+                    "name": "MyTabPanel2",
+                    "designerId": "a5f30b88-a716-48b4-9cee-0efaadb7d83a",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelPersonas",
+                                "title": "Personas"
+                            },
+                            "name": "persona.persona",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "19aeee28-56ce-4c59-964e-dcd5b011492b",
+                            "masterInstanceId": "75a2387e-0f86-4ae7-bf8f-72a9f689a226",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig1",
+                                    "designerId": "661dbfce-bfb4-4e84-a83e-1a24599fc6c1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelCargos",
+                                "title": "Cargos"
+                            },
+                            "name": "persona.cargo",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "ad509f77-827f-44fe-a7b0-f10279af2f07",
+                            "masterInstanceId": "7f4a5b34-2f66-465a-8584-7ad40b11d9d6",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig8",
+                                    "designerId": "9d35cacd-26bc-4c87-ba96-2fcb786788d4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": true,
+                        "collapseFirst": false,
+                        "hidden": true,
+                        "itemId": "panelActualizaciones",
+                        "title": "Actualizaciones"
+                    },
+                    "name": "MyTabPanel3",
+                    "designerId": "42e4f146-7df1-46f1-9d55-352d888986eb",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelSistema",
+                                "title": "Sistema"
+                            },
+                            "name": "actualizacion.actualizacion",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "0bc4bac5-d88c-4c48-9f55-2b349dc52c47",
+                            "masterInstanceId": "ce02bfc5-f626-4c7e-a448-43b3986a8e12",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig7",
+                                    "designerId": "e3d36472-395a-4a6e-b425-7395695aed69"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": false,
+                        "defaultAlign": null,
+                        "height": null,
+                        "hidden": true,
+                        "itemId": "panelSexos",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer25",
+                    "configAlternates": {
+                        "height": "binding"
+                    },
+                    "designerId": "9598ae0d-613a-47c1-bed3-e687eef763a5",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": false,
+                                "defaultAlign": null,
+                                "header": null,
+                                "height": null,
+                                "itemId": "panelSexos",
+                                "manageHeight": null,
+                                "maxHeight": null,
+                                "title": "Sexos"
+                            },
+                            "name": "nomenclador.sexo",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "b5d8b850-87aa-4cb9-999a-6f9ad87bcd32",
+                            "masterInstanceId": "cc885620-aef0-4e28-922a-8a294bfcfa68"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelDefensas",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer53",
+                    "configAlternates": {
+                        "height": "binding"
+                    },
+                    "designerId": "e1e846e1-7cc8-4256-8489-2d936994cea6",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "panelDefensas",
+                                "title": "Defensas"
+                            },
+                            "name": "nomenclador.defensa",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "a02b5090-4167-412b-9309-927b2af4d99f",
+                            "masterInstanceId": "fceb521c-371e-4e58-8168-0b096c650a59"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelEstadosCiviles",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer52",
+                    "designerId": "4ca6f6f1-4949-4efa-904b-4600b2890d16",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelEstadosCiviles",
+                                "title": "Estados Civiles"
+                            },
+                            "name": "nomenclador.estadocivil",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "75a827c3-4150-486f-99fe-0f9f39f14e2a",
+                            "masterInstanceId": "21b9734f-a5a3-423b-907d-a880c394df8d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelColoresPiel",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer51",
+                    "designerId": "863dcb3e-da96-4652-b945-6bbad149599b",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelColoresPiel",
+                                "title": "Colores de Piel"
+                            },
+                            "name": "nomenclador.colorpiel",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "d9b1d77e-cd66-4936-84fe-5462f8ecfef2",
+                            "masterInstanceId": "26529545-c18f-4e44-b47b-b9d41b9ae677"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelGruposSanguineos",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer50",
+                    "designerId": "edda07bc-c42a-4e04-b77f-f793a16990cf",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelGruposSanguineos",
+                                "title": "Grupos Sanguineos"
+                            },
+                            "name": "nomenclador.gruposanguineo",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "12c9b03f-7d39-4500-a053-818fe740df5a",
+                            "masterInstanceId": "faa6a2ec-d82e-457f-aef6-bd1d63849e89"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelTipos",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer49",
+                    "designerId": "5d069f84-f2b2-45c8-bc96-5281bf0b1bec",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelTipos",
+                                "title": "Tipos de Entidades"
+                            },
+                            "name": "nomenclador.tipoentidad",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "e873a3c9-1c55-4608-b976-7bbd29a23dfc",
+                            "masterInstanceId": "f74bf0f9-8e6d-49d2-9f35-1b922793b1bc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelTipoRegistro",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer61",
+                    "designerId": "afb361d8-b8ab-452e-aefc-d9bdbced3ac6",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelTipoRegistro",
+                                "title": "Tipos de Registro"
+                            },
+                            "name": "nomenclador.tiporegistro",
+                            "designerId": "55201557-b86a-4cf2-adde-79ff673288c0",
+                            "masterInstanceId": "96124a5a-00c7-4306-b2f6-9ac0e65a3f6c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelNAE",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "347af795-6e1e-4a32-a82e-85c1c05363eb",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelNAE",
+                                "title": "NAE"
+                            },
+                            "name": "nomenclador.nae",
+                            "designerId": "8dc293df-7dc2-4961-b4c8-5dc7b40cf066",
+                            "masterInstanceId": "9f2f96cb-d9b0-4331-ac55-9b37db51b88e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelUnion",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer60",
+                    "designerId": "45e9fc4b-b086-4983-b391-c44c55d583d5",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelUnion",
+                                "title": "Unión"
+                            },
+                            "name": "nomenclador.union",
+                            "designerId": "b8459f0d-4d97-4e67-9534-dd563a03111c",
+                            "masterInstanceId": "94cd425a-ef87-48a2-99e4-b6aebb261378"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelMoneda",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer62",
+                    "designerId": "1ef21d77-fec2-4646-bfc6-1c0ddce74598",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelMoneda",
+                                "title": "Moneda"
+                            },
+                            "name": "nomenclador.moneda",
+                            "designerId": "915f193a-7f64-4575-87c0-3a0dc2d899f7",
+                            "masterInstanceId": "c35d2de2-d117-4328-8a2d-9435d2d44185"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelSeccionNAE",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer57",
+                    "designerId": "40f2d087-7015-4b47-9925-7929a992df08",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelSeccionNAE",
+                                "title": "Sección NAE"
+                            },
+                            "name": "nomenclador.seccionnae",
+                            "designerId": "17ce4e58-6780-4785-a5c0-218514a2f266",
+                            "masterInstanceId": "81f7b15e-7713-4995-8911-d1e687eb7eb0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelDivisionNAE",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer59",
+                    "designerId": "e6edc4ee-15e7-4009-b31c-55d0ac9ba7b2",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelDivisionNAE",
+                                "title": "Division NAE"
+                            },
+                            "name": "nomenclador.divisionnae",
+                            "designerId": "3211ebe1-5dc4-4c9d-99aa-284d69cf7a7c",
+                            "masterInstanceId": "1001464f-f78e-4059-9113-dd058909c88f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelCategorias",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer26",
+                    "designerId": "856c4446-4232-4a00-840e-efc26e7f86bf",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Categorias de Cargos"
+                            },
+                            "name": "nomenclador.categoria",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "2f82f384-c066-4783-8ccc-361600bc5246",
+                            "masterInstanceId": "6f919628-e7bb-464f-927c-1250b5d6b722"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelCategoriasEntidades",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer56",
+                    "designerId": "6504e904-c824-417e-8cf6-e2852347cb1a",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Categorias de Entidad"
+                            },
+                            "name": "nomenclador.categoriaentidad",
+                            "designerId": "e426be1f-a9c3-46e5-b723-de56e2d00e10",
+                            "masterInstanceId": "58362d26-1cfa-45bd-ac0d-f86baac95b0f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelClasificaciones",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer27",
+                    "designerId": "1c92aa6d-a8c9-457e-8f96-2727215658fc",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Clasificaciones"
+                            },
+                            "name": "nomenclador.clasificacion",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "a3e7b820-00b4-4915-8d36-b298c1f8de13",
+                            "masterInstanceId": "5fa2637b-e4b0-43f0-ab4d-ca45cdc9d687"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelOrganismos",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer28",
+                    "designerId": "c3f7da4e-1830-40a3-be80-55e92cc7d24f",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|createAlias": "",
+                                "designer|displayName": null,
+                                "itemId": "panelOrganismos",
+                                "title": "Organismos"
+                            },
+                            "name": "nomenclador.organismo",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "cd69f199-f384-454f-a516-f4cb660d0c77",
+                            "masterInstanceId": "929856f0-7bf2-4e64-85cc-9325e98f0459"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelPaises",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer29",
+                    "designerId": "4bb82127-c8f2-46f6-9e54-b70eada514a0",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "panelPaises",
+                                "title": "Paises"
+                            },
+                            "name": "nomenclador.pais",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "2055bb74-9ed3-4997-85e9-eecb9b4afdd1",
+                            "masterInstanceId": "a4e07f51-fce8-4b55-9413-206ec4311e25"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelContinentes",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer58",
+                    "designerId": "6ba5fa60-cb20-496f-8026-3d156f13e375",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelContinentes",
+                                "title": "Continentes"
+                            },
+                            "name": "nomenclador.continente",
+                            "designerId": "322065a4-7525-4f8d-933a-7ab24d835189",
+                            "masterInstanceId": "9fa984ef-3888-4f4f-8a13-cff3e43d9581"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "hidden": true,
+                        "itemId": "panelProvincias",
+                        "layout": "fit",
+                        "width": null
+                    },
+                    "name": "MyContainer30",
+                    "designerId": "c060b734-a642-46f5-a65e-5dd80ca6f23b",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "panelProvincias",
+                                "title": "Provincias"
+                            },
+                            "name": "nomenclador.provincia",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "5302a499-999d-4c18-a840-b93b5512be0b",
+                            "masterInstanceId": "d6c771c6-8f00-4ba3-a727-bb9ebc50dcf1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelMunicipios",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer31",
+                    "designerId": "fd8d7d46-7e6e-4116-9ee7-0a1295034b21",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "panelMunicipios",
+                                "title": "Municipios"
+                            },
+                            "name": "nomenclador.municipio",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "f1bfea23-b8ca-4883-a30f-c04f20b66cca",
+                            "masterInstanceId": "e1f196b7-8155-4e68-92e1-fd6ea6963af8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelNivelesEducacionales",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer34",
+                    "designerId": "c868dcb8-5e59-49fa-bf35-4269331b9820",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "panelNivelesEducacionales",
+                                "title": "Niveles Educacionales"
+                            },
+                            "name": "nomenclador.niveleducacional",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "b547c599-2800-4d29-a26c-588c35cf59b0",
+                            "masterInstanceId": "6d669c17-db54-439d-b4e7-cf92fbcfc1e7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelCalificadores",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer54",
+                    "designerId": "aeac03ef-cfab-4c07-afc9-79fd3ae54204",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "panelCalificadores",
+                                "title": "Calificadores"
+                            },
+                            "name": "nomenclador.calificador",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "77b0ffcd-1411-48ed-86fc-569a6b7ee607",
+                            "masterInstanceId": "1c060b41-9985-4a1c-a251-c81042231284"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "panelGruposEscalas",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer55",
+                    "designerId": "694583d8-0619-4fe8-9c10-aca971c5964a",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "panelGruposEscalas",
+                                "title": "Grupos Escalas"
+                            },
+                            "name": "nomenclador.grupoescala",
+                            "configAlternates": {
+                                "height": "binding"
+                            },
+                            "designerId": "3576d0d6-8575-4bf7-971d-c16b6cf99f41",
+                            "masterInstanceId": "b5d18707-c4d5-427a-b9c8-2100c8d123a6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "animCollapse": true,
+                        "collapseFirst": false,
+                        "hidden": true,
+                        "itemId": "panelTableros",
+                        "title": "Tableros de control"
+                    },
+                    "name": "MyTabPanel5",
+                    "designerId": "27f2e0fc-d439-47df-b15c-7e1f03ca7a27",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 340,
+                                "title": "Sistema"
+                            },
+                            "name": "MyPanel",
+                            "designerId": "af252d47-016e-4672-a73e-a566d3353f8b",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "dc6cf53c-098e-4343-972f-06beeb473ce6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 340,
+                                "title": "Administración"
+                            },
+                            "name": "MyPanel9",
+                            "designerId": "05b3cede-7967-44bd-8191-01cfe069a536",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "bc1eea67-0037-4214-9764-35671e0b95e0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+   "name": "cerodatax",
+   "version": "1.0.0.0",
+   "indexHtmlPath": "index.html",
+   "classpath": "${app.dir}/app,${app.dir}/app/override/form/field/",
+   "overrides": "${app.dir}/overrides,${app.dir}/locale/${app.locale}",
+   "framework": "ext",
+   "theme": "ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a",
+   "requires": [
+      "ext-locale"
+   ],
+   "locale": "es",
+   "sass": {
+      "namespace": "cerodata"
+   },
+   "js": [
+      {
+         "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+      },
+      {
+         "path": "app.js",
+         "bundle": true
+      }
+   ],
+   "css": [
+      {
+         "path": "bootstrap.css",
+         "bootstrap": true
+      }
+   ],
+   "production": {},
+   "testing": {},
+   "development": {},
+   "bootstrap": {
+      "base": "${app.dir}",
+      "manifest": "bootstrap.json",
+      "microloader": "bootstrap.js",
+      "css": "bootstrap.css"
+   },
+   "output": {
+      "base": "${workspace.build.dir}/${build.environment}/${app.name}"
+   },
+   "appCache": {
+      "cache": [
+         "index.html"
+      ],
+      "network": [
+         "*"
+      ],
+      "fallback": []
+   },
+   "resources": [],
+   "ignore": [
+      "(^|/)CVS(/?$|/.*?$)"
+   ],
+   "archivePath": "archive",
+   "slicer": {
+      "js": [
+         {
+            "path": "${app.dir}/sass/example/custom.js",
+            "isWidgetManifest": true
+         }
+      ]
+   },
+   "id": "aeabfcc4-6f2d-4d0a-8781-4bfcbb5fd749"
+}

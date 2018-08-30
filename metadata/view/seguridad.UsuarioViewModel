@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "seguridadusuario",
+        "designer|userClassName": "seguridad.UsuarioViewModel"
+    },
+    "designerId": "2d6aefd7-2cac-4f05-a196-efd74fe770f6"
+}

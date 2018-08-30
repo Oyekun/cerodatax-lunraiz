@@ -1,0 +1,529 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "estructuraentidad",
+        "designer|userClassName": "estructura.Entidad",
+        "fixed": true,
+        "height": 528,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 852
+    },
+    "designerId": "5e16cb60-92db-48f1-b1aa-57af2fc4f667",
+    "viewControllerInstanceId": "2b874255-5d85-44b5-bb34-618e3178c0fa",
+    "viewModelInstanceId": "26e1594e-91d4-49fd-99b9-6656a6324518",
+    "cn": [
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animate": true,
+                "hidden": null,
+                "itemId": "treePanel",
+                "layout|region": "center",
+                "reserveScrollbar": true,
+                "resizable": [
+                    "false"
+                ],
+                "rootVisible": false,
+                "store": "estructura.Entidad",
+                "title": null
+            },
+            "name": "TreeGrid",
+            "designerId": "5b2de5e1-b6ca-4d38-a848-e3a468b50118",
+            "isBuiltIn": true,
+            "iconCls": "icon-treegridpanel",
+            "autoName": "TreeGrid",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootVisible": false
+                    },
+                    "name": "MyTreeView1",
+                    "designerId": "bec83adf-14bd-4ab1-8db4-b2c3f22c5ae6"
+                },
+                {
+                    "type": "Ext.tree.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "flex": 1,
+                        "text": "Nombre"
+                    },
+                    "name": "MyTreeColumn",
+                    "designerId": "cc2798f3-3ef7-48f3-ae90-da2142c1ac05",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.Date",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dateFormat": "Y-m-d"
+                            },
+                            "name": "MyDateFilter",
+                            "designerId": "600aa606-b43f-44b6-b59f-dd71b5051222"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "provincia",
+                        "text": "Value"
+                    },
+                    "name": "MyColumn73",
+                    "designerId": "03c4808a-bf98-4c56-b3af-b4b2acf27c7f"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreePanelSelectionChange",
+                        "implHandler": [
+                            " "
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onTreePanelSelectionChange",
+                    "designerId": "e94f7101-de45-40a5-a3c3-5434eb6a842f"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreePanelBeforeItemExpand",
+                        "name": "beforeitemexpand",
+                        "scope": "me"
+                    },
+                    "name": "onTreePanelBeforeItemExpand",
+                    "designerId": "20a04e4a-7cde-46ff-950f-750fe387a732"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreePanelAfterItemExpand",
+                        "name": "afteritemexpand",
+                        "scope": "me"
+                    },
+                    "name": "onTreePanelAfterItemExpand",
+                    "designerId": "9bbf6079-df7b-4f1d-b5eb-dbb04d267ee0"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreePanelSelect",
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "onTreePanelSelect",
+                    "designerId": "f217db86-f746-4465-bb38-5426ab39c6e9"
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyCheckboxSelectionModel",
+                    "designerId": "0f6755bb-d9f7-4aef-9ec0-be51505b0335"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "toolbar",
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar3",
+                    "designerId": "1ce70d15-479e-4ffd-bafc-cfcfac5ed79f",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAdd",
+                                "layout|flex": null,
+                                "text": "Adicionar"
+                            },
+                            "name": "MyButton21",
+                            "designerId": "bf73e795-b2f4-4247-aef1-4295ad5dd396",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "addWindows",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    newRecord = Ext.create('model.entidades');",
+                                            "",
+                                            "// Clear form",
+                                            "form.reset();",
+                                            "",
+                                            "// Set record",
+                                            "form.loadRecord(newRecord);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Adicionar Entidad');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "addWindows",
+                                    "designerId": "3797550a-4f6b-4d51-b270-e66f505b3d98"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnEdit",
+                                "layout|flex": null,
+                                "text": "Editar"
+                            },
+                            "name": "MyButton22",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "9ee4f897-7388-455d-9668-e93d81854899",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "editWindows",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    record = this.getViewModel().get('record');",
+                                            "",
+                                            "// Load record model into form",
+                                            "form.loadRecord(record);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Editar Entidad');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "editWindows",
+                                    "designerId": "2fd66fa4-3010-4efe-a756-a6e717de2e31"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRemove",
+                                "layout|flex": null,
+                                "text": "Eliminar"
+                            },
+                            "name": "MyButton23",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "4be383ec-3e8a-45f2-bb87-bc4c294cad47",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "remove",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            "console.log('esta malito')",
+                                            "// Ask user to confirm this action",
+                                            "Ext.Msg.confirm('Confirm Delete', 'Desea eliminar la Entidad seleccionada?', function(result) {",
+                                            "",
+                                            "    // User confirmed yes",
+                                            "    if (result == 'yes') {",
+                                            "",
+                                            "        var record = me.getViewModel().get('record'),",
+                                            "            store = Ext.StoreManager.lookup('Entidades');",
+                                            "",
+                                            "        // Delete record from store",
+                                            "        store.remove(record);",
+                                            "",
+                                            "        // Hide display",
+                                            "        me.showView('selectMessage');",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "remove",
+                                    "designerId": "cdaf1fd7-1599-4fe5-a55b-ae8f87b795c9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseParams": [
+                                    "area"
+                                ],
+                                "designer|createAlias": "button",
+                                "designer|displayName": "btnAssociate",
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnAssociate",
+                                "layout|flex": null,
+                                "text": "Asociar Area"
+                            },
+                            "name": "MyButton1",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "c94a4cc7-d601-4232-afa4-9ae452f6b5e4",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "associate",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "associate",
+                                    "designerId": "ab1c7165-a258-4b2f-b1f0-1c4411d07bcb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRefresh",
+                                "layout|flex": null,
+                                "text": "Actualizar"
+                            },
+                            "name": "MyButton102",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "bf62e62f-d4b7-4f42-ad63-a05faf6519bc",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "refresh",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "refresh",
+                                    "designerId": "3e8fa195-f7f1-41d3-b274-f07ab6d06400"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onToolbarAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onToolbarAfterRender",
+                            "designerId": "40e1d8eb-baf5-4d70-871d-007200631a27"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processTreePanel",
+                        "implHandler": [
+                            "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController');",
+                            "",
+                            "control.win='';",
+                            " var me = this;",
+                            "var aux = me.config.viewModel.type;",
+                            "control.getWinPanel(aux);",
+                            "var win = control.win;",
+                            "var vista = Ext.create('widget.'+win);",
+                            "form = vista.down('form').getForm();",
+                            "var results=[];",
+                            "//console.log(form.owner.items.items)",
+                            "columns = control.searchLabel(form.owner,results,false);",
+                            "// columns = me.searchLabel(form.owner.items.items,results);",
+                            "",
+                            "/*config.features =   [",
+                            "                {",
+                            "                    ftype: 'filters',",
+                            "                    encode: true,",
+                            "                    local: false,",
+                            "                    menuFilterText: 'Buscar'",
+                            "                }",
+                            "            ];",
+                            "",
+                            "config.viewConfig = {",
+                            "                emptyText: 'No existen No Conformidades que mostrar.',",
+                            "                deferEmptyText: false,",
+                            "                loadMask: true,",
+                            "                loadingText: 'Cargando No Conformidades...'",
+                            "            };*/",
+                            "config.columns = columns;",
+                            "return config;"
+                        ]
+                    },
+                    "name": "processTreePanel",
+                    "designerId": "87ba4a5e-eaa8-4684-9017-c5e3fbef46e4"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuFilterText": "Buscar"
+                    },
+                    "name": "MyGridFiltersPlugin",
+                    "designerId": "15a905e0-9f4b-4f6d-b8b4-715ef2ce2c9c"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "niveleducacional",
+        "designer|userClassName": "nomenclador.NivelEducacional"
+    },
+    "designerId": "0fb43d47-4778-4c55-a061-624e00d3f2d6",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString17",
+            "designerId": "cfb407a1-d95e-4d7c-a323-b1829479eed0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyField9",
+            "designerId": "a2e0aed0-a17b-4d60-aed2-93703a83aae9"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "abreviatura"
+            },
+            "name": "MyField52",
+            "designerId": "4fd92a85-6781-4ca8-9d57-5745b3d151bf"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "orden"
+            },
+            "name": "MyField53",
+            "designerId": "e8c8ce27-d0cc-4021-bb2e-90141ac14ee0"
+        }
+    ]
+}

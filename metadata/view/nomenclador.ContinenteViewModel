@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontinente",
+        "designer|userClassName": "nomenclador.ContinenteViewModel"
+    },
+    "name": "nomenclador.SexoViewModel1",
+    "designerId": "d8e47f10-1ebe-47fa-9912-7ac2579658f5"
+}

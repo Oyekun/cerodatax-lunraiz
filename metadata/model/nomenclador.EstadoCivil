@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "estadocivil",
+        "designer|userClassName": "nomenclador.EstadoCivil"
+    },
+    "designerId": "ffc325ae-6ad5-4b7d-a295-9603f01505a0",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString26",
+            "designerId": "95d3ef98-7dad-4e30-9563-cc97b3c9c963"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyField13",
+            "designerId": "a06d373f-ca81-4b06-900b-5b302cba0feb"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gruposanguineo",
+        "designer|userClassName": "nomenclador.GrupoSanguineo"
+    },
+    "designerId": "f30f7175-d1a3-4b7d-9974-847e916b0a3e",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString37",
+            "designerId": "7a24cb83-d37a-48a2-a8ed-c3400910bdb7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyField11",
+            "designerId": "445c051d-ae53-4c0c-ae64-447f1b16c318"
+        }
+    ]
+}

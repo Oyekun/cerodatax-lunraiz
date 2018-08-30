@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontinente",
+        "designer|userClassName": "nomenclador.ContinenteViewController"
+    },
+    "name": "nomenclador.SexoViewController1",
+    "designerId": "86dad1ae-8fa4-44d9-8b5f-c75e97ae08ac",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "32218aa2-190a-42a6-a35d-d280dd896227"
+        }
+    ]
+}

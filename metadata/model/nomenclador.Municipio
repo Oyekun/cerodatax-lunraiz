@@ -1,0 +1,93 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "municipio",
+        "designer|userClassName": "nomenclador.Municipio"
+    },
+    "designerId": "4126045f-8ca2-41dd-a6f8-1c8fbfa9af54",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString21",
+            "designerId": "6b1e08bf-0fcd-4b7b-b10c-ce3e6413b2ff"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "siglas"
+            },
+            "name": "MyField30",
+            "designerId": "bb068647-0d0b-47a3-bc10-b630dbae5c18"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString23",
+            "designerId": "088487a7-8cd2-45e5-9510-544f360c186e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "provincia"
+            },
+            "name": "MyString24",
+            "designerId": "04c1a8db-3dda-480a-b206-4d0fd0ee3563"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "provincia_id"
+            },
+            "name": "MyString35",
+            "designerId": "9c8e207c-b413-4882-b2c8-c445bbb96bf7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyField34",
+            "designerId": "2b129f71-e15e-4536-bcf6-75b9a706c072"
+        }
+    ]
+}

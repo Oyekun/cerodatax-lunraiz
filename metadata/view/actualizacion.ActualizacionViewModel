@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "actualizacionactualizacion",
+        "designer|userClassName": "actualizacion.ActualizacionViewModel"
+    },
+    "designerId": "441ae0a7-9321-4a96-8ddc-9a3c98225fe0"
+}

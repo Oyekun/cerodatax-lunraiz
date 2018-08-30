@@ -1,0 +1,74 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "designer|userAlias": "categoriaentidad",
+        "designer|userClassName": "nomenclador.CategoriaEntidad",
+        "model": "nomenclador.CategoriaEntidad",
+        "storeId": "nomenclador.CategoriaEntidad"
+    },
+    "designerId": "3b0d0c6f-391d-4bf9-a00f-c79250a95a45",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "add:{url: 'index.php/api/restserver/rests',method: 'POST'},",
+                    "show: {url: 'index.php/api/restserver/rests/',method: 'GET'},",
+                    "save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},",
+                    "remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}",
+                    "}"
+                ],
+                "extraParams": [
+                    "{model:'categoriaentidad',esquema:'nomenclador'}"
+                ],
+                "format": "",
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy",
+            "designerId": "cf3cf050-6f72-4f6f-a65b-1d3c6fd6bfd6",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "b91e8807-58ea-4f06-96be-bd070458ab16"
+                },
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "bbb626d5-1278-467b-b683-e81b12b92e40"
+                }
+            ]
+        }
+    ]
+}

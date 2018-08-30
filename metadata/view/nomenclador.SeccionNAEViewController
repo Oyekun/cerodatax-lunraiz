@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorseccionnae",
+        "designer|userClassName": "nomenclador.SeccionNAEViewController"
+    },
+    "name": "nomenclador.GrupoSanguineoViewController1",
+    "designerId": "1e7b6c13-1cd1-4a5f-837e-2ede4bb5802a",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "db5a8c68-d54d-41ed-abac-b38e7bd1a9e1"
+        }
+    ]
+}

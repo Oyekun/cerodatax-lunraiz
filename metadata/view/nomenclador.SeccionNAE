@@ -1,0 +1,732 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "nomencladorseccionnae",
+        "designer|userClassName": "nomenclador.SeccionNAE",
+        "height": 600,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 843
+    },
+    "name": "nomenclador.GrupoSanguineo1",
+    "designerId": "81f7b15e-7713-4995-8911-d1e687eb7eb0",
+    "viewControllerInstanceId": "1e7b6c13-1cd1-4a5f-837e-2ede4bb5802a",
+    "viewModelInstanceId": "b3f29c80-e4d4-4ced-b170-f627bdd2dc19",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "itemId": "gridPanel",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "nomenclador.SeccionNAE",
+                "title": ""
+            },
+            "name": "MyGridPanel13",
+            "designerId": "72d6a8cd-7777-46a0-b5db-4a7bd1067561",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Nombre"
+                    },
+                    "name": "MyColumn24",
+                    "designerId": "11546798-66c2-4432-9cb1-a237a0988d2a"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "seccion",
+                        "text": "Sección"
+                    },
+                    "name": "MyColumn17",
+                    "designerId": "441a133b-c545-40ae-b4e4-1db8d053dcf5"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "descripcion",
+                        "text": "Descripción"
+                    },
+                    "name": "MyColumn18",
+                    "designerId": "112ea509-ce7b-4ad9-aa49-aaca3ef44fbb"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "toolbar",
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar15",
+                    "designerId": "e219078c-de78-49ca-8b48-35eb4944d361",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAdd",
+                                "layout|flex": null,
+                                "text": "Adicionar"
+                            },
+                            "name": "MyButton74",
+                            "designerId": "fb328bf2-f7cb-4c70-854a-c81430887895",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "add",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    newRecord = Ext.create('model.grupossanguineos');",
+                                            "",
+                                            "// Clear form",
+                                            "form.reset();",
+                                            "",
+                                            "// Set record",
+                                            "form.loadRecord(newRecord);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Adicionar Grupo Sanguineo');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "add",
+                                    "designerId": "4856771b-3072-4f7f-875d-e7f217650a32"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnEdit",
+                                "layout|flex": null,
+                                "text": "Editar"
+                            },
+                            "name": "MyButton75",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "44e2974c-693a-4812-9ae5-7042edba7a48",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "edit",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    record = this.getViewModel().get('record');",
+                                            "",
+                                            "// Load record model into form",
+                                            "form.loadRecord(record);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Editar Grupo Sanguineo');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "edit",
+                                    "designerId": "b6b5ce0c-24b1-4d3e-80c9-08712f782f08"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRemove",
+                                "layout|flex": null,
+                                "text": "Eliminar"
+                            },
+                            "name": "MyButton76",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "330edcb2-7864-4686-9480-3816955afc3d",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "remove",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            "",
+                                            "// Ask user to confirm this action",
+                                            "Ext.Msg.confirm('Confirm Delete', 'Are you sure you want to delete this grupossanguineos?', function(result) {",
+                                            "",
+                                            "    // User confirmed yes",
+                                            "    if (result == 'yes') {",
+                                            "",
+                                            "        var record = me.getViewModel().get('record'),",
+                                            "            store = Ext.StoreManager.lookup('GruposSanguineos');",
+                                            "",
+                                            "        // Delete record from store",
+                                            "        store.remove(record);",
+                                            "",
+                                            "        // Hide display",
+                                            "        me.showView('selectMessage');",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "remove",
+                                    "designerId": "29828355-8699-4394-8b8d-afc74e49df7a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRefresh",
+                                "layout|flex": null,
+                                "text": "Actualizar",
+                                "width": null
+                            },
+                            "name": "MyButton112",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "92c694c7-3858-46bc-9f96-b0bb292d01a6",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "refresh",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "refresh",
+                                    "designerId": "7480a0dc-7644-496f-95ec-2ebb63b427ee"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onToolbarAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onToolbarAfterRender",
+                            "designerId": "88dcd946-cfbc-4ad0-9104-4f7cd173444f"
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "select",
+                        "implHandler": [
+                            "// Set selected record",
+                            "this.getViewModel().set('record', record);",
+                            "",
+                            "// Show details",
+                            "this.showView('details');"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "select",
+                    "designerId": "f124ce6a-2454-4846-83e3-75f358b76620"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "nomenclador.SeccionNAE",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar9",
+                    "designerId": "3df50fa7-d521-4011-b302-b7e531b43599"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel10",
+                    "designerId": "576924fe-414c-434a-9f1e-57143531287e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "layout": "card",
+                "layout|flex": 1,
+                "layout|region": "east",
+                "layout|split": true,
+                "reference": "display",
+                "width": 150
+            },
+            "name": "MyPanel53",
+            "designerId": "e69d4626-8700-47db-9dad-7cd245568c69",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "layout": "vbox",
+                        "reference": "selectMessage"
+                    },
+                    "name": "MyPanel54",
+                    "designerId": "d9a46677-9bde-4384-b9a3-bb55c1e1e082",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "message",
+                                "html": [
+                                    "\"<h1>Seleccione la Sección NAE</h1>\""
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer37",
+                            "designerId": "1e1a985b-8bf7-413b-8e17-16ef1139782f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "details"
+                    },
+                    "name": "MyPanel55",
+                    "designerId": "84f51e68-8d3c-4724-b54b-9d9d7392020b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Nombre",
+                                "value": [
+                                    "{record.nombre}"
+                                ]
+                            },
+                            "name": "MyDisplayField59",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "a6541195-32ac-45d7-a267-88344f318c56"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Sección",
+                                "value": [
+                                    "{record.seccion}"
+                                ]
+                            },
+                            "name": "MyDisplayField8",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "5fd7726f-8ef9-4246-be9b-069f8655a0e5"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Descripción",
+                                "value": [
+                                    "{record.descripcion}"
+                                ]
+                            },
+                            "name": "MyDisplayField23",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "9be774df-3672-46a0-8d1b-24137e054578"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "form",
+                        "title": "Editar Grupo Sanguineo"
+                    },
+                    "name": "MyForm15",
+                    "designerId": "8876dd80-4f7e-41cc-bb4f-6c862018f90d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "name": "nombre"
+                            },
+                            "name": "MyTextField29",
+                            "designerId": "4d1d6666-6d19-4655-89d6-e36a92f7b605",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "3b69bb39-a089-4abf-9d45-99777448615f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Sección",
+                                "name": "seccion"
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "3aad8fbd-1b92-4f1f-a9c2-5d6377ef1bf4",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "e0b21cce-de61-48b5-bdb5-27f2b67b5a9b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Descripción",
+                                "height": "height",
+                                "name": "descripcion"
+                            },
+                            "name": "MyTextArea1",
+                            "designerId": "7ae68ff5-56a9-4dca-85a8-61e945a6444e"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "designer|displayName": "buttons",
+                                "dock": "bottom",
+                                "layout": "hbox",
+                                "padding": 10
+                            },
+                            "name": "MyContainer38",
+                            "designerId": "44577066-95d6-4b40-bca9-97c1db6a35aa",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "formBind": true,
+                                        "itemId": "saveButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Guardar"
+                                    },
+                                    "name": "MyButton72",
+                                    "designerId": "f7836d33-07ea-4139-943d-3b2c62177722",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "save",
+                                                "implHandler": [
+                                                    "var form = this.getReferences().form.getForm(),",
+                                                    "    record = form.getRecord(),",
+                                                    "    store = Ext.StoreManager.lookup('GruposSanguineos');",
+                                                    "",
+                                                    "// Valid",
+                                                    "if (form.isValid()) {",
+                                                    "",
+                                                    "    // Update associated record with values",
+                                                    "    form.updateRecord();",
+                                                    "",
+                                                    "    // Add to store if new record",
+                                                    "    if (record.phantom) {",
+                                                    "",
+                                                    "        // TODO: Assign the record's ID from data source",
+                                                    "        // Normally, this value would be auto-generated,",
+                                                    "        // or returned from the server",
+                                                    "        var id = store.count() + 1;",
+                                                    "        record.set('id', id);",
+                                                    "",
+                                                    "        // Add to store",
+                                                    "        store.add(record);",
+                                                    "",
+                                                    "    }",
+                                                    "",
+                                                    "    // Commit changes",
+                                                    "    store.commitChanges();",
+                                                    "",
+                                                    "    // Display record",
+                                                    "    this.select(this, record);",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "save",
+                                            "designerId": "8c13219c-125d-4e6d-af29-49790722b90c"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "cancelButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Cancelar"
+                                    },
+                                    "name": "MyButton73",
+                                    "designerId": "052ef85e-5078-45d6-a73c-7787d1f3fa23",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "cancelEdit",
+                                                "implHandler": [
+                                                    "// Show details",
+                                                    "this.showView('details');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "cancelEdit",
+                                            "designerId": "8eb3d41c-c056-4156-a811-f19c643e021d"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

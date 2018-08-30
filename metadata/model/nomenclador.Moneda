@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "nomenclador.Moneda"
+    },
+    "name": "nomenclador.Union1",
+    "designerId": "00ff26b6-4513-4589-9766-bb73156092a7",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString36",
+            "designerId": "ec9d5c25-1d35-4627-9401-10b7d0855498"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString6",
+            "designerId": "c2c95e9d-1b63-492e-ada3-c87984a94527"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo_iso"
+            },
+            "name": "MyField43",
+            "designerId": "62110e0c-abc7-47f3-8d01-b63dd9c99087"
+        }
+    ]
+}

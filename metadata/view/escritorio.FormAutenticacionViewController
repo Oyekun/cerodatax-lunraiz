@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "escritorioformautenticacion",
+        "designer|userClassName": "escritorio.FormAutenticacionViewController"
+    },
+    "designerId": "805e4fd5-8003-46d2-9e49-fd7beb448d18"
+}

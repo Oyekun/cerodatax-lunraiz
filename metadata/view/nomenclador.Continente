@@ -1,0 +1,618 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "nomencladorcontinente",
+        "designer|userClassName": "nomenclador.Continente",
+        "height": 600,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 868
+    },
+    "name": "nomenclador.Sexo1",
+    "designerId": "9fa984ef-3888-4f4f-8a13-cff3e43d9581",
+    "viewControllerInstanceId": "86dad1ae-8fa4-44d9-8b5f-c75e97ae08ac",
+    "viewModelInstanceId": "d8e47f10-1ebe-47fa-9912-7ac2579658f5",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "itemId": "gridPanel",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "nomenclador.Continente",
+                "title": ""
+            },
+            "name": "MyGridPanel",
+            "designerId": "eb7003f3-723e-412c-8abf-b0e526812f16",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Nombre"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "48b9f333-f3c1-4f6a-a3eb-b1aaa372cfc1"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "select",
+                        "implHandler": [
+                            "// Set selected record",
+                            "this.getViewModel().set('record', record);",
+                            "",
+                            "// Show details",
+                            "this.showView('details');"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "select",
+                    "designerId": "ebdb0267-6cf6-4d49-a435-efe106e40cce"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "nomenclador.Continente",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar2",
+                    "designerId": "d134f1d7-b52d-4721-aac4-9bc9511d8b69"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "toolbar",
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar12",
+                    "designerId": "f5df7749-f6ef-4bd1-8f6a-691ac1923c69",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAdd",
+                                "layout|flex": null,
+                                "text": "Adicionar"
+                            },
+                            "name": "MyButton59",
+                            "designerId": "de54b1ec-db49-47ea-a9af-dfbb0fa9a021",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "add",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    newRecord = Ext.create('model.sexos');",
+                                            "",
+                                            "// Clear form",
+                                            "form.reset();",
+                                            "",
+                                            "// Set record",
+                                            "form.loadRecord(newRecord);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Adicionar Sexos');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "add",
+                                    "designerId": "e04637ae-2536-4438-a4a2-5ae360569974"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnEdit",
+                                "layout|flex": null,
+                                "text": "Editar"
+                            },
+                            "name": "MyButton60",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "c59efafd-46b4-423d-ae0a-41b9977d2eab",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "edit",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    record = this.getViewModel().get('record');",
+                                            "",
+                                            "// Load record model into form",
+                                            "form.loadRecord(record);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Edit Sexos');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "edit",
+                                    "designerId": "cb54d09a-75d0-4e9f-a9c1-7bd6196d3a8a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRemove",
+                                "layout|flex": null,
+                                "text": "Eliminar"
+                            },
+                            "name": "MyButton61",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "dc0b0daa-4f8f-4e40-a887-0d35b6049d63",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "remove",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            "",
+                                            "// Ask user to confirm this action",
+                                            "Ext.Msg.confirm('Confirm Delete', 'Are you sure you want to delete this sexos?', function(result) {",
+                                            "",
+                                            "    // User confirmed yes",
+                                            "    if (result == 'yes') {",
+                                            "",
+                                            "        var record = me.getViewModel().get('record'),",
+                                            "            store = Ext.StoreManager.lookup('Sexos');",
+                                            "",
+                                            "        // Delete record from store",
+                                            "        store.remove(record);",
+                                            "",
+                                            "        // Hide display",
+                                            "        me.showView('selectMessage');",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "remove",
+                                    "designerId": "05c11df5-0b2a-4c5d-9c50-2a76f4898bd2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRefresh",
+                                "layout|flex": null,
+                                "text": "Actualizar",
+                                "width": null
+                            },
+                            "name": "MyButton117",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "aafbda61-7400-4302-8edc-67da43cc6215",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "refresh",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "refresh",
+                                    "designerId": "36ab5dbf-e9ba-486e-9f99-8a6f6371b5da"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onToolbarAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onToolbarAfterRender",
+                            "designerId": "2b6d8dc5-4dfe-4baa-86e4-6ec3a4e6e74d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel5",
+                    "designerId": "b21770a1-06d8-45df-a6e4-0683cd27c1e9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "layout": "card",
+                "layout|flex": 1,
+                "layout|region": "east",
+                "layout|split": true,
+                "reference": "display",
+                "width": 150
+            },
+            "name": "MyPanel10",
+            "designerId": "ee63e398-444f-47e3-b015-3d5ca26f666a",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "layout": "vbox",
+                        "reference": "selectMessage"
+                    },
+                    "name": "MyPanel41",
+                    "designerId": "42238c32-5132-4a91-ac1a-6e0a8053fce1",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "message",
+                                "html": [
+                                    "\"<h1>Seleccione el Continente</h1>\""
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer23",
+                            "designerId": "1a4e4dec-0316-4a9d-9de1-1cb95d3d3e1a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "details"
+                    },
+                    "name": "MyPanel52",
+                    "designerId": "c436bbda-e8b8-4096-ac51-efbddd355766",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Nombre",
+                                "value": [
+                                    "{record.nombre}"
+                                ]
+                            },
+                            "name": "MyDisplayField24",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "339dee7d-8a6f-4419-b4c7-fa4b9791ee37"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "form",
+                        "title": "Editar Sexos"
+                    },
+                    "name": "MyForm12",
+                    "designerId": "bb29e264-3c32-4eb7-b00f-e2e143927600",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "name": "nombre"
+                            },
+                            "name": "MyTextField26",
+                            "designerId": "3e050160-e2c0-4ca1-a5ad-adff54c6f7b8",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "8985315d-493b-4167-a441-4bfdaeea07bc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "designer|displayName": "buttons",
+                                "dock": "bottom",
+                                "layout": "hbox",
+                                "padding": 10
+                            },
+                            "name": "MyContainer24",
+                            "designerId": "5d4f2a90-ca4e-4d89-89da-ccb684761f7d",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "formBind": true,
+                                        "itemId": "saveButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Guardar"
+                                    },
+                                    "name": "MyButton2",
+                                    "designerId": "3f5c5f81-e06f-472c-8537-a4ee6f475a84",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "save",
+                                                "implHandler": [
+                                                    "var form = this.getReferences().form.getForm(),",
+                                                    "    record = form.getRecord(),",
+                                                    "    store = Ext.StoreManager.lookup('Sexos');",
+                                                    "",
+                                                    "// Valid",
+                                                    "if (form.isValid()) {",
+                                                    "",
+                                                    "    // Update associated record with values",
+                                                    "    form.updateRecord();",
+                                                    "",
+                                                    "    // Add to store if new record",
+                                                    "    if (record.phantom) {",
+                                                    "",
+                                                    "        // TODO: Assign the record's ID from data source",
+                                                    "        // Normally, this value would be auto-generated,",
+                                                    "        // or returned from the server",
+                                                    "        var id = store.count() + 1;",
+                                                    "        record.set('id', id);",
+                                                    "",
+                                                    "        // Add to store",
+                                                    "        store.add(record);",
+                                                    "",
+                                                    "    }",
+                                                    "",
+                                                    "    // Commit changes",
+                                                    "    store.commitChanges();",
+                                                    "",
+                                                    "    // Display record",
+                                                    "    this.select(this, record);",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "save",
+                                            "designerId": "a022ef08-89d8-4a5d-a11a-13b9682ce751"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "cancelButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Cancelar"
+                                    },
+                                    "name": "MyButton4",
+                                    "designerId": "601067cd-5d0d-414c-98e7-2d08921dd22d",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "cancelEdit",
+                                                "implHandler": [
+                                                    "// Show details",
+                                                    "this.showView('details');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "cancelEdit",
+                                            "designerId": "69fe5f84-5b2d-43b7-a82b-b593b72c0729"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "personacargo",
+        "designer|userClassName": "persona.CargoViewModel"
+    },
+    "designerId": "4d9f059e-c45c-4abb-9104-a77041d93d82"
+}

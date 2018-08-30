@@ -1,0 +1,82 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Seguridad"
+    },
+    "name": "MyController",
+    "designerId": "0d874d0e-6f9b-4199-9c45-5107d1808b11",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#buttonAutenticacion",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onButtonAutenticacionClick",
+                "implHandler": [
+                    "var view = this.getView();",
+                    "form = button.up('form');",
+                    "formWindow = button.up('window');",
+                    "",
+                    "",
+                    "if(form.isValid())",
+                    "{",
+                    "    values = form.getValues();",
+                    "    // Success",
+                    "    var successCallback = function(resp, ops) {",
+                    "        //debugger;",
+                    "        // Hide login panel",
+                    "        view.hide();",
+                    "        // Close window",
+                    "        formWindow.destroy();",
+                    "",
+                    "        // Show logout panel",
+                    "        var viewportEscritorio = Ext.create('cerodatax.view.Escritorio',{",
+                    "",
+                    "        });",
+                    "        viewportEscritorio.show();",
+                    "",
+                    "    };",
+                    "",
+                    "    // Failure",
+                    "    var failureCallback = function(resp, ops) {",
+                    "",
+                    "        // Show login failure error",
+                    "        Ext.Msg.alert('Login Failure', resp);",
+                    "",
+                    "    };",
+                    "",
+                    "",
+                    "    // TODO: Login using server-side authentication service",
+                    "    Ext.Ajax.request({",
+                    "        url: \"./seguridad/authenticate_user\",",
+                    "        params: values,",
+                    "        success: successCallback,",
+                    "        failure: failureCallback",
+                    "    });",
+                    "}",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "click"
+            },
+            "name": "onButtonAutenticacionClick",
+            "designerId": "3a993080-4ef9-4a02-a138-9471120d8907"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "clasificacion",
+        "designer|userClassName": "nomenclador.Clasificacion"
+    },
+    "designerId": "c7915661-1e34-4ca3-9218-2b134c74fa04",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "4912a043-3d00-45c4-9bae-87a0cfae770f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "d0ae7226-b00b-42ae-b85e-b9dea6e05e49"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "abreviatura"
+            },
+            "name": "MyField54",
+            "designerId": "7ad66efe-755d-4bac-ba00-882f514e2681"
+        }
+    ]
+}

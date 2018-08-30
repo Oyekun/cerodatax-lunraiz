@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladornae",
+        "designer|userClassName": "nomenclador.NAEViewModel"
+    },
+    "name": "nomenclador.TipoEntidadViewModel2",
+    "designerId": "5bf8fcb5-3bcf-4936-b412-4fe18c62b2f0"
+}

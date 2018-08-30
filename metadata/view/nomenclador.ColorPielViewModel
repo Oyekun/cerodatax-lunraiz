@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcolorpiel",
+        "designer|userClassName": "nomenclador.ColorPielViewModel"
+    },
+    "designerId": "2cac117c-435f-4073-9b30-438c5bdbaec1"
+}

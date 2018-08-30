@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladordefensa",
+        "designer|userClassName": "nomenclador.DefensaViewModel"
+    },
+    "designerId": "d0f365ee-5890-4091-b53a-7e0242c1b7bb"
+}

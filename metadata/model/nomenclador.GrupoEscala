@@ -1,0 +1,67 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "grupoescala",
+        "designer|userClassName": "nomenclador.GrupoEscala"
+    },
+    "designerId": "2afce88e-2da2-40b5-8e60-37da561e2ef2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "d46b0e5f-9d38-4bc4-8731-6eb35554ee0b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString69",
+            "designerId": "86cb554a-8db2-42ff-ab2a-2e420510c5ee"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "orden"
+            },
+            "name": "MyField56",
+            "designerId": "81fcf81e-54e9-416c-9d90-27311a301536"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salario"
+            },
+            "name": "MyString68",
+            "designerId": "53f1909a-a56c-4665-8cd8-4c25962af7c2"
+        }
+    ]
+}

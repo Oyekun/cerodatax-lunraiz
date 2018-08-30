@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "modulo",
+        "designer|userClassName": "seguridad.Modulo"
+    },
+    "name": "Roles1",
+    "designerId": "0306e0c8-ab8b-4afe-969d-a3e9c7334fa7",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString6",
+            "designerId": "f61e9133-cd75-4352-8d8c-2fa27158cb52"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modulo"
+            },
+            "name": "MyString7",
+            "designerId": "408ce357-7151-46fc-8de1-635c8023e3ce"
+        }
+    ]
+}

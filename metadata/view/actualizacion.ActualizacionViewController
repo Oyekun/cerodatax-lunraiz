@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "actualizacionactualizacion",
+        "designer|userClassName": "actualizacion.ActualizacionViewController"
+    },
+    "designerId": "5b76ad7f-e60d-4b36-b885-52e112b7e18d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "15e75c08-2512-43cf-82c5-21f209fecf7c"
+        }
+    ]
+}

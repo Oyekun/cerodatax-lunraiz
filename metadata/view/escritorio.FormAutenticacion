@@ -1,0 +1,138 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "closable": false,
+        "designer|userAlias": "escritorioformautenticacion",
+        "designer|userClassName": "escritorio.FormAutenticacion",
+        "height": 350,
+        "itemId": "windowsAutenticacion",
+        "layout": "form",
+        "modal": true,
+        "monitorResize": false,
+        "title": "Autenticación",
+        "width": 410
+    },
+    "name": "MyWindow",
+    "designerId": "d83f1f64-2e3d-46d1-b60e-0f6d1ccd88b3",
+    "viewControllerInstanceId": "805e4fd5-8003-46d2-9e49-fd7beb448d18",
+    "viewModelInstanceId": "1ad7f769-4d67-49d7-96f3-76320d1c4dc3",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "itemId": "formAutenticacion",
+                "title": null,
+                "width": 392
+            },
+            "name": "MyForm",
+            "designerId": "3af687d6-1a40-4634-8ad8-04060150d5a4",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "height": 201,
+                        "width": 392
+                    },
+                    "name": "MyImg",
+                    "designerId": "30e51b48-a8f7-47bb-a964-9947a2111915"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Usuario",
+                        "layout|anchor": "100%",
+                        "selectOnFocus": true,
+                        "twoWayBindable": null
+                    },
+                    "name": "MyTextField",
+                    "designerId": "7e35d3dc-76de-4a20-b17f-5c6a09246798",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "afterLabelTextTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "afterLabelTextTpl",
+                                "implHandler": null
+                            },
+                            "name": "afterLabelTextTpl",
+                            "designerId": "9e2c8756-8ee2-4d1c-b788-7e55a3e0cc54"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Contraseña",
+                        "inputType": "password",
+                        "layout|anchor": "100%"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "c78da32e-6a4b-44f2-90b5-0493cb05622b",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "afterLabelTextTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "afterLabelTextTpl",
+                                "implHandler": null
+                            },
+                            "name": "afterLabelTextTpl",
+                            "designerId": "e57fabf9-9028-4b7d-a058-32accd81c282"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "alignTarget": null,
+                        "itemId": "buttonAutenticacion",
+                        "text": "Aceptar"
+                    },
+                    "name": "MyButton",
+                    "designerId": "2dfb2c29-be76-4841-9bef-10e30827ebb6"
+                }
+            ]
+        }
+    ]
+}

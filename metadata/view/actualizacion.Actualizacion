@@ -1,0 +1,358 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "actualizacionactualizacion",
+        "designer|userClassName": "actualizacion.Actualizacion",
+        "height": 528,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 832
+    },
+    "designerId": "ce02bfc5-f626-4c7e-a448-43b3986a8e12",
+    "viewControllerInstanceId": "5b76ad7f-e60d-4b36-b885-52e112b7e18d",
+    "viewModelInstanceId": "441ae0a7-9321-4a96-8ddc-9a3c98225fe0",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "itemId": "gridPanel",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "actualizacion.Actualizacion",
+                "title": ""
+            },
+            "name": "MyGridPanel8",
+            "designerId": "875d3742-057a-49b1-95bf-1aae338501c5",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "version",
+                        "text": "Version"
+                    },
+                    "name": "MyColumn12",
+                    "designerId": "d1918ec1-8d71-4f0e-964b-8683931839f0"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "fecha_actualizacion",
+                        "format": "m/j/Y",
+                        "text": "Fecha Actualizacion"
+                    },
+                    "name": "MyDateColumn2",
+                    "designerId": "d1f9fbf3-2e84-403b-9b49-e68884db6ad7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "usuario",
+                        "text": "Usuario"
+                    },
+                    "name": "MyColumn13",
+                    "designerId": "e239b3b0-3716-48ca-bab4-bd12a0debfec"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "descripcion",
+                        "text": "Descripcion"
+                    },
+                    "name": "MyColumn14",
+                    "designerId": "f0a163b9-c9eb-41e8-a01a-92b54fc63dea"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "select",
+                        "implHandler": [
+                            "// Set selected record",
+                            "this.getViewModel().set('record', record);",
+                            "",
+                            "// Show details",
+                            "this.showView('details');"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "select",
+                    "designerId": "162ddab8-b5f8-414d-ac3e-dcf092540634"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "17ec4476-a184-4c7c-8926-a372f5b4aac7",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnImport",
+                                "layout|flex": null,
+                                "text": "Importar"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "e49bde64-9327-4319-8871-830b62489e3a"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnExport",
+                                "layout|flex": null,
+                                "text": "Exportar"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "3c94929e-9d0b-4197-9abf-0dae1913d40a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "actualizacion.Actualizacion",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar16",
+                    "designerId": "066d94ab-0090-4528-8163-a58546234444"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "layout": "card",
+                "layout|flex": 1,
+                "layout|region": "east",
+                "layout|split": true,
+                "reference": "display",
+                "width": 150
+            },
+            "name": "MyPanel27",
+            "designerId": "739dd01d-fbf0-484d-ab32-f21ec74f9f75",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "layout": "vbox",
+                        "reference": "selectMessage"
+                    },
+                    "name": "MyPanel28",
+                    "designerId": "3e895c41-d583-421b-a06b-451c3ad7c1c3",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "message",
+                                "html": [
+                                    "\"<h1>Seleccione la Actualización</h1>\""
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer12",
+                            "designerId": "b19ed7b6-5ef5-494e-8d0e-8dbb9c926c53"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "details"
+                    },
+                    "name": "MyPanel29",
+                    "designerId": "4bbb5cf7-f644-4909-880b-41e407224b0a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Version",
+                                "value": [
+                                    "{record.version}"
+                                ]
+                            },
+                            "name": "MyDisplayField16",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "a99bad49-16da-4b92-8b28-413b733cdcb0"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Fecha Actualizacion",
+                                "value": [
+                                    "{record.fecha_actualizacion}"
+                                ]
+                            },
+                            "name": "MyDisplayField17",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "6c7fb0f0-e235-4292-a977-661792d693c4"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Usuario",
+                                "value": [
+                                    "{record.usuario}"
+                                ]
+                            },
+                            "name": "MyDisplayField18",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "137aedc1-6b77-4344-8d16-4a9cb2745181"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Descripcion",
+                                "value": [
+                                    "{record.descripcion}"
+                                ]
+                            },
+                            "name": "MyDisplayField19",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "282bdff1-c03f-4c08-93d0-8cb1f591e5d3"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Nombre Fichero",
+                                "value": [
+                                    "{record.nombre_fichero}"
+                                ]
+                            },
+                            "name": "MyDisplayField20",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "56d16507-c138-4fa2-8b14-ff2b0c5ba4eb"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

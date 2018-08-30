@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorgrupoescala",
+        "designer|userClassName": "nomenclador.GrupoEscalaViewModel"
+    },
+    "designerId": "7ff958c9-2cd5-48fd-b3c9-e0edb9c57e40"
+}

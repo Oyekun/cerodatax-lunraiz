@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "continente",
+        "designer|userClassName": "nomenclador.Continente"
+    },
+    "name": "nomenclador.Sexo3",
+    "designerId": "17f2e0a3-79f0-4aed-ad67-962b4903ce45",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString18",
+            "designerId": "ad9eb501-cd81-4b4e-a974-b57ac1efc3ba"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyField8",
+            "designerId": "a359aa57-db27-452f-b4d2-89ee1c02d5de"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorniveleducacional",
+        "designer|userClassName": "nomenclador.NivelEducacionalViewController"
+    },
+    "designerId": "989ce48c-4e51-471a-8fcc-43c292323363",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "ea3fe1f5-8b83-4f06-bf68-2e86d936d0d7"
+        }
+    ]
+}

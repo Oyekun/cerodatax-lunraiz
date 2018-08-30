@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "colorpiel",
+        "designer|userClassName": "nomenclador.ColorPiel"
+    },
+    "designerId": "55d51b46-25de-41d7-add2-16c7e302b835",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString25",
+            "designerId": "507a1abf-8ea8-4066-970a-bf7f0f263c62"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyField12",
+            "designerId": "fe5a3cf4-4f24-4432-b9e6-6ceb55f558f1"
+        }
+    ]
+}

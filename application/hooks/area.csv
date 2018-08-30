@@ -1,0 +1,811 @@
+13e57a39-55ca-4962-9313-0d79928c096d;Brigada de Mecánicos Antonio Sánchez;0;50796419-4e3f-4bdb-982d-b751b88742ad
+fe93ca1a-2a37-4990-93cb-3a370b40c392;Brigada de Producción de Cal No 4;0;6e2913ec-5913-4a95-8a2c-fe80b39e3a8c
+23f5bdb2-04af-434b-8bcf-bf0a47782942;Brigada de Construcción Civil 1 Rdos;0;2feacfdf-d71f-45c4-8d22-0582f4813f26
+777d107a-e9ec-4bb6-a627-66905b1c3dc3;Brigada de Mecánicos 5 de septiembre;0;50796419-4e3f-4bdb-982d-b751b88742ad
+c1ee0bdb-1dbe-42f0-91f0-7fd19e78b7a3;Brigada de Montaje de Automatización 4;0;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+9cec346b-33b2-4033-ad81-7e39667aecbb;Adiestramento;0;
+4417edce-32e3-49fa-8ce3-c4c06bef4792;Brigada de Montaje de Automatización 3;0;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+04779026-78ba-44fe-b918-7b944a785216;Brigada de Pailería No. 1;1;a4696f60-01f5-493f-82fb-7b27a4147c2a
+2d80b451-f186-44f5-bd84-26e9d729ec01;Reparación de Oxicorte;1;40341f58-977f-49eb-8ba3-7ce164a18910
+d4960b50-060f-4033-a5ef-e57bfe1c7f02;Grupo Plantas Industriales;1;3139de0e-dc59-4255-8e1b-9c6f43b7aeaf
+66080c18-e848-4211-a95c-e7b4c8978a8d;Brigada de Pailería No 1;1;cb3edc2e-ff97-47b0-8c02-7e0a8f72b010
+2e95ffea-fd5a-4216-a516-adb2525a8fba;Brigada de Maquinado 9 de Abril;1;282ff674-40f4-4964-b6b9-860b27759109
+89de89b7-27c5-4453-bb97-68344eb383ce;Grupo de Cuadro;1;3d4197a0-5a8c-46d8-8693-bca50e3fb953
+d5849d3c-dcb6-4637-bb90-0718a53e74c6;Brigada de Producción de Cal No 1;1;6e2913ec-5913-4a95-8a2c-fe80b39e3a8c
+335dd32b-647f-4c60-95d7-96b373bcc468;Brigada de Cantera y Molino;1;16177144-50cc-4ef0-8a4e-f76adc495d0d
+c85fdb25-bfbf-4c51-b016-1c8a46553a9d;Grupo de Empleo y Salario;1;1e6935ff-60d9-4d32-af33-fef2c2934ed8
+56040d41-3114-43c1-a24a-3b27cd3d5662;Brigada de Montaje No 1;1;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+4db892b9-f3cf-4227-a04a-bb44a42057c2;Grupo de Contabilidad y Costos;1;15fdacbf-64aa-4bac-8ac6-6a9fd7d6424b
+0140995d-2cc7-4b9e-9877-56adb533f496;Servicio Interno;1;eac9217b-035d-498e-9520-0c13ecc8c583
+8dec257e-9f3f-4e7b-8849-d8b481e80231;Equipo de Sala Análisis;1;03a62dfd-e231-4c0e-be4d-1689185c9403
+d8faede5-3fd6-4c78-8b57-fcae075cba95;Equipo de Proyecto y Puesta en Marcha;1;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+f066b11f-78b3-4477-8b4d-7f8f7963b8eb;Brigada de Maquinado;1;bea79854-54ac-44ef-9264-feaca598bd67
+056befe3-290d-411f-a71d-c4810d351a5e;Grupo de Nueva Tecnología;1;32d64e38-73db-42f5-b89d-b0e114c2fec4
+51c878b0-27df-4d4a-9e94-b1c22f84133b;Equipos de Servicios Informáticos;1;ff40cce3-e3f1-47be-a56e-c210bd0f5dfd
+a85f8893-8146-4972-bc39-9ef9bae2d875;Grupo de Servicios Internos;1;3d4197a0-5a8c-46d8-8693-bca50e3fb953
+13457c3b-6599-4770-b9c5-99d99babbb6d;Grupo de Finanzas;2;15fdacbf-64aa-4bac-8ac6-6a9fd7d6424b
+56bc6aff-92a7-4506-bb60-1f4359500690;Brigada de Pailería No. 2;2;a4696f60-01f5-493f-82fb-7b27a4147c2a
+9393fe1d-7da9-4f9b-817e-bd1ee76e0559;Transporte Automotor;2;eac9217b-035d-498e-9520-0c13ecc8c583
+e03d8773-276b-4b45-8c83-d3893d441ac4;Brigada de Producción de Bloques;2;72626ba1-4c33-40b0-a862-89b44a6061d1
+01afe3db-ed9a-4759-93a3-6f977781e404;Brigada de Servicios de Mantenimiento Industrial;2;bea79854-54ac-44ef-9264-feaca598bd67
+e78834f6-0e93-4b72-95b8-0f0ecb2435e7;Brigada de Pailería No 2;2;cb3edc2e-ff97-47b0-8c02-7e0a8f72b010
+ff7bcd2b-49d5-42c6-b8d2-f02b65148007;Brigada Producción de Aridos;2;72626ba1-4c33-40b0-a862-89b44a6061d1
+cd23372d-b77e-4ffe-b370-6922c11d92b2;Brigada de Producción de Cal No 2;2;6e2913ec-5913-4a95-8a2c-fe80b39e3a8c
+647149cf-97d6-497f-9c7e-d554410b52fe;Brigada de Montaje de Automatización 1;2;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+6e2913ec-5913-4a95-8a2c-fe80b39e3a8c;Producción de Cal;2;16177144-50cc-4ef0-8a4e-f76adc495d0d
+b565ed90-2045-4da3-964b-6f5e14f71aaf;Grupo de Juridico;2;3d4197a0-5a8c-46d8-8693-bca50e3fb953
+0b90c2c5-9b71-4bd7-8bea-fb49706fba3b;Brigada Construcción Civil;2;72626ba1-4c33-40b0-a862-89b44a6061d1
+70b03bc7-3bfb-41fb-a1e2-54be027a8ff8;Grupo de Desarrollo e Inversiones;2;e2532790-5b73-4615-b3df-6074c3849cbe
+a5e7da11-0457-480a-b100-51a5b772aae0;Brigada de Taller de Maquinado;2;40341f58-977f-49eb-8ba3-7ce164a18910
+a74e80dd-23ab-4ff2-9c12-e043542b6aca;Brigada de Montaje No 2;2;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+f42b6e9a-8843-410f-b15e-a7236911d296;Equipo de Sala de Análisis;2;ff40cce3-e3f1-47be-a56e-c210bd0f5dfd
+dfd52e23-7be7-45d8-8755-4b2ce5c023b2;Equipo de Análisis;2;14e47af0-159b-4316-892f-3864a6311760
+8f542821-4d76-4df4-9815-7a5d8e01a701;Grupo Jurídico;2;3d4197a0-5a8c-46d8-8693-bca50e3fb953
+7ec83f52-8ca9-4280-8722-2e32a1aea402;Brigada No 1 Montaje y Mantenimiento Calderas;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+c9b83cbe-879a-4257-8dcd-f23862571bb3;Brigada de Montaje No 1;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+2a142acf-f627-441f-92d2-37b03352a35f;Brigada Techadores No 2;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+98c354c8-a9a9-4b78-863f-2736f59bd3ab;Washington;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+53c0b527-d06f-4657-b7a8-187fec2b9352;Villegas;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+f61a2974-d5e7-434a-8e46-279c29a1beff;Brigada de Producción de Cal No 3;3;6e2913ec-5913-4a95-8a2c-fe80b39e3a8c
+0368ff04-775e-4484-a67b-c81ffead03f6;Brigada de Montaje de Automatización 2;3;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+23b50cef-d081-474f-a4e0-445df1b69b9b;Dirección;3;
+01936e65-77ee-4e37-bc7e-74c68795b3b0;Dirección General;3;
+3d4197a0-5a8c-46d8-8693-bca50e3fb953;Dirección General;3;
+62dcb084-a6ba-4dad-b56c-cdfb0e125da9;Dirección General;3;
+fe79d642-2072-4089-a499-d684434e23b1;Dirección;3;
+90096bf7-595d-4d64-a175-acf82ba37025;Dirección;3;
+ddb2bd5c-e0d9-4679-add8-f01bb833434a;Dirección;3;
+397edc5b-8abb-4abe-bdbb-6837c3a7fa53;Dirección;3;
+cdf3eebb-93d5-42f5-a78e-7029f68b07b3;Dirección;3;
+faa71c3a-ad69-4ea8-a92a-435f2483a44f;Dirección;3;
+32d64e38-73db-42f5-b89d-b0e114c2fec4;Dirección;3;
+1b168d3b-2085-4eaf-9197-720a2941e4f3;Dirección;3;
+1c1f5e41-10b7-48fc-bffe-58b02a1e1811;Dirección Fábrica;3;
+d8c3dd3f-f64a-428a-8f25-47146f8a5ee0;Dirección;3;
+b44eda1b-d895-472c-a561-89b90af4cae7;Dirección;3;
+e4b2345e-3751-4804-9a0b-59c5831d373a;Dirección General;3;
+c2d44b60-7f67-4f5a-902b-497018613bae;Grupo de Planificación, Estadística y Precios;3;15fdacbf-64aa-4bac-8ac6-6a9fd7d6424b
+dc0e39c2-ea9e-4425-9f29-71e0b9e04bf5;Brigada de Montaje No 3;3;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+8877aa8b-6902-4246-ba54-c9bfa12254a2;Dirección;3;
+7bdb1eeb-c6f7-4bd0-84e0-760a43fc281c;Equipo de Inspección de la Empresa;3;3d4197a0-5a8c-46d8-8693-bca50e3fb953
+256b1e89-e7c1-4dbd-a7b9-f0b3752be429;Dirección;3;
+afbd963f-5935-475c-a5d6-30d77c76b112;Brigada de Pailería No. 3;3;a4696f60-01f5-493f-82fb-7b27a4147c2a
+cd175374-fc87-4561-95e3-7393a1154c4d;Brigada de Pailería No 3;3;cb3edc2e-ff97-47b0-8c02-7e0a8f72b010
+7937e1df-5439-49a6-a37b-b9189e6b27bf;Brigada de Montaje No 2;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+93637cc2-2dcc-4063-940f-986b2135c81e;Brigada de Montaje No 3;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+03525ea1-689f-4e13-9659-342564c30ba3;Brigada de Montaje No 4;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+65db3299-80a4-4bfe-b5ae-236f619e5191;Brigada de Montaje No 5;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+038266f7-1276-4380-85cd-89ddee16df50;Brigada de Montaje No 6;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+bea14bbf-aaa3-4669-bb53-916581b28fc7;Brigada de Techadores No 3;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+1e531ab1-cc13-401b-9d28-fe8a859ced36;Acuajet Quintín Banderas;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+415d5998-2b4a-4360-8406-50bcd44a85f4;Brigada de Montaje No 7;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+c475575e-1322-4e24-950b-dde4619aea72;Brigada de Techadores No 1;3;a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15
+4e269a0b-b72e-4d39-946e-32554811d7ac;Grupo de Contabilidad y Finanzas;4;
+0dbd7bc9-3583-4cf5-a108-76588d288c84;Grupo de Contabilidad y Finanzas;4;
+bcf12ef5-7730-4d8e-bba4-76fb4962072d;Grupo de Contabilidad y Finanzas;4;
+925e9c37-e3c0-4497-a4b4-4473d117bd12;Grupo Capital Humano;4;
+3026467f-5040-4d1a-bc4c-3dd58454b503;Grupo Contabilidad y Finanzas;4;
+6942f548-b8d9-4fe4-976b-c6708375000f;Brigada de Mantenimiento Industrial;4;6e2913ec-5913-4a95-8a2c-fe80b39e3a8c
+62797fc2-a0f7-4f65-9ff7-63237321814a;Brigada de SanBlasting y Pintura;4;a4696f60-01f5-493f-82fb-7b27a4147c2a
+edd53216-43de-4d48-8689-8dce752fcfb4;Grupo Contabilidad y Finanzas;4;
+97a5a6e6-4f62-427d-a363-411438fae78d;Brigada de Electromontaje;4;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+b445e680-0544-4c72-8be8-6324ebf1fd67;Grupo Contabilidad y Finanzas;4;
+72626ba1-4c33-40b0-a862-89b44a6061d1;Brigada Arenera El Santo Dirección;4;
+70ab132e-5649-442f-93a4-63715cbb3121;Grupo de Contabilidad y Finanzas;4;
+7dbc2205-1dfb-4b2f-be71-02c8525ca428;Grupo de Contabilidad y Finanzas;4;
+dc587648-2791-46ce-baf8-9d35f01a7158;Grupo Contabilidad y Finanzas;4;
+c2d724e9-b663-4a8a-b84d-ad8052080afa;Grupo de Asistencia Técnica;4;
+7e30afd4-5d54-471a-8ef9-0aab3a22bbd2;Brigada Sandblasting;4;cb3edc2e-ff97-47b0-8c02-7e0a8f72b010
+4213ec34-d163-4e2d-94d7-211811bf43c0;Grupo de Contabilidad y Finanzas;4;
+1b40ce31-c85b-4c22-a2bd-67793d023cbe;Brigada de Montaje No 4;4;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+14e47af0-159b-4316-892f-3864a6311760;Dirección de Operaciones de Zafra;4;
+81165256-485a-4929-b596-f71e618a7c6a;Grupo de Contabilidad y Finanzas;4;
+9d7558a5-6837-47fb-ae87-277ce6ce0405;Grupo de Auditoría;4;3d4197a0-5a8c-46d8-8693-bca50e3fb953
+8f831f36-5bc2-45db-ba65-2be0dd8f7587;Grupo de Contabilidad y Finanzas;4;
+d4c159e3-6b24-415b-bad4-3a7d88ee80e4;Equipo de Preparación de Obras;4;ccfef89f-018a-4cac-aeec-e1ae02e2314f
+333bebef-0257-4a88-af7f-6a22809be91f;Grupo Contabilidad y Finanzas;4;
+e2532790-5b73-4615-b3df-6074c3849cbe;Dirección de Desarrollo y Calidad;5;b2a07d96-c9ae-4917-944d-a1b7012330cd
+e285aaf1-7a34-4e00-b0b1-012cbac11a3f;Brigada de Montaje No 5;5;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+8bb485a9-b7e3-47d9-8cdf-7c16db9ddfa8;Grupo de Control de Ejecución de Obras;5;af3ec6c7-6eb8-490f-a1bc-7fde6602941a
+ce3f0d94-87b3-4812-b265-de87582b862e;Grupo de Control Técnico;5;af3ec6c7-6eb8-490f-a1bc-7fde6602941a
+99a0f006-5267-4b0a-947f-57cddccd2f90;Brigada de Techadores;5;489310b1-4512-4600-8b5d-05eaad1ca380
+48d3d785-a527-43d8-b2b2-02a51dca6f5c;Brigada de Pailería;5;489310b1-4512-4600-8b5d-05eaad1ca380
+30de6bcb-5d31-434e-b253-8e1c554bfe81;Brigada Acuajet;5;489310b1-4512-4600-8b5d-05eaad1ca380
+d202cc15-e138-460f-8d9c-3641100144a8;Casa de Visita;5;05576a97-c75e-471f-9df0-d7ed72b58d76
+a8eaf551-962f-4c33-8216-49e794df6fc9;Brigada de Equipos Auxiliares;5;a4696f60-01f5-493f-82fb-7b27a4147c2a
+0e8d9f96-f07e-4fea-ba4e-d1d8e8310e24;Brigada de Instrumentación;5;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+2336b5b3-f0d8-45d0-9350-9d2e2130771e;Brigada de Montaje No. 5;5;489310b1-4512-4600-8b5d-05eaad1ca380
+ba55d304-a127-4d6e-ab9c-1d1dd3353c36;Grupo de Contabilidad y Finanzas;5;
+38c37169-93ea-40ae-b22c-f79df3a71e4a;Brigada de Montaje No. 4;5;489310b1-4512-4600-8b5d-05eaad1ca380
+ac2b4ac1-5857-4e17-b2dd-709674623db5;Brigada de Montaje No. 3;5;489310b1-4512-4600-8b5d-05eaad1ca380
+c6767dc8-9731-4b25-868c-5242286fff84;Brigada de Montaje No. 2;5;489310b1-4512-4600-8b5d-05eaad1ca380
+f31d719b-85c6-4d7f-bed9-267bc02584eb;Brigada de Montaje No. 1;5;489310b1-4512-4600-8b5d-05eaad1ca380
+551a709b-2c0e-4425-b05e-e66db7ccebb8;Brigada de HidroBlasting;5;cb3edc2e-ff97-47b0-8c02-7e0a8f72b010
+b221c606-67bc-4e7a-a3d9-557dfb15758f;Servicios Internos;5;05576a97-c75e-471f-9df0-d7ed72b58d76
+0476b927-bce6-45b1-b86c-b761fff7e033;Grupo de Capital Humano;5;
+47eeaf2a-330a-42c2-9188-3f818a7f541b;Grupo de Ejecución de Obras;5;503a5922-e2f1-4e25-9c67-d5eb5fadc31f
+945997fa-ff72-446b-ac24-368afa92035f;Grupo de Preparación de Obras;5;503a5922-e2f1-4e25-9c67-d5eb5fadc31f
+e1a3a8c8-4278-4502-8d2c-dd609f702496;Brigada de Enrollado;6;e7c96077-3222-472c-a266-3c274abb8bae
+9bec04ed-b3fa-4a97-993b-63bcce16297b;Grupo de Calidad;6;0bc6e554-9ce6-4e4a-9f08-89881eba2d51
+99bd1cb2-afbc-45dc-890d-1781dad6c196;Grupo de Inversiones y Desarrollo;6;0bc6e554-9ce6-4e4a-9f08-89881eba2d51
+7f2769b7-5bfb-4131-9866-1bbedb7c59d9;Brigada de Bachiplán;6;a464d45c-6040-4105-b767-2f69b07bf091
+55809223-2526-444a-9644-f4299a4ab51f;Brigada de Izaje;6;cb3edc2e-ff97-47b0-8c02-7e0a8f72b010
+bb492ada-a454-4c21-bfa7-250839cc1fca;Grupo de Capital Humano;6;
+1b2d7c78-4715-4b90-9101-510901db6f02;Grupo de Capital Humanos;6;
+ca04e6aa-8b93-4ef9-9a91-6d292492197a;Grupo de Capital Humano;6;
+f1c4b236-5262-4612-bc37-9f8e68c25995;Grupo de Comercialización y Negocios;6;0bc6e554-9ce6-4e4a-9f08-89881eba2d51
+e1137382-c416-40cd-a895-203ebd57cb81;Equipo de Servicios Informático de Camaguey;6;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+eae64b11-8b2e-4255-a108-6f190b3e145e;Equipo de Servicios Informáticos;6;
+6db0e1d6-70eb-4340-82f2-20d807b6f89a;Grupo de Capital Humano;6;
+e28e72e5-f8a0-4076-9bfd-3435cfc9b171;Brigada de Recuperación y Cromado;6;e7c96077-3222-472c-a266-3c274abb8bae
+a9e9ff97-dcd2-4494-b331-8215b5bb8b12;Grupo de Capital Humano;6;
+1d15e9ce-81df-43ce-9912-81a058a614ab;Sala de Análisis;6;e7c96077-3222-472c-a266-3c274abb8bae
+c80fadd5-c928-402e-b03a-51ea2150311e;Grupo de Capital Humano;6;
+a2bb5e5c-b6d3-4d17-9669-5daaca3b5f15;Construcción y Montaje;6;
+829ac9c7-fa07-485f-b3e8-d8632005a522;Grupo de Capital Humano;6;
+bb0b4f46-4e9c-4523-ad27-145a117f4960;Grupo de Capital Humano;6;
+77ca5341-7a26-4ce1-8808-fdbfc3b8ad04;Grupo Capital Humano;6;
+9a0c2bbe-e2fe-4346-96b8-b8c47a6a9746;Grupo de Capital Humano;6;
+c524cb53-8731-480d-a85f-70d37becc337;Grupo de Capital Humano;6;
+3896bc55-b6bf-4e78-9b3a-d13f371851df;Grupo de Asistencia Técnica;6;e7c96077-3222-472c-a266-3c274abb8bae
+eafc90cc-a06a-45b5-a351-ae8d57c26c61;Brigada de Contrucción Civil;6;a464d45c-6040-4105-b767-2f69b07bf091
+4e5d8fda-6075-47d3-a17c-d499eb60878a;Sala de Análisis;6;628d0c26-b842-4167-9e1a-cc6d053c4c80
+2dcfb959-6baa-4097-8b1e-bbab2005535e;Brigada de Montaje No 6;6;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+8f6656af-8265-4c27-bf05-2b9217e1f28c;Grupo Capital Humano;6;
+37dbc718-b69e-48b0-bc2c-d0d66cfe9b9f;Grupo Contabilidad y Finanzas;6;
+f242d77b-eda1-4c36-b3bb-694d54a7b220;Grupo de Capital Humano;6;
+877a5493-275e-49b1-a8d9-2933963aeca1;Equipo de Automatización;6;e7c96077-3222-472c-a266-3c274abb8bae
+eef63ee0-fb34-4c3a-8ef7-79bc62f48db6;Equipo de Servicios Informáticos Holguín;6;e7c96077-3222-472c-a266-3c274abb8bae
+c5936bb1-307a-4701-be8d-a731f93e6541;Obra No 1 Construcción y Montaje Dirección de Obra;7;6d28347c-a092-4baa-9dd8-6ea52656aef4
+b1f249b4-45f9-42e9-8875-fd7061002be2;Grupo de Tecnología y Derivados;7;1311b983-f6a8-4eb7-b82e-310db7902c11
+787490cd-674b-4176-8f15-e77ee3481373;Brigada de Reparación y Mantenimiento de Turbos;7;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+f42050e6-b855-430f-82d6-734dab199e72;Brigada de Mantenimiento;7;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+9b41c62c-7933-4131-a2a3-33d1b4944002;Brigada de Corriente Alterna;7;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+05b54d36-6e82-4cfc-84ba-670973148899;Grupo de Mantenimiento y Talleres;7;1311b983-f6a8-4eb7-b82e-310db7902c11
+685d21dd-3ae8-434d-a5bc-50312dba3d11;Grupo de Automática e Informática y Centrifuga;7;1311b983-f6a8-4eb7-b82e-310db7902c11
+6bc2f2c1-b5c6-4790-b8ca-747562923cad;Grupo de Producción;7;1311b983-f6a8-4eb7-b82e-310db7902c11
+66f87938-a786-4307-861c-945158767255;Brigada de Mecánica Eléctrica (Transformadores);7;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+daf715e6-ac58-48d5-a2d4-63d49e7c7df5;Brigada de Confección de Bobinas;7;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+bdf497b1-9bd5-4ef5-8869-2c17ce96211f;Brigada de Recepción y Entrega;7;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+6ca845d1-bc98-4833-8eec-6c1cb933cee5;Producción de Motores;7;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+bad3bee8-6643-4918-834d-9b41117657fe;Brigada de Mantenimiento Industrial;7;d0425745-6377-46a8-b9d9-d5c08201c81d
+99c7de1d-65ae-4741-9ac4-17df8afb23ac;Brigada de Ensaque;7;d0425745-6377-46a8-b9d9-d5c08201c81d
+9c728d70-f770-4f3f-80ca-3f8edacd63b9;Brigada No. 3 Producción de Cal;7;d0425745-6377-46a8-b9d9-d5c08201c81d
+c4db1c5c-1276-4397-88c9-bcabd551f36e;Brigada No. 2 Producción de Cal;7;d0425745-6377-46a8-b9d9-d5c08201c81d
+c2a07f99-eda8-442e-b7bd-135aa398748e;Brigada No. 1 Producción de Cal;7;d0425745-6377-46a8-b9d9-d5c08201c81d
+17405481-f381-409d-976b-e271c06959b7;Molino;7;d0425745-6377-46a8-b9d9-d5c08201c81d
+ced94358-1342-4db1-8543-c378018200a4;Brigada de Montaje  No.1;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+f762e606-e82d-44e7-9b02-539aae60fae1;Brigada de Montaje  No.2;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+ee95ec94-983e-4c9c-ae11-5b9840e4bd20;Brigada de Montaje  No.3;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+ce2e1b21-69bf-4e86-8c4c-7eee0d244f1b;Brigada de Montaje  No.4;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+25835232-e876-412a-929c-1d39da0e22ee;Brigada de Montaje  No.5;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+91b6dcd4-e3d9-4582-a224-b7e3422adeea;Brigada de Montaje  No.6;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+aa4d4d5c-38f5-4d59-b3bd-18574510f533;Brigada de Montaje  No.7;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+df9d381a-e2fd-4eb6-a1e0-0521254ffbe1;Brigada de Montaje  No.8;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+2e537d18-b5f3-4559-b4a7-7dd61723a03b;Brigada de Montaje  No.9;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+222612f4-e9bc-4735-8caa-1654d8dc9e78;Brigada Techado no.1;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+bc2de09a-7926-4cf1-9ec4-5c81011f6e9c;Brigada Techado no.2;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+776115df-ae8c-4524-95bd-af904f205b2a;Brigada Techado no.3;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+0eb13492-0836-4df5-aed1-6401464811d8;Brigada Techado no.4;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+fa96dc11-5a68-4389-a04b-351fe0126ed2;Brigada Construcción Civil;7;eea47a24-3f7f-4aad-81b7-6004e89090da
+5b91a94c-82dc-4a3b-903e-4f153d8560bb;Brigada de Informática;7;ee52d9b6-6d2f-4b27-af92-703b4e00fa0c
+199db017-ebb8-4c5e-bd26-35338409f797;Brigada Planta Arena;7;585deaa9-5229-4823-b4df-c88282f3077d
+a4d1c518-4d71-4bec-9ff6-c4c732ba4b0c;Brigada Fundición Pesada;7;585deaa9-5229-4823-b4df-c88282f3077d
+2d970f52-4a20-4ec9-abc6-9b391f890dc0;Brigada Desmoldeo;7;585deaa9-5229-4823-b4df-c88282f3077d
+b1bb356c-e679-4c59-8862-62efe975f496;Brigada Fundición Ligera;7;585deaa9-5229-4823-b4df-c88282f3077d
+8037d3f0-eb88-426d-97a6-479de723cb48;Brigada Rompedero de Chatarra;7;585deaa9-5229-4823-b4df-c88282f3077d
+c3808a49-45cc-494f-8f29-bf110a09f324;Brigada Bronce;7;585deaa9-5229-4823-b4df-c88282f3077d
+2d9b5846-6e6e-4cf7-a2ef-92199d144fb8;Brigada de Montaje No 7;7;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+28c266a3-b791-42c8-927d-1129b3109500;Grupo de Preparación de Obras;7;6d28347c-a092-4baa-9dd8-6ea52656aef4
+fca64f50-03cf-4498-9a4b-bc12b6fb1d14;Brigada Montaje No 1;7;c5936bb1-307a-4701-be8d-a731f93e6541
+52210481-bfb1-4e56-97ac-2687cfc1343f;Brigada Montaje No 2;7;c5936bb1-307a-4701-be8d-a731f93e6541
+265f1471-7daf-46ac-ae32-94b80afe7703;Brigada Montaje No 3;7;c5936bb1-307a-4701-be8d-a731f93e6541
+2513e2e3-d901-431a-b4af-d7391bc3c7e0;Brigada Montaje No 4;7;c5936bb1-307a-4701-be8d-a731f93e6541
+254d44d1-45e1-4c87-b518-dfd101f4531e;Brigada Montaje No 5;7;c5936bb1-307a-4701-be8d-a731f93e6541
+91b779f4-1284-4821-bfaf-cb88ba720fca;Brigada Montaje No 6;7;c5936bb1-307a-4701-be8d-a731f93e6541
+eefa4702-fd67-4504-8be4-bce7558b99c5;Brigada Construcción Civil No 1;7;c5936bb1-307a-4701-be8d-a731f93e6541
+24e258e9-9349-4df2-9783-74c86750243b;Brigada Techero No 1;7;c5936bb1-307a-4701-be8d-a731f93e6541
+200599a7-14f5-4889-b41d-9208db22dc63;Brigada de Pintura e Insulación No 1;7;c5936bb1-307a-4701-be8d-a731f93e6541
+97104b97-5353-4df9-bc94-94da228303d2;Obra No 2 Construcción y Montaje Dirección de Obra;7;6d28347c-a092-4baa-9dd8-6ea52656aef4
+af3d62e9-2478-4b57-93f1-1d759db7e72c;Brigada Construcción Civil No 2;7;97104b97-5353-4df9-bc94-94da228303d2
+e35c63ea-b857-437d-8482-b350318a20af;Brigada de Techero No 2;7;97104b97-5353-4df9-bc94-94da228303d2
+1bd29cec-5cb2-468e-a797-f00785f58bc4;Brigada de Pintura No 2;7;97104b97-5353-4df9-bc94-94da228303d2
+67950a12-2181-49e6-84d7-2ebd94816f02;Obra No 3 Construcción y Montaje Dirección de Obra;7;6d28347c-a092-4baa-9dd8-6ea52656aef4
+9509a6fb-bab2-47cf-b88b-d3cb6e78f028;Brigada Construcción Civil No 3;7;67950a12-2181-49e6-84d7-2ebd94816f02
+ed4458e5-35d1-44d3-a7f0-12b7a82edd46;Brigada Montaje No 1 ;7;97104b97-5353-4df9-bc94-94da228303d2
+4d776ea7-d7ab-4a25-872a-188ecc768e3d;Brigada Montaje No 2 ;7;97104b97-5353-4df9-bc94-94da228303d2
+bc083744-1f37-4aca-8ef8-5469d93d26f8;Brigada Montaje No 3 ;7;97104b97-5353-4df9-bc94-94da228303d2
+bed802c9-8212-40d5-ac29-8df5c449181e;Brigada Montaje No 4 ;7;97104b97-5353-4df9-bc94-94da228303d2
+bf71ab4f-3d6d-42cb-8a4d-8c6a0790abfe;Brigada Montaje No 5 ;7;97104b97-5353-4df9-bc94-94da228303d2
+23e05d2a-dcdd-46e1-a629-be587da8a137;Brigada Montaje No 1  ;7;67950a12-2181-49e6-84d7-2ebd94816f02
+877ef8ac-3ec4-4f69-9c55-73f210222aa9;Brigada Montaje No 2  ;7;67950a12-2181-49e6-84d7-2ebd94816f02
+fd04240c-59bb-43fa-bc08-8bdc4aa18347;Brigada Montaje No 3  ;7;67950a12-2181-49e6-84d7-2ebd94816f02
+8214e078-26b8-4139-b8ae-c455474676f3;Brigada Montaje No 4  ;7;67950a12-2181-49e6-84d7-2ebd94816f02
+3cb88d37-20e3-4eaa-9f9e-7a95ca85b7dc;Brigada de Construcción Civil 1;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+16cec8b3-133e-4c9c-8b3f-190299910a74;Sala de Análisis;8;a4ba3a22-26da-404f-951e-f5d214451b14
+6aea9913-a851-4fc6-a3d8-a398e5b536f1;Brigada de Construcción y Desmontaje No. 1;8;6e205b9b-62b9-4ace-953f-21812026ec21
+b6d2b8f6-e704-4efd-b6da-b69e23a5b4c4;Brigada de Construcción y Desmontaje No. 2;8;6e205b9b-62b9-4ace-953f-21812026ec21
+99ed1222-609d-4b19-9b7d-836adb8db7cb;Brigada de Construcción y Desmontaje No. 3;8;6e205b9b-62b9-4ace-953f-21812026ec21
+f5f69032-ed60-4056-b55f-c1a3d906f362;Brigada de Construcción y Desmontaje No. 4;8;6e205b9b-62b9-4ace-953f-21812026ec21
+307b9c61-4781-4d01-a86d-9ffedf5c8414;Brigada de Construcción Civil No 6;8;50796419-4e3f-4bdb-982d-b751b88742ad
+58433b59-8e53-47b7-9aa3-c3ec2164c7d9;Brigada de Construcción Civil 2;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+d251dc84-8f2e-44c9-95cc-4ec6c1580dc5;Brigada de Montaje No 2;8;50796419-4e3f-4bdb-982d-b751b88742ad
+2d8b5a46-e4d8-45cd-9d67-36f568af2348;Brigada Pintura  Samblasting ;8;50796419-4e3f-4bdb-982d-b751b88742ad
+d1537a9b-fc39-44cd-a6cf-37a9375826da;Brigada de Montaje No 3;8;50796419-4e3f-4bdb-982d-b751b88742ad
+3d2c3d24-2c9b-49ca-9944-60cd56e9bfbd;Brigada de Montaje No 4;8;50796419-4e3f-4bdb-982d-b751b88742ad
+d0da93d5-c3a0-4776-9968-a01f01bc3904;Grupo de Explotación de Transporte y su Mantenimiento;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+83b80143-8724-4ea7-9041-8516af11cd7f;Brigada de Montaje 5;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+d1f42e70-0166-4ca4-b2f4-3fa4058d7d4f;Brigada de Construcción Civil No 1;8;50796419-4e3f-4bdb-982d-b751b88742ad
+b8c1651c-87e4-4469-a77b-007ccd2512e6;Brigada de Montaje No 5;8;50796419-4e3f-4bdb-982d-b751b88742ad
+748bf319-5c4c-4311-95c5-2d647138ce08;Brigada de Construcción Civil No 4;8;50796419-4e3f-4bdb-982d-b751b88742ad
+fedfed13-39b1-445d-9340-92e6221d5586;Brigada de Construcción Civil No 2;8;50796419-4e3f-4bdb-982d-b751b88742ad
+301d6374-f6e1-4d3e-bf7f-081a15eec209;Brigada de Montaje No 6;8;50796419-4e3f-4bdb-982d-b751b88742ad
+bef3b51a-9e2b-4954-9ad1-873cd4f1d4c8;Brigada de Construcción Civil No 3;8;50796419-4e3f-4bdb-982d-b751b88742ad
+d15605d8-dfde-4da4-ae7f-e51d10d59edf;Brigada de Montaje No 7;8;50796419-4e3f-4bdb-982d-b751b88742ad
+c994b4fe-3302-4c68-a7fb-5a46d6dca05b;Grupo de Explotación de la Mecanización;8;42318aab-670e-4423-b463-0a87719fc45e
+01bf1c91-344a-45e5-a45f-abe1953b1c52;Equipo de  Tecnología;8;35424fdf-a258-4809-a48d-527e21e2bce8
+ebac3a43-a9f0-4dc9-a19d-b89944392b34;Brigada de Mantenimiento ;8;35424fdf-a258-4809-a48d-527e21e2bce8
+516912f3-dda4-4a07-9615-443a94bd5d74;Talleres Integrales de Montaje y Automatización;8;fb807df9-f40a-4f8f-b261-d5b8a016c0b2
+16bc6d1a-9fac-45b4-b15d-8b84e350c125;Brigada de Pailería No 4;8;50796419-4e3f-4bdb-982d-b751b88742ad
+0db4501f-f13b-47ee-b2da-a81d1143ebf4;Producción de Cal y Cantera -Molino;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+0936cf18-0e9b-4670-8b13-253b8015700f;Brigada No 1 de Producción de Cal;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+87c18fc7-507a-4d81-96af-dc6712a4d896;Brigada No 2 de Producción de Cal;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+38d9394d-290b-40ed-8c0d-6e508e816a60;Brigada No 3 de Producción de Cal;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+ceec9e30-b4a6-45b7-8bbf-b9e4e4a6643d;Brigada No 4 de Producción de Cal;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+55a205bb-7ace-44af-af6a-5a18d96f1e39;Brigada de Ensaque;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+7462d9e1-0417-421b-9018-deb8b714c25b;Brigada de Matenimiento Industrial;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+0c63d99a-d2e1-4865-b39b-6b917b66945f;Brigada de Montaje 3;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+a3f87e2f-2e59-4066-8aed-1d8a445ca45c;Brigada de Montaje 8;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+9dc9576e-c328-4170-a8fe-7e9d09747c0a;Brigada de Montaje 7;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+e4fc32c5-973a-495d-80d5-2c1a11bfdd6c;Brigada de Montaje 6;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+16166620-267c-4815-baec-713f48ea402b;Grupo de Compras y Almacenes;8;42318aab-670e-4423-b463-0a87719fc45e
+2647a0cc-02f6-4acf-b2f1-c5760f15d8c0;Brigada de Taller y Mecanización;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+f15f6ac9-a0d4-4eba-b270-c55626779b53;Brigada de Hidroblasting;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+9747daf5-208e-46f7-9aaa-5340d28cb3da;Brigada de Pintura;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+58d76056-bfbe-41c6-af59-96b0a0f387d7;Planta de Pintura;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+50a40bce-aff7-4490-a263-6d7240c144e3;Planta de Carbonato Micronizado;8;716b7673-fc65-4b56-a01f-09bdcf5f48c2
+acfb2b13-2065-41e7-9090-07aa07885640;Brigada de Insulación;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+5ea0ac1e-9ed2-4325-a14c-3f14fd5492cd;Taller y Montaje de Insulación;8;fb807df9-f40a-4f8f-b261-d5b8a016c0b2
+40859876-25eb-455b-8f03-33eb7e556608;Brigada de Mantenimiento y Herramental 1;8;dd0df8e6-a12c-40ac-8863-e9cc33d7caf0
+23fc0c3c-ee6c-446b-a657-43cefdbd0769;Brigada de Montaje 4;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+9a0bd3c6-07d1-42f7-89c2-f59efaea26a6;Grupo de Obras de Montaje Industrial;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+eb91462e-5a05-4c79-9eb9-85fa43963f7b;Brigada de Cadena;8;35424fdf-a258-4809-a48d-527e21e2bce8
+e6cdb2b2-1cbc-43e3-b79c-b218e3230bcd;Grupo Desarrollo y Calidad;8;
+89bb3772-3934-4f2d-8ca8-65274d002c0b;Brigada de Tráfico;8;fb807df9-f40a-4f8f-b261-d5b8a016c0b2
+e053a1d2-ac88-456e-87bc-fca08bad2d5f;Brigada de Izaje;8;fb807df9-f40a-4f8f-b261-d5b8a016c0b2
+76878364-8ccd-4843-a47d-4cafa6b8a600;Brigada de Pailería;8;fb807df9-f40a-4f8f-b261-d5b8a016c0b2
+ffa17893-4962-42a9-9070-a60d2be025d8;Brigada de Pailería No 3;8;50796419-4e3f-4bdb-982d-b751b88742ad
+05d8e30a-04de-490f-b8f4-0241bf162498;Brigada de Montaje 13;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+12b500c2-b684-4a55-97d8-54e47590f976;Brigada de Montaje 12;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+55d3fd00-c8b9-4b76-9674-bdf12a6b880f;Brigada de Pailería No 2;8;50796419-4e3f-4bdb-982d-b751b88742ad
+2bca480d-ed8d-4c23-8e40-9a1b7f43e937;Brigada de Techadores  No 1;8;50796419-4e3f-4bdb-982d-b751b88742ad
+c8948ecd-fdba-476d-918f-3503734bedd6;Brigada de Pailería No 1;8;50796419-4e3f-4bdb-982d-b751b88742ad
+0a75e825-f286-4fff-9897-0efabd38b5dd;Brigada de Acuajet;8;50796419-4e3f-4bdb-982d-b751b88742ad
+818cc1c7-32bf-4414-806a-011c5a995d11;Brigada de Aislamiento Térmico;8;50796419-4e3f-4bdb-982d-b751b88742ad
+3059e694-5f58-42ce-8e1e-4c34d7ea7d85;Brigada de Construcción Civil No 5;8;50796419-4e3f-4bdb-982d-b751b88742ad
+8e83da75-355a-49e0-98ca-00f0aa0254eb;Brigada de Maquinado No.2;8;e0a9d4d9-0e85-4a85-a8af-a5d743f55435
+4ebcf38d-dba9-4b72-b63c-045a198d0ea6;Brigada de Maquinado No.3;8;e0a9d4d9-0e85-4a85-a8af-a5d743f55435
+2eadbd28-3f28-4b82-aab6-b813101d3d33;Brigada de Montaje 14;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+97c941cc-30c5-4a11-b04b-b48aded46d04;Brigada de Montaje 15;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+879247af-0afa-453f-9953-27b1684659f6;Brigada de Montaje 16;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+d5906ef3-0c0d-4eaf-a195-01198c488a39;Brigada Eléctrica 1;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+cc6ffdc7-c9db-4874-81bc-6090ef803613;Brigada de Maquinado No.1;8;e0a9d4d9-0e85-4a85-a8af-a5d743f55435
+50d15a61-0c8c-4589-a0ba-bf15315783f4;Brigada de Pailería;8;35424fdf-a258-4809-a48d-527e21e2bce8
+826566bb-c8ca-493b-b189-2b8da50c8fd6;Brigada de Maquinado;8;35424fdf-a258-4809-a48d-527e21e2bce8
+2d388982-354b-4569-8540-a0154be54244;Brigada de Techadores 1;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+a967b4e0-3b38-486f-9e75-7aac8c713006;Brigada de Montaje 1;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+9761a209-705d-4af9-90de-d928a0c3dca2;Brigada de Techadores 2;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+8ba638c8-b85c-415c-bf2e-5a76bd3529fc;Brigada de Montaje No 8;8;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+d7593410-b1c6-4213-8c6a-1178a9efd9fc;Brigada de Montaje No 1  ;8;50796419-4e3f-4bdb-982d-b751b88742ad
+dab1b8f9-a8df-474b-9584-1f632cf6df82;Brigada de Montaje 11;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+a4636802-ef2e-4117-9860-79a74008119d;Brigada de Mantenimiento;8;fb807df9-f40a-4f8f-b261-d5b8a016c0b2
+41bb4488-f24e-4c41-bc10-fe4314211524;Equipo de Tecnología;8;ae6536ce-d9a4-4ed4-9365-1cbbd22780c0
+bbf95a3a-1ff8-4466-961a-bac92cc01cb1;Brigada de Montaje 10;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+ed5be6be-c250-43a5-9c6b-74bc9f56d3f2;Brigada No.4 Blindaje;8;e0a9d4d9-0e85-4a85-a8af-a5d743f55435
+db8f9abb-dd12-497a-a1cd-3e0e5e9dfa8a;Brigada de Montaje 2;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+83a5b3c0-e692-46b2-affe-4382b07ea6d0;Brigada de Montaje 9;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+cd8b55c3-466c-4e75-9da0-576807f9b9fb;Brigada de Turbinas;8;35424fdf-a258-4809-a48d-527e21e2bce8
+550018b0-a3c7-4797-a902-e4b872c1df04;Brigada de Aislamiento Térmico 1;8;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+d02da9e6-6ad7-4c79-bdf7-0a59fee11813;Taller de Mantenimiento Automotor;8;fb807df9-f40a-4f8f-b261-d5b8a016c0b2
+00c09eeb-1b05-4e9a-a8c3-f90d342c0ed0;Grupo Comercialización;9;
+5c38b4e8-4396-4501-9825-80696d7841e7;Grupo de Construcción y Montaje ;9;
+dcf4fa31-dffb-47f6-b374-27bc31afda5d;Grupo de Operaciones;9;
+cae4ff90-2b7e-478e-9d98-c6b4ea45ff0f;Brigada de Construcción Civil 3;9;b68d8a81-c1e3-4f94-bafd-1c996cc1a94d
+5b7783f4-5833-4ca0-a837-b3a4f67cb531;Grupo de Desarrollo y Calidad;9;
+37e8794c-1982-4124-8c7e-09fcb110b0b1;Grupo Técnico Productivo;9;
+541a7374-f629-4e68-80e9-05ea2840742b;Grupo de Desarrollo y Calidad;9;
+8086a4da-526f-46bc-85ef-57b6d8adb594;Grupo de Desarrollo y Comercialización;9;
+1b49b733-b75b-46b2-a37f-4678b236e26c;Grupo de Operaciones;9;
+a8cc641b-73f6-4e31-8c35-644606179277;Brigada del Taller Automotor;9;b38ad3b8-43cc-46cb-b491-d67d7d2c2e48
+318e7e16-9fbd-47a6-9c5b-b994b846cd59;Brigada de Tráfico;9;b38ad3b8-43cc-46cb-b491-d67d7d2c2e48
+0d070381-9a0e-4dfc-b2cd-dd8ecdd61414;Almacén de Laminado y Ferretería;9;d7fc7920-2d67-467a-af32-143d9138afe8
+af80c5ca-2205-4e83-93c5-8ef20ea2b8da;Almacén Producción Terminada;9;d7fc7920-2d67-467a-af32-143d9138afe8
+0b9f33f4-f8a7-4a7d-9053-3db710a4049d;Brigada de Mecanización;9;d7fc7920-2d67-467a-af32-143d9138afe8
+714d9dba-cbcc-49c8-ab56-cb5754a4bfb4;Brigada de Servicio;9;d7fc7920-2d67-467a-af32-143d9138afe8
+e33dc3e0-fe44-4038-a1ac-e6549c638cd4;Equipo de Comercialización;9;
+f2e70ec4-5a75-44fd-8c65-1f37a04030a7;Grupo Desarrollo y  Calidad ;9;
+fac7be1a-f549-4876-bb69-4a36f57aaaff;Brigada de Montaje No 9;9;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+9c6d5ec7-b206-436c-81a7-f82611ce8ed8;Brigada 6 de Ensamble;9;e0a9d4d9-0e85-4a85-a8af-a5d743f55435
+8d15b5ff-9f1f-4969-bbbc-a307b54ddd2a;Grupo de Desarrollo y Calidad;9;
+6af51b12-1505-4890-84e5-840e0f533fa0;Brigada de Mantenimiento y Herramental 2;9;dd0df8e6-a12c-40ac-8863-e9cc33d7caf0
+7b74e3dd-b701-497a-8b42-30252eb2e3df;Equipo de Comercialización;9;
+93198dc0-af24-4215-99c5-f0007c377093;Brigada de Montaje No 1;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+3e7908b0-fa9b-462e-81d7-c1677169a3c2;Brigada de Montaje No 2;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+bd9dfba4-285a-494e-834b-d1cd59f117ca;Brigada de Montaje No 3;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+339be621-d69c-4c5d-afaf-9575d1827a7a;Brigada de Montaje No 4;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+c9cadfd0-3f8d-4520-999d-1257083903d7;Brigada de Montaje No 5;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+c497535d-4cb1-4e57-a867-335cc87bec15;Brigada de Montaje No 6;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+4e407ce2-c02e-4838-b28e-9ff9539ff254;Brigada de Montaje No 8;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+10b05821-1be1-4596-807b-f13b988725ce;Brigada de Montaje No 9;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+e11e3965-ae8c-4039-992f-597c1f0ea1b0;Brigada Eléctrica;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+b5ae22d1-bc31-49db-86f5-b6cf3b8ce2b7;Brigada de Techadores 1;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+50814c33-9948-41d8-a480-4a1cad1239f9;Brigada de Techadores 2;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+01f73b2e-5ec5-4360-9d3d-6c832902931d;Brigada de Acuajet;9;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+70dc6104-05d3-4e48-8aef-a2abed1bf5a1;Grupo de Organización, Desarrollo y Perfeccionamiento;9;1e6935ff-60d9-4d32-af33-fef2c2934ed8
+15fdacbf-64aa-4bac-8ac6-6a9fd7d6424b;Dirección de Contabilidad y Finanzas;9;
+60beecbc-88db-44ee-8c25-95cbce2149a7;Producción de Cal;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+6113611e-c626-4d37-83fc-371f342f3240;Brigada de Cantera y Molino;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+9761ae72-0b10-4316-8351-c8d568d57db0;Brigada No 1 de Producción de Cal;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+3fd46637-01d5-4b16-9a74-31401223d57e;Brigada No 2 de Producción de Cal;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+30f314d8-26ea-41e2-97c7-93a2740ce8cb;Brigada No 3 de Producción de Cal;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+2883a4f2-0ec4-4640-a189-4c2357c0e629;Brigada de Estibadores ;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+d7a82960-09ca-4d16-ba6e-0337dd79ac96;Brigada de  Civiles y Pinturas;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+2ebd7645-0815-4fa4-9c04-82b05e0c1300;Brigada de Taller y Mecanización;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+de98e543-59fb-46d2-9312-14557a2fbc16;Brigada de Resina ;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+13512080-ebbe-4260-84ec-1a331b80a75e;Grupo de Operaciones;9;
+3e420d04-e1bc-4077-9263-6269157f9ab8;Grupo de Producciones Mecánicas;9;
+ccfef89f-018a-4cac-aeec-e1ae02e2314f;Grupo de Operaciones;9;
+59bc624d-a67d-4ad5-a58e-d6ae59918e78;Grupo de Desarrollo y Comercialización;9;
+2d55ba88-b176-4575-a1c4-3abb9caacafb;Grupo de Desarrollo y Calidad;9;
+c2d8a1dc-1d69-4aef-8336-68b921a26ebd;Brigada de Planta Mortero Seco;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+b66ad7d3-cf34-4d67-9e61-14a54661c7ca;Brigada de Mantenimiento Industrial;9;da3a3c44-3d4d-4afd-a5df-82c2e2bdad36
+59c81369-f4dc-4707-b91a-85e9e6e4f4a3;Brigada de Turbogeneradores;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+581a8fc0-7486-41ec-8710-b812116657ca;Brigada de Maquinado;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+775dcfa7-86b6-4dc8-b4e4-40551f5ff295;Brigada de Sandblasting Pintura y Acuajet;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+55469615-de63-47ba-9309-bad0a3e844d4;Brigada Mecánica;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+b5da1847-0bac-446b-9424-461121292adb;Brigada de Montaje y Pailería 5;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+ea957db1-6e95-4b64-bb63-bf3b0b9e575b;Brigada de Montaje y Pailería 4;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+b2423c5c-c2d4-4760-a8d9-777a71d8c331;Brigada de Montaje y Pailería 3;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+2ebef552-37b1-4cc9-8499-be8743df1de4;Brigada de Montaje y Pailería 2;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+c54c1482-16b5-4d7b-bd90-56f00818517b;Brigada de Montaje y Pailería 1;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+3243781b-d5e3-4aa8-bf88-1ad7a2bcf9d4;Colectivo Técnico de Obras y Taller;9;2feacfdf-d71f-45c4-8d22-0582f4813f26
+a94a2dfa-1bfc-4eba-b5b9-d83646227630;Brigada de Construcción Civil No 1;10;83518f65-d550-405c-9f50-348a08c8c102
+134ca6b2-3e1f-4cfe-a2ac-8d23c29c43cd;Brigada de Construcción Civil No 2;10;83518f65-d550-405c-9f50-348a08c8c102
+bac9d296-5184-4fcf-8994-b70915f2e28f;Brigada de Construcción Civil No 3;10;83518f65-d550-405c-9f50-348a08c8c102
+803aa42e-34a6-4633-a1f6-939c57118a1a;Brigada de Mantenimiento Constructivo;10;8f7f6cd7-485a-4122-8b33-a63f8e9b7ad5
+b8260c9d-f1d0-47fe-9b2e-1197cef5d533;Brigada de Maquinado;10;571b1350-2c93-4ffb-a45a-dd7493bef452
+80057c4c-dcd9-4cb9-989f-372cc5d90e4f;Brigada Taller de Enrollado;10;571b1350-2c93-4ffb-a45a-dd7493bef452
+65be1bfb-956e-4d4d-be0e-05644c1473ce;Brigada de Pailería;10;571b1350-2c93-4ffb-a45a-dd7493bef452
+5ed3f329-7048-4862-96dc-e2416ad43751;Brigada  de Cadenas ;10;571b1350-2c93-4ffb-a45a-dd7493bef452
+baa8f096-9f17-469a-93fc-4f1726cabb66;Brigada de Producción de Gomas y Carbones;10;571b1350-2c93-4ffb-a45a-dd7493bef452
+732405fa-24dc-495b-888c-13ea46670ccf;Brigada de Mantenimiento Mecánico Industrial;10;8f7f6cd7-485a-4122-8b33-a63f8e9b7ad5
+489310b1-4512-4600-8b5d-05eaad1ca380;Construcción y Montaje;10;
+1cb0ec94-ae14-48bb-abcf-8ff82db043b0;Equipo de Preparación de Obras;10;
+c6dcbe20-558e-489d-b540-0f740f336eb8;Grupo de Desarrollo y Comercialización;10;
+71f0099a-c86a-40c0-b71b-70df12a1d767;Brigada de Montaje No 4;10;cf45324a-9640-4b47-b563-d07408da5f47
+72f6bd6d-f577-4f4a-bbd5-8f36cc486f01;Brigada de Montaje No 15;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+d85ec34a-8697-4725-8315-85965316affe;Brigada de Fabricación y Recuperación de Piezas de Respuesto;10;8f7f6cd7-485a-4122-8b33-a63f8e9b7ad5
+97a2e5fc-1f04-45cf-bd86-23f362029443;Brigada de Servicios;10;8e4a0a2b-64a1-45db-86b1-168a561b4715
+314435c5-9180-46c2-a520-9cf6be3fe795;Brigada de Montaje No 3;10;cf45324a-9640-4b47-b563-d07408da5f47
+5a6acd73-82c1-4c78-844a-b3eef190aa23;Brigada de Montaje No 2;10;cf45324a-9640-4b47-b563-d07408da5f47
+b6a44ddd-c73d-4635-8cba-54ef3d43aaac;Brigada de Montaje No 16;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+6157e306-6876-4061-acdf-08cac926f3e8;Brigada Eléctrica;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+78b04ee2-3778-4e82-b478-e69bd64eb067;Brigada de Techeros;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+905b8112-5366-4126-9bc4-fbe90e306dfc;Equipo de Servicios Informáticos de Santiago de Cuba;10;8e4a0a2b-64a1-45db-86b1-168a561b4715
+ceaf004c-5cde-4fcd-9598-b318b3dac3f5;Brigada de Informática;10;8e4a0a2b-64a1-45db-86b1-168a561b4715
+f9bc990f-1446-4a12-b6f2-f116b9f690c1;Brigada de Montaje No 8;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+e99840dd-65af-4334-a57f-0577b002d96a;Brigada de Montaje No 7;10;cf45324a-9640-4b47-b563-d07408da5f47
+a04d0049-fa9a-466d-9f16-0689a52f9f5c;Brigada de Montaje No 6;10;cf45324a-9640-4b47-b563-d07408da5f47
+c2bfe779-2827-4ace-b011-30bce6a6c21c;Grupo de Comercialización;10;
+104a1001-07ef-41ce-bb5c-813128dd3718;Brigada de Montaje No 1;10;cf45324a-9640-4b47-b563-d07408da5f47
+7bd680e0-22c2-4c5e-a54b-4d66a2aa40a3;Sala de Análisis;10;
+9ee3b507-89f7-4aeb-9bcb-4e19b41b1d8b;Grupo Técnico Productivo;10;
+7a9526b6-50e0-45ac-bf5e-01c2aac032d0;Brigada de Montaje de Automatización 2;10;8e4a0a2b-64a1-45db-86b1-168a561b4715
+b02a6f05-9eab-4818-8235-b5e6bc849287;Brigada de Montaje de Automatización 1;10;8e4a0a2b-64a1-45db-86b1-168a561b4715
+e0513ef3-34b3-4b37-aea3-12c3e7b48d7d;Equipo Proyecto y Puesta en Marcha;10;8e4a0a2b-64a1-45db-86b1-168a561b4715
+503a5922-e2f1-4e25-9c67-d5eb5fadc31f;Grupo de Operaciones;10;
+cd13a50f-63ab-4c82-8552-6e87612ff230;Brigada Construcción Civil;10;cf45324a-9640-4b47-b563-d07408da5f47
+1e6935ff-60d9-4d32-af33-fef2c2934ed8;Dirección de Gestión del Capital Humano;10;
+040fac85-98d3-4e61-a9d7-8d4e9f8846a8;Grupo de Desarrollo y Calidad;10;
+fe90a406-83a7-4895-9156-c792b416fc94;Grupo de Desarrollo y Comercialización;10;
+5f34b3c3-9c21-416d-8cc6-c2b63bc7474b;Equipo de Comercialización;10;
+c4c38a51-ccfc-4e3c-9a53-2fd1e84865fc;Brigada 5 de Construcción Civil;10;8d24dc9a-b92b-4344-bb55-5b1f6a9e7019
+3be33b0d-280a-4d1f-809a-28b4af41b979;Brigada 4 de Construcción Civil;10;8d24dc9a-b92b-4344-bb55-5b1f6a9e7019
+a1dbfe77-a344-457d-822e-2b8d21b4e04a;Brigada 3 de Construcción Civil;10;8d24dc9a-b92b-4344-bb55-5b1f6a9e7019
+5775f33a-4138-4b0d-bb71-bfcb8751c5be;Brigada 2 de Construcción Civil;10;8d24dc9a-b92b-4344-bb55-5b1f6a9e7019
+b2cd42c9-e1f0-4ca8-a168-3340fa1e4b76;Brigada 1 de Construcción Civil;10;8d24dc9a-b92b-4344-bb55-5b1f6a9e7019
+aacbb265-845e-47db-afd3-9de99d1e195d;Grupo de Producciones Mecánicas;10;
+ed1dd8c0-ba5a-4855-b25b-279b668246bf;Brigada de Montaje No 5;10;cf45324a-9640-4b47-b563-d07408da5f47
+e4a40c7f-fc89-457d-9436-cbf76fa35df4;Brigada de Montaje No 4;10;83518f65-d550-405c-9f50-348a08c8c102
+d3db41d5-5e66-4c46-bd0c-a5f8c34d7663;Brigada de Montaje No 3;10;83518f65-d550-405c-9f50-348a08c8c102
+2218aed9-c9b6-4439-a656-e0973e1fd0c2;Brigada de Mantenimiento Civil;10;e4b2b189-d130-48b8-91bd-f2457e02301c
+05576a97-c75e-471f-9df0-d7ed72b58d76;Equipo de Compra;10;
+41d9e253-487c-40dc-97b9-6134f7695e26;Brigada de Maquinado 5;10;e0a9d4d9-0e85-4a85-a8af-a5d743f55435
+628d0c26-b842-4167-9e1a-cc6d053c4c80;Grupo Planta Industrial;10;
+346161c6-9048-461d-ba28-2eb0df1832c1;Brigada Eléctrica;10;e4b2b189-d130-48b8-91bd-f2457e02301c
+d9c49c81-4b8f-4a6e-ad14-84a3d1032371;Brigada de Pailería;10;e4b2b189-d130-48b8-91bd-f2457e02301c
+5d01f171-f754-4850-bb99-5d748b2ef0cc;Brigada Mantenimiento Industrial;10;e4b2b189-d130-48b8-91bd-f2457e02301c
+5f37b407-f92a-46d0-aae2-ae1e61a88f31;Brigada Herramental;10;e4b2b189-d130-48b8-91bd-f2457e02301c
+82b3c5a7-9f92-4335-8fe8-741239503636;Brigada de Montaje No 10;10;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+af3ec6c7-6eb8-490f-a1bc-7fde6602941a;Dirección de Construcción y Montaje;10;
+82bfd444-ee49-453c-b985-e6baa14df9dc;Brigada de Montaje No 2;10;83518f65-d550-405c-9f50-348a08c8c102
+6b9362cc-5e2a-4215-a248-84b89524d3dc;Sala Control;10;
+42dd6488-5a43-4e23-b357-bab1dbf455df;Brigada de Montaje No 1;10;83518f65-d550-405c-9f50-348a08c8c102
+0bf90d61-fb6e-4009-ab91-df5c2683f71a;Grupo Operaciones;10;
+1369faa6-a34d-4f62-8d12-2241eb636587;Brigada de Montaje No 1;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+ffd7da6a-5b26-4bed-b099-e257861afaac;Brigada de Montaje No 6;10;83518f65-d550-405c-9f50-348a08c8c102
+52ccb841-2de2-4b45-a1d0-815870c12700;Brigada de Montaje No 2;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+c6b694c8-0c51-4bc2-b77a-6a987aabbec4;Brigada de Montaje No 3;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+7d6fbdc5-b671-465e-ab1b-9aefffb182a7;Brigada de Montaje No 4;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+2a54f874-952e-4b86-92a0-4ced3235f6c0;Brigada de Montaje No 5;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+cd7f1844-91a1-49ab-b8b7-dddab7f2b5e2;Brigada de Montaje No 6;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+a3fb0f22-b956-4931-b352-8ceacb3b111e;Brigada de Montaje No 7;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+db9d3df1-4b0d-44b0-8a76-09305aa59a5f;Grupo de Operaciones;10;
+3701f640-1461-4a28-8997-64d2ef9c6547;Brigada de Techeros No 1;10;cf45324a-9640-4b47-b563-d07408da5f47
+027f5c98-ddc9-499d-8c73-17e82140a701;Brigada de Reparación de Autos y Chapistería;10;efae3f39-9cf1-4982-a8d1-efde592fc87a
+573cada9-4b9c-4675-aa49-cd1704833051;Brigada de Izaje;10;efae3f39-9cf1-4982-a8d1-efde592fc87a
+78bba3e4-7724-4592-8aac-f25e7a24e996;Brigada de Tráfico;10;efae3f39-9cf1-4982-a8d1-efde592fc87a
+8121c063-784a-4100-83cc-7cc15df450bc;Brigada de Montaje No 9;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+578c2cdc-22a2-495b-a095-01d4db2f2e23;Brigada de Montaje No 5;10;83518f65-d550-405c-9f50-348a08c8c102
+d9e79cfe-931f-4769-b4f6-1c2e7335e375;Brigada de Montaje No 10;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+c7a54639-6b12-47f9-93b3-bbbf7aaf4ef7;Brigada de Montaje No 11;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+2c4db8fa-80a4-40a0-b750-a65f8307d532;Brigada de Montaje No 9;10;cf45324a-9640-4b47-b563-d07408da5f47
+54c6cbc2-bb3a-4d83-b983-140f9c250523;Brigada de Montaje No 12;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+77ec7e87-e345-45b9-bad3-2c01c2d07366;Brigada de Montaje No 13;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+ed6311df-38fc-42be-9fa8-88c3632786df;Brigada de Montaje No 14;10;fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2
+fcece23c-a018-4665-8e63-030e74d784c2;Brigada de Montaje No 7;10;83518f65-d550-405c-9f50-348a08c8c102
+d6a9f888-3810-4b60-a06e-f9f1a3e2df68;Brigada de Montaje No 8;10;83518f65-d550-405c-9f50-348a08c8c102
+473a892c-4d3c-4fd9-8c53-c89e384a2181;Brigada de Martilleros;10;83518f65-d550-405c-9f50-348a08c8c102
+c7e935e8-bbef-4226-8033-46843e584585;Brigada de Mantenimiento Electroautomático Industrial;10;8f7f6cd7-485a-4122-8b33-a63f8e9b7ad5
+aae36366-f564-4c70-802e-f093dbaea6da;Brigada de Techeros;10;83518f65-d550-405c-9f50-348a08c8c102
+1b9d4366-d7cf-41c3-bb1b-71de38016b1c;Brigada de Maquinado;11;427065b9-af24-44b2-9816-35aede77d1f5
+776b54e9-a3a5-4492-94cf-33b915e911c7;Sala de Análisis;11;
+08d9643c-d35d-45a5-b614-93165e991093;Grupo Técnico Productivo;11;
+ff40cce3-e3f1-47be-a56e-c210bd0f5dfd;Grupo de Asistencia Técnica;11;
+bc1c9f07-691e-41b6-9308-e58cd7f31a23;Grupo de Comercial;11;
+e8f8f84d-884b-481f-8528-bbd14649a75a;Grupo de Diseño y Tecnología;11;
+93d0963d-d36f-4ac1-9eff-a27df4929784;Brigada de Moldeo;11;09087255-e93e-4087-bf19-1f83cc42e631
+e7c96077-3222-472c-a266-3c274abb8bae;Grupo de Atención Plantas Industriales;11;
+9f38b1f9-cbbe-451a-912b-9baa034574fb;Grupo de Desarrollo y Calidad;11;
+7b56fa0e-40af-4ac0-b966-4e83674eafe9;Brigada de Servicios;11;b2ecc64e-bce2-4a05-b927-55aa9ad4101c
+235071c8-41d1-4e33-aba3-4522e870278d;Brigada de Pailería # 1;11;427065b9-af24-44b2-9816-35aede77d1f5
+49f33c18-b044-4e51-8d0c-8f98f69efe6d;Brigada de Pailería # 2;11;427065b9-af24-44b2-9816-35aede77d1f5
+33c1ddee-ad0d-4a11-8c28-bc1766b577d4;Brigada de Pailería # 3;11;427065b9-af24-44b2-9816-35aede77d1f5
+5be209d5-48ea-4fdb-b08d-ace0e3bf1d6b;Brigada de Pailería # 4;11;427065b9-af24-44b2-9816-35aede77d1f5
+f9a4ba95-cdc0-4a04-9081-b1713d74aae5;Equipo de Preparación de Obras;11;
+096c6b5d-93c5-41b2-9482-4532b609c9d1;Grupo de Operaciones ;11;
+fc0806ca-1709-4125-8701-daec13bda205;Brigada de Maquinado Pesado ;11;1e117016-2483-437f-8634-23114c8036be
+64770ef9-587f-42a7-b990-941760842fd7;Brigada de  Pailería;11;1e117016-2483-437f-8634-23114c8036be
+61666096-63f3-4051-8aa9-d1744d1903dd;Brigada de Bombas de Alta Presión;11;1e117016-2483-437f-8634-23114c8036be
+28137e5a-4318-4048-bd45-9a29ca23e3d6;Brigada de Producciones Metálicas;11;1e117016-2483-437f-8634-23114c8036be
+07d83338-7e23-4926-a1b1-3c797a37cc04;Brigada de Tráfico y Taller Automotor;11;79e2f12b-6c83-43db-abce-544b5a2aa297
+8dc13ed8-dadf-431f-9859-83dfaddf601b;Brigada de Izaje;11;79e2f12b-6c83-43db-abce-544b5a2aa297
+d045ceaf-a428-4d97-86f8-7f67af41c31d;Brigada de Acuajet;11;79e2f12b-6c83-43db-abce-544b5a2aa297
+ad59a410-7e53-4365-bdda-052d6678cd99;Brigada de Taller Automotor;11;7bb4af8e-a1ec-4ee5-be0b-591bfedf461d
+0bc6e554-9ce6-4e4a-9f08-89881eba2d51;Dirección de Desarrollo y Comercialización;11;
+4ba9ed66-540f-4ac4-8966-f99f4219f31c;Equipo de Asistencia Técnica;11;
+a6523844-9508-4306-8fbd-5a6fa6c203e4;Equipo de Laboratorio;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+c0e55e12-78f5-4dad-8706-1f9a0a533664;Brigada de Cantera y Molino;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+4c4ef8ad-1827-4cc3-8b57-df4ff77860fc;Producción de Cal;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+b17f86f0-ba90-4b69-90d7-b59aa81fb597;Brigada 1 de Producción de Cal;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+da7bcb2a-9f85-4309-93f0-874d511ebc4b;Brigada 2 de Producción de Cal;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+3a0fa214-3aa9-4d87-928e-dde372bfa2e5;Brigada 3 de Producción de Cal;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+e76e002d-114f-4467-a25b-f2e3e7b82945;Mantenimiento Industrial y Mecanización;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+cde5f9c3-57ec-495b-a72a-b4a78f59f903;Brigada de Servicios Calera;11;8f683dd5-267a-426d-9c95-c2bd6047cc5e
+e4a334e2-1e3e-4155-bfe6-3bca01801919;Brigada de Construcción Civil No 1;11;0f72f351-e1f0-4411-89ac-03f940986a58
+15c30241-9913-461e-8494-073d365d2607;Brigada de Construcción Civil No 2;11;0f72f351-e1f0-4411-89ac-03f940986a58
+1ea28e7c-2e9e-4d7e-9da1-d14577506203;Brigada de Montaje No 11;11;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+1db6a34f-ac15-47c7-ac62-26217a4350f2;Grupo de Comercialización;11;
+a464d45c-6040-4105-b767-2f69b07bf091;Construcción Civil;11;
+de95a39b-b2e3-4d30-b27a-8fc7f242cac5;Equipo de Diseño;11;
+fed71ebc-aeda-42e3-b0b1-4f0f489c5ccb;Equipo de Ejecución de Obra;11;
+1ce4c2ef-8274-49a0-a873-a3cbafb9b186;Techado Héctor Rodriguez;11;98c354c8-a9a9-4b78-863f-2736f59bd3ab
+f2176716-7125-48c7-a7d5-88876866d6ac;Brigada de Montaje No 12;12;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+aceaa75b-75a1-44cd-88f2-8c8e52b64b51;Brigada de Mantenimiento Industrial;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+d4a13d84-4a2a-4a3e-ad16-b998f4a743bf;Brigada de Montaje No 5;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+52105920-7ae9-4b87-a360-2e7ea7217ab9;Brigada de Montaje No 4;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+2b7add0c-15a9-4a95-8db4-0337c9cd8982;Brigada de Taller Automotor;12;79f3d8df-97bc-4a1c-ba81-10e9e80ce181
+d5047138-a667-4aa9-8bf4-b7bd0ca647e4;Brigada de Tráfico;12;79f3d8df-97bc-4a1c-ba81-10e9e80ce181
+64dbc806-2a5d-4b36-9d7d-c69f146d6234;Brigada de Tráfico;12;7bb4af8e-a1ec-4ee5-be0b-591bfedf461d
+b3f0a727-b5b7-4a54-83d0-8e53291188d2;Brigada del Taller de Maquinado y Corte 1;12;05f424d0-b358-48a3-9373-b3ba4c97384c
+2aad8ea3-8d2a-4c1d-b8e5-82fd860cc4ae;Obras;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+97cf8195-b972-4f89-93a9-b89c15b2b99f;Brigada del Taller de Maquinado y Corte 2;12;05f424d0-b358-48a3-9373-b3ba4c97384c
+3df189a4-ef35-4c3d-aeb4-4be1bf588b13;Brigada de Cantera y Molino;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+d850c8f7-98f3-43d6-8962-5a1f214917bc;Brigada Taller Automotor;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+489e0cab-6fae-40d4-994f-273e2d29c61c;Brigada de Techeros No 2;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+d9011379-f301-4276-a2c4-22a17cbdba6a;Brigada de Techeros No 1;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+ce412ebd-09cd-4d9b-8523-470a34d520cb;Brigada de Insulación;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+d6e941ef-16ff-40f6-8995-d304df55d5c2;Brigada de Montaje No 7;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+8f21f189-0d4d-461c-9361-8e4e275c6270;Brigada de Montaje No 6;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+e3404144-38dd-4c30-b3b7-a31be338e9b2;Brigada de Montaje No 3;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+91ad5aa5-3d21-4f84-a114-bb6069489719;Brigada de Montaje No 2;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+701045f5-1894-481d-965b-c1fa6de7b659;Brigada de Montaje No 1;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+42ce94ef-ff6b-41ba-b0ef-c18e76486ba8;Equipo Electromontaje e Informáticos;12;7e0790d5-a4d2-4828-b40d-8209073d2ff5
+fb28324b-272d-441a-9142-5b762ac991cf;Brigada de Logística;12;0acc29d8-c0aa-45e6-876c-34eacae53ba6
+32be6af1-2918-43c1-8a49-22829fe1fbce;Brigada de Taller Automotor;12;0acc29d8-c0aa-45e6-876c-34eacae53ba6
+9e367635-7ceb-43df-989c-a8831294736b;Brigada de Ensaque;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+dd14d60f-3308-454b-b4ec-bd2383b65912;Brigada No 3 Producción de Cal ;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+15d64ce8-b76a-4e8b-81f5-fb0b4a5d7956;Brigada de Horno, Rompedero y Rebabeo;12;09087255-e93e-4087-bf19-1f83cc42e631
+b26624b7-8e48-467a-a352-2ee158921da9;Brigada de Acuajet;12;79f3d8df-97bc-4a1c-ba81-10e9e80ce181
+cdfa8886-ed5f-4426-9f9e-cda8ff2ed639;Brigada No 2 Producción de Cal ;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+e5c9bb8d-b7ff-4388-a1ba-276cc54dd700;Brigada No 1 Producción de Cal ;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+97df4c80-c642-4eef-812d-901f16ab55df;Servicios Calera;12;eca811a6-1b52-46d8-9bdf-91bf60f42043
+4068a070-13f7-41ae-b1ab-2ab59489f9ef;Brigada de Izaje;12;79f3d8df-97bc-4a1c-ba81-10e9e80ce181
+40341f58-977f-49eb-8ba3-7ce164a18910;Brigada Compresores;13;0ee83d96-64a2-439a-ab7c-705f50871f1e
+fcb0bb68-3097-4056-a544-308db715e22b;Brigada de Montaje No 13;13;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+357a5b08-7402-4338-aaa9-7a67c622f400;Equipo de Proyecto y Puesta en Marcha;13;2d0af6fd-e052-45aa-9e35-1cf98a3ed257
+a9a67b47-62d8-4cb1-9445-1a4cdb7b966b;Vivienda;13;7efe1a46-48a3-4910-a44e-3b2a7b1a57ec
+78d31ebd-a8b1-487e-8401-b0455efe84cf;Brigada del Taller de Tubos;13;19673803-9636-4da6-a9b9-096c3fd54dfc
+09cef79c-fbf9-4e9a-991c-2a4d3c712537;Brigada de Machería y Plantilla;13;09087255-e93e-4087-bf19-1f83cc42e631
+32df69c0-e613-4416-ae39-90b3fbfc23fe;Equipo de Preparación de Obra;13;
+cab50cb9-5605-460c-ba40-dd0a6c148a07;Techado Quintin Chiquitico;13;1ce4c2ef-8274-49a0-a873-a3cbafb9b186
+dcd87555-8bc3-42d4-b5f2-04c9d1666fb6;Brigada de Techeros 3;13;dc2f1108-5b50-42f0-9a1e-2ee6ef54b049
+2ec16f73-1872-44a9-86c4-a6e8f74b52fc;Brigada de Montaje y Automatización No 2;13;2d0af6fd-e052-45aa-9e35-1cf98a3ed257
+5d142706-af7f-4f17-bec1-894f80a5b145;Brigada de Montaje y Automatización No 1;13;2d0af6fd-e052-45aa-9e35-1cf98a3ed257
+910cb314-9c05-4cfe-bf90-f94f6a476452;Equipo de Montaje y Automatización;13;2d0af6fd-e052-45aa-9e35-1cf98a3ed257
+442d8d91-59a6-4d2b-9e5b-80d8a77b66e7;Equipo de Servicios Informáticos;13;2d0af6fd-e052-45aa-9e35-1cf98a3ed257
+ca2b5eae-e539-4fa2-8c59-4418e8e2abea;Brigada 1 Construcción Civil;14;7efe1a46-48a3-4910-a44e-3b2a7b1a57ec
+498c7321-91b2-4a6c-852e-a87acbd08ba7;Brigada de Taller Automotor;14;62cdc343-7e5e-485e-9d70-7ca10981acf6
+300cdc86-e115-4c68-998a-48fe975c2063;Brigada del Taller de Construcciones Metálicas 1;14;b3362dc0-518e-4320-9263-b36457171b7d
+e4ccad77-d98b-4c64-91b1-8448c1b7f0e8;Preparación de Obras;14;
+7000ed81-c576-4510-875e-5005010e4b20;Grupo de Asistencia Técnica;14;
+f27ddd93-9a68-46a0-aa18-ea69444a103e;Equipo de Asistencia Técnica;14;
+ae6536ce-d9a4-4ed4-9365-1cbbd22780c0;Taller de Electromecánica Waldo Díaz;14;
+c813eba9-5b3e-4d87-9734-85c743938236;Brigada del Taller de Construcciones Metálicas 3;14;b3362dc0-518e-4320-9263-b36457171b7d
+d4002130-bd7d-4631-9251-38b3b9eb03c2;Brigada del Taller de Construcciones Metálicas 2;14;b3362dc0-518e-4320-9263-b36457171b7d
+bc3e2f5e-a4fc-4719-9ff6-d70f4ca0d5d5;Equipo de Compras;14;
+d575d35f-6b11-40a4-9503-f49d899b0813;Brigada de Izaje;14;62cdc343-7e5e-485e-9d70-7ca10981acf6
+3b1552ed-4545-471b-8a21-0ac3722f9c1c;Brigada de Tráfico;14;62cdc343-7e5e-485e-9d70-7ca10981acf6
+816acbf1-2b9b-443f-b22a-345754fdb69b;Civil Heriberto Duquesne;14;98c354c8-a9a9-4b78-863f-2736f59bd3ab
+dd4b2cf2-123a-4f4f-8832-3f12c2ccea3f;Grupo de Compra;14;
+a088da15-ede8-4f8e-9634-2ebd2ee118cd;Brigada 2 Construcción Civil;14;7efe1a46-48a3-4910-a44e-3b2a7b1a57ec
+231529fa-9303-4556-98d7-3117384993ef;Grupo de Operaciones;14;
+76a0e8f1-fec6-46c7-bcbf-f283829cd730;Brigada de Montaje No 14;14;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+d0425745-6377-46a8-b9d9-d5c08201c81d;Planta de Cal;14;
+8b2fd49c-4a76-409a-93e9-610495c37567;Brigada de Desmontaje;14;a807fbf7-1e7e-4fb4-9434-9a092cfb4320
+c5f79e0e-1fc4-4189-b667-f6ac57999522;Brigada de Agregado;15;0d9ee258-7394-4411-97e2-a40319732d10
+1311b983-f6a8-4eb7-b82e-310db7902c11;Dirección de Atención a Plantas Industriales;15;
+2f03f4c9-fdc5-4371-a367-e54caa3527ed;Brigada de Enrollado;15;0d9ee258-7394-4411-97e2-a40319732d10
+627d6729-0902-401b-b2c4-7819d50d47b8;Grupo de Desarrollo y Comercialización;15;
+3bb12752-2db2-465c-900f-d55e85a39e92;Brigada Pailería y Maquinado;15;bc07d9e5-612b-4c38-bece-9825762b8faa
+bbb32f70-8ddf-4e34-9466-4e94bb93dcbf;Brigada de Taller Automotor;15;bc07d9e5-612b-4c38-bece-9825762b8faa
+0a8e5905-1250-4b34-8a41-b4f360a7aade;Brigada de Apoyo;15;bc07d9e5-612b-4c38-bece-9825762b8faa
+39d63139-9eab-41e4-8cad-736b0bd2fc2b;Brigada de Tráfico;15;bc07d9e5-612b-4c38-bece-9825762b8faa
+2bcce69e-04dc-4812-bd55-521cf1aa2812;Equipo de Servicios Informáticos;15;
+6d28347c-a092-4baa-9dd8-6ea52656aef4;Grupo de Construcción y Montaje;15;
+dd0df8e6-a12c-40ac-8863-e9cc33d7caf0;Taller de Mantenimiento;15;
+e3fe89fd-2b13-4dd2-b08a-4f199081d440;Grupo de Mantenimiento a la Mecanización;15;42318aab-670e-4423-b463-0a87719fc45e
+1c9ef387-5ef8-44a8-b55f-80da73c23bb7;Equipo de Preparación de Obras;15;
+8c57855d-3f4e-4b49-9b7d-b3dc35a8ab98;Brigada 3 Construcción Civil;15;7efe1a46-48a3-4910-a44e-3b2a7b1a57ec
+b68d8a81-c1e3-4f94-bafd-1c996cc1a94d;Construcción y Montaje Industrial;15;
+eac9217b-035d-498e-9520-0c13ecc8c583;Equipo de Compra;15;
+e51f9e9d-8f5c-4882-9cb1-de91b5855a48;Grupo de Comercialización;15;
+35424fdf-a258-4809-a48d-527e21e2bce8;Taller de Producciones Mecánicas;15;
+6e205b9b-62b9-4ace-953f-21812026ec21;Taller Venezuela;15;
+9694d4ad-2496-4e3a-8e8b-20ac2ee5660e;Grupo de Asistencia Técnica;15;
+a8e2e560-3190-42a5-9406-f8775fbf14e9;Equipo Preparación de Obras;15;
+57210b96-3870-4999-8d8c-4c66477a699a;Brigada de Paileria No 1;15;0af50672-c734-4407-8832-7f5548fc9d98
+4cdd2b53-13fd-4fe4-a91f-2e1bfebd978d;Brigada de Paileria No 2;15;0af50672-c734-4407-8832-7f5548fc9d98
+14ce6cf2-1f28-4b6c-90ba-2d5013ad41b6;Brigada de Paileria No 3;15;0af50672-c734-4407-8832-7f5548fc9d98
+f9ffbcda-57a2-4be7-bbda-36ed1e4fd88e;Brigada de Paileria No 4;15;0af50672-c734-4407-8832-7f5548fc9d98
+3961b2ca-60f8-44fd-aee6-72d2636253df;Brigada de Paileria No 5;15;0af50672-c734-4407-8832-7f5548fc9d98
+f282e92b-0742-4f21-b677-95f7aac355bc;Brigada de Samblasting;15;0af50672-c734-4407-8832-7f5548fc9d98
+e021ef2c-122e-4170-8748-3dc6abc987e2;Brigada de Producción y Máquinado;15;0af50672-c734-4407-8832-7f5548fc9d98
+51578390-4cbb-4589-a649-250071219a45;Brigada de Montaje No 17;15;0af50672-c734-4407-8832-7f5548fc9d98
+14a62d4b-43b8-4b9d-b734-2a1410a5b7f7;Brigada de Montaje No 18;15;0af50672-c734-4407-8832-7f5548fc9d98
+65968dbb-19a8-4d1f-b4f6-d32f7a14617c;Brigada de Montaje No 19;15;0af50672-c734-4407-8832-7f5548fc9d98
+faaa5a21-917b-4ed6-8dcb-15c73c495c25;Brigada de Montaje No 20;15;0af50672-c734-4407-8832-7f5548fc9d98
+b483101f-c5e4-4f43-b9a3-636bf4052e60;Grupo de Producciones Mecánicas;15;
+5fb62eee-2012-4060-a5c1-64e8d2854459;Brigada de Maquinaria Pesada 1;15;77c1037d-a8c7-4203-bd87-f348dc195f29
+338b1f71-5b85-49ad-a7b5-c825c1dc3851;Grupo de Preparación de Obras;15;
+585deaa9-5229-4823-b4df-c88282f3077d;Taller de Fundición;15;
+eea47a24-3f7f-4aad-81b7-6004e89090da;Construcción y Montaje;15;
+426521f9-7707-4b50-8ee8-71f247e3963e;Brigada de Montaje No 15;15;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+42318aab-670e-4423-b463-0a87719fc45e;Dirección de Mecanización y Logística;16;
+99004911-405d-4593-a2c3-648909848cf7;Brigada de Paileria 5;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+716b7673-fc65-4b56-a01f-09bdcf5f48c2;Grupo de Producciones Industriales Urbano Noris;16;
+a25e3e6c-7d41-4d00-9beb-9a7b5955efa1;Equipo de Mantenimiento y Montaje de Máquinas de Herramientas;16;
+566ccb0e-716d-4c55-97b3-4b9558135d42;Brigada de Maquinaria Pesada 2;16;77c1037d-a8c7-4203-bd87-f348dc195f29
+00a7f0f0-b6dc-423c-9ce0-41cee9efc3ae;Brigada de Paileria 3;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+fa0b92e8-5e0b-4b0e-a5f4-f0cd8c46928b;Máquinado;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+a63f886e-889a-4f5c-8770-d5d72c61834a;Brigada de Mantenimiento y Reparación;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+ba379925-9adb-404a-b5d8-e48a67226eb0;Brigada de Máquinado;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+faf5835f-a9ce-43b8-a7f9-bbb6811de651;Paileria;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+2ea29c4a-7b57-4603-8604-fa1e01f30f52;Molino;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+15a05712-4ad5-433b-9e16-6a9ce6e8d64c;Brigada de Molino No 1;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+d0e8b415-ba6e-4978-94b6-4900c3daef1f;Brigada de Molino No 2;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+e7874034-fe08-411f-b537-3efce0eb05a6;Brigada de Molino No 3;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+dd04d309-fc65-45e6-b2a5-9adc5df139f3;Brigada de Molino No 4;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+8804fe56-3021-4f5e-b37a-f47f1518aa6a;Tráfico Producciones Mecánicas Norte;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+abde1145-e4b6-4971-9360-530fe5b810b8;Brigada Servicios Internos Producciones Mecánicas Norte;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+fb807df9-f40a-4f8f-b261-d5b8a016c0b2;Taller de Mantenimiento y Logística;16;
+4856054f-ff02-481d-b8b9-03cee525f5fe;Brigada de Paileria 1;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+3da91907-3363-4384-a5d0-9b27a2979da7;Equipo de Preparación de Obras;16; 
+a384b3cf-376d-4fea-aa8e-6fa8511383ed;Brigada del Taller de Recipiente a Presión 3;16;7edcac6d-09a1-440b-a003-9695ef0dc87e
+f8ca2540-73e5-4d23-8f8e-374b597bc94c;Brigada del Taller de Recipiente a Presión 4;16;7edcac6d-09a1-440b-a003-9695ef0dc87e
+a4ba3a22-26da-404f-951e-f5d214451b14;Grupo de Programación, Control y Regulación de la Producción;16;
+87b48b6a-7420-4c56-b030-04de06ef10e2;Equipo de Servicios Informáticos de Matanzas;16;
+24380688-18ed-45a4-bb38-6bc26e37ee68;Equipo de Diseño y Asistencia Técnica;16;
+0f72f351-e1f0-4411-89ac-03f940986a58;Construcción Civil;16;
+dc2f1108-5b50-42f0-9a1e-2ee6ef54b049;Grupo de Control y Comercialización;16;
+d57a9d33-5fbc-4945-922c-f96c9d0b1560;Brigada de Paileria 4;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+acbbb040-ec8b-4b74-983b-32e8211ce0b7;Brigada de Paileria 2;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+352177c2-53a8-4b6e-9b1b-c4d74cb525db;Brigada de Paileria 6;16;5f88ac53-268a-4c2c-a630-f007d4c62815
+f2e42828-36f0-433f-a6e5-befd9c1fce9c;Brigada de Clima y Refrigeración;16;
+b38ad3b8-43cc-46cb-b491-d67d7d2c2e48;Taller de Logística;16;
+b7c89404-9d47-4ad2-8a36-4c9069e38a3c;Obras;16;
+2394d831-86b8-48ae-a8e4-ca12e2272801;Brigada del Taller de Recipiente a Presión 2;16;7edcac6d-09a1-440b-a003-9695ef0dc87e
+e0a9d4d9-0e85-4a85-a8af-a5d743f55435;Taller de Maquinaria ;16;
+ed9642d3-e89b-4349-81a4-eb53839df6b2;Brigada 3 construcción Civil;16;dc2f1108-5b50-42f0-9a1e-2ee6ef54b049
+37c2e459-9de4-4901-b056-f3dad6a2e694;Brigada de Montaje No 16;16;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+50796419-4e3f-4bdb-982d-b751b88742ad;Construcción y Montaje;16;
+471d79ba-7afd-4fe1-b3b6-fe9c328596bb;Brigada del Taller de Recipiente a Presión 1;16;7edcac6d-09a1-440b-a003-9695ef0dc87e
+2feacfdf-d71f-45c4-8d22-0582f4813f26;Taller de Pailería y Maquinado Los Reynaldos;16;
+b4fe28b0-b5c3-475f-949f-fe4322fafd5b;Laboratorio Calibración;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+02b655cf-a9c1-4cfd-b1ee-13384fa781f5;Brigada de Electromontaje;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+5072a6a2-e79e-4543-9ff4-6fe078a89f56;Brigada de Turbogeneradores ;17;
+ed8d7043-4845-4f99-8e2b-97f8e5fa792f;Brigada de Informática;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+9e079248-6d57-4e5c-8851-da7b58d33c35;Equipo Proyecto;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+80c1cf40-353c-4bc5-a1b3-18384407b5dd;Equipo Puesta en Marcha;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+70ce7da4-4337-4ce0-9c0d-db3f8f5f1822;Brigada de Instrumentación y Metrología;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+d820240a-12a2-42dc-8ad3-44940b9b846c;Brigada de Techadores 1;17;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+0931cc92-a4bc-4a89-aa74-7ca33dd49752;Brigada de Montaje de Automatización 1;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+59eeef45-dae6-41b7-81e5-9f786fde7671;Brigada de Montaje de Automatización 2;17;74479cbe-6d85-4c4a-9305-1c6e435c8f77
+68c06108-eaf1-4a78-9379-6e04d6bc95e5;Brigada de Servicios Internos;17;38f6d6b5-39ca-4715-9b8d-35cee89315fd
+cd0ab964-368b-44a2-b1d5-46c3598166ba;Construcción Civil 3;17;d4a13d84-4a2a-4a3e-ad16-b998f4a743bf
+da542ba9-1fb4-4532-9149-9753b6771c9f;Brigada de Maquinaria Pesada 3;17;77c1037d-a8c7-4203-bd87-f348dc195f29
+f2486fa3-4bb5-4f05-90c4-a8f6e7ea669b;Taller de Maquinaria Ligera;18;
+a807fbf7-1e7e-4fb4-9434-9a092cfb4320;Montaje Industrial;18;
+ca4e4588-fa01-425b-9521-bc2d42edcf95;Equipo de Compra;18;
+a138c964-4ba9-401a-821f-f9be0bb049bd;Grupo de Plantas Industriales;18;
+ef5f3f45-8968-46fa-b6da-eae38081d8d8;Brigada de Mantenimiento DO 3;18;
+8d24dc9a-b92b-4344-bb55-5b1f6a9e7019;DIP de Obras Civiles;18;
+da3a3c44-3d4d-4afd-a5df-82c2e2bdad36;Planta de Cal;18;
+8e4a0a2b-64a1-45db-86b1-168a561b4715;Taller Territorial de Automatización e Informática;18;
+b1dc799d-ca07-461b-bdca-6ef45678f4a7;Brigada de Techadores 2;18;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+58f6b26e-18c0-4737-9715-5921d634f23c;Grupo de Mecanización;18;
+05ee9786-66c5-47bd-bdda-257353d4e0d8;Brigada de Maquinaria Ligera;18;77c1037d-a8c7-4203-bd87-f348dc195f29
+20937823-5764-4d3c-85bf-fe58e9f6e69f;Grupo de Capital Humano;18;
+cc8ecbb7-ba89-46f5-a138-12ee64cc07ed;Grupo de Asistencia Técnica;18;
+d1b99667-a293-4533-b8b9-a9cbfacb34ff;Grupo de Compras;18;
+cf45324a-9640-4b47-b563-d07408da5f47;Construcción y Montaje;18;
+21148295-0e83-4d95-8a27-dca3cac21c03;Brigada 3 Construcción Civil;18;13512080-ebbe-4260-84ec-1a331b80a75e
+eca811a6-1b52-46d8-9bdf-91bf60f42043;Planta de Cal;18;
+d7fc7920-2d67-467a-af32-143d9138afe8;Grupo de Mecanización y Logística;18;
+386f05ba-2df5-4276-a2f3-3c0c736db6fb;Equipo de Tecnología;18;
+83518f65-d550-405c-9f50-348a08c8c102;Montaje Industrial;18;
+2d2ff24d-a445-4c3d-8368-dd8279477d5e;Construcción y Montaje;19;
+8f683dd5-267a-426d-9c95-c2bd6047cc5e;Planta de Cal;19;
+fa84812a-c8fe-4e31-a75e-2fd855846e1c;Brigada Servicios Internos;19;
+f8f85b94-6743-4bbb-aaa0-d66e2680220e;Brigada de Transporte;19;
+09087255-e93e-4087-bf19-1f83cc42e631;Taller Integral de Fundición  ;19;
+8f7f6cd7-485a-4122-8b33-a63f8e9b7ad5;Grupo Técnico de Mantenimiento;19;
+a4696f60-01f5-493f-82fb-7b27a4147c2a;Taller de Pailería y Conformado;19;
+e9e021db-629f-4c09-98b3-82b9b9d6ee58;Nave No. 2;19;a6900da9-4071-48b3-b649-9874f05a7769
+7dd406c8-c31e-4edf-a4ee-d49d8d5d1c0c;Brigada de Techadores 7;19;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+1c4f022d-d362-4908-ac68-4e3d4dd187dd;Brigada de Techadores 3;19;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+81282958-5913-430c-8271-2e336fb26ad6;Equipo de Informática;19;
+79e2f12b-6c83-43db-abce-544b5a2aa297;Grupo de Mecanización y Logística;19;
+51e7bc6c-3efb-41c7-bf32-374720bba754;Grupo de Seguridad Interna;19;
+efae3f39-9cf1-4982-a8d1-efde592fc87a;Taller de Transporte y Mecanización;19;
+f079f0e8-9062-4719-858d-3a9d0ff3d8a8;Brigada de Techadores 6;19;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+957b685f-29cb-4e7d-b521-27a761468d10;Grupo de Seguridad Interna;19;
+571b1350-2c93-4ffb-a45a-dd7493bef452;Taller de Producciones Varias;19;
+3139de0e-dc59-4255-8e1b-9c6f43b7aeaf;Grupo de Contabilidad y Finanzas;19;
+e4b2b189-d130-48b8-91bd-f2457e02301c;Taller de Mantenimiento;19;
+2d0af6fd-e052-45aa-9e35-1cf98a3ed257;Taller de Automatización e Informática;19;
+aaeb9fc9-aef0-45cd-8467-666359e000dc;Brigada de Techadores 5;20;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+7bb4af8e-a1ec-4ee5-be0b-591bfedf461d;Taller de Logística;20;
+2e942bd8-561f-407e-8147-03ebfe97a64f;Brigada de Techadores 8;20;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+432a435b-0333-40f9-92b5-3ac446e3010b;Brigada de Techadores 4;20;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+4ba8c028-88de-4ab6-a87f-bf0fe7ad008b;Nave No. 1;20;a6900da9-4071-48b3-b649-9874f05a7769
+6e7ea148-39da-48cd-8d95-32207a0d2b44;Brigada de Compresores e Hidráulica Tanacen;21;
+196cc44e-140a-469e-b3b6-ba6a439519ac;Brigada de Construcción Civil 1;21;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+fc210580-36b7-4df8-a804-dc93c6df51c6;Machería;21;a6900da9-4071-48b3-b649-9874f05a7769
+62cdc343-7e5e-485e-9d70-7ca10981acf6;Taller de Logística;21;
+d8677213-f4d0-49ee-9153-b4e9fde6abb6;Grupo de Plantas y Talleres;22;
+1e117016-2483-437f-8634-23114c8036be;Taller de Maquinado Pesado y Pailería ;22;
+79f3d8df-97bc-4a1c-ba81-10e9e80ce181;Taller de Servicios de Transporte y Mecanización;22;
+0d65af38-c817-4fc6-99b4-4e66ada5dc60;Grupo de Seguridad Interna;22;
+a8f501f7-3111-45a0-8e2c-3494ed32cedc;Equipo de Derivados;22;
+7e0790d5-a4d2-4828-b40d-8209073d2ff5;Construcción y Montaje;22;
+b5faae57-a4da-4b56-badd-04cde59427a1;Brigada de Enrollado;22;
+427065b9-af24-44b2-9816-35aede77d1f5;Taller de Producciones Mecánicas Granma;22;
+31fca526-ba2f-4cd6-9f33-a4b651ae4582;Brigada de Transporte;22;ccf9ada8-7e5f-4c79-a71f-6df7cd82382d
+0af50672-c734-4407-8832-7f5548fc9d98;Taller de Producciones Mecánicas;22;
+046e7e08-64e7-4719-907c-b281bdba3432;Brigada de Construcción Civil 2;22;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+e081ec36-325a-44bf-8593-30981d020a40;Equipo de Compras;22;
+bea79854-54ac-44ef-9264-feaca598bd67;Taller de Fabricación y Recuperación de Piezas;22;
+ac511a81-3209-477e-adc9-7837a52591fb;Grupo de Seguridad Interna;22;
+7aa17b93-7c3c-4d12-9d8b-d82cdd087f95;Brigada de Izaje;22;
+b2ecc64e-bce2-4a05-b927-55aa9ad4101c;Grupo de Servicios, Transporte y Mecanización;22;
+fcab9dc2-b2c1-49a9-b74d-77ed9612a6b2;Montaje Industrial;23;
+ced62ece-89be-4f00-99ed-5b940b3b78a4;Compra y Comercialización;23;
+66946f06-1acd-45ed-8ada-0280425b1249;Brigada de Construcción Civil 3;23;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+28053912-c876-4161-988d-11d98cdabcaa;Brigada de Construcción Civil 4;24;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+a1bc5ad9-33c3-4c39-827f-06f5da11160e;Grupo de Desarrollo y Calidad;24;
+0acc29d8-c0aa-45e6-876c-34eacae53ba6;Taller de Logística y Mecanización;25;
+b7f20b73-b3da-4389-ba0f-260ba22136c9;Brigada de Techeros 3;25;
+05f424d0-b358-48a3-9373-b3ba4c97384c;Taller de Maquinado y Corte;25;
+03a62dfd-e231-4c0e-be4d-1689185c9403;Grupo de Operaciones;25;
+2dcd6b8c-0b6a-4471-be6d-f83aad39d1e6;Equipo de Compras;25;
+8da75521-a51f-443d-b07a-2a2c31d68eef;Brigada de  Servicio y Mantenimiento;25;
+7efe1a46-48a3-4910-a44e-3b2a7b1a57ec;Construcción Civil;25;
+d53e9ce5-b4ff-48ea-b286-5c0409be19a8;Brigada de Montaje Derivados;25;
+5139d569-397f-4c6a-ac6f-8e9573912c38;Brigada de Construcción Civil 5;25;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+f6e3afb0-10fd-4ff6-bc8b-bb48dd463d4d;Brigada de Taller Maquinado, Reparación Grúa, Baterías y Máquina de Soldar;25;
+5f88ac53-268a-4c2c-a630-f007d4c62815;Taller de Producciones Mecánicas Norte;25;
+714dea17-41fd-443f-88c6-ffd8954fd0c7;Grupo de Contabilidad y Finanzas;25;
+9bd4a2e9-8d92-4022-8487-9342b0bcf405;Brigada de Compresores;25;
+38f6d6b5-39ca-4715-9b8d-35cee89315fd;Equipo de Compra;26;
+cab3625c-a8f1-47f9-8b67-f26279722041;Brigada de Tráfico;26;
+60f51d01-31d8-4464-b30f-a8bc8dd82206;Campamento Concha;26;
+33fcc8cf-4cb7-4325-b394-5acad43c5019;Grupo Capital Humano;27;
+7bbe78a7-a097-409d-a33c-9110fd21f5d5;Grupo de Seguridad Interna;27;
+36bc8374-98a2-4d6d-b121-3ba5c53623a7;Brigada de Construcción Civil 6;27;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+328b03f1-0450-42cf-9a30-7298cb84937f;Grupo de Mecanización1;27;
+f73a607b-f627-4cb3-82ee-628715065a7e;Brigada de Logística;27;
+19673803-9636-4da6-a9b9-096c3fd54dfc;Taller de Tubos;27;
+c42ecbab-9b08-4832-a2a1-8a1d1c484d66;Brigada de Taller Holguín;27;
+503421a7-86db-4abb-83d8-e7df734f96b4;Equipo de Compras;27;
+0ee83d96-64a2-439a-ab7c-705f50871f1e;Producciones Mecánicas;27;
+348fa19a-b1fe-4d8d-9639-701a8419a085;Grupo de Seguridad y Protección;27;
+155cf5e4-168a-4123-945a-942f7ff7a363;Grupo de Comercialización y Compras;27;
+3c4683dc-80c8-48c3-9d9a-9f55cc7d7b36;Obras;28;
+f67c3369-0d36-4bb2-8e78-3d10b292dbd2;Brigada de Construcción Civil 8;28;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+935ea005-a7d7-4d4c-a75d-0464495ec20b;Brigada de Construcción Civil 7;28;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+cb78e611-13f4-4c49-bfb3-6cf264833ad8;Brigada de Servicios;28;
+a112b3f3-6c17-43fb-b53a-b5b11acaa07d;Brigada de Taller Automotor;29;
+2abf9e10-542c-4834-81ef-a90f7860db02;Brigada de Servicios a la Empresa;29;
+0beb6f59-e665-43f1-9711-2fa5dc1de9ae;Brigada de Construcción Civil 9;29;2d2ff24d-a445-4c3d-8368-dd8279477d5e
+781d7bb8-0bbe-42fe-baa3-1ab3fcd24392;Grupo de Seguridad Interna;30;
+77c1037d-a8c7-4203-bd87-f348dc195f29;Taller Integral de Maquinado;31;
+12a3feb1-cb6a-44fd-9776-f326f09e9980;Obras;31;
+b3362dc0-518e-4320-9263-b36457171b7d;Taller de Construcciones Metálicas;31;
+51ee4f55-d6be-4267-a5f6-a9193e7b0843;Grupo de Desarrollo, Calidad y Jurídico;31;
+d1f2aa87-b01c-41e5-88ef-053d2e340a2a;Equipo de Compras;31;
+bc07d9e5-612b-4c38-bece-9825762b8faa;Logística;31;
+b6bed84e-0ed5-4794-9a56-e795c74f7963;Brigada de Taller Automotor;31;
+9ed266b3-f7f7-432c-86af-886d1d5540e4;Brigada de Mantenimiento a Centrífugas;31;
+29d54ae3-e26b-4612-8ba2-1c0c59a0bc67;Seguridad y Protección;31;
+e6a33cc0-44ae-40ee-a862-c36041905d1a;Grupo de Seguridad y Protección Planta de Cal;31;
+ac9ab055-7ceb-464c-ba00-7f9af46cf1f0;Centro de Capacitación;31;
+50111935-dccc-4e9b-a806-af3f99aa3da0;Taller Logística;32;
+3d12ee1d-f7e5-49c1-8d44-a6ed9c868976;Grupo de Seguridad Interna;33;
+0d9ee258-7394-4411-97e2-a40319732d10;Taller de Enrollado;33;
+abe66ba6-b8ec-475d-b438-b31a5c15ba06;Dirección;33;
+057a88c0-ccc6-4a77-8dff-79cf93d651ea;Taller 1ro de mayo;33;
+19920291-7b02-4f87-81d0-710f4b6d5530;Equipo de Comercialización;33;
+d1392c02-c344-496c-a58d-5ed5da2f4ab9;Grupo de Seguridad y Protección Taller de Producciones Varias;33;
+b8411e71-c8a5-45ff-bc28-822e7df5588c;Taller de Acabado, Pintura y otras Producciones;33;
+11520ca9-fb87-441f-a0c6-529f8c3a5c30;Equipo de Comercialización;33;
+33231fe6-4189-48f2-a3c8-4fba66d0ac7a;Organopónico;33;
+1e074ec7-5bd5-4fc4-9f1c-39ab26ac0680;Equipo de Compras;34;
+693b343a-2578-4b69-afe4-d31b8fd1049a;Equipo de Servicios Automáticos e Informáticos ;34;
+7edcac6d-09a1-440b-a003-9695ef0dc87e;Taller de Recipientes a Presión;34;
+1e0a3237-e472-4e16-afdb-9b4d17b005eb;Obras;34;
+d660c8c9-d538-43ee-b6e4-d90478d21bc1;Grupo de Seguridad Interna;34;
+efe29447-2ba3-406d-974d-3c333a958faa;Grupo de Contabilidad y Finanzas;34;
+b4bfdedb-17b9-4598-8b79-12bd2c2baa78;Brigada de Mantenimiento a Básculas;35;
+a74fe210-ce01-43c7-848c-b97d3e768682;Equipo  de Laboratorio;36;
+74479cbe-6d85-4c4a-9305-1c6e435c8f77;Taller Territorial de Automatización e Informática;36;
+caeb26ce-2a34-4682-a0da-b4664517b1d3;Grupo de Capital Humano;36;
+cb3edc2e-ff97-47b0-8c02-7e0a8f72b010;Taller de Producciones Mecánicas;36;
+a9a728cc-462e-4964-a80a-fe129adf5cd7;Taller de Logística;36;
+282ff674-40f4-4964-b6b9-860b27759109;Taller de Producciones Industriales;37;
+98a4fe71-510b-4315-b290-80ead34edab7;Brigada de Servicios Internos y Mantenimiento;37;
+e30c2f3c-aa4a-4020-8a6f-608243c81a15;Equipo de Comercialización;37;
+a6900da9-4071-48b3-b649-9874f05a7769;Taller de Bombas;38;
+16177144-50cc-4ef0-8a4e-f76adc495d0d;Planta de Cal;38;
+94f97df6-ccd3-401f-8440-3abb4ec7c924;Grupo de Seguridad Interna;38;
+ac5a4e5c-4db3-4cd3-8b61-6ce89b0efcde;Grupo de Desarrollo de Software La Habana;38;
+b52db590-db19-4c0a-b642-96ab58c15ee4;Equipo de Compras;40;
+ee52d9b6-6d2f-4b27-af92-703b4e00fa0c;Taller Territorial de Automatización e Informática;40;
+21e6641b-efa6-418b-ae42-f04ef30f1e70;Equipo de Servicios Informáticos Villa Clara;40;
+f3f9f4eb-1f7d-4305-bb80-cf78416cb5f5;Equipo de Servicios Informáticos Habana;44;
+270502fd-cc6a-4aad-a602-9a5fc3571b81;Grupo de Seguridad y Protección;44;
+ccf9ada8-7e5f-4c79-a71f-6df7cd82382d;Taller de Transporte y Mecanización;45;
+3c854f52-1f5f-4908-8f45-ff8f48420f73;Equipo de Automatización e Instrumentación (Occidente);45;
+bda44be7-072a-447a-a17c-e422a8301c8b;Equipo de Implantación Habana;46;
+26593c5e-699b-498a-8bf4-353e8349ce51;Brigada de Mantenimiento;53;
+da1d793e-4040-4eae-92be-8a66175acb2e;Grupo de desarrollo y Logística;112

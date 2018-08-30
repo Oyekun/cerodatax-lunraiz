@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoriaentidad",
+        "designer|userClassName": "nomenclador.CategoriaEntidad"
+    },
+    "designerId": "ac5e5937-4c63-4a54-8afd-9dd7b03c4150",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField10",
+            "designerId": "b7f654ec-bd5d-4ad1-b771-ca44d41c8d53"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString70",
+            "designerId": "b4e2e46b-f6f1-4239-9e7b-879992deb85a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "posicion"
+            },
+            "name": "MyString25",
+            "designerId": "d0b0ac98-b44e-4cd2-803f-da75c84af8a3"
+        }
+    ]
+}

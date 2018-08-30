@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcrud",
+        "designer|userClassName": "nomenclador.CrudViewModel"
+    },
+    "name": "nomenclador.NivelEducacionalViewModel1",
+    "designerId": "746c36c2-7719-4daa-94ea-3c39ab7f62da"
+}

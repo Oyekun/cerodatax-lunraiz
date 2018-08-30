@@ -1,0 +1,67 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "nomenclador.Union"
+    },
+    "name": "nomenclador.TipoEntidad2",
+    "designerId": "20854616-d77c-49bc-9dac-f031ff0af63c",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString36",
+            "designerId": "052f2e4a-661a-40c0-8735-64b7c1530e61"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString6",
+            "designerId": "532ef78a-42a0-4e9d-b1ab-71ec5d0c2943"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "activo"
+            },
+            "name": "MyBoolean8",
+            "designerId": "4a5a6e0b-bf3a-4a35-8484-739c06e99cf1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyField43",
+            "designerId": "5f7039fe-4f0f-46de-82a8-ff24ef3d9d5c"
+        }
+    ]
+}

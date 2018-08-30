@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "comercialformcontacto",
+        "designer|userClassName": "comercial.FormContactoViewController"
+    },
+    "designerId": "77b6abeb-63a2-48a5-b7e8-3b53899dd52a"
+}

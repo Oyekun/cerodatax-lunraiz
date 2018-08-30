@@ -1,0 +1,889 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "nomencladorniveleducacional",
+        "designer|userClassName": "nomenclador.NivelEducacional",
+        "height": 508,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 788
+    },
+    "designerId": "6d669c17-db54-439d-b4e7-cf92fbcfc1e7",
+    "viewControllerInstanceId": "989ce48c-4e51-471a-8fcc-43c292323363",
+    "viewModelInstanceId": "96e3f92f-8b5c-4437-ba24-e3b04cb37c7a",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "itemId": "gridPanel",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "nomenclador.NivelEducacional",
+                "title": ""
+            },
+            "name": "MyGridPanel6",
+            "designerId": "b6a6e4f5-87fd-4026-a268-0b178457e497",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Nombre"
+                    },
+                    "name": "MyColumn57",
+                    "designerId": "c5ef8666-1f91-4041-918f-f045b6b2423b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "abreviatura",
+                        "text": "Abreviatura"
+                    },
+                    "name": "MyColumn22",
+                    "designerId": "115cb591-50da-4d61-b58a-7bb76c52ba53"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "select",
+                        "implHandler": [
+                            "// Set selected record",
+                            "this.getViewModel().set('record', record);",
+                            "var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');",
+                            "botones.forEach(function (item) {",
+                            "item.setDisabled(false);",
+                            "});",
+                            "// Show details",
+                            "this.showView('details');"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "select",
+                    "designerId": "beec3ab1-4161-471b-a2fa-6d6db95de784"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "nomenclador.NivelEducacional",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar11",
+                    "designerId": "212dfe7b-1f33-481e-8439-0e46f4e3c3af"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel",
+                    "designerId": "4f3f3e65-6222-41a9-b517-1e9261006e60"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelectionChange",
+                        "implHandler": [
+                            "var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');",
+                            "if(selected.length>1)",
+                            " {this.getViewModel().set('record', selected[selected.length-1]);",
+                            "",
+                            "botones.forEach(function (item) {",
+                            "item.setDisabled(true);",
+                            "});",
+                            " }",
+                            "else botones.forEach(function (item) {",
+                            "item.setDisabled(false);",
+                            "});",
+                            "var botonesRemove =  Ext.ComponentQuery.query('panel toolbar #btnRemove');",
+                            " if(selected.length>0)",
+                            " {",
+                            "botonesRemove.forEach(function (item) {",
+                            "item.setDisabled(false);",
+                            "});",
+                            "}",
+                            "",
+                            ""
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelSelectionChange",
+                    "designerId": "fc1b3095-72b3-4544-a549-05ecc607d316"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "toolbar",
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar13",
+                    "designerId": "fcb757ba-57e6-4f38-9c88-9c52bff85fa8",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAdd",
+                                "layout|flex": null,
+                                "text": "Adicionar"
+                            },
+                            "name": "MyButton64",
+                            "designerId": "07a2cd22-37db-4ba2-a99e-dedf56ad45cf",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "add",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    newRecord = Ext.create('model.niveleducacional');",
+                                            "",
+                                            "// Clear form",
+                                            "form.reset();",
+                                            "",
+                                            "// Set record",
+                                            "form.loadRecord(newRecord);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Adicionar Nivel Educacional');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');",
+                                            "",
+                                            "// Deselect grid",
+                                            "var grid =  Ext.ComponentQuery.query('panel gridpanel');",
+                                            "",
+                                            "grid.forEach(function (item) {",
+                                            "",
+                                            "item.getSelectionModel().deselectAll();",
+                                            "});",
+                                            "var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');",
+                                            "        botones.forEach(function (item) {",
+                                            "            item.setDisabled(true);",
+                                            "        });",
+                                            "var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');",
+                                            "        botones.forEach(function (item) {",
+                                            "            item.setDisabled(true);",
+                                            "        });"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "add",
+                                    "designerId": "851a31fd-88e4-4ab9-9b64-65bb605bfe4c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnEdit",
+                                "layout|flex": null,
+                                "text": "Editar"
+                            },
+                            "name": "MyButton65",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "71200a2c-bff5-4ec9-b051-08048baa7c81",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "edit",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    record = this.getViewModel().get('record');",
+                                            "",
+                                            "// Load record model into form",
+                                            "form.loadRecord(record);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Editar Nivel Educacional');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "edit",
+                                    "designerId": "956ee1ed-d0c3-40ee-aff3-2b65f5305511"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRemove",
+                                "layout|flex": null,
+                                "text": "Eliminar"
+                            },
+                            "name": "MyButton66",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "14f53d92-3444-4d21-815c-c1d96a302e43",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "remove",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            " var grid =  Ext.ComponentQuery.query('panel #gridPanelNivel')[0];",
+                                            "",
+                                            "          var sm = grid.getSelectionModel().selected;",
+                                            "var mensajeText = 'Esta seguro que desea eliminar los elementos seleccionados?';",
+                                            " ",
+                                            "if(sm.length==1)",
+                                            "    var mensajeText = 'Esta seguro que desea eliminar el elemento seleccionado?';",
+                                            "// Ask user to confirm this action",
+                                            "Ext.Msg.confirm('Confirmación de Eliminar', mensajeText, function(result) {",
+                                            "",
+                                            "    // User confirmed yes",
+                                            "    if (result == 'yes') {",
+                                            "",
+                                            "        var record = me.getViewModel().get('record'),",
+                                            "            store = Ext.StoreManager.lookup('nomenclador.NivelEducacional');",
+                                            "        //console.log(record);",
+                                            "        // Delete record from store",
+                                            "",
+                                            "",
+                                            "",
+                                            "        // Deselect grid",
+                                            "",
+                                            "       var deleteItem = [];",
+                                            "        sm.each(function (item) {",
+                                            "",
+                                            "            deleteItem.push(item);",
+                                            "        });",
+                                            "          var itemDe = store.remove(deleteItem);",
+                                            "         ",
+                                            "         if (itemDe.length ==1)",
+                                            "            { //this.load();",
+                                            "             Ext.MessageBox.show({",
+                                            "                 title: 'Información',",
+                                            "                 msg: 'El elemento ha sido eliminado satisfactoriamente',",
+                                            "                 buttons: Ext.MessageBox.OK,",
+                                            "                 //animateTarget: 'mb9',",
+                                            "                 //fn: showResult,",
+                                            "                 icon: Ext.MessageBox.INFO",
+                                            "             });",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "            else if(itemDe.length >1){",
+                                            "",
+                                            "                Ext.MessageBox.show({",
+                                            "                    title: 'Información',",
+                                            "                    msg: 'Los elementos han sido eliminados satisfactoriamente',",
+                                            "                    buttons: Ext.MessageBox.OK,",
+                                            "                    animateTarget: 'mb9',",
+                                            "                    //fn: showResult,",
+                                            "                    icon: Ext.MessageBox.INFO",
+                                            "                });",
+                                            "",
+                                            "            }",
+                                            "           ",
+                                            "             else {",
+                                            "                var menssage = 'Los elementos no se han eliminado';",
+                                            "                if(sm.length ==1)",
+                                            "                    menssage = 'El elemento no se han eliminado';",
+                                            "                Ext.MessageBox.show({",
+                                            "                    title: 'Error',",
+                                            "                    msg: menssage,",
+                                            "                    buttons: Ext.MessageBox.OK,",
+                                            "                    animateTarget: 'mb9',",
+                                            "                    //fn: showResult,",
+                                            "                    icon: Ext.MessageBox.ERROR",
+                                            "                });",
+                                            "",
+                                            "            }",
+                                            "        ",
+                                            "        var flag = true;",
+                                            "        ",
+                                            "",
+                                            "        // Hide display",
+                                            "        me.showView('selectMessage');",
+                                            "        //Disabled Button",
+                                            "",
+                                            "        button.setDisabled(true);",
+                                            "        var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');",
+                                            "        botones.forEach(function (item) {",
+                                            "            item.setDisabled(true);",
+                                            "        });",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me",
+                                        "single": false
+                                    },
+                                    "name": "remove",
+                                    "designerId": "c9fce401-ad28-43af-9fd5-961a7d75f624"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRefresh",
+                                "layout|flex": null,
+                                "text": "Actualizar"
+                            },
+                            "name": "MyButton113",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "a10035ed-03e3-495a-8361-8d873ea59968",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "refresh",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "refresh",
+                                    "designerId": "aa8411ac-048d-4fe1-b70a-fad569dee75b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onToolbarAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onToolbarAfterRender",
+                            "designerId": "660f15bf-b284-495e-8b53-70917c33a7a9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "layout": "card",
+                "layout|flex": 1,
+                "layout|region": "east",
+                "layout|split": true,
+                "reference": "display",
+                "width": 150
+            },
+            "name": "MyPanel33",
+            "designerId": "25581982-41de-41b7-8d7e-68b78913ddac",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "layout": "vbox",
+                        "reference": "selectMessage"
+                    },
+                    "name": "MyPanel37",
+                    "designerId": "d13f57d4-b74e-48ed-8769-0a6c4eaaabdd",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "message",
+                                "html": [
+                                    "\"<h1>Seleccione el Nivel Educacional</h1>\""
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer32",
+                            "designerId": "ca2cadea-71b8-4c17-b600-8f51fa606190"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "details"
+                    },
+                    "name": "MyPanel42",
+                    "designerId": "c4b7678f-4770-4dae-919c-0c45bbc63b5c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Nombre",
+                                "value": [
+                                    "{record.nombre}"
+                                ]
+                            },
+                            "name": "MyDisplayField57",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "ee2ff021-a4a0-4da8-9715-52612c92d889"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Abreviatura",
+                                "value": [
+                                    "{record.abreviatura}"
+                                ]
+                            },
+                            "name": "MyDisplayField69",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "447e9922-be7d-4436-982a-84a281e2e08b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "form",
+                        "title": "Editar Nivel Educacional"
+                    },
+                    "name": "MyForm13",
+                    "designerId": "e50a8ffa-829c-4f2d-b02a-7067afefec11",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "name": "nombre"
+                            },
+                            "name": "MyTextField27",
+                            "designerId": "a3751f0e-7398-43e0-b7a4-74629e049f6f",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "874224f9-e6a4-4990-a8e9-4d4e1793020b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Abreviatura",
+                                "name": "abreviatura"
+                            },
+                            "name": "MyTextField14",
+                            "designerId": "a07c5da8-0ab1-4c5c-a074-3cfa085e40a3",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "ca86ce20-cc7d-4ffe-b8d6-52cb790faa94"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "designer|displayName": "buttons",
+                                "dock": "bottom",
+                                "layout": "hbox",
+                                "padding": 10
+                            },
+                            "name": "MyContainer33",
+                            "designerId": "c3edfede-fc2a-42ca-a10d-34a914fd568b",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "formBind": true,
+                                        "itemId": "saveButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Guardar"
+                                    },
+                                    "name": "MyButton62",
+                                    "designerId": "0ec3ad0f-f9e3-4a9c-be1f-829f373d4a0a",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "save",
+                                                "implHandler": [
+                                                    "var form = this.getReferences().form.getForm(),",
+                                                    "    record = form.getRecord(),",
+                                                    "    store = Ext.StoreManager.lookup('nomenclador.NivelEducacional');",
+                                                    "var me = this;",
+                                                    "// Valid",
+                                                    "if (form.isValid()) {",
+                                                    "",
+                                                    "    // Update associated record with values",
+                                                    "",
+                                                    "    var nombre='';",
+                                                    "",
+                                                    "    form.owner.items.items.forEach(function (item) {",
+                                                    "        if(item.name == 'nombre')",
+                                                    "            nombre = item.value;",
+                                                    "    });",
+                                                    "",
+                                                    "    // Add to store if new record",
+                                                    "",
+                                                    "    var dt = store.findRecord('nombre',nombre);",
+                                                    "    if (record.phantom) {",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        if(dt===null)",
+                                                    "        {form.updateRecord();",
+                                                    "         store.add(record);",
+                                                    "         store.commitChanges();",
+                                                    "",
+                                                    "        }",
+                                                    "        else  Ext.MessageBox.show({",
+                                                    "            title: 'Error',",
+                                                    "            msg: 'El elemento ya existe.',",
+                                                    "            buttons: Ext.MessageBox.OK,",
+                                                    "            //animateTarget: 'mb9',",
+                                                    "            //fn: showResult,",
+                                                    "            icon: Ext.MessageBox.ERROR",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "    }else{",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        if(dt===null)",
+                                                    "        {form.updateRecord();",
+                                                    "         store.commitChanges();",
+                                                    "",
+                                                    "        }else",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Error',",
+                                                    "                msg: 'El elemento ya existe.',",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                //animateTarget: 'mb9',",
+                                                    "                //fn: showResult,",
+                                                    "                icon: Ext.MessageBox.ERROR",
+                                                    "            });",
+                                                    "",
+                                                    "",
+                                                    "    }",
+                                                    "",
+                                                    "    // Commit changes",
+                                                    "",
+                                                    "var flag=true;",
+                                                    "    store.on('write',fn = function(store, operation, eOpts ) {",
+                                                    "         ",
+                                                    "",
+                                                    "        if(flag)",
+                                                    "        {var json = Ext.JSON.decode(operation._response.responseText);",
+                                                    "",
+                                                    "         if (json.id !== null)",
+                                                    "        { this.load({",
+                                                    "            callback: function(s,o,e){",
+                                                    "                flag = false;",
+                                                    "                me.showView('selectMessage');",
+                                                    "            }",
+                                                    "        });",
+                                                    "         Ext.MessageBox.show({",
+                                                    "             title: 'Información',",
+                                                    "             msg: json.message,",
+                                                    "             buttons: Ext.MessageBox.OK,",
+                                                    "             //animateTarget: 'mb9',",
+                                                    "             //fn: showResult,",
+                                                    "             icon: Ext.MessageBox.INFO",
+                                                    "         });",
+                                                    "",
+                                                    "        }",
+                                                    "        else{",
+                                                    "",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Error',",
+                                                    "                msg: json.message,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                //animateTarget: 'mb9',",
+                                                    "                //fn: showResult,",
+                                                    "                icon: Ext.MessageBox.ERROR",
+                                                    "            });",
+                                                    "",
+                                                    "        }",
+                                                    "        var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');",
+                                                    "        botones.forEach(function (item) {",
+                                                    "            item.setDisabled(true);",
+                                                    "        });",
+                                                    "        var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');",
+                                                    "        botonesEditar.forEach(function (item) {",
+                                                    "            item.setDisabled(true);",
+                                                    "        });}",
+                                                    "",
+                                                    "    });",
+                                                    "    // Display record",
+                                                    "",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "save",
+                                            "designerId": "d6bb0d2e-f865-49e1-8ca7-fc66b5eedc0e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "cancelButton",
+                                        "layout|flex": 1,
+                                        "margin": 5,
+                                        "text": "Cancelar"
+                                    },
+                                    "name": "MyButton63",
+                                    "designerId": "ca60aa9f-3aa5-4b4b-9792-2bac5ddb180c",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "cancelEdit",
+                                                "implHandler": [
+                                                    "// Show details",
+                                                    "this.showView('details');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "cancelEdit",
+                                            "designerId": "10d8c2e1-4932-4fbf-bb43-76ff5364ecfc"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

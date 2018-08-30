@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorprovincia",
+        "designer|userClassName": "nomenclador.ProvinciaViewModel"
+    },
+    "designerId": "d0d31f46-4287-4247-b222-aab2c72ea263"
+}

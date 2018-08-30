@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorestadocivil",
+        "designer|userClassName": "nomenclador.EstadoCivilViewController"
+    },
+    "designerId": "e26a250b-d336-4bce-8e51-648562bc13cf",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "eabf9b7b-e7aa-4803-a1b8-1aaad5551ec1"
+        }
+    ]
+}

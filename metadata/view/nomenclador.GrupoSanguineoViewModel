@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorgruposanguineo",
+        "designer|userClassName": "nomenclador.GrupoSanguineoViewModel"
+    },
+    "designerId": "e4b47800-b28d-48c4-b1c8-f774bc284204"
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "personapersonaform",
+        "designer|userClassName": "persona.PersonaFormViewController"
+    },
+    "name": "estructura.EntidadFormViewController1",
+    "designerId": "c2becec1-b5f6-4c6c-adb8-117aa4f11f51"
+}

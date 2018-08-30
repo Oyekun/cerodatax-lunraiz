@@ -1,0 +1,80 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "organismo",
+        "designer|userClassName": "nomenclador.Organismo"
+    },
+    "designerId": "c230726a-2442-4dfa-8ae4-37880fe1f422",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString20",
+            "designerId": "6563d53a-a13c-4d2a-85ca-437ebe686685"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString74",
+            "designerId": "74a3c4d0-216f-4efe-8ba2-f35f34fe823d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString81",
+            "designerId": "bd2b8e3a-6e28-48e8-a445-4cb33137b14a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "abreviatura"
+            },
+            "name": "MyField32",
+            "designerId": "6dbc69b8-6a98-4a53-bcf0-02e566e8feb3"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "activo"
+            },
+            "name": "MyBoolean9",
+            "designerId": "4d6ca8b9-a377-437d-b547-ec189bee91a8"
+        }
+    ]
+}

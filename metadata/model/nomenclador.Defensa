@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "defensa",
+        "designer|userClassName": "nomenclador.Defensa"
+    },
+    "designerId": "295c6a8a-ee20-4c00-a186-d8b06bfb1483",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString23",
+            "designerId": "560d034b-dab9-4c2e-9042-c1b15dbdba93"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyField14",
+            "designerId": "d47f4a51-9cbf-4dd2-b1f8-c2fa781983e1"
+        }
+    ]
+}

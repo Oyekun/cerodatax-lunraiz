@@ -1,0 +1,15 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "basePath": "ext/",
+        "designer|userClassName": "Library",
+        "theme": "MyCrispTheme"
+    },
+    "name": "Library",
+    "designerId": "05040bad-c17c-44be-b550-b8464c321283"
+}

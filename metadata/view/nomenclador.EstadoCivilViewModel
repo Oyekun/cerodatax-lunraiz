@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorestadocivil",
+        "designer|userClassName": "nomenclador.EstadoCivilViewModel"
+    },
+    "designerId": "b2a95341-6821-48e7-9038-c055663a1ca4"
+}

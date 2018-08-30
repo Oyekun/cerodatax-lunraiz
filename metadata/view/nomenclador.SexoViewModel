@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorsexo",
+        "designer|userClassName": "nomenclador.SexoViewModel"
+    },
+    "designerId": "7d8f7caf-73f3-47fb-8098-8dfca335de70"
+}
