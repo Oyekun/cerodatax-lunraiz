@@ -120,12 +120,24 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                                     shim: false,
                                                     frame: false,
                                                     height: 110,
+                                                    hidden: true,
                                                     itemId: 'foto',
-                                                    style: 'font-size: 8em; text-align: center;position: relative',
+                                                    style: 'font-size: 36px; lineHeight: 36px',
                                                     width: 100,
                                                     alt: 'Cargando Foto...',
-                                                    glyph: 'xf007@FontAwesome',
                                                     imgCls: ''
+                                                },
+                                                {
+                                                    xtype: 'image',
+                                                    alwaysOnTop: true,
+                                                    shim: false,
+                                                    frame: true,
+                                                    height: 110,
+                                                    itemId: 'foto1',
+                                                    style: 'font-size: 110px; margin: 10px;line-height: 120px;',
+                                                    width: 100,
+                                                    alt: 'Cargando Foto...',
+                                                    glyph: 'xf007@FontAwesome'
                                                 }
                                             ]
                                         },
@@ -134,6 +146,7 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                             margin: '10 0 0 0',
                                             fieldLabel: 'Foto',
                                             name: 'foto',
+                                            invalidText: 'El valor del elemento es invalido',
                                             emptyText: 'Seleccione',
                                             buttonText: 'Examinar...',
                                             listeners: {

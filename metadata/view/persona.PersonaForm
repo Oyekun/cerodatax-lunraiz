@@ -256,8 +256,9 @@
                                                         ],
                                                         "border": null,
                                                         "frame": false,
-                                                        "glyph": "xf007@FontAwesome",
+                                                        "glyph": null,
                                                         "height": 110,
+                                                        "hidden": true,
                                                         "imgCls": "",
                                                         "itemId": "foto",
                                                         "liquidLayout": null,
@@ -270,13 +271,50 @@
                                                         "shim": false,
                                                         "shrinkWrap": null,
                                                         "style": [
-                                                            "'font-size: 8em; text-align: center;position: relative'"
+                                                            "'font-size: 36px; lineHeight: 36px'"
                                                         ],
                                                         "title": null,
                                                         "width": 100
                                                     },
                                                     "name": "MyImg",
                                                     "designerId": "4a36aed1-205a-433e-9ba3-48160fdd66a1"
+                                                },
+                                                {
+                                                    "type": "Ext.Img",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "alignTarget": null,
+                                                        "alt": "Cargando Foto...",
+                                                        "alwaysOnTop": [
+                                                            "true"
+                                                        ],
+                                                        "border": null,
+                                                        "frame": true,
+                                                        "glyph": "xf007@FontAwesome",
+                                                        "height": 110,
+                                                        "imgCls": null,
+                                                        "itemId": "foto1",
+                                                        "liquidLayout": null,
+                                                        "margin": null,
+                                                        "overCls": null,
+                                                        "padding": null,
+                                                        "resizable": null,
+                                                        "rtl": null,
+                                                        "shadowOffset": null,
+                                                        "shim": false,
+                                                        "shrinkWrap": null,
+                                                        "style": [
+                                                            "'font-size: 110px; margin: 10px;line-height: 120px;'"
+                                                        ],
+                                                        "title": null,
+                                                        "width": 100
+                                                    },
+                                                    "name": "MyImg3",
+                                                    "designerId": "402bc252-c6f8-4373-8381-47d7faedfb78"
                                                 }
                                             ]
                                         },
@@ -291,6 +329,7 @@
                                                 "buttonText": "Examinar...",
                                                 "emptyText": "Seleccione",
                                                 "fieldLabel": "Foto",
+                                                "invalidText": "El valor del elemento es invalido",
                                                 "margin": "10 0 0 0",
                                                 "name": "foto"
                                             },

@@ -935,6 +935,26 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                    }
                   }
+        //Adicionando imagen base64 a los record fotos
+                   var resultImage = [];
+                  result = me.searchComponent('image',item,result);
+                  for(var compImage in resultImage)
+                  {var objImage = resultImage[compImage];
+                   if(objImage.xtype=='image')
+                   {
+                       var auxImage = objImage.itemId;
+                console.log(objImage)
+                 console.log(record.data[auxImage])
+               //  console.log(record.data[auxImage])
+                       if(auxImage)
+        if(record.data[auxImage])
+                           record.data[auxImage]=objImage.src;
+
+
+
+
+                   }
+                  }
 
                   var resultree = [];
                   resultree = me.searchComponent('treepanel',item,resultree);
@@ -1649,27 +1669,46 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
     },
 
     onFilefieldChange: function(filefield, value, eOpts) {
-        console.log(filefield)
-        console.log(value)
-        var form =filefield.up('form');
-        var resulimage = [];
-        Ext.Ajax.request({
-            url: 'index.php/api/restserver/rests/',
-            method: 'POST',
-            success: function(response) {
-                var res = Ext.decode(response.responseText);
-                alert(res);
-            }
-        });
-                            resulimage = this.searchComponent('image',form,resulimage);
-                         for(var compimage in resulimage)
-                                    {var objimage = resulimage[compimage];
-                                         if(objimage.xtype=='image')
-                                {
-                                    console.log(objimage)
+         var input = filefield.button.fileInputEl.dom;
 
-                                }
-                                    }
+             var me = this;
+                if (input.files && input.files[0]) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+        //console.log(reader)
+
+        var form =filefield.up('form');
+
+                var resulimage = [];
+                                    resulimage = me.searchComponent('image',form,resulimage);
+                                 for(var compimage in resulimage)
+                                            {var objimage = resulimage[compimage];
+                                                 if(objimage.xtype=='image')
+                                        {
+
+                                            console.log(objimage)
+                                         //  console.log(e.target.result)
+                                            if(objimage.itemId=='foto')
+                                            {objimage.setHidden(false)
+                                                objimage.setSrc(e.target.result);
+                                            }else objimage.setHidden(true)
+
+                                        }
+                                            }
+
+
+
+                    };
+
+
+
+                    reader.readAsDataURL(input.files[0]);
+
+                }
+
+
     }
 
 });
