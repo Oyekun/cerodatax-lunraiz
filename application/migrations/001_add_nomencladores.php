@@ -988,7 +988,7 @@ $this->dbforge->add_field(array(
                                 'unique' => TRUE,
                                 'null' => FALSE,
                         ),
-                        'habilitado' => array(
+                                'habilitado' => array(
                                 'type' => 'INT',
                                 'constraint' => '1', 
                                 'default' => '0',
@@ -1244,9 +1244,9 @@ $this->dbforge->add_field(array(
                          
                 ));
                 $this->dbforge->add_key('entidad_id');
-                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('persona_id');
-                $this->dbforge->add_field('CONSTRAINT persona_id FOREIGN KEY (persona_id) REFERENCES persona_persona (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT persona_id FOREIGN KEY (persona_id) REFERENCES persona_persona (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
                 $this->dbforge->create_table('persona_entidadpersona',TRUE);
 

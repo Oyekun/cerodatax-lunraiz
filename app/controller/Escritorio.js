@@ -236,9 +236,10 @@ Ext.define('cerodatax.controller.Escritorio', {
                  layout.setActiveItem(select);
 
              }
+
              if(grid)
-             {if(grid.store.extraParams!==undefined)
-                 grid.store.extraParams.combo = '';
+             {if(grid.store.proxy.extraParams!==undefined)
+               grid.store.proxy.extraParams.combo = '';
               grid.store.load();
               grid.getSelectionModel().deselectAll();
 

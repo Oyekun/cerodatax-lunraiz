@@ -756,6 +756,19 @@
                     },
                     "name": "MyGridFiltersPlugin1",
                     "designerId": "31571f74-066a-44d2-99c5-71ba85ce70de"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel1",
+                    "designerId": "9a7101e4-4096-4ece-8513-deb58d6761c0"
                 }
             ]
         },

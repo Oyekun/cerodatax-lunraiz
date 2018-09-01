@@ -132,6 +132,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 // Set record
                 form.loadRecord(newRecord);
         form.owner.items.items.forEach(function (item) {
+             if(item.config.disabled)
+                              item.store.clearData();
         if(!item.config.disabled)
                         if(item.xtype=='treepanel')
                         {
@@ -165,6 +167,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                     resultree = me.searchComponent('treepanel',item,resultree);
                  for(var comptree in resultree)
                             {var objtree = resultree[comptree];
+                             if(objtree.config.disabled)
+                              objtree.store.clearData();
+
          if(!objtree.config.disabled)
                                  if(objtree.xtype=='treepanel')
                         {    if(record!==null)
@@ -297,11 +302,11 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         //objtree.store.load();
                           objtree.store.load({   scope: this,
                                                     callback: function (records, operation, success) {
-                                                        item.setDisabled(false);
-                                                        if(item.clearFilters)
-                                                         item.clearFilters();
-                                                        item.store.proxy.extraParams.combo = '';
-                                                        item.store.proxy.extraParams.filter ='';
+                                                        itemt.setDisabled(false);
+                                                        if(itemt.clearFilters)
+                                                         itemt.clearFilters();
+                                                        itemt.store.proxy.extraParams.combo = '';
+                                                        itemt.store.proxy.extraParams.filter ='';
                                                     }});
                         }
                             }
@@ -1156,7 +1161,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
            var store= nodeinterface.getTreeStore();
             store.proxy.extraParams.parent_id = nodeinterface.data.id;
-
+            //store.clearFilter();
     },
 
     onTreePanelBeforeItemExpand1: function(nodeinterface, eOpts) {
@@ -1169,12 +1174,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         if(r!==null)
         {store.proxy.extraParams.id_asociado =r.data.id;
 
-         //store.proxy.extraParams.detalles ='detalles';
+           store.proxy.extraParams.detalles ='detalles';
         }
         else{
             store.proxy.extraParams.id_asociado ='';
 
-        /// store.proxy.extraParams.detalles ='';
+            store.proxy.extraParams.detalles ='';
         }
     },
 
@@ -1183,7 +1188,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                 if(r!==null)
                 {var store =  r.getTreeStore();
-                    store.proxy.extraParams.parent_id = '';}
+                    store.proxy.extraParams.parent_id = '';
+
+                }
     },
 
     onTreePanelSelect: function(rowmodel, record, index, eOpts) {
@@ -1210,20 +1217,21 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         var tree = bottom.up('treepanel');
         var grid = bottom.up('gridpanel');
         if(grid)
-            {
-               grid.store.clearFilter();
-               grid.store.load();
+        {
+            grid.store.clearFilter();
+            grid.store.proxy.extraParams.combo ='';
+            grid.store.load();
             grid.getSelectionModel().deselectAll();
 
-            }
+        }
         if(tree)
-            {tree.store.proxy.extraParams.parent_id = '';
-             tree.store.clearFilter();
-             tree.store.load();
+        {tree.store.proxy.extraParams.parent_id = '';
+         tree.store.clearFilter();
+         tree.store.load();
 
-            tree.getSelectionModel().deselectAll();
+         tree.getSelectionModel().deselectAll();
 
-            }
+        }
         var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
         botones.forEach(function (item) {
             item.setDisabled(true);
@@ -1232,10 +1240,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         botones.forEach(function (item) {
             item.setDisabled(true);
         });
-         var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-                                   btnAssociate.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
+        var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
+        btnAssociate.forEach(function (item) {
+            item.setDisabled(true);
+        });
         this.showView('selectMessage');
     },
 
@@ -1645,12 +1653,21 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         console.log(value)
         var form =filefield.up('form');
         var resulimage = [];
+        Ext.Ajax.request({
+            url: 'index.php/api/restserver/rests/',
+            method: 'POST',
+            success: function(response) {
+                var res = Ext.decode(response.responseText);
+                alert(res);
+            }
+        });
                             resulimage = this.searchComponent('image',form,resulimage);
                          for(var compimage in resulimage)
                                     {var objimage = resulimage[compimage];
                                          if(objimage.xtype=='image')
                                 {
                                     console.log(objimage)
+
                                 }
                                     }
     }

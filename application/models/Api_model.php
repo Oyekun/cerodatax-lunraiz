@@ -28,6 +28,7 @@ class Api_model extends CI_Model
 	    
 
        $flagrelacion=false;
+       //---Para definir el padre del TREE
      	if(isset($request['parent_id']))
 		{
 
@@ -49,8 +50,7 @@ else
 			
 
 			if(isset($request['combo']))
-			{
-
+			{  
 				if($request['combo']=='combo')
 				{$limit = false;
 			if(isset($request['filter']))
@@ -68,10 +68,40 @@ else
 		}
            	}
 			}
-			return $this->db->get("$tb");
+			
+$q = $this->db->get("$tb");
+
+if(isset($request['asociados'])&&isset($request['id_asociado']))  
+{$total_actual = count($q->result_array());
+$total = $q->result_array();
+
+	for($i=0;$i<$total_actual;$i++){
+		
+		if($request['asociados']!=''&&$request['id_asociado']!=''||($request['detalles']=='detalles'||$request['detalles']=='edit'))  
+{  
+
+
+$tbDos = $request['esquema_asociado'].'_'.$modelo.$request['asociados'];  
+$idasociadoUno = $modelo.'_id';
+$idasociadoDos = $request['asociados'].'_id';
+		$this->db->where("$idasociadoUno", $total[$i]['id']);
+		$this->db->where("$idasociadoDos", $request['id_asociado']);
+	    $r = $this->db->get("$tbDos");
+		$total[$i]['checked']=count($r->result_array())>0 ? True: False;
+		
+	}
+	else $total[$i]['checked'] = false;
+	$total[$i]['model'] = $modelo;
+
+}
+return $total;
+
+}
+			return $q->result_array(); 
 		}
 
 			}
+
 		if($limit)
 		{         
         $this->load->model($request['model'],'', TRUE);
@@ -188,7 +218,7 @@ $flagrelacion= true;
 
 		$total['data'] = $q->result_array();
 		$total_actual = count($q->result_array()); 	
- 
+ 	
 		$total['total']= count($q1->result_array());
 		/*if(isset($request['asociados'])&&isset($request['id_asociado'])&&isset($request['esquema_asociado'])&&isset($request['detalles']))
 		{
@@ -201,14 +231,14 @@ $flagrelacion= true;
 		}*/
 
 		if($total['total']>0)
-		{ 
+		{
+
 			if((isset($total['data'][0]['parent_id']) && $parent_id!='') || isset($request['id_asociado']))
 			{
 
 				
 
-
-//print_r($total['data']);die;				
+		
  
 
 				 // Creating the Tree
@@ -223,18 +253,7 @@ for($i=0;$i<$total_actual;$i++){
 
 $nodo['checked']=False;
 
-if($request['asociados']!=''&&$request['id_asociado']!=''||($request['detalles']=='detalles'||$request['detalles']=='edit'))  
-{  
 
-$tbDos = $request['esquema_asociado'].'_'.$modelo.$request['asociados'];  
-$idasociadoUno = $modelo.'_id';
-$idasociadoDos = $request['asociados'].'_id';
-		$this->db->where("$idasociadoUno", $nodo['id']);
-		$this->db->where("$idasociadoDos", $request['id_asociado']);
-	    $r = $this->db->get("$tbDos");
-		$nodo['checked']=count($r->result_array())>0 ? True: False;
-		
-	}
 	//else $tree->addChild($nodo,$nodo["parent_id"],$parent_id);
 		}
 		//print_r($request);die;

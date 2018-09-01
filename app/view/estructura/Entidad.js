@@ -27,7 +27,8 @@ Ext.define('cerodatax.view.estructura.Entidad', {
         'Ext.selection.CheckboxModel',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
-        'Ext.grid.filters.Filters'
+        'Ext.grid.filters.Filters',
+        'Ext.grid.plugin.BufferedRenderer'
     ],
 
     controller: 'estructuraentidad',
@@ -155,6 +156,9 @@ Ext.define('cerodatax.view.estructura.Entidad', {
                             {
                                 ptype: 'gridfilters',
                                 menuFilterText: 'Buscar'
+                            },
+                            {
+                                ptype: 'bufferedrenderer'
                             }
                         ]
                     })

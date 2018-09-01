@@ -26,6 +26,7 @@ Ext.define('cerodatax.view.persona.Persona', {
         'Ext.grid.column.Date',
         'Ext.button.Button',
         'Ext.grid.filters.Filters',
+        'Ext.selection.RowModel',
         'Ext.toolbar.Paging'
     ],
 
@@ -297,7 +298,11 @@ Ext.define('cerodatax.view.persona.Persona', {
                                 ptype: 'gridfilters',
                                 menuFilterText: 'Buscar'
                             }
-                        ]
+                        ],
+                        selModel: {
+                            selType: 'rowmodel',
+                            mode: 'MULTI'
+                        }
                     })
                 ]
             };
