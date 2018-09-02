@@ -474,7 +474,7 @@
                                                 "reference": "edad",
                                                 "twoWayBindable": null,
                                                 "value": null,
-                                                "width": 250
+                                                "width": 285
                                             },
                                             "name": "MySlider1",
                                             "designerId": "7dba0dd6-f78e-46c3-bc34-b85b09ac1184",
@@ -1364,7 +1364,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fieldLabel": "Ano",
+                                                "fieldLabel": "Año",
                                                 "format": "Y",
                                                 "name": "ano",
                                                 "width": 180

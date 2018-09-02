@@ -67,6 +67,10 @@ Ext.define('cerodatax.view.persona.Persona', {
                         columns: [
                             {
                                 xtype: 'gridcolumn',
+                                cls: [
+                                    'x-fa',
+                                    'fa-user'
+                                ],
                                 dataIndex: 'foto',
                                 lockable: true,
                                 locked: true,

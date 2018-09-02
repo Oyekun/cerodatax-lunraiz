@@ -31,7 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "animate": true,
+                "animate": false,
                 "hidden": null,
                 "itemId": "treePanel",
                 "layout|region": "center",
@@ -530,6 +530,9 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "scrollToLoadBuffer": 100
+                    },
                     "name": "MyBufferedRenderer",
                     "designerId": "1f63df19-b1a4-4bd0-9244-f3dcfc887c95"
                 }

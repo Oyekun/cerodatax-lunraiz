@@ -54,7 +54,7 @@ Ext.define('cerodatax.view.estructura.Entidad', {
                         resizable: false,
                         reserveScrollbar: true,
                         store: 'estructura.Entidad',
-                        animate: true,
+                        animate: false,
                         rootVisible: false,
                         viewConfig: {
                             rootVisible: false
@@ -158,7 +158,8 @@ Ext.define('cerodatax.view.estructura.Entidad', {
                                 menuFilterText: 'Buscar'
                             },
                             {
-                                ptype: 'bufferedrenderer'
+                                ptype: 'bufferedrenderer',
+                                scrollToLoadBuffer: 100
                             }
                         ]
                     })

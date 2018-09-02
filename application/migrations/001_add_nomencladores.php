@@ -816,6 +816,7 @@ $this->dbforge->add_field(array(
 
                 ));
                 $this->dbforge->add_key('tipo_id');
+                $this->dbforge->add_key('tipo_registro_id');
                 $this->dbforge->add_key('categoria_id');
                 $this->dbforge->add_key('pais_id');
                 $this->dbforge->add_key('provincia_id'); 
@@ -826,6 +827,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('union_id'); 
                 $this->dbforge->add_key('parent_id'); 
                 $this->dbforge->add_field('CONSTRAINT tipo_id FOREIGN KEY (tipo_id) REFERENCES nomenclador_tipoentidad (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT tipo_registro_id FOREIGN KEY (tipo_registro_id) REFERENCES nomenclador_tiporegistro (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT categoria_id FOREIGN KEY (categoria_id) REFERENCES nomenclador_categoriaentidad (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT pais_id FOREIGN KEY (pais_id) REFERENCES nomenclador_pais (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT provincia_id FOREIGN KEY (provincia_id) REFERENCES nomenclador_provincia (id) ON UPDATE CASCADE');
@@ -1134,8 +1136,8 @@ $this->dbforge->add_field(array(
                                 'null' => TRUE,
                         ),
                         'foto' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '255',
+                                'type' => 'TEXT',
+                                 
                                 'null' => TRUE
                         ),
                         'donante' => array(

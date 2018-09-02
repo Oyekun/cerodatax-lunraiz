@@ -17,7 +17,7 @@ Ext.define('cerodatax.store.estructura.EntidadArea', {
     extend: 'Ext.data.TreeStore',
 
     requires: [
-        'cerodatax.model.estructura.Entidad',
+        'cerodatax.model.estructura.EntidadArea',
         'Ext.data.proxy.Rest',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json'
@@ -30,7 +30,7 @@ Ext.define('cerodatax.store.estructura.EntidadArea', {
             storeId: 'estructura.EntidadArea',
             autoLoad: true,
             autoSync: true,
-            model: 'cerodatax.model.estructura.Entidad',
+            model: 'cerodatax.model.estructura.EntidadArea',
             folderSort: true,
             proxy: {
                 type: 'rest',

@@ -185,7 +185,7 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                         {
                                             xtype: 'slider',
                                             reference: 'edad',
-                                            width: 250,
+                                            width: 285,
                                             fieldLabel: 'Edad',
                                             name: 'edad',
                                             listeners: {
@@ -529,7 +529,7 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                         {
                                             xtype: 'datefield',
                                             width: 180,
-                                            fieldLabel: 'Ano',
+                                            fieldLabel: 'Año',
                                             name: 'ano',
                                             format: 'Y'
                                         }

@@ -53,9 +53,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "cls": [
+                            "x-fa",
+                            "fa-user"
+                        ],
                         "dataIndex": "foto",
                         "lockable": true,
                         "locked": true,
+                        "renderData": null,
                         "text": "Foto"
                     },
                     "name": "MyColumn33",

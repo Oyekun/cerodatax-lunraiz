@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "persona",
-        "designer|userClassName": "persona.Persona"
+        "designer|userClassName": "crm.Contacto"
     },
-    "designerId": "671bf04f-801e-40af-b5af-24b0a5279eda",
+    "name": "persona.Persona1",
+    "designerId": "7f2e587a-03f3-4b83-8ba0-ce6e4f03c53d",
     "cn": [
         {
             "type": "Ext.data.field.String",
@@ -22,7 +22,20 @@
                 "name": "id"
             },
             "name": "MyString26",
-            "designerId": "d769dba2-c67e-438e-b11f-ee12dec7de9c"
+            "designerId": "19fa4f4b-65a3-4e8d-b1a1-f3371b110d02"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "foto"
+            },
+            "name": "MyField18",
+            "designerId": "57357e20-a1de-4668-b33d-62566917c46a"
         },
         {
             "type": "Ext.data.field.Field",
@@ -35,7 +48,7 @@
                 "name": "nombre"
             },
             "name": "MyField9",
-            "designerId": "d4510ece-b2d0-4551-afef-f2acfece4e45"
+            "designerId": "844e36fb-d01e-40ed-9aa6-73c37f553201"
         },
         {
             "type": "Ext.data.field.Field",
@@ -48,7 +61,7 @@
                 "name": "apellidos"
             },
             "name": "MyField10",
-            "designerId": "5227c0db-59bf-4355-9122-7cf83fadb39a"
+            "designerId": "f08c4d75-ca2d-4367-b328-eb42a20f0d77"
         },
         {
             "type": "Ext.data.field.Field",
@@ -61,7 +74,7 @@
                 "name": "entidad"
             },
             "name": "MyField19",
-            "designerId": "62c309ae-8c8e-47c3-8dd5-0e6cb97fd9e9"
+            "designerId": "2bb383f1-4fa9-411a-9fed-c03bf82e6e27"
         },
         {
             "type": "Ext.data.field.Field",
@@ -74,7 +87,7 @@
                 "name": "carnet_identidad"
             },
             "name": "MyField",
-            "designerId": "8c20ccaa-0a06-4b5e-bc4c-7bb9e4064b9c"
+            "designerId": "44eae833-2c78-452e-affd-e35cf5fbf710"
         },
         {
             "type": "Ext.data.field.String",
@@ -87,7 +100,7 @@
                 "name": "sexo"
             },
             "name": "MyString17",
-            "designerId": "67461840-0a51-4709-a886-8fbc942cbfb8"
+            "designerId": "67d17b02-f411-4db2-848d-fa75e0132048"
         },
         {
             "type": "Ext.data.field.String",
@@ -100,7 +113,7 @@
                 "name": "sexo_id"
             },
             "name": "MyString45",
-            "designerId": "ed631782-13cb-41ee-80d2-a62201d65288"
+            "designerId": "dd4c4e02-2d51-48bd-8894-5c7cee697680"
         },
         {
             "type": "Ext.data.field.String",
@@ -113,7 +126,7 @@
                 "name": "estado_civil"
             },
             "name": "MyString18",
-            "designerId": "47e0122c-5597-46de-91bf-3647c5df80b4"
+            "designerId": "69276d6d-824f-43bd-b717-229c2fcd79df"
         },
         {
             "type": "Ext.data.field.String",
@@ -126,7 +139,7 @@
                 "name": "estado_civil_id"
             },
             "name": "MyString46",
-            "designerId": "4896a428-a901-4be8-a81e-d3bfa8660ecc"
+            "designerId": "0cff2a39-4519-4c32-9210-f45ab58a6dab"
         },
         {
             "type": "Ext.data.field.String",
@@ -139,7 +152,7 @@
                 "name": "color_piel"
             },
             "name": "MyString19",
-            "designerId": "2a0db4f0-7455-430b-8948-ff7abd801ab3"
+            "designerId": "f1949e1e-47ce-4780-b101-2beab99f84ea"
         },
         {
             "type": "Ext.data.field.String",
@@ -152,7 +165,7 @@
                 "name": "color_piel_id"
             },
             "name": "MyString47",
-            "designerId": "72597dd6-be1f-490d-a56e-c64cb20b7195"
+            "designerId": "3bffd64e-1784-4912-9b36-d6edb1cfac2f"
         },
         {
             "type": "Ext.data.field.Field",
@@ -165,7 +178,7 @@
                 "name": "padre"
             },
             "name": "MyField11",
-            "designerId": "8a6a85ca-1953-488f-b095-2fc53f69dc1f"
+            "designerId": "38cfd51a-c7b2-49fe-8bcc-980f9dc7358c"
         },
         {
             "type": "Ext.data.field.Field",
@@ -178,7 +191,7 @@
                 "name": "madre"
             },
             "name": "MyField12",
-            "designerId": "21848e18-65f6-49ee-9188-246a8c4c8163"
+            "designerId": "2fea5583-7cc4-460a-987c-4e69fae1c461"
         },
         {
             "type": "Ext.data.field.Field",
@@ -191,7 +204,7 @@
                 "name": "tomo"
             },
             "name": "MyField13",
-            "designerId": "d45c5393-1257-4400-905c-0c5c5b650ca8"
+            "designerId": "efa15c2f-29c1-4724-afae-38871895980f"
         },
         {
             "type": "Ext.data.field.Field",
@@ -204,7 +217,7 @@
                 "name": "folio"
             },
             "name": "MyField14",
-            "designerId": "39905ff6-7c0e-43cc-a696-58d7b4e9e091"
+            "designerId": "0bfbc31a-8297-4671-abdf-f1679fe8858d"
         },
         {
             "type": "Ext.data.field.Field",
@@ -217,7 +230,7 @@
                 "name": "ano"
             },
             "name": "MyField15",
-            "designerId": "5fb2c791-0c22-41f6-81ac-c1e7444cb295"
+            "designerId": "759432f6-0486-435e-8b89-8114f908f6b0"
         },
         {
             "type": "Ext.data.field.Field",
@@ -230,7 +243,7 @@
                 "name": "direccion"
             },
             "name": "MyField16",
-            "designerId": "d8bca663-2eca-4bb3-b01b-904df7fc05b1"
+            "designerId": "17025d6d-a58f-4ca2-93ce-f08e71056d46"
         },
         {
             "type": "Ext.data.field.Field",
@@ -243,7 +256,7 @@
                 "name": "correo"
             },
             "name": "MyField17",
-            "designerId": "a3c6862c-1877-4859-9b70-e39616048f6b"
+            "designerId": "0a013afc-e5cb-4a55-a7c3-1e9d5757288c"
         },
         {
             "type": "Ext.data.field.Field",
@@ -256,7 +269,7 @@
                 "name": "celular"
             },
             "name": "MyField6",
-            "designerId": "7289a55d-d751-4e77-9786-a2ceddbb56f1"
+            "designerId": "cf885ae3-981d-4717-ae90-fb83a77594ac"
         },
         {
             "type": "Ext.data.field.Field",
@@ -269,7 +282,7 @@
                 "name": "edad"
             },
             "name": "MyField27",
-            "designerId": "8d454727-0c3c-4b59-aa04-27b6953cc717"
+            "designerId": "16e3c56b-c67c-42c9-8cb0-8089de1dff55"
         },
         {
             "type": "Ext.data.field.Field",
@@ -282,7 +295,7 @@
                 "name": "telefono"
             },
             "name": "MyField29",
-            "designerId": "8f007282-3000-487d-9a39-1453af6e3f25"
+            "designerId": "017e92db-8aec-4e3e-b134-0f58b2b8e34b"
         },
         {
             "type": "Ext.data.field.Field",
@@ -295,7 +308,7 @@
                 "name": "estatura"
             },
             "name": "MyField31",
-            "designerId": "46a8ce87-e464-41ab-b2f3-99033f750b0d"
+            "designerId": "d0301995-bbd4-4517-b4ef-31619d8c9977"
         },
         {
             "type": "Ext.data.field.Field",
@@ -308,7 +321,7 @@
                 "name": "peso"
             },
             "name": "MyField33",
-            "designerId": "90cdf8ec-f146-43c1-a441-3aeb3c1f9e6a"
+            "designerId": "bb058564-9177-46bc-b580-d323fdbe113b"
         },
         {
             "type": "Ext.data.field.String",
@@ -321,7 +334,7 @@
                 "name": "pais_registro_civil"
             },
             "name": "MyString3",
-            "designerId": "1e93e648-5b18-48f2-a6e0-830a2805a42f"
+            "designerId": "15d1ca7c-b718-4cbb-86fd-d978e149bcfb"
         },
         {
             "type": "Ext.data.field.String",
@@ -334,7 +347,7 @@
                 "name": "provincia_registro_civil"
             },
             "name": "MyString8",
-            "designerId": "eafbe840-24a6-47d8-9ae7-e0e79f877419"
+            "designerId": "fd1845a4-9da2-4ff0-a2b6-672245a7c482"
         },
         {
             "type": "Ext.data.field.String",
@@ -347,7 +360,7 @@
                 "name": "municipio_registro_civil"
             },
             "name": "MyString12",
-            "designerId": "65103067-4338-400d-b508-6dfc9e072300"
+            "designerId": "d008dd75-29ef-4b50-b560-5b3e78dcf1ac"
         },
         {
             "type": "Ext.data.field.String",
@@ -360,7 +373,7 @@
                 "name": "pais_registro_civil_id"
             },
             "name": "MyString4",
-            "designerId": "7e1a36a6-14fb-44af-9309-0086dc05aa45"
+            "designerId": "2d5bf368-d2d8-4442-aa51-ad76db02b43c"
         },
         {
             "type": "Ext.data.field.String",
@@ -373,7 +386,7 @@
                 "name": "provincia_registro_civil_id"
             },
             "name": "MyString5",
-            "designerId": "7b0cf3b6-cfd3-480b-93d3-5000375a8e52"
+            "designerId": "50057370-6cc6-4a7c-89d0-da591d6f3586"
         },
         {
             "type": "Ext.data.field.String",
@@ -386,7 +399,7 @@
                 "name": "municipio_registro_civil_id"
             },
             "name": "MyString6",
-            "designerId": "0c508a3e-6e1e-4014-b390-c4bd8c5fd5b6"
+            "designerId": "2d4d3567-0e0e-4640-a6f9-41622a17066d"
         },
         {
             "type": "Ext.data.field.String",
@@ -399,7 +412,7 @@
                 "name": "pais"
             },
             "name": "MyString",
-            "designerId": "b4b23040-5cf8-4eed-b527-1d27f25b4318"
+            "designerId": "02d56dde-5a2f-4352-86ff-8033e364a3a9"
         },
         {
             "type": "Ext.data.field.String",
@@ -412,7 +425,7 @@
                 "name": "pais_id"
             },
             "name": "MyString1",
-            "designerId": "32487378-ef1c-4ae3-a673-6129014b7dab"
+            "designerId": "cc59b225-f02c-44f7-b8ad-e19084aac21f"
         },
         {
             "type": "Ext.data.field.String",
@@ -425,7 +438,7 @@
                 "name": "municipio"
             },
             "name": "MyString21",
-            "designerId": "ab5cc485-1a64-42cc-8bbd-0fd21ed4bf98"
+            "designerId": "80ab10ea-602d-442f-85a2-834b90f6eaf7"
         },
         {
             "type": "Ext.data.field.String",
@@ -438,7 +451,7 @@
                 "name": "municipio_id"
             },
             "name": "MyString50",
-            "designerId": "2d4a5376-b729-46f2-b7c2-95a42b8faeff"
+            "designerId": "ef0688a4-eb0e-4673-a8b3-e0edeeca10cf"
         },
         {
             "type": "Ext.data.field.String",
@@ -451,7 +464,7 @@
                 "name": "provincia"
             },
             "name": "MyString48",
-            "designerId": "c3f77c9c-5a74-4cd3-bb66-e7aafa79bef6"
+            "designerId": "a40cc3c3-8841-4ec1-9276-1b5c3c9834ff"
         },
         {
             "type": "Ext.data.field.String",
@@ -464,7 +477,7 @@
                 "name": "provincia_id"
             },
             "name": "MyString49",
-            "designerId": "00b3ee0d-1a2c-4562-8af1-f8d26e370db9"
+            "designerId": "4bc77661-c2e1-4445-97dc-6b511f3f3bf2"
         },
         {
             "type": "Ext.data.field.String",
@@ -477,7 +490,7 @@
                 "name": "nivel_educacional"
             },
             "name": "MyString22",
-            "designerId": "e0e18bd6-5a59-4a4a-91e5-77b7d8e2d6bd"
+            "designerId": "8cc3a27a-de6c-4536-b185-35757c5bfb7c"
         },
         {
             "type": "Ext.data.field.String",
@@ -490,7 +503,7 @@
                 "name": "nivel_educacional_id"
             },
             "name": "MyString51",
-            "designerId": "cfad5a87-71f5-4379-8f63-024fbea30ce6"
+            "designerId": "b09eee60-722a-4e9f-b690-954873eff2dd"
         },
         {
             "type": "Ext.data.field.String",
@@ -503,7 +516,7 @@
                 "name": "situacion_defensa"
             },
             "name": "MyString23",
-            "designerId": "ea7f98ca-a0e6-4987-825a-d1472c642bdd"
+            "designerId": "520b34ea-fbc5-4fea-8bd2-0e15b7b82324"
         },
         {
             "type": "Ext.data.field.String",
@@ -516,7 +529,7 @@
                 "name": "situacion_defensa_id"
             },
             "name": "MyString52",
-            "designerId": "ace283a3-6f0f-4452-a225-e9f8be213850"
+            "designerId": "576743f3-6ab4-4f11-bb75-03e5f8784096"
         },
         {
             "type": "Ext.data.field.Boolean",
@@ -529,7 +542,7 @@
                 "name": "donante"
             },
             "name": "MyBoolean2",
-            "designerId": "d3cff160-3601-4ace-bc30-e38d0d884398"
+            "designerId": "2ec55a90-7331-4682-88ce-0d7365b86680"
         },
         {
             "type": "Ext.data.field.Boolean",
@@ -542,7 +555,7 @@
                 "name": "trabaja"
             },
             "name": "MyBoolean3",
-            "designerId": "e73d179c-ec88-44dd-b251-7a24843756b0"
+            "designerId": "a7fe7260-0519-4e4e-83c8-f7c00bc5187a"
         },
         {
             "type": "Ext.data.field.Date",
@@ -556,7 +569,7 @@
                 "name": "fecha_nacimiento"
             },
             "name": "MyDate3",
-            "designerId": "58567485-3de8-4070-be93-818ad9b85c5d"
+            "designerId": "7be1ae5b-ac11-4f9c-b282-90f49e9f9057"
         },
         {
             "type": "Ext.data.field.Field",
@@ -569,7 +582,7 @@
                 "name": "cantidad_hijos"
             },
             "name": "MyField1",
-            "designerId": "12a9dabd-451d-43a2-bb24-510f726d28f7"
+            "designerId": "ed4a3e5c-d1da-4d00-a26d-6a314bd5153c"
         },
         {
             "type": "Ext.data.field.String",
@@ -582,7 +595,7 @@
                 "name": "grupo_sanguineo"
             },
             "name": "MyString24",
-            "designerId": "034011e2-d0e4-4e58-9ae3-860637733a32"
+            "designerId": "492b5a18-a46c-4fc5-9a3a-985455e54c2a"
         },
         {
             "type": "Ext.data.field.String",
@@ -595,7 +608,7 @@
                 "name": "grupo_sanguineo_id"
             },
             "name": "MyString53",
-            "designerId": "78e01243-85ea-42cb-af46-ea67feafba98"
+            "designerId": "2726d92d-819b-4c44-931b-a260d2090490"
         },
         {
             "type": "Ext.data.field.String",
@@ -608,33 +621,7 @@
                 "name": "entidad_id"
             },
             "name": "MyString2",
-            "designerId": "133e3c32-7e69-45e9-bea4-cbae8d473b56"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "organismo_id"
-            },
-            "name": "MyString28",
-            "designerId": "9d293c6e-786a-44cd-a54a-d2391503e958"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "foto"
-            },
-            "name": "MyString87",
-            "designerId": "6f7a0142-5a73-4f73-86de-ca45e8f24859"
+            "designerId": "a6978b2d-1e37-4f5d-b59e-3d9135f76600"
         },
         {
             "type": "Ext.data.proxy.Rest",
@@ -659,7 +646,7 @@
                 "url": "index.php/api/restserver/rests/"
             },
             "name": "MyRestProxy4",
-            "designerId": "8af1cef0-0089-4ed5-9009-fe431cde950c",
+            "designerId": "912cc2e4-1911-49c1-9642-471a4c46cee3",
             "cn": [
                 {
                     "type": "Ext.data.writer.Json",
@@ -674,7 +661,7 @@
                         "writeAllFields": true
                     },
                     "name": "MyJsonWriter3",
-                    "designerId": "5007f10d-5e54-42e5-af3e-5fa10cc9a7d2"
+                    "designerId": "cf784689-f0f2-4a58-abda-1139bc20258f"
                 },
                 {
                     "type": "Ext.data.reader.Json",
@@ -687,7 +674,7 @@
                         "rootProperty": "data"
                     },
                     "name": "MyJsonReader3",
-                    "designerId": "8908a938-313a-45b4-8e07-a14145f9f1fd"
+                    "designerId": "cee0008d-f9f6-463a-8f1a-eae1477dcfc4"
                 }
             ]
         }

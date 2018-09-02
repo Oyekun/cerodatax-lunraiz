@@ -57,7 +57,7 @@ Ext.application({
         'nomenclador.DivisionNAE',
         'nomenclador.Union',
         'nomenclador.TipoRegistro',
-        'comercial.Contacto',
+        'crm.Contacto',
         'nomenclador.Moneda',
         'persona.PersonaEntidad'
     ],
@@ -132,8 +132,8 @@ Ext.application({
         'nomenclador.DivisionNAE',
         'nomenclador.Union',
         'nomenclador.TipoRegistro',
-        'comercial.FormContacto',
-        'comercial.Contacto',
+        'crm.FormContacto',
+        'crm.Contacto',
         'nomenclador.Moneda',
         'estructura.EntidadAreaForm'
     ],
@@ -147,7 +147,7 @@ Ext.application({
         'cerodatax.nomenclador',
         'cerodatax.actualizacion',
         'cerodatax.estructura',
-        'cerodatax.comercial'
+        'cerodatax.crm'
     ],
 
     launch: function() {

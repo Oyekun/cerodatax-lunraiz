@@ -10,7 +10,7 @@
         "autoSync": true,
         "designer|userClassName": "estructura.EntidadArea",
         "folderSort": true,
-        "model": "estructura.Entidad",
+        "model": "estructura.EntidadArea",
         "storeId": "estructura.EntidadArea"
     },
     "name": "estructura.Entidad1",

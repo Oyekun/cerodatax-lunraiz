@@ -356,6 +356,7 @@ if(isset($dataArray['asociados']))
 }	
 	$this->db->set('id', $uuid);
 		$this->db->insert("$tb", $dataArray); 
+       
         if(isset($dataArray['parent_id']))		
 		if($dataArray['parent_id']!='')
 		{$dataArray1 = array();

@@ -54,7 +54,8 @@ class Entidad extends CI_Model {
         ,'nae_id' =>'nomenclador_nae'
         ,'clasificacion_id' =>'nomenclador_clasificacion'
         ,'organismo_id' =>'nomenclador_organismo'
-        ,'union_id' =>'nomenclador_union'
+        ,'union_id' =>'nomenclador_union',
+        'tipo_registro_id' =>'nomenclador_tiporegistro'
        // ,'parent_id' =>'estructura_entidad'
         );
         }
