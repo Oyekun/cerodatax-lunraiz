@@ -1067,8 +1067,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
                      }
-                     if(record.data.parent_id)
-                         record.data.leaf = true;
+
                      //if(record.data.parent_id=='root')
 
                  }});
@@ -1107,6 +1106,16 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                windows.close();
                            else
                                me.showView('selectMessage');
+
+                            Ext.MessageBox.show({
+                       title: 'Información',
+                       msg: json.message,
+                       buttons: Ext.MessageBox.OK,
+                       //animateTarget: 'mb9',
+                       //fn: showResult,
+                       icon: Ext.MessageBox.INFO
+                   });
+
                            var tree =  Ext.ComponentQuery.query('panel treepanel');
 
                            tree.forEach(function (item) {
@@ -1134,14 +1143,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                        }
                    });
-                   Ext.MessageBox.show({
-                       title: 'Información',
-                       msg: json.message,
-                       buttons: Ext.MessageBox.OK,
-                       //animateTarget: 'mb9',
-                       //fn: showResult,
-                       icon: Ext.MessageBox.INFO
-                   });
+
 
                   }
                  }
@@ -1162,6 +1164,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          {
                            record.data[foto]  = record_foto[foto];
                          }
+                     if(record.data.parentId===null)
+
+                                 record.data.leaf = true;
                      record.save({success:write});
 
                      flag= true;
@@ -1283,17 +1288,20 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
            var store= nodeinterface.getTreeStore();
             store.proxy.extraParams.parent_id = nodeinterface.data.id;
          var r = this.getViewModel().get('record');
-        //console.log(r)
+
         if(r!==null)
-        {store.proxy.extraParams.id_asociado =r.data.id;
+            {store.proxy.extraParams.id_asociado =r.data.id;
 
-           store.proxy.extraParams.detalles ='detalles';
-        }
-        else{
-            store.proxy.extraParams.id_asociado ='';
+                   store.proxy.extraParams.detalles ='detalles';
+                    store.proxy.extraParams.detalles ='edit';
+                    store.proxy.extraParams.combo ='';
+                }
+                else{
+                   // store.proxy.extraParams.id_asociado ='';
 
-            store.proxy.extraParams.detalles ='';
-        }
+                    store.proxy.extraParams.detalles ='edit';
+                    store.proxy.extraParams.combo ='';
+                }
     },
 
     onTreePanelAfterItemExpand: function(node, index, item, eOpts) {
@@ -1391,6 +1399,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  item.store.proxy.extraParams.id_asociado ='';
              item.store.proxy.extraParams.parent_id ='';
              item.store.proxy.extraParams.detalles ='edit';
+                item.store.proxy.extraParams.combo ='combo';
 
              item.store.load();
             }
@@ -1424,6 +1433,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                 objtree.store.proxy.extraParams.id_asociado ='';
                             objtree.store.proxy.extraParams.parent_id ='';
                             objtree.store.proxy.extraParams.detalles ='edit';
+                         objtree.store.proxy.extraParams.combo ='combo';
 
         objtree.store.load();
                         }
@@ -1510,7 +1520,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             result.push(comp);
         if(comp.items)
             {
-                var items = comp.items.items;
+                var items = comp.items;
+                if(comp.items.items)
+                  items = comp.items.items;
+
                 for(var item in items)
                     {
                         this.searchComponent(xtype,items[item],result);
@@ -1668,8 +1681,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                         header: comp.fieldLabel,
                                         sortable: true,
               groupable:groupable,
-                locked:locked,
-                lockable:lockable,
+               // locked:locked,
+               // lockable:lockable,
               width:width,
                                         align: 'left',
                                         format:format,
@@ -1838,6 +1851,26 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 }
 
 
+    },
+
+    configGridPanel: function(gridPanel, columns) {
+        gridPanel.viewConfig = {
+                        emptyText: 'No existen elementos que mostrar.',
+                        deferEmptyText: false,
+                        loadMask: true,
+                        loadingText: 'Cargando Elementos...'
+                    };
+        gridPanel.columns = columns;
+        gridPanel.plugins= [
+                                    {
+                                        ptype: 'gridfilters',
+                                        menuFilterText: 'Buscar'
+                                    }
+                                ];
+                                gridPanel.selModel= {
+                                    selType: 'rowmodel',
+                                    mode: 'MULTI'
+                                };
     }
 
 });

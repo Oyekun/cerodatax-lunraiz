@@ -59,7 +59,7 @@ Ext.define('cerodatax.view.persona.Cargo', {
                 {
                     xtype: 'gridcolumn',
                     dataIndex: 'nombre',
-                    text: 'Nombre'
+                    text: 'Nombre11'
                 },
                 {
                     xtype: 'gridcolumn',
@@ -249,8 +249,13 @@ Ext.define('cerodatax.view.persona.Cargo', {
                 {
                     xtype: 'form',
                     reference: 'form',
+                    alignTarget: 'top',
+                    itemId: 'cargoForm',
                     bodyPadding: 10,
                     title: 'Editar Cargo',
+                    fieldDefaults: {
+                        padding: '0 10 0 10'
+                    },
                     layout: {
                         type: 'table',
                         columns: 3
@@ -295,8 +300,26 @@ Ext.define('cerodatax.view.persona.Cargo', {
                         },
                         {
                             xtype: 'combobox',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
+                            fieldLabel: 'Grupo Escala',
+                            name: 'grupo_escala',
+                            allowBlank: false,
+                            displayField: 'nombre (salario)',
+                            queryMode: 'local',
+                            store: 'nomenclador.GrupoEscala',
+                            valueField: 'id'
+                        },
+                        {
+                            xtype: 'combobox',
                             fieldLabel: 'Calificador',
-                            name: 'calificador'
+                            name: 'calificador_id',
+                            emptyText: 'Seleccione',
+                            displayField: 'nombre',
+                            queryMode: 'local',
+                            store: 'nomenclador.Calificador',
+                            valueField: 'id'
                         },
                         {
                             xtype: 'textfield',
@@ -307,15 +330,6 @@ Ext.define('cerodatax.view.persona.Cargo', {
                             xtype: 'checkboxfield',
                             fieldLabel: 'Funcionario',
                             name: 'funcionario'
-                        },
-                        {
-                            xtype: 'textfield',
-                            afterLabelTextTpl: [
-                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                            ],
-                            fieldLabel: 'Grupo Escala',
-                            name: 'grupo_escala',
-                            allowBlank: false
                         }
                     ],
                     dockedItems: [
@@ -350,6 +364,39 @@ Ext.define('cerodatax.view.persona.Cargo', {
                 }
             ]
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processPersonaCargo(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processPersonaCargo: function(config) {
+        var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),
+          result = [],
+          columns=[],
+          resultgrid = [];
+        result = control.searchComponent('form', this, result);
+        resultgrid = control.searchComponent('gridpanel', this, resultgrid);
+
+         if(result.length > 0)
+         {var formPanel = result[0],
+
+
+        columns = control.searchLabel(formPanel.items,columns,false);
+
+        if(resultgrid.length > 0)
+            control.configGridPanel(resultgrid[0],columns);
+
+        }
+
+
+        return config;
+    }
 
 });

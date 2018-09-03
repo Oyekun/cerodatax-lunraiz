@@ -698,6 +698,45 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processNomencladorCategoria",
+                "implHandler": [
+                    "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
+                    "  result = [],",
+                    "  columns=[],",
+                    "  resultgrid = [];",
+                    "result = control.searchComponent('form', this, result);",
+                    "resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
+                    "",
+                    " if(result.length > 0)",
+                    " {var formPanel = result[0],",
+                    "",
+                    "",
+                    "columns = control.searchLabel(formPanel.items,columns,true);",
+                    "",
+                    "if(resultgrid.length > 0)",
+                    "",
+                    "    control.configGridPanel(resultgrid[0],columns);",
+                    " ",
+                    "}",
+                    "",
+                    "  return config;",
+                    ""
+                ]
+            },
+            "name": "processNomencladorCategoria",
+            "designerId": "1f672b41-6016-45ae-bf41-73355151d338"
         }
     ]
 }

@@ -894,32 +894,16 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => FALSE,
                         ),
-                        'codigo' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '30',
-                                'unique' => TRUE,
-                                'null' => FALSE,
-                        ),
-                        'codigo_reup' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '30',
-                                'unique' => TRUE,
-                                'null' => FALSE,
-                        ), 
+ 
                         'periodo_prueba' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '255'
+                                'type' => 'INT',
+                                'constraint' => '3'
                         ),
                         'funcionario' => array(
                                 'type' => 'INT',
                                 'constraint' => '1', 
                                 'default' => '0',
-                        ), 
-                        'grupoescala' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => FALSE,
-                        ), 
+                        ),  
                         'grupoescala_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
@@ -937,7 +921,30 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_field('CONSTRAINT grupoescala_id FOREIGN KEY (grupoescala_id) REFERENCES nomenclador_grupoescala (id) ON UPDATE CASCADE');
                 $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->create_table('persona_cargo',TRUE);
-
+                
+                $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ),
+                                'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255',        
+                                'null' => FALSE,
+                        ), 
+                                'cargo_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                        ), 
+                ));
+                $this->dbforge->add_key('cargo_id');  
+                $this->dbforge->add_field('CONSTRAINT cargo_id FOREIGN KEY (cargo_id) REFERENCES persona_cargo (id) ON UPDATE CASCADE');
+               
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->create_table('persona_cargofuncion',TRUE);
+ 
 
                 $this->dbforge->add_field(array(
                                 'id' => array(

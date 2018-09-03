@@ -54,7 +54,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "nombre",
-                        "text": "Nombre"
+                        "text": "Nombre11"
                     },
                     "name": "MyColumn6",
                     "designerId": "3ab24f7a-8546-4770-bb4b-82f89ccc1f28"
@@ -644,9 +644,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "alignTarget": "top",
                         "bodyPadding": 10,
                         "container|columns": 3,
+                        "fieldDefaults": [
+                            "{padding:'0 10 0 10'}"
+                        ],
+                        "itemId": "cargoForm",
                         "layout": "table",
+                        "padding": null,
                         "reference": "form",
                         "title": "Editar Cargo"
                     },
@@ -700,6 +706,7 @@
                                 "emptyText": "Seleccione",
                                 "fieldLabel": "Nivel Educacional",
                                 "name": "nivel_educacional_id",
+                                "padding": null,
                                 "queryMode": "local",
                                 "store": "nomenclador.NivelEducacional",
                                 "valueField": "id"
@@ -772,8 +779,50 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "allowBlank": false,
+                                "displayField": "nombre (salario)",
+                                "fieldLabel": "Grupo Escala",
+                                "name": "grupo_escala",
+                                "queryMode": "local",
+                                "store": "nomenclador.GrupoEscala",
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox24",
+                            "designerId": "d308c9ef-f0f0-49dc-84a4-9dd79cc82ea9",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "d21154ff-46c7-4646-9814-af79c273a61e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "nombre",
+                                "emptyText": "Seleccione",
                                 "fieldLabel": "Calificador",
-                                "name": "calificador"
+                                "name": "calificador_id",
+                                "queryMode": "local",
+                                "store": "nomenclador.Calificador",
+                                "valueField": "id"
                             },
                             "name": "MyComboBox4",
                             "designerId": "4bf7bad0-92ed-4697-9950-38d28c169f6b"
@@ -805,39 +854,6 @@
                             },
                             "name": "MyCheckbox1",
                             "designerId": "7fc9ea62-77fa-48be-99d1-dd6804c7a524"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "fieldLabel": "Grupo Escala",
-                                "name": "grupo_escala"
-                            },
-                            "name": "MyTextField6",
-                            "designerId": "d308c9ef-f0f0-49dc-84a4-9dd79cc82ea9",
-                            "cn": [
-                                {
-                                    "type": "Ext.XTemplate",
-                                    "reference": {
-                                        "name": "afterLabelTextTpl",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": "afterLabelTextTpl",
-                                        "implHandler": [
-                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                        ]
-                                    },
-                                    "name": "afterLabelTextTpl",
-                                    "designerId": "d21154ff-46c7-4646-9814-af79c273a61e"
-                                }
-                            ]
                         },
                         {
                             "type": "Ext.container.Container",
@@ -962,6 +978,44 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processPersonaCargo",
+                "implHandler": [
+                    "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
+                    "  result = [],",
+                    "  columns=[],",
+                    "  resultgrid = [];",
+                    "result = control.searchComponent('form', this, result); ",
+                    "resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
+                    "",
+                    " if(result.length > 0)",
+                    " {var formPanel = result[0], ",
+                    "       ",
+                    "",
+                    "columns = control.searchLabel(formPanel.items,columns,false);",
+                    "",
+                    "if(resultgrid.length > 0)",
+                    "    control.configGridPanel(resultgrid[0],columns);",
+                    " ",
+                    "}",
+                    "",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processPersonaCargo",
+            "designerId": "2e81fd65-701d-472e-89b7-bb8cc92334e0"
         }
     ]
 }

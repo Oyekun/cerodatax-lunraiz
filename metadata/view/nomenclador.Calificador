@@ -344,25 +344,6 @@
                     },
                     "name": "MyRowSelectionModel18",
                     "designerId": "84f2941f-adc9-4050-b5c9-ec0acde4cdb8"
-                },
-                {
-                    "type": "processcfgfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "config"
-                        ],
-                        "fn": "processList",
-                        "implHandler": [
-                            "return config;"
-                        ]
-                    },
-                    "name": "processList",
-                    "designerId": "1e1f2078-7fa8-435d-8c6a-63d45a842f34"
                 }
             ]
         },
@@ -630,6 +611,44 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processNomencladorCalificador",
+                "implHandler": [
+                    "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
+                    "  result = [],",
+                    "  columns=[],",
+                    "  resultgrid = [];",
+                    "result = control.searchComponent('form', this, result);",
+                    "resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
+                    "",
+                    " if(result.length > 0)",
+                    " {var formPanel = result[0],",
+                    "",
+                    "",
+                    "columns = control.searchLabel(formPanel.items,columns,false);",
+                    "",
+                    "if(resultgrid.length > 0)",
+                    "    control.configGridPanel(resultgrid[0],columns);",
+                    "",
+                    "}",
+                    "",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processNomencladorCalificador",
+            "designerId": "27c766a8-152a-4b73-8e79-a64fbdaef33f"
         }
     ]
 }

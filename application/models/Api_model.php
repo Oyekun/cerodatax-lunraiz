@@ -94,9 +94,11 @@ $idasociadoDos = $request['asociados'].'_id';
 	$total[$i]['model'] = $modelo;
 
 }
+
 return $total;
 
 }
+
 			return $q->result_array(); 
 		}
 
@@ -452,7 +454,7 @@ public function row_update($request,$id) {
 		
 	 
 		unset($dataArray['parentId']);
-		unset($dataArray['leaf']);
+		//unset($dataArray['leaf']); verificar despues si esto afecta
 		unset($dataArray['expanded']);
 		unset($dataArray['checked']);
 		unset($dataArray['model']);
