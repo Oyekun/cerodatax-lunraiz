@@ -348,6 +348,39 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                 }
             ]
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processSeguridadUsuario(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processSeguridadUsuario: function(config) {
+        var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),
+            result = [],
+            columns=[],
+            resultgrid = [];
+        result = control.searchComponent('form', this, result);
+        resultgrid = control.searchComponent('gridpanel', this, resultgrid);
+
+        if(result.length > 0)
+        {var formPanel = result[0],
+
+
+            columns = control.searchLabel(formPanel.items,columns,true);
+
+         if(resultgrid.length > 0)
+             control.configGridPanel(resultgrid[0],columns);
+         control.createDetails(this,columns);
+        }
+
+
+        return config;
+    }
 
 });

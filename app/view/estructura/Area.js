@@ -219,6 +219,39 @@ Ext.define('cerodatax.view.estructura.Area', {
                 }
             ]
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processEstructuraArea(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processEstructuraArea: function(config) {
+        var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),
+            result = [],
+            columns=[],
+            resultgrid = [];
+        result = control.searchComponent('form', this, result);
+        resultgrid = control.searchComponent('gridpanel', this, resultgrid);
+
+        if(result.length > 0)
+        {var formPanel = result[0],
+
+
+            columns = control.searchLabel(formPanel.items,columns,false);
+
+         if(resultgrid.length > 0)
+             control.configGridPanel(resultgrid[0],columns);
+
+        }
+
+
+        return config;
+    }
 
 });

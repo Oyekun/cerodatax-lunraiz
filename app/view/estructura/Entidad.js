@@ -182,26 +182,8 @@ Ext.define('cerodatax.view.estructura.Entidad', {
         var vista = Ext.create('widget.'+win);
         form = vista.down('form').getForm();
         var results=[];
-        //console.log(form.owner.items.items)
         columns = control.searchLabel(form.owner,results,false);
-        // columns = me.searchLabel(form.owner.items.items,results);
-
-        /*config.features =   [
-                        {
-                            ftype: 'filters',
-                            encode: true,
-                            local: false,
-                            menuFilterText: 'Buscar'
-                        }
-                    ];
-
-        config.viewConfig = {
-                        emptyText: 'No existen No Conformidades que mostrar.',
-                        deferEmptyText: false,
-                        loadMask: true,
-                        loadingText: 'Cargando No Conformidades...'
-                    };*/
-        config.columns = columns;
+         control.configGridPanel(config,columns);
         return config;
     }
 

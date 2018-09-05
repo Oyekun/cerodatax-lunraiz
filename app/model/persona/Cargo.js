@@ -19,7 +19,10 @@ Ext.define('cerodatax.model.persona.Cargo', {
 
     requires: [
         'Ext.data.field.String',
-        'Ext.data.field.Boolean'
+        'Ext.data.field.Boolean',
+        'Ext.data.proxy.Rest',
+        'Ext.data.reader.Json',
+        'Ext.data.writer.Json'
     ],
 
     fields: [
@@ -67,5 +70,42 @@ Ext.define('cerodatax.model.persona.Cargo', {
         {
             name: 'grupo_escala_id'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        api: {
+            add: {
+                url: 'index.php/api/restserver/rests',
+                method: 'POST'
+            },
+            show: {
+                url: 'index.php/api/restserver/rests/',
+                method: 'GET'
+            },
+            save: {
+                url: 'index.php/api/restserver/rests/id/{id}',
+                method: 'PUT'
+            },
+            remove: {
+                url: 'index.php/api/restserver/rests/id/{id}',
+                method: 'DELETE'
+            }
+        },
+        extraParams: {
+            model: 'cargo',
+            esquema: 'persona'
+        },
+        url: 'index.php/api/restserver/rests/',
+        reader: {
+            type: 'json',
+            rootProperty: 'data'
+        },
+        writer: {
+            type: 'json',
+            writeAllFields: true,
+            encode: true,
+            rootProperty: 'data'
+        }
+    }
 });

@@ -209,6 +209,29 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
              item.store.load();
             }
+             var resulimage = [];
+                            resulimage = me.searchComponent('image',item,resulimage);
+            var objimgold=null;
+                         for(var compimg in resulimage)
+                                    {var objimg = resulimage[compimg];
+                                   //objimg.setVisible(false);
+                                     if(objimg.config.hidden)
+                                               {
+
+                                                   var img_value = record.data[objimg.itemId].toString();
+
+
+                                                   if(img_value!=='')
+                                                   { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+                                                 }
+                                                 else
+                                                 {
+                                                     if(objimgold!==null)
+                                                     {objimg.setVisible(false); objimgold=null;}}
+
+
+
+                                         }
             if(item.xtype=='tabpanel')
             {  var result = [];
              result = me.searchComponent('combobox',item,result);
@@ -1580,164 +1603,169 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
     searchLabel: function(comp, result, is_grid) {
         //Funcion para construir el encabezado de los grid y tree panel
+        if(comp.inputType !='password')
         if(comp.xtype==='textfield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )
         {
 
             var xtype = 'gridcolumn';
 
-         var listeners = '';
-        var lockable = '';
-         var locked = '';
+            var listeners = '';
+            var lockable = '';
+            var locked = '';
             var format= '';
             var width = '';
             var renderer = '';
             var groupable = '';
 
-         var dataIndex = comp.name;
-        if (comp.name !='carnet_identidad') // arreglar este problema es prk el _id de carnet coincide o los combobox
-           dataIndex = comp.name.replace('_id','');
+            var dataIndex = comp.name;
+            if (comp.name !='carnet_identidad') // arreglar este problema es prk el _id de carnet coincide o los combobox
+                dataIndex = comp.name.replace('_id','');
             var emptyText = 'Ingrese el texto del filtro...';
-          var filter = {
-              type: 'string',dataIndex: dataIndex,emptyText:emptyText
-                                        };
-         if (comp.name =='nombre'||comp.name =='foto'||comp.name =='logotipo')
-           {if(is_grid===true)
-           {lockable = true;
-                                        locked= true;
-           }
-            if(comp.name =='nombre' &&is_grid===false)
-            {xtype = 'treecolumn';
+            var filter = {
+                type: 'string',dataIndex: dataIndex,emptyText:emptyText
+            };
+            if (comp.name =='nombre'||comp.name =='foto'||comp.name =='logotipo')
+            {if(is_grid===true)
+            {lockable = true;
+             locked= true;
+            }
+             if(comp.name =='nombre' &&is_grid===false)
+             {xtype = 'treecolumn';
               width = 200;
+             }
+             if(comp.name =='nombre' &&is_grid===true)
+             {
+                 width = 200;
+             }
+             if(comp.name =='foto'||comp.name =='logotipo')
+             {
+                 //width = 200;
+                 groupable = false;
+
+                 filter = '';
+                 var clas = 'x-fa fa-building';
+                 if(comp.name =='foto') //Para saber que es una persona
+                     clas = 'x-fa fa-user';
+
+
+                 var  renderer= function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+                     if(record.data.codigo_registro) //Para saber q es una entidad
+                     {
+                         clas = 'x-fa fa-building';
+                     }
+                     if(value!==''&& value!==null)
+                         return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
+                     else return '<div class="'+clas+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
+
+                 };
+             }
             }
-            if(comp.name =='nombre' &&is_grid===true)
+            switch(comp.xtype)
             {
-              width = 200;
-            }
-            if(comp.name =='foto'||comp.name =='logotipo')
-                {
-                     //width = 200;
-                    groupable = false;
-
-                    filter = '';
-                    var clas = 'x-fa fa-building';
-                    if(comp.name =='foto') //Para saber que es una persona
-                      clas = 'x-fa fa-user';
-
-
-                  var  renderer= function(value, metaData, record, rowIndex, colIndex, store, view) {
-
-                      if(record.data.codigo_registro) //Para saber q es una entidad
-            {
-                clas = 'x-fa fa-building';
-            }
-                      if(value!==''&& value!==null)
-                                            return '<img src="'+value+'" height="50px" style="float:left;margin:0 10px 5px 0">';
-                      else return '<div class="'+clas+'" height="50px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
-
-                  };
+                case 'numberfield':{
+                    xtype = 'numbercolumn';
+                    filter = {
+                        type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'
+                    };
+                    break;
                 }
-           }
-         switch(comp.xtype)
-                {
-                    case 'numberfield':{
-        xtype = 'numbercolumn';
-                        filter = {
-                                            type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'
-                                        };
-                        break;
-                    }
-                        case 'datefield':{
-        xtype = 'datecolumn';
-                            format = 'Y-m-d';
-                             filter = {
-                                 type: 'date',fields:{
-            lt: {
-                text: 'Antes'
-            },
-            gt: {
-                text: 'Después'
-            },
-            eq: {
-                text: 'En'
-            }
-        },dateFormat: format,dataIndex: dataIndex
-                                        };
-                            break;
-                    }
-                        case 'checkboxfield':{
-        xtype = 'checkcolumn';
-                            listeners=  {beforecheckchange:  function(){return false;}};
-                            filter = {
-                                type: 'boolean',noText:'No',yesText:'Si',dataIndex: dataIndex
-                                        };
-                            break;
-                    }
-
+                case 'datefield':{
+                    xtype = 'datecolumn';
+                    format = 'Y-m-d';
+                    filter = {
+                        type: 'date',fields:{
+                            lt: {
+                                text: 'Antes'
+                            },
+                            gt: {
+                                text: 'Después'
+                            },
+                            eq: {
+                                text: 'En'
+                            }
+                        },dateFormat: format,dataIndex: dataIndex
+                    };
+                    break;
+                }
+                case 'checkboxfield':{
+                    xtype = 'checkcolumn';
+                    listeners=  {beforecheckchange:  function(){return false;}};
+                    filter = {
+                        type: 'boolean',noText:'No',yesText:'Si',dataIndex: dataIndex
+                    };
+                    break;
                 }
 
-          var column = {
-                                        xtype: xtype,
-                                        dataIndex: dataIndex,
-                                        header: comp.fieldLabel,
-                                        sortable: true,
-              groupable:groupable,
-               // locked:locked,
-               // lockable:lockable,
-              width:width,
-                                        align: 'left',
-                                        format:format,
-              renderer:renderer,
+            }
 
-                                        listeners:listeners,
-              filter:filter
-                                    };
+            var column = {
+                xtype: xtype,
+                dataIndex: dataIndex,
+                header: comp.fieldLabel,
+                sortable: true,
+                groupable:groupable,
+                // locked:locked,
+                // lockable:lockable,
+                width:width,
+                align: 'left',
+                format:format,
+                renderer:renderer,
+
+                listeners:listeners,
+                filter:filter
+            };
+
+            var index = result.lastIndexOf(column);
+            //validar q no se repitan las columnas como el caso del usuario confirmar contrase;a
+            if(index===-1)
             result.push(column);
 
         }
 
         if(comp.items)
+        {
+            var items = comp.items.items;
+
+            for(var item in items)
             {
-                var items = comp.items.items;
+                if(items[item].xtype==='panel'||items[item].xtype==='fieldset'||items[item].xtype==='container')
+                {
+                    var aux = items[item].items.items;
+                    var columns=[];
 
-                for(var item in items)
+
+                    for (var j in aux)
                     {
-                        if(items[item].xtype==='panel'||items[item].xtype==='fieldset'||items[item].xtype==='container')
-                            {
-                                var aux = items[item].items.items;
-                                var columns=[];
-
-
-                                for (var j in aux)
-                                {
-                                     this.searchLabel(aux[j],columns,is_grid);
-                                }
-         var column = {
-                                        xtype: 'gridcolumn',
-                                        header: items[item].title,
-                                        sortable: false,
-                                        //groupable:false,
-                                        align: 'center',
-                                        columns:columns
-                                    };
-                                result.push(column);
-
-
-                            }
-                        if(comp.xtype==='tabpanel')
-                        this.searchLabel(items[item],result,is_grid);
-
+                        this.searchLabel(aux[j],columns,is_grid);
                     }
+                    var column = {
+                        xtype: 'gridcolumn',
+                        header: items[item].title,
+                        sortable: false,
+                        //groupable:false,
+                        align: 'center',
+                        columns:columns
+                    };
+                    result.push(column);
+
+
+                }
+                if(comp.xtype==='tabpanel')
+                    this.searchLabel(items[item],result,is_grid);
+
             }
+        }
 
         if((comp.items===undefined && comp.xtype===undefined))
+        {
+
+            for(var item in comp)
             {
 
-                for(var item in comp)
-                    {
-
-                        this.searchLabel(comp[item],result,is_grid);
-                    }
+                this.searchLabel(comp[item],result,is_grid);
             }
+        }
         return result;
     },
 
@@ -1864,13 +1892,47 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         gridPanel.plugins= [
                                     {
                                         ptype: 'gridfilters',
-                                        menuFilterText: 'Buscar'
+                                        menuFilterText: 'Buscar',
+                                        encode:true
+
                                     }
                                 ];
                                 gridPanel.selModel= {
                                     selType: 'rowmodel',
                                     mode: 'MULTI'
                                 };
+
+    },
+
+    createDetails: function(config, columns) {
+        var resultpanel =[];
+        this.searchComponent('panel', config, resultpanel);
+        var configDetails;
+        for(var pan in resultpanel)
+        if(resultpanel[pan].reference==="details")
+            configDetails = resultpanel[pan];
+
+        //console.log(configDetails.items)
+
+        var details = [];
+        for(var col in columns)
+            {
+                var value='{record.' +columns[col].dataIndex+'}';
+               var  fieldLabel = columns[col].header;
+
+                var field =  {
+                                    xtype: 'displayfield',
+                                    fieldLabel: fieldLabel,
+                                    bind: {
+                                        value: value
+                                    }
+
+                                };
+                 details.push(field);
+
+            }
+
+        configDetails.items = details;
     }
 
 });

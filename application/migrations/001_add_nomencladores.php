@@ -875,29 +875,30 @@ $this->dbforge->add_field(array(
                         ),
                         'nombre' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '100',
+                                'constraint' => '255',
                                 'unique' => TRUE,
                                 'null' => FALSE,
                         ),
                         'niveleducacional_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'null' => FALSE,
+                                'null' => TRUE,
                         ),
                          'categoria_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'null' => FALSE,
+                                'null' => TRUE,
                         ),
                          'calificador_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'null' => FALSE,
+                                'null' => TRUE,
                         ),
  
                         'periodo_prueba' => array(
                                 'type' => 'INT',
-                                'constraint' => '3'
+                                'constraint' => '3',
+                                'null' => TRUE,      
                         ),
                         'funcionario' => array(
                                 'type' => 'INT',
@@ -907,7 +908,7 @@ $this->dbforge->add_field(array(
                         'grupoescala_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'null' => FALSE,
+                                'null' => TRUE,
                         )
 
                 )); 
@@ -930,7 +931,7 @@ $this->dbforge->add_field(array(
                         ),
                                 'nombre' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '255',        
+                                'constraint' => '2048',        
                                 'null' => FALSE,
                         ), 
                                 'cargo_id' => array(

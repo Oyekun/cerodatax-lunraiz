@@ -29,7 +29,6 @@ Ext.define('cerodatax.view.seguridad.Rol', {
         'Ext.view.MultiSelectorSearch',
         'Ext.view.Table',
         'Ext.form.Panel',
-        'Ext.form.FieldContainer',
         'Ext.form.field.Text',
         'Ext.XTemplate'
     ],
@@ -192,61 +191,55 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                     title: 'Editar Rol',
                     items: [
                         {
-                            xtype: 'fieldcontainer',
-                            layout: 'anchor',
+                            xtype: 'textfield',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
+                            fieldLabel: 'Rol',
+                            name: 'rol',
+                            allowBlank: false
+                        },
+                        {
+                            xtype: 'multiselector',
+                            title: 'Modulos',
+                            search: {
+                                xtype: 'multiselector-search',
+                                store: 'seguridad.ModuloDesabilitado',
+                                field: 'modulo'
+                            },
+                            viewConfig: {
+                                deferEmptyText: false
+                            }
+                        },
+                        {
+                            xtype: 'container',
+                            padding: 10,
+                            layout: {
+                                type: 'hbox',
+                                align: 'middle',
+                                pack: 'center'
+                            },
                             items: [
                                 {
-                                    xtype: 'multiselector',
-                                    title: 'Modulos',
-                                    search: {
-                                        xtype: 'multiselector-search',
-                                        store: 'seguridad.ModuloDesabilitado',
-                                        field: 'modulo'
-                                    },
-                                    viewConfig: {
-                                        deferEmptyText: false
+                                    xtype: 'button',
+                                    flex: 1,
+                                    formBind: true,
+                                    itemId: 'saveButton',
+                                    margin: 5,
+                                    text: 'Guardar',
+                                    listeners: {
+                                        click: 'save'
                                     }
                                 },
                                 {
-                                    xtype: 'textfield',
-                                    afterLabelTextTpl: [
-                                        '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                    ],
-                                    fieldLabel: 'Rol',
-                                    name: 'rol',
-                                    allowBlank: false
-                                },
-                                {
-                                    xtype: 'container',
-                                    padding: 10,
-                                    layout: {
-                                        type: 'hbox',
-                                        align: 'middle',
-                                        pack: 'center'
-                                    },
-                                    items: [
-                                        {
-                                            xtype: 'button',
-                                            flex: 1,
-                                            formBind: true,
-                                            itemId: 'saveButton',
-                                            margin: 5,
-                                            text: 'Guardar',
-                                            listeners: {
-                                                click: 'save'
-                                            }
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            flex: 1,
-                                            itemId: 'cancelButton',
-                                            margin: 5,
-                                            text: 'Cancelar',
-                                            listeners: {
-                                                click: 'cancelEdit'
-                                            }
-                                        }
-                                    ]
+                                    xtype: 'button',
+                                    flex: 1,
+                                    itemId: 'cancelButton',
+                                    margin: 5,
+                                    text: 'Cancelar',
+                                    listeners: {
+                                        click: 'cancelEdit'
+                                    }
                                 }
                             ]
                         }
@@ -254,6 +247,39 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                 }
             ]
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processSeguridadRol(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processSeguridadRol: function(config) {
+        var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),
+            result = [],
+            columns=[],
+            resultgrid = [];
+        result = control.searchComponent('form', this, result);
+        resultgrid = control.searchComponent('gridpanel', this, resultgrid);
+
+        if(result.length > 0)
+        {var formPanel = result[0],
+
+
+            columns = control.searchLabel(formPanel.items,columns,true);
+
+         if(resultgrid.length > 0)
+             control.configGridPanel(resultgrid[0],columns);
+
+        }
+
+
+        return config;
+    }
 
 });

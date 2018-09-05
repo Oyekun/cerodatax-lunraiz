@@ -327,7 +327,7 @@ Ext.define('cerodatax.view.persona.Persona', {
         form = vista.down('form').getForm();
         var results=[];
         columns = control.searchLabel(form.owner.items.items,results,true);
-        config.columns = columns;
+         control.configGridPanel(config,columns);
         return config;
     },
 
