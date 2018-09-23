@@ -12,7 +12,7 @@
         "folderSort": true,
         "model": "estructura.Entidad",
         "root": [
-            "{expanded:true}"
+            "{expanded: true}"
         ],
         "storeId": "estructura.Entidad"
     },

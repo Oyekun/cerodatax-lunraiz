@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
@@ -36,8 +44,8 @@ $string = read_file(APPPATH.'hooks/paises.csv');
            $this->db->where('nombre', $continente);   
            $result = $this->db->get("$tb");
 	 
-          $existe = count($result->result_array())>0 ? True: False;
-        if($existe==False)
+          $existe = count($result->result_array())>0 ? TRUE: FALSE;
+        if($existe==FALSE)
         {$model = 'Continente';
         	$this->load->model($model);
 		$nameuuid = new $model; 
@@ -57,9 +65,9 @@ $string = read_file(APPPATH.'hooks/paises.csv');
             
            $this->db->where('nombre', $nombre);   
            $result = $this->db->get("$tb");
-          $existe = count($result->result_array())>0 ? True: False;
+          $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
-        if($existe==False)
+        if($existe==FALSE)
         {$model = 'Pais';
         	$this->load->model($model);
 		$nameuuid = new $model; 

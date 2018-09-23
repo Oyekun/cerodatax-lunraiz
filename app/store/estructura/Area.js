@@ -28,10 +28,13 @@ Ext.define('cerodatax.store.estructura.Area', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'estructura.Area',
-            autoLoad: true,
+            autoLoad: false,
             autoSync: true,
             model: 'cerodatax.model.estructura.Area',
             folderSort: true,
+            root: {
+                expanded: true
+            },
             proxy: {
                 type: 'rest',
                 extraParams: {

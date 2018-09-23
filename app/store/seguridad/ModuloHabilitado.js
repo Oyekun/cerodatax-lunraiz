@@ -17,7 +17,6 @@ Ext.define('cerodatax.store.seguridad.ModuloHabilitado', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'cerodatax.model.seguridad.Modulo',
         'Ext.data.proxy.Rest',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json'
@@ -30,7 +29,6 @@ Ext.define('cerodatax.store.seguridad.ModuloHabilitado', {
             storeId: 'seguridad.ModuloHabilitado',
             autoLoad: false,
             autoSync: true,
-            model: 'cerodatax.model.seguridad.Modulo',
             proxy: {
                 type: 'rest',
                 api: {

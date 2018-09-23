@@ -29,6 +29,7 @@ Ext.define('cerodatax.view.persona.Cargo', {
         'Ext.form.Panel',
         'Ext.XTemplate',
         'Ext.form.field.ComboBox',
+        'Ext.view.BoundList',
         'Ext.form.field.Checkbox'
     ],
 
@@ -189,8 +190,9 @@ Ext.define('cerodatax.view.persona.Cargo', {
                 {
                     xtype: 'panel',
                     reference: 'details',
-                    padding: '0 10 0 10',
+                    padding: '10 10 10 10',
                     bodyPadding: 10,
+                    bodyStyle: 'padding:10px 10px 10px 10px',
                     layout: {
                         type: 'table',
                         columns: 3
@@ -307,10 +309,17 @@ Ext.define('cerodatax.view.persona.Cargo', {
                             fieldLabel: 'Grupo Escala',
                             name: 'grupo_escala',
                             allowBlank: false,
-                            displayField: 'nombre (salario)',
+                            displayField: 'nombre',
                             queryMode: 'local',
                             store: 'nomenclador.GrupoEscala',
-                            valueField: 'id'
+                            valueField: 'id',
+                            listConfig: {
+                                xtype: 'boundlist',
+                                itemSelector: 'div',
+                                itemTpl: [
+                                    ' {nombre} ({salario})'
+                                ]
+                            }
                         },
                         {
                             xtype: 'combobox',
@@ -390,7 +399,7 @@ Ext.define('cerodatax.view.persona.Cargo', {
 
 
             columns = control.searchLabel(formPanel.items,columns,true);
-
+        control.formatForm(formPanel);
          if(resultgrid.length > 0)
              control.configGridPanel(resultgrid[0],columns);
          control.createDetails(this,columns);

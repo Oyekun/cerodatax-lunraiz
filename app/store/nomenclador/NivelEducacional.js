@@ -53,7 +53,7 @@ Ext.define('cerodatax.store.nomenclador.NivelEducacional', {
                     }
                 },
                 extraParams: {
-                    model: 'nivel_educacional',
+                    model: 'niveleducacional',
                     esquema: 'nomenclador'
                 },
                 url: 'index.php/api/restserver/rests/',

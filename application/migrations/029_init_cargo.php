@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
@@ -13,19 +22,11 @@ class Migration_Init_cargo extends CI_Migration {
                 $this->load->library('uuid'); 
 
 $string = read_file(APPPATH.'hooks/cargo.csv');
-$string2 = read_file(APPPATH.'hooks/cargo_otro.csv');
-  $cargos = [];
-        
-        $salida2 = explode("\n", $string2);
-         foreach ($salida2 as $key => $value) {
-            $salida_aux = explode("||", $value);
-           // print_r($salida_aux);die;
-             $cargo_uuid = $salida_aux[0]; 
-             $nivel_id = $salida_aux[1]; // nivel_educacional 
-             $nombre = $salida_aux[14]; 
-             $cargos["$cargo_uuid"]['nombre'] = $nombre;
 
-         }
+  //$cargos = [];
+        
+   
+  
         $salida = explode("\n", $string);
         $cant=0;
       
@@ -35,9 +36,11 @@ $string2 = read_file(APPPATH.'hooks/cargo_otro.csv');
        
         foreach ($salida as $key => $value) {
 
-            $salida_aux = explode("|", $value);
+            $salida_aux = explode(",", $value);
    
-            
+          if(count($salida_aux)<=7)
+           {
+
             $nombre = $salida_aux[0]; 
             $nivel='';
             $categoria='';
@@ -57,28 +60,20 @@ $string2 = read_file(APPPATH.'hooks/cargo_otro.csv');
         $grupo_escala = $salida_aux[4];
          if($salida_aux[5]!='')
         $periodo_prueba = $salida_aux[5];
-         if($salida_aux[6]!='')
-        $documento_legal = $salida_aux[6];
-         if($salida_aux[7]!='')
-        $documento_legal_fecha = $salida_aux[7];
-          if($salida_aux[8]!='')
-        $cargo_uuid = $salida_aux[8];
-
-$cargos["$cargo_uuid"]['nombre']=$nombre;
-
+         
             $tb='persona_cargo';
            $this->db->where('nombre', $nombre);   
            $result = $this->db->get("$tb");
-          $existe = count($result->result_array())>0 ? True: False;
+          $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
-        if($existe==False)
+        if($existe==FALSE)
         {$model = 'Cargo';
             $this->load->model($model);
         $nameuuid = new $model; 
         $uuid = $this->uuid->v5($nombre,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
         $dataArray = array();
         
-          $tb='nomenclador_nivel_educacional';
+          $tb='nomenclador_niveleducacional';
 
            $this->db->where('nombre', $nivel);   
            $result = $this->db->get("$tb");
@@ -128,23 +123,23 @@ $cargos["$cargo_uuid"]['nombre']=$nombre;
          if($periodo_prueba!='')
         $dataArray['periodo_prueba'] = $periodo_prueba;        
         if($nivel_id!='')
-        $dataArray['niveleducacional_id'] = $nivel_id;               
+        $dataArray['nivel_educacional_id'] = $nivel_id;               
         if($categoria_id!='')
         $dataArray['categoria_id'] = $categoria_id;               
         if($calificador_id!='')
         $dataArray['calificador_id'] = $calificador_id;               
         if($grupoescala_id!='')
         $dataArray['grupoescala_id'] = $grupoescala_id;               
-// print_r($dataArray);die;       
+        
                         $tb='persona_cargo';
         $this->db->set('id', $uuid);
         $this->db->insert("$tb", $dataArray); 
-         
+         }
         }
  
         }
 
-        $string1 = read_file(APPPATH.'hooks/cargofuncion.csv');
+        $string1 = read_file(APPPATH.'hooks/cargo_funcion.csv');
         
         $salida1 = explode("\n", $string1);
         $cant=0;
@@ -155,24 +150,21 @@ $cargos["$cargo_uuid"]['nombre']=$nombre;
         
         foreach ($salida1 as $key => $value) {
 
-            $salida_aux = explode(";", $value);
+            $salida_aux = explode("|", $value);
    
-           if(isset($salida_aux[2]))
-            $nombre = $salida_aux[2]; 
-          else{
+           
+            $cargo = $salida_aux[0]; 
+            
             $nombre = $salida_aux[1]; 
-          }
-              $cargo = '';
-              $cargo_id = '';
-            if($salida_aux[1]!='')
-            $cargo_uuid = $salida_aux[1];
-         
+          
+               
+              
             $tb='persona_cargofuncion';
            $this->db->where('nombre', $nombre);   
            $result = $this->db->get("$tb");
-          $existe = count($result->result_array())>0 ? True: False;
+          $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
-        if($existe==False)
+        if($existe==FALSE)
         {$model = 'CargoFuncion';
             $this->load->model($model);
         $nameuuid = new $model; 
@@ -180,9 +172,8 @@ $cargos["$cargo_uuid"]['nombre']=$nombre;
         $dataArray = array();
         
           $tb='persona_cargo'; 
-         $cargo = $cargos["$cargo_uuid"]['nombre'];
- //print_r($cargo);die;
-           $this->db->where('nombre', $cargo);   
+         
+           $this->db->where('id', $cargo);   
            $result = $this->db->get("$tb");
          $aux_org_array = $result->result_array();
          

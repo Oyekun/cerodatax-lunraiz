@@ -1,6 +1,12 @@
 <?php
 /**
- * @class User
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
  */
 class Persona extends CI_Model {
 	public $id;
@@ -82,17 +88,15 @@ class Persona extends CI_Model {
 				$this->entidad_id = $this->Entidad->id;
                                 $this->load->model('Organismo'); 
                                 $this->organismo_id = $this->Organismo->id;
-				$this->uuid = 'nombre';
+				$this->uuid = 'carnet_identidad';
                                  $this->relacion = array('sexo_id' =>'nomenclador_sexo'
         ,'estado_civil_id' =>'nomenclador_estadocivil'
         ,'color_piel_id' =>'nomenclador_colorpiel'
         ,'pais_id' =>'nomenclador_pais'
         ,'provincia_id' =>'nomenclador_provincia'
         ,'municipio_id' =>'nomenclador_municipio'
-        //,'pais_registro_civil_id' =>'nomenclador_pais'
-       // ,'provincia_registro_civil_id' =>'nomenclador_provincia'
-       // ,'municipio_registro_civil_id' =>'nomenclador_municipio'
-        ,'nivel_educacional_id' =>'nomenclador_nivel_educacional'
+         
+        ,'nivel_educacional_id' =>'nomenclador_niveleducacional'
         ,'situacion_defensa_id' =>'nomenclador_defensa'
         ,'grupo_sanguineo_id' =>'nomenclador_gruposanguineo'
         ,'organismo_id' =>'nomenclador_organismo'

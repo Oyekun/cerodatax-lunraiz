@@ -213,7 +213,6 @@ Ext.define('cerodatax.view.nomenclador.CategoriaEntidad', {
                         {
                             xtype: 'container',
                             dock: 'bottom',
-                            defaultAlign: 'c',
                             padding: 10,
                             layout: {
                                 type: 'hbox',
@@ -273,7 +272,7 @@ Ext.define('cerodatax.view.nomenclador.CategoriaEntidad', {
 
 
             columns = control.searchLabel(formPanel.items,columns,true);
-
+        control.formatForm(formPanel);
          if(resultgrid.length > 0)
              control.configGridPanel(resultgrid[0],columns);
          control.createDetails(this,columns);

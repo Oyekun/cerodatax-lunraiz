@@ -18,8 +18,6 @@ Ext.define('cerodatax.view.seguridad.Rol', {
     alias: 'widget.seguridadrol',
 
     requires: [
-        'cerodatax.view.seguridad.RolViewModel',
-        'cerodatax.view.seguridad.RolViewController',
         'Ext.grid.column.Column',
         'Ext.button.Button',
         'Ext.toolbar.Paging',
@@ -33,10 +31,6 @@ Ext.define('cerodatax.view.seguridad.Rol', {
         'Ext.XTemplate'
     ],
 
-    controller: 'seguridadrol',
-    viewModel: {
-        type: 'seguridadrol'
-    },
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,
@@ -202,9 +196,10 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                         {
                             xtype: 'multiselector',
                             title: 'Modulos',
+                            store: 'configuracion.Modulo',
                             search: {
                                 xtype: 'multiselector-search',
-                                store: 'seguridad.ModuloDesabilitado',
+                                store: 'configuracion.Modulo',
                                 field: 'modulo'
                             },
                             viewConfig: {
@@ -272,7 +267,7 @@ Ext.define('cerodatax.view.seguridad.Rol', {
 
 
             columns = control.searchLabel(formPanel.items,columns,true);
-
+        control.formatForm(formPanel);
          if(resultgrid.length > 0)
              control.configGridPanel(resultgrid[0],columns);
 

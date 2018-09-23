@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "moneda",
         "designer|userClassName": "nomenclador.Moneda"
     },
     "name": "nomenclador.Union1",

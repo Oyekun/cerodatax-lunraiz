@@ -244,7 +244,7 @@ Ext.define('cerodatax.view.estructura.Area', {
 
 
             columns = control.searchLabel(formPanel.items,columns,false);
-
+        control.formatForm(formPanel);
          if(resultgrid.length > 0)
              control.configGridPanel(resultgrid[0],columns);
 

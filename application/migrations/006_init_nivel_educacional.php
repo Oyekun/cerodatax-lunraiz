@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
@@ -29,13 +37,13 @@ $string = read_file(APPPATH.'hooks/nivel_educacional.csv');
             $nombre = $salida[1]; 
             
             $sgl = str_replace("\r", "", $salida[2]); 
-            $tb='nomenclador_nivel_educacional';
+            $tb='nomenclador_niveleducacional';
            $this->db->where('nombre', $nombre);   
            $result = $this->db->get("$tb");
-          $existe = count($result->result_array())>0 ? True: False;
+          $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
-        if($existe==False)
-        {$model = 'Nivel_Educacional';
+        if($existe==FALSE)
+        {$model = 'NivelEducacional';
             $this->load->model($model);
         $nameuuid = new $model; 
         $uuid = $this->uuid->v5($value,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
@@ -56,7 +64,7 @@ $string = read_file(APPPATH.'hooks/nivel_educacional.csv');
         
     		        public function down()
         {
-			$tb = 'nomenclador_nivel_educacional'; 		
+			$tb = 'nomenclador_niveleducacional'; 		
             $this->db->delete("$tb");
                  
         }

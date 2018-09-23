@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 

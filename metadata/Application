@@ -16,7 +16,6 @@
             "seguridad.Usuario",
             "seguridad.Rol",
             "seguridad.Accion",
-            "seguridad.Modulo",
             "estructura.Entidad",
             "estructura.Area",
             "persona.Persona",
@@ -47,7 +46,12 @@
             "nomenclador.TipoRegistro",
             "crm.Contacto",
             "nomenclador.Moneda",
-            "persona.PersonaEntidad"
+            "persona.PersonaEntidad",
+            "seguridad.UsuarioEntidad",
+            "configuracion.Modulo",
+            "nomenclador.Icono",
+            "nomenclador.TipoModulo",
+            "configuracion.Menu"
         ],
         "name": "cerodatax",
         "namespaces": [
@@ -55,17 +59,17 @@
             "cerodatax.nomenclador",
             "cerodatax.actualizacion",
             "cerodatax.estructura",
-            "cerodatax.crm"
+            "cerodatax.crm",
+            "cerodatax.configuracion"
         ],
         "requires": [
+            "cerodatax.view.escritorio.FormAutenticacion",
             "cerodatax.view.escritorio.Escritorio"
         ],
         "stores": [
             "seguridad.Usuario",
             "seguridad.Rol",
             "seguridad.Accion",
-            "seguridad.ModuloHabilitado",
-            "seguridad.ModuloDesabilitado",
             "persona.Persona",
             "persona.Cargo",
             "actualizacion.Actualizacion",
@@ -95,7 +99,13 @@
             "nomenclador.Union",
             "nomenclador.TipoRegistro",
             "nomenclador.Moneda",
-            "persona.PersonaEntidad"
+            "persona.PersonaEntidad",
+            "seguridad.UsuarioEntidad",
+            "configuracion.Modulo",
+            "nomenclador.TipoModulo",
+            "configuracion.Menu",
+            "nomenclador.Icono",
+            "configuracion.Panel"
         ],
         "views": [
             "seguridad.Usuario",
@@ -134,7 +144,12 @@
             "crm.FormContacto",
             "crm.Contacto",
             "nomenclador.Moneda",
-            "estructura.EntidadAreaForm"
+            "estructura.EntidadAreaForm",
+            "configuracion.Modulo",
+            "configuracion.Menu",
+            "nomenclador.TipoModulo",
+            "nomenclador.Icono",
+            "configuracion.Panel"
         ]
     },
     "name": "Application",

@@ -32,7 +32,7 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{model:'nivel_educacional',esquema:'nomenclador'}"
+                    "{model:'niveleducacional',esquema:'nomenclador'}"
                 ],
                 "format": "",
                 "url": "index.php/api/restserver/rests/"

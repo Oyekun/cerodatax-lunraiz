@@ -28,7 +28,6 @@ Ext.define('cerodatax.store.nomenclador.Municipio', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            remoteFilter: true,
             storeId: 'nomenclador.Municipio',
             autoLoad: false,
             autoSync: true,

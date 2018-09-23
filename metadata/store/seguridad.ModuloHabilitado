@@ -9,7 +9,7 @@
         "autoLoad": false,
         "autoSync": true,
         "designer|userClassName": "seguridad.ModuloHabilitado",
-        "model": "seguridad.Modulo",
+        "model": null,
         "storeId": "seguridad.ModuloHabilitado"
     },
     "name": "MyStore",

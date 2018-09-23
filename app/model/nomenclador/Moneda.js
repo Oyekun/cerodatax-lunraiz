@@ -15,6 +15,7 @@
 
 Ext.define('cerodatax.model.nomenclador.Moneda', {
     extend: 'Ext.data.Model',
+    alias: 'model.moneda',
 
     requires: [
         'Ext.data.field.String'

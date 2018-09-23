@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
@@ -31,9 +39,9 @@ $string = read_file(APPPATH.'hooks/tipo_registro.csv');
             $tb='nomenclador_tiporegistro';
            $this->db->where('nombre', $nombre);   
            $result = $this->db->get("$tb");
-          $existe = count($result->result_array())>0 ? True: False;
+          $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
-        if($existe==False)
+        if($existe==FALSE)
         {$model = 'TipoRegistro';
             $this->load->model($model);
         $nameuuid = new $model; 

@@ -6,11 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": true,
+        "autoLoad": false,
         "autoSync": true,
         "designer|userClassName": "estructura.Area",
         "folderSort": true,
         "model": "estructura.Area",
+        "root": [
+            "{expanded:true}"
+        ],
         "storeId": "estructura.Area"
     },
     "name": "estructura.Entidad2",

@@ -11,7 +11,7 @@
         "designer|userAlias": "municipio",
         "designer|userClassName": "nomenclador.Municipio",
         "model": "nomenclador.Municipio",
-        "remoteFilter": true,
+        "remoteFilter": null,
         "storeId": "nomenclador.Municipio"
     },
     "designerId": "118920d9-c71c-4184-8784-69630a589a19",

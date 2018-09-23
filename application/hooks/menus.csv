@@ -1,0 +1,30 @@
+Administración,Generales,Seguridad,Seguridad,1,Se utiliza para la administración de los módulos principales del marco de trabajo.,Este módulo tiene las funciones principales del sistema.,El menú Seguridad gestiona la seguridad del sistema.
+Administración,Generales,Estructura,Estructura,1,,,El menú Estructura se utiliza para gestionar las entidades y áreas del sistema.
+Administración,Generales,RRHH,RRHH,1,,,El menú RRHH se utiliza para gestionar las personas y cargos de las mismas.
+Administración,Generales,Actualizaciones,Actualizaciones,0,,,El menú Actualización se utiliza para actualizar las funcionalidades y características del Sistema.
+Nomencladores,Generales,Continente,Continentes,0,Se utiliza para gestionar todos los nomencladores del sistema.,En este Módulo se encuentran los nomencladores que se utilizan en todo el sistema sin distinción de Módulo.,El menú Continentes se visualiza todos los continentes del mundo.
+Nomencladores,Generales,Pais,Países,0,,,El menú Países se visualiza todos los países del mundo.
+Nomencladores,Generales,Provincia,Provincias,0,,,El menú Provincias se visualiza todas las provincias principales de los países.
+Nomencladores,Generales,Municipio,Municipios,0,,,El menú Municipios se visualiza los municipios de las provincias.
+Nomencladores,Generales,Moneda,Monedas,0,,,El menú Monedas se visualiza las monedas principales de los países.
+Nomencladores,Entidad,Organismo,Organismos,0,,Gestionar las características principales de las entidades.,El menú Organismos se visualizan los organismos principales de las entidades.
+Nomencladores,Entidad,Clasificacion,Clasificación,0,,,El menú Clasificación se visualiza las clasificaciones principales de las entidades.
+Nomencladores,Entidad,TipoRegistro,Tipo de Registro,0,,,El menú Tipo de Registro se visualiza los tipos de registros principales de las entidades.
+Nomencladores,Entidad,CategoriaEntidad,Categoría,0,,,El menú Categoría se visualiza la categoría de la entidad.
+Nomencladores,Entidad,SeccionNAE,Sección NAE,0,,,El menú Sección NAE se visualiza las sección de actividad económicas principales de las entidades.
+Nomencladores,Entidad,DivisionNAE,División NAE,0,,,El menú División NAE se visualiza las divisiones de actividad económica principales de las entidades.
+Nomencladores,Entidad,NAE,NAE,0,,,El menú Sección NAE se visualiza el nivel de actividad económica de las entidades.
+Nomencladores,Entidad,TipoEntidad,Tipo de Entidad,0,,,El menú Tipo de Entidad se visualiza el tipo de entidad.
+Nomencladores,Entidad,Union,Unión,0,,,El menú Unión se visualiza la unión en la cual se encuentra la entidad.
+Nomencladores,Persona,NivelEducacional,Nivel Educacional,0,,Gestionar las características principales de las personas.,El menú Nivel Educacional se visualiza los nivel escolar que puede tener una persona.
+Nomencladores,Persona,GrupoSanguineo,Grupo Sanguíneo,0,,,El menú Grupo Sanguíneo se visualiza el grupo sanguíneo que puede tener una persona.
+Nomencladores,Persona,ColorPiel,Color de Piel,0,,,El menú Color de Piel se visualiza el color de piel que puede tener una persona.
+Nomencladores,Persona,EstadoCivil,Estado Civil,0,,,El menú Estado Civil se visualiza los estados civiles de las persona.
+Nomencladores,Persona,Defensa,Situación de la Defensa,0,,,El menú Situación de la Defensa se visualiza los estado de la defenza que puede encontrarse una persona.
+Nomencladores,Persona,Sexo,Sexo,0,,,El menú Sexo se visualiza el sexo de la personas.
+Nomencladores,Cargo,GrupoEscala,Grupo Escala,0,,Gestionar las características principales del cargo de las persona.,El menú Grupo Escala se visualiza los grupos escalas salariales que puede tener de acuerdo al cargo de la persona.
+Nomencladores,Cargo,Calificador,Calificador,0,,,El menú Calificador se visualiza los calificadores del cargo de la persona.
+Nomencladores,Cargo,CategoriaCargo,Categoría,0,,,El menú Categoría se visualiza las categorías de acuerdo al cargo de la persona.
+Nomencladores,Módulo,TipoModulo,Tipo de Módulo,0,,Gestionar las características principales de los módulos del sistema.,El menú Tipo de Módulo se visualiza los diferentes módulos que va a tener el sistema.
+Nomencladores,Módulo,Icono,Icono,0,,,El menú Iconos se visualiza los iconos de los módulos que va a tener el sistema.
+Configuración,Generales,Modulos,Módulos,1,Se utiliza para gestionar la configuración y personalización del sistema.,Muestra la configuración general del sistema.,El menú Módulos se visualiza los diferentes módulos que va a tener el sistema y los menú asociados ha estos módulos.

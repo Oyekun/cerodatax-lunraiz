@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
@@ -105,7 +113,7 @@ if(isset($datosentidad["$sub"]))
     //$datosentidad["$key"]['leaf']= 1;
    //  $datosentidad["$key"]['parent']= $parent;
     $datosentidad["$key"]['parent_id']= $parent_id;
-
+$datosentidad["$key"]['codigo_parent']= $sub;
     $datosentidad["$sub"]['leaf']= 0;
      //$datosentidad["$sub"]['parent_id']= 'root';
      }
@@ -233,7 +241,9 @@ if(isset($datosentidad["$sub"]))
   //  if(isset($value['parent']))
    // $dataArray['parent']= $parent;
     if(isset($value['parent_id']))
-    $dataArray['parent_id']= $parent_id;
+    {$dataArray['parent_id']= $parent_id;
+$dataArray['codigo_parent']= $value['codigo_parent'];
+}
 
  	//	$dataArray['pais']= $pais;
  		$dataArray['pais_id']= $pais_id;

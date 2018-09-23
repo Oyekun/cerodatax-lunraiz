@@ -28,7 +28,7 @@ Ext.define('cerodatax.store.estructura.EntidadArea', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'estructura.EntidadArea',
-            autoLoad: true,
+            autoLoad: false,
             autoSync: true,
             model: 'cerodatax.model.estructura.EntidadArea',
             folderSort: true,

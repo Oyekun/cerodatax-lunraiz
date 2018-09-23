@@ -420,7 +420,7 @@
                 ],
                 "fn": "selectMenu",
                 "implHandler": [
-                    "",
+                    "//funcion para recargar los grid y tree panel al dar click en en los menu principales",
                     "",
                     "",
                     "var obj = item.itemId.split('menu');",
@@ -447,7 +447,7 @@
                     "         layout.setActiveItem(select);",
                     "",
                     "     }",
-                    "     ",
+                    "",
                     "     if(grid)",
                     "     {if(grid.store.proxy.extraParams!==undefined)",
                     "       grid.store.proxy.extraParams.combo = '';",
@@ -636,6 +636,169 @@
             },
             "name": "onMenuMonedaClick",
             "designerId": "090c7b00-a5a6-41bb-befc-efc98af20985"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel",
+                "designer|targetType": "persona.Cargo",
+                "fn": "onPanelActivate",
+                "implHandler": [
+                    "//Funcion para recargar los grid y tree de los tabpanel",
+                    "if(component.tab)",
+                    "  {       var grid = component.down('grid');",
+                    "          var tree = component.down('tree');",
+                    "          if(grid)",
+                    "             {if(grid.store.proxy.extraParams!==undefined)",
+                    "               grid.store.proxy.extraParams.combo = '';",
+                    "              grid.store.load();",
+                    "              grid.getSelectionModel().deselectAll();",
+                    "              if(grid.down('toolbar').down('button[itemId=btnEdit]'))",
+                    "                 grid.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);",
+                    "             if(grid.down('toolbar').down('button[itemId=btnRemove]'))",
+                    "                 grid.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);",
+                    "             if(grid.down('toolbar').down('button[itemId=btnAssociate]'))",
+                    "                 grid.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);",
+                    "",
+                    "             }",
+                    "             if(tree)",
+                    "             {tree.store.proxy.extraParams.parent_id = '';",
+                    "              tree.store.load();",
+                    "              tree.getSelectionModel().deselectAll();",
+                    "              if(tree.down('toolbar').down('button[itemId=btnEdit]'))",
+                    "                 tree.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);",
+                    "             if(tree.down('toolbar').down('button[itemId=btnRemove]'))",
+                    "                 tree.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);",
+                    "             if(tree.down('toolbar').down('button[itemId=btnAssociate]'))",
+                    "                 tree.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);",
+                    "",
+                    "             }",
+                    "}",
+                    " ",
+                    "",
+                    ""
+                ],
+                "name": "activate",
+                "scope": "me"
+            },
+            "name": "onPanelActivate",
+            "designerId": "625dbf7f-8bda-4789-8af8-a3be25ea5b21"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuModulos",
+                "designer|params": [
+                    "panel"
+                ],
+                "designer|targetType": "configuracion.Modulo",
+                "fn": "onMenuModulosClick",
+                "implHandler": [
+                    " this.selectMenu(panel);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuModulosClick",
+            "designerId": "b914daf8-851f-4cbc-b806-14cee4249f6e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuTipoModulo",
+                "designer|params": [
+                    "panel"
+                ],
+                "designer|targetType": "nomenclador.TipoModulo",
+                "fn": "onMenuTipoModuloClick",
+                "implHandler": [
+                    "this.selectMenu(panel);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuTipoModuloClick",
+            "designerId": "3c0bc7f0-9865-4d7e-afab-ed45f4e113d8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuTipoMenu",
+                "designer|params": [
+                    "target"
+                ],
+                "designer|targetType": null,
+                "fn": "onMenuTipoMenuClick",
+                "implHandler": [
+                    "this.selectMenu(panel);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuTipoMenuClick",
+            "designerId": "d7827df1-f320-4377-a454-5c39edd9b404"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuIcono",
+                "designer|params": [
+                    "panel"
+                ],
+                "designer|targetType": "nomenclador.Icono",
+                "fn": "onMenuIconoClick",
+                "implHandler": [
+                    "this.selectMenu(panel);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMenuIconoClick",
+            "designerId": "34d45e99-ea9a-4996-9751-e321b1dd68cd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "item"
+                ],
+                "fn": "showMenu",
+                "implHandler": [
+                    "console.log(item);"
+                ]
+            },
+            "name": "showMenu",
+            "designerId": "b2b8b358-19f2-45e9-82b2-fce309a857b0"
         }
     ]
 }

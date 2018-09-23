@@ -11,7 +11,7 @@
         "designer|userAlias": "calificador",
         "designer|userClassName": "nomenclador.Calificador",
         "model": "nomenclador.Calificador",
-        "remoteFilter": true,
+        "remoteFilter": null,
         "storeId": "nomenclador.Calificador"
     },
     "designerId": "f0ecfe59-cc19-4194-92bb-d85cffb7ce7f",

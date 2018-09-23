@@ -1,6 +1,12 @@
 <?php
 /**
- * @class User
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
  */
 class Sexo extends CI_Model {
 	    public $id;

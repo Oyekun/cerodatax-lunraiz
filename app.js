@@ -22,13 +22,13 @@ Ext.Loader.setConfig({
 Ext.application({
 
     requires: [
+        'cerodatax.view.escritorio.FormAutenticacion',
         'cerodatax.view.escritorio.Escritorio'
     ],
     models: [
         'seguridad.Usuario',
         'seguridad.Rol',
         'seguridad.Accion',
-        'seguridad.Modulo',
         'estructura.Entidad',
         'estructura.Area',
         'persona.Persona',
@@ -59,14 +59,17 @@ Ext.application({
         'nomenclador.TipoRegistro',
         'crm.Contacto',
         'nomenclador.Moneda',
-        'persona.PersonaEntidad'
+        'persona.PersonaEntidad',
+        'seguridad.UsuarioEntidad',
+        'configuracion.Modulo',
+        'nomenclador.Icono',
+        'nomenclador.TipoModulo',
+        'configuracion.Menu'
     ],
     stores: [
         'seguridad.Usuario',
         'seguridad.Rol',
         'seguridad.Accion',
-        'seguridad.ModuloHabilitado',
-        'seguridad.ModuloDesabilitado',
         'persona.Persona',
         'persona.Cargo',
         'actualizacion.Actualizacion',
@@ -96,7 +99,13 @@ Ext.application({
         'nomenclador.Union',
         'nomenclador.TipoRegistro',
         'nomenclador.Moneda',
-        'persona.PersonaEntidad'
+        'persona.PersonaEntidad',
+        'seguridad.UsuarioEntidad',
+        'configuracion.Modulo',
+        'nomenclador.TipoModulo',
+        'configuracion.Menu',
+        'nomenclador.Icono',
+        'configuracion.Panel'
     ],
     views: [
         'seguridad.Usuario',
@@ -135,7 +144,12 @@ Ext.application({
         'crm.FormContacto',
         'crm.Contacto',
         'nomenclador.Moneda',
-        'estructura.EntidadAreaForm'
+        'estructura.EntidadAreaForm',
+        'configuracion.Modulo',
+        'configuracion.Menu',
+        'nomenclador.TipoModulo',
+        'nomenclador.Icono',
+        'configuracion.Panel'
     ],
     controllers: [
         'Escritorio',
@@ -147,11 +161,12 @@ Ext.application({
         'cerodatax.nomenclador',
         'cerodatax.actualizacion',
         'cerodatax.estructura',
-        'cerodatax.crm'
+        'cerodatax.crm',
+        'cerodatax.configuracion'
     ],
 
     launch: function() {
-        Ext.create('cerodatax.view.escritorio.Escritorio');
+        Ext.create('cerodatax.view.escritorio.FormAutenticacion', {renderTo: Ext.getBody()});
     }
 
 });

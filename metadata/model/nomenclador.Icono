@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "icono",
+        "designer|userClassName": "nomenclador.Icono"
+    },
+    "name": "nomenclador.Clasificacion1",
+    "designerId": "7ddbc276-767b-4a18-b6b2-0738cc2f4fcf",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "9b83ff0d-7e03-4d89-bd3e-6ed2c9b7ce85"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "f9a13705-4874-4765-ac43-f2a13e7e405a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString88",
+            "designerId": "0b35325e-4827-468b-9c2b-10ec9a26e3b9"
+        }
+    ]
+}

@@ -48,7 +48,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "persona_id",
-                "name": "area_id"
+                "name": "persona_id"
             },
             "name": "MyString20",
             "designerId": "02b35a4e-de1e-4c8f-8887-ed55cdad8607"

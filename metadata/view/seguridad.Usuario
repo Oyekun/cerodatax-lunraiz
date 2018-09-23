@@ -99,7 +99,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "entidad",
+                        "dataIndex": "organismo",
                         "text": "Entidad"
                     },
                     "name": "MyColumn2",
@@ -132,6 +132,20 @@
                     },
                     "name": "MyBooleanColumn1",
                     "designerId": "a83a232e-91dd-43e8-af21-86d6b25813b0"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ldap",
+                        "text": "LDAP"
+                    },
+                    "name": "MyBooleanColumn3",
+                    "designerId": "22d248d0-07e1-42c9-8729-d12325fa17ef"
                 },
                 {
                     "type": "viewcontrollereventbinding",
@@ -686,11 +700,18 @@
                                 "disabled": null,
                                 "fieldLabel": "Confirmar Contraseña",
                                 "inputType": "password",
-                                "name": "password",
+                                "name": "confirmacion_password",
                                 "regex": "/^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,100}$/",
-                                "regexText": "La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula."
+                                "regexText": "La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula.",
+                                "twoWayBindable": null,
+                                "value": [
+                                    "{record.password}"
+                                ]
                             },
                             "name": "MyTextField35",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
                             "designerId": "cede932b-a207-4846-a416-7384d22e4424",
                             "cn": [
                                 {
@@ -731,6 +752,22 @@
                                     },
                                     "name": "validator",
                                     "designerId": "7ff6fd55-2081-411a-a318-2943e4d14ccf"
+                                },
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "inputAttrTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "inputAttrTpl",
+                                        "implHandler": [
+                                            ""
+                                        ]
+                                    },
+                                    "name": "inputAttrTpl",
+                                    "designerId": "43b2cfef-4281-4d24-a6b4-31ba0ace4d3f"
                                 }
                             ]
                         },
@@ -762,46 +799,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "allowBlank": false,
-                                "designer|displayName": null,
-                                "displayField": null,
-                                "emptyText": "Seleccione",
-                                "fieldLabel": "Entidad",
-                                "name": "entidad_id",
-                                "queryMode": "local",
-                                "store": null,
-                                "valueField": null
-                            },
-                            "name": "MyComboBox",
-                            "designerId": "5e30ba79-8233-4959-9181-47352530bc5d",
-                            "cn": [
-                                {
-                                    "type": "Ext.XTemplate",
-                                    "reference": {
-                                        "name": "afterLabelTextTpl",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": "afterLabelTextTpl",
-                                        "implHandler": [
-                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                        ]
-                                    },
-                                    "name": "afterLabelTextTpl",
-                                    "designerId": "f60945a4-76a7-4784-b9d2-dfc15e422007"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
                                 "designer|displayName": null,
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
@@ -827,6 +824,179 @@
                             },
                             "name": "MyCheckbox",
                             "designerId": "5b90cd30-5d3d-4014-97b9-dd5e66fbe32e"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "LDAP",
+                                "name": "ldap"
+                            },
+                            "name": "MyCheckbox5",
+                            "designerId": "3851bb5a-5e16-4f90-ab6a-031f49e8e1a7"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": null,
+                                "designer|displayName": null,
+                                "displayField": "nombre",
+                                "emptyText": "Seleccione",
+                                "fieldLabel": "Organismo",
+                                "name": "organismo_id",
+                                "queryMode": "local",
+                                "queryParam": "Entidades:false",
+                                "store": "nomenclador.Organismo",
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox5",
+                            "designerId": "2610ee3d-f905-48b1-9c56-955710c23a99",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelectEntidad",
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxSelectEntidad",
+                                    "designerId": "433b0d92-49dc-4698-9dcc-221f351387f6"
+                                },
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "inputAttrTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "inputAttrTpl",
+                                        "implHandler": [
+                                            "Entidades:false"
+                                        ]
+                                    },
+                                    "name": "inputAttrTpl",
+                                    "designerId": "675e8e27-a1b3-4ff2-891c-07ddd88a5790"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tree.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "controller": null,
+                                "designer|displayName": "entidad",
+                                "disabled": true,
+                                "height": 284,
+                                "hideHeaders": false,
+                                "itemId": "treePanel",
+                                "margin": "10 0 0 0",
+                                "reserveScrollbar": null,
+                                "rootVisible": false,
+                                "scrollable": true,
+                                "store": "seguridad.UsuarioEntidad",
+                                "title": "Entidades",
+                                "useArrows": true,
+                                "width": 400
+                            },
+                            "name": "MyTreePanel",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a7ebe18f-ff84-480f-ac23-38af8a228b6b",
+                            "cn": [
+                                {
+                                    "type": "Ext.tree.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "preserveScrollOnRefresh": null,
+                                        "rootVisible": false
+                                    },
+                                    "name": "MyTreeView",
+                                    "designerId": "bf5e4cb8-52fb-419f-83a7-a472ea2e3f66"
+                                },
+                                {
+                                    "type": "Ext.tree.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "nombre",
+                                        "flex": 3,
+                                        "text": "Nombre",
+                                        "width": null
+                                    },
+                                    "name": "MyTreeColumn1",
+                                    "designerId": "fc5fe0a9-ab65-4874-8491-8b1811cc5dae",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.filters.filter.String",
+                                            "reference": {
+                                                "name": "filter",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": "Ingrese el texto del filtro..."
+                                            },
+                                            "name": "MyStringFilter",
+                                            "designerId": "7e1911e5-e6f2-439f-b181-0980692f8731"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTreePanelBeforeItemExpand1",
+                                        "name": "beforeitemexpand",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTreePanelBeforeItemExpand1",
+                                    "designerId": "c388cb90-ccdf-454d-b5f4-aad2265c6661"
+                                },
+                                {
+                                    "type": "Ext.grid.filters.Filters",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "menuFilterText": "Buscar"
+                                    },
+                                    "name": "MyGridFiltersPlugin",
+                                    "designerId": "cfcd5e36-7242-4727-99ed-e26ddbc3b01f"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.container.Container",
@@ -976,6 +1146,7 @@
                     "    columns=[],",
                     "    resultgrid = [];",
                     "result = control.searchComponent('form', this, result);",
+                    "",
                     "resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
                     "",
                     "if(result.length > 0)",
@@ -983,6 +1154,7 @@
                     "",
                     "",
                     "    columns = control.searchLabel(formPanel.items,columns,true);",
+                    " control.formatForm(formPanel);",
                     "",
                     " if(resultgrid.length > 0)",
                     "     control.configGridPanel(resultgrid[0],columns);",

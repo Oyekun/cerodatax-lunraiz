@@ -1,8 +1,14 @@
 <?php
 /**
- * @class User
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
  */
-class NivelEducacional extends CI_Model {
+class Niveleducacional extends CI_Model {
 	    public $id;
         public $nombre;  
 		public $uuid;

@@ -324,7 +324,7 @@ Ext.define('cerodatax.view.nomenclador.Municipio', {
 
 
             columns = control.searchLabel(formPanel.items,columns,true);
-
+        control.formatForm(formPanel);
          if(resultgrid.length > 0)
              control.configGridPanel(resultgrid[0],columns);
           control.createDetails(this,columns);

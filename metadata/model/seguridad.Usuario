@@ -71,7 +71,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "entidad"
+                "name": "organismo"
             },
             "name": "MyString4",
             "designerId": "5e311497-417c-4066-80cc-7ef77a7fc134"
@@ -84,7 +84,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "entidad_id"
+                "name": "organismo_id"
             },
             "name": "MyString54",
             "designerId": "6461a8c8-85e8-4a52-915d-10dd16d7d250"
@@ -123,10 +123,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "administrador"
+                "name": "ldap"
             },
             "name": "MyBoolean",
             "designerId": "b602fa48-cc3d-4bc3-bc51-3bb87d73b192"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "administrador"
+            },
+            "name": "MyBoolean10",
+            "designerId": "342e0118-2395-4eb2-b40f-c0c0dd9a63a3"
         }
     ]
 }

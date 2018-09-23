@@ -1,0 +1,35 @@
+Seguridad,Usuario,Usuarios,0,seguridad
+Seguridad,Rol,Roles,1,seguridad
+Seguridad,Accion,Acciones,2,seguridad
+Estructura,Entidad,Entidades,0,estructura
+Estructura,Area,Áreas,1,estructura
+RRHH,Persona,Personas,0,persona
+RRHH,Cargo,Cargos,1,persona
+Actualizaciones,Actualizacion,Actualizaciones,0,actualizacion
+Continente,Continente,Continentes,0,nomenclador
+Pais,Pais,País,0,nomenclador
+Provincia,Provincia,Provincias,0,nomenclador
+Municipio,Municipio,Municipios,0,nomenclador
+Moneda,Moneda,Monedas,0,nomenclador
+Organismo,Organismo,Organismos,0,nomenclador
+Clasificacion,Clasificacion,Clasificación,0,nomenclador
+TipoRegistro,TipoRegistro,Tipo de Registro,0,nomenclador
+CategoriaEntidad,Categoria,Categoría,0,nomenclador
+SeccionNAE,SeccionNAE,Sección NAE,0,nomenclador
+DisicionNAE,DivisionNAE,División NAE,0,nomenclador
+NAE,NAE,NAE,0,nomenclador
+TipoEntidad,TipoEntidad,Tipo de Entidad,0,nomenclador
+Union,Union,Unión,0,nomenclador
+NivelEducacional,NivelEducacional,Nivel Educacional,0,nomenclador
+GrupoSanguineo,GrupoSanguineo,Grupo Sanguíneo,0,nomenclador
+ColorPiel,ColorPiel,Color de Piel,0,nomenclador
+EstadoCivil,EstadoCivil,Estado Civil,0,nomenclador
+Defensa,Defensa,Situación de la Defensa,0,nomenclador
+Sexo,Sexo,Sexo,0,nomenclador
+GrupoEscala,GrupoEscala,Grupo Escala,0,nomenclador
+Calificador,Calificador,Calificador,0,nomenclador
+CategoriaCargo,CategoriaCargo,Categoría,0,nomenclador
+TipoModulo,TipoModulo,Tipo de Módulo,0,nomenclador
+Icono,Icono,Icono,0,nomenclador
+Modulos,Modulo,Módulos,0,configuracion
+Modulo,Menu,Menú,0,configuracion

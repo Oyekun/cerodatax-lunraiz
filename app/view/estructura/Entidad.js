@@ -183,6 +183,7 @@ Ext.define('cerodatax.view.estructura.Entidad', {
         form = vista.down('form').getForm();
         var results=[];
         columns = control.searchLabel(form.owner,results,false);
+        control.formatForm(form.owner.items);
          control.configGridPanel(config,columns);
         return config;
     }

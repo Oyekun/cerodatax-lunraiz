@@ -41,11 +41,11 @@ Ext.define('cerodatax.model.seguridad.Usuario', {
         },
         {
             type: 'string',
-            name: 'entidad'
+            name: 'organismo'
         },
         {
             type: 'string',
-            name: 'entidad_id'
+            name: 'organismo_id'
         },
         {
             type: 'string',
@@ -54,6 +54,10 @@ Ext.define('cerodatax.model.seguridad.Usuario', {
         {
             type: 'string',
             name: 'persona_id'
+        },
+        {
+            type: 'boolean',
+            name: 'ldap'
         },
         {
             type: 'boolean',

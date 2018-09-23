@@ -535,6 +535,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "store": "configuracion.Modulo",
                                 "title": "Modulos"
                             },
                             "name": "MyMultiSelector",
@@ -549,7 +550,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "field": "modulo",
-                                        "store": "seguridad.ModuloDesabilitado"
+                                        "store": "configuracion.Modulo"
                                     },
                                     "name": "MyMultiSelectorSearch",
                                     "designerId": "95cfac76-3efe-4366-890f-63f37c03504f"
@@ -721,7 +722,7 @@
                     "",
                     "",
                     "    columns = control.searchLabel(formPanel.items,columns,true);",
-                    "",
+                    "control.formatForm(formPanel);",
                     " if(resultgrid.length > 0)",
                     "     control.configGridPanel(resultgrid[0],columns);",
                     "",

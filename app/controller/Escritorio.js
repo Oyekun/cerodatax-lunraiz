@@ -97,6 +97,21 @@ Ext.define('cerodatax.controller.Escritorio', {
         },
         "#menuMoneda": {
             click: 'onMenuMonedaClick'
+        },
+        "panel": {
+            activate: 'onPanelActivate'
+        },
+        "#menuModulos": {
+            click: 'onMenuModulosClick'
+        },
+        "#menuTipoModulo": {
+            click: 'onMenuTipoModuloClick'
+        },
+        "#menuTipoMenu": {
+            click: 'onMenuTipoMenuClick'
+        },
+        "#menuIcono": {
+            click: 'onMenuIconoClick'
         }
     },
 
@@ -208,8 +223,60 @@ Ext.define('cerodatax.controller.Escritorio', {
         this.selectMenu(item);
     },
 
-    selectMenu: function(item) {
+    onPanelActivate: function(component, eOpts) {
+        //Funcion para recargar los grid y tree de los tabpanel
+        if(component.tab)
+          {       var grid = component.down('grid');
+                  var tree = component.down('tree');
+                  if(grid)
+                     {if(grid.store.proxy.extraParams!==undefined)
+                       grid.store.proxy.extraParams.combo = '';
+                      grid.store.load();
+                      grid.getSelectionModel().deselectAll();
+                      if(grid.down('toolbar').down('button[itemId=btnEdit]'))
+                         grid.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
+                     if(grid.down('toolbar').down('button[itemId=btnRemove]'))
+                         grid.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
+                     if(grid.down('toolbar').down('button[itemId=btnAssociate]'))
+                         grid.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
 
+                     }
+                     if(tree)
+                     {tree.store.proxy.extraParams.parent_id = '';
+                      tree.store.load();
+                      tree.getSelectionModel().deselectAll();
+                      if(tree.down('toolbar').down('button[itemId=btnEdit]'))
+                         tree.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
+                     if(tree.down('toolbar').down('button[itemId=btnRemove]'))
+                         tree.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
+                     if(tree.down('toolbar').down('button[itemId=btnAssociate]'))
+                         tree.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
+
+                     }
+        }
+
+
+
+    },
+
+    onMenuModulosClick: function(panel) {
+         this.selectMenu(panel);
+    },
+
+    onMenuTipoModuloClick: function(panel) {
+        this.selectMenu(panel);
+    },
+
+    onMenuTipoMenuClick: function(target) {
+        this.selectMenu(panel);
+    },
+
+    onMenuIconoClick: function(panel) {
+        this.selectMenu(panel);
+    },
+
+    selectMenu: function(item) {
+        //funcion para recargar los grid y tree panel al dar click en en los menu principales
 
 
         var obj = item.itemId.split('menu');
@@ -260,6 +327,10 @@ Ext.define('cerodatax.controller.Escritorio', {
             }
             else itemPanel.setHidden(true);
         });
+    },
+
+    showMenu: function(item) {
+        console.log(item);
     }
 
 });

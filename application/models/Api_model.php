@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
+
  defined('BASEPATH') OR exit('No direct script access allowed');
  require APPPATH .'libraries/TreeExtJS.php'; 
  
@@ -13,11 +24,17 @@ class Api_model extends CI_Model
 				$this->load->library('uuid'); 
                 // Your own constructor code
         } 
- 
+
+	/**
+ * Encodes string for use in XML
+ *
+ * @param       string  $str    Input string
+ * @return      string
+ */ 
     public function get_all($request){
     
     $total = array();
-		$limit= false;
+		$limit= FALSE;
 		$parent_id= '';
 		if(isset($request['page']))	
 	    $page = $request['page']; 
@@ -27,7 +44,7 @@ class Api_model extends CI_Model
 		$limit = $request['limit'];
 	    
 
-       $flagrelacion=false;
+       $flagrelacion=FALSE;
        //---Para definir el padre del TREE
      	if(isset($request['parent_id']))
 		{
@@ -52,13 +69,13 @@ else
 			if(isset($request['combo']))
 			{  
 				if($request['combo']=='combo')
-				{$limit = false;
+				{$limit = FALSE;
 			if(isset($request['filter']))
 			{
 				if($request['filter']!='')
             {
 				$filters = array();	 		
-		        $filters= json_decode($request['filter'],true);
+		        $filters= json_decode($request['filter'],TRUE);
 		       
 		        foreach($filters as $query)
 		{
@@ -87,10 +104,10 @@ $idasociadoDos = $request['asociados'].'_id';
 		$this->db->where("$idasociadoUno", $total[$i]['id']);
 		$this->db->where("$idasociadoDos", $request['id_asociado']);
 	    $r = $this->db->get("$tbDos");
-		$total[$i]['checked']=count($r->result_array())>0 ? True: False;
+		$total[$i]['checked']=count($r->result_array())>0 ? TRUE: FALSE;
 		
 	}
-	else $total[$i]['checked'] = false;
+	else $total[$i]['checked'] = FALSE;
 	$total[$i]['model'] = $modelo;
 
 }
@@ -110,7 +127,7 @@ return $total;
 		$nameuuid = new $request['model']; 
 		if(isset($nameuuid->relacion))
         {
-$flagrelacion= true;
+$flagrelacion= TRUE;
         	$this->db->select("$tb.*");
         	foreach ($nameuuid->relacion as $campo=>$tabla_campo)
 					{
@@ -119,6 +136,7 @@ $flagrelacion= true;
                    $alias = str_replace("_id", "", $campo);
                    $ref = $tabla_campo.".nombre as ".$alias;
                    $this->db->select("$ref");
+    			   
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
 					}
 				}
@@ -253,7 +271,7 @@ for($i=0;$i<$total_actual;$i++){
 	if(isset($request['asociados'])&&isset($request['id_asociado']))
 	{ 
 
-$nodo['checked']=False;
+$nodo['checked']=FALSE;
 
 
 	//else $tree->addChild($nodo,$nodo["parent_id"],$parent_id);
@@ -283,7 +301,7 @@ $nodo['checked']=False;
 	   }
 	   else {
 	   if($request['detalles']==''){
-		    $nodo['checked']=False;
+		    $nodo['checked']=FALSE;
  
 		   $tree->addChild($nodo,$nodo["parent_id"],$parent_id);
 	   }
@@ -311,6 +329,13 @@ $cant++;
 		return $total;
         
 		}
+
+		/**
+ * Encodes string for use in XML
+ *
+ * @param       string  $str    Input string
+ * @return      string
+ */
  
     public function posts($request){
 	 
@@ -320,16 +345,16 @@ $cant++;
 	    if(!$this->row_existe($request))
 	    {
 	    	$tb = $request['esquema'].'_'.$request['model']; 		
-		$dataArray=json_decode($request['data'],true); 
+		$dataArray=json_decode($request['data'],TRUE); 
 		
 		foreach($dataArray as $key=>$nodo)
 		{
 			if($nodo=='' || $nodo=='NULL' )
 			{
-				     if(is_bool($nodo)===false)
+				     if(is_bool($nodo)===FALSE)
 				unset($dataArray["$key"]);
 			}
-			if(is_bool($nodo)===true)
+			if(is_bool($nodo)===TRUE)
 			{
 				$dataArray["$key"] = 0;
 				if($nodo)
@@ -347,16 +372,17 @@ $cant++;
 		unset($dataArray['expanded']);		
 		unset($dataArray['checked']);		
 		unset($dataArray['model']);
-		$asociados=false;
+		$asociados=FALSE;
 if(isset($dataArray['asociados']))		
 {
 	
 		$dataArray2 = array();	 		
 		$dataArray2= $dataArray['asociados'];
-		$asociados=true;
+		$asociados=TRUE;
 		unset($dataArray['asociados']);
 }	
 	$this->db->set('id', $uuid);
+	
 		$this->db->insert("$tb", $dataArray); 
        
         if(isset($dataArray['parent_id']))		
@@ -407,17 +433,30 @@ if(isset($dataArray['asociados']))
 		return NULL;
     } 
 	
+	/**
+ * Encodes string for use in XML
+ *
+ * @param       string  $str    Input string
+ * @return      string
+ */
 	public function row_delete($request,$id) { 
 	$tb = $request['esquema'].'_'.$request['model']; 		
     $this->db->where('id', $id);   
     $this->db->delete("$tb");
     return $this->db->affected_rows();
 }
+
+/**
+ * Encodes string for use in XML
+ *
+ * @param       string  $str    Input string
+ * @return      string
+ */
 public function row_update($request,$id) { 
  
 	$tb = $request['esquema'].'_'.$request['model']; 
 
-    $dataArray=json_decode($request['data'],true); 
+    $dataArray=json_decode($request['data'],TRUE); 
     foreach($dataArray as $key=>$nodo)
 		{
 
@@ -426,11 +465,11 @@ public function row_update($request,$id) {
 
 			if($nodo=='' || $nodo=='NULL' )
 			{
-                if(is_bool($nodo)===false)
+                if(is_bool($nodo)===FALSE)
 				unset($dataArray["$key"]);
 			//print_r($key);
 			}
-			if(is_bool($nodo)===true)
+			if(is_bool($nodo)===TRUE)
 			{
 				$dataArray["$key"] = 0;
 				if($nodo)
@@ -446,10 +485,10 @@ public function row_update($request,$id) {
         if($id==0)
 		$id=$dataArray['id'];
 		$dataArray['id'] = $uuid;
-		$arbol = false;
+		$arbol = FALSE;
 		 
 	 if(isset($dataArray['parentId']))
-	  $arbol = true;
+	  $arbol = TRUE;
 		 
 		
 	 
@@ -459,13 +498,13 @@ public function row_update($request,$id) {
 		unset($dataArray['checked']);
 		unset($dataArray['model']);
 		
-			$asociados=false;
+			$asociados=FALSE;
 if(isset($dataArray['asociados']))		
 {
 	
 		$dataArray2 = array();	 		
 		$dataArray2= $dataArray['asociados'];
-		$asociados=true;
+		$asociados=TRUE;
 		unset($dataArray['asociados']);
 }
 
@@ -536,7 +575,7 @@ if(isset($dataArray['asociados']))
 
 public function row_existe($request) { 
 	$tb = $request['esquema'].'_'.$request['model']; 
-    $dataArray=json_decode($request['data'],true); 
+    $dataArray=json_decode($request['data'],TRUE); 
 		$this->load->model($request['model']);
 		$nameuuid = new $request['model']; 	
 		$uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"],'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
@@ -544,7 +583,7 @@ public function row_existe($request) {
     $this->db->where('id', $uuid);   
     $result = $this->db->get("$tb");
 	 
-    return count($result->result_array())>0 ? True: False;
+    return count($result->result_array())>0 ? TRUE: FALSE;
 }
 
 

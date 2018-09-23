@@ -23,29 +23,392 @@ Ext.define('cerodatax.controller.Seguridad', {
     },
 
     onButtonAutenticacionClick: function(button, e, eOpts) {
-        var view = this.getView();
+        //var view = this.getView();
         form = button.up('form');
-        formWindow = button.up('window');
+        //formWindow = button.up('window');
 
-
+        form.mask('Cargando...');
         if(form.isValid())
         {
             values = form.getValues();
             // Success
             var successCallback = function(resp, ops) {
                 //debugger;
-                // Hide login panel
-                view.hide();
-                // Close window
-                formWindow.destroy();
 
-                // Show logout panel
-                var viewportEscritorio = Ext.create('cerodatax.view.Escritorio',{
-
-                });
-                viewportEscritorio.show();
 
             };
+
+            // Hide login panel
+
+            // Close window
+            // formWindow.destroy();
+
+            // Show logout panel
+
+
+            // console.log(viewportEscritorio)
+            var obj =    Ext.create('cerodatax.store.nomenclador.TipoModulo');
+            var objmenu =    Ext.create('cerodatax.store.configuracion.Menu');
+            var objmodulo =    Ext.create('cerodatax.store.configuracion.Modulo');
+            var objpanel =    Ext.create('cerodatax.store.configuracion.Panel');
+           var objpanelp;
+            var me = this;
+
+            obj.proxy.extraParams.combo='';
+            obj.proxy.extraParams.limit='';
+            objmenu.proxy.extraParams.combo='';
+            objmenu.proxy.extraParams.limit='';
+            objmodulo.proxy.extraParams.combo='';
+            objmodulo.proxy.extraParams.limit='';
+            objpanel.proxy.extraParams.combo='';
+            objpanel.proxy.extraParams.limit='';
+
+            var modulos,menus,tipos,paneles;
+
+            objmenu.load({   scope: this,
+                          callback: function (records, operation, success) {
+
+                              menus = records;
+
+                              objmodulo.load({   scope: this,
+                                              callback: function (records, operation, success) {
+
+                                                  modulos = records;
+
+                                                  obj.load({   scope: this,
+                                                            callback: function (records, operation, success) {
+
+                                                                 tipos = records;
+                                                                objpanel.load({   scope: this,
+                                                                               callback: function (records, operation, success) {
+                                                                                   paneles = records;
+                                                                                    form.unmask();
+                                                                                   form.hide();
+                                                                                    var require=[];
+        require.push('cerodatax.view.escritorio.Escritorio');
+                                                                                   for(var pan in paneles)
+                                                                                                                {
+                                                                                                                     var id_contenedor = paneles[pan].data.id_contenedor;
+                                                                                                                     var alias = paneles[pan].data.alias;
+                                                                                       require.push('cerodatax.view.' +alias+'.'+ id_contenedor);
+
+
+
+                                                                                                                    }
+                                                                                   var tipomodulos = [];
+                                                                                    var container = [];
+
+                                                                                   for(var tipomodulo in tipos)
+                                                                                   {var tipoid = tipos[tipomodulo].data.id;
+                                                                                    var arraymodulos = [];
+                                                                                    for(var mod in modulos)
+                                                                                    {
+                                                                                        if(modulos[mod].data.tipo_modulo_id===tipoid)
+                                                                                        {
+                                                                                            var auxnamemod = modulos[mod].data.nombre;
+                                                                                            var modid = modulos[mod].data.id;
+                                                                                            var aux1 =    {
+                                                                                                xtype: 'menu',
+                                                                                                floating: false,
+                                                                                                itemId: 'menu'+modid,
+                                                                                                collapsed: true,
+                                                                                                title: auxnamemod};
+
+
+                                                                                            var arraymenus = [];
+
+                                                                                            for(var men in menus)
+                                                                                            {var auxnamemenu = menus[men].data.nombre;
+                                                                                                    var menu_id=menus[men].data.id;
+                                                                                             var id_menu=menus[men].data.id_menu;
+                                                                                             var tabpanel = menus[men].data.tabpanel;
+
+                                                                                                if(menus[men].data.modulo_id===modid)
+                                                                                                {
+                                                                                                     var panelmenu;
+                                                                                                                     if(tabpanel==='1')
+                                                                                                                         {
+                                                                                                                          panelmenu = {
+                                                                                                                    xtype: 'tabpanel',
+                                                                                                                      hidden: true,
+                                                                                                                    itemId: 'panel'+id_menu,
+                                                                                                                    animCollapse: true,
+                                                                                                                    closeAction: 'hide',
+                                                                                                                    collapseFirst: false,
+                                                                                                                    title: auxnamemenu,
+                                                                                                                    activeTab: 0};
+
+
+                                                                                                                         }
+                                                                                                    else{
+                                                                                                        panelmenu ={
+                                                                                            xtype: 'container',
+                                                                                             hidden: true,
+                                                                                            border: false,
+                                                                                            itemId: 'panel'+id_menu,
+                                                                                            layout: 'fit'};
+                                                                                                    }
+                                                                                                    var container_item =[];
+                                                                                                     for(var pan_item in paneles)
+                                                                                                         {
+                                                                                                             if(paneles[pan_item].data.menu_id===menu_id)
+                                                                                                                    {var auxnamepanel_item = paneles[pan_item].data.nombre;
+                                                                                        var id_contenedor_item = paneles[pan_item].data.id_contenedor;
+                                                                                                                     var alias_item = paneles[pan_item].data.alias;
+
+                                                                                                             /*var item_container =  {
+                                                                                                                                    xtype: alias_item+id_contenedor_item,
+                                                                                                                                    itemId: 'panel'+auxnamepanel_item,
+                                                                                                                                    title: auxnamepanel_item
+                                                                                                                                };*/
+                                                                                                                       var namespace = 'cerodatax.view.'+alias_item+'.'+id_contenedor_item;
+
+                                                                                                                     objpanelp = Ext.create(namespace);
+                                                                                                                     objpanelp.itemId= 'panel'+auxnamepanel_item;
+                                                                                                                     objpanelp.title= auxnamepanel_item;
+
+                                                                                                                     container_item.push(objpanelp);
+
+                                                                                                                        }
+                                                                                                             }
+                                                                                                    panelmenu.items = container_item;
+                                                                                                            container.push(panelmenu);
+                                                                                                           // console.log(container)
+
+                                                                                                    var maux =  {
+                                                                                                        xtype: 'menuitem',
+                                                                                                        itemId: menus[men].data.id_menu,
+                                                                                                        menu_id:menu_id,
+                                                                                                         tabpanel:menus[men].data.tabpanel,
+                                                                                                        id_menu:menus[men].data.id_menu,
+                                                                                                        text: auxnamemenu,
+                                                                                                        focusable: true,
+                                                                                                        listeners: {
+                                                                                                            click: function(){
+                                                                                                               var menu_id = this.menu_id;
+                                                                                                                var id_menu = this.id_menu;
+                                                                                                                 var tabpanel = this.tabpanel;
+                                                                                                                var panelPrincipal = Ext.ComponentQuery.query('#panelPrincipal')[0];
+        //console.log(panelPrincipal)
+                                                                                                                    panelPrincipal.items.each(function(itemPanel){
+                                                                                                                        searchPanel = 'panel'+id_menu;
+
+                                                                                                                        if(itemPanel.itemId==searchPanel)
+                                                                                                                        {
+                                                                                                                           // console.log(itemPanel)
+                                                                                                                            itemPanel.setHidden(false);
+                                                                                                                            var tree = itemPanel.down('treep anel');
+             var grid = itemPanel.down('grid');
+
+             var display = itemPanel.down('panel[reference=display]');
+
+             if(display)
+             {
+
+                 var layout = display.getLayout();
+
+                 var select = itemPanel.down('panel[reference=selectMessage]');
+
+                 //layout.setActiveItem(select);
+
+             }
+
+             if(grid)
+             {if(grid.store.proxy.extraParams!==undefined)
+               grid.store.proxy.extraParams.combo = '';
+              grid.store.load();
+              grid.getSelectionModel().deselectAll();
+
+             }
+             if(tree)
+             {tree.store.proxy.extraParams.parent_id = '';
+              tree.store.load();
+              tree.getSelectionModel().deselectAll();
+
+             }
+             if(itemPanel.down('toolbar').down('button[itemId=btnEdit]'))
+                 itemPanel.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
+             if(itemPanel.down('toolbar').down('button[itemId=btnRemove]'))
+                 itemPanel.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
+             if(itemPanel.down('toolbar').down('button[itemId=btnAssociate]'))
+                 itemPanel.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
+
+                                                                                                                        }
+                                                                                                                        else itemPanel.setHidden(true);
+                                                                                                                    });
+
+
+                                                                                                                        }
+                                                                                                                    }
+
+                                                                                                    };
+                                                                                                    arraymenus.push(maux);
+
+
+
+                                                                                            }
+
+                                                                                            aux1.items = arraymenus;
+                                                                                            arraymodulos.push(aux1);}
+                                                                                    }
+                                                                                        }
+
+                                                                                    var paneltipo = { xtype: 'panel',
+                                                                                                 width: 165,
+                                                                                                 layout: 'accordion',
+                                                                                                 animCollapse: true,
+                                                                                                 collapsed: true,
+                                                                                                 collapsible: false,
+                                                                                                 title: tipos[tipomodulo].data.nombre,
+                                                                                                 titleCollapse: false,
+                                                                                                 items:arraymodulos
+                                                                                                };
+                                                                                    tipomodulos.push(paneltipo);
+                                                                                   }
+        //console.log(require)
+
+                                                                                   var viewportEscritorio = Ext.create('cerodatax.view.escritorio.Escritorio',{
+                                                                                       requires:require,
+                                                                                       items: [
+                                                                                           {
+                                                                                               xtype: 'panel',
+                                                                                               collapseMode: 'mini',
+                                                                                               region: 'north',
+                                                                                               height: 150,
+                                                                                               itemId: 'headerPanel',
+                                                                                               animCollapse: false,
+                                                                                               collapseDirection: 'top',
+                                                                                               collapsed: true,
+                                                                                               collapsible: true,
+                                                                                               title: '',
+                                                                                               listeners: {
+                                activate: function(component,eOpts){
+        if(component.tab)
+          {       var grid = component.down('grid');
+                  var tree = component.down('tree');
+                  if(grid)
+                     {if(grid.store.proxy.extraParams!==undefined)
+                       grid.store.proxy.extraParams.combo = '';
+                      grid.store.load();
+                      grid.getSelectionModel().deselectAll();
+                      if(grid.down('toolbar').down('button[itemId=btnEdit]'))
+                         grid.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
+                     if(grid.down('toolbar').down('button[itemId=btnRemove]'))
+                         grid.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
+                     if(grid.down('toolbar').down('button[itemId=btnAssociate]'))
+                         grid.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
+
+                     }
+                     if(tree)
+                     {tree.store.proxy.extraParams.parent_id = '';
+                      tree.store.load();
+                      tree.getSelectionModel().deselectAll();
+                      if(tree.down('toolbar').down('button[itemId=btnEdit]'))
+                         tree.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
+                     if(tree.down('toolbar').down('button[itemId=btnRemove]'))
+                         tree.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
+                     if(tree.down('toolbar').down('button[itemId=btnAssociate]'))
+                         tree.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
+
+                     }
+        }
+
+                                }
+                            },
+                                                                                               dockedItems: [
+
+                                                                                                   {
+                                                                                                       xtype: 'fieldset',
+                                                                                                       dock: 'right',
+                                                                                                       width: 130,
+                                                                                                       title: 'Perfil del Usuario',
+                                                                                                       layout: {
+                                                                                                           type: 'vbox',
+                                                                                                           align: 'center'
+                                                                                                       },
+                                                                                                       items: [
+                                                                                                           {
+                                                                                                               xtype: 'image',
+                                                                                                               height: 100,
+                                                                                                               width: 100,
+                                                                                                               src: 'resources/images/avatarHombre.png',
+                                                                                                               title: 'Usuario'
+                                                                                                           },
+                                                                                                           {
+                                                                                                               xtype: 'segmentedbutton',
+                                                                                                               items: [
+                                                                                                                   {
+                                                                                                                       itemId: 'btnEdit',
+                                                                                                                       text: 'Editar'
+                                                                                                                   },
+                                                                                                                   {
+                                                                                                                       text: 'Cerrar'
+                                                                                                                   }
+                                                                                                               ]
+                                                                                                           }
+                                                                                                       ]
+                                                                                                   }
+                                                                                               ]
+                                                                                           },
+                                                                                           ,
+                                                                                           {
+                                                                                               xtype: 'panel',
+                                                                                               region: 'west',
+                                                                                               split: true,
+                                                                                               itemId: 'menuPanel',
+                                                                                               margin: '5 0 0 0',
+                                                                                               width: 180,
+                                                                                               collapseDirection: 'left',
+                                                                                               collapsed: false,
+                                                                                               collapsible: true,
+                                                                                               title: 'Navegación',
+                                                                                           dockedItems:{
+                                                                                            xtype: 'toolbar',
+                                                                                               dock: 'top',
+
+                                                                                           items:  {
+                                                                                                       xtype: 'image',
+                                                                                                       dock: 'left',
+                                                                                                       height: 90,
+                                                                                                       width: 90,
+                                                                                                       src: 'resources/images/lunraiz.jpg',
+                                                                                                       title: 'Logo'
+                                                                                                   }
+                                                                                           },
+                                                                                               layout: {
+                                                                                                   type: 'accordion',
+                                                                                                   hideCollapseTool: true
+                                                                                               },
+
+                                                                                               items:tipomodulos
+                                                                                           },
+                                                                                           {
+                                                                                               xtype: 'panel',
+                                                                                               //title: 'Contenido',
+                                                                                               collapsible: false,
+                                                                                               region: 'center',
+                                                                                               itemId: 'panelPrincipal',
+                                                                                               layout: 'fit',
+                                                                                               margin: '5 0 0 0',
+                                                                                           width: 125,
+                                                                                               items:container,
+                                                                                               html: '<h2>Main Page</h2><p>This is where the main content would go</p>'
+                                                                                           }
+                                                                                       ]
+                                                                                   });
+                                                                                  // console.log(viewportEscritorio)
+
+                                                                                     viewportEscritorio.show();
+
+                                                                                   //return component;
+                                                                               }});
+                                                            }});
+                                              }});
+                          }});
+
+
+
+
 
             // Failure
             var failureCallback = function(resp, ops) {
@@ -56,13 +419,15 @@ Ext.define('cerodatax.controller.Seguridad', {
             };
 
 
+
+            //Esto es momentaneamente para la creaion de los usuarios roles y menu
             // TODO: Login using server-side authentication service
-            Ext.Ajax.request({
+            /* Ext.Ajax.request({
                 url: "./seguridad/authenticate_user",
                 params: values,
                 success: successCallback,
-                failure: failureCallback
-            });
+               // failure: failureCallback
+            });*/
         }
 
 

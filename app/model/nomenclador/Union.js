@@ -15,6 +15,7 @@
 
 Ext.define('cerodatax.model.nomenclador.Union', {
     extend: 'Ext.data.Model',
+    alias: 'model.union',
 
     requires: [
         'Ext.data.field.String',

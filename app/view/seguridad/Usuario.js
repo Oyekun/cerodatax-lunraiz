@@ -18,8 +18,6 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
     alias: 'widget.seguridadusuario',
 
     requires: [
-        'cerodatax.view.seguridad.UsuarioViewModel',
-        'cerodatax.view.seguridad.UsuarioViewController',
         'Ext.grid.Panel',
         'Ext.grid.column.Template',
         'Ext.XTemplate',
@@ -30,13 +28,14 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
-        'Ext.form.field.Checkbox'
+        'Ext.form.field.Checkbox',
+        'Ext.tree.Panel',
+        'Ext.tree.View',
+        'Ext.tree.Column',
+        'Ext.grid.filters.filter.String',
+        'Ext.grid.filters.Filters'
     ],
 
-    controller: 'seguridadusuario',
-    viewModel: {
-        type: 'seguridadusuario'
-    },
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,
@@ -72,7 +71,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'entidad',
+                    dataIndex: 'organismo',
                     text: 'Entidad'
                 },
                 {
@@ -84,6 +83,11 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                     xtype: 'booleancolumn',
                     dataIndex: 'administrador',
                     text: 'Administrador'
+                },
+                {
+                    xtype: 'booleancolumn',
+                    dataIndex: 'ldap',
+                    text: 'LDAP'
                 }
             ],
             listeners: {
@@ -265,11 +269,14 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
                             fieldLabel: 'Confirmar Contraseña',
-                            name: 'password',
+                            name: 'confirmacion_password',
                             inputType: 'password',
                             allowBlank: false,
                             regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,100}$/,
-                            regexText: 'La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula.'
+                            regexText: 'La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula.',
+                            bind: {
+                                value: '{record.password}'
+                            }
                         },
                         {
                             xtype: 'textfield',
@@ -284,20 +291,8 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                         },
                         {
                             xtype: 'combobox',
-                            afterLabelTextTpl: [
-                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                            ],
-                            fieldLabel: 'Entidad',
-                            name: 'entidad_id',
-                            allowBlank: false,
-                            emptyText: 'Seleccione',
-                            queryMode: 'local'
-                        },
-                        {
-                            xtype: 'combobox',
                             fieldLabel: 'Persona',
                             name: 'persona_id',
-                            allowBlank: false,
                             emptyText: 'Seleccione',
                             displayField: 'nombre',
                             queryMode: 'local',
@@ -308,6 +303,66 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                             xtype: 'checkboxfield',
                             fieldLabel: 'Administrador',
                             name: 'administrador'
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            fieldLabel: 'LDAP',
+                            name: 'ldap'
+                        },
+                        {
+                            xtype: 'combobox',
+                            fieldLabel: 'Organismo',
+                            name: 'organismo_id',
+                            inputAttrTpl: [
+                                'Entidades:false'
+                            ],
+                            emptyText: 'Seleccione',
+                            displayField: 'nombre',
+                            queryMode: 'local',
+                            queryParam: 'Entidades:false',
+                            store: 'nomenclador.Organismo',
+                            valueField: 'id',
+                            listeners: {
+                                select: 'onComboboxSelectEntidad'
+                            }
+                        },
+                        {
+                            xtype: 'treepanel',
+                            disabled: true,
+                            height: 284,
+                            itemId: 'treePanel',
+                            margin: '10 0 0 0',
+                            scrollable: true,
+                            width: 400,
+                            title: 'Entidades',
+                            hideHeaders: false,
+                            store: 'seguridad.UsuarioEntidad',
+                            rootVisible: false,
+                            useArrows: true,
+                            viewConfig: {
+                                rootVisible: false
+                            },
+                            columns: [
+                                {
+                                    xtype: 'treecolumn',
+                                    dataIndex: 'nombre',
+                                    text: 'Nombre',
+                                    flex: 3,
+                                    filter: {
+                                        type: 'string',
+                                        emptyText: 'Ingrese el texto del filtro...'
+                                    }
+                                }
+                            ],
+                            listeners: {
+                                beforeitemexpand: 'onTreePanelBeforeItemExpand1'
+                            },
+                            plugins: [
+                                {
+                                    ptype: 'gridfilters',
+                                    menuFilterText: 'Buscar'
+                                }
+                            ]
                         }
                     ],
                     dockedItems: [
@@ -366,6 +421,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
             columns=[],
             resultgrid = [];
         result = control.searchComponent('form', this, result);
+
         resultgrid = control.searchComponent('gridpanel', this, resultgrid);
 
         if(result.length > 0)
@@ -373,6 +429,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
 
 
             columns = control.searchLabel(formPanel.items,columns,true);
+         control.formatForm(formPanel);
 
          if(resultgrid.length > 0)
              control.configGridPanel(resultgrid[0],columns);

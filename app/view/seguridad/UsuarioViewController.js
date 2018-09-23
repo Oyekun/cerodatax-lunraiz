@@ -94,6 +94,14 @@ Ext.define('cerodatax.view.seguridad.UsuarioViewController', {
 
     },
 
+    onComboboxSelectEntidad: function(combo, record, eOpts) {
+
+    },
+
+    onTreePanelBeforeItemExpand1: function(nodeinterface, eOpts) {
+
+    },
+
     save: function(button, e, eOpts) {
         var form = this.getReferences().form.getForm(),
             record = form.getRecord(),

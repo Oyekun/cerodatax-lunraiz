@@ -494,9 +494,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "bodyStyle": [
+                            "'padding:10px 10px 10px 10px'"
+                        ],
                         "container|columns": 3,
                         "layout": "table",
-                        "padding": "0 10 0 10",
+                        "padding": "10 10 10 10",
                         "reference": "details"
                     },
                     "name": "MyPanel21",
@@ -781,7 +784,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "displayField": "nombre (salario)",
+                                "displayField": "nombre",
                                 "fieldLabel": "Grupo Escala",
                                 "name": "grupo_escala",
                                 "queryMode": "local",
@@ -806,6 +809,37 @@
                                     },
                                     "name": "afterLabelTextTpl",
                                     "designerId": "d21154ff-46c7-4646-9814-af79c273a61e"
+                                },
+                                {
+                                    "type": "Ext.view.BoundList",
+                                    "reference": {
+                                        "name": "listConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemSelector": "div"
+                                    },
+                                    "name": "MyBoundList",
+                                    "designerId": "ed201c30-3cd4-4567-966e-90c27bbcdebb",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    " {nombre} ({salario})"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "c7e1921d-4039-4499-9d9f-8ee2a8db72d2"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1005,7 +1039,7 @@
                     "",
                     "",
                     "    columns = control.searchLabel(formPanel.items,columns,true);",
-                    "",
+                    "control.formatForm(formPanel);",
                     " if(resultgrid.length > 0)",
                     "     control.configGridPanel(resultgrid[0],columns);",
                     " control.createDetails(this,columns);",

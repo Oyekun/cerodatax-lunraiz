@@ -228,7 +228,6 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                             fieldLabel: 'Correo',
                                             name: 'correo',
                                             inputType: 'email',
-                                            emptyText: 'usuario@dominio.com',
                                             vtype: 'email'
                                         },
                                         {

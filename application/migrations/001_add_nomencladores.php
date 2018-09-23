@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
@@ -229,7 +237,7 @@ class Migration_Add_nomencladores extends CI_Migration {
                         ),  
                 ));
                 $this->dbforge->add_key('id', TRUE);
-                $this->dbforge->create_table('nomenclador_nivel_educacional',TRUE);     
+                $this->dbforge->create_table('nomenclador_niveleducacional',TRUE);     
 
                 $this->dbforge->add_field(array(
                                 'id' => array(
@@ -805,6 +813,12 @@ $this->dbforge->add_field(array(
                                 'constraint' => '1',
                                 'default' => '1'
                         ),
+                        'codigo_parent' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100', 
+                                'null' => TRUE,
+                                  
+                        ),
                        
                         'parent_id' => array(
                                 'type' => 'VARCHAR',
@@ -879,7 +893,7 @@ $this->dbforge->add_field(array(
                                 'unique' => TRUE,
                                 'null' => FALSE,
                         ),
-                        'niveleducacional_id' => array(
+                        'nivel_educacional_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => TRUE,
@@ -912,11 +926,11 @@ $this->dbforge->add_field(array(
                         )
 
                 )); 
-                $this->dbforge->add_key('niveleducacional_id');
+                $this->dbforge->add_key('nivel_educacional_id');
                 $this->dbforge->add_key('categoria_id');
                 $this->dbforge->add_key('calificador_id'); 
                 $this->dbforge->add_key('grupoescala_id');  
-                $this->dbforge->add_field('CONSTRAINT niveleducacional_id FOREIGN KEY (niveleducacional_id) REFERENCES nomenclador_nivel_educacional (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT nivel_educacional_id FOREIGN KEY (nivel_educacional_id) REFERENCES nomenclador_niveleducacional (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT categoria_id FOREIGN KEY (categoria_id) REFERENCES nomenclador_categoria (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT calificador_id FOREIGN KEY (calificador_id) REFERENCES nomenclador_calificador (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT grupoescala_id FOREIGN KEY (grupoescala_id) REFERENCES nomenclador_grupoescala (id) ON UPDATE CASCADE');
@@ -964,26 +978,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->create_table('seguridad_accion',TRUE);
                 
                 
-                $this->dbforge->add_field(array(
-                                'id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => 100,
-                                'unsigned' => TRUE,
-                        ),
-                                'modulo' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'unique' => TRUE,
-                                'null' => FALSE,
-                        ),
-                        'habilitado' => array(
-                                'type' => 'INT',
-                                'constraint' => '1', 
-                                'default' => '0',
-                        ), 
-                ));
-                $this->dbforge->add_key('id', TRUE);
-                $this->dbforge->create_table('seguridad_modulo',TRUE);
+              
                 
                 
                 $this->dbforge->add_field(array(
@@ -1228,7 +1223,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('grupo_sanguineo_id');
                 $this->dbforge->add_key('entidad_id');
                 $this->dbforge->add_key('organismo_id'); 
-                $this->dbforge->add_field('CONSTRAINT nivel_educacional_id FOREIGN KEY (nivel_educacional_id) REFERENCES nomenclador_nivel_educacional (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT nivel_educacional_id FOREIGN KEY (nivel_educacional_id) REFERENCES nomenclador_niveleducacional (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT situacion_defensa_id FOREIGN KEY (situacion_defensa_id) REFERENCES nomenclador_defensa (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT grupo_sanguineo_id FOREIGN KEY (grupo_sanguineo_id) REFERENCES nomenclador_gruposanguineo (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT organismo_id FOREIGN KEY (organismo_id) REFERENCES nomenclador_organismo (id) ON UPDATE CASCADE');
@@ -1277,23 +1272,25 @@ $this->dbforge->add_field(array(
                                 'password' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'unique' => TRUE,
+                                 
                                 'null' => FALSE,
                         ),
                                 'correo' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '30'
+                                'constraint' => '30',
+                                'null' => TRUE 
                         ),
-                           
-                                'entidad_id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => FALSE,
-                        ), 
+                        
                                 'persona_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'null' => FALSE,
+                                'null' => TRUE,
+                        ),
+
+                                'organismo_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
                         ),
                                 'administrador' => array(
                                 'type' => 'INT',
@@ -1305,16 +1302,272 @@ $this->dbforge->add_field(array(
                                 'constraint' => '1', 
                                 'default' => '0',
                         ), 
+                                'ldap' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                        ), 
                 ));
                 $this->dbforge->add_key('id', TRUE);
-                $this->dbforge->add_key('entidad_id');
-                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
-                $this->dbforge->add_key('persona_id');
+                 $this->dbforge->add_key('persona_id');
+                 $this->dbforge->add_key('organismo_id');
                 $this->dbforge->add_field('CONSTRAINT persona_id FOREIGN KEY (persona_id) REFERENCES persona_persona (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT organismo_id FOREIGN KEY (organismo_id) REFERENCES nomenclador_organismo (id) ON UPDATE CASCADE');
                
                 $this->dbforge->create_table('seguridad_usuario',TRUE);  
 
+                   $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ), 
+                                'entidad_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                        ),  
+                                'usuario_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                        )
+                         
+                ));
+                $this->dbforge->add_key('entidad_id');
+                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_key('usuario_id');
+                $this->dbforge->add_field('CONSTRAINT usuario_id FOREIGN KEY (usuario_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_key('id', TRUE);  
+                $this->dbforge->create_table('seguridad_entidadusuario',TRUE);
 
+                  $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ),
+                                'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                        ),
+
+                                'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255', 
+                                'null' => FALSE,
+                        ) 
+                ));
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->create_table('nomenclador_icono',TRUE);
+
+                
+
+
+                $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ),
+
+                                'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                        ),
+                                
+                                'orden' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                        ),
+
+                                'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255', 
+                                'null' => FALSE,
+                        ) 
+                ));
+                $this->dbforge->add_key('id', TRUE);
+                
+                $this->dbforge->create_table('nomenclador_tipomodulo',TRUE);
+
+         
+               
+               
+                $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ),
+                                'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => FALSE,
+                                'null' => FALSE,
+                        ),
+
+                                'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255', 
+                                'null' => FALSE,
+                        ),
+                                'icono_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+ 
+
+                                'orden' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                
+                                'null' => FALSE,
+                        ),
+
+                                'tipo_modulo_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+                                'activo' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                        ) 
+                ));
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->add_key('tipo_modulo_id');
+                $this->dbforge->add_key('icono_id');
+                $this->dbforge->add_field('CONSTRAINT icono_id FOREIGN KEY (icono_id) REFERENCES nomenclador_icono (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT tipo_modulo_id FOREIGN KEY (tipo_modulo_id) REFERENCES nomenclador_tipomodulo (id) ON UPDATE CASCADE');
+               
+                $this->dbforge->create_table('configuracion_modulo',TRUE);  
+                
+
+                  $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ),
+                                'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                        ),
+
+                                'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255', 
+                                'null' => FALSE,
+                        ),
+
+                                'icono_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+
+                                'orden' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                 
+                                'null' => FALSE,
+                        ),
+                                'modulo_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+
+                                'id_menu' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+
+
+ 
+                                'tabpanel' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                        ),
+
+ 
+                                'activo' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                        ) 
+                ));
+                $this->dbforge->add_key('id', TRUE); 
+                $this->dbforge->add_key('icono_id');
+                $this->dbforge->add_key('modulo_id');
+                 
+                $this->dbforge->add_field('CONSTRAINT modulo_id FOREIGN KEY (modulo_id) REFERENCES configuracion_modulo (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT icono_id FOREIGN KEY (icono_id) REFERENCES nomenclador_icono (id) ON UPDATE CASCADE');
+               
+                $this->dbforge->create_table('configuracion_menu',TRUE);  
+
+                                $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ),
+                                'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                        ),
+                                'orden' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                
+                                'null' => FALSE,
+
+                        ),      'id_contenedor' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+                                'alias' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+
+                                'menu_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
+
+                                
+                                'activo' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                        )
+
+                ));
+                $this->dbforge->add_key('id', TRUE); 
+                 $this->dbforge->add_key('menu_id');
+                $this->dbforge->add_field('CONSTRAINT menu_id FOREIGN KEY (menu_id) REFERENCES configuracion_menu (id) ON UPDATE CASCADE');
+                $this->dbforge->create_table('configuracion_panel',TRUE);
+
+                
                  		
         }
 
@@ -1335,7 +1588,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->drop_table('nomenclador_grupoescala',TRUE);
                 $this->dbforge->drop_table('nomenclador_gruposanguineo',TRUE);
                 $this->dbforge->drop_table('nomenclador_municipio',TRUE);
-                $this->dbforge->drop_table('nomenclador_nivel_educacional',TRUE);
+                $this->dbforge->drop_table('nomenclador_niveleducacional',TRUE);
                 $this->dbforge->drop_table('nomenclador_organismo',TRUE);
                 $this->dbforge->drop_table('nomenclador_continente',TRUE);
                 $this->dbforge->drop_table('nomenclador_pais',TRUE);
@@ -1351,6 +1604,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->drop_table('seguridad_modulo',TRUE);
                 $this->dbforge->drop_table('seguridad_rol',TRUE);
                 $this->dbforge->drop_table('seguridad_usuario',TRUE);
+                 $this->dbforge->drop_table('configuracion_modulo',TRUE);
                 
 }
 }

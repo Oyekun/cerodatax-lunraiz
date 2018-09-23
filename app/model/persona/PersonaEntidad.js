@@ -35,7 +35,7 @@ Ext.define('cerodatax.model.persona.PersonaEntidad', {
         },
         {
             type: 'string',
-            name: 'area_id'
+            name: 'persona_id'
         },
         {
             name: 'nombre'

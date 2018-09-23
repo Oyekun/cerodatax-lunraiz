@@ -28,7 +28,6 @@ Ext.define('cerodatax.store.nomenclador.Calificador', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            remoteFilter: true,
             storeId: 'nomenclador.Calificador',
             autoLoad: false,
             autoSync: true,

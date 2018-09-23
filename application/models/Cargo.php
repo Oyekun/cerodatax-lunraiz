@@ -1,6 +1,12 @@
 <?php
 /**
- * @class User
+ * Niveleducacional
+ *
+ * @package     Nomenclador
+ * @subpackage  Persona
+ * @category    Category
+ * @author      Leandro L. Céspedes Lara
+ * @link        https://cerodatax.com
  */
 class Cargo extends CI_Model {
 	    public $id;
@@ -27,7 +33,7 @@ class Cargo extends CI_Model {
 				$this->load->model('GrupoEscala'); 
 				$this->grupoescala_id = $this->GrupoEscala->id;
 				$this->uuid = 'nombre';
-                                 $this->relacion = array('niveleducacional_id' =>'nomenclador_nivel_educacional'
+                                 $this->relacion = array('nivel_educacional_id' =>'nomenclador_niveleducacional'
         ,'categoria_id' =>'nomenclador_categoria'
         ,'calificador_id' =>'nomenclador_calificador'
         ,'grupoescala_id' =>'nomenclador_grupoescala'

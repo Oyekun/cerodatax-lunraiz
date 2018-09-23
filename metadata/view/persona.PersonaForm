@@ -593,7 +593,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "emptyText": "usuario@dominio.com",
+                                                "emptyText": null,
                                                 "fieldLabel": "Correo",
                                                 "inputType": "email",
                                                 "name": "correo",
