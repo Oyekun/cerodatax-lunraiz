@@ -189,7 +189,7 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                         {
                             xtype: 'combobox',
                             fieldLabel: 'Categoría',
-                            name: 'categoria_id',
+                            name: 'categoria_entidad_id',
                             emptyText: 'Seleccione',
                             displayField: 'nombre',
                             queryMode: 'local',

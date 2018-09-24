@@ -18,21 +18,26 @@ Ext.define('cerodatax.view.configuracion.Panel', {
     alias: 'widget.configuracionpanel',
 
     requires: [
+        'cerodatax.view.seguridad.UsuarioViewModel',
+        'cerodatax.view.seguridad.UsuarioViewController',
         'Ext.grid.Panel',
-        'Ext.grid.column.Template',
-        'Ext.XTemplate',
-        'Ext.grid.column.Boolean',
+        'Ext.grid.column.Column',
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
         'Ext.form.field.Display',
         'Ext.form.Panel',
+        'Ext.XTemplate',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Number',
         'Ext.form.field.Checkbox',
         'Ext.form.field.TextArea'
     ],
 
+    controller: 'seguridadusuario',
+    viewModel: {
+        type: 'seguridadusuario'
+    },
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,
@@ -57,34 +62,6 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                     xtype: 'gridcolumn',
                     dataIndex: 'usuario',
                     text: 'nombre'
-                },
-                {
-                    xtype: 'templatecolumn',
-                    tpl: [
-                        '<a href="mailto:{correo}">{correo}</a>'
-                    ],
-                    dataIndex: 'orden',
-                    text: 'Correo'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'icono',
-                    text: 'Entidad'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'modulo',
-                    text: 'Persona'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'administrador',
-                    text: 'Administrador'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'activo',
-                    text: 'LDAP'
                 }
             ],
             listeners: {
@@ -148,7 +125,7 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                     dock: 'bottom',
                     width: 360,
                     displayInfo: true,
-                    store: 'configuracion.Menu'
+                    store: 'configuracion.Panel'
                 }
             ],
             selModel: {
@@ -158,7 +135,7 @@ Ext.define('cerodatax.view.configuracion.Panel', {
         },
         {
             xtype: 'panel',
-            flex: 1,
+            flex: 0.8,
             region: 'east',
             split: true,
             reference: 'display',
@@ -178,7 +155,7 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                         {
                             xtype: 'container',
                             flex: 1,
-                            html: '<h1>Seleccione un Menu</h1>'
+                            html: '<h1>Seleccione un Panel</h1>'
                         }
                     ]
                 },
@@ -269,7 +246,7 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                         {
                             xtype: 'combobox',
                             fieldLabel: 'Icono',
-                            name: 'icono',
+                            name: 'icono_id',
                             emptyText: 'Seleccione',
                             displayField: 'nombre',
                             queryMode: 'local',
@@ -336,14 +313,14 @@ Ext.define('cerodatax.view.configuracion.Panel', {
     initConfig: function(instanceConfig) {
         var me = this,
             config = {};
-        me.processConfiguracionMenu(config);
+        me.processConfiguracionPanel(config);
         if (instanceConfig) {
             me.getConfigurator().merge(me, config, instanceConfig);
         }
         return me.callParent([config]);
     },
 
-    processConfiguracionMenu: function(config) {
+    processConfiguracionPanel: function(config) {
         var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),
             result = [],
             columns=[],

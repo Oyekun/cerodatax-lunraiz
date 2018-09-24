@@ -71,175 +71,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "entidad"
-            },
-            "name": "MyField19",
-            "designerId": "2bb383f1-4fa9-411a-9fed-c03bf82e6e27"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "carnet_identidad"
-            },
-            "name": "MyField",
-            "designerId": "44eae833-2c78-452e-affd-e35cf5fbf710"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "sexo"
-            },
-            "name": "MyString17",
-            "designerId": "67d17b02-f411-4db2-848d-fa75e0132048"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "sexo_id"
-            },
-            "name": "MyString45",
-            "designerId": "dd4c4e02-2d51-48bd-8894-5c7cee697680"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "estado_civil"
-            },
-            "name": "MyString18",
-            "designerId": "69276d6d-824f-43bd-b717-229c2fcd79df"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "estado_civil_id"
-            },
-            "name": "MyString46",
-            "designerId": "0cff2a39-4519-4c32-9210-f45ab58a6dab"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "color_piel"
-            },
-            "name": "MyString19",
-            "designerId": "f1949e1e-47ce-4780-b101-2beab99f84ea"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "color_piel_id"
-            },
-            "name": "MyString47",
-            "designerId": "3bffd64e-1784-4912-9b36-d6edb1cfac2f"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "padre"
-            },
-            "name": "MyField11",
-            "designerId": "38cfd51a-c7b2-49fe-8bcc-980f9dc7358c"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "madre"
-            },
-            "name": "MyField12",
-            "designerId": "2fea5583-7cc4-460a-987c-4e69fae1c461"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "tomo"
-            },
-            "name": "MyField13",
-            "designerId": "efa15c2f-29c1-4724-afae-38871895980f"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "folio"
-            },
-            "name": "MyField14",
-            "designerId": "0bfbc31a-8297-4671-abdf-f1679fe8858d"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "ano"
-            },
-            "name": "MyField15",
-            "designerId": "759432f6-0486-435e-8b89-8114f908f6b0"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "name": "direccion"
             },
             "name": "MyField16",
@@ -279,127 +110,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "edad"
-            },
-            "name": "MyField27",
-            "designerId": "16e3c56b-c67c-42c9-8cb0-8089de1dff55"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "name": "telefono"
             },
             "name": "MyField29",
             "designerId": "017e92db-8aec-4e3e-b134-0f58b2b8e34b"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "estatura"
+                "name": "web"
             },
-            "name": "MyField31",
+            "name": "MyString92",
             "designerId": "d0301995-bbd4-4517-b4ef-31619d8c9977"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "peso"
-            },
-            "name": "MyField33",
-            "designerId": "bb058564-9177-46bc-b580-d323fdbe113b"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "pais_registro_civil"
-            },
-            "name": "MyString3",
-            "designerId": "15d1ca7c-b718-4cbb-86fd-d978e149bcfb"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "provincia_registro_civil"
-            },
-            "name": "MyString8",
-            "designerId": "fd1845a4-9da2-4ff0-a2b6-672245a7c482"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "municipio_registro_civil"
-            },
-            "name": "MyString12",
-            "designerId": "d008dd75-29ef-4b50-b560-5b3e78dcf1ac"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "pais_registro_civil_id"
-            },
-            "name": "MyString4",
-            "designerId": "2d5bf368-d2d8-4442-aa51-ad76db02b43c"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "provincia_registro_civil_id"
-            },
-            "name": "MyString5",
-            "designerId": "50057370-6cc6-4a7c-89d0-da591d6f3586"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "municipio_registro_civil_id"
-            },
-            "name": "MyString6",
-            "designerId": "2d4d3567-0e0e-4640-a6f9-41622a17066d"
         },
         {
             "type": "Ext.data.field.String",
@@ -480,98 +207,6 @@
             "designerId": "4bc77661-c2e1-4445-97dc-6b511f3f3bf2"
         },
         {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "nivel_educacional"
-            },
-            "name": "MyString22",
-            "designerId": "8cc3a27a-de6c-4536-b185-35757c5bfb7c"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "nivel_educacional_id"
-            },
-            "name": "MyString51",
-            "designerId": "b09eee60-722a-4e9f-b690-954873eff2dd"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "situacion_defensa"
-            },
-            "name": "MyString23",
-            "designerId": "520b34ea-fbc5-4fea-8bd2-0e15b7b82324"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "situacion_defensa_id"
-            },
-            "name": "MyString52",
-            "designerId": "576743f3-6ab4-4f11-bb75-03e5f8784096"
-        },
-        {
-            "type": "Ext.data.field.Boolean",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "donante"
-            },
-            "name": "MyBoolean2",
-            "designerId": "2ec55a90-7331-4682-88ce-0d7365b86680"
-        },
-        {
-            "type": "Ext.data.field.Boolean",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "trabaja"
-            },
-            "name": "MyBoolean3",
-            "designerId": "a7fe7260-0519-4e4e-83c8-f7c00bc5187a"
-        },
-        {
-            "type": "Ext.data.field.Date",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dateFormat": "Y-m-d",
-                "name": "fecha_nacimiento"
-            },
-            "name": "MyDate3",
-            "designerId": "7be1ae5b-ac11-4f9c-b282-90f49e9f9057"
-        },
-        {
             "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
@@ -579,36 +214,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "cantidad_hijos"
+                "name": "entidad"
             },
-            "name": "MyField1",
-            "designerId": "ed4a3e5c-d1da-4d00-a26d-6a314bd5153c"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "grupo_sanguineo"
-            },
-            "name": "MyString24",
-            "designerId": "492b5a18-a46c-4fc5-9a3a-985455e54c2a"
-        },
-        {
-            "type": "Ext.data.field.String",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "grupo_sanguineo_id"
-            },
-            "name": "MyString53",
-            "designerId": "2726d92d-819b-4c44-931b-a260d2090490"
+            "name": "MyField19",
+            "designerId": "2bb383f1-4fa9-411a-9fed-c03bf82e6e27"
         },
         {
             "type": "Ext.data.field.String",
@@ -622,6 +231,32 @@
             },
             "name": "MyString2",
             "designerId": "a6978b2d-1e37-4f5d-b59e-3d9135f76600"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "organismo"
+            },
+            "name": "MyString95",
+            "designerId": "11005424-38dc-46b6-84bc-7b7a9e7062c9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "organismo_id"
+            },
+            "name": "MyString96",
+            "designerId": "b9c9a487-c2df-49fb-89d4-cea1d9cc1eee"
         },
         {
             "type": "Ext.data.proxy.Rest",
@@ -640,8 +275,8 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{model: 'persona',",
-                    "            esquema: 'persona'}"
+                    "{model: 'contacto',",
+                    "            esquema: 'crm'}"
                 ],
                 "url": "index.php/api/restserver/rests/"
             },

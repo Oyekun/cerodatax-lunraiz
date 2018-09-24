@@ -357,7 +357,7 @@
             "userConfig": {
                 "bodyBorder": true,
                 "layout": "card",
-                "layout|flex": 1,
+                "layout|flex": 0.6,
                 "layout|region": "east",
                 "layout|split": true,
                 "reference": "display",
@@ -634,7 +634,7 @@
                     "",
                     "if(result.length > 0)",
                     "{var formPanel = result[0],",
-                    "",
+                    " ",
                     "",
                     "    columns = control.searchLabel(formPanel.items,columns,true);",
                     "control.formatForm(formPanel);",

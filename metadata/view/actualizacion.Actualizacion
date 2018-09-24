@@ -197,7 +197,7 @@
             "userConfig": {
                 "bodyBorder": true,
                 "layout": "card",
-                "layout|flex": 1,
+                "layout|flex": 0.8,
                 "layout|region": "east",
                 "layout|split": true,
                 "reference": "display",

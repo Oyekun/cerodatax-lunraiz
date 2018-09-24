@@ -61,94 +61,6 @@
                     "designerId": "d6d82d04-48b6-4f08-98c6-96a2d5a7681a"
                 },
                 {
-                    "type": "Ext.grid.column.Template",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "orden",
-                        "text": "Correo"
-                    },
-                    "name": "MyTemplateColumn",
-                    "designerId": "6c486408-37a8-4819-89c2-5e6e2a9ee944",
-                    "cn": [
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "tpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "tpl",
-                                "implHandler": [
-                                    "<a href=\"mailto:{correo}\">{correo}</a>"
-                                ]
-                            },
-                            "name": "tpl",
-                            "designerId": "c2b61be0-ef5f-4386-a58a-b96e2ba2b3d7"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "icono",
-                        "text": "Entidad"
-                    },
-                    "name": "MyColumn2",
-                    "designerId": "a0b3232d-88b5-4b04-a785-528e0e670d1d"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "modulo",
-                        "text": "Persona"
-                    },
-                    "name": "MyColumn3",
-                    "designerId": "89ffba31-7209-4270-ae0e-e2ee7124c6cb"
-                },
-                {
-                    "type": "Ext.grid.column.Boolean",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "administrador",
-                        "text": "Administrador"
-                    },
-                    "name": "MyBooleanColumn1",
-                    "designerId": "ad25a90c-950d-4847-83ac-3c056bf7d9d2"
-                },
-                {
-                    "type": "Ext.grid.column.Boolean",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "activo",
-                        "text": "LDAP"
-                    },
-                    "name": "MyBooleanColumn3",
-                    "designerId": "bb765691-d237-4249-9449-e5264755fb5d"
-                },
-                {
                     "type": "viewcontrollereventbinding",
                     "reference": {
                         "name": "listeners",
@@ -416,7 +328,7 @@
                     "userConfig": {
                         "displayInfo": true,
                         "dock": "bottom",
-                        "store": "configuracion.Menu",
+                        "store": "configuracion.Panel",
                         "width": 360
                     },
                     "name": "MyPagingToolbar20",
@@ -447,7 +359,7 @@
             "userConfig": {
                 "bodyBorder": true,
                 "layout": "card",
-                "layout|flex": 1,
+                "layout|flex": 0.8,
                 "layout|region": "east",
                 "layout|split": true,
                 "reference": "display",
@@ -482,7 +394,7 @@
                             "userConfig": {
                                 "designer|displayName": "message",
                                 "html": [
-                                    "\"<h1>Seleccione un Menu</h1>\""
+                                    "\"<h1>Seleccione un Panel</h1>\""
                                 ],
                                 "layout|flex": 1
                             },
@@ -734,7 +646,7 @@
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
                                 "fieldLabel": "Icono",
-                                "name": "icono",
+                                "name": "icono_id",
                                 "queryMode": "local",
                                 "store": "nomenclador.Icono",
                                 "valueField": "id"
@@ -932,7 +844,7 @@
                 "designer|params": [
                     "config"
                 ],
-                "fn": "processConfiguracionMenu",
+                "fn": "processConfiguracionPanel",
                 "implHandler": [
                     "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
                     "    result = [],",
@@ -958,7 +870,7 @@
                     "return config;"
                 ]
             },
-            "name": "processConfiguracionMenu",
+            "name": "processConfiguracionPanel",
             "designerId": "48092904-d784-4237-b4f0-9d4abea0f2b8"
         }
     ]

@@ -100,7 +100,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "categoria"
+                "name": "categoria_entidad"
             },
             "name": "MyString13",
             "designerId": "8dcdd478-b59c-4042-854d-d2a079900f4c"
@@ -113,7 +113,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "categoria_id"
+                "name": "categoria_entidad_id"
             },
             "name": "MyString39",
             "designerId": "cbca12fd-8bba-451f-95ce-1a825a01a437"

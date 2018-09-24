@@ -85,7 +85,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "menu_id"
+                "name": "menu"
             },
             "name": "MyString91",
             "designerId": "a5a06c08-5fc3-4d54-b284-1556b729688f"
@@ -98,10 +98,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "menu"
+                "name": "menu_id"
             },
-            "name": "MyString92",
-            "designerId": "b7ce2595-0e2f-4351-89d5-93c81f53e49b"
+            "name": "MyString7",
+            "designerId": "8db6ef38-f190-428c-b40d-200c3ff66ef6"
         },
         {
             "type": "Ext.data.field.String",

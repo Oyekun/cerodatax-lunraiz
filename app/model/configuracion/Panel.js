@@ -44,11 +44,11 @@ Ext.define('cerodatax.model.configuracion.Panel', {
         },
         {
             type: 'string',
-            name: 'menu_id'
+            name: 'menu'
         },
         {
             type: 'string',
-            name: 'menu'
+            name: 'menu_id'
         },
         {
             type: 'string',

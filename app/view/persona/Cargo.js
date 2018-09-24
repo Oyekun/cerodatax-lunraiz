@@ -69,7 +69,7 @@ Ext.define('cerodatax.view.persona.Cargo', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'categoria',
+                    dataIndex: 'categoria_cargo',
                     text: 'Categoria'
                 },
                 {
@@ -293,12 +293,12 @@ Ext.define('cerodatax.view.persona.Cargo', {
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
                             fieldLabel: 'Categoria',
-                            name: 'categoria_id',
+                            name: 'categoria_cargo_id',
                             allowBlank: false,
                             emptyText: 'Seleccione',
                             displayField: 'nombre',
                             queryMode: 'local',
-                            store: 'nomenclador.Categoria',
+                            store: 'nomenclador.CategoriaCargo',
                             valueField: 'id'
                         },
                         {

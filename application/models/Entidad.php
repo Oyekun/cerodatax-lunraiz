@@ -42,7 +42,7 @@ class Entidad extends CI_Model {
                 $this->load->model('TipoEntidad'); 
 				$this->tipo_id = $this->TipoEntidad->id;
 				$this->load->model('CategoriaEntidad'); 
-				$this->categoria_id = $this->CategoriaEntidad->id;
+				$this->categoria_entidad_id = $this->CategoriaEntidad->id;
 				$this->load->model('Municipio'); 
 				$this->municipio_id = $this->Municipio->id;
 				$this->load->model('Clasificacion'); 
@@ -53,7 +53,7 @@ class Entidad extends CI_Model {
                                 $this->tipo_registro_id = $this->TipoRegistro->id;
 				$this->uuid = 'codigo_registro';
          $this->relacion = array('tipo_id' =>'nomenclador_tipoentidad'
-        ,'categoria_id' =>'nomenclador_categoriaentidad'
+        ,'categoria_entidad_id' =>'nomenclador_categoriaentidad'
         ,'pais_id' =>'nomenclador_pais'
         ,'provincia_id' =>'nomenclador_provincia'
         ,'municipio_id' =>'nomenclador_municipio'

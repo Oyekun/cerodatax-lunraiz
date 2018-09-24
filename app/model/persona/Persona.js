@@ -197,6 +197,10 @@ Ext.define('cerodatax.model.persona.Persona', {
         },
         {
             type: 'string',
+            name: 'organismo'
+        },
+        {
+            type: 'string',
             name: 'organismo_id'
         },
         {

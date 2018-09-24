@@ -18,6 +18,8 @@ Ext.define('cerodatax.view.seguridad.Rol', {
     alias: 'widget.seguridadrol',
 
     requires: [
+        'cerodatax.view.seguridad.RolViewModel',
+        'cerodatax.view.seguridad.RolViewController',
         'Ext.grid.column.Column',
         'Ext.button.Button',
         'Ext.toolbar.Paging',
@@ -31,6 +33,10 @@ Ext.define('cerodatax.view.seguridad.Rol', {
         'Ext.XTemplate'
     ],
 
+    controller: 'seguridadrol',
+    viewModel: {
+        type: 'seguridadrol'
+    },
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,
@@ -128,7 +134,7 @@ Ext.define('cerodatax.view.seguridad.Rol', {
         },
         {
             xtype: 'panel',
-            flex: 1,
+            flex: 0.6,
             region: 'east',
             split: true,
             reference: 'display',

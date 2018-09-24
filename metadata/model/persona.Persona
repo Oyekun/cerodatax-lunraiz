@@ -618,10 +618,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "organismo_id"
+                "name": "organismo"
             },
             "name": "MyString28",
             "designerId": "9d293c6e-786a-44cd-a54a-d2391503e958"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "organismo_id"
+            },
+            "name": "MyString94",
+            "designerId": "5b100d6f-1b7c-48d6-9bb8-b44bab25dd9c"
         },
         {
             "type": "Ext.data.field.String",

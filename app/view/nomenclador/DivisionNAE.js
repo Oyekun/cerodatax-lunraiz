@@ -144,7 +144,7 @@ Ext.define('cerodatax.view.nomenclador.DivisionNAE', {
         },
         {
             xtype: 'panel',
-            flex: 1,
+            flex: 0.6,
             region: 'east',
             split: true,
             reference: 'display',

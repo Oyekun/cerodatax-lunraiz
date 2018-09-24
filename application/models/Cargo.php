@@ -26,15 +26,15 @@ class Cargo extends CI_Model {
                 parent::__construct();
                 $this->load->model('NivelEducacional'); 
 				$this->niveleducacional_id = $this->NivelEducacional->id;
-				$this->load->model('Categoria'); 
-				$this->categoria_id = $this->Categoria->id;
+				$this->load->model('CategoriaCargo'); 
+				$this->categoria_cargo_id = $this->CategoriaCargo->id;
 				$this->load->model('Calificador'); 
 				$this->calificador_id = $this->Calificador->id;
 				$this->load->model('GrupoEscala'); 
 				$this->grupoescala_id = $this->GrupoEscala->id;
 				$this->uuid = 'nombre';
                                  $this->relacion = array('nivel_educacional_id' =>'nomenclador_niveleducacional'
-        ,'categoria_id' =>'nomenclador_categoria'
+        ,'categoria_cargo_id' =>'nomenclador_categoriacargo'
         ,'calificador_id' =>'nomenclador_calificador'
         ,'grupoescala_id' =>'nomenclador_grupoescala'
         );

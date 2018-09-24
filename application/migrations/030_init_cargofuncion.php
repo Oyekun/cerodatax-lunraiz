@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class Migration_Init_cargo extends CI_Migration {
+class Migration_Init_cargo_funcion extends CI_Migration {
 
         public function up()
         {

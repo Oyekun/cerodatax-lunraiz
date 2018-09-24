@@ -20,9 +20,17 @@ class Seguridad extends CI_Controller {
 	 */
 	public function index()
 	{    
+
 		$this->load->view('inicio');
 	} 
-	
+
+/*No se ha
+public function authenticate_user()
+	{    
+
+		return TRUE;
+	} */
+ 
 	
 }
   

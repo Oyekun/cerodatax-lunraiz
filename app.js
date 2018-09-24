@@ -49,7 +49,7 @@ Ext.application({
         'nomenclador.Defensa',
         'nomenclador.Calificador',
         'nomenclador.GrupoEscala',
-        'nomenclador.Categoria',
+        'nomenclador.CategoriaCargo',
         'estructura.EntidadArea',
         'nomenclador.Continente',
         'nomenclador.NAE',
@@ -88,7 +88,7 @@ Ext.application({
         'nomenclador.Defensa',
         'nomenclador.Calificador',
         'nomenclador.GrupoEscala',
-        'nomenclador.Categoria',
+        'nomenclador.CategoriaCargo',
         'estructura.Entidad',
         'estructura.EntidadArea',
         'estructura.Area',
@@ -105,7 +105,8 @@ Ext.application({
         'nomenclador.TipoModulo',
         'configuracion.Menu',
         'nomenclador.Icono',
-        'configuracion.Panel'
+        'configuracion.Panel',
+        'crm.Contacto'
     ],
     views: [
         'seguridad.Usuario',
@@ -122,7 +123,7 @@ Ext.application({
         'nomenclador.Municipio',
         'nomenclador.Organismo',
         'nomenclador.Clasificacion',
-        'nomenclador.Categoria',
+        'nomenclador.CategoriaCargo',
         'nomenclador.Sexo',
         'nomenclador.NivelEducacional',
         'nomenclador.TipoEntidad',
@@ -141,15 +142,15 @@ Ext.application({
         'nomenclador.DivisionNAE',
         'nomenclador.Union',
         'nomenclador.TipoRegistro',
-        'crm.FormContacto',
-        'crm.Contacto',
         'nomenclador.Moneda',
         'estructura.EntidadAreaForm',
         'configuracion.Modulo',
         'configuracion.Menu',
         'nomenclador.TipoModulo',
         'nomenclador.Icono',
-        'configuracion.Panel'
+        'configuracion.Panel',
+        'crm.ContactoForm',
+        'crm.Contacto'
     ],
     controllers: [
         'Escritorio',

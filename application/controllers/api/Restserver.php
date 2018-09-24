@@ -44,6 +44,7 @@ class Restserver extends REST_Controller {
 		//print_r($_REQUEST);die;
 		//print_r($this->config->config['enable_query_strings']);die;
 		// $this->config->config['enable_query_strings'] = TRUE;
+        $_REQUEST = $this->security->xss_clean($_REQUEST);
         $rests = $this->Api_model->get_all($_REQUEST); 
 		//$config['base_url'] = 'http://localhost/cerodata/index.php/api/restserver/rests/?model='.$_REQUEST['model'].'&esquema='.$_REQUEST['esquema'];
 		
@@ -118,7 +119,7 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
 
     public function rests_post()
     { 
-	 
+	//  $_REQUEST = $this->security->xss_clean($_REQUEST);
     $id = $this->Api_model->posts($_REQUEST); 
 	if ($id === NULL) 
 	$messageText = 'El elemento no se ha creado.';
@@ -136,6 +137,8 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
 	
 	public function rests_put($id)
     {
+         $this->_args = $this->security->xss_clean($this->_args);
+         $id = $this->security->xss_clean($id);
 		$datos =  Array();  
 		$datos['esquema']=$this->_args['esquema'];
 		$datos['model']=$this->_args['model'];  
@@ -169,7 +172,8 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
 
     public function rests_delete($id)
     {
-		
+		 $this->_args = $this->security->xss_clean($this->_args);
+          $id = $this->security->xss_clean($id);
         $datos =  Array();  
 		$datos['esquema']=$this->_args['esquema'];
 		$datos['model']=$this->_args['model']; 

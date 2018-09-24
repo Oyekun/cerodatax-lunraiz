@@ -11,9 +11,7 @@
         "designer|userClassName": "estructura.Entidad",
         "folderSort": true,
         "model": "estructura.Entidad",
-        "root": [
-            "{expanded: true}"
-        ],
+        "root": null,
         "storeId": "estructura.Entidad"
     },
     "name": "MyTreeStore",

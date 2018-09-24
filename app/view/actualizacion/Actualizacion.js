@@ -104,7 +104,7 @@ Ext.define('cerodatax.view.actualizacion.Actualizacion', {
         },
         {
             xtype: 'panel',
-            flex: 1,
+            flex: 0.8,
             region: 'east',
             split: true,
             reference: 'display',

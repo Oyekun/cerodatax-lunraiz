@@ -81,7 +81,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "categoria",
+                        "dataIndex": "categoria_cargo",
                         "text": "Categoria"
                     },
                     "name": "MyColumn8",
@@ -749,9 +749,9 @@
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
                                 "fieldLabel": "Categoria",
-                                "name": "categoria_id",
+                                "name": "categoria_cargo_id",
                                 "queryMode": "local",
-                                "store": "nomenclador.Categoria",
+                                "store": "nomenclador.CategoriaCargo",
                                 "valueField": "id"
                             },
                             "name": "MyComboBox3",

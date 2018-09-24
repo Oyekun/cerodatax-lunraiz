@@ -14,9 +14,9 @@ Moneda,Moneda,Monedas,0,nomenclador
 Organismo,Organismo,Organismos,0,nomenclador
 Clasificacion,Clasificacion,Clasificación,0,nomenclador
 TipoRegistro,TipoRegistro,Tipo de Registro,0,nomenclador
-CategoriaEntidad,Categoria,Categoría,0,nomenclador
+CategoriaEntidad,CategoriaEntidad,Categoría Entidad,0,nomenclador
 SeccionNAE,SeccionNAE,Sección NAE,0,nomenclador
-DisicionNAE,DivisionNAE,División NAE,0,nomenclador
+DivisionNAE,DivisionNAE,División NAE,0,nomenclador
 NAE,NAE,NAE,0,nomenclador
 TipoEntidad,TipoEntidad,Tipo de Entidad,0,nomenclador
 Union,Union,Unión,0,nomenclador
@@ -28,8 +28,9 @@ Defensa,Defensa,Situación de la Defensa,0,nomenclador
 Sexo,Sexo,Sexo,0,nomenclador
 GrupoEscala,GrupoEscala,Grupo Escala,0,nomenclador
 Calificador,Calificador,Calificador,0,nomenclador
-CategoriaCargo,CategoriaCargo,Categoría,0,nomenclador
+CategoriaCargo,CategoriaCargo,Categoría Cargo,0,nomenclador
 TipoModulo,TipoModulo,Tipo de Módulo,0,nomenclador
 Icono,Icono,Icono,0,nomenclador
-Modulos,Modulo,Módulos,0,configuracion
-Modulo,Menu,Menú,0,configuracion
+Modulos,Modulos,Módulos,0,configuracion
+Modulo,Menu,Menú,1,configuracion
+Modulo,Panel,Panel,2,configuracion

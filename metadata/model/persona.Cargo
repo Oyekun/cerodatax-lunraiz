@@ -71,7 +71,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "categoria"
+                "name": "categoria_cargo"
             },
             "name": "MyString30",
             "designerId": "00173642-f573-4102-a435-f95160f75f64"
@@ -84,7 +84,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "categoria_id"
+                "name": "categoria_cargo_id"
             },
             "name": "MyString43",
             "designerId": "e4d6d05f-f3e4-4ea9-a00f-e3465e0aa378"

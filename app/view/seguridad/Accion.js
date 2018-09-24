@@ -105,7 +105,7 @@ Ext.define('cerodatax.view.seguridad.Accion', {
         },
         {
             xtype: 'panel',
-            flex: 1,
+            flex: 0.6,
             region: 'east',
             split: true,
             reference: 'display',

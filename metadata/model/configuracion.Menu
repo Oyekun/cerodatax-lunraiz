@@ -137,10 +137,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "activo"
+                "name": "tabpanel"
             },
             "name": "MyBoolean",
             "designerId": "6f72c1bf-38f6-4026-a54c-9f0632a255ac"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "activo"
+            },
+            "name": "MyBoolean13",
+            "designerId": "b80bf0a4-869e-49a5-8502-5389c2ee72f0"
         }
     ]
 }

@@ -43,11 +43,11 @@ Ext.define('cerodatax.model.persona.Cargo', {
         },
         {
             type: 'string',
-            name: 'categoria'
+            name: 'categoria_cargo'
         },
         {
             type: 'string',
-            name: 'categoria_id'
+            name: 'categoria_cargo_id'
         },
         {
             type: 'string',

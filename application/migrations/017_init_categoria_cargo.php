@@ -40,13 +40,13 @@ $string = read_file(APPPATH.'hooks/categoria_cargo.csv');
              
              $abreviatura = str_replace("\r", "", $salida[2]); 
          
-            $tb='nomenclador_categoria';
+            $tb='nomenclador_categoriacargo';
            $this->db->where('nombre', $nombre);   
            $result = $this->db->get("$tb");
           $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
         if($existe==FALSE)
-        {$model = 'Categoria';
+        {$model = 'CategoriaCargo';
             $this->load->model($model);
         $nameuuid = new $model; 
         $uuid = $this->uuid->v5($value,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
@@ -69,7 +69,7 @@ $string = read_file(APPPATH.'hooks/categoria_cargo.csv');
         
                     public function down()
         {
-            $tb = 'nomenclador_categoria';      
+            $tb = 'nomenclador_categoriacargo';      
             $this->db->delete("$tb");
                  
         }

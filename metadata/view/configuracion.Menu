@@ -61,94 +61,6 @@
                     "designerId": "3008839a-2765-411d-ba2c-ef63ee033e87"
                 },
                 {
-                    "type": "Ext.grid.column.Template",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "orden",
-                        "text": "Correo"
-                    },
-                    "name": "MyTemplateColumn",
-                    "designerId": "cf331898-66d5-4ba3-a058-fb924df873f6",
-                    "cn": [
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "tpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "tpl",
-                                "implHandler": [
-                                    "<a href=\"mailto:{correo}\">{correo}</a>"
-                                ]
-                            },
-                            "name": "tpl",
-                            "designerId": "3b1f45a4-dc1a-4fef-9b72-dc3b826a2b69"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "icono",
-                        "text": "Entidad"
-                    },
-                    "name": "MyColumn2",
-                    "designerId": "7dff4667-47ea-4354-9dfd-c6a0872869e0"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "modulo",
-                        "text": "Persona"
-                    },
-                    "name": "MyColumn3",
-                    "designerId": "0fa35016-b21c-4bc6-bbcc-e626f2e62c20"
-                },
-                {
-                    "type": "Ext.grid.column.Boolean",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "administrador",
-                        "text": "Administrador"
-                    },
-                    "name": "MyBooleanColumn1",
-                    "designerId": "ebe8c8b3-7151-47cb-a27d-27d33b19e3b4"
-                },
-                {
-                    "type": "Ext.grid.column.Boolean",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "activo",
-                        "text": "LDAP"
-                    },
-                    "name": "MyBooleanColumn3",
-                    "designerId": "d6f89014-5dc1-4ddb-a630-c923ecc83de1"
-                },
-                {
                     "type": "viewcontrollereventbinding",
                     "reference": {
                         "name": "listeners",
@@ -447,7 +359,7 @@
             "userConfig": {
                 "bodyBorder": true,
                 "layout": "card",
-                "layout|flex": 1,
+                "layout|flex": 0.8,
                 "layout|region": "east",
                 "layout|split": true,
                 "reference": "display",
@@ -482,7 +394,7 @@
                             "userConfig": {
                                 "designer|displayName": "message",
                                 "html": [
-                                    "\"<h1>Seleccione un Menu</h1>\""
+                                    "\"<h1>Seleccione un Menú</h1>\""
                                 ],
                                 "layout|flex": 1
                             },
@@ -661,17 +573,64 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "designer|displayName": null,
                                 "displayField": "nombre",
-                                "emptyText": "Seleccione",
-                                "fieldLabel": "Modulo",
-                                "name": "modulo_id",
+                                "fieldLabel": "Módulo",
+                                "name": "modulo",
                                 "queryMode": "local",
                                 "store": "configuracion.Modulo",
                                 "valueField": "id"
                             },
-                            "name": "MyComboBox25",
-                            "designerId": "23727852-47b3-49ae-9485-69280e431583"
+                            "name": "MyComboBox6",
+                            "designerId": "c7d10137-edd6-4f31-9d8a-ad183250dd5f",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "e2b0207b-ce35-4fa9-8015-6249d972ba0d"
+                                },
+                                {
+                                    "type": "Ext.view.BoundList",
+                                    "reference": {
+                                        "name": "listConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemSelector": "div"
+                                    },
+                                    "name": "MyBoundList",
+                                    "designerId": "bcddbdb4-08f7-476c-9c5b-4e335ab37ae2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    " {nombre} ({tipo_modulo})"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "5921feda-6ee0-4337-9ae9-b41af3d7838c"
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -751,11 +710,26 @@
                             "codeClass": null,
                             "userConfig": {
                                 "checked": true,
-                                "fieldLabel": "Activo",
-                                "name": "activo"
+                                "fieldLabel": "TabPanel",
+                                "name": "tabpanel"
                             },
                             "name": "MyCheckbox",
                             "designerId": "982e9de3-1338-4ca7-ac26-faf864618f55"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Activo",
+                                "name": "activo"
+                            },
+                            "name": "MyCheckbox2",
+                            "designerId": "11d6b535-593c-48b4-8192-2756bb0375c3"
                         },
                         {
                             "type": "Ext.form.field.TextArea",

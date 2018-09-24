@@ -63,7 +63,7 @@ class Migration_Add_nomencladores extends CI_Migration {
                         ),  
                 ));
                 $this->dbforge->add_key('id', TRUE); 
-                $this->dbforge->create_table('nomenclador_categoria',TRUE);
+                $this->dbforge->create_table('nomenclador_categoriacargo',TRUE);
                 
 
                 $this->dbforge->add_field(array(
@@ -713,7 +713,7 @@ $this->dbforge->add_field(array(
                                 'null' => FALSE
                         ),
                         
-                        'categoria_id' => array(
+                        'categoria_entidad_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => TRUE 
@@ -831,7 +831,7 @@ $this->dbforge->add_field(array(
                 ));
                 $this->dbforge->add_key('tipo_id');
                 $this->dbforge->add_key('tipo_registro_id');
-                $this->dbforge->add_key('categoria_id');
+                $this->dbforge->add_key('categoria_entidad_id');
                 $this->dbforge->add_key('pais_id');
                 $this->dbforge->add_key('provincia_id'); 
                 $this->dbforge->add_key('municipio_id');
@@ -842,7 +842,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('parent_id'); 
                 $this->dbforge->add_field('CONSTRAINT tipo_id FOREIGN KEY (tipo_id) REFERENCES nomenclador_tipoentidad (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT tipo_registro_id FOREIGN KEY (tipo_registro_id) REFERENCES nomenclador_tiporegistro (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT categoria_id FOREIGN KEY (categoria_id) REFERENCES nomenclador_categoriaentidad (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT categoria_entidad_id FOREIGN KEY (categoria_entidad_id) REFERENCES nomenclador_categoriaentidad (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT pais_id FOREIGN KEY (pais_id) REFERENCES nomenclador_pais (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT provincia_id FOREIGN KEY (provincia_id) REFERENCES nomenclador_provincia (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT municipio_id FOREIGN KEY (municipio_id) REFERENCES nomenclador_municipio (id) ON UPDATE CASCADE');
@@ -898,7 +898,7 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => TRUE,
                         ),
-                         'categoria_id' => array(
+                         'categoria_cargo_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => TRUE,
@@ -927,11 +927,11 @@ $this->dbforge->add_field(array(
 
                 )); 
                 $this->dbforge->add_key('nivel_educacional_id');
-                $this->dbforge->add_key('categoria_id');
+                $this->dbforge->add_key('categoria_cargo_id');
                 $this->dbforge->add_key('calificador_id'); 
                 $this->dbforge->add_key('grupoescala_id');  
                 $this->dbforge->add_field('CONSTRAINT nivel_educacional_id FOREIGN KEY (nivel_educacional_id) REFERENCES nomenclador_niveleducacional (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT categoria_id FOREIGN KEY (categoria_id) REFERENCES nomenclador_categoria (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT categoria_cargo_id FOREIGN KEY (categoria_cargo_id) REFERENCES nomenclador_categoriacargo (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT calificador_id FOREIGN KEY (calificador_id) REFERENCES nomenclador_calificador (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT grupoescala_id FOREIGN KEY (grupoescala_id) REFERENCES nomenclador_grupoescala (id) ON UPDATE CASCADE');
                 $this->dbforge->add_key('id', TRUE);
@@ -1579,7 +1579,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->drop_table('estructura_areaentidad',TRUE);
                 $this->dbforge->drop_table('estructura_entidadpersona',TRUE);
                 $this->dbforge->drop_table('nomenclador_calificador',TRUE);
-                $this->dbforge->drop_table('nomenclador_categoria',TRUE);
+                $this->dbforge->drop_table('nomenclador_categoriacargo',TRUE);
                 $this->dbforge->drop_table('nomenclador_categoriaentidad',TRUE);
                 $this->dbforge->drop_table('nomenclador_clasificacion',TRUE);
                 $this->dbforge->drop_table('nomenclador_colorpiel',TRUE);

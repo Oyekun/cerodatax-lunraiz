@@ -18,6 +18,8 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
     alias: 'widget.seguridadusuario',
 
     requires: [
+        'cerodatax.view.seguridad.UsuarioViewModel',
+        'cerodatax.view.seguridad.UsuarioViewController',
         'Ext.grid.Panel',
         'Ext.grid.column.Template',
         'Ext.XTemplate',
@@ -36,6 +38,10 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
         'Ext.grid.filters.Filters'
     ],
 
+    controller: 'seguridadusuario',
+    viewModel: {
+        type: 'seguridadusuario'
+    },
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,
@@ -161,7 +167,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
         },
         {
             xtype: 'panel',
-            flex: 1,
+            flex: 0.6,
             region: 'east',
             split: true,
             reference: 'display',

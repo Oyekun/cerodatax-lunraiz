@@ -443,7 +443,7 @@
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
                                 "fieldLabel": "Categoría",
-                                "name": "categoria_id",
+                                "name": "categoria_entidad_id",
                                 "queryMode": "local",
                                 "store": "nomenclador.CategoriaEntidad",
                                 "valueField": "id"

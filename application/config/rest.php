@@ -94,7 +94,7 @@ $config['enable_emulate_request'] = TRUE;
 | e.g: My Secret REST API
 |
 */
-$config['rest_realm'] = 'REST API';
+$config['rest_realm'] = 'CERODATAX';
 
 /*
 |--------------------------------------------------------------------------
@@ -110,7 +110,7 @@ $config['rest_realm'] = 'REST API';
 |           authorization key
 |
 */
-$config['rest_auth'] = FALSE;
+$config['rest_auth'] = FALSE;//Hay que hacer la parte de autenticacion
 
 /*
 |--------------------------------------------------------------------------
@@ -137,7 +137,7 @@ $config['auth_source'] = '';
 | requests etc), set to TRUE;
 |
 */
-$config['allow_auth_and_keys'] = TRUE;
+$config['allow_auth_and_keys'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -155,8 +155,8 @@ $config['allow_auth_and_keys'] = TRUE;
 | e.g: md5('admin:REST API:1234') = '1e957ebc35631ab22d5bd6526bd14ea2'
 |
 */
-$config['auth_library_class'] = '';
-$config['auth_library_function'] = '';
+$config['auth_library_class'] = '';//'Seguridad';
+$config['auth_library_function'] ='';// 'authenticate_user';
 
 /*
 |--------------------------------------------------------------------------
@@ -210,7 +210,8 @@ $config['auth_library_function'] = '';
 | Array of usernames and passwords for login, if ldap is configured this is ignored
 |
 */
-$config['rest_valid_logins'] = ['admin' => '1234'];
+$config['rest_valid_logins'] = ['admin' => '123'];
+//$config['rest_valid_logins'] = ['username' => 'password', 'admin' => '123'];
 
 /*
 |--------------------------------------------------------------------------
@@ -298,7 +299,7 @@ $config['rest_database_group'] = 'default';
 | The table name in your database that stores API keys
 |
 */
-$config['rest_keys_table'] = 'keys';
+$config['rest_keys_table'] = 'rest_keys';
 
 /*
 |--------------------------------------------------------------------------
@@ -323,7 +324,7 @@ $config['rest_keys_table'] = 'keys';
 |   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
 */
-$config['rest_enable_keys'] = FALSE;
+$config['rest_enable_keys'] = FALSE; //aki es donde se activa para poder
 
 /*
 |--------------------------------------------------------------------------
@@ -403,7 +404,7 @@ $config['rest_key_name'] = 'X-API-KEY';
 |   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
 */
-$config['rest_enable_logging'] = FALSE;
+$config['rest_enable_logging'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -414,7 +415,7 @@ $config['rest_enable_logging'] = FALSE;
 | table name to match e.g. my_logs
 |
 */
-$config['rest_logs_table'] = 'logs';
+$config['rest_logs_table'] = 'rest_logs';
 
 /*
 |--------------------------------------------------------------------------
@@ -436,7 +437,7 @@ $config['rest_logs_table'] = 'logs';
 |    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
 */
-$config['rest_enable_access'] = FALSE;
+$config['rest_enable_access'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -447,7 +448,7 @@ $config['rest_enable_access'] = FALSE;
 | table name to match e.g. my_access
 |
 */
-$config['rest_access_table'] = 'access';
+$config['rest_access_table'] = 'rest_access';
 
 /*
 |--------------------------------------------------------------------------
@@ -486,7 +487,7 @@ $config['rest_logs_json_params'] = FALSE;
 |
 | See application/controllers/api/example.php for examples
 */
-$config['rest_enable_limits'] = FALSE;
+$config['rest_enable_limits'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -497,7 +498,7 @@ $config['rest_enable_limits'] = FALSE;
 | table name to match e.g. my_limits
 |
 */
-$config['rest_limits_table'] = 'limits';
+$config['rest_limits_table'] = 'rest_limits';
 
 /*
 |--------------------------------------------------------------------------

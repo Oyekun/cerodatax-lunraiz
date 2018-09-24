@@ -18,8 +18,6 @@ Ext.define('cerodatax.model.crm.Contacto', {
 
     requires: [
         'Ext.data.field.String',
-        'Ext.data.field.Boolean',
-        'Ext.data.field.Date',
         'Ext.data.proxy.Rest',
         'Ext.data.writer.Json',
         'Ext.data.reader.Json'
@@ -40,51 +38,6 @@ Ext.define('cerodatax.model.crm.Contacto', {
             name: 'apellidos'
         },
         {
-            name: 'entidad'
-        },
-        {
-            name: 'carnet_identidad'
-        },
-        {
-            type: 'string',
-            name: 'sexo'
-        },
-        {
-            type: 'string',
-            name: 'sexo_id'
-        },
-        {
-            type: 'string',
-            name: 'estado_civil'
-        },
-        {
-            type: 'string',
-            name: 'estado_civil_id'
-        },
-        {
-            type: 'string',
-            name: 'color_piel'
-        },
-        {
-            type: 'string',
-            name: 'color_piel_id'
-        },
-        {
-            name: 'padre'
-        },
-        {
-            name: 'madre'
-        },
-        {
-            name: 'tomo'
-        },
-        {
-            name: 'folio'
-        },
-        {
-            name: 'ano'
-        },
-        {
             name: 'direccion'
         },
         {
@@ -94,40 +47,11 @@ Ext.define('cerodatax.model.crm.Contacto', {
             name: 'celular'
         },
         {
-            name: 'edad'
-        },
-        {
             name: 'telefono'
         },
         {
-            name: 'estatura'
-        },
-        {
-            name: 'peso'
-        },
-        {
             type: 'string',
-            name: 'pais_registro_civil'
-        },
-        {
-            type: 'string',
-            name: 'provincia_registro_civil'
-        },
-        {
-            type: 'string',
-            name: 'municipio_registro_civil'
-        },
-        {
-            type: 'string',
-            name: 'pais_registro_civil_id'
-        },
-        {
-            type: 'string',
-            name: 'provincia_registro_civil_id'
-        },
-        {
-            type: 'string',
-            name: 'municipio_registro_civil_id'
+            name: 'web'
         },
         {
             type: 'string',
@@ -154,48 +78,19 @@ Ext.define('cerodatax.model.crm.Contacto', {
             name: 'provincia_id'
         },
         {
-            type: 'string',
-            name: 'nivel_educacional'
-        },
-        {
-            type: 'string',
-            name: 'nivel_educacional_id'
-        },
-        {
-            type: 'string',
-            name: 'situacion_defensa'
-        },
-        {
-            type: 'string',
-            name: 'situacion_defensa_id'
-        },
-        {
-            type: 'boolean',
-            name: 'donante'
-        },
-        {
-            type: 'boolean',
-            name: 'trabaja'
-        },
-        {
-            type: 'date',
-            name: 'fecha_nacimiento',
-            dateFormat: 'Y-m-d'
-        },
-        {
-            name: 'cantidad_hijos'
-        },
-        {
-            type: 'string',
-            name: 'grupo_sanguineo'
-        },
-        {
-            type: 'string',
-            name: 'grupo_sanguineo_id'
+            name: 'entidad'
         },
         {
             type: 'string',
             name: 'entidad_id'
+        },
+        {
+            type: 'string',
+            name: 'organismo'
+        },
+        {
+            type: 'string',
+            name: 'organismo_id'
         }
     ],
 
@@ -220,8 +115,8 @@ Ext.define('cerodatax.model.crm.Contacto', {
             }
         },
         extraParams: {
-            model: 'persona',
-            esquema: 'persona'
+            model: 'contacto',
+            esquema: 'crm'
         },
         url: 'index.php/api/restserver/rests/',
         writer: {

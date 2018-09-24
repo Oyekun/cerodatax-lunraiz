@@ -85,7 +85,7 @@ $string = read_file(APPPATH.'hooks/cargo.csv');
           }
 
 
-          $tb='nomenclador_categoria';
+          $tb='nomenclador_categoriacargo';
 
            $this->db->where('nombre', $categoria);   
            $result = $this->db->get("$tb");
@@ -125,7 +125,7 @@ $string = read_file(APPPATH.'hooks/cargo.csv');
         if($nivel_id!='')
         $dataArray['nivel_educacional_id'] = $nivel_id;               
         if($categoria_id!='')
-        $dataArray['categoria_id'] = $categoria_id;               
+        $dataArray['categoria_cargo_id'] = $categoria_id;               
         if($calificador_id!='')
         $dataArray['calificador_id'] = $calificador_id;               
         if($grupoescala_id!='')

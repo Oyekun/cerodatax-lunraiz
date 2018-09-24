@@ -18,21 +18,27 @@ Ext.define('cerodatax.view.configuracion.Menu', {
     alias: 'widget.configuracionmenu',
 
     requires: [
+        'cerodatax.view.seguridad.UsuarioViewModel',
+        'cerodatax.view.seguridad.UsuarioViewController',
         'Ext.grid.Panel',
-        'Ext.grid.column.Template',
-        'Ext.XTemplate',
-        'Ext.grid.column.Boolean',
+        'Ext.grid.column.Column',
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
         'Ext.form.field.Display',
         'Ext.form.Panel',
+        'Ext.XTemplate',
         'Ext.form.field.ComboBox',
+        'Ext.view.BoundList',
         'Ext.form.field.Number',
         'Ext.form.field.Checkbox',
         'Ext.form.field.TextArea'
     ],
 
+    controller: 'seguridadusuario',
+    viewModel: {
+        type: 'seguridadusuario'
+    },
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,
@@ -57,34 +63,6 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                     xtype: 'gridcolumn',
                     dataIndex: 'usuario',
                     text: 'nombre'
-                },
-                {
-                    xtype: 'templatecolumn',
-                    tpl: [
-                        '<a href="mailto:{correo}">{correo}</a>'
-                    ],
-                    dataIndex: 'orden',
-                    text: 'Correo'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'icono',
-                    text: 'Entidad'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'modulo',
-                    text: 'Persona'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'administrador',
-                    text: 'Administrador'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'activo',
-                    text: 'LDAP'
                 }
             ],
             listeners: {
@@ -158,7 +136,7 @@ Ext.define('cerodatax.view.configuracion.Menu', {
         },
         {
             xtype: 'panel',
-            flex: 1,
+            flex: 0.8,
             region: 'east',
             split: true,
             reference: 'display',
@@ -178,7 +156,7 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                         {
                             xtype: 'container',
                             flex: 1,
-                            html: '<h1>Seleccione un Menu</h1>'
+                            html: '<h1>Seleccione un Menú</h1>'
                         }
                     ]
                 },
@@ -242,14 +220,23 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                         },
                         {
                             xtype: 'combobox',
-                            fieldLabel: 'Modulo',
-                            name: 'modulo_id',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
+                            fieldLabel: 'Módulo',
+                            name: 'modulo',
                             allowBlank: false,
-                            emptyText: 'Seleccione',
                             displayField: 'nombre',
                             queryMode: 'local',
                             store: 'configuracion.Modulo',
-                            valueField: 'id'
+                            valueField: 'id',
+                            listConfig: {
+                                xtype: 'boundlist',
+                                itemSelector: 'div',
+                                itemTpl: [
+                                    ' {nombre} ({tipo_modulo})'
+                                ]
+                            }
                         },
                         {
                             xtype: 'numberfield',
@@ -275,6 +262,12 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                             queryMode: 'local',
                             store: 'nomenclador.Icono',
                             valueField: 'id'
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            fieldLabel: 'TabPanel',
+                            name: 'tabpanel',
+                            checked: true
                         },
                         {
                             xtype: 'checkboxfield',

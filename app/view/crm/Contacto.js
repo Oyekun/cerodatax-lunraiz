@@ -18,47 +18,148 @@ Ext.define('cerodatax.view.crm.Contacto', {
     alias: 'widget.crmcontacto',
 
     requires: [
-        'cerodatax.view.crm.ContactoViewModel',
+        'cerodatax.view.persona.PersonaViewModel1',
+        'cerodatax.view.persona.PersonaViewController1',
         'Ext.grid.Panel',
-        'Ext.grid.column.Number',
-        'Ext.grid.column.Date',
-        'Ext.grid.column.Boolean',
-        'Ext.view.Table'
+        'Ext.grid.column.Column',
+        'Ext.button.Button',
+        'Ext.grid.filters.Filters',
+        'Ext.selection.RowModel',
+        'Ext.toolbar.Paging'
     ],
 
+    controller: 'crmcontacto',
     viewModel: {
         type: 'crmcontacto'
     },
-    height: 250,
-    width: 400,
+    controller: 'nomencladorcrud',
+    height: 528,
+    shrinkWrap: 0,
+    width: 860,
+    layout: 'border',
+    collapsed: false,
 
-    items: [
+    dockedItems: [
         {
-            xtype: 'gridpanel',
-            title: 'My Grid Panel',
-            columns: [
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'string',
-                    text: 'String'
-                },
-                {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'number',
-                    text: 'Number'
-                },
-                {
-                    xtype: 'datecolumn',
-                    dataIndex: 'date',
-                    text: 'Date'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'bool',
-                    text: 'Boolean'
-                }
-            ]
+            xtype: 'pagingtoolbar',
+            dock: 'bottom',
+            displayInfo: true,
+            store: 'crm.Contacto'
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {
+                items: [
+                    me.processList({
+                        xtype: 'gridpanel',
+                        region: 'center',
+                        split: true,
+                        reference: 'list',
+                        itemId: 'gridPanel',
+                        resizable: false,
+                        forceFit: false,
+                        store: 'crm.Contacto',
+                        columns: [
+                            {
+                                xtype: 'gridcolumn',
+                                dataIndex: 'nombre',
+                                text: 'Nombre'
+                            }
+                        ],
+                        dockedItems: [
+                            {
+                                xtype: 'toolbar',
+                                dock: 'top',
+                                componentCls: 'button-view',
+                                items: [
+                                    {
+                                        xtype: 'button',
+                                        itemId: 'btnAdd',
+                                        glyph: 'xf067@FontAwesome',
+                                        iconCls: 'null',
+                                        text: 'Adicionar',
+                                        listeners: {
+                                            click: 'addWindows'
+                                        }
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        disabled: true,
+                                        itemId: 'btnEdit',
+                                        text: 'Editar',
+                                        bind: {
+                                            hidden: '{!record}'
+                                        },
+                                        listeners: {
+                                            click: 'editWindows'
+                                        }
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        disabled: true,
+                                        itemId: 'btnRemove',
+                                        text: 'Eliminar',
+                                        bind: {
+                                            hidden: '{!record}'
+                                        },
+                                        listeners: {
+                                            click: 'remove'
+                                        }
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        itemId: 'btnRefresh',
+                                        text: 'Actualizar',
+                                        tooltip: '<span style="  font-weight:bold"> Actualizar(Ctrl+A) </span>Actualiza elemento(s).',
+                                        tooltipType: 'title',
+                                        bind: {
+                                            hidden: '{!record}'
+                                        },
+                                        listeners: {
+                                            click: 'refresh'
+                                        }
+                                    }
+                                ],
+                                listeners: {
+                                    afterrender: 'onToolbarAfterRender'
+                                }
+                            }
+                        ],
+                        plugins: [
+                            {
+                                ptype: 'gridfilters',
+                                menuFilterText: 'Buscar'
+                            }
+                        ],
+                        selModel: {
+                            selType: 'rowmodel',
+                            mode: 'MULTI'
+                        }
+                    })
+                ]
+            };
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processList: function(config) {
+        var control = Ext.create('cerodatax.view.nomenclador.CrudViewController');
+        control.win='';
+        var me = this;
+        var aux = me.config.viewModel.type;
+        control.getWinPanel(aux);
+        var win = control.win;
+        var vista = Ext.create('widget.'+win);
+        form = vista.down('form').getForm();
+        var results=[];
+        columns = control.searchLabel(form.owner.items.items,results,true);
+        control.formatForm(form.owner.items);
+         control.configGridPanel(config,columns);
+        return config;
+    }
 
 });

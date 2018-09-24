@@ -61,3 +61,4 @@ $route['translate_uri_dashes'] = TRUE;
 $route['api/restserver/rests/(:num)'] = 'api/restserver/rests/id/$1';  
 $route['api/restserver/rests/root/(:num)'] = 'api/restserver/rests/root/id/$1';  
 $route['api/restserver/rests/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/restserver/rests/id/$1/format/$3$4'; 
+ 

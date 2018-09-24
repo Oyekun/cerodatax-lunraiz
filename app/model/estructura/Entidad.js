@@ -52,11 +52,11 @@ Ext.define('cerodatax.model.estructura.Entidad', {
         },
         {
             type: 'string',
-            name: 'categoria'
+            name: 'categoria_entidad'
         },
         {
             type: 'string',
-            name: 'categoria_id'
+            name: 'categoria_entidad_id'
         },
         {
             type: 'string',

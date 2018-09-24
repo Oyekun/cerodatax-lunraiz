@@ -14,11 +14,12 @@
  */
 
 Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
-    extend: 'Ext.form.Panel',
+    extend: 'Ext.window.Window',
     alias: 'widget.escritorioformautenticacion',
 
     requires: [
         'cerodatax.view.escritorio.FormAutenticacionViewModel',
+        'Ext.form.Panel',
         'Ext.Img',
         'Ext.form.field.Text',
         'Ext.XTemplate',
@@ -31,51 +32,54 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
         type: 'escritorioformautenticacion'
     },
     animateShadow: true,
-    alignTarget: 'center',
     autoShow: true,
     frame: true,
     itemId: 'windowsAutenticacion',
     width: 320,
+    layout: 'fit',
     bodyPadding: 10,
+    closable: false,
     title: 'Autenticación',
-    fieldDefaults: {
-        defaultType: 'textfield',
-        anchor: '100%',
-        labelWidth: 120
-    },
 
-    dockedItems: [
-        {
-            xtype: 'image',
-            dock: 'top',
-            height: 318,
-            width: 318,
-            src: 'resources/images/lunraiz.jpg'
-        }
-    ],
     items: [
         {
-            xtype: 'textfield',
-            fieldLabel: 'Usuario',
-            emptyText: 'usuario',
-            selectOnFocus: true
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Contraseña',
-            inputType: 'password',
-            emptyText: 'contraseña'
-        },
-        {
-            xtype: 'checkboxfield',
-            hidden: true,
-            fieldLabel: 'Recordarme',
-            name: 'recordarme'
-        },
-        {
-            xtype: 'button',
-            itemId: 'buttonAutenticacion',
-            text: 'Iniciar Session'
+            xtype: 'form',
+            dockedItems: [
+                {
+                    xtype: 'image',
+                    dock: 'top',
+                    height: 318,
+                    width: 318,
+                    src: 'resources/images/lunraiz.jpg'
+                }
+            ],
+            items: [
+                {
+                    xtype: 'textfield',
+                    fieldLabel: 'Usuario',
+                    name: 'usuario',
+                    emptyText: 'usuario',
+                    selectOnFocus: true
+                },
+                {
+                    xtype: 'textfield',
+                    fieldLabel: 'Contraseña',
+                    name: 'password',
+                    inputType: 'password',
+                    emptyText: 'contraseña'
+                },
+                {
+                    xtype: 'checkboxfield',
+                    hidden: true,
+                    fieldLabel: 'Recordarme',
+                    name: 'recordarme'
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'buttonAutenticacion',
+                    text: 'Iniciar Session'
+                }
+            ]
         }
     ]
 
