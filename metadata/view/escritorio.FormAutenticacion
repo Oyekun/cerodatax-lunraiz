@@ -160,7 +160,7 @@
                     "userConfig": {
                         "alignTarget": null,
                         "itemId": "buttonAutenticacion",
-                        "text": "Iniciar Session"
+                        "text": "Iniciar Sesión"
                     },
                     "name": "MyButton",
                     "designerId": "2dfb2c29-be76-4841-9bef-10e30827ebb6"

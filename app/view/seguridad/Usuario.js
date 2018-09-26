@@ -312,6 +312,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                         },
                         {
                             xtype: 'checkboxfield',
+                            hidden: true,
                             fieldLabel: 'LDAP',
                             name: 'ldap'
                         },

@@ -344,7 +344,8 @@ $cant++;
 	  
 	    if(!$this->row_existe($request))
 	    {
-	    	$tb = $request['esquema'].'_'.$request['model']; 		
+	    	$tb = $request['esquema'].'_'.$request['model']; 
+
 		$dataArray=json_decode($request['data'],TRUE); 
 		
 		foreach($dataArray as $key=>$nodo)
@@ -382,16 +383,24 @@ if(isset($dataArray['asociados']))
 		unset($dataArray['asociados']);
 }	
 	$this->db->set('id', $uuid);
-	
+	    $dataArray['date_created'] = $dataArray['date_updated'] = date('Y-m-d H:i:s');
+        $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
 		$this->db->insert("$tb", $dataArray); 
-       
+       if($tb=='seguridad_usuario')		
+	    	{
+	    		 $this->load->model("Register_model", "registerModel");
+	    		  $generate = $this->registerModel->new_api_key($level = 0,$ignore_limits = 0,$is_private_key = 0,$ip_addresses = "",$uuid);
+	    		
+	    	}
         if(isset($dataArray['parent_id']))		
 		if($dataArray['parent_id']!='')
 		{$dataArray1 = array();
 	
 			$this->db->where('id', $dataArray['parent_id']);   
 	$dataArray1['leaf']=0;
-	 
+	 $dataArray1['date_updated'] = date('Y-m-d H:i:s');
+        $dataArray3['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+
     $this->db->update("$tb",$dataArray1);
 	
 			
@@ -422,7 +431,9 @@ if(isset($dataArray['asociados']))
 		$dataArray3["$modeluno"]=$nodo['id'];
 		$dataArray3["$modeldos"]=$uuid;
 	 
-          	
+         $dataArray3['date_created'] = $dataArray3['date_updated'] = date('Y-m-d H:i:s');
+        $dataArray3['created_from_ip'] = $dataArray3['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+
 		$this->db->insert("$tb1", $dataArray3); 
 		}
 			 
@@ -510,7 +521,9 @@ if(isset($dataArray['asociados']))
 
 
     $this->db->where('id', $id);   
-	 
+	  $dataArray1['date_updated'] = date('Y-m-d H:i:s');
+        $dataArray1['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+
     $sl = $this->db->update("$tb",$dataArray);
 	 
 	if($asociados)	
@@ -543,6 +556,9 @@ if(isset($dataArray['asociados']))
 		//$dataArray3['entidad_id']=$nodo['id'];
 		//$dataArray3['area_id']=$uuidUno;
 		//print_r($dataArray3);die;
+		 $dataArray3['date_created'] = $dataArray3['date_updated'] = date('Y-m-d H:i:s');
+        $dataArray3['created_from_ip'] = $dataArray3['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+
 		$this->db->insert("$tb1", $dataArray3); 
           	
 		}
@@ -562,6 +578,9 @@ if(isset($dataArray['asociados']))
 		         $cambio['parent_id'] = $uuid;
 				 
 				 $this->db->where('id', $nodo['id']);
+				  $dataArray1['date_updated'] = date('Y-m-d H:i:s');
+        			$dataArray1['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+
 				 $this->db->update("$tb",$cambio);
 				 
 			 }

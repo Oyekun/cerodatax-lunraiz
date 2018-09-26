@@ -27,4 +27,4 @@ Nomencladores,Cargo,Calificador,Calificador,0,,,El menú Calificador se visualiz
 Nomencladores,Cargo,CategoriaCargo,Categoría Cargo,0,,,El menú Categoría se visualiza las categorías de acuerdo al cargo de la persona.
 Nomencladores,Módulo,TipoModulo,Tipo de Módulo,0,,Gestionar las características principales de los módulos del sistema.,El menú Tipo de Módulo se visualiza los diferentes módulos que va a tener el sistema.
 Nomencladores,Módulo,Icono,Icono,0,,,El menú Iconos se visualiza los iconos de los módulos que va a tener el sistema.
-Configuración,Generales,Modulos,Módulos,1,Se utiliza para gestionar la configuración y personalización del sistema.,Muestra la configuración general del sistema.,El menú Módulos se visualiza los diferentes módulos que va a tener el sistema y los menú asociados ha estos módulos.
+Configuración,Generales,Modulo,Módulos,1,Se utiliza para gestionar la configuración y personalización del sistema.,Muestra la configuración general del sistema.,El menú Módulos se visualiza los diferentes módulos que va a tener el sistema y los menú asociados ha estos módulos.

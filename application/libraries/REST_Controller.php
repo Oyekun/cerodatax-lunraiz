@@ -1121,6 +1121,7 @@ abstract class REST_Controller extends CI_Controller {
     protected function _log_request($authorized = FALSE)
     {
         // Insert the request into the log table
+       
         $is_inserted = $this->rest->db
             ->insert(
                 $this->config->item('rest_logs_table'), [
@@ -1130,10 +1131,15 @@ abstract class REST_Controller extends CI_Controller {
                 'api_key' => isset($this->rest->key) ? $this->rest->key : '',
                 'ip_address' => $this->input->ip_address(),
                 'time' => time(),
+                'date_created' => date('Y-m-d H:i:s'),
+                'date_updated' => date('Y-m-d H:i:s'),
+                'created_from_ip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1',
+                'updated_from_ip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1',
                 'authorized' => $authorized
             ]);
 
         // Get the last insert id to update at a later stage of the request
+
         $this->_insert_id = $this->rest->db->insert_id();
 
         return $is_inserted;
@@ -1209,7 +1215,11 @@ abstract class REST_Controller extends CI_Controller {
                 'uri' => $limited_uri,
                 'api_key' =>$api_key,
                 'count' => 1,
-                'hour_started' => time()
+                'hour_started' => time(),
+                 'date_created' => date('Y-m-d H:i:s'),
+                'date_updated' => date('Y-m-d H:i:s'),
+                'created_from_ip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1',
+                'updated_from_ip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1',
             ]);
         }
 
@@ -2156,7 +2166,9 @@ abstract class REST_Controller extends CI_Controller {
 
         return $this->rest->db->update(
                 $this->config->item('rest_logs_table'), $payload, [
-                'id' => $this->_insert_id
+                'id' => $this->_insert_id,
+                'date_updated' => date('Y-m-d H:i:s'),
+                'updated_from_ip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1'
             ]);
     }
 
@@ -2174,7 +2186,10 @@ abstract class REST_Controller extends CI_Controller {
 
         return $this->rest->db->update(
             $this->config->item('rest_logs_table'), $payload, [
-            'id' => $this->_insert_id
+            'id' => $this->_insert_id,
+             'date_updated' => date('Y-m-d H:i:s'),
+                'updated_from_ip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1',
+
         ]);
     }
 

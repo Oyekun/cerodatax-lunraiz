@@ -14,10 +14,10 @@
     </style>
     <title><?php echo $titulo ?></title>
 </head>
-<body>
-<?php echo form_open(base_url("registerUser/newApiKey")) ?>
+<body> 
+<form action="newApiKey" method="post">
     <input type="hidden" name="miApiKey" value="get!" />
     <input type="submit" class="getApiKet" value="Obtener mi api key" />
-<?php echo form_close() ?>
+</form> 
 </body>
 </html>

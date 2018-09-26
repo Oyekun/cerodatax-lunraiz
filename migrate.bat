@@ -1,1 +1,1 @@
-php index.php migrate/index
+php index.php tools/migrate

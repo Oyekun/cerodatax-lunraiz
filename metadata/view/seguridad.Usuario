@@ -834,6 +834,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "LDAP",
+                                "hidden": true,
                                 "name": "ldap"
                             },
                             "name": "MyCheckbox5",

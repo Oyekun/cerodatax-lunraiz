@@ -572,7 +572,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
             form.loadRecord(newRecord);
             if(record)
-            {   if(record.data.root===false)
+            {   if(record.data.root!==undefined)
+                if(record.data.root===false)
             {//newRecord.data.parent = record.data.nombre;
                 newRecord.data.parent_id = record.data.id;
 

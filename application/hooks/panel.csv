@@ -31,6 +31,6 @@ Calificador,Calificador,Calificador,0,nomenclador
 CategoriaCargo,CategoriaCargo,Categoría Cargo,0,nomenclador
 TipoModulo,TipoModulo,Tipo de Módulo,0,nomenclador
 Icono,Icono,Icono,0,nomenclador
-Modulos,Modulos,Módulos,0,configuracion
+Modulo,Modulo,Módulos,0,configuracion
 Modulo,Menu,Menú,1,configuracion
 Modulo,Panel,Panel,2,configuracion

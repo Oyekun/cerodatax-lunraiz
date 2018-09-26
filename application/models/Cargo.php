@@ -12,7 +12,7 @@ class Cargo extends CI_Model {
 	    public $id;
         public $nombre;  
         public $niveleducacional_id;  
-        public $categoria_id;  
+        public $categoria_cargo_id;  
         public $calificador_id;  
         public $codigo;  
         public $codigo_reup;  

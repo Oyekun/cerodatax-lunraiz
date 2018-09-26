@@ -77,7 +77,7 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                 {
                     xtype: 'button',
                     itemId: 'buttonAutenticacion',
-                    text: 'Iniciar Session'
+                    text: 'Iniciar Sesión'
                 }
             ]
         }
