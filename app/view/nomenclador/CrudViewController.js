@@ -572,12 +572,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
             form.loadRecord(newRecord);
             if(record)
-            {   if(record.data.root!==undefined)
-                if(record.data.root===false)
-            {//newRecord.data.parent = record.data.nombre;
-                newRecord.data.parent_id = record.data.id;
 
-            }
+            {   if(record.data)
+                if(record.data.root!==undefined)
+                if(record.data.root===false)
+                {//newRecord.data.parent = record.data.nombre;
+                    newRecord.data.parent_id = record.data.id;
+
+                }
             }
             //else {
             // if(newRecord.data.root===false)
@@ -620,7 +622,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 for(var comptree in resultree)
                 {var objtree = resultree[comptree];
                  console.log(objtree)
-               objtree.setDisabled(objtree.initialConfig.disabled);
+                 objtree.setDisabled(objtree.initialConfig.disabled);
                  if(objtree.config.disabled)
                      objtree.store.clearData();
 
@@ -630,18 +632,18 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      if(objtree.xtype=='treepanel')  {
 
                          if(record!==null)
-                            { if(record.data.parentId!==undefined)
-                         objtree.store.proxy.extraParams.id_asociado =record.data.id;
-                         else objtree.store.proxy.extraParams.id_asociado ='';
-                            }
-                      else
-                          objtree.store.proxy.extraParams.id_asociado ='';
-                      objtree.store.proxy.extraParams.parent_id ='';
-                      objtree.store.proxy.extraParams.detalles ='';
+                         { if(record.data.parentId!==undefined)
+                             objtree.store.proxy.extraParams.id_asociado =record.data.id;
+                          else objtree.store.proxy.extraParams.id_asociado ='';
+                         }
+                         else
+                             objtree.store.proxy.extraParams.id_asociado ='';
+                         objtree.store.proxy.extraParams.parent_id ='';
+                         objtree.store.proxy.extraParams.detalles ='';
                          objtree.store.proxy.extraParams.filter='';
 
 
-                      objtree.store.load();
+                         objtree.store.load();
                      }
                  }
                 }
@@ -1610,6 +1612,18 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                    item.store.proxy.extraParams.combo ='';
                                }});
              }}
+            if(item.xtype=='multiselector')
+            {if(record.data[item.name]!=='')
+                item.setDisabled(false);
+             if(item.store.proxy.extraParams)
+             { item.store.proxy.extraParams.combo ='combo';
+              item.store.load({   scope: this,
+                               callback: function (records, operation, success) {
+
+                                   item.store.proxy.extraParams.combo ='';
+                               }});
+             }}
+
 
         });
         // Show form hay q quitar los campos innesesarios.

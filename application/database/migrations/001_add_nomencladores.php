@@ -12,7 +12,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 class Migration_Add_nomencladores extends CI_Migration {
+        private $tables;
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->dbforge();
+$this->load->library('uuid'); 
+        $this->load->config('ion_auth', TRUE);
+        $this->tables = $this->config->item('tables', 'ion_auth');
+    }
         public function up()
         {
                // $attributes = array('ENGINE' => 'InnoDB');
@@ -996,7 +1004,7 @@ $this->dbforge->add_field(array(
                                 'seccionnae_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'null' => FALSE,
+                                'null' => FALSE
                         ),
                                 
                                 'divisionnae_id' => array(
@@ -1544,46 +1552,6 @@ $this->dbforge->add_field(array(
                 
               
                 
-                
-                $this->dbforge->add_field(array(
-                                'id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => 100,
-                                'unsigned' => TRUE,
-                        ),
-                                'rol' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'unique' => TRUE,
-                                'null' => FALSE,
-                        ),
-                                'habilitado' => array(
-                                'type' => 'INT',
-                                'constraint' => '1', 
-                                'default' => '0',
-                   ),  
-                         'date_created' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                         'date_updated' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                          'created_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        ),
-                          'updated_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        )
-
-                ));
-                $this->dbforge->add_key('id', TRUE);
-                $this->dbforge->create_table('seguridad_rol',TRUE);		
 		 
 		$this->dbforge->add_field(array(
                         'id' => array(
@@ -1875,30 +1843,150 @@ $this->dbforge->add_field(array(
                 $this->dbforge->create_table('persona_entidadpersona',TRUE);
 
 
+                $this->dbforge->drop_table($this->tables['groups'], TRUE);
 
-                $this->dbforge->add_field(array(
-                                'id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => 100,
-                                'unsigned' => TRUE,
+        // Table structure for table 'groups'
+        $this->dbforge->add_field(array(
+            'id' => array(
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
+                'unsigned'       => TRUE,
+            ),
+            'name' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '20',
+            ),
+            'description' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            )  ,  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => TRUE,    
                         ),
-                                'usuario' => array(
-                                'type' => 'VARCHAR',
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => TRUE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
                                 'constraint' => '100',
-                                'unique' => TRUE,
-                                'null' => FALSE,
+                                'null' => TRUE,    
                         ),
-                                'password' => array(
-                                'type' => 'VARCHAR',
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
                                 'constraint' => '100',
-                                 
-                                'null' => FALSE,
-                        ),
-                                'correo' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '30',
-                                'null' => TRUE 
-                        ),
+                                'null' => TRUE,    
+                        )
+        ));
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->create_table($this->tables['groups']);
+
+        // Dumping data for table 'groups'
+        $rol_id= $this->uuid->v5('admin','8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+        $data = array(
+            array(
+                'id' => $rol_id,
+                'name'        => 'admin',
+                'description' => 'Administrador'
+            ),
+            array(
+                'id' => $this->uuid->v5('miembros','8d3dc6d8-3a0d-4c03-8a04-1155445658f7'),
+                'name'        => 'miembros',
+                'description' => 'Usuario General'
+            )
+        );
+        $this->db->insert_batch($this->tables['groups'], $data);
+
+        // Drop table 'users' if it exists
+        $this->dbforge->drop_table($this->tables['users'], TRUE);
+
+        // Table structure for table 'users'
+        $this->dbforge->add_field(array(
+            'id' => array(
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
+                'unsigned'       => TRUE, 
+            ),
+            'ip_address' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '45'
+            ),
+            'username' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'password' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '80',
+            ),
+            'salt' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '40',
+                'null'       => TRUE
+            ),
+            'email' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '254'
+            ),
+            'activation_code' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '40',
+                'null'       => TRUE
+            ),
+            'forgotten_password_code' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '40',
+                'null'       => TRUE
+            ),
+            'forgotten_password_time' => array(
+                'type'       => 'INT',
+                'constraint' => '11',
+                'unsigned'   => TRUE,
+                'null'       => TRUE
+            ),
+            'remember_code' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '40',
+                'null'       => TRUE
+            ),
+            'created_on' => array(
+                'type'       => 'INT',
+                'constraint' => '11',
+                'unsigned'   => TRUE,
+            ),
+            'last_login' => array(
+                'type'       => 'INT',
+                'constraint' => '11',
+                'unsigned'   => TRUE,
+                'null'       => TRUE
+            ),
+            'active' => array(
+                'type'       => 'TINYINT',
+                'constraint' => '1',
+                'unsigned'   => TRUE,
+                'null'       => TRUE
+            ),
+            'first_name' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null'       => TRUE
+            ),
+            'last_name' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null'       => TRUE
+            ),
+            'company' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null'       => TRUE
+            ),
+            'phone' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '20',
+                'null'       => TRUE
+            ),        
                         
                                 'persona_id' => array(
                                 'type' => 'VARCHAR',
@@ -1911,48 +1999,162 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => TRUE,
                         ),
-                                'administrador' => array(
-                                'type' => 'INT',
-                                'constraint' => '1', 
-                                'default' => '0',
-                        ),
-                                'habilitado' => array(
-                                'type' => 'INT',
-                                'constraint' => '1', 
-                                'default' => '0',
-                        ), 
-                                'ldap' => array(
-                                'type' => 'INT',
-                                'constraint' => '1', 
-                                'default' => '0',
-                   ),  
+                                 
                          'date_created' => array(
                                 'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
+                                'null' => TRUE,    
                         ),
                          'date_updated' => array(
                                 'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
+                                'null' => TRUE,    
                         ),
                           'created_from_ip' => array(
                                 'type' => 'VARCHAR',  
                                 'constraint' => '100',
-                                'null' => FALSE,    
+                                'null' => TRUE,    
                         ),
                           'updated_from_ip' => array(
                                 'type' => 'VARCHAR',  
                                 'constraint' => '100',
-                                'null' => FALSE,    
+                                'null' => TRUE,    
                         )
 
-                ));
-                $this->dbforge->add_key('id', TRUE);
-                 $this->dbforge->add_key('persona_id');
+        ));
+        $this->dbforge->add_key('id', TRUE);
+          $this->dbforge->add_key('persona_id');
                  $this->dbforge->add_key('organismo_id');
                 $this->dbforge->add_field('CONSTRAINT persona_id FOREIGN KEY (persona_id) REFERENCES persona_persona (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT organismo_id FOREIGN KEY (organismo_id) REFERENCES nomenclador_organismo (id) ON UPDATE CASCADE');
                
-                $this->dbforge->create_table('seguridad_usuario',TRUE);  
+        $this->dbforge->create_table($this->tables['users']);
+
+        // Dumping data for table 'users'
+        $user_id = $this->uuid->v5('administrator','8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+        $data = array(
+            'id' => $user_id, 
+            'ip_address'              => '127.0.0.1',
+            'username'                => 'administrator',
+            'password'                => '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36',
+            'salt'                    => '',
+            'email'                   => 'admin@admin.com',
+            'activation_code'         => '',
+            'forgotten_password_code' => NULL,
+            'created_on'              => '1268889823',
+            'last_login'              => '1268889823',
+            'active'                  => '1',
+            'first_name'              => 'Admin',
+            'last_name'               => 'istrator',
+            'company'                 => 'ADMIN',
+            'phone'                   => '0',
+        );
+        $this->db->insert($this->tables['users'], $data);
+
+
+        // Drop table 'users_groups' if it exists
+        $this->dbforge->drop_table($this->tables['users_groups'], TRUE);
+
+        // Table structure for table 'users_groups'
+        $this->dbforge->add_field(array(
+            'id' => array(
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
+                'unsigned'       => TRUE,
+            ),
+            'user_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'unsigned'   => TRUE
+            ),
+            'group_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'unsigned'   => TRUE
+            ),  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => TRUE,    
+                        ),
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => TRUE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => TRUE,    
+                        ),
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => TRUE,    
+                        )
+        ));
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->create_table($this->tables['users_groups']);
+
+        // Dumping data for table 'users_groups'
+        $rand=mt_rand(0, 0xffff);
+        $uuidUno = $this->uuid->v5($rand,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
+        $data = array(
+            array(
+                'id'=>$uuidUno,
+                'user_id'  => $user_id,
+                'group_id' => $rol_id,
+            ) 
+        );
+        $this->db->insert_batch($this->tables['users_groups'], $data);
+
+
+        // Drop table 'login_attempts' if it exists
+        $this->dbforge->drop_table($this->tables['login_attempts'], TRUE);
+
+        // Table structure for table 'login_attempts'
+        $this->dbforge->add_field(array(
+            'id' => array(
+                'type'           => 'MEDIUMINT',
+                'constraint'     => '8',
+                'unsigned'       => TRUE,
+                'auto_increment' => TRUE
+
+            ),
+            'ip_address' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '45'
+            ),
+            'login' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null'       => TRUE
+            ),
+            'time' => array(
+                'type'       => 'INT',
+                'constraint' => '11',
+                'unsigned'   => TRUE,
+                'null'       => TRUE,
+            ),  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => TRUE,    
+                        ),
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => TRUE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => TRUE,    
+                        ),
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => TRUE,    
+                        )
+
+        ));
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->create_table($this->tables['login_attempts']);
+
 
                    $this->dbforge->add_field(array(
                                 'id' => array(
@@ -1997,6 +2199,8 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('id', TRUE);  
                 $this->dbforge->create_table('seguridad_entidadusuario',TRUE);
 
+
+ 
                   $this->dbforge->add_field(array(
                                 'id' => array(
                                 'type' => 'VARCHAR',

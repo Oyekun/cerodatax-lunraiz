@@ -1,0 +1,236 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "usuariorolForm",
+        "designer|userClassName": "seguridad.UsuarioRolForm",
+        "height": null,
+        "modal": true,
+        "resizable": [
+            "false"
+        ],
+        "title": "Roles",
+        "width": null
+    },
+    "name": "estructura.EntidadAreaForm1",
+    "designerId": "803513ae-71dd-463b-b129-64e4c1d88bb1",
+    "viewControllerInstanceId": "6b3a8d10-d20d-40d7-8cdd-5cd39f03de81",
+    "viewModelInstanceId": "94804799-3157-4e99-8b14-90783874147e",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "fieldDefaults": [
+                    "{padding:'0 10 0 0',enforceMaxLength: true}"
+                ],
+                "height": 480,
+                "layout": "auto",
+                "reference": "form",
+                "title": null,
+                "width": 400
+            },
+            "name": "MyForm",
+            "designerId": "5741dd01-1cb3-4397-88fa-f4366c055102",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": null,
+                        "fieldLabel": "Usuario",
+                        "name": "identity",
+                        "value": null,
+                        "width": 380
+                    },
+                    "name": "MyDisplayField35",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "a3fee591-9858-454f-96f4-7ba7254a34dc"
+                },
+                {
+                    "type": "Ext.view.MultiSelector",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "store": "seguridad.Rol",
+                        "title": "Roles"
+                    },
+                    "name": "MyMultiSelector2",
+                    "designerId": "7295400d-f4ef-4740-94d3-11b7f451d37c",
+                    "cn": [
+                        {
+                            "type": "Ext.view.MultiSelectorSearch",
+                            "reference": {
+                                "name": "search",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "store": "seguridad.Rol"
+                            },
+                            "name": "MyMultiSelectorSearch2",
+                            "designerId": "f133feab-c025-47f9-b31f-219b02eee872"
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "deferEmptyText": false,
+                                "designer|displayName": "nombre"
+                            },
+                            "name": "MyTable3",
+                            "designerId": "a7eae1c8-6b1d-402a-94f4-95ca0cf4b432"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "buttons",
+                        "dock": "bottom",
+                        "layout": "form",
+                        "padding": 10
+                    },
+                    "name": "MyContainer",
+                    "designerId": "d836e35b-cb35-4d66-84c1-2cc254bc51e6",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "itemId": "saveButton",
+                                "margin": 5,
+                                "text": "Guardar"
+                            },
+                            "name": "MyButton19",
+                            "designerId": "80a86d7b-58fd-4e49-99fb-e6a0cf329cba",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "saveTreeWindows",
+                                        "implHandler": [
+                                            "var form = this.getReferences().form.getForm(),",
+                                            "    record = form.getRecord(),",
+                                            "    store = Ext.StoreManager.lookup('Entidades');",
+                                            "",
+                                            "",
+                                            "// Valid",
+                                            "if (form.isValid()) {",
+                                            "",
+                                            "    // Update associated record with values",
+                                            "    form.updateRecord();",
+                                            "",
+                                            "    // Add to store if new record",
+                                            "    if (record.phantom) {",
+                                            "",
+                                            "        // TODO: Assign the record's ID from data source",
+                                            "        // Normally, this value would be auto-generated,",
+                                            "        // or returned from the server",
+                                            "        var id = store.count() + 1;",
+                                            "        record.set('id', id);",
+                                            "",
+                                            "        // Add to store",
+                                            "        store.add(record);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "    // Commit changes",
+                                            "    store.commitChanges();",
+                                            "",
+                                            "    // Display record",
+                                            "    this.select(this, record);",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "saveTreeWindows",
+                                    "designerId": "286906e0-1cdb-4283-8f5f-6052f3b44a61"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cancelButton",
+                                "margin": 5,
+                                "text": "Cancelar"
+                            },
+                            "name": "MyButton20",
+                            "designerId": "25712241-b6ef-4b27-ab1b-534e3e1fcfaa",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "cancelEdit",
+                                        "implHandler": [
+                                            "// Show details",
+                                            "this.showView('details');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "cancelEdit",
+                                    "designerId": "1cad2a61-6c9e-4c79-b32f-7a45634263b8"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

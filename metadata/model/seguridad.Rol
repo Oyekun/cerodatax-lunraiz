@@ -32,10 +32,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "rol"
+                "name": "name"
             },
             "name": "MyString7",
             "designerId": "08deae07-62df-4735-a07f-c27cc9ec016c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "description"
+            },
+            "name": "MyString97",
+            "designerId": "7f0f0dc4-aa88-49f3-b9f4-687b4f81f790"
         }
     ]
 }

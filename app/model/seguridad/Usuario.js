@@ -29,7 +29,7 @@ Ext.define('cerodatax.model.seguridad.Usuario', {
         },
         {
             type: 'string',
-            name: 'usuario'
+            name: 'username'
         },
         {
             type: 'string',
@@ -37,7 +37,7 @@ Ext.define('cerodatax.model.seguridad.Usuario', {
         },
         {
             type: 'string',
-            name: 'correo'
+            name: 'email'
         },
         {
             type: 'string',
@@ -57,11 +57,7 @@ Ext.define('cerodatax.model.seguridad.Usuario', {
         },
         {
             type: 'boolean',
-            name: 'ldap'
-        },
-        {
-            type: 'boolean',
-            name: 'administrador'
+            name: 'active'
         }
     ]
 });

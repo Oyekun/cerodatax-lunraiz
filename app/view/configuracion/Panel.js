@@ -219,13 +219,13 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                         },
                         {
                             xtype: 'combobox',
-                            fieldLabel: 'Modulo',
-                            name: 'modulo_id',
+                            fieldLabel: 'Menú',
+                            name: 'menu_id',
                             allowBlank: false,
                             emptyText: 'Seleccione',
                             displayField: 'nombre',
                             queryMode: 'local',
-                            store: 'configuracion.Modulo',
+                            store: 'configuracion.Menu',
                             valueField: 'id'
                         },
                         {
@@ -239,8 +239,8 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
-                            fieldLabel: 'ID del Menú',
-                            name: 'id_menu',
+                            fieldLabel: 'ID del Contenedor',
+                            name: 'id_contenedor',
                             allowBlank: false
                         },
                         {

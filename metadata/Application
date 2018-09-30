@@ -51,7 +51,8 @@
             "configuracion.Modulo",
             "nomenclador.Icono",
             "nomenclador.TipoModulo",
-            "configuracion.Menu"
+            "configuracion.Menu",
+            "seguridad.UsuarioRol"
         ],
         "name": "cerodatax",
         "namespaces": [
@@ -150,9 +151,29 @@
             "nomenclador.Icono",
             "configuracion.Panel",
             "crm.ContactoForm",
-            "crm.Contacto"
+            "crm.Contacto",
+            "seguridad.UsuarioRolForm"
         ]
     },
     "name": "Application",
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "",
+                    "  this.getController('Seguridad').loadMain();"
+                ]
+            },
+            "name": "launch",
+            "designerId": "d64efe17-0e5b-4cf3-9e23-50813a13ad2c"
+        }
+    ]
 }

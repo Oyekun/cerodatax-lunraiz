@@ -15,5 +15,19 @@
 
 Ext.define('cerodatax.view.escritorio.FormAutenticacionViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.escritorioformautenticacion'
+    alias: 'controller.escritorioformautenticacion',
+
+    onWindowsAutenticacionAfterRender: function(component, eOpts) {
+        component.keyboardMapping = new Ext.util.KeyMap({
+            target: component.el,
+            key: Ext.event.Event.ENTER,
+            fn: function (keyCode, event) {
+                var defaultButton =  Ext.ComponentQuery.query('#buttonAutenticacion')[0];
+                if (!defaultButton.isDisabled())
+                defaultButton.fireEvent('click', defaultButton);
+            },
+            scope: component
+        });
+    }
+
 });

@@ -29,8 +29,8 @@ Ext.define('cerodatax.view.seguridad.Rol', {
         'Ext.view.MultiSelectorSearch',
         'Ext.view.Table',
         'Ext.form.Panel',
-        'Ext.form.field.Text',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.form.field.TextArea'
     ],
 
     controller: 'seguridadrol',
@@ -59,7 +59,7 @@ Ext.define('cerodatax.view.seguridad.Rol', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'rol',
+                    dataIndex: 'description',
                     text: 'Rol'
                 }
             ],
@@ -196,11 +196,21 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
                             fieldLabel: 'Rol',
-                            name: 'rol',
+                            name: 'name',
+                            allowBlank: false
+                        },
+                        {
+                            xtype: 'textareafield',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
+                            fieldLabel: 'Descripcón',
+                            name: 'description',
                             allowBlank: false
                         },
                         {
                             xtype: 'multiselector',
+                            hidden: true,
                             title: 'Modulos',
                             store: 'configuracion.Modulo',
                             search: {

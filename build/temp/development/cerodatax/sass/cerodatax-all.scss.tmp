@@ -1,5 +1,5 @@
 $app-name:   'cerodatax' !default;
-$image-search-path: 'C:/xampp/htdocs/cerodatax/build/development/cerodatax/resources';
+$image-search-path: 'C:/xampp1/htdocs/cerodatax/build/development/cerodatax/resources';
 $theme-name:   'ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a' !default;
 $include-app-profile-desktop: true;
 $include-ext-abstractcomponent: true;
@@ -976,6 +976,8 @@ $include-cerodatax-model-seguridad-accion: true;
 $include-cerodatax-model-seguridad-rol: true;
 $include-cerodatax-model-seguridad-usuario: true;
 $include-cerodatax-model-seguridad-usuarioentidad: true;
+$include-cerodatax-model-seguridad-usuariorol: true;
+$include-cerodatax-override-form-field-combobox: true;
 $include-cerodatax-store-actualizacion-actualizacion: true;
 $include-cerodatax-store-configuracion-menu: true;
 $include-cerodatax-store-configuracion-modulo: true;
@@ -1136,6 +1138,9 @@ $include-cerodatax-view-seguridad-rol: true;
 $include-cerodatax-view-seguridad-rolviewcontroller: true;
 $include-cerodatax-view-seguridad-rolviewmodel: true;
 $include-cerodatax-view-seguridad-usuario: true;
+$include-cerodatax-view-seguridad-usuariorolform: true;
+$include-cerodatax-view-seguridad-usuariorolformviewcontroller: true;
+$include-cerodatax-view-seguridad-usuariorolformviewmodel: true;
 $include-cerodatax-view-seguridad-usuarioviewcontroller: true;
 $include-cerodatax-view-seguridad-usuarioviewmodel: true;
 

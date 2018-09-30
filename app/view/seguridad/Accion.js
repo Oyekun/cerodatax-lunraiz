@@ -54,7 +54,7 @@ Ext.define('cerodatax.view.seguridad.Accion', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'rol',
+                    dataIndex: 'description',
                     text: 'Rol'
                 }
             ],

@@ -8,16 +8,15 @@
     "userConfig": {
         "alignTarget": null,
         "animateShadow": true,
-        "autoShow": true,
         "bodyPadding": 10,
         "closable": false,
         "defaults": null,
-        "designer|initialView": true,
         "designer|uiInterfaceName": "default-framed",
         "designer|userAlias": "escritorioformautenticacion",
         "designer|userClassName": "escritorio.FormAutenticacion",
         "frame": true,
         "height": null,
+        "id": "windowsAutenticacion",
         "itemId": "windowsAutenticacion",
         "layout": "fit",
         "margin": null,
@@ -25,7 +24,7 @@
             "cerodatax.view.escritorio.Escritorio"
         ],
         "title": "Autenticación",
-        "width": 320
+        "width": 310
     },
     "designerId": "d83f1f64-2e3d-46d1-b60e-0f6d1ccd88b3",
     "configMeta": {
@@ -59,7 +58,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "top",
-                        "height": 318,
+                        "height": 300,
+                        "margin": null,
                         "src": "resources/images/lunraiz.jpg",
                         "width": 318
                     },
@@ -74,12 +74,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "emptyText": "usuario",
+                        "emptyText": null,
                         "fieldLabel": "Usuario",
-                        "layout|anchor": null,
-                        "name": "usuario",
+                        "id": "identity",
+                        "labelPad": null,
+                        "layout|anchor": "",
+                        "name": "identity",
                         "selectOnFocus": true,
-                        "twoWayBindable": null
+                        "tabIndex": null,
+                        "twoWayBindable": null,
+                        "width": 285
                     },
                     "name": "MyTextField",
                     "designerId": "7e35d3dc-76de-4a20-b17f-5c6a09246798",
@@ -108,11 +112,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "emptyText": "contraseña",
+                        "emptyText": null,
                         "fieldLabel": "Contraseña",
                         "inputType": "password",
+                        "labelPad": null,
                         "layout|anchor": null,
-                        "name": "password"
+                        "margin": null,
+                        "name": "password",
+                        "tabIndex": null,
+                        "width": 285
                     },
                     "name": "MyTextField1",
                     "designerId": "c78da32e-6a4b-44f2-90b5-0493cb05622b",
@@ -143,9 +151,9 @@
                     "userConfig": {
                         "boxLabel": null,
                         "fieldLabel": "Recordarme",
-                        "hidden": true,
                         "layout|anchor": null,
-                        "name": "recordarme"
+                        "name": "remember",
+                        "tabIndex": null
                     },
                     "name": "MyCheckbox6",
                     "designerId": "906d8372-fa38-40d9-81b3-0e4739d7ccc4"
@@ -159,11 +167,46 @@
                     "codeClass": null,
                     "userConfig": {
                         "alignTarget": null,
+                        "animateShadow": true,
+                        "formBind": true,
+                        "height": null,
+                        "id": "buttonAutenticacion",
                         "itemId": "buttonAutenticacion",
-                        "text": "Iniciar Sesión"
+                        "layout|anchor": null,
+                        "margin": null,
+                        "tabIndex": null,
+                        "text": "Iniciar Sesión",
+                        "width": 295
                     },
                     "name": "MyButton",
                     "designerId": "2dfb2c29-be76-4841-9bef-10e30827ebb6"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onWindowsAutenticacionAfterRender",
+                        "implHandler": [
+                            "   component.keyboardMapping = new Ext.util.KeyMap({",
+                            "                target: component.el,",
+                            "                key: Ext.event.Event.ENTER,",
+                            "                fn: function (keyCode, event) {",
+                            "  var defaultButton =  Ext.ComponentQuery.query('#buttonAutenticacion')[0];",
+                            "                    if (!defaultButton.isDisabled())",
+                            "                        defaultButton.fireEvent('click', defaultButton);",
+                            "                },",
+                            "                scope: component",
+                            "            });"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "name": "onWindowsAutenticacionAfterRender",
+                    "designerId": "657a8540-16bc-4f53-bc67-b3682db85222"
                 }
             ]
         }

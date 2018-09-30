@@ -576,10 +576,10 @@
                                 "designer|displayName": null,
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
-                                "fieldLabel": "Modulo",
-                                "name": "modulo_id",
+                                "fieldLabel": "Menú",
+                                "name": "menu_id",
                                 "queryMode": "local",
-                                "store": "configuracion.Modulo",
+                                "store": "configuracion.Menu",
                                 "valueField": "id"
                             },
                             "name": "MyComboBox25",
@@ -610,8 +610,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "fieldLabel": "ID del Menú",
-                                "name": "id_menu"
+                                "fieldLabel": "ID del Contenedor",
+                                "name": "id_contenedor"
                             },
                             "name": "MyTextField6",
                             "designerId": "799cc953-6dab-4357-849d-5820a3f6e8ab",

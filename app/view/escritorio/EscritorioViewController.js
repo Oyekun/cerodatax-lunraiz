@@ -15,5 +15,10 @@
 
 Ext.define('cerodatax.view.escritorio.EscritorioViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.escritorioescritorio'
+    alias: 'controller.escritorioescritorio',
+
+    onPanelPrincipalActivate: function(component, eOpts) {
+
+    }
+
 });

@@ -53,7 +53,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "rol",
+                        "dataIndex": "description",
                         "text": "Rol"
                     },
                     "name": "MyColumn5",

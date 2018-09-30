@@ -19,13 +19,158 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
 
     requires: [
         'cerodatax.view.escritorio.EscritorioViewModel',
+        'cerodatax.view.escritorio.EscritorioViewController',
+        'Ext.menu.Menu',
+        'Ext.menu.Item',
+        'Ext.Img',
         'cerodatax.view.seguridad.Usuario'
     ],
 
+    controller: 'escritorioescritorio',
     viewModel: {
         type: 'escritorioescritorio'
     },
     itemId: 'viewportEscritorio',
-    layout: 'border'
+    layout: 'border',
+
+    items: [
+        {
+            xtype: 'panel',
+            region: 'center',
+            itemId: 'panelPrincipal',
+            margin: '5 0 0 0',
+            listeners: {
+                activate: 'onPanelPrincipalActivate'
+            }
+        },
+        {
+            xtype: 'panel',
+            region: 'west',
+            split: true,
+            itemId: 'menuPanel',
+            margin: '5 0 0 0',
+            width: 145,
+            layout: 'accordion',
+            animCollapse: true,
+            collapseDirection: 'left',
+            collapsed: false,
+            collapsible: true,
+            hideCollapseTool: true,
+            title: '   Navegación',
+            titleCollapse: true,
+            dockedItems: [
+                {
+                    xtype: 'panel',
+                    dock: 'top',
+                    height: 90,
+                    width: 90,
+                    items: [
+                        {
+                            xtype: 'menu',
+                            floating: false,
+                            width: 140,
+                            animCollapse: true,
+                            bodyBorder: false,
+                            collapseDirection: 'top',
+                            collapsed: true,
+                            collapsible: true,
+                            title: 'Perfil del Usuario:',
+                            titleAlign: 'center',
+                            items: [
+                                {
+                                    xtype: 'menuitem',
+                                    handler: function(item, e) {
+
+                                    },
+                                    text: 'Contraseña'
+                                },
+                                {
+                                    xtype: 'menuitem',
+                                    handler: function(item, e) {
+                                        var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];
+                                        var myMask = new Ext.LoadMask({
+                                            msg    : 'Cerrando Sesión...',
+                                            target : init
+                                        });
+                                        myMask.show();
+                                        var successCallback = function(resp, ops) {
+                                            //debugger;
+
+                                            var json = Ext.JSON.decode(resp.responseText);
+
+
+
+                                            if(json.success===true) // cambiar cuando se creen usuario bien
+                                            {myMask.mask('Cerrando sessión...');
+                                                window.location = 'index.php?auth/login';
+                                            }
+                                            else{
+                                                myMask.unmask();
+                                                var s='El usuario no pudo cerrar sessión.';
+                                                var title='Error';
+                                                var icon = 'xf057@FontAwesome';
+
+                                                Ext.toast({
+                                                    html: s ,
+                                                    glyph:icon,
+                                                    closable: false,
+                                                    align: 't',
+                                                    title:title,
+                                                    slideInDuration: 400,
+                                                    minWidth: 400
+                                                });
+                                            }
+
+                                        };
+
+
+
+
+                                        // Failure
+                                        var failureCallback = function(resp, ops) {
+
+                                            myMask.unmask();
+                                            var s='El usuario no pudo cerrar sessión.';
+                                            var title='Error';
+                                            var icon = 'xf057@FontAwesome';
+
+                                            Ext.toast({
+                                                html: s ,
+                                                glyph:icon,
+                                                closable: false,
+                                                align: 't',
+                                                title:title,
+                                                slideInDuration: 400,
+                                                minWidth: 400
+                                            });
+
+
+                                        };
+                                        Ext.Ajax.request({
+                                            url: 'index.php/auth/logout',
+                                            method: 'POST',
+                                            success: successCallback,
+                                            failure: failureCallback
+
+                                        });
+                                    },
+                                    text: 'Cerrar Sesión'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'image',
+                            frame: true,
+                            height: 80,
+                            margin: '0 0 0 30',
+                            width: 80,
+                            src: 'resources/images/lunraiz.jpg',
+                            title: 'Logo'
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 
 });

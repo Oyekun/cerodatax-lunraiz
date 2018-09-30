@@ -64,7 +64,8 @@ Ext.application({
         'configuracion.Modulo',
         'nomenclador.Icono',
         'nomenclador.TipoModulo',
-        'configuracion.Menu'
+        'configuracion.Menu',
+        'seguridad.UsuarioRol'
     ],
     stores: [
         'seguridad.Usuario',
@@ -150,7 +151,8 @@ Ext.application({
         'nomenclador.Icono',
         'configuracion.Panel',
         'crm.ContactoForm',
-        'crm.Contacto'
+        'crm.Contacto',
+        'seguridad.UsuarioRolForm'
     ],
     controllers: [
         'Escritorio',
@@ -167,7 +169,9 @@ Ext.application({
     ],
 
     launch: function() {
-        Ext.create('cerodatax.view.escritorio.FormAutenticacion', {renderTo: Ext.getBody()});
+        Ext.create('cerodatax.view.escritorio.Escritorio');
+
+          this.getController('Seguridad').loadMain();
     }
 
 });

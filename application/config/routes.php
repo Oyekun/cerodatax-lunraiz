@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples: my-controller/index -> my_controller/index
 |   my-controller/my-method -> my_controller/my_method
 */
-$route['default_controller'] = 'seguridad';
+$route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
@@ -61,5 +61,7 @@ $route['translate_uri_dashes'] = TRUE;
 $route['api/restserver/rests/(:num)'] = 'api/restserver/rests/id/$1';  
 $route['api/restserver/rests/root/(:num)'] = 'api/restserver/rests/root/id/$1';  
 $route['api/restserver/rests/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/restserver/rests/id/$1/format/$3$4'; 
+
+//seguridad/authenticate_user
 $route['register']='register/index';
 $route['register/newApiKey']='register/newApiKey';

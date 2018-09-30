@@ -382,16 +382,26 @@ if(isset($dataArray['asociados']))
 		$asociados=TRUE;
 		unset($dataArray['asociados']);
 }	
-	$this->db->set('id', $uuid);
+	    
 	    $dataArray['date_created'] = $dataArray['date_updated'] = date('Y-m-d H:i:s');
-        $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
-		$this->db->insert("$tb", $dataArray); 
-       if($tb=='seguridad_usuario')		
+        $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = $dataArray['ip_address'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+		$this->db->set('id', $uuid);
+           if($tb=='seguridad_usuario')		
 	    	{
-	    		 $this->load->model("Register_model", "registerModel");
-	    		  $generate = $this->registerModel->new_api_key($level = 0,$ignore_limits = 0,$is_private_key = 0,$ip_addresses = "",$uuid);
-	    		
-	    	}
+	    		// $this->load->model("Register_model", "registerModel");
+	    		 // $generate = $this->registerModel->new_api_key($level = 0,$ignore_limits = 0,$is_private_key = 0,$ip_addresses = "",$uuid);
+	    		$this->load->model("Ion_auth_model", "ionAuthModel");
+	    		$password = $dataArray['password'];
+	    		$email = $dataArray['email'];
+	    		$identity = $dataArray['username'];
+	    		unset($dataArray['password']);
+	    		unset($dataArray['email']);
+	    		unset($dataArray['username']);
+	    		$this->ionAuthModel->register($uuid,$identity, $password, $email, $dataArray, $groups = array());
+	    	}else{
+		
+		$this->db->insert("$tb", $dataArray); 
+       }
         if(isset($dataArray['parent_id']))		
 		if($dataArray['parent_id']!='')
 		{$dataArray1 = array();
@@ -521,10 +531,21 @@ if(isset($dataArray['asociados']))
 
 
     $this->db->where('id', $id);   
-	  $dataArray1['date_updated'] = date('Y-m-d H:i:s');
-        $dataArray1['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+	  $dataArray['date_updated'] = date('Y-m-d H:i:s');
+        $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
 
-    $sl = $this->db->update("$tb",$dataArray);
+        if($tb=='seguridad_usuario')		
+	    	{
+	    		// $this->load->model("Register_model", "registerModel");
+	    		 // $generate = $this->registerModel->new_api_key($level = 0,$ignore_limits = 0,$is_private_key = 0,$ip_addresses = "",$uuid);
+	    		$this->load->model("Ion_auth_model", "ionAuthModel");
+	    		 
+	    		$sl = $this->ionAuthModel->update($id,$dataArray);
+	    	}else{
+		
+		$sl = $this->db->update("$tb",$dataArray); 
+       }
+    
 	 
 	if($asociados)	
 		 { 

@@ -32,7 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "usuario"
+                "name": "username"
             },
             "name": "MyString1",
             "designerId": "3fa51453-7a43-454f-b776-fc7bc18406a8"
@@ -58,7 +58,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "correo"
+                "name": "email"
             },
             "name": "MyString3",
             "designerId": "b9428671-4751-4ac1-84fc-1712bb8aef2f"
@@ -123,23 +123,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "ldap"
+                "name": "active"
             },
             "name": "MyBoolean",
             "designerId": "b602fa48-cc3d-4bc3-bc51-3bb87d73b192"
-        },
-        {
-            "type": "Ext.data.field.Boolean",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "administrador"
-            },
-            "name": "MyBoolean10",
-            "designerId": "342e0118-2395-4eb2-b40f-c0c0dd9a63a3"
         }
     ]
 }

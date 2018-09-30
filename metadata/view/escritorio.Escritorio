@@ -7,8 +7,10 @@
     "codeClass": null,
     "userConfig": {
         "controller": null,
+        "designer|initialView": true,
         "designer|userAlias": "escritorioescritorio",
         "designer|userClassName": "escritorio.Escritorio",
+        "id": null,
         "itemId": "viewportEscritorio",
         "layout": "border",
         "requires": [
@@ -17,5 +19,266 @@
     },
     "designerId": "ccf11f1b-c72a-44fc-9803-344ace6f3349",
     "viewControllerInstanceId": "4611ed12-d628-4ff4-91cd-baa29154d036",
-    "viewModelInstanceId": "f4941368-9963-4383-b809-d66d6516ffe3"
+    "viewModelInstanceId": "f4941368-9963-4383-b809-d66d6516ffe3",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": null,
+                "itemId": "panelPrincipal",
+                "layout|region": "center",
+                "margin": "5 0 0 0",
+                "title": null
+            },
+            "name": "MyPanel5",
+            "designerId": "2237de08-4f75-4718-a567-54f2f9f80bbf",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPanelPrincipalActivate",
+                        "name": "activate",
+                        "scope": "me"
+                    },
+                    "name": "onPanelPrincipalActivate",
+                    "designerId": "d6bdbf0f-dff9-4ae7-b19b-387293ed3d3e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": true,
+                "collapseDirection": "left",
+                "collapsed": false,
+                "collapsible": true,
+                "hideCollapseTool": true,
+                "id": null,
+                "itemId": "menuPanel",
+                "layout": "accordion",
+                "layout|flex": null,
+                "layout|region": "west",
+                "layout|split": true,
+                "margin": "5 0 0 0",
+                "title": "   Navegación",
+                "titleAlign": null,
+                "titleCollapse": true,
+                "width": 145
+            },
+            "name": "MyPanel6",
+            "designerId": "3dc55aaa-6ff6-4ac5-81ed-2793609eed3f",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "height": 90,
+                        "width": 90
+                    },
+                    "name": "MyPanel25",
+                    "designerId": "416d0c5f-b918-47cb-a2fe-b471c9a5d436",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "animCollapse": true,
+                                "bodyBorder": false,
+                                "collapseDirection": "top",
+                                "collapsed": true,
+                                "collapsible": true,
+                                "designer|uiInterfaceName": "default",
+                                "dock": null,
+                                "floating": false,
+                                "title": "Perfil del Usuario:",
+                                "titleAlign": "center",
+                                "width": 140
+                            },
+                            "name": "MyMenu",
+                            "designerId": "f98e0eb9-2bd5-48be-8500-270d68b627fd",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Contraseña"
+                                    },
+                                    "name": "MyMenuItem1",
+                                    "designerId": "4e4c0c38-79e7-468d-829b-b415472eef96",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "item",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": null
+                                            },
+                                            "name": "handler",
+                                            "designerId": "db3f3c60-81ef-4bd4-a8ac-83c31ad5a660"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Cerrar Sesión"
+                                    },
+                                    "name": "MyMenuItem2",
+                                    "designerId": "16b195d3-1c6b-4357-8dd7-6df6c8f0d637",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "item",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];",
+                                                    "var myMask = new Ext.LoadMask({",
+                                                    "    msg    : 'Cerrando Sesión...',",
+                                                    "    target : init",
+                                                    "});",
+                                                    "myMask.show();",
+                                                    " var successCallback = function(resp, ops) {",
+                                                    "                //debugger;",
+                                                    "",
+                                                    "                 var json = Ext.JSON.decode(resp.responseText);",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                if(json.success===true) // cambiar cuando se creen usuario bien",
+                                                    "                {myMask.mask('Cerrando sessión...');",
+                                                    "                 window.location = 'index.php?auth/login';",
+                                                    "                }",
+                                                    "                else{",
+                                                    "                    myMask.unmask();",
+                                                    "                    var s='El usuario no pudo cerrar sessión.';",
+                                                    "                    var title='Error';",
+                                                    "                    var icon = 'xf057@FontAwesome';",
+                                                    "",
+                                                    "                     Ext.toast({",
+                                                    "                            html: s ,",
+                                                    "                            glyph:icon,",
+                                                    "                            closable: false,",
+                                                    "                            align: 't',",
+                                                    "                            title:title,",
+                                                    "                            slideInDuration: 400,",
+                                                    "                            minWidth: 400",
+                                                    "                        });",
+                                                    "                }",
+                                                    "",
+                                                    "            };",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "            // Failure",
+                                                    "            var failureCallback = function(resp, ops) {",
+                                                    "",
+                                                    "               myMask.unmask();",
+                                                    "                    var s='El usuario no pudo cerrar sessión.';",
+                                                    "                    var title='Error';",
+                                                    "                    var icon = 'xf057@FontAwesome';",
+                                                    "",
+                                                    "                     Ext.toast({",
+                                                    "                            html: s ,",
+                                                    "                            glyph:icon,",
+                                                    "                            closable: false,",
+                                                    "                            align: 't',",
+                                                    "                            title:title,",
+                                                    "                            slideInDuration: 400,",
+                                                    "                            minWidth: 400",
+                                                    "                        });",
+                                                    "                ",
+                                                    "",
+                                                    "            };",
+                                                    "Ext.Ajax.request({",
+                                                    "                url: 'index.php/auth/logout',",
+                                                    "                method: 'POST',",
+                                                    "    success: successCallback,",
+                                                    "                failure: failureCallback",
+                                                    "    ",
+                                                    "            });"
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "48703e5f-1af3-417c-bbc0-d3d07422fe7a"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "alignTarget": null,
+                                "frame": true,
+                                "height": 80,
+                                "margin": "0 0 0 30",
+                                "padding": null,
+                                "src": "resources/images/lunraiz.jpg",
+                                "title": "Logo",
+                                "width": 80
+                            },
+                            "name": "MyImg1",
+                            "designerId": "525912d6-8b25-4e6c-a518-6624af5075dd"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

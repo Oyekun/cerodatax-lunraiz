@@ -31,6 +31,7 @@ class Restserver extends REST_Controller {
 		$this->load->model('Api_model');
         $this->load->library('uuid'); 
 		$this->load->library('pagination');
+        $this->load->library(array('ion_auth'));
 		
 		
 		$this->methods['rests_get']['limit'] = 500; // 500 requests per hour per user/key
@@ -44,7 +45,9 @@ class Restserver extends REST_Controller {
 		//print_r($_REQUEST);die;
 		//print_r($this->config->config['enable_query_strings']);die;
 		// $this->config->config['enable_query_strings'] = TRUE;
+        $rests=FALSE;
         $_REQUEST = $this->security->xss_clean($_REQUEST);
+        //if($this->ion_auth->logged_in()) Activar cuando se tenga usuario y contraseña
         $rests = $this->Api_model->get_all($_REQUEST); 
 		//$config['base_url'] = 'http://localhost/cerodata/index.php/api/restserver/rests/?model='.$_REQUEST['model'].'&esquema='.$_REQUEST['esquema'];
 		

@@ -53,7 +53,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "rol",
+                        "dataIndex": "description",
                         "text": "Rol"
                     },
                     "name": "MyColumn4",
@@ -504,9 +504,9 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Rol",
-                                "name": "rol"
+                                "name": "name"
                             },
-                            "name": "MyTextField5",
+                            "name": "MyTextField",
                             "designerId": "e3feb8cc-a6f0-4953-b9be-398834587eb1",
                             "cn": [
                                 {
@@ -528,6 +528,39 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Descripcón",
+                                "name": "description"
+                            },
+                            "name": "MyTextArea",
+                            "designerId": "b1a2bd11-25c5-4ae4-82bc-03d21bf5d0dc",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "7d9617ed-b0dc-40eb-bcd4-d0e8faeee719"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.view.MultiSelector",
                             "reference": {
                                 "name": "items",
@@ -535,6 +568,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "hidden": true,
                                 "store": "configuracion.Modulo",
                                 "title": "Modulos"
                             },

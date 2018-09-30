@@ -58,7 +58,7 @@ Date created: Simplemente la fecha de creación de la api key.*/
                                 'null' => FALSE,
                                 'default'=>0
                         ),
-                                'ip_addresses' => array(
+                                'ip_address' => array(
                                 'type' => 'VARCHAR',
                                 'null' => TRUE,
                         ),  
@@ -86,7 +86,7 @@ Date created: Simplemente la fecha de creación de la api key.*/
                  $this->dbforge->add_key('user_id');
                 $this->dbforge->add_field('CONSTRAINT user_id FOREIGN KEY (user_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE ON DELETE CASCADE');
                
-                $this->dbforge->create_table('rest_keys',TRUE);
+                $this->dbforge->create_table('seguridad_rest_keys',TRUE);
 
  
                  $this->dbforge->add_field(array(
@@ -163,7 +163,7 @@ Date created: Simplemente la fecha de creación de la api key.*/
 
                 ));
                 $this->dbforge->add_key('id', TRUE); 
-                $this->dbforge->create_table('rest_logs',TRUE);
+                $this->dbforge->create_table('seguridad_rest_logs',TRUE);
                 
 
  
@@ -216,7 +216,7 @@ Date created: Simplemente la fecha de creación de la api key.*/
 
                 ));
                 $this->dbforge->add_key('id', TRUE); 
-                $this->dbforge->create_table('rest_acces',TRUE);
+                $this->dbforge->create_table('seguridad_rest_acces',TRUE);
 
 
          $this->dbforge->add_field(array(
@@ -272,7 +272,7 @@ Date created: Simplemente la fecha de creación de la api key.*/
 
                 ));
                 $this->dbforge->add_key('id', TRUE); 
-                $this->dbforge->create_table('rest_limits',TRUE);
+                $this->dbforge->create_table('seguridad_rest_limits',TRUE);
  
         }
         

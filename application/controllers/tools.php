@@ -235,10 +235,13 @@ protected function make_model_file($name) {
 
     $model_template = "<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-    class $name extends MY_Model {
+    class $name extends CI_Model {
 
         public function __construct() {
             parent::__construct();
+                $this->uuid = 'nombre'; 
+                $this->relacion = array('continente_id' =>'nomenclador_continente','moneda_id' =>'nomenclador_moneda');
+              
         }
     }
     ";

@@ -34,7 +34,7 @@ class Register_model extends CI_Model {
             "level"         =>      $level,
             "ignore_limits" =>      $ignore_limits,
             "is_private_key"=>      $is_private_key,
-            "ip_addresses"  =>      isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+            "ip_addresses"  =>      isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1',
             "timestamp"  =>         $timestamp
         );
         if($user_id!='')

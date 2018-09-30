@@ -64,7 +64,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'usuario',
+                    dataIndex: 'username',
                     text: 'Usuario'
                 },
                 {
@@ -72,7 +72,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                     tpl: [
                         '<a href="mailto:{correo}">{correo}</a>'
                     ],
-                    dataIndex: 'correo',
+                    dataIndex: 'email',
                     text: 'Correo'
                 },
                 {
@@ -92,7 +92,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                 },
                 {
                     xtype: 'booleancolumn',
-                    dataIndex: 'ldap',
+                    dataIndex: 'active',
                     text: 'LDAP'
                 }
             ],
@@ -134,6 +134,20 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                             },
                             listeners: {
                                 click: 'remove'
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            itemId: 'btnAssociate',
+                            width: 100,
+                            baseParams: 'rol',
+                            text: 'Asociar Rol',
+                            bind: {
+                                hidden: '{!record}'
+                            },
+                            listeners: {
+                                click: 'associate'
                             }
                         },
                         {
@@ -246,7 +260,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
                             fieldLabel: 'Usuario',
-                            name: 'usuario',
+                            name: 'username',
                             allowBlank: false
                         },
                         {
@@ -286,9 +300,13 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                         },
                         {
                             xtype: 'textfield',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
                             fieldLabel: 'Correo',
-                            name: 'correo',
+                            name: 'email',
                             inputType: 'email',
+                            allowBlank: false,
                             emptyText: 'mail@example.com',
                             maxLength: 50,
                             minLength: 5,
@@ -307,14 +325,9 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                         },
                         {
                             xtype: 'checkboxfield',
-                            fieldLabel: 'Administrador',
-                            name: 'administrador'
-                        },
-                        {
-                            xtype: 'checkboxfield',
                             hidden: true,
-                            fieldLabel: 'LDAP',
-                            name: 'ldap'
+                            fieldLabel: 'Activo',
+                            name: 'active'
                         },
                         {
                             xtype: 'combobox',

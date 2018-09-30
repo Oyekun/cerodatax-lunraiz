@@ -1,0 +1,136 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "usuariorol",
+        "designer|userClassName": "seguridad.UsuarioRol"
+    },
+    "name": "seguridad.UsuarioEntidad1",
+    "designerId": "e8df3287-7d4a-4ff0-91d2-9697bd379306",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "id",
+                "name": "id"
+            },
+            "name": "MyString58",
+            "designerId": "fc211963-b45f-45b9-ac18-1463040b37a7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "group_id",
+                "name": "group_id"
+            },
+            "name": "MyString27",
+            "designerId": "1923f520-7369-451e-846c-6be6b0f0425e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "user_id",
+                "name": "user_id"
+            },
+            "name": "MyString20",
+            "designerId": "e6e7fd7c-bb0e-4ee9-beb3-96e3144dcaf7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "nombre",
+                "name": "nombre"
+            },
+            "name": "MyField44",
+            "designerId": "ba0bdf2c-9078-48d7-8918-2c386e7f6897"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "model",
+                "name": "model"
+            },
+            "name": "MyString65",
+            "designerId": "68e5d1be-d031-49e5-9c54-909ddfe04106"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{add:{url: 'index.php/api/restserver/rests',method: 'POST'},show: {url: 'index.php/api/restserver/rests/',method: 'GET'},save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}}"
+                ],
+                "extraParams": [
+                    "{ model: 'usuario_rol',",
+                    "esquema: 'seguridad',asociados: ''}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy4",
+            "designerId": "d993ecb0-423e-4151-a53c-6a97d05b1b4c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "81ac4567-47f7-422b-91d3-9008cbcc9bd0"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "1d1df8ac-fee7-479f-8ff4-93ac20b464ce"
+                }
+            ]
+        }
+    ]
+}

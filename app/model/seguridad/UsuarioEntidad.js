@@ -15,6 +15,7 @@
 
 Ext.define('cerodatax.model.seguridad.UsuarioEntidad', {
     extend: 'Ext.data.Model',
+    alias: 'model.usuarioentidad',
 
     requires: [
         'Ext.data.field.String',

@@ -299,7 +299,7 @@ $config['rest_database_group'] = 'default';
 | The table name in your database that stores API keys
 |
 */
-$config['rest_keys_table'] = 'rest_keys';
+$config['rest_keys_table'] = 'seguridad_rest_keys';
 
 /*
 |--------------------------------------------------------------------------
@@ -415,7 +415,7 @@ $config['rest_enable_logging'] = TRUE;
 | table name to match e.g. my_logs
 |
 */
-$config['rest_logs_table'] = 'rest_logs';
+$config['rest_logs_table'] = 'seguridad_rest_logs';
 
 /*
 |--------------------------------------------------------------------------
@@ -448,7 +448,7 @@ $config['rest_enable_access'] = TRUE;
 | table name to match e.g. my_access
 |
 */
-$config['rest_access_table'] = 'rest_access';
+$config['rest_access_table'] = 'seguridad_rest_access';
 
 /*
 |--------------------------------------------------------------------------
@@ -498,7 +498,7 @@ $config['rest_enable_limits'] = TRUE;
 | table name to match e.g. my_limits
 |
 */
-$config['rest_limits_table'] = 'rest_limits';
+$config['rest_limits_table'] = 'seguridad_rest_limits';
 
 /*
 |--------------------------------------------------------------------------

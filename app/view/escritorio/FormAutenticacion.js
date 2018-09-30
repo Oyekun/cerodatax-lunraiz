@@ -19,6 +19,7 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
 
     requires: [
         'cerodatax.view.escritorio.FormAutenticacionViewModel',
+        'cerodatax.view.escritorio.FormAutenticacionViewController',
         'Ext.form.Panel',
         'Ext.Img',
         'Ext.form.field.Text',
@@ -28,14 +29,15 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
         'cerodatax.view.escritorio.Escritorio'
     ],
 
+    controller: 'escritorioformautenticacion',
     viewModel: {
         type: 'escritorioformautenticacion'
     },
     animateShadow: true,
-    autoShow: true,
     frame: true,
+    id: 'windowsAutenticacion',
     itemId: 'windowsAutenticacion',
-    width: 320,
+    width: 310,
     layout: 'fit',
     bodyPadding: 10,
     closable: false,
@@ -48,7 +50,7 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                 {
                     xtype: 'image',
                     dock: 'top',
-                    height: 318,
+                    height: 300,
                     width: 318,
                     src: 'resources/images/lunraiz.jpg'
                 }
@@ -56,30 +58,38 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
             items: [
                 {
                     xtype: 'textfield',
+                    anchor: '',
+                    id: 'identity',
+                    width: 285,
                     fieldLabel: 'Usuario',
-                    name: 'usuario',
-                    emptyText: 'usuario',
+                    name: 'identity',
                     selectOnFocus: true
                 },
                 {
                     xtype: 'textfield',
+                    width: 285,
                     fieldLabel: 'Contraseña',
                     name: 'password',
-                    inputType: 'password',
-                    emptyText: 'contraseña'
+                    inputType: 'password'
                 },
                 {
                     xtype: 'checkboxfield',
-                    hidden: true,
                     fieldLabel: 'Recordarme',
-                    name: 'recordarme'
+                    name: 'remember'
                 },
                 {
                     xtype: 'button',
+                    formBind: true,
+                    animateShadow: true,
+                    id: 'buttonAutenticacion',
                     itemId: 'buttonAutenticacion',
+                    width: 295,
                     text: 'Iniciar Sesión'
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: 'onWindowsAutenticacionAfterRender'
+            }
         }
     ]
 

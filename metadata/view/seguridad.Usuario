@@ -53,7 +53,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "usuario",
+                        "dataIndex": "username",
                         "text": "Usuario"
                     },
                     "name": "MyColumn1",
@@ -67,7 +67,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "correo",
+                        "dataIndex": "email",
                         "text": "Correo"
                     },
                     "name": "MyTemplateColumn",
@@ -141,7 +141,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "ldap",
+                        "dataIndex": "active",
                         "text": "LDAP"
                     },
                     "name": "MyBooleanColumn3",
@@ -343,6 +343,54 @@
                                     },
                                     "name": "remove",
                                     "designerId": "27cd2212-5761-4289-bd17-e1248831d837"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseParams": [
+                                    "rol"
+                                ],
+                                "designer|createAlias": "button",
+                                "designer|displayName": "btnAssociate",
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnAssociate",
+                                "layout|flex": null,
+                                "text": "Asociar Rol",
+                                "width": 100
+                            },
+                            "name": "MyButton6",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "f92874d6-2c01-4849-8680-397a85aee371",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "associate",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "associate",
+                                    "designerId": "1fd7c32e-ed0e-4ca9-a18a-1927ba97d728"
                                 }
                             ]
                         },
@@ -628,7 +676,7 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Usuario",
-                                "name": "usuario"
+                                "name": "username"
                             },
                             "name": "MyTextField2",
                             "designerId": "da34dec1-84ad-47c7-b99c-b7cb79488077",
@@ -779,17 +827,36 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "allowBlank": false,
                                 "emptyText": "mail@example.com",
                                 "fieldLabel": "Correo",
                                 "inputType": "email",
                                 "maxLength": 50,
                                 "minLength": 5,
-                                "name": "correo",
+                                "name": "email",
                                 "regex": "/^([0-9a-zA-Z]+[\\-._+&amp;])*[0-9a-zA-Z]+@([\\-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$/",
                                 "regexText": "Por favor escriba un correo valido."
                             },
                             "name": "MyTextField4",
-                            "designerId": "520ff44d-ca7c-4c77-af6e-e0f096f7f710"
+                            "designerId": "520ff44d-ca7c-4c77-af6e-e0f096f7f710",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl1",
+                                    "designerId": "214c45cc-8752-480b-b3da-2571e73c3674"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -819,23 +886,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Administrador",
-                                "name": "administrador"
-                            },
-                            "name": "MyCheckbox",
-                            "designerId": "5b90cd30-5d3d-4014-97b9-dd5e66fbe32e"
-                        },
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "LDAP",
+                                "fieldLabel": "Activo",
                                 "hidden": true,
-                                "name": "ldap"
+                                "name": "active"
                             },
                             "name": "MyCheckbox5",
                             "designerId": "3851bb5a-5e16-4f90-ab6a-031f49e8e1a7"
@@ -904,7 +957,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "controller": null,
-                                "designer|displayName": "entidad",
+                                "designer|displayName": "treePanel",
                                 "disabled": true,
                                 "height": 284,
                                 "hideHeaders": false,

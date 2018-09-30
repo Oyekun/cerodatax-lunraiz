@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "seguridadusuariorolform",
+        "designer|userClassName": "seguridad.UsuarioRolFormViewModel"
+    },
+    "name": "estructura.EntidadAreaFormViewModel1",
+    "designerId": "94804799-3157-4e99-8b14-90783874147e"
+}

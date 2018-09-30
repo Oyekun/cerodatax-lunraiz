@@ -28,7 +28,11 @@ Ext.define('cerodatax.model.seguridad.Rol', {
         },
         {
             type: 'string',
-            name: 'rol'
+            name: 'name'
+        },
+        {
+            type: 'string',
+            name: 'description'
         }
     ]
 });
