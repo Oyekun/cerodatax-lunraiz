@@ -44,11 +44,103 @@
                 "margin": "",
                 "reference": "form",
                 "title": null,
-                "width": 647
+                "width": 640
             },
             "name": "MyForm4",
             "designerId": "f99333e5-42b9-46f7-9ab1-cb0129f49e87",
             "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 147,
+                        "margin": null,
+                        "width": null
+                    },
+                    "name": "MyContainer65",
+                    "designerId": "cb167cc7-e794-4525-a807-4e6c4fdac849",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "alignTarget": null,
+                                "alt": "Cargando Foto...",
+                                "alwaysOnTop": [
+                                    "true"
+                                ],
+                                "border": null,
+                                "frame": false,
+                                "glyph": null,
+                                "height": 120,
+                                "hidden": true,
+                                "imgCls": null,
+                                "itemId": "logotipo",
+                                "liquidLayout": null,
+                                "margin": null,
+                                "overCls": null,
+                                "padding": null,
+                                "resizable": null,
+                                "rtl": null,
+                                "shadowOffset": null,
+                                "shim": false,
+                                "shrinkWrap": null,
+                                "style": [
+                                    "    'margin: 0px 0px 90px 100px;'"
+                                ],
+                                "title": null,
+                                "width": 120
+                            },
+                            "name": "MyImg4",
+                            "designerId": "1cb39069-3abc-462a-8ff2-d11f67ed4a0d"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "alignTarget": null,
+                                "alt": "Cargando Foto...",
+                                "alwaysOnTop": [
+                                    "true"
+                                ],
+                                "border": null,
+                                "frame": true,
+                                "glyph": "xf1ad@FontAwesome",
+                                "height": 120,
+                                "imgCls": null,
+                                "itemId": "logotipo1",
+                                "liquidLayout": null,
+                                "margin": "0 90 0 90",
+                                "overCls": null,
+                                "padding": null,
+                                "resizable": null,
+                                "rtl": null,
+                                "shadowOffset": null,
+                                "shim": false,
+                                "shrinkWrap": null,
+                                "style": [
+                                    "'font-size: 110px; margin: 10px;line-height: 120px;'"
+                                ],
+                                "title": null,
+                                "width": 120
+                            },
+                            "name": "MyImg5",
+                            "designerId": "3278b5b6-6e54-4b1e-a7e1-953f9d6dc7a2"
+                        }
+                    ]
+                },
                 {
                     "type": "Ext.form.FieldSet",
                     "reference": {
@@ -58,10 +150,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": 227,
-                        "margin": null,
+                        "margin": "0 0 0 10",
                         "padding": null,
                         "title": "Información General",
-                        "width": 303
+                        "width": 300
                     },
                     "name": "MyFieldSet3",
                     "designerId": "c068ddea-2c6c-4dc8-8a14-807629951a08",
@@ -286,98 +378,6 @@
                     ]
                 },
                 {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "height": 147,
-                        "margin": null,
-                        "width": null
-                    },
-                    "name": "MyContainer65",
-                    "designerId": "cb167cc7-e794-4525-a807-4e6c4fdac849",
-                    "cn": [
-                        {
-                            "type": "Ext.Img",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "alignTarget": null,
-                                "alt": "Cargando Foto...",
-                                "alwaysOnTop": [
-                                    "true"
-                                ],
-                                "border": null,
-                                "frame": false,
-                                "glyph": null,
-                                "height": 115,
-                                "hidden": true,
-                                "imgCls": null,
-                                "itemId": "logotipo",
-                                "liquidLayout": null,
-                                "margin": null,
-                                "overCls": null,
-                                "padding": null,
-                                "resizable": null,
-                                "rtl": null,
-                                "shadowOffset": null,
-                                "shim": false,
-                                "shrinkWrap": null,
-                                "style": [
-                                    "    'margin: 0px 0px 90px 100px;'"
-                                ],
-                                "title": null,
-                                "width": 120
-                            },
-                            "name": "MyImg4",
-                            "designerId": "1cb39069-3abc-462a-8ff2-d11f67ed4a0d"
-                        },
-                        {
-                            "type": "Ext.Img",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "alignTarget": null,
-                                "alt": "Cargando Foto...",
-                                "alwaysOnTop": [
-                                    "true"
-                                ],
-                                "border": null,
-                                "frame": true,
-                                "glyph": "xf1ad@FontAwesome",
-                                "height": 115,
-                                "imgCls": null,
-                                "itemId": "logotipo1",
-                                "liquidLayout": null,
-                                "margin": "0 90 0 100",
-                                "overCls": null,
-                                "padding": null,
-                                "resizable": null,
-                                "rtl": null,
-                                "shadowOffset": null,
-                                "shim": false,
-                                "shrinkWrap": null,
-                                "style": [
-                                    "'font-size: 110px; margin: 10px;line-height: 120px;'"
-                                ],
-                                "title": null,
-                                "width": 120
-                            },
-                            "name": "MyImg5",
-                            "designerId": "3278b5b6-6e54-4b1e-a7e1-953f9d6dc7a2"
-                        }
-                    ]
-                },
-                {
                     "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
@@ -385,7 +385,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "margin": null,
+                        "margin": "0 0 10 0",
                         "title": "Registros",
                         "width": 303
                     },
@@ -627,9 +627,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": null,
-                        "margin": "0 0 37 20",
+                        "margin": "0 0 40 10",
                         "title": "Información de Contacto",
-                        "width": 310
+                        "width": 300
                     },
                     "name": "MyFieldSet4",
                     "designerId": "1b2f596b-d470-44fa-82ae-f0c920055cbf",

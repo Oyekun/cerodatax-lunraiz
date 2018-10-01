@@ -16,6 +16,6 @@ class Rol extends CI_Model {
 		public function __construct()
         {
                 parent::__construct();
-				$this->uuid = 'rol';
+				$this->uuid = 'name';
         }
 }

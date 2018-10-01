@@ -20,6 +20,10 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
     requires: [
         'cerodatax.view.escritorio.EscritorioViewModel',
         'cerodatax.view.escritorio.EscritorioViewController',
+        'Ext.view.View',
+        'Ext.XTemplate',
+        'Ext.toolbar.Toolbar',
+        'Ext.form.field.Display',
         'Ext.menu.Menu',
         'Ext.menu.Item',
         'Ext.Img',
@@ -41,7 +45,35 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
             margin: '5 0 0 0',
             listeners: {
                 activate: 'onPanelPrincipalActivate'
-            }
+            },
+            items: [
+                {
+                    xtype: 'dataview',
+                    itemSelector: 'div',
+                    itemTpl: [
+                        'Data View Item {nombre}'
+                    ],
+                    store: 'configuracion.Menu'
+                }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'bottom',
+                    border: 2,
+                    margin: '5 0 0 0',
+                    width: 150,
+                    items: [
+                        {
+                            xtype: 'displayfield',
+                            itemId: 'entidadlabel',
+                            width: 330,
+                            fieldLabel: 'Entidad',
+                            labelWidth: 50
+                        }
+                    ]
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -82,6 +114,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                                     handler: function(item, e) {
 
                                     },
+                                    hidden: true,
                                     text: 'Contraseña'
                                 },
                                 {
@@ -89,7 +122,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                                     handler: function(item, e) {
                                         var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];
                                         var myMask = new Ext.LoadMask({
-                                            msg    : 'Cerrando Sesión...',
+                                            msg    : 'Cerrando Sessión...',
                                             target : init
                                         });
                                         myMask.show();
@@ -101,7 +134,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
 
 
                                             if(json.success===true) // cambiar cuando se creen usuario bien
-                                            {myMask.mask('Cerrando sessión...');
+                                            {
                                                 window.location = 'index.php?auth/login';
                                             }
                                             else{
@@ -154,7 +187,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
 
                                         });
                                     },
-                                    text: 'Cerrar Sesión'
+                                    text: 'Cerrar Sessión'
                                 }
                             ]
                         },
@@ -162,6 +195,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                             xtype: 'image',
                             frame: true,
                             height: 80,
+                            itemId: 'logousuario',
                             margin: '0 0 0 30',
                             width: 80,
                             src: 'resources/images/lunraiz.jpg',

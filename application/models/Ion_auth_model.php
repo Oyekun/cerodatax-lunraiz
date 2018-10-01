@@ -1884,7 +1884,7 @@ class Ion_auth_model extends CI_Model
 		$this->trigger_events('pre_update_user');
 
 		$user = $this->user($id)->row();
-
+        
 		$this->db->trans_begin();
 
 		if (array_key_exists($this->identity_column, $data) && $this->identity_check($data[$this->identity_column]) && $user->{$this->identity_column} !== $data[$this->identity_column])
@@ -1897,20 +1897,21 @@ class Ion_auth_model extends CI_Model
 
 			return FALSE;
 		}
-
+        $pas =$data['password']; 
 		// Filter the data passed
 		$data = $this->_filter_data($this->tables['users'], $data);
 
 		if (array_key_exists($this->identity_column, $data) || array_key_exists('password', $data) || array_key_exists('email', $data))
 		{
 			if (array_key_exists('password', $data))
-			{
+			{ 
 				if( ! empty($data['password']))
-				{
+				{   if($pas!=$user->password)
 					$data['password'] = $this->hash_password($data['password'], $user->salt);
+					else unset($data['password']);
 				}
 				else
-				{
+				{ print_r('data');die;
 					// unset password so it doesn't effect database entry if no password passed
 					unset($data['password']);
 				}

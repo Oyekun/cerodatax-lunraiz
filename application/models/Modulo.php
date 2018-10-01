@@ -19,7 +19,7 @@ class Modulo extends CI_Model {
                
 				$this->load->model('TipoModulo'); 
 				//$this->persona_id = $this->Persona->id;
-				$this->uuid = 'nombretipo_modulo_id';
+				$this->uuid = 'nombre';
                 $this->relacion = array('tipo_modulo_id' =>'nomenclador_tipomodulo','icono_id' =>'nomenclador_icono');
         }
 }

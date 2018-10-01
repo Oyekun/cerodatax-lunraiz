@@ -719,7 +719,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             grid.forEach(function (item) {
                 if(item.store)
                     if(nombre==item.store.storeId)
-                        sm = item.getSelectionModel().selected;
+                    { sm = item.getSelectionModel().selected;
+
+                    }
 
             });
             var tree =  Ext.ComponentQuery.query('panel #treePanel');
@@ -933,7 +935,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                  if(item.name){
 
-                 if(item.name == 'nombre' ||item.name == 'usuario')
+                 if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
                      { nombre = item.value;
                       campo = item.name;}
                    var      auxname = item.name.replace('_id','');
@@ -945,7 +947,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  }});
 
              // Add to store if new record
-             form.updateRecord();
+
         if(nombre!=='')
              var dt = store.findRecord(campo,nombre,0,false,false,true);
 
@@ -1004,9 +1006,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                              if(record.data.parentId===null)
 
                                          record.data.leaf = true;
-                          store.add(record);
+                          //store.add(record);
                           var flag=true;
-                          store.commitChanges();
+                         // store.commitChanges();
 
                          }else
                              if(nombre!=='' &&nombre ===dt.data[campo])
@@ -1014,7 +1016,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                  mask.unmask();
                                  if(dt.data.id===record.data.id)
-                                     { me.showView('selectMessage');
+                                     { form.updateRecord();
+                                      var flag=true;
+                                         me.showView('selectMessage');
         me.showToast('El elemento ha sido modificado satisfactoriamente.','info');
                                      }
                                      else
@@ -1204,7 +1208,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
                  if(item.name){
-                     if(item.name === 'nombre')
+                      if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
                         { nombre = item.value;
                           campo = item.name;
                         }
@@ -1225,7 +1229,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  }});
 
              // Add to store if new record
-              form.updateRecord();
+              //form.updateRecord();
              if(asociados.length>0)
                  record.data.asociados=asociados;//Ext.JSON.encode(asociados);
 
@@ -1297,7 +1301,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              };
 
              var dt = store.findRecord(campo,nombre,0,false,false,true);
-
+        console.log(record_foto)
              if (record.phantom) {
 
 
@@ -1316,11 +1320,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      record.save({success:write});
 
                      flag= true;
+                      return;
                  }
                  else
                      if(nombre!=='' &&nombre ===dt.data[campo])
                      {
-                         store.remove(record);
+                         //store.remove(record);
                          if(dt.data.id===record.data.id)
                               {
                                   if(windows)
@@ -1332,6 +1337,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                  me.showToast('El elemento ya existe.','error');
 
                          mask.unmask();
+                          return;
                             }
                  else{
         form.updateRecord();
@@ -1343,6 +1349,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      record.save({success:write});
 
                      flag= true;
+                      return;
 
                  }
 
@@ -1352,12 +1359,13 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                   record.save({success:write});
                   flag= true;
+                   return;
 
                  }else
                      if(nombre!=='' &&nombre ===dt.data[campo])
                      {
 
-                         store.remove(record);
+                         //store.remove(record);
                          if(dt.data.id===record.data.id)
                               {
                                   if(windows)
@@ -1369,6 +1377,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          me.showToast('El elemento ya existe.','error');
 
                          mask.unmask();
+                          return;
                      }
                  else{
 
@@ -1380,6 +1389,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      record.save({success:write});
 
                      flag= true;
+                     return;
 
                  }
 
@@ -1782,10 +1792,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              {xtype = 'treecolumn';
               width = 200;
              }
-             if(comp.name =='nombre' &&is_grid===true)
+             /*if(comp.name =='nombre' &&is_grid===true)
              {
                  width = 200;
-             }
+             }*/
              if(comp.name =='foto'||comp.name =='logotipo')
              {
                  width = 200;

@@ -116,6 +116,68 @@ class Auth extends CI_Controller
 	/**
 	 * Log the user out
 	 */
+	public function entidad()
+	{
+		   		   $identity = $this->session->userdata['user_id'];
+
+		   $tb = 'seguridad_entidadusuario'; 
+         
+		$this->load->model('entidadusuario');
+	 	
+    $this->db->where('usuario_id', $identity);   
+    $result = $this->db->get("$tb");
+	// print_r($result->result_array());die;
+
+    if( count($result->result_array())>0)
+    {   $entidades = $result->result_array()[0]; 
+    	
+	   $tb = 'estructura_entidad'; 
+         
+		$this->load->model('entidad');
+	 	
+    $this->db->where('id', $entidades['entidad_id']);   
+    $result = $this->db->get("$tb");
+	 $entidad = $result->result_array()[0];
+     
+       $tb = 'seguridad_usuario'; 
+         
+		$this->load->model('usuario');
+	 	
+    $this->db->where('id', $identity);   
+    $result = $this->db->get("$tb");
+	 $usuarios = $result->result_array()[0];
+    $persona=''; 
+     if(isset($usuarios['persona_id']))
+     {$persona_id = $usuarios['persona_id'];
+	 
+	 $tb = 'persona_persona'; 
+         
+		$this->load->model('persona');
+	 	
+    $this->db->where('id', $persona_id);   
+    $result = $this->db->get("$tb");
+    
+    if( count($result->result_array())>0)
+	 $persona = $result->result_array()[0];
+    }
+    	$data = array('persona' => $persona,'entidad' => $entidad['nombre'],'cantidad' => strlen($entidad['nombre']));
+		 $this->output->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>TRUE,'data'=>$data)));
+	
+    }
+    else{
+
+ $this->output->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>FALSE)));
+
+    }
+     	 
+
+	}
+
+	/**
+	 * Log the user out
+	 */
 	public function logout()
 	{
 		$this->data['title'] = "Logout";

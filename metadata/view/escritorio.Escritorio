@@ -52,6 +52,76 @@
                     },
                     "name": "onPanelPrincipalActivate",
                     "designerId": "d6bdbf0f-dff9-4ae7-b19b-387293ed3d3e"
+                },
+                {
+                    "type": "Ext.view.View",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemSelector": "div",
+                        "store": "configuracion.Menu"
+                    },
+                    "name": "MyView",
+                    "designerId": "dfa77ca6-95d5-415f-9a97-73b76597d69b",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "Data View Item {nombre}"
+                                ]
+                            },
+                            "name": "itemTpl",
+                            "designerId": "19f91489-68c0-4d87-9e8e-b20305cfe61d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 2,
+                        "container|align": null,
+                        "dock": "bottom",
+                        "frame": null,
+                        "margin": "5 0 0 0",
+                        "width": 150
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "6bd3ed96-a85f-46a5-8aea-0d11b03bbd71",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Entidad",
+                                "itemId": "entidadlabel",
+                                "labelWidth": 50,
+                                "layout|flex": null,
+                                "value": null,
+                                "width": 330
+                            },
+                            "name": "MyDisplayField6",
+                            "designerId": "68963d44-e510-41bb-b016-0a28b3e2614f"
+                        }
+                    ]
                 }
             ]
         },
@@ -129,6 +199,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "hidden": true,
                                         "text": "Contraseña"
                                     },
                                     "name": "MyMenuItem1",
@@ -162,7 +233,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "text": "Cerrar Sesión"
+                                        "text": "Cerrar Sessión"
                                     },
                                     "name": "MyMenuItem2",
                                     "designerId": "16b195d3-1c6b-4357-8dd7-6df6c8f0d637",
@@ -183,7 +254,7 @@
                                                 "implHandler": [
                                                     "var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];",
                                                     "var myMask = new Ext.LoadMask({",
-                                                    "    msg    : 'Cerrando Sesión...',",
+                                                    "    msg    : 'Cerrando Sessión...',",
                                                     "    target : init",
                                                     "});",
                                                     "myMask.show();",
@@ -195,7 +266,7 @@
                                                     "",
                                                     "",
                                                     "                if(json.success===true) // cambiar cuando se creen usuario bien",
-                                                    "                {myMask.mask('Cerrando sessión...');",
+                                                    "                { ",
                                                     "                 window.location = 'index.php?auth/login';",
                                                     "                }",
                                                     "                else{",
@@ -267,6 +338,7 @@
                                 "alignTarget": null,
                                 "frame": true,
                                 "height": 80,
+                                "itemId": "logousuario",
                                 "margin": "0 0 0 30",
                                 "padding": null,
                                 "src": "resources/images/lunraiz.jpg",

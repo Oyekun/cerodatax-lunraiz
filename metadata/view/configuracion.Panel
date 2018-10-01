@@ -635,26 +635,6 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": null,
-                                "displayField": "nombre",
-                                "emptyText": "Seleccione",
-                                "fieldLabel": "Icono",
-                                "name": "icono_id",
-                                "queryMode": "local",
-                                "store": "nomenclador.Icono",
-                                "valueField": "id"
-                            },
-                            "name": "MyComboBox1",
-                            "designerId": "7f76f224-a6a9-4a15-8366-c61f15c21a31"
-                        },
-                        {
                             "type": "Ext.form.field.Checkbox",
                             "reference": {
                                 "name": "items",

@@ -111,7 +111,33 @@ Ext.define('cerodatax.controller.Seguridad', {
                     }
                 });
          //Ext.getCmp('identity').focus('', 10);
-        var obj =    Ext.create('cerodatax.store.nomenclador.TipoModulo');
+            var entidadlabel = Ext.ComponentQuery.query('#entidadlabel')[0];
+         Ext.Ajax.request({
+                url: 'index.php/auth/entidad',
+                method: 'POST',
+
+             success: function(resp){
+                 var json = Ext.JSON.decode(resp.responseText);
+
+
+
+                if(json.success===true)
+                {entidadlabel.setValue(json.data.entidad);
+                 if(json.data.persona!=='')
+                     {
+                         if(json.data.persona.foto!==undefined)
+                         {var logousuario = Ext.ComponentQuery.query('#logousuario')[0];
+                          logousuario.setSrc(json.data.persona.foto);}
+                     }
+
+                // entidadlabel.setWidth(json.data.cantidad);
+                // console.log(entidadlabel)
+                }
+             }
+               // failure: failureCallback
+            });
+
+            var obj =    Ext.create('cerodatax.store.nomenclador.TipoModulo');
             var objmenu =    Ext.create('cerodatax.store.configuracion.Menu');
             var objmodulo =    Ext.create('cerodatax.store.configuracion.Modulo');
             var objpanel =    Ext.create('cerodatax.store.configuracion.Panel');
@@ -343,6 +369,7 @@ Ext.define('cerodatax.controller.Seguridad', {
 
 
                                                                                     var panelPrincipal = Ext.ComponentQuery.query('#panelPrincipal')[0];
+                                                                                   panelPrincipal.removeAll();
                                                                                    panelPrincipal.add(container);
                                                                                    myMask.destroy();
 

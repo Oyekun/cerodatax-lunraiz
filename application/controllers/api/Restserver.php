@@ -47,7 +47,7 @@ class Restserver extends REST_Controller {
 		// $this->config->config['enable_query_strings'] = TRUE;
         $rests=FALSE;
         $_REQUEST = $this->security->xss_clean($_REQUEST);
-        //if($this->ion_auth->logged_in()) Activar cuando se tenga usuario y contraseña
+        if($this->ion_auth->logged_in()) //Activar cuando se tenga usuario y contraseña
         $rests = $this->Api_model->get_all($_REQUEST); 
 		//$config['base_url'] = 'http://localhost/cerodata/index.php/api/restserver/rests/?model='.$_REQUEST['model'].'&esquema='.$_REQUEST['esquema'];
 		
@@ -123,6 +123,8 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
     public function rests_post()
     { 
 	//  $_REQUEST = $this->security->xss_clean($_REQUEST);
+        $id=NULL;
+        if($this->ion_auth->logged_in())
     $id = $this->Api_model->posts($_REQUEST); 
 	if ($id === NULL) 
 	$messageText = 'El elemento no se ha creado.';
@@ -142,11 +144,14 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
     {
          $this->_args = $this->security->xss_clean($this->_args);
          $id = $this->security->xss_clean($id);
+         
+
 		$datos =  Array();  
 		$datos['esquema']=$this->_args['esquema'];
 		$datos['model']=$this->_args['model'];  
 		$datos['data']=$this->_args['data'];
 		//$id = '';
+        if($this->ion_auth->logged_in())
         if(!isset($this->_args['parent_id']))		
         {$id =$this->Api_model->row_update($datos,$id);  
         
@@ -155,7 +160,7 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
 			//arbol
 			$id = 0;
 			$parent_id = $this->_args['parent_id'];
-			 
+		if($this->ion_auth->logged_in())	 
 		if($parent_id!="") 		
         {$id =$this->Api_model->row_update($datos,$id);  
        // print_r($id);die;	
@@ -179,7 +184,9 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
           $id = $this->security->xss_clean($id);
         $datos =  Array();  
 		$datos['esquema']=$this->_args['esquema'];
-		$datos['model']=$this->_args['model']; 
+		$datos['model']=$this->_args['model'];
+$result=0;
+        if($this->ion_auth->logged_in()) 
 		$result = $this->Api_model->row_delete($datos,$id); 
           
         // Validate the id.

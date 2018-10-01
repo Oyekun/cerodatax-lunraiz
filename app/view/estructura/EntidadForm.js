@@ -21,13 +21,13 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
         'cerodatax.view.estructura.EntidadFormViewModel',
         'cerodatax.view.estructura.EntidadFormViewController',
         'Ext.form.Panel',
+        'Ext.Img',
         'Ext.form.FieldSet',
         'Ext.form.field.File',
         'Ext.XTemplate',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
         'Ext.form.field.Checkbox',
-        'Ext.Img',
         'Ext.button.Button'
     ],
 
@@ -47,7 +47,7 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
             reference: 'form',
             height: 550,
             margin: '',
-            width: 647,
+            width: 640,
             bodyPadding: 10,
             fieldDefaults: {
                 padding: '0 10 0 0',
@@ -59,9 +59,41 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
             },
             items: [
                 {
+                    xtype: 'container',
+                    height: 147,
+                    items: [
+                        {
+                            xtype: 'image',
+                            alwaysOnTop: true,
+                            shim: false,
+                            frame: false,
+                            height: 120,
+                            hidden: true,
+                            itemId: 'logotipo',
+                            style: 'margin: 0px 0px 90px 100px;',
+                            width: 120,
+                            alt: 'Cargando Foto...'
+                        },
+                        {
+                            xtype: 'image',
+                            alwaysOnTop: true,
+                            shim: false,
+                            frame: true,
+                            height: 120,
+                            itemId: 'logotipo1',
+                            margin: '0 90 0 90',
+                            style: 'font-size: 110px; margin: 10px;line-height: 120px;',
+                            width: 120,
+                            alt: 'Cargando Foto...',
+                            glyph: 'xf1ad@FontAwesome'
+                        }
+                    ]
+                },
+                {
                     xtype: 'fieldset',
                     height: 227,
-                    width: 303,
+                    margin: '0 0 0 10',
+                    width: 300,
                     title: 'Información General',
                     items: [
                         {
@@ -137,38 +169,8 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                     ]
                 },
                 {
-                    xtype: 'container',
-                    height: 147,
-                    items: [
-                        {
-                            xtype: 'image',
-                            alwaysOnTop: true,
-                            shim: false,
-                            frame: false,
-                            height: 115,
-                            hidden: true,
-                            itemId: 'logotipo',
-                            style: 'margin: 0px 0px 90px 100px;',
-                            width: 120,
-                            alt: 'Cargando Foto...'
-                        },
-                        {
-                            xtype: 'image',
-                            alwaysOnTop: true,
-                            shim: false,
-                            frame: true,
-                            height: 115,
-                            itemId: 'logotipo1',
-                            margin: '0 90 0 100',
-                            style: 'font-size: 110px; margin: 10px;line-height: 120px;',
-                            width: 120,
-                            alt: 'Cargando Foto...',
-                            glyph: 'xf1ad@FontAwesome'
-                        }
-                    ]
-                },
-                {
                     xtype: 'fieldset',
+                    margin: '0 0 10 0',
                     width: 303,
                     title: 'Registros',
                     items: [
@@ -256,8 +258,8 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                 },
                 {
                     xtype: 'fieldset',
-                    margin: '0 0 37 20',
-                    width: 310,
+                    margin: '0 0 40 10',
+                    width: 300,
                     title: 'Información de Contacto',
                     items: [
                         {

@@ -85,8 +85,26 @@ else
 		}
            	}
 			}
+			$this->load->model($request['model'],'', TRUE);
+			$nameuuid = new $request['model']; 
+
+				if(isset($nameuuid->relacion))
+        {
+
+        	$this->db->select("$tb.*");
+        	foreach ($nameuuid->relacion as $campo=>$tabla_campo)
+					{
+ 				   $tabla_campo_id = $tabla_campo.'.id';
+                   $igual = $tb.'.'.$campo;
+                   $alias = str_replace("_id", "", $campo);
+                   $ref = $tabla_campo.".nombre as ".$alias;
+                   $this->db->select("$ref");
+    			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
+					}
+				}
 			
-$q = $this->db->get("$tb");
+$q = $this->db->get("$tb"); 
+
 
 if(isset($request['asociados'])&&isset($request['id_asociado']))  
 {$total_actual = count($q->result_array());
@@ -384,7 +402,7 @@ if(isset($dataArray['asociados']))
 }	
 	    
 	    $dataArray['date_created'] = $dataArray['date_updated'] = date('Y-m-d H:i:s');
-        $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = $dataArray['ip_address'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+        $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
 		$this->db->set('id', $uuid);
            if($tb=='seguridad_usuario')		
 	    	{
@@ -394,6 +412,7 @@ if(isset($dataArray['asociados']))
 	    		$password = $dataArray['password'];
 	    		$email = $dataArray['email'];
 	    		$identity = $dataArray['username'];
+	    		$dataArray['ip_address'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
 	    		unset($dataArray['password']);
 	    		unset($dataArray['email']);
 	    		unset($dataArray['username']);
@@ -536,11 +555,9 @@ if(isset($dataArray['asociados']))
 
         if($tb=='seguridad_usuario')		
 	    	{
-	    		// $this->load->model("Register_model", "registerModel");
-	    		 // $generate = $this->registerModel->new_api_key($level = 0,$ignore_limits = 0,$is_private_key = 0,$ip_addresses = "",$uuid);
 	    		$this->load->model("Ion_auth_model", "ionAuthModel");
-	    		 
 	    		$sl = $this->ionAuthModel->update($id,$dataArray);
+                   
 	    	}else{
 		
 		$sl = $this->db->update("$tb",$dataArray); 

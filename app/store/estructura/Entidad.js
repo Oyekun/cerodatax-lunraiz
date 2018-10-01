@@ -32,6 +32,9 @@ Ext.define('cerodatax.store.estructura.Entidad', {
             autoSync: true,
             model: 'cerodatax.model.estructura.Entidad',
             folderSort: true,
+            root: {
+                expanded: true
+            },
             proxy: {
                 type: 'rest',
                 extraParams: {

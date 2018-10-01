@@ -244,16 +244,6 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                             allowBlank: false
                         },
                         {
-                            xtype: 'combobox',
-                            fieldLabel: 'Icono',
-                            name: 'icono_id',
-                            emptyText: 'Seleccione',
-                            displayField: 'nombre',
-                            queryMode: 'local',
-                            store: 'nomenclador.Icono',
-                            valueField: 'id'
-                        },
-                        {
                             xtype: 'checkboxfield',
                             fieldLabel: 'Activo',
                             name: 'activo',
