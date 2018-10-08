@@ -20,13 +20,13 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
     requires: [
         'cerodatax.view.escritorio.EscritorioViewModel',
         'cerodatax.view.escritorio.EscritorioViewController',
-        'Ext.view.View',
-        'Ext.XTemplate',
+        'cerodatax.view.escritorio.Tablero',
         'Ext.toolbar.Toolbar',
         'Ext.form.field.Display',
-        'Ext.menu.Menu',
-        'Ext.menu.Item',
         'Ext.Img',
+        'Ext.button.Split',
+        'Ext.menu.Menu',
+        'Ext.menu.Separator',
         'cerodatax.view.seguridad.Usuario'
     ],
 
@@ -43,19 +43,10 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
             region: 'center',
             itemId: 'panelPrincipal',
             margin: '5 0 0 0',
+            layout: 'fit',
             listeners: {
                 activate: 'onPanelPrincipalActivate'
             },
-            items: [
-                {
-                    xtype: 'dataview',
-                    itemSelector: 'div',
-                    itemTpl: [
-                        'Data View Item {nombre}'
-                    ],
-                    store: 'configuracion.Menu'
-                }
-            ],
             dockedItems: [
                 {
                     xtype: 'toolbar',
@@ -72,6 +63,11 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                             labelWidth: 50
                         }
                     ]
+                }
+            ],
+            items: [
+                {
+                    xtype: 'escritoriotablero'
                 }
             ]
         },
@@ -98,46 +94,92 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                     width: 90,
                     items: [
                         {
-                            xtype: 'menu',
-                            floating: false,
-                            width: 140,
-                            animCollapse: true,
-                            bodyBorder: false,
-                            collapseDirection: 'top',
-                            collapsed: true,
-                            collapsible: true,
-                            title: 'Perfil del Usuario:',
-                            titleAlign: 'center',
-                            items: [
-                                {
-                                    xtype: 'menuitem',
-                                    handler: function(item, e) {
-
+                            xtype: 'image',
+                            animateShadow: true,
+                            frame: true,
+                            height: 70,
+                            itemId: 'logousuario',
+                            margin: '0 0 0 35',
+                            width: 70,
+                            src: 'resources/images/lunraiz.jpg',
+                            title: 'Logo'
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'splitbutton',
+                            dock: 'bottom',
+                            text: 'Perfil del Usuario',
+                            menu: {
+                                xtype: 'menu',
+                                items: [
+                                    {
+                                        xtype: 'menuitem',
+                                        text: 'Ayuda'
                                     },
-                                    hidden: true,
-                                    text: 'Contraseña'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    handler: function(item, e) {
-                                        var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];
-                                        var myMask = new Ext.LoadMask({
-                                            msg    : 'Cerrando Sessión...',
-                                            target : init
-                                        });
-                                        myMask.show();
-                                        var successCallback = function(resp, ops) {
-                                            //debugger;
+                                    {
+                                        xtype: 'menuitem',
+                                        text: 'Ayuda en linea'
+                                    },
+                                    {
+                                        xtype: 'menuseparator'
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        text: 'Acerca de'
+                                    },
+                                    {
+                                        xtype: 'menuseparator'
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        text: 'Cambiar Contraseña'
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        handler: function(item, e) {
+                                            var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];
+                                            var myMask = new Ext.LoadMask({
+                                                msg    : 'Cerrando Sessión...',
+                                                target : init
+                                            });
+                                            myMask.show();
+                                            var successCallback = function(resp, ops) {
+                                                //debugger;
 
-                                            var json = Ext.JSON.decode(resp.responseText);
+                                                var json = Ext.JSON.decode(resp.responseText);
 
 
 
-                                            if(json.success===true) // cambiar cuando se creen usuario bien
-                                            {
-                                                window.location = 'index.php?auth/login';
-                                            }
-                                            else{
+                                                if(json.success===true) // cambiar cuando se creen usuario bien
+                                                {
+                                                    window.location = 'index.php?auth/login';
+                                                }
+                                                else{
+                                                    myMask.unmask();
+                                                    var s='El usuario no pudo cerrar sessión.';
+                                                    var title='Error';
+                                                    var icon = 'xf057@FontAwesome';
+
+                                                    Ext.toast({
+                                                        html: s ,
+                                                        glyph:icon,
+                                                        closable: false,
+                                                        align: 't',
+                                                        title:title,
+                                                        slideInDuration: 400,
+                                                        minWidth: 400
+                                                    });
+                                                }
+
+                                            };
+
+
+
+
+                                            // Failure
+                                            var failureCallback = function(resp, ops) {
+
                                                 myMask.unmask();
                                                 var s='El usuario no pudo cerrar sessión.';
                                                 var title='Error';
@@ -152,54 +194,21 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                                                     slideInDuration: 400,
                                                     minWidth: 400
                                                 });
-                                            }
-
-                                        };
 
 
+                                            };
+                                            Ext.Ajax.request({
+                                                url: 'index.php/auth/logout',
+                                                method: 'POST',
+                                                success: successCallback,
+                                                failure: failureCallback
 
-
-                                        // Failure
-                                        var failureCallback = function(resp, ops) {
-
-                                            myMask.unmask();
-                                            var s='El usuario no pudo cerrar sessión.';
-                                            var title='Error';
-                                            var icon = 'xf057@FontAwesome';
-
-                                            Ext.toast({
-                                                html: s ,
-                                                glyph:icon,
-                                                closable: false,
-                                                align: 't',
-                                                title:title,
-                                                slideInDuration: 400,
-                                                minWidth: 400
                                             });
-
-
-                                        };
-                                        Ext.Ajax.request({
-                                            url: 'index.php/auth/logout',
-                                            method: 'POST',
-                                            success: successCallback,
-                                            failure: failureCallback
-
-                                        });
-                                    },
-                                    text: 'Cerrar Sessión'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'image',
-                            frame: true,
-                            height: 80,
-                            itemId: 'logousuario',
-                            margin: '0 0 0 30',
-                            width: 80,
-                            src: 'resources/images/lunraiz.jpg',
-                            title: 'Logo'
+                                        },
+                                        text: 'Cerrar Sesión'
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }

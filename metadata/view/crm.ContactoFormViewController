@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "contactoform",
+        "designer|userClassName": "crm.ContactoFormViewController"
+    },
+    "name": "persona.PersonaFormViewController1",
+    "designerId": "310570fb-9b7b-4d8e-86aa-578e7eb0338e"
+}

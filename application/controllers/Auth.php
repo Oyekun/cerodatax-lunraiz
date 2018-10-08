@@ -120,16 +120,21 @@ class Auth extends CI_Controller
 	{
 		   		   $identity = $this->session->userdata['user_id'];
 
-		   $tb = 'seguridad_entidadusuario'; 
+		 
+	// print_r($result->result_array());die;
+    $nombre = '';
+    $cantidad = '';
+    if($identity!='')
+    {   
+       $tb = 'seguridad_entidadusuario'; 
          
 		$this->load->model('entidadusuario');
 	 	
     $this->db->where('usuario_id', $identity);   
     $result = $this->db->get("$tb");
-	// print_r($result->result_array());die;
-
-    if( count($result->result_array())>0)
-    {   $entidades = $result->result_array()[0]; 
+    	
+    if(count($result->result_array())>0)
+    {	$entidades = $result->result_array()[0]; 
     	
 	   $tb = 'estructura_entidad'; 
          
@@ -137,8 +142,13 @@ class Auth extends CI_Controller
 	 	
     $this->db->where('id', $entidades['entidad_id']);   
     $result = $this->db->get("$tb");
-	 $entidad = $result->result_array()[0];
-     
+     if( count($result->result_array())>0)
+	 {$entidad = $result->result_array()[0];
+     $nombre = $entidad['nombre'];
+     $cantidad = strlen($entidad['nombre']);
+
+     }
+ }
        $tb = 'seguridad_usuario'; 
          
 		$this->load->model('usuario');
@@ -160,7 +170,7 @@ class Auth extends CI_Controller
     if( count($result->result_array())>0)
 	 $persona = $result->result_array()[0];
     }
-    	$data = array('persona' => $persona,'entidad' => $entidad['nombre'],'cantidad' => strlen($entidad['nombre']));
+    	$data = array('persona' => $persona,'entidad' => $nombre,'cantidad' =>$cantidad);
 		 $this->output->set_content_type('application/json')
         ->set_output(json_encode(array('success'=>TRUE,'data'=>$data)));
 	

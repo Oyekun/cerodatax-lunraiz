@@ -37,7 +37,7 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
     frame: true,
     id: 'windowsAutenticacion',
     itemId: 'windowsAutenticacion',
-    width: 310,
+    width: 320,
     layout: 'fit',
     bodyPadding: 10,
     closable: false,
@@ -51,7 +51,7 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                     xtype: 'image',
                     dock: 'top',
                     height: 300,
-                    width: 318,
+                    width: 300,
                     src: 'resources/images/lunraiz.jpg'
                 }
             ],
@@ -60,14 +60,14 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                     xtype: 'textfield',
                     anchor: '',
                     id: 'identity',
-                    width: 285,
+                    width: 295,
                     fieldLabel: 'Usuario',
                     name: 'identity',
                     selectOnFocus: true
                 },
                 {
                     xtype: 'textfield',
-                    width: 285,
+                    width: 295,
                     fieldLabel: 'Contraseña',
                     name: 'password',
                     inputType: 'password'

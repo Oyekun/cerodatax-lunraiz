@@ -28,3 +28,6 @@ Nomencladores,Cargo,CategoriaCargo,Categoría Cargo,0,,,El menú Categoría se v
 Nomencladores,Módulo,TipoModulo,Tipo de Módulo,0,,Gestionar las características principales de los módulos del sistema.,El menú Tipo de Módulo se visualiza los diferentes módulos que va a tener el sistema.
 Nomencladores,Módulo,Icono,Icono,0,,,El menú Iconos se visualiza los iconos de los módulos que va a tener el sistema.
 Configuración,Generales,Modulo,Módulos,1,Se utiliza para gestionar la configuración y personalización del sistema.,Muestra la configuración general del sistema.,El menú Módulos se visualiza los diferentes módulos que va a tener el sistema y los menú asociados ha estos módulos.
+CRM,Generales,Contacto,Contacto,1,Se utiliza para la gestionar los contactos, las ventas y compras.,Muestra los menu principales que son Contacto, Venta y Compra.,El menú Contacto se visualiza los Contactos, Clientes, Proveedores y Oferentes que va a tener la Venta o Compra.
+CRM,Generales,Venta,Venta,1,,,El menú Venta se visualiza las Ventas de los Clientes, Proveedores y Oferentes que va a tener.
+CRM,Generales,Compra,Compra,1,,,El menú Compra se visualiza las Compras de los Clientes, Proveedores y Oferentes que va a tener.

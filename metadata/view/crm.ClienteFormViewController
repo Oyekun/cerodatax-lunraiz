@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "crmclienteform",
+        "designer|userClassName": "crm.ClienteFormViewController"
+    },
+    "name": "crm.ContactoFormViewController1",
+    "designerId": "e8151433-097b-4b70-8741-662161cae360"
+}

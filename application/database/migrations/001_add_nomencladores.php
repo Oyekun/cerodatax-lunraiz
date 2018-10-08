@@ -23,8 +23,44 @@ $this->load->library('uuid');
     }
         public function up()
         {
-               // $attributes = array('ENGINE' => 'InnoDB');
-                //Nomencladores
+
+                $this->dbforge->drop_table('actualizacion_actualizacion',TRUE);
+                $this->dbforge->drop_table('estructura_areaentidad',TRUE);
+                $this->dbforge->drop_table('estructura_area',TRUE);
+                $this->dbforge->drop_table('seguridad_entidadusuario',TRUE);
+                $this->dbforge->drop_table($this->tables['login_attempts'], TRUE);
+                $this->dbforge->drop_table($this->tables['users_groups'], TRUE);
+                $this->dbforge->drop_table($this->tables['users'], TRUE);
+                $this->dbforge->drop_table('seguridad_usuario',TRUE);
+                $this->dbforge->drop_table('estructura_entidadpersona',TRUE);
+                $this->dbforge->drop_table('persona_cargofuncion',TRUE);
+                $this->dbforge->drop_table('persona_cargo',TRUE);
+                $this->dbforge->drop_table('estructura_entidad',TRUE);
+                $this->dbforge->drop_table('nomenclador_clasificacion',TRUE);
+                $this->dbforge->drop_table('nomenclador_colorpiel',TRUE);
+                $this->dbforge->drop_table('nomenclador_defensa',TRUE);
+                $this->dbforge->drop_table('nomenclador_estadocivil',TRUE);
+                $this->dbforge->drop_table('nomenclador_gruposanguineo',TRUE);
+                $this->dbforge->drop_table('nomenclador_municipio',TRUE);
+                $this->dbforge->drop_table('nomenclador_organismo',TRUE);
+                $this->dbforge->drop_table('nomenclador_provincia',TRUE);
+                $this->dbforge->drop_table('nomenclador_pais',TRUE);
+                $this->dbforge->drop_table('nomenclador_continente',TRUE);
+                $this->dbforge->drop_table('nomenclador_sexo',TRUE);
+                $this->dbforge->drop_table('nomenclador_nae',TRUE);
+                $this->dbforge->drop_table('nomenclador_seccionnae',TRUE);
+                $this->dbforge->drop_table('nomenclador_divisionnae',TRUE);
+                $this->dbforge->drop_table('nomenclador_categoriaentidad',TRUE);
+                $this->dbforge->drop_table('persona_persona',TRUE);
+                $this->dbforge->drop_table('nomenclador_categoriacargo',TRUE);
+                $this->dbforge->drop_table('nomenclador_tipoentidad',TRUE);
+                $this->dbforge->drop_table('nomenclador_niveleducacional',TRUE);
+                $this->dbforge->drop_table('nomenclador_grupoescala',TRUE);
+                $this->dbforge->drop_table('nomenclador_calificador',TRUE);
+                $this->dbforge->drop_table('seguridad_accion',TRUE);
+                $this->dbforge->drop_table('seguridad_modulo',TRUE);
+                $this->dbforge->drop_table('seguridad_rol',TRUE);
+                 $this->dbforge->drop_table('configuracion_modulo',TRUE);
 
                 $this->dbforge->add_field(array(
                                 'id' => array(
@@ -950,6 +986,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->create_table('nomenclador_divisionnae',TRUE);
 
+
                         $this->dbforge->add_field(array(
                                 'id' => array(
                                 'type' => 'VARCHAR',
@@ -994,6 +1031,7 @@ $this->dbforge->add_field(array(
                 ));
                 $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->create_table('nomenclador_union',TRUE);
+
                 $this->dbforge->add_field(array(
                                 'id' => array(
                                 'type' => 'VARCHAR',
@@ -1306,7 +1344,7 @@ $this->dbforge->add_field(array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => TRUE,
-					),  
+					    ),  
                          'date_created' => array(
                                 'type' => 'TIMESTAMP',  
                                 'null' => FALSE,    
@@ -1327,6 +1365,7 @@ $this->dbforge->add_field(array(
                         )
 
                 ));
+                $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->add_key('tipo_id');
                 $this->dbforge->add_key('tipo_registro_id');
                 $this->dbforge->add_key('categoria_entidad_id');
@@ -1341,16 +1380,15 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_field('CONSTRAINT tipo_id FOREIGN KEY (tipo_id) REFERENCES nomenclador_tipoentidad (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT tipo_registro_id FOREIGN KEY (tipo_registro_id) REFERENCES nomenclador_tiporegistro (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT categoria_entidad_id FOREIGN KEY (categoria_entidad_id) REFERENCES nomenclador_categoriaentidad (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT pais_id FOREIGN KEY (pais_id) REFERENCES nomenclador_pais (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT provincia_id FOREIGN KEY (provincia_id) REFERENCES nomenclador_provincia (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT municipio_id FOREIGN KEY (municipio_id) REFERENCES nomenclador_municipio (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT municipio_entidad_id FOREIGN KEY (municipio_id) REFERENCES nomenclador_municipio (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT pais_entidad_id FOREIGN KEY (pais_id) REFERENCES nomenclador_pais (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT provincia_entidad_id FOREIGN KEY (provincia_id) REFERENCES nomenclador_provincia (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT nae_id FOREIGN KEY (nae_id) REFERENCES nomenclador_nae (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT clasificacion_id FOREIGN KEY (clasificacion_id) REFERENCES nomenclador_clasificacion (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT organismo_id FOREIGN KEY (organismo_id) REFERENCES nomenclador_organismo (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT organismo_entidad_id FOREIGN KEY (organismo_id) REFERENCES nomenclador_organismo (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT union_id FOREIGN KEY (union_id) REFERENCES nomenclador_union (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT parent_id FOREIGN KEY (parent_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT parent_entidad_id FOREIGN KEY (parent_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
                  
-                $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->create_table('estructura_entidad',TRUE);
 
                 $this->dbforge->add_field(array(
@@ -1776,9 +1814,9 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_field('CONSTRAINT sexo_id FOREIGN KEY (sexo_id) REFERENCES nomenclador_sexo (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT estado_civil_id FOREIGN KEY (estado_civil_id) REFERENCES nomenclador_estadocivil (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT color_piel_id FOREIGN KEY (color_piel_id) REFERENCES nomenclador_colorpiel (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT pais_id FOREIGN KEY (pais_id) REFERENCES nomenclador_pais (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT provincia_id FOREIGN KEY (provincia_id) REFERENCES nomenclador_provincia (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT municipio_id FOREIGN KEY (municipio_id) REFERENCES nomenclador_municipio (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT pais_persona_id FOREIGN KEY (pais_id) REFERENCES nomenclador_pais (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT provincia_persona_id FOREIGN KEY (provincia_id) REFERENCES nomenclador_provincia (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT municipio_persona_id FOREIGN KEY (municipio_id) REFERENCES nomenclador_municipio (id) ON UPDATE CASCADE');
 
                 $this->dbforge->add_key('pais_registro_civil_id');
                 $this->dbforge->add_key('provincia_registro_civil_id'); 
@@ -1790,12 +1828,11 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('nivel_educacional_id'); 
                 $this->dbforge->add_key('situacion_defensa_id'); 
                 $this->dbforge->add_key('grupo_sanguineo_id');
-                $this->dbforge->add_key('entidad_id');
                 $this->dbforge->add_key('organismo_id'); 
-                $this->dbforge->add_field('CONSTRAINT nivel_educacional_id FOREIGN KEY (nivel_educacional_id) REFERENCES nomenclador_niveleducacional (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT nivel_educacional_persona_id FOREIGN KEY (nivel_educacional_id) REFERENCES nomenclador_niveleducacional (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT situacion_defensa_id FOREIGN KEY (situacion_defensa_id) REFERENCES nomenclador_defensa (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT grupo_sanguineo_id FOREIGN KEY (grupo_sanguineo_id) REFERENCES nomenclador_gruposanguineo (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT organismo_id FOREIGN KEY (organismo_id) REFERENCES nomenclador_organismo (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT organismo_persona_id FOREIGN KEY (organismo_id) REFERENCES nomenclador_organismo (id) ON UPDATE CASCADE');
                 $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->create_table('persona_persona',TRUE);
 
@@ -1836,9 +1873,9 @@ $this->dbforge->add_field(array(
 
                 ));
                 $this->dbforge->add_key('entidad_id');
-                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT entidad_entidadpersona_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('persona_id');
-                $this->dbforge->add_field('CONSTRAINT persona_id FOREIGN KEY (persona_id) REFERENCES persona_persona (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT persona_persona_id FOREIGN KEY (persona_id) REFERENCES persona_persona (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
                 $this->dbforge->create_table('persona_entidadpersona',TRUE);
 
@@ -1885,21 +1922,21 @@ $this->dbforge->add_field(array(
         // Dumping data for table 'groups'
         $rol_id= $this->uuid->v5('admin','8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
         $data = array(
-            array(
                 'id' => $rol_id,
                 'name'        => 'admin',
                 'description' => 'Administrador'
-            ),
-            array(
+            
+            
+        );
+        $this->db->insert($this->tables['groups'], $data);
+
+        $data = array(
                 'id' => $this->uuid->v5('miembros','8d3dc6d8-3a0d-4c03-8a04-1155445658f7'),
                 'name'        => 'miembros',
                 'description' => 'Usuario General'
-            )
-        );
-        $this->db->insert_batch($this->tables['groups'], $data);
+            );
+        $this->db->insert($this->tables['groups'], $data);
 
-        // Drop table 'users' if it exists
-        $this->dbforge->drop_table($this->tables['users'], TRUE);
 
         // Table structure for table 'users'
         $this->dbforge->add_field(array(
@@ -2033,8 +2070,8 @@ $this->dbforge->add_field(array(
         $data = array(
             'id' => $user_id, 
             'ip_address'              => '127.0.0.1',
-            'username'                => 'administrator',
-            'password'                => '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36',
+            'username'                => 'admin',
+            'password'                => '$2y$08$1C46o3rAks.YYXilqxKrXugvfOwxizurRZNXl9tg6GNkWAHJqMpua',
             'salt'                    => '',
             'email'                   => 'admin@admin.com',
             'activation_code'         => '',
@@ -2051,7 +2088,7 @@ $this->dbforge->add_field(array(
 
 
         // Drop table 'users_groups' if it exists
-        $this->dbforge->drop_table($this->tables['users_groups'], TRUE);
+       
 
         // Table structure for table 'users_groups'
         $this->dbforge->add_field(array(
@@ -2106,7 +2143,6 @@ $this->dbforge->add_field(array(
 
 
         // Drop table 'login_attempts' if it exists
-        $this->dbforge->drop_table($this->tables['login_attempts'], TRUE);
 
         // Table structure for table 'login_attempts'
         $this->dbforge->add_field(array(
@@ -2193,9 +2229,9 @@ $this->dbforge->add_field(array(
 
                 ));
                 $this->dbforge->add_key('entidad_id');
-                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT entidad_entidadusuario_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('usuario_id');
-                $this->dbforge->add_field('CONSTRAINT usuario_id FOREIGN KEY (usuario_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT usuario_entidadusuario_id FOREIGN KEY (usuario_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
                 $this->dbforge->create_table('seguridad_entidadusuario',TRUE);
 
@@ -2363,8 +2399,8 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->add_key('tipo_modulo_id');
                 $this->dbforge->add_key('icono_id');
-                $this->dbforge->add_field('CONSTRAINT icono_id FOREIGN KEY (icono_id) REFERENCES nomenclador_icono (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT tipo_modulo_id FOREIGN KEY (tipo_modulo_id) REFERENCES nomenclador_tipomodulo (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT icono_configuracion_id FOREIGN KEY (icono_id) REFERENCES nomenclador_icono (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT tipo_modulo_configuracion_id FOREIGN KEY (tipo_modulo_id) REFERENCES nomenclador_tipomodulo (id) ON UPDATE CASCADE');
                
                 $this->dbforge->create_table('configuracion_modulo',TRUE);  
                 
@@ -2450,8 +2486,8 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('icono_id');
                 $this->dbforge->add_key('modulo_id');
                  
-                $this->dbforge->add_field('CONSTRAINT modulo_id FOREIGN KEY (modulo_id) REFERENCES configuracion_modulo (id) ON UPDATE CASCADE');
-                $this->dbforge->add_field('CONSTRAINT icono_id FOREIGN KEY (icono_id) REFERENCES nomenclador_icono (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT modulo_menu_id FOREIGN KEY (modulo_id) REFERENCES configuracion_modulo (id) ON UPDATE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT icono_menu_id FOREIGN KEY (icono_id) REFERENCES nomenclador_icono (id) ON UPDATE CASCADE');
                
                 $this->dbforge->create_table('configuracion_menu',TRUE);  
 
@@ -2552,6 +2588,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->drop_table('nomenclador_seccionnae',TRUE);
                 $this->dbforge->drop_table('nomenclador_divisionnae ',TRUE);
                 $this->dbforge->drop_table('nomenclador_nae',TRUE);
+                $this->dbforge->drop_table('persona_cargofuncion',TRUE);
                 $this->dbforge->drop_table('persona_cargo',TRUE);
                 $this->dbforge->drop_table('persona_persona',TRUE);
                 $this->dbforge->drop_table('seguridad_accion',TRUE);

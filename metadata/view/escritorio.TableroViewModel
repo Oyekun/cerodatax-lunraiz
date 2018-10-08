@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "escritoriotablero",
+        "designer|userClassName": "escritorio.TableroViewModel"
+    },
+    "name": "persona.PersonaViewModel2",
+    "designerId": "83df8ec7-15ce-4726-9b4d-17c049ca08fc"
+}

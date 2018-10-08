@@ -1,0 +1,76 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": null,
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "escritoriotablero",
+        "designer|userClassName": "escritorio.Tablero",
+        "frame": true,
+        "height": 528,
+        "layout": null,
+        "loader": null,
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 860
+    },
+    "name": "crm.Contacto1",
+    "designerId": "32e16573-c4f7-4db1-b1c4-e976b356c38b",
+    "viewControllerInstanceId": "357ebd59-b2f7-4bb8-bd8b-5e019997d0ee",
+    "viewModelInstanceId": "83df8ec7-15ce-4726-9b4d-17c049ca08fc",
+    "cn": [
+        {
+            "type": "Ext.view.View",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animateShadow": true,
+                "autoShow": true,
+                "dock": "top",
+                "frame": false,
+                "itemSelector": "div.thumb-wrap",
+                "overItemCls": "x-item-over",
+                "scrollable": null,
+                "store": "main",
+                "trackOver": true
+            },
+            "name": "MyView",
+            "designerId": "3d5041ed-acf2-4310-be4f-5658da076b36",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<tpl for=\".\">",
+                            "          ",
+                            "                    <div   class=\"thumb-wrap\"  id=\"{name}\"> ",
+                            "                        <div class=\"thumb\">",
+                            "                         <img src=\"resources/images/touch-icons/{thumb}\" />",
+                            "                        <span>{name}</span>",
+                            "                        </div> ",
+                            "                    </div>",
+                            "                                    ",
+                            "                </tpl>"
+                        ]
+                    },
+                    "name": "tpl",
+                    "designerId": "423bb534-10fc-41d8-8a79-8ddefe6247b4"
+                }
+            ]
+        }
+    ]
+}

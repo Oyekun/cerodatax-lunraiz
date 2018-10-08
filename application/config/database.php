@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => 'cerodatax',
 	'database' => 'cerodatax',
 	'port' => '5432',
-	'dbdriver' => 'postgre',
+	'dbdriver' => 'postgre', 
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

@@ -10,14 +10,14 @@
         "controller": [
             "nomencladorcrud"
         ],
-        "designer|userAlias": "crmcontactoform",
+        "designer|userAlias": "contactoForm",
         "designer|userClassName": "crm.ContactoForm",
         "height": null,
         "modal": true,
         "resizable": [
             "false"
         ],
-        "title": "Persona",
+        "title": "Contacto",
         "width": null
     },
     "name": "persona.PersonaForm1",

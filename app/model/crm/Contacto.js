@@ -15,6 +15,7 @@
 
 Ext.define('cerodatax.model.crm.Contacto', {
     extend: 'Ext.data.Model',
+    alias: 'model.contacto',
 
     requires: [
         'Ext.data.field.String',

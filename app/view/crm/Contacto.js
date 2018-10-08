@@ -18,8 +18,8 @@ Ext.define('cerodatax.view.crm.Contacto', {
     alias: 'widget.crmcontacto',
 
     requires: [
-        'cerodatax.view.persona.PersonaViewModel1',
-        'cerodatax.view.persona.PersonaViewController1',
+        'cerodatax.view.crm.ContactoViewModel',
+        'cerodatax.view.crm.ContactoViewController',
         'Ext.grid.Panel',
         'Ext.grid.column.Column',
         'Ext.button.Button',

@@ -34,3 +34,9 @@ Icono,Icono,Icono,0,nomenclador
 Modulo,Modulo,Módulos,0,configuracion
 Modulo,Menu,Menú,1,configuracion
 Modulo,Panel,Panel,2,configuracion
+Contacto,Contacto,Contacto,0,crm
+Contacto,Cliente,Cliente,1,crm
+Contacto,Proveedor,Proveedor,2,crm
+Contacto,Ofeerente,Ofeerente,3,crm
+Venta,Venta,Venta,0,crm
+Compra,Compra,Compra,0,crm

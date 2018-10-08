@@ -15,11 +15,11 @@
 
 Ext.define('cerodatax.view.crm.ContactoForm', {
     extend: 'Ext.window.Window',
-    alias: 'widget.crmcontactoform',
+    alias: 'widget.contactoForm',
 
     requires: [
-        'cerodatax.view.persona.PersonaFormViewModel1',
-        'cerodatax.view.persona.PersonaFormViewController1',
+        'cerodatax.view.crm.ContactoFormViewModel',
+        'cerodatax.view.crm.ContactoFormViewController',
         'Ext.form.Panel',
         'Ext.tab.Panel',
         'Ext.tab.Tab',
@@ -35,14 +35,14 @@ Ext.define('cerodatax.view.crm.ContactoForm', {
         'Ext.grid.filters.Filters'
     ],
 
-    controller: 'crmcontactoform',
+    controller: 'contactoform',
     viewModel: {
         type: 'crmcontactoform'
     },
     controller: 'nomencladorcrud',
     resizable: false,
     bodyPadding: 10,
-    title: 'Persona',
+    title: 'Contacto',
     modal: true,
 
     items: [

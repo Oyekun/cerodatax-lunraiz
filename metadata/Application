@@ -52,7 +52,10 @@
             "nomenclador.Icono",
             "nomenclador.TipoModulo",
             "configuracion.Menu",
-            "seguridad.UsuarioRol"
+            "seguridad.UsuarioRol",
+            "crm.Cliente",
+            "crm.Proveedor",
+            "crm.Oferente"
         ],
         "name": "cerodatax",
         "namespaces": [
@@ -107,7 +110,11 @@
             "configuracion.Menu",
             "nomenclador.Icono",
             "configuracion.Panel",
-            "crm.Contacto"
+            "crm.Contacto",
+            "main",
+            "crm.Cliente",
+            "crm.Proveedor",
+            "crm.Oferente"
         ],
         "views": [
             "seguridad.Usuario",
@@ -152,7 +159,14 @@
             "configuracion.Panel",
             "crm.ContactoForm",
             "crm.Contacto",
-            "seguridad.UsuarioRolForm"
+            "seguridad.UsuarioRolForm",
+            "escritorio.Tablero",
+            "crm.Cliente",
+            "crm.Proveedor",
+            "crm.Oferente",
+            "crm.ClienteForm",
+            "crm.ProveedorForm",
+            "crm.OferenteForm"
         ]
     },
     "name": "Application",

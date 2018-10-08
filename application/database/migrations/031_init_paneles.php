@@ -22,7 +22,7 @@ class Migration_Init_paneles extends CI_Migration {
                 $this->load->dbforge();
                 $this->load->library('uuid'); 
 
-$string = read_file(APPPATH.'hooks/panel.csv');
+  $string = read_file(APPPATH.'hooks/panel.csv');
         
         $salida = explode("\n", $string);
         $cant=0;

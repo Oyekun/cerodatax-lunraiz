@@ -368,13 +368,15 @@ $cant++;
 		
 		foreach($dataArray as $key=>$nodo)
 		{
-			if($nodo=='' || $nodo=='NULL' )
+			if($nodo==='' || $nodo==='NULL' )
 			{
+				
 				     if(is_bool($nodo)===FALSE)
 				unset($dataArray["$key"]);
 			}
 			if(is_bool($nodo)===TRUE)
 			{
+				
 				$dataArray["$key"] = 0;
 				if($nodo)
 				$dataArray["$key"] = 1;	
@@ -418,7 +420,7 @@ if(isset($dataArray['asociados']))
 	    		unset($dataArray['username']);
 	    		$this->ionAuthModel->register($uuid,$identity, $password, $email, $dataArray, $groups = array());
 	    	}else{
-		
+		 
 		$this->db->insert("$tb", $dataArray); 
        }
         if(isset($dataArray['parent_id']))		
@@ -559,7 +561,7 @@ if(isset($dataArray['asociados']))
 	    		$sl = $this->ionAuthModel->update($id,$dataArray);
                    
 	    	}else{
-		
+		 
 		$sl = $this->db->update("$tb",$dataArray); 
        }
     

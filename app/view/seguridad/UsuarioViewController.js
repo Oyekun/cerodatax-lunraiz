@@ -86,11 +86,23 @@ Ext.define('cerodatax.view.seguridad.UsuarioViewController', {
         });
     },
 
+    associate: function(button, e, eOpts) {
+ 
+    },
+
     refresh: function(button, e, eOpts) {
  
     },
 
     onToolbarAfterRender: function(component, eOpts) {
+
+    },
+
+    onComboboxSelectEntidad: function(combo, record, eOpts) {
+
+    },
+
+    onTreePanelBeforeItemExpand1: function(nodeinterface, eOpts) {
 
     },
 

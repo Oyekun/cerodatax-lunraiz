@@ -24,7 +24,7 @@
             "cerodatax.view.escritorio.Escritorio"
         ],
         "title": "Autenticación",
-        "width": 310
+        "width": 320
     },
     "designerId": "d83f1f64-2e3d-46d1-b60e-0f6d1ccd88b3",
     "configMeta": {
@@ -44,7 +44,8 @@
             "codeClass": null,
             "userConfig": {
                 "bodyPadding": null,
-                "title": null
+                "title": null,
+                "width": null
             },
             "name": "MyForm2",
             "designerId": "62e5d0e6-44bb-4e2b-bdac-c8bb2d68275c",
@@ -61,7 +62,7 @@
                         "height": 300,
                         "margin": null,
                         "src": "resources/images/lunraiz.jpg",
-                        "width": 318
+                        "width": 300
                     },
                     "name": "MyImg",
                     "designerId": "30e51b48-a8f7-47bb-a964-9947a2111915"
@@ -83,7 +84,7 @@
                         "selectOnFocus": true,
                         "tabIndex": null,
                         "twoWayBindable": null,
-                        "width": 285
+                        "width": 295
                     },
                     "name": "MyTextField",
                     "designerId": "7e35d3dc-76de-4a20-b17f-5c6a09246798",
@@ -120,7 +121,7 @@
                         "margin": null,
                         "name": "password",
                         "tabIndex": null,
-                        "width": 285
+                        "width": 295
                     },
                     "name": "MyTextField1",
                     "designerId": "c78da32e-6a4b-44f2-90b5-0493cb05622b",
