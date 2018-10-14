@@ -344,6 +344,16 @@
                     },
                     "name": "MyRowSelectionModel18",
                     "designerId": "84f2941f-adc9-4050-b5c9-ec0acde4cdb8"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin7",
+                    "designerId": "d1f08018-9f70-4e67-b42b-a4606416b066"
                 }
             ]
         },
@@ -445,6 +455,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Calificador"
                     },

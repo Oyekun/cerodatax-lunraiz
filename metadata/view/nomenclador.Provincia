@@ -399,6 +399,16 @@
                     },
                     "name": "onGridpanelSelectionChange",
                     "designerId": "ab3e4236-adcf-48f7-8ae5-31aadb62d916"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin24",
+                    "designerId": "6c18bd6d-6546-4e04-bc01-0ed8b6e5640e"
                 }
             ]
         },
@@ -557,6 +567,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Provincia"
                     },

@@ -346,6 +346,19 @@
                     },
                     "name": "MyRowSelectionModel7",
                     "designerId": "b74ca914-da72-493f-9cc5-d1f931a35428"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuFilterText": "Buscar"
+                    },
+                    "name": "MyGridFiltersPlugin4",
+                    "designerId": "6be33c58-0212-4de5-9472-a9e989a41b85"
                 }
             ]
         },
@@ -524,6 +537,10 @@
                     "userConfig": {
                         "bodyPadding": 10,
                         "designer|uiInterfaceName": "default-framed",
+                        "fieldDefaults": [
+                            "{maxLength: 100,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "frame": true,
                         "reference": "form",
                         "title": "Editar Usuario"
@@ -660,6 +677,7 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Descripción",
                                 "height": 300,
+                                "maxLength": 255,
                                 "name": "descripcion"
                             },
                             "name": "MyTextArea4",

@@ -345,6 +345,16 @@
                     },
                     "name": "MyRowSelectionModel12",
                     "designerId": "af137929-d8fc-4622-9bc4-006893c267ba"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin15",
+                    "designerId": "4ba04cf5-608a-4094-8c5c-479e0305cc14"
                 }
             ]
         },
@@ -446,6 +456,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 255,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Estado Civil"
                     },

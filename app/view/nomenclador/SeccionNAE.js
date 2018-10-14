@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.nomenclador.SeccionNAE', {
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.XTemplate',
@@ -138,7 +139,12 @@ Ext.define('cerodatax.view.nomenclador.SeccionNAE', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -199,6 +205,10 @@ Ext.define('cerodatax.view.nomenclador.SeccionNAE', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Grupo Sanguineo',
+                    fieldDefaults: {
+                        maxLength: 255,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',
@@ -222,7 +232,8 @@ Ext.define('cerodatax.view.nomenclador.SeccionNAE', {
                             xtype: 'textareafield',
                             height: 'height',
                             fieldLabel: 'Descripción',
-                            name: 'descripcion'
+                            name: 'descripcion',
+                            maxLength: 4048
                         }
                     ],
                     dockedItems: [

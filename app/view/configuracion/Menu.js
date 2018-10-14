@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.configuracion.Menu', {
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.XTemplate',
@@ -132,7 +133,13 @@ Ext.define('cerodatax.view.configuracion.Menu', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters',
+                    menuFilterText: 'Buscar'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -208,6 +215,10 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                     frame: true,
                     bodyPadding: 10,
                     title: 'Editar Usuario',
+                    fieldDefaults: {
+                        maxLength: 100,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',
@@ -220,11 +231,8 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                         },
                         {
                             xtype: 'combobox',
-                            afterLabelTextTpl: [
-                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                            ],
                             fieldLabel: 'Módulo',
-                            name: 'modulo',
+                            name: 'modulo_id',
                             allowBlank: false,
                             displayField: 'nombre',
                             queryMode: 'local',
@@ -256,7 +264,7 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                         {
                             xtype: 'combobox',
                             fieldLabel: 'Icono',
-                            name: 'icono',
+                            name: 'icono_id',
                             emptyText: 'Seleccione',
                             displayField: 'nombre',
                             queryMode: 'local',
@@ -283,7 +291,8 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                             ],
                             fieldLabel: 'Descripción',
                             name: 'descripcion',
-                            allowBlank: false
+                            allowBlank: false,
+                            maxLength: 255
                         }
                     ],
                     dockedItems: [

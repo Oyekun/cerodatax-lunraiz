@@ -402,6 +402,16 @@
                     },
                     "name": "onGridpanelSelectionChange",
                     "designerId": "7a44e4a4-34d0-446d-84e4-e53907e58403"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin19",
+                    "designerId": "86a364be-7346-4b09-bc1d-94c7ff21147f"
                 }
             ]
         },
@@ -560,6 +570,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 100,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Municipio"
                     },

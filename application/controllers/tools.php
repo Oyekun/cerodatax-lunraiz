@@ -428,6 +428,7 @@ $string = read_file(APPPATH.'hooks/menus.csv');
         $dataArray['nombre'] = $nombre;  
         $dataArray['orden'] = $orden;  
         $dataArray['menu_id'] = $menu_id;   
+        $dataArray['activo'] = TRUE;
         $dataArray['alias'] = $alias;   
         $dataArray['id_contenedor'] = $id_contenedor;   
         $this->db->set('id', $uuid);

@@ -360,6 +360,16 @@
                     },
                     "name": "MyRowSelectionModel16",
                     "designerId": "48db9ad6-ef63-4a35-882b-8dd5bb9e0ff5"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin9",
+                    "designerId": "374aa81a-223f-422f-8c95-273d908a8d1f"
                 }
             ]
         },
@@ -480,6 +490,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Categoría"
                     },
@@ -528,7 +542,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "fieldLabel": "Posicion",
+                                "fieldLabel": "Orden",
                                 "name": "posicion",
                                 "width": 180
                             },

@@ -68,7 +68,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "descripcion",
+                        "dataIndex": "systema",
                         "text": "Descripción"
                     },
                     "name": "MyColumn61",
@@ -357,6 +357,19 @@
                     "codeClass": null,
                     "name": "MyRowSelectionModel6",
                     "designerId": "447704c3-30d3-402e-93e3-a6b589ff1fea"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuFilterText": "Buscar"
+                    },
+                    "name": "MyGridFiltersPlugin1",
+                    "designerId": "374f04f0-c612-4a00-abc7-c2d3214f25a5"
                 }
             ]
         },
@@ -477,12 +490,148 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Tipo Entidad"
                     },
                     "name": "MyForm14",
                     "designerId": "f43367ae-eedd-42a8-b665-78350bac8af3",
                     "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 130,
+                                "layout": null,
+                                "margin": "10 10 0 0",
+                                "width": 110
+                            },
+                            "name": "MyContainer63",
+                            "designerId": "79dfbcf6-ffbb-45d8-9b50-851b4d42d8de",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": null,
+                                        "alt": "Cargando Foto...",
+                                        "alwaysOnTop": [
+                                            "true"
+                                        ],
+                                        "border": null,
+                                        "frame": false,
+                                        "glyph": null,
+                                        "height": 110,
+                                        "hidden": true,
+                                        "imgCls": "",
+                                        "itemId": "foto",
+                                        "liquidLayout": null,
+                                        "margin": null,
+                                        "overCls": null,
+                                        "padding": null,
+                                        "resizable": null,
+                                        "rtl": null,
+                                        "shadowOffset": null,
+                                        "shim": false,
+                                        "shrinkWrap": null,
+                                        "style": [
+                                            "'font-size: 36px; lineHeight: 36px'"
+                                        ],
+                                        "title": null,
+                                        "width": 100
+                                    },
+                                    "name": "MyImg",
+                                    "designerId": "4a36aed1-205a-433e-9ba3-48160fdd66a1"
+                                },
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": null,
+                                        "alt": "Cargando Foto...",
+                                        "alwaysOnTop": [
+                                            "true"
+                                        ],
+                                        "border": null,
+                                        "frame": true,
+                                        "glyph": "xf1c5@FontAwesome",
+                                        "height": 110,
+                                        "imgCls": null,
+                                        "itemId": "foto1",
+                                        "liquidLayout": null,
+                                        "margin": null,
+                                        "overCls": null,
+                                        "padding": null,
+                                        "resizable": null,
+                                        "rtl": null,
+                                        "shadowOffset": null,
+                                        "shim": false,
+                                        "shrinkWrap": null,
+                                        "style": [
+                                            "'font-size: 110px; margin: 10px;line-height: 120px;'"
+                                        ],
+                                        "title": null,
+                                        "width": 100
+                                    },
+                                    "name": "MyImg3",
+                                    "designerId": "402bc252-c6f8-4373-8381-47d7faedfb78"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.File",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "buttonText": "Examinar...",
+                                "emptyText": "Seleccione",
+                                "fieldLabel": "Foto",
+                                "invalidText": "El valor del elemento es invalido",
+                                "margin": "10 0 0 0",
+                                "name": "foto"
+                            },
+                            "name": "MyFileUpload2",
+                            "designerId": "5bfb6929-f1cf-47d0-8706-58247648c028",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFilefieldChange",
+                                        "implHandler": [
+                                            "console.log(filefield)",
+                                            "console.log(value)"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onFilefieldChange",
+                                    "designerId": "9c4e0091-6044-4a86-81da-990887fe50b7"
+                                }
+                            ]
+                        },
                         {
                             "type": "Ext.form.field.Text",
                             "reference": {
@@ -527,6 +676,7 @@
                                 "allowBlank": false,
                                 "fieldLabel": "Descripción",
                                 "height": 250,
+                                "maxLength": 255,
                                 "name": "descripcion"
                             },
                             "name": "MyTextArea3",

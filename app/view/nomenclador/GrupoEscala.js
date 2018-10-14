@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.nomenclador.GrupoEscala', {
         'Ext.toolbar.Paging',
         'Ext.button.Button',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.Text',
@@ -133,7 +134,12 @@ Ext.define('cerodatax.view.nomenclador.GrupoEscala', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -187,6 +193,10 @@ Ext.define('cerodatax.view.nomenclador.GrupoEscala', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Grupo Escala',
+                    fieldDefaults: {
+                        maxLength: 255,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',

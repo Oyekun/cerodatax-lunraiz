@@ -1,0 +1,3 @@
+\htdocs\cerodata>php index.php Create_CSV/init
+
+php pdepend1.1.1.phar --jdepend-chart=chart --overview-pyramid=piram  --summary-xml=suma --jdepend-xml=xml c:\xampp\htdocs\cerodatax\application

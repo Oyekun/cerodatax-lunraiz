@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "escritorioformchangepassword",
+        "designer|userClassName": "escritorio.FormAutenticacionViewModel1"
+    },
+    "name": "escritorio.FormAutenticacionViewModel1",
+    "designerId": "67467d47-8c26-4e68-bdb0-018808d35279"
+}

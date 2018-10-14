@@ -6,6 +6,7 @@ Estructura,Area,Áreas,1,estructura
 RRHH,Persona,Personas,0,persona
 RRHH,Cargo,Cargos,1,persona
 Actualizaciones,Actualizacion,Actualizaciones,0,actualizacion
+Escritorio,Tablero,Escritorio,0,escritorio
 Continente,Continente,Continentes,0,nomenclador
 Pais,Pais,País,0,nomenclador
 Provincia,Provincia,Provincias,0,nomenclador
@@ -37,6 +38,6 @@ Modulo,Panel,Panel,2,configuracion
 Contacto,Contacto,Contacto,0,crm
 Contacto,Cliente,Cliente,1,crm
 Contacto,Proveedor,Proveedor,2,crm
-Contacto,Ofeerente,Ofeerente,3,crm
+Contacto,Oferente,Oferente,3,crm
 Venta,Venta,Venta,0,crm
 Compra,Compra,Compra,0,crm

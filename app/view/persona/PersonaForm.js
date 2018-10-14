@@ -59,7 +59,9 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
             layout: 'auto',
             bodyPadding: 10,
             fieldDefaults: {
-                padding: '0 10 0 0'
+                padding: '0 10 0 0',
+                maxLength: 50,
+                enforceMaxLength: true
             },
             dockedItems: [
                 {
@@ -221,7 +223,8 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                             ],
                                             fieldLabel: 'Direccion',
                                             name: 'direccion',
-                                            allowBlank: false
+                                            allowBlank: false,
+                                            maxLength: 100
                                         },
                                         {
                                             xtype: 'textfield',

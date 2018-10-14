@@ -67,7 +67,8 @@ class Migration_Init_paneles extends CI_Migration {
         $dataArray['nombre'] = $nombre;  
         $dataArray['orden'] = $orden;  
         $dataArray['menu_id'] = $menu_id;   
-        $dataArray['alias'] = $alias;   
+        $dataArray['alias'] = $alias;  
+        $dataArray['activo'] = TRUE;   
         $dataArray['id_contenedor'] = $id_contenedor;   
         $this->db->set('id', $uuid);
          $tb='configuracion_panel';

@@ -28,34 +28,49 @@ Ext.define('cerodatax.view.escritorio.Tablero', {
     },
     frame: true,
     height: 528,
+    scrollable: '',
     shrinkWrap: 0,
     width: 860,
+    layout: 'fit',
     collapsed: false,
 
-    dockedItems: [
+    items: [
         {
             xtype: 'dataview',
-            dock: 'top',
             animateShadow: true,
             autoShow: true,
+            cls: 'tpl-30jdxw15',
             frame: false,
+            scrollable: 'true',
             tpl: [
                 '<tpl for=".">',
-                '          ',
-                '                    <div   class="thumb-wrap"  id="{name}"> ',
-                '                        <div class="thumb">',
-                '                         <img src="resources/images/touch-icons/{thumb}" />',
-                '                        <span>{name}</span>',
-                '                        </div> ',
-                '                    </div>',
-                '                                    ',
-                '                </tpl>'
+                '',
+                '    <div class="ticket-wrapper">',
+                '',
+                '        <img class="image-ticket" src="resources/images/touch-icons/{thumb}" />',
+                '        <span class="title">{name}</span>',
+                '    </div>',
+                '    </div>',
+                '',
+                '</tpl>'
             ],
-            itemSelector: 'div.thumb-wrap',
-            overItemCls: 'x-item-over',
-            trackOver: true,
+            itemSelector: 'div.ticket-wrapper',
             store: 'main'
         }
-    ]
+    ],
+
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {};
+        me.processEscritorioTablero(config);
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
+        }
+        return me.callParent([config]);
+    },
+
+    processEscritorioTablero: function(config) {
+
+    }
 
 });

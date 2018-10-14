@@ -346,6 +346,16 @@
                     },
                     "name": "MyRowSelectionModel5",
                     "designerId": "b21770a1-06d8-45df-a6e4-0683cd27c1e9"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin12",
+                    "designerId": "98363919-c9af-4370-bd96-4affcbc8cdf4"
                 }
             ]
         },
@@ -447,6 +457,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Sexos"
                     },

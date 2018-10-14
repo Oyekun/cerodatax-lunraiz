@@ -359,6 +359,16 @@
                     },
                     "name": "MyRowSelectionModel15",
                     "designerId": "5b9ebd42-16b5-45eb-aa95-98dcdf3996d9"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin10",
+                    "designerId": "120a22a3-91bb-4d2a-a31f-794d921aec77"
                 }
             ]
         },
@@ -479,6 +489,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Clasificacion"
                     },

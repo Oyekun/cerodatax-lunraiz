@@ -44,6 +44,12 @@
             "codeClass": null,
             "userConfig": {
                 "bodyPadding": null,
+                "fieldDefaults": [
+                    "{",
+                    "                        maxLength: 30,",
+                    "                        enforceMaxLength: true",
+                    "                    }"
+                ],
                 "title": null,
                 "width": null
             },
@@ -75,6 +81,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "emptyText": null,
                         "fieldLabel": "Usuario",
                         "id": "identity",
@@ -113,6 +120,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "emptyText": null,
                         "fieldLabel": "Contraseña",
                         "inputType": "password",

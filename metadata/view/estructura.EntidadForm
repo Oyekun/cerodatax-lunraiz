@@ -36,8 +36,10 @@
                 "bodyPadding": 10,
                 "container|columns": 2,
                 "defaultAlign": null,
+                "defaultFocus": "nombreentidad",
                 "fieldDefaults": [
-                    "{padding:'0 10 0 0',enforceMaxLength: true}"
+                    "{padding:'0 10 0 0',maxLength: 100,",
+                    "        enforceMaxLength: true}"
                 ],
                 "height": 550,
                 "layout": "table",
@@ -208,6 +210,8 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Nombre",
+                                "id": null,
+                                "itemId": "nombreentidad",
                                 "margin": null,
                                 "name": "nombre",
                                 "padding": null
@@ -404,7 +408,7 @@
                                 "designer|displayName": null,
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
-                                "fieldLabel": "Clasificacion",
+                                "fieldLabel": "Clasificación",
                                 "name": "clasificacion_id",
                                 "queryMode": "local",
                                 "store": "nomenclador.Clasificacion",
@@ -559,7 +563,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "fieldLabel": "Cód. Registro",
+                                "fieldLabel": "Cód Registro",
                                 "name": "codigo_registro"
                             },
                             "name": "MyTextField9",
@@ -646,7 +650,7 @@
                                 "designer|displayName": null,
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
-                                "fieldLabel": "Paìs",
+                                "fieldLabel": "País",
                                 "name": "pais_id",
                                 "queryMode": "local",
                                 "queryParam": "provincia_id:false,municipio_id:true",
@@ -808,6 +812,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Telefono",
+                                "maxLength": 30,
                                 "name": "telefono"
                             },
                             "name": "MyTextField10",

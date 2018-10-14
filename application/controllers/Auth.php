@@ -69,11 +69,20 @@ class Auth extends CI_Controller
 	public function login()
 	{
 		 
-		if ($this->input->post('identity')!=''&&$this->input->post('password')!='')
-		{    $remember = (bool)$this->input->post('remember');
+		 $this->load->model("Ion_auth_model", "ionAuthModel");
+/*$ip_address = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';;
+		 if($this->ionAuthModel->is_max_login_attempts_exceeded($this->input->post('identity'),$ip_address))
+		 {$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>FALSE,'message' => 'El usuario ha excedido la cantidad de intentos de autenticación.')));
+		 }
+  else*/
+	//	if ($this->input->post('identity')!=''&&$this->input->post('password')!='')
+	//	{    
+	        $remember = (bool)$this->input->post('remember');
              
              
-             $this->load->model("Ion_auth_model", "ionAuthModel");
+             
 			if ($this->ionAuthModel->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
 				 	 
@@ -94,12 +103,30 @@ class Auth extends CI_Controller
 			}
 			else
 			{
+
+				 
+				 $logins = $this->ionAuthModel->errors_array(false);
+
+                 $mensaje = 'El usuario o la contraseña son incorrectos.';
+				 if (count($logins)>0)
+				 switch ($logins[0]) {
+				 	case 'login_timeout':
+				 		$mensaje = 'El usuario ha excedido la cantidad de intentos de autenticación.';
+				 		break;
+				 	case 'login_unsuccessful_not_active':
+				 			$mensaje = 'El usuario no esta activo.';
+				 		break;
+				 	 
+				 	default:
+				 		$mensaje = 'El usuario o la contraseña son incorrectos.';
+				 		break;
+				 }
 		 $this->output
         ->set_content_type('application/json')
-        ->set_output(json_encode(array('success'=>FALSE,'message' => 'El usuario o la contraseña son incorrectos.')));
+        ->set_output(json_encode(array('success'=>FALSE,'message' => $mensaje)));
 		 
 		 	}
-		}
+		/*}
 		else
 		{
  
@@ -110,7 +137,7 @@ class Auth extends CI_Controller
         ->set_content_type('application/json')
         ->set_output(json_encode(array('success'=>FALSE,'message' => 'El usuario o la contraseña son incorrectos.')));
 			 
-		}
+		}*/
 	}
 
 	/**
@@ -168,7 +195,9 @@ class Auth extends CI_Controller
     $result = $this->db->get("$tb");
     
     if( count($result->result_array())>0)
-	 $persona = $result->result_array()[0];
+	{ $persona = $result->result_array()[0];
+      $persona['username'] = $usuarios['username'];
+      }
     }
     	$data = array('persona' => $persona,'entidad' => $nombre,'cantidad' =>$cantidad);
 		 $this->output->set_content_type('application/json')
@@ -209,67 +238,47 @@ class Auth extends CI_Controller
 	 */
 	public function change_password()
 	{
-		$this->form_validation->set_rules('old', $this->lang->line('change_password_validation_old_password_label'), 'required');
-		$this->form_validation->set_rules('new', $this->lang->line('change_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
-		$this->form_validation->set_rules('new_confirm', $this->lang->line('change_password_validation_new_password_confirm_label'), 'required');
-
+	 
 		if (!$this->ion_auth->logged_in())
 		{
-			redirect('auth/login', 'refresh');
+			$this->load->view('auth/login');
 		}
 
 		$user = $this->ion_auth->user()->row();
-
-		if ($this->form_validation->run() === FALSE)
+        $username = $this->input->post('username');
+        $old_password = $this->input->post('old_password');
+        $new_password = $this->input->post('new_password');
+		if ($username=='' && $new_password=='' && $old_password=='')
 		{
+			
 			// display the form
 			// set the flash data error message if there is one
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-			$this->data['min_password_length'] = $this->config->item('min_password_length', 'ion_auth');
-			$this->data['old_password'] = array(
-				'name' => 'old',
-				'id' => 'old',
-				'type' => 'password',
-			);
-			$this->data['new_password'] = array(
-				'name' => 'new',
-				'id' => 'new',
-				'type' => 'password',
-				'pattern' => '^.{' . $this->data['min_password_length'] . '}.*$',
-			);
-			$this->data['new_password_confirm'] = array(
-				'name' => 'new_confirm',
-				'id' => 'new_confirm',
-				'type' => 'password',
-				'pattern' => '^.{' . $this->data['min_password_length'] . '}.*$',
-			);
-			$this->data['user_id'] = array(
-				'name' => 'user_id',
-				'id' => 'user_id',
-				'type' => 'hidden',
-				'value' => $user->id,
-			);
-
-			// render
-			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'change_password', $this->data);
+			$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>FALSE,'message' => 'El usuario o la contraseña son incorrectos.')));
 		}
 		else
 		{
 			$identity = $this->session->userdata('identity');
 
-			$change = $this->ion_auth->change_password($identity, $this->input->post('old'), $this->input->post('new'));
+			$change = $this->ion_auth->change_password($identity, $this->input->post('old_password'), $this->input->post('new_password'));
 
 			if ($change)
 			{
 				//if the password was successfully changed
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
+				$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>TRUE,'message' => 'El usuario y la contraseña son correctos.')));
+	
 				$this->logout();
+				//$this->load->view('auth/login');
 			}
 			else
 			{
-				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				redirect('auth/change_password', 'refresh');
+				$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>FALSE,'message' => 'El usuario o la contraseña son incorrectos.')));
+	
 			}
 		}
 	}

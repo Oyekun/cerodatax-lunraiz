@@ -23,6 +23,7 @@ Ext.define('cerodatax.view.nomenclador.TipoMenu', {
         'Ext.toolbar.Paging',
         'Ext.button.Button',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.XTemplate',
@@ -127,7 +128,12 @@ Ext.define('cerodatax.view.nomenclador.TipoMenu', {
             ],
             selModel: {
                 selType: 'rowmodel'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -181,6 +187,10 @@ Ext.define('cerodatax.view.nomenclador.TipoMenu', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Tipo Entidad',
+                    fieldDefaults: {
+                        maxLength: 50,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',

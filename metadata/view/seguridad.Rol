@@ -345,6 +345,19 @@
                     },
                     "name": "MyRowSelectionModel8",
                     "designerId": "c6ba2009-5204-4f33-be62-9410020095ea"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuFilterText": "Buscar"
+                    },
+                    "name": "MyGridFiltersPlugin5",
+                    "designerId": "462c7b3b-cf16-47af-982b-d8ecdb743d58"
                 }
             ]
         },
@@ -488,6 +501,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{",
+                            "                        maxLength: 30,",
+                            "                        enforceMaxLength: true",
+                            "                    }"
+                        ],
                         "reference": "form",
                         "title": "Editar Rol"
                     },
@@ -504,7 +523,8 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Rol",
-                                "name": "name"
+                                "name": "name",
+                                "tabIndex": null
                             },
                             "name": "MyTextField",
                             "designerId": "e3feb8cc-a6f0-4953-b9be-398834587eb1",
@@ -537,6 +557,7 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Descripcón",
+                                "maxLength": 255,
                                 "name": "description"
                             },
                             "name": "MyTextArea",

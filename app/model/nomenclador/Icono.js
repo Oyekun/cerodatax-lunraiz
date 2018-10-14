@@ -32,6 +32,14 @@ Ext.define('cerodatax.model.nomenclador.Icono', {
         },
         {
             type: 'string',
+            name: 'foto'
+        },
+        {
+            type: 'string',
+            name: 'systema'
+        },
+        {
+            type: 'string',
             name: 'descripcion'
         }
     ]

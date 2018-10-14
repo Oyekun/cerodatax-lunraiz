@@ -55,7 +55,9 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
             layout: 'auto',
             bodyPadding: 10,
             fieldDefaults: {
-                padding: '0 10 0 0'
+                padding: '0 10 0 0',
+                maxLength: 100,
+                enforceMaxLength: true
             },
             dockedItems: [
                 {

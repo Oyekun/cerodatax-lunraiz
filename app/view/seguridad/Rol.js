@@ -24,6 +24,7 @@ Ext.define('cerodatax.view.seguridad.Rol', {
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.view.MultiSelector',
         'Ext.view.MultiSelectorSearch',
@@ -130,7 +131,13 @@ Ext.define('cerodatax.view.seguridad.Rol', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters',
+                    menuFilterText: 'Buscar'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -189,6 +196,10 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Rol',
+                    fieldDefaults: {
+                        maxLength: 30,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',
@@ -206,7 +217,8 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                             ],
                             fieldLabel: 'Descripcón',
                             name: 'description',
-                            allowBlank: false
+                            allowBlank: false,
+                            maxLength: 255
                         },
                         {
                             xtype: 'multiselector',

@@ -374,6 +374,16 @@
                     },
                     "name": "MyRowSelectionModel10",
                     "designerId": "576924fe-414c-434a-9f1e-57143531287e"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin25",
+                    "designerId": "8076c35e-e806-4344-a620-dd3b9ce94ced"
                 }
             ]
         },
@@ -513,6 +523,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 255,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Grupo Sanguineo"
                     },
@@ -595,6 +609,7 @@
                             "userConfig": {
                                 "fieldLabel": "Descripción",
                                 "height": "height",
+                                "maxLength": 4048,
                                 "name": "descripcion"
                             },
                             "name": "MyTextArea1",

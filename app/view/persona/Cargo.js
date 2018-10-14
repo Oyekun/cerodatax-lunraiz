@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.persona.Cargo', {
         'Ext.toolbar.Paging',
         'Ext.button.Button',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.XTemplate',
@@ -159,7 +160,12 @@ Ext.define('cerodatax.view.persona.Cargo', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -257,7 +263,9 @@ Ext.define('cerodatax.view.persona.Cargo', {
                     bodyPadding: 10,
                     title: 'Editar Cargo',
                     fieldDefaults: {
-                        padding: '0 10 0 10'
+                        padding: '0 10 0 10',
+                        maxLength: 30,
+                        enforceMaxLength: true
                     },
                     layout: {
                         type: 'table',
@@ -271,7 +279,8 @@ Ext.define('cerodatax.view.persona.Cargo', {
                             ],
                             fieldLabel: 'Nombre',
                             name: 'nombre',
-                            allowBlank: false
+                            allowBlank: false,
+                            maxLength: 100
                         },
                         {
                             xtype: 'combobox',
@@ -334,7 +343,8 @@ Ext.define('cerodatax.view.persona.Cargo', {
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Periodo de Prueba',
-                            name: 'periodo_prueba'
+                            name: 'periodo_prueba',
+                            maxLength: 3
                         },
                         {
                             xtype: 'checkboxfield',

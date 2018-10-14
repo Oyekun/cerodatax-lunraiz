@@ -23,8 +23,11 @@ Ext.define('cerodatax.view.nomenclador.Icono', {
         'Ext.toolbar.Paging',
         'Ext.button.Button',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
+        'Ext.Img',
+        'Ext.form.field.File',
         'Ext.XTemplate',
         'Ext.form.field.TextArea'
     ],
@@ -56,7 +59,7 @@ Ext.define('cerodatax.view.nomenclador.Icono', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'descripcion',
+                    dataIndex: 'systema',
                     text: 'Descripción'
                 }
             ],
@@ -126,7 +129,13 @@ Ext.define('cerodatax.view.nomenclador.Icono', {
             ],
             selModel: {
                 selType: 'rowmodel'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters',
+                    menuFilterText: 'Buscar'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -180,7 +189,56 @@ Ext.define('cerodatax.view.nomenclador.Icono', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Tipo Entidad',
+                    fieldDefaults: {
+                        maxLength: 50,
+                        enforceMaxLength: true
+                    },
                     items: [
+                        {
+                            xtype: 'container',
+                            height: 130,
+                            margin: '10 10 0 0',
+                            width: 110,
+                            items: [
+                                {
+                                    xtype: 'image',
+                                    alwaysOnTop: true,
+                                    shim: false,
+                                    frame: false,
+                                    height: 110,
+                                    hidden: true,
+                                    itemId: 'foto',
+                                    style: 'font-size: 36px; lineHeight: 36px',
+                                    width: 100,
+                                    alt: 'Cargando Foto...',
+                                    imgCls: ''
+                                },
+                                {
+                                    xtype: 'image',
+                                    alwaysOnTop: true,
+                                    shim: false,
+                                    frame: true,
+                                    height: 110,
+                                    itemId: 'foto1',
+                                    style: 'font-size: 110px; margin: 10px;line-height: 120px;',
+                                    width: 100,
+                                    alt: 'Cargando Foto...',
+                                    glyph: 'xf1c5@FontAwesome'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'filefield',
+                            margin: '10 0 0 0',
+                            fieldLabel: 'Foto',
+                            name: 'foto',
+                            invalidText: 'El valor del elemento es invalido',
+                            emptyText: 'Seleccione',
+                            buttonText: 'Examinar...',
+                            listeners: {
+                                change: 'onFilefieldChange'
+                            }
+                        },
                         {
                             xtype: 'textfield',
                             afterLabelTextTpl: [
@@ -198,7 +256,8 @@ Ext.define('cerodatax.view.nomenclador.Icono', {
                             ],
                             fieldLabel: 'Descripción',
                             name: 'descripcion',
-                            allowBlank: false
+                            allowBlank: false,
+                            maxLength: 255
                         }
                     ],
                     dockedItems: [

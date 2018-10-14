@@ -27,6 +27,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
@@ -34,8 +35,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
         'Ext.tree.Panel',
         'Ext.tree.View',
         'Ext.tree.Column',
-        'Ext.grid.filters.filter.String',
-        'Ext.grid.filters.Filters'
+        'Ext.grid.filters.filter.String'
     ],
 
     controller: 'seguridadusuario',
@@ -177,7 +177,13 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters',
+                    menuFilterText: 'Buscar'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -253,6 +259,10 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                     frame: true,
                     bodyPadding: 10,
                     title: 'Editar Usuario',
+                    fieldDefaults: {
+                        maxLength: 30,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',
@@ -261,7 +271,8 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                             ],
                             fieldLabel: 'Usuario',
                             name: 'username',
-                            allowBlank: false
+                            allowBlank: false,
+                            selectOnFocus: true
                         },
                         {
                             xtype: 'textfield',

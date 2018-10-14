@@ -378,6 +378,16 @@
                             "designerId": "90d71c9c-a023-4f88-9408-1253cc1ce97e"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin34",
+                    "designerId": "edda62bb-e9eb-45f9-98d7-63c7e3f44bc8"
                 }
             ]
         },
@@ -479,6 +489,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 255,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Área"
                     },

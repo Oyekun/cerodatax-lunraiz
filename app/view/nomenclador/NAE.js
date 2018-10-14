@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.nomenclador.NAE', {
         'Ext.toolbar.Paging',
         'Ext.button.Button',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
@@ -148,7 +149,12 @@ Ext.define('cerodatax.view.nomenclador.NAE', {
             ],
             selModel: {
                 selType: 'rowmodel'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -223,6 +229,10 @@ Ext.define('cerodatax.view.nomenclador.NAE', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Tipo Entidad',
+                    fieldDefaults: {
+                        maxLength: 255,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'combobox',
@@ -276,7 +286,8 @@ Ext.define('cerodatax.view.nomenclador.NAE', {
                             ],
                             fieldLabel: 'Descripción',
                             name: 'descripcion',
-                            allowBlank: false
+                            allowBlank: false,
+                            maxLength: 8048
                         }
                     ],
                     dockedItems: [

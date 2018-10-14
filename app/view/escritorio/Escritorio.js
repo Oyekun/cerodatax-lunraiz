@@ -101,8 +101,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                             itemId: 'logousuario',
                             margin: '0 0 0 35',
                             width: 70,
-                            src: 'resources/images/lunraiz.jpg',
-                            title: 'Logo'
+                            src: 'resources/images/lunraiz.jpg'
                         }
                     ],
                     dockedItems: [
@@ -133,7 +132,17 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                                     },
                                     {
                                         xtype: 'menuitem',
-                                        text: 'Cambiar Contraseña'
+                                        handler: function(item, e) {
+                                            var component =  Ext.create('cerodatax.view.escritorio.FormChangePassword').show();
+
+
+                                            Ext.ComponentQuery.query('#old_password')[0].focus('', 10);
+                                            var logousuario = Ext.ComponentQuery.query('#logousuario')[0];
+                                            if(logousuario.username)
+                                            Ext.ComponentQuery.query('#username')[0].setValue(logousuario.username);
+
+                                        },
+                                        text: 'Cambiar contraseña'
                                     },
                                     {
                                         xtype: 'menuitem',
@@ -154,6 +163,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                                                 if(json.success===true) // cambiar cuando se creen usuario bien
                                                 {
                                                     window.location = 'index.php?auth/login';
+                                                    window.location ='';
                                                 }
                                                 else{
                                                     myMask.unmask();
@@ -205,7 +215,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
 
                                             });
                                         },
-                                        text: 'Cerrar Sesión'
+                                        text: 'Cerrar sesión'
                                     }
                                 ]
                             }

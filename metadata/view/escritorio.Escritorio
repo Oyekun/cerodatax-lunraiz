@@ -99,6 +99,9 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "layout": null
+                    },
                     "name": "escritorio.tablero",
                     "designerId": "0c21b4ba-f0af-4852-b58e-9cc820634882",
                     "masterInstanceId": "32e16573-c4f7-4db1-b1c4-e976b356c38b"
@@ -165,7 +168,7 @@
                                 "margin": "0 0 0 35",
                                 "padding": null,
                                 "src": "resources/images/lunraiz.jpg",
-                                "title": "Logo",
+                                "title": null,
                                 "width": 70
                             },
                             "name": "MyImg1",
@@ -262,10 +265,39 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "text": "Cambiar Contraseña"
+                                                "text": "Cambiar contraseña"
                                             },
                                             "name": "MyMenuItem5",
-                                            "designerId": "25bd518f-656a-416b-af5a-ab5e27569b68"
+                                            "designerId": "25bd518f-656a-416b-af5a-ab5e27569b68",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "item",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            " var component =  Ext.create('cerodatax.view.escritorio.FormChangePassword').show();",
+                                                            "",
+                                                            "",
+                                                            "   Ext.ComponentQuery.query('#old_password')[0].focus('', 10);",
+                                                            "var logousuario = Ext.ComponentQuery.query('#logousuario')[0];",
+                                                            "if(logousuario.username)",
+                                                            " Ext.ComponentQuery.query('#username')[0].setValue(logousuario.username);",
+                                                            ""
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "7c329003-3d37-4b4c-a4f5-aaa09c94f76a"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.menu.Item",
@@ -275,7 +307,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "text": "Cerrar Sesión"
+                                                "text": "Cerrar sesión"
                                             },
                                             "name": "MyMenuItem2",
                                             "designerId": "16b195d3-1c6b-4357-8dd7-6df6c8f0d637",
@@ -308,8 +340,9 @@
                                                             "",
                                                             "",
                                                             "                if(json.success===true) // cambiar cuando se creen usuario bien",
-                                                            "                { ",
+                                                            "                {",
                                                             "                 window.location = 'index.php?auth/login';",
+                                                            "                    window.location ='';",
                                                             "                }",
                                                             "                else{",
                                                             "                    myMask.unmask();",
@@ -350,7 +383,7 @@
                                                             "                            slideInDuration: 400,",
                                                             "                            minWidth: 400",
                                                             "                        });",
-                                                            "                ",
+                                                            "",
                                                             "",
                                                             "            };",
                                                             "Ext.Ajax.request({",
@@ -358,7 +391,7 @@
                                                             "                method: 'POST',",
                                                             "    success: successCallback,",
                                                             "                failure: failureCallback",
-                                                            "    ",
+                                                            "",
                                                             "            });"
                                                         ]
                                                     },

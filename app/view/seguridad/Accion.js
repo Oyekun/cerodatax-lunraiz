@@ -23,6 +23,7 @@ Ext.define('cerodatax.view.seguridad.Accion', {
         'Ext.grid.column.Column',
         'Ext.button.Button',
         'Ext.toolbar.Paging',
+        'Ext.grid.filters.Filters',
         'Ext.view.MultiSelector',
         'Ext.view.MultiSelectorSearch',
         'Ext.view.Table',
@@ -100,6 +101,11 @@ Ext.define('cerodatax.view.seguridad.Accion', {
                     width: 360,
                     displayInfo: true,
                     store: 'seguridad.Rol'
+                }
+            ],
+            plugins: [
+                {
+                    ptype: 'gridfilters'
                 }
             ]
         },

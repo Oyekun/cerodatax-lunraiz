@@ -36,7 +36,8 @@
                 "alignTarget": "top",
                 "bodyPadding": 10,
                 "fieldDefaults": [
-                    "{padding: '0 10 0 0'}"
+                    "{padding: '0 10 0 0',maxLength: 100,",
+                    "        enforceMaxLength: true}"
                 ],
                 "height": 500,
                 "layout": "auto",
@@ -502,6 +503,7 @@
                                                 "fieldLabel": "Telefono",
                                                 "inputType": "tel",
                                                 "maskRe": "/\\d/",
+                                                "maxLength": 30,
                                                 "name": "telefono",
                                                 "width": null
                                             },
@@ -519,6 +521,7 @@
                                                 "fieldLabel": "Celular",
                                                 "inputType": "tel",
                                                 "maskRe": "/\\d/",
+                                                "maxLength": 30,
                                                 "name": "celular",
                                                 "width": null
                                             },

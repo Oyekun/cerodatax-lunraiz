@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.configuracion.Modulo', {
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
@@ -131,7 +132,13 @@ Ext.define('cerodatax.view.configuracion.Modulo', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters',
+                    menuFilterText: 'Buscar'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -209,6 +216,10 @@ Ext.define('cerodatax.view.configuracion.Modulo', {
                     width: 80,
                     bodyPadding: 10,
                     title: 'Editar Usuario',
+                    fieldDefaults: {
+                        maxLength: 100,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',
@@ -256,7 +267,8 @@ Ext.define('cerodatax.view.configuracion.Modulo', {
                             ],
                             fieldLabel: 'Descripción',
                             name: 'descripcion',
-                            allowBlank: false
+                            allowBlank: false,
+                            maxLength: 255
                         }
                     ],
                     dockedItems: [

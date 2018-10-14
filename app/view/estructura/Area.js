@@ -26,6 +26,7 @@ Ext.define('cerodatax.view.estructura.Area', {
         'Ext.selection.CheckboxModel',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.Text',
@@ -123,6 +124,11 @@ Ext.define('cerodatax.view.estructura.Area', {
                         afterrender: 'onToolbarAfterRender'
                     }
                 }
+            ],
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
             ]
         },
         {
@@ -170,6 +176,10 @@ Ext.define('cerodatax.view.estructura.Area', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Área',
+                    fieldDefaults: {
+                        maxLength: 255,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',

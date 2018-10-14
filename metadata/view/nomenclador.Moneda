@@ -357,6 +357,16 @@
                     "codeClass": null,
                     "name": "MyRowSelectionModel6",
                     "designerId": "de25e9bc-e900-43a3-a80f-931403ffedda"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin18",
+                    "designerId": "0683cf7d-afa8-4ba5-b47d-fc323767e47c"
                 }
             ]
         },
@@ -477,6 +487,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Tipo Entidad"
                     },

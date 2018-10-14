@@ -133,9 +133,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                 // Set record
                 form.loadRecord(newRecord);
+        var focus=false;
+        var itemfocus;
         form.owner.items.items.forEach(function (item) {
 
-             var resultree = [];
+             findtreepanel = true;
+                var resultree = [];
                     resultree = me.searchComponent('treepanel',item,resultree);
                  for(var comptree in resultree)
                             {var objtree = resultree[comptree];
@@ -156,8 +159,13 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                             }
 
 
+
         var result = [];
                     result = me.searchComponent('combobox',item,result);
+                var callback = function (records, operation, success) {
+        if(obj.store)
+                                        obj.store.proxy.extraParams.combo ='';
+                                    };
                  for(var comp in result)
                             {var obj = result[comp];
 
@@ -166,16 +174,36 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                 {if(obj.store.proxy.extraParams)
                                            { obj.store.proxy.extraParams.combo ='combo';
                                             obj.store.load({   scope: this,
-                                    callback: function (records, operation, success) {
-        if(obj.store)
-                                        obj.store.proxy.extraParams.combo ='';
-                                    }});
+                                    callback: callback});
                                            }}
                             }
 
+        if(focus===false)
+        {var resulttext = [];
+                resulttext = me.searchComponent('textfield',item,resulttext);
+
+                if(resulttext.length>0)
+                   { resulttext[0].focus('',10);
+                    itemfocus = resulttext[0];
+                focus = true;
+                   }
+        }
+
+
+              if(focus===false)
+                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                {item.focus('', 10);
+                focus = true;
+                }
+
                 });
 
-        vista.show();
+        var callbackfocus = function (){
+        if(itemfocus)
+        itemfocus.focus('', 10);
+            };
+        vista.show(null,callbackfocus);
+
     },
 
     editWindows: function(button, e, eOpts) {
@@ -197,7 +225,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         var record = this.getViewModel().get('record');
 
         // Load record model into form
-
+        var focus=false;
+        var itemfocus;
         form.owner.items.items.forEach(function (item) {
 
             if(item.xtype=='treepanel')
@@ -211,6 +240,20 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                 item.store.load();
             }
+
+
+        if(focus===false)
+        {var resulttext = [];
+                resulttext = me.searchComponent('textfield',item,resulttext);
+
+                if(resulttext.length>0)
+                   { resulttext[0].focus('',10);
+                    itemfocus = resulttext[0];
+                focus = true;
+                   }
+        }
+
+
             var resulimage = [];
             resulimage = me.searchComponent('image',item,resulimage);
             var objimgold=null;
@@ -219,8 +262,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              //objimg.setVisible(false);
              if(objimg.config.hidden)
              {
-
-                 var img_value = record.data[objimg.itemId].toString();
+                 var img_value= '';
+                  if(record.data[objimg.itemId])
+                   img_value = record.data[objimg.itemId].toString();
 
 
                  if(img_value!=='')
@@ -234,9 +278,18 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
             }
+
             if(item.xtype=='tabpanel')
-            {  var result = [];
+            {
+                var result = [];
              result = me.searchComponent('combobox',item,result);
+              var callback = function (records, operation, success) {
+
+                                       if(obj.store!==null)
+                                       obj.store.proxy.extraParams.combo ='';
+                                       // itemt.setDisabled(false);
+
+                                   };
              for(var comp in result)
              {var obj = result[comp];
               if(obj.xtype=='combobox')
@@ -245,6 +298,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   {  var form =obj.up('form');
                    var acciones = obj.config.inputAttrTpl[0].split(',');
                    // console.log(obj.config.inputAttrTpl)
+
                    for(var accion in acciones)
                    {
 
@@ -280,14 +334,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                   if(obj.store.proxy.extraParams)
                   { obj.store.proxy.extraParams.combo ='combo';
+
                    obj.store.load({   scope: this,
-                                   callback: function (records, operation, success) {
-
-                                       if(obj.store!==null)
-                                       obj.store.proxy.extraParams.combo ='';
-                                       // itemt.setDisabled(false);
-
-                                   }});
+                                   callback: callback});
                   }}
              }
 
@@ -295,6 +344,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
              var resultree = [];
              resultree = me.searchComponent('treepanel',item,resultree);
+             var callbacktree = function (records, operation, success) {
+                                          objtree.setDisabled(false);
+                                                  if(objtree.clearFilters)
+                                                      objtree.clearFilters();
+                                                  objtree.store.proxy.extraParams.combo = '';
+                                                  objtree.store.proxy.extraParams.filter ='';
+
+                                      };
              for(var comptree in resultree)
              {var objtree = resultree[comptree];
               if(objtree.xtype=='treepanel')
@@ -309,14 +366,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                   //objtree.store.load();
                   objtree.store.load({   scope: this,
-                                      callback: function (records, operation, success) {
-                                          objtree.setDisabled(false);
-                                                  if(objtree.clearFilters)
-                                                      objtree.clearFilters();
-                                                  objtree.store.proxy.extraParams.combo = '';
-                                                  objtree.store.proxy.extraParams.filter ='';
-
-                                      }});
+                                      callback: callbacktree});
               }
              }
 
@@ -339,6 +389,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             if(item.xtype=='fieldset')
             {  var resultcombo = [];
              resultcombo = me.searchComponent('combobox',item,resultcombo);
+             var callbackobjcombo =  function (records, operation, success) {
+
+                                            objcombo.store.proxy.extraParams.combo ='';
+                                            //  itemtcombo.setDisabled(false);
+
+                                        };
              for(var compcombo in resultcombo)
              {var objcombo = resultcombo[compcombo];
               if(objcombo.xtype=='combobox')
@@ -385,23 +441,27 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   if(objcombo.store.proxy.extraParams)
                   { objcombo.store.proxy.extraParams.combo ='combo';
                    objcombo.store.load({   scope: this,
-                                        callback: function (records, operation, success) {
-
-                                            objcombo.store.proxy.extraParams.combo ='';
-                                            //  itemtcombo.setDisabled(false);
-
-                                        }});
+                                        callback: callbackobjcombo});
                   }}
              }
             }
 
-
+        if(focus===false)
+                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                {item.focus('', 10);
+                focus = true;
+                }
 
         });
         // Show form
         form.loadRecord(record);
         form.isValid();
-        vista.show();
+
+        var callbackfocus = function (){
+        if(itemfocus)
+        itemfocus.focus('', 10);
+            };
+        vista.show(null,callbackfocus);
     },
 
     edit: function(target) {
@@ -411,7 +471,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
         // Load record model into form
         form.loadRecord(record);
-         //console.log(form)
+        //console.log(form)
         var auxTitle = this.view.title;
         var countWord = this.view.title.split(' ');
         var title = '';
@@ -439,48 +499,76 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
         // Set title
         formPanel.setTitle('Editar '+title);
+        var me = this;
+        var focus =false; // Para dar el foco al primer elemento del formulario
         form.owner.items.items.forEach(function (item) {
 
             var objtree = item;
-              if(objtree.xtype=='treepanel')
-              {   // console.log(record)
-                  if(record!==null)
-                  {objtree.setDisabled(false);
-                   objtree.store.proxy.extraParams.id_asociado =record.data.id;
-                  }   else
-                      objtree.store.proxy.extraParams.id_asociado ='';
-                  objtree.store.proxy.extraParams.parent_id ='';
-                  objtree.store.proxy.extraParams.detalles ='edit';
+            if(objtree.xtype=='treepanel')
+            {   // console.log(record)
+                if(record!==null)
+                {objtree.setDisabled(false);
+                 objtree.store.proxy.extraParams.id_asociado =record.data.id;
+                }   else
+                    objtree.store.proxy.extraParams.id_asociado ='';
+                objtree.store.proxy.extraParams.parent_id ='';
+                objtree.store.proxy.extraParams.detalles ='edit';
 
-                  //objtree.store.load();
-                  objtree.store.load({   scope: this,
-                                      callback: function (records, operation, success) {
-                                          objtree.setDisabled(false);
-                                                  if(objtree.clearFilters)
-                                                      objtree.clearFilters();
-                                                  objtree.store.proxy.extraParams.combo = '';
-                                                  objtree.store.proxy.extraParams.filter ='';
-
-                                      }});
-              }
-            if(item.xtype=='tabpanel')
-                {  var result = [];
-                    result = me.searchComponent('combobox',item,result);
-                 for(var comp in result)
-                            {var obj = result[comp];
-                                if(obj.xtype=='combobox')
-                                {if(obj.store.proxy.extraParams)
-                                           { obj.store.proxy.extraParams.combo ='combo';
-                                            obj.store.load({   scope: this,
+                //objtree.store.load();
+                objtree.store.load({   scope: this,
                                     callback: function (records, operation, success) {
+                                        objtree.setDisabled(false);
+                                        if(objtree.clearFilters)
+                                            objtree.clearFilters();
+                                        objtree.store.proxy.extraParams.combo = '';
+                                        objtree.store.proxy.extraParams.filter ='';
 
-                                        obj.store.proxy.extraParams.combo ='';
                                     }});
-                                           }}
-                            }
-                }
+            }
+            if(item.xtype=='tabpanel')
+            {  var result = [];
+             result = me.searchComponent('combobox',item,result);
+             var callbackcombobox = function (records, operation, success) {
 
-           /* if(item.xtype=='combobox')
+                                   obj.store.proxy.extraParams.combo ='';
+                               };
+             for(var comp in result)
+             {var obj = result[comp];
+              if(obj.xtype=='combobox')
+              {if(obj.store.proxy.extraParams)
+              { obj.store.proxy.extraParams.combo ='combo';
+               obj.store.load({   scope: this,
+                               callback: callbackcombobox});
+              }}
+             }
+            }
+
+            var resulimage = [];
+            resulimage = me.searchComponent('image',item,resulimage);
+            var objimgold=null;
+            for(var compimg in resulimage)
+            {var objimg = resulimage[compimg];
+             //objimg.setVisible(false);
+             if(objimg.config.hidden)
+             {
+                 var img_value= '';
+                 if(record.data[objimg.itemId])
+                     img_value = record.data[objimg.itemId].toString();
+
+
+                 if(img_value!=='')
+                 { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+             }
+             else
+             {
+                 if(objimgold!==null)
+                 {objimg.setVisible(false); objimgold=null;}}
+
+
+
+            }
+
+            /* if(item.xtype=='combobox')
             {item.store.proxy.extraParams.combo ='combo';
              item.store.load({   scope: this,
                               callback: function (records, operation, success) {
@@ -489,57 +577,65 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                               }});}*/
             //var result = [];
             // result = me.searchComponent('combobox',item,result);
-             var obj = item;
-              if(obj.xtype=='combobox')
-              {
-                  if(obj.config.inputAttrTpl)
-                  {  var form =obj.up('form');
-                   var acciones = obj.config.inputAttrTpl[0].split(',');
-                   // console.log(obj.config.inputAttrTpl)
-                   for(var accion in acciones)
-                   {
+            var objcombo = item;
+            if(objcombo.xtype=='combobox')
+            {
+                if(objcombo.config.inputAttrTpl)
+                {  var form =objcombo.up('form');
+                 var acciones = objcombo.config.inputAttrTpl[0].split(',');
+                 // console.log(obj.config.inputAttrTpl)
+                 for(var accion in acciones)
+                 {
 
-                       var campo = acciones[accion].split(':');
+                     var campo = acciones[accion].split(':');
 
-                       var itemt = form.down('treepanel[title='+campo[0]+']');
-
-
-                       if(itemt!==null)
-                       {      if(campo[1]==='false')
-                       {
-                           if(record!==null)
-                           {var filter = [];
-
-                            filter.campo_id = record.data[obj.name].toString();
-                            //  console.log(record.data[obj.name])
-                            itemt.store.proxy.extraParams.combo='combo';
-                            filter.push({value:filter.campo_id,name_id:obj.name});
-                            itemt.store.proxy.extraParams.filter=Ext.JSON.encode(filter);
-
-                           }
-                       }
-                        else {
-                            itemt.setDisabled(true);
-                        }
-                        if(record.data[obj.name]!=='')
-                            itemt.setDisabled(false);
-                        //  itemt.store.load()
-                       }
-                   }
-                  }
+                     var itemt = form.down('treepanel[title='+campo[0]+']');
 
 
-                  if(obj.store.proxy.extraParams)
-                  { obj.store.proxy.extraParams.combo ='combo';
-                   obj.store.load({   scope: this,
-                                   callback: function (records, operation, success) {
+                     if(itemt!==null)
+                     {      if(campo[1]==='false')
+                     {
+                         if(record!==null)
+                         {var filter = [];
 
-                                       if(obj.store!==null)
-                                       obj.store.proxy.extraParams.combo ='';
-                                       // itemt.setDisabled(false);
+                          filter.campo_id = record.data[objcombo.name].toString();
+                          //  console.log(record.data[obj.name])
+                          itemt.store.proxy.extraParams.combo='combo';
+                          filter.push({value:filter.campo_id,name_id:objcombo.name});
+                          itemt.store.proxy.extraParams.filter=Ext.JSON.encode(filter);
 
-                                   }});
-                  }}
+                         }
+                     }
+                      else {
+                          itemt.setDisabled(true);
+                      }
+                      if(record.data[objcombo.name]!=='')
+                          itemt.setDisabled(false);
+                      //  itemt.store.load()
+                     }
+                 }
+                }
+
+
+                if(objcombo.store.proxy.extraParams)
+                { objcombo.store.proxy.extraParams.combo ='combo';
+                 objcombo.store.load({   scope: this,
+                                 callback: function (records, operation, success) {
+
+                                     if(obj.store!==null)
+                                         obj.store.proxy.extraParams.combo ='';
+                                     // itemt.setDisabled(false);
+
+                                 }});
+                }}
+
+            if(focus===false)
+                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                {item.focus('', 10);
+                 focus = true;
+                }
+
+
 
         });
         // Show form
@@ -614,14 +710,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
             // Set title
             formPanel.setTitle('Adicionar '+title);
-
+        var focus =false; // Para dar el foco al primer elemento del formulario
             form.owner.items.items.forEach(function (item) {
 
                 var resultree = [];
                 resultree = me.searchComponent('treepanel',item,resultree);
                 for(var comptree in resultree)
                 {var objtree = resultree[comptree];
-                 console.log(objtree)
+
                  objtree.setDisabled(objtree.initialConfig.disabled);
                  if(objtree.config.disabled)
                      objtree.store.clearData();
@@ -651,6 +747,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                 var result = [];
                 result = me.searchComponent('combobox',item,result);
+                var callbackcombo = function (records, operation, success) {
+                                          if(obj.store)
+                                              obj.store.proxy.extraParams.combo ='';
+                                      };
                 for(var comp in result)
                 {var obj = result[comp];
 
@@ -659,11 +759,40 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      {if(obj.store.proxy.extraParams)
                      { obj.store.proxy.extraParams.combo ='combo';
                       obj.store.load({   scope: this,
-                                      callback: function (records, operation, success) {
-                                          if(obj.store)
-                                              obj.store.proxy.extraParams.combo ='';
-                                      }});
+                                      callback: callbackcombo});
                      }}
+                }
+
+                 var resulimage = [];
+            resulimage = me.searchComponent('image',item,resulimage);
+            var objimgold=null;
+            for(var compimg in resulimage)
+            {var objimg = resulimage[compimg];
+            console.log(objimg)
+             if(objimg.itemId=='logotipo1')
+             objimg.setVisible(true);
+             else  objimg.setVisible(false);
+             if(objimg.config.hidden)
+             {
+
+                 var img_value = '';
+
+
+                 if(img_value!=='')
+                 { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+             }
+             else
+             {
+                 if(objimgold!==null)
+                 {objimg.setVisible(false); objimgold=null;}}
+
+
+
+            }
+                if(focus===false)
+                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                {item.focus('', 10);
+                focus = true;
                 }
 
 
@@ -857,12 +986,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          if(windows)
          {form = windows.down('form').getForm();
           mask = windows.down('form');
-          mask.mask('Guardando...');
+         // mask.mask('Guardando...');
          }
          else
          {form = this.getReferences().form.getForm();
           mask= this.getReferences().form;
-                    mask.mask('Guardando...');
+
          }
          var record = form.getRecord(),
          store = Ext.StoreManager.lookup(nombre);
@@ -871,6 +1000,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         var record_foto = [];
          // Valid
          if (form.isValid()) {
+              mask.mask('Guardando...');
          //form.updateRecord();
              // Update associated record with values
 
@@ -880,16 +1010,17 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              form.owner.items.items.forEach(function (item) {
                   var resultree = [];
                   resultree = me.searchComponent('treepanel',item,resultree);
+                 var checked = function (v) {
+
+                           asociados.push({id: v.data.id,model: v.data.model});
+                       };
                   for(var comptree in resultree)
                   {var objtree = resultree[comptree];
                    if(objtree.xtype=='treepanel')
                    {
 
                        var checkedstree =objtree.getChecked();
-                       checkedstree.forEach(function (v) {
-
-                           asociados.push({id: v.data.id,model: v.data.model});
-                       });
+                       checkedstree.forEach(checked);
 
 
 
@@ -1128,12 +1259,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  if(windows)
                  {form = windows.down('form').getForm();
                   mask = windows.down('form');
-                  mask.mask('Guardando...');
+
                  }
                  else
                  {form = this.getReferences().form.getForm();
                   mask= this.getReferences().form;
-                            mask.mask('Guardando...');
+                          //  mask.mask('Guardando...');
                  }
 
          var record = form.getRecord();
@@ -1144,7 +1275,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
          // Valid
          if (form.isValid()) {
-
+         mask.mask('Guardando...');
              // Update associated record with values
 
              var nombre='';
@@ -1153,16 +1284,17 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              form.owner.items.items.forEach(function (item) {
                   var resultree = [];
                   resultree = me.searchComponent('treepanel',item,resultree);
+                 var checked = function (v) {
+
+                           asociados.push({id: v.data.id,model: v.data.model});
+                       };
                   for(var comptree in resultree)
                   {var objtree = resultree[comptree];
                    if(objtree.xtype=='treepanel')
                    {
 
                        var checkedstree =objtree.getChecked();
-                       checkedstree.forEach(function (v) {
-
-                           asociados.push({id: v.data.id,model: v.data.model});
-                       });
+                       checkedstree.forEach(checked);
 
 
 
@@ -1301,7 +1433,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              };
 
              var dt = store.findRecord(campo,nombre,0,false,false,true);
-        console.log(record_foto)
+
              if (record.phantom) {
 
 
@@ -1656,7 +1788,6 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         {
 
             var campo = acciones[accion].split(':');
-
             var item = form.down('combobox[name='+campo[0]+']');
 
 
@@ -1700,6 +1831,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
     searchComponent: function(xtype, comp, result) {
         if(comp.xtype===xtype)
             result.push(comp);
+
         if(comp.items)
             {
                 var items = comp.items;
@@ -1813,9 +1945,21 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      {
                          clas = 'x-fa fa-building';
                      }
-                     if(value!==''&& value!==null)
+                     if(record.data.systema===undefined)
+                     {if(value!==''&& value!==null)
                          return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
                      else return '<div class="'+clas+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
+                     }
+                     else{
+                         if(record.data.systema)
+                         {var systema = 'x-fa fa-'+value;
+                         return '<div class="'+systema+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
+                     }
+                         else{
+                             if(value!==''&& value!==null)
+                         return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
+                         }
+                     }
 
                  };
              }
@@ -1984,6 +2128,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                         {var filter = [];
                                 filter.campo_id = record.toString();
                                 item.store.proxy.extraParams.combo='combo';
+
                                 filter.push({value:record.id.toString(),name_id:combo.name});
                                 item.store.proxy.extraParams.filter=Ext.JSON.encode(filter);
 
@@ -2073,35 +2218,61 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         this.searchComponent('panel', config, resultpanel);
         var configDetails;
         for(var pan in resultpanel)
-        if(resultpanel[pan].reference==="details")
-            configDetails = resultpanel[pan];
+            if(resultpanel[pan].reference==="details")
+                configDetails = resultpanel[pan];
 
 
 
         var details = [];
-        for(var col in columns)
-            {
-                var value='{record.' +columns[col].dataIndex+'}';
-               var  fieldLabel = columns[col].header;
-                var renderer = '';
+        var rendcheck = function(value1){ if(value1===true)return 'Si'; return 'No';};
+        var rendimage = function(value, metaData, record, rowIndex, colIndex, store, view) {
 
-         if(columns[col].xtype==='checkcolumn')
+
+
+                            if(value!==undefined)
                             {
-
-                              renderer = function(value1){ if(value1===true)return 'Si'; return 'No';};
+                                if(value.length <40){
+                                    var systema = 'x-fa fa-'+value;
+                                        return '<div class="'+systema+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
                             }
-                var field =  {
-                                    xtype: 'displayfield',
-                                    fieldLabel: fieldLabel,
-                                    bind: {
-                                        value: value
-                                    },
-                    renderer:renderer
+                            else{
+                                 if(value!==''&& value!==null)
+                                 return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
 
-                                };
-                 details.push(field);
+                            }
+                            }
+                            };
+        for(var col in columns)
+        {
+            var value='{record.' +columns[col].dataIndex+'}';
+            var  fieldLabel = columns[col].header;
+            var renderer = '';
+
+            if(columns[col].xtype==='checkcolumn')
+            {
+
+                renderer = rendcheck;
+            }
+            console.log(columns[col].dataIndex);
+            if(columns[col].dataIndex==='foto')
+            {
+
+                var  renderer= rendimage;
+
 
             }
+            var field =  {
+                xtype: 'displayfield',
+                fieldLabel: fieldLabel,
+                bind: {
+                    value: value
+                },
+                renderer:renderer
+
+            };
+            details.push(field);
+
+        }
 
         configDetails.items = details;
     },

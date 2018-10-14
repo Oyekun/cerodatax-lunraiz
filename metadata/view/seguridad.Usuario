@@ -481,6 +481,19 @@
                     },
                     "name": "MyRowSelectionModel7",
                     "designerId": "0fb98524-9285-459b-94a4-7897b7ad44dc"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuFilterText": "Buscar"
+                    },
+                    "name": "MyGridFiltersPlugin6",
+                    "designerId": "5e8a7d6e-3398-46b8-9142-632dcede2567"
                 }
             ]
         },
@@ -659,6 +672,10 @@
                     "userConfig": {
                         "bodyPadding": 10,
                         "designer|uiInterfaceName": "default-framed",
+                        "fieldDefaults": [
+                            "{maxLength: 30,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "frame": true,
                         "reference": "form",
                         "title": "Editar Usuario"
@@ -676,7 +693,9 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Usuario",
-                                "name": "username"
+                                "maxLength": null,
+                                "name": "username",
+                                "selectOnFocus": true
                             },
                             "name": "MyTextField2",
                             "designerId": "da34dec1-84ad-47c7-b99c-b7cb79488077",
@@ -711,6 +730,7 @@
                                 "fieldLabel": "Contraseña",
                                 "id": "password",
                                 "inputType": "password",
+                                "maxLength": null,
                                 "name": "password",
                                 "regex": "/^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,100}$/",
                                 "regexText": "La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula."
@@ -748,6 +768,7 @@
                                 "disabled": null,
                                 "fieldLabel": "Confirmar Contraseña",
                                 "inputType": "password",
+                                "maxLength": null,
                                 "name": "confirmacion_password",
                                 "regex": "/^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,100}$/",
                                 "regexText": "La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula.",

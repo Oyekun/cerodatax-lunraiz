@@ -166,7 +166,8 @@
             "crm.Oferente",
             "crm.ClienteForm",
             "crm.ProveedorForm",
-            "crm.OferenteForm"
+            "crm.OferenteForm",
+            "escritorio.FormChangePassword"
         ]
     },
     "name": "Application",

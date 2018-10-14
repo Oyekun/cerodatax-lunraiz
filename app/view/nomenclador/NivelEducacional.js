@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.nomenclador.NivelEducacional', {
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
         'Ext.button.Button',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.Text',
@@ -137,7 +138,12 @@ Ext.define('cerodatax.view.nomenclador.NivelEducacional', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -191,6 +197,10 @@ Ext.define('cerodatax.view.nomenclador.NivelEducacional', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Nivel Educacional',
+                    fieldDefaults: {
+                        maxLength: 50,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',

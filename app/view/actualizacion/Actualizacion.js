@@ -24,6 +24,7 @@ Ext.define('cerodatax.view.actualizacion.Actualizacion', {
         'Ext.grid.column.Date',
         'Ext.button.Button',
         'Ext.toolbar.Paging',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display'
     ],
 
@@ -99,6 +100,11 @@ Ext.define('cerodatax.view.actualizacion.Actualizacion', {
                     width: 360,
                     displayInfo: true,
                     store: 'actualizacion.Actualizacion'
+                }
+            ],
+            plugins: [
+                {
+                    ptype: 'gridfilters'
                 }
             ]
         },

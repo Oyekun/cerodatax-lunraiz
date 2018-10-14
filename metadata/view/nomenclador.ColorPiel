@@ -344,6 +344,16 @@
                     },
                     "name": "MyRowSelectionModel14",
                     "designerId": "c301a276-6fea-497a-bbea-5500bab1f4de"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin11",
+                    "designerId": "caa09ed2-1ab7-42c1-9356-39729ca8060b"
                 }
             ]
         },
@@ -445,6 +455,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Color de Piel"
                     },

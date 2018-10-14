@@ -44,10 +44,11 @@ Ext.define('cerodatax.controller.Seguridad', {
                 if(json.success===true) // cambiar cuando se creen usuario bien
                 {form.mask('Cargando aplicación...');
                  window.location = 'index.php?auth/index';
+                  window.location = '';
                 }
                 else{
                     form.unmask();
-                    var s='El usuario o la contraseña son incorrectas.';
+                    var s=json.message;
                     var title='Error';
                     var icon = 'xf057@FontAwesome';
 
@@ -95,12 +96,15 @@ Ext.define('cerodatax.controller.Seguridad', {
 
     loadMain: function() {
         var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];
+
+        Ext.get("pre-loading").destroy();
+
         var myMask = new Ext.LoadMask({
             msg    : 'Iniciando aplicación...',
             target : init
         });
         myMask.show();
-        Ext.require(["Ext.util.Cookies", "Ext.Ajax"], function () {
+        /*Ext.require(["Ext.util.Cookies", "Ext.Ajax"], function () {
             var token = Ext.util.Cookies.get('csrftoken');
             if (!token) {
                 console.warn("Missing csrftoken cookie. POST operations might be forbidden!");
@@ -109,7 +113,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                     'X-CSRFToken': token
                 };
             }
-        });
+        });*/
         //Ext.getCmp('identity').focus('', 10);
         var entidadlabel = Ext.ComponentQuery.query('#entidadlabel')[0];
         Ext.Ajax.request({
@@ -127,7 +131,13 @@ Ext.define('cerodatax.controller.Seguridad', {
                  {
                      if(json.data.persona.foto!==undefined)
                      {var logousuario = Ext.ComponentQuery.query('#logousuario')[0];
-                      logousuario.setSrc(json.data.persona.foto);}
+                      logousuario.setSrc(json.data.persona.foto);
+                     var nombre = json.data.persona.nombre +' '+ json.data.persona.apellidos;
+                       logousuario.username = json.data.persona.username;
+                      console.log(logousuario)
+                      logousuario.title ='<span style=" font-weight:bold" > Nombre: </span><span>'+nombre+'</span>';
+
+                     }
                  }
 
                  // entidadlabel.setWidth(json.data.cantidad);
@@ -206,6 +216,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                             itemId: 'menu'+modid,
                                                                                             collapsed: true,
                                                                                             scrollable:true,
+
                                                                                             title: auxnamemod};
 
 
@@ -249,6 +260,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                  xtype: 'menuitem',
                                                                                                  itemId: menus[men].data.id_menu,
                                                                                                  menu_id:menu_id,
+                                                                                                 focusable: true,
                                                                                                  tabpanel:menus[men].data.tabpanel,
                                                                                                  id_menu:menus[men].data.id_menu,
                                                                                                  text: auxnamemenu,
@@ -305,7 +317,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                              if(itemPanel.itemId==searchPanel)
                                                                                                              {
                                                                                                                  // console.log(itemPanel)
-                                                                                                                 itemPanel.setHidden(false)
+                                                                                                                 itemPanel.setHidden(false);
                                                                                                                  var tree = itemPanel.down('treePanel');
                                                                                                                  var grid = itemPanel.down('grid');
 
@@ -335,13 +347,15 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                                   tree.getSelectionModel().deselectAll();
 
                                                                                                                  }
+                                                                                                                 if(itemPanel.down('toolbar')!=null)
+                                                                                                                     {
                                                                                                                  if(itemPanel.down('toolbar').down('button[itemId=btnEdit]'))
                                                                                                                      itemPanel.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
                                                                                                                  if(itemPanel.down('toolbar').down('button[itemId=btnRemove]'))
                                                                                                                      itemPanel.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
                                                                                                                  if(itemPanel.down('toolbar').down('button[itemId=btnAssociate]'))
                                                                                                                      itemPanel.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
-
+                                                                                                                     }
                                                                                                              }
 
                                                                                                          });

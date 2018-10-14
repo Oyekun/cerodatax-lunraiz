@@ -36,7 +36,8 @@
                 "alignTarget": "top",
                 "bodyPadding": 10,
                 "fieldDefaults": [
-                    "{padding: '0 10 0 0'}"
+                    "{padding: '0 10 0 0',maxLength: 50,",
+                    "        enforceMaxLength: true}"
                 ],
                 "height": 500,
                 "layout": "auto",
@@ -238,8 +239,8 @@
                                                 "margin": "10 10 0 0",
                                                 "width": 110
                                             },
-                                            "name": "MyContainer63",
-                                            "designerId": "c7234964-c7a6-4620-802c-fcd8f0bd1fc2",
+                                            "name": "MyContainer10",
+                                            "designerId": "e6862c0c-db76-41d9-8277-90c21c40bc00",
                                             "cn": [
                                                 {
                                                     "type": "Ext.Img",
@@ -277,7 +278,7 @@
                                                         "width": 100
                                                     },
                                                     "name": "MyImg",
-                                                    "designerId": "4a36aed1-205a-433e-9ba3-48160fdd66a1"
+                                                    "designerId": "28295188-3c71-4f5a-b3f9-d10ab39f771b"
                                                 },
                                                 {
                                                     "type": "Ext.Img",
@@ -314,7 +315,7 @@
                                                         "width": 100
                                                     },
                                                     "name": "MyImg3",
-                                                    "designerId": "402bc252-c6f8-4373-8381-47d7faedfb78"
+                                                    "designerId": "34258084-af0e-46a5-ad12-0bb0413d400b"
                                                 }
                                             ]
                                         },
@@ -562,6 +563,7 @@
                                             "userConfig": {
                                                 "allowBlank": false,
                                                 "fieldLabel": "Direccion",
+                                                "maxLength": 100,
                                                 "name": "direccion"
                                             },
                                             "name": "MyTextField18",

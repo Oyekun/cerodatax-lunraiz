@@ -166,7 +166,8 @@ Ext.application({
         'crm.Oferente',
         'crm.ClienteForm',
         'crm.ProveedorForm',
-        'crm.OferenteForm'
+        'crm.OferenteForm',
+        'escritorio.FormChangePassword'
     ],
     controllers: [
         'Escritorio',

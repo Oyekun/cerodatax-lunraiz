@@ -46,6 +46,10 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
     items: [
         {
             xtype: 'form',
+            fieldDefaults: {
+                maxLength: 30,
+                enforceMaxLength: true
+            },
             dockedItems: [
                 {
                     xtype: 'image',
@@ -63,6 +67,7 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                     width: 295,
                     fieldLabel: 'Usuario',
                     name: 'identity',
+                    allowBlank: false,
                     selectOnFocus: true
                 },
                 {
@@ -70,7 +75,8 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                     width: 295,
                     fieldLabel: 'Contraseña',
                     name: 'password',
-                    inputType: 'password'
+                    inputType: 'password',
+                    allowBlank: false
                 },
                 {
                     xtype: 'checkboxfield',

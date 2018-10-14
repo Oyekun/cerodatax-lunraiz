@@ -184,6 +184,16 @@
                     },
                     "name": "MyPagingToolbar16",
                     "designerId": "066d94ab-0090-4528-8163-a58546234444"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin35",
+                    "designerId": "ad27d952-926c-4b7b-8584-dc2c6359bfb8"
                 }
             ]
         },

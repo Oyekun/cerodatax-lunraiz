@@ -46,10 +46,36 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "descripcion"
+                "name": "foto"
             },
             "name": "MyString88",
             "designerId": "0b35325e-4827-468b-9c2b-10ec9a26e3b9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "systema"
+            },
+            "name": "MyString13",
+            "designerId": "52d7a114-8483-4eea-9bd6-f5778d89184d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString98",
+            "designerId": "d2ae0072-c0ba-4949-9fbe-e998e436c879"
         }
     ]
 }

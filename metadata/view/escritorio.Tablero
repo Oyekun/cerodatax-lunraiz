@@ -13,9 +13,12 @@
         "designer|userClassName": "escritorio.Tablero",
         "frame": true,
         "height": 528,
-        "layout": null,
+        "layout": "fit",
+        "liquidLayout": null,
         "loader": null,
+        "scrollable": "",
         "shrinkWrap": 0,
+        "suspendLayout": null,
         "title": null,
         "width": 860
     },
@@ -27,20 +30,24 @@
         {
             "type": "Ext.view.View",
             "reference": {
-                "name": "dockedItems",
+                "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
                 "animateShadow": true,
                 "autoShow": true,
-                "dock": "top",
+                "cls": [
+                    "tpl-30jdxw15"
+                ],
+                "dock": null,
                 "frame": false,
-                "itemSelector": "div.thumb-wrap",
-                "overItemCls": "x-item-over",
-                "scrollable": null,
+                "itemSelector": "div.ticket-wrapper",
+                "liquidLayout": null,
+                "overItemCls": null,
+                "scrollable": "true",
                 "store": "main",
-                "trackOver": true
+                "trackOver": null
             },
             "name": "MyView",
             "designerId": "3d5041ed-acf2-4310-be4f-5658da076b36",
@@ -56,21 +63,118 @@
                         "designer|displayName": "tpl",
                         "implHandler": [
                             "<tpl for=\".\">",
-                            "          ",
-                            "                    <div   class=\"thumb-wrap\"  id=\"{name}\"> ",
-                            "                        <div class=\"thumb\">",
-                            "                         <img src=\"resources/images/touch-icons/{thumb}\" />",
-                            "                        <span>{name}</span>",
-                            "                        </div> ",
-                            "                    </div>",
-                            "                                    ",
-                            "                </tpl>"
+                            "",
+                            "    <div class=\"ticket-wrapper\">",
+                            "",
+                            "        <img class=\"image-ticket\" src=\"resources/images/touch-icons/{thumb}\" />",
+                            "        <span class=\"title\">{name}</span>",
+                            "    </div>",
+                            "    </div>",
+                            "",
+                            "</tpl>"
                         ]
                     },
                     "name": "tpl",
-                    "designerId": "423bb534-10fc-41d8-8a79-8ddefe6247b4"
+                    "designerId": "423bb534-10fc-41d8-8a79-8ddefe6247b4",
+                    "cn": [
+                        {
+                            "type": "tplscss",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Scss Resource",
+                                "implHandler": [
+                                    "div.ticket-wrapper",
+                                    "{",
+                                    "    float:left;",
+                                    "    width:150px;",
+                                    "    height:100px;",
+                                    "     ",
+                                    "    margin: 20px;",
+                                    "    ",
+                                    "}",
+                                    " ",
+                                    "",
+                                    "div.ticket-wrapper span.title",
+                                    "{",
+                                    "    font-size:1.2em;",
+                                    "     ",
+                                    "    text-align:center;",
+                                    "    display:block",
+                                    "}",
+                                    "div.ticket-wrapper img.image-ticket",
+                                    "{",
+                                    "    margin-left: 35px;",
+                                    "    display: table-caption;",
+                                    "    margin-top: 5px;",
+                                    "}",
+                                    "",
+                                    "div.ticket-wrapper span.importance",
+                                    "{",
+                                    "    display:block;",
+                                    "    width:80%;",
+                                    "    height:50px;",
+                                    "    color:white;",
+                                    "    font-weight:bold;",
+                                    "    font-size:3em;",
+                                    "    text-align:center;",
+                                    "    margin:10px 10%;",
+                                    "}",
+                                    "",
+                                    "div.ticket-wrapper span.importance.importance-1 {background-color:green;}",
+                                    "div.ticket-wrapper span.importance.importance-2 {background-color:yellow;}",
+                                    "div.ticket-wrapper span.importance.importance-3 {background-color:orange;}",
+                                    "div.ticket-wrapper span.importance.importance-4 {background-color:pink;}",
+                                    "div.ticket-wrapper span.importance.importance-5 {background-color:red;}",
+                                    "",
+                                    "div.ticket-wrapper span.description",
+                                    "{",
+                                    "    padding: 5px;",
+                                    "    display: block;",
+                                    "    text-align: center;",
+                                    "}",
+                                    "",
+                                    "div.ticket-wrapper span.status",
+                                    "{",
+                                    "    display:block;",
+                                    "    width:60%;",
+                                    "    margin: 10px 20%;",
+                                    "    padding: 3px;",
+                                    "    text-align:center;",
+                                    "    colow:white;",
+                                    "    font-weight:bold;",
+                                    "}",
+                                    "",
+                                    "div.ticket-wrapper span.status.open{baackground-color:green;}",
+                                    "div.ticket-wrapper span.status.in-progress{background-color:yellow;}",
+                                    "div.ticket-wrapper span.status.complete{background-color:purple;}"
+                                ]
+                            },
+                            "name": "scss2",
+                            "designerId": "266ca0b0-c8bf-4768-84e9-3f43b6382c28"
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processEscritorioTablero"
+            },
+            "name": "processEscritorioTablero",
+            "designerId": "150305bc-f840-4ece-8914-6fcdaf8b62ec"
         }
     ]
 }

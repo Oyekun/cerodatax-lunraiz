@@ -55,7 +55,9 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
             layout: 'auto',
             bodyPadding: 10,
             fieldDefaults: {
-                padding: '0 10 0 0'
+                padding: '0 10 0 0',
+                maxLength: 100,
+                enforceMaxLength: true
             },
             dockedItems: [
                 {
@@ -196,14 +198,16 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
                                             fieldLabel: 'Telefono',
                                             name: 'telefono',
                                             inputType: 'tel',
-                                            maskRe: /\d/
+                                            maskRe: /\d/,
+                                            maxLength: 30
                                         },
                                         {
                                             xtype: 'textfield',
                                             fieldLabel: 'Celular',
                                             name: 'celular',
                                             inputType: 'tel',
-                                            maskRe: /\d/
+                                            maskRe: /\d/,
+                                            maxLength: 30
                                         },
                                         {
                                             xtype: 'textfield',

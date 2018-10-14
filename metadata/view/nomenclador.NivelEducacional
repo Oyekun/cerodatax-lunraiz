@@ -482,6 +482,16 @@
                             "designerId": "660f15bf-b284-495e-8b53-70917c33a7a9"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin21",
+                    "designerId": "43ff4286-cdf3-40e4-ab54-96b9680c6beb"
                 }
             ]
         },
@@ -602,6 +612,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Nivel Educacional"
                     },

@@ -19,6 +19,9 @@ Ext.define('cerodatax.controller.Escritorio', {
     control: {
         "panel": {
             activate: 'onPanelActivate'
+        },
+        "#buttonChangePassword": {
+            click: 'onWindowsChangePasswordClick'
         }
     },
 
@@ -27,7 +30,7 @@ Ext.define('cerodatax.controller.Escritorio', {
         //console.log(component)
         if(component.tab)
           {       var grid = component.down('grid');
-                  var tree = component.down('tree');
+                  var tree = component.down('treepanel');
                   if(grid)
                      {if(grid.store.proxy.extraParams!==undefined)
                        grid.store.proxy.extraParams.combo = '';
@@ -41,6 +44,7 @@ Ext.define('cerodatax.controller.Escritorio', {
                          grid.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
 
                      }
+
                      if(tree)
                      {tree.store.proxy.extraParams.parent_id = '';
                       tree.store.load();
@@ -57,6 +61,92 @@ Ext.define('cerodatax.controller.Escritorio', {
 
 
 
+    },
+
+    onWindowsChangePasswordClick: function(button) {
+        //alert('change')
+        form = button.up('form');
+        formWindow = form.up('window');
+        var me = this;
+        form.mask('Comprobando usuario y contraseña...');
+        if(form.isValid())
+        {
+            values = form.getValues();
+            //var view = this.getView()
+            // console.log(view)
+            // Success
+
+            var successCallback = function(resp, ops) {
+                //debugger;
+
+                 var json = Ext.JSON.decode(resp.responseText);
+
+
+
+                if(json.success===true) // cambiar cuando se creen usuario bien
+                {
+                 form.unmask();
+                    title = 'Información';
+                    icon = 'xf05a@FontAwesome';
+                     Ext.toast({
+                            html: 'Contraseña cambianda satisfactoriamente.' ,
+                            glyph:icon,
+                            closable: false,
+                            align: 't',
+                            title:title,
+                            slideInDuration: 400,
+                            minWidth: 400
+                        });
+         window.location = 'index.php?auth/login';
+                          window.location = '';
+                formWindow.destroy();
+                }
+                else{
+                    form.unmask();
+                    var s=json.message;
+                    var title='Error';
+                    var icon = 'xf057@FontAwesome';
+
+                     Ext.toast({
+                            html: s ,
+                            glyph:icon,
+                            closable: false,
+                            align: 't',
+                            title:title,
+                            slideInDuration: 400,
+                            minWidth: 400
+                        });
+                    Ext.ComponentQuery.query('#old_password')[0].reset();
+                    Ext.ComponentQuery.query('#new_password')[0].reset();
+                    Ext.ComponentQuery.query('#confirmacion_password')[0].reset();
+                }
+
+            };
+
+
+
+
+            // Failure
+            var failureCallback = function(resp, ops) {
+
+                // Show login failure error
+                form.unmask();
+               // Ext.Msg.alert('Login Failure', resp);
+
+            };
+
+
+
+            //Esto es momentaneamente para la creaion de los usuarios roles y menu
+            // TODO: Login using server-side authentication service
+            Ext.Ajax.request({
+                url: 'index.php/auth/change_password',
+                method: 'POST',
+                params: values,
+                success: successCallback,
+                failure: failureCallback
+            });
+        }
     },
 
     selectMenu: function(item) {

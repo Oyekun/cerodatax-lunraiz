@@ -359,6 +359,16 @@
                     },
                     "name": "MyRowSelectionModel11",
                     "designerId": "621845fe-aa57-4ede-b58b-e3b58f448a5e"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin16",
+                    "designerId": "41d05410-23c0-44f9-a8b6-1f15a9818943"
                 }
             ]
         },
@@ -479,6 +489,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 255,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Grupo Escala"
                     },

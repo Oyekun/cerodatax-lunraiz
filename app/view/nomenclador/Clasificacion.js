@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.nomenclador.Clasificacion', {
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.Text',
@@ -133,7 +134,12 @@ Ext.define('cerodatax.view.nomenclador.Clasificacion', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -187,6 +193,10 @@ Ext.define('cerodatax.view.nomenclador.Clasificacion', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Clasificacion',
+                    fieldDefaults: {
+                        maxLength: 50,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',

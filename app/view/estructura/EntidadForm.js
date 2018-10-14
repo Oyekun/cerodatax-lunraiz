@@ -48,9 +48,11 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
             height: 550,
             margin: '',
             width: 640,
+            defaultFocus: 'nombreentidad',
             bodyPadding: 10,
             fieldDefaults: {
                 padding: '0 10 0 0',
+                maxLength: 100,
                 enforceMaxLength: true
             },
             layout: {
@@ -109,6 +111,7 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                         },
                         {
                             xtype: 'textfield',
+                            itemId: 'nombreentidad',
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
@@ -179,7 +182,7 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
-                            fieldLabel: 'Clasificacion',
+                            fieldLabel: 'Clasificación',
                             name: 'clasificacion_id',
                             allowBlank: false,
                             emptyText: 'Seleccione',
@@ -241,7 +244,7 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
-                            fieldLabel: 'Cód. Registro',
+                            fieldLabel: 'Cód Registro',
                             name: 'codigo_registro',
                             allowBlank: false
                         },
@@ -267,7 +270,7 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
-                            fieldLabel: 'Paìs',
+                            fieldLabel: 'País',
                             name: 'pais_id',
                             allowBlank: false,
                             emptyText: 'Seleccione',
@@ -322,7 +325,8 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Telefono',
-                            name: 'telefono'
+                            name: 'telefono',
+                            maxLength: 30
                         },
                         {
                             xtype: 'textfield',

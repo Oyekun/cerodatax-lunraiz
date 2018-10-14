@@ -344,6 +344,16 @@
                     },
                     "name": "MyRowSelectionModel13",
                     "designerId": "c174d7fb-0056-49e0-ba0c-435b08cf3b2a"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin13",
+                    "designerId": "b0957a57-4e3e-42f3-867b-d8943bd465c8"
                 }
             ]
         },
@@ -445,6 +455,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Defensa"
                     },

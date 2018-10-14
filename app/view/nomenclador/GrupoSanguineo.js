@@ -25,6 +25,7 @@ Ext.define('cerodatax.view.nomenclador.GrupoSanguineo', {
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
+        'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.Text',
@@ -128,7 +129,12 @@ Ext.define('cerodatax.view.nomenclador.GrupoSanguineo', {
             selModel: {
                 selType: 'rowmodel',
                 mode: 'MULTI'
-            }
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -175,6 +181,10 @@ Ext.define('cerodatax.view.nomenclador.GrupoSanguineo', {
                     reference: 'form',
                     bodyPadding: 10,
                     title: 'Editar Grupo Sanguineo',
+                    fieldDefaults: {
+                        maxLength: 10,
+                        enforceMaxLength: true
+                    },
                     items: [
                         {
                             xtype: 'textfield',

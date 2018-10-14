@@ -428,6 +428,16 @@
                     },
                     "name": "MyRowSelectionModel9",
                     "designerId": "6ff9705f-6191-4965-b480-3db25c73e3e6"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin32",
+                    "designerId": "8bcc97be-68ee-4785-8f37-f4ab4d1e72a4"
                 }
             ]
         },
@@ -652,7 +662,10 @@
                         "bodyPadding": 10,
                         "container|columns": 3,
                         "fieldDefaults": [
-                            "{padding:'0 10 0 10'}"
+                            "{padding:'0 10 0 10',",
+                            "                        maxLength: 30,",
+                            "                        enforceMaxLength: true",
+                            "                    }"
                         ],
                         "itemId": "cargoForm",
                         "layout": "table",
@@ -673,6 +686,7 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Nombre",
+                                "maxLength": 100,
                                 "name": "nombre"
                             },
                             "name": "MyTextField",
@@ -871,6 +885,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Periodo de Prueba",
+                                "maxLength": 3,
                                 "name": "periodo_prueba"
                             },
                             "name": "MyTextField1",

@@ -2,6 +2,7 @@ Administración,Generales,Seguridad,Seguridad,1,Se utiliza para la administraci�
 Administración,Generales,Estructura,Estructura,1,,,El menú Estructura se utiliza para gestionar las entidades y áreas del sistema.
 Administración,Generales,RRHH,RRHH,1,,,El menú RRHH se utiliza para gestionar las personas y cargos de las mismas.
 Administración,Generales,Actualizaciones,Actualizaciones,0,,,El menú Actualización se utiliza para actualizar las funcionalidades y características del Sistema.
+Administración,Generales,Escritorio,Escritorio,0,,,Para mostrar los accesos directos a los Módulos principales.
 Nomencladores,Generales,Continente,Continentes,0,Se utiliza para gestionar todos los nomencladores del sistema.,En este Módulo se encuentran los nomencladores que se utilizan en todo el sistema sin distinción de Módulo.,El menú Continentes se visualiza todos los continentes del mundo.
 Nomencladores,Generales,Pais,Países,0,,,El menú Países se visualiza todos los países del mundo.
 Nomencladores,Generales,Provincia,Provincias,0,,,El menú Provincias se visualiza todas las provincias principales de los países.

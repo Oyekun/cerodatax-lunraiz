@@ -401,6 +401,16 @@
                     },
                     "name": "MyRowSelectionModel4",
                     "designerId": "0cf1964f-edd6-4aa0-9cce-c51aacb6d3d7"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin23",
+                    "designerId": "3b34e0f5-f33d-46ae-8ef6-73dab1858ef9"
                 }
             ]
         },
@@ -578,6 +588,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "fieldDefaults": [
+                            "{maxLength: 100,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar País"
                     },

@@ -2243,6 +2243,11 @@ $this->dbforge->add_field(array(
                                 'constraint' => 100,
                                 'unsigned' => TRUE,
                         ),
+                                 'foto' => array(
+                                'type' => 'TEXT',
+                                 
+                                'null' => TRUE
+                        ),
                                 'nombre' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
@@ -2254,7 +2259,7 @@ $this->dbforge->add_field(array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '255', 
                                 'null' => FALSE,
-                   ),  
+                        ),  
                          'date_created' => array(
                                 'type' => 'TIMESTAMP',  
                                 'null' => FALSE,    

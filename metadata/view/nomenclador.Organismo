@@ -372,6 +372,16 @@
                     },
                     "name": "MyRowSelectionModel3",
                     "designerId": "d1488859-7d48-4674-a664-90767f357501"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin22",
+                    "designerId": "19c2ef3d-aca3-4751-8ae3-3c728b56dd39"
                 }
             ]
         },
@@ -512,6 +522,10 @@
                     "userConfig": {
                         "bodyPadding": 10,
                         "dock": null,
+                        "fieldDefaults": [
+                            "{maxLength: 50,",
+                            "        enforceMaxLength: true}"
+                        ],
                         "reference": "form",
                         "title": "Editar Organismo"
                     },
