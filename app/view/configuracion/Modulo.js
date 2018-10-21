@@ -29,10 +29,11 @@ Ext.define('cerodatax.view.configuracion.Modulo', {
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
+        'Ext.view.BoundList',
+        'Ext.XTemplate',
         'Ext.form.field.Number',
         'Ext.form.field.Checkbox',
-        'Ext.form.field.TextArea',
-        'Ext.XTemplate'
+        'Ext.form.field.TextArea'
     ],
 
     controller: 'seguridadusuario',
@@ -246,7 +247,22 @@ Ext.define('cerodatax.view.configuracion.Modulo', {
                             displayField: 'nombre',
                             queryMode: 'local',
                             store: 'nomenclador.Icono',
-                            valueField: 'id'
+                            valueField: 'id',
+                            listConfig: {
+                                xtype: 'boundlist',
+                                itemSelector: 'span',
+                                itemTpl: [
+                                    '<tpl for=".">',
+                                    '   <tpl if="systema==\'1\'">',
+                                    '    <span class="x-fa fa-{foto}" height="5px" style="  font-family: FontAwesome; float: left; font-size: large; line-height: 1;"> </span>',
+                                    '       {nombre}',
+                                    '       </tpl>',
+                                    '    <tpl if="systema==\'0\'">',
+                                    '        <img src="{foto}" height="20px" style="float:left;"> {nombre}',
+                                    '        </tpl> ',
+                                    '</tpl>'
+                                ]
+                            }
                         },
                         {
                             xtype: 'numberfield',

@@ -60,6 +60,10 @@ Ext.define('cerodatax.model.configuracion.Menu', {
         },
         {
             type: 'boolean',
+            name: 'escritorio'
+        },
+        {
+            type: 'boolean',
             name: 'tabpanel'
         },
         {

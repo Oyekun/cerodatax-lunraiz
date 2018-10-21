@@ -111,7 +111,7 @@ Ext.application({
         'nomenclador.Icono',
         'configuracion.Panel',
         'crm.Contacto',
-        'main',
+        'configuracion.Tablero',
         'crm.Cliente',
         'crm.Proveedor',
         'crm.Oferente'

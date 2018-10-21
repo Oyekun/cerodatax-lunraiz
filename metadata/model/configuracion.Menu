@@ -137,10 +137,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "tabpanel"
+                "name": "escritorio"
             },
             "name": "MyBoolean",
             "designerId": "6f72c1bf-38f6-4026-a54c-9f0632a255ac"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tabpanel"
+            },
+            "name": "MyBoolean1",
+            "designerId": "9b2092a0-8337-44f9-850e-7056c35fb6b6"
         },
         {
             "type": "Ext.data.field.Boolean",

@@ -126,14 +126,16 @@ Ext.define('cerodatax.controller.Seguridad', {
 
 
                 if(json.success===true)
-                {entidadlabel.setValue(json.data.entidad);
+                {var tablero = Ext.ComponentQuery.query('#tablero')[0];
+                 tablero.store.load();
+                 entidadlabel.setValue(json.data.entidad);
                  if(json.data.persona!=='')
                  {
                      if(json.data.persona.foto!==undefined)
                      {var logousuario = Ext.ComponentQuery.query('#logousuario')[0];
                       logousuario.setSrc(json.data.persona.foto);
-                     var nombre = json.data.persona.nombre +' '+ json.data.persona.apellidos;
-                       logousuario.username = json.data.persona.username;
+                      var nombre = json.data.persona.nombre +' '+ json.data.persona.apellidos;
+                      logousuario.username = json.data.usuario.username;
                       console.log(logousuario)
                       logousuario.title ='<span style=" font-weight:bold" > Nombre: </span><span>'+nombre+'</span>';
 
@@ -266,10 +268,9 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                  text: auxnamemenu,
                                                                                                  paneles:paneles,
                                                                                                  panelmenu:panelmenu,
-
-                                                                                                 focusable: true,
                                                                                                  listeners: {
                                                                                                      click: function(){
+
                                                                                                          var panelPrincipal = Ext.ComponentQuery.query('#panelPrincipal')[0];
                                                                                                          var myMaskPanel = new Ext.LoadMask({
                                                                                                              msg    : 'Cargando...',
@@ -284,7 +285,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                          var panelmenu = this.panelmenu;
 
 
-                                                                                                         //console.log(panelPrincipal)
+
                                                                                                          panelPrincipal.removeAll();
                                                                                                          var container_item =[];
                                                                                                          for(var pan_item in paneles)
@@ -309,7 +310,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                          panelmenu.items = container_item;
                                                                                                          container.push(panelmenu);
                                                                                                          panelPrincipal.add(container);
-                                                                                                         myMaskPanel.destroy()
+                                                                                                         myMaskPanel.destroy();
 
                                                                                                          panelPrincipal.items.each(function(itemPanel){
                                                                                                              searchPanel = 'panel'+id_menu;
@@ -332,30 +333,30 @@ Ext.define('cerodatax.controller.Seguridad', {
 
                                                                                                                      //layout.setActiveItem(select);
 
-                                                                                                                 }
+                                                                                                                 }console.log(tree)
 
-                                                                                                                 if(grid)
+                                                                                                                 if(grid && tabpanel===false)
                                                                                                                  {if(grid.store.proxy.extraParams!==undefined)
                                                                                                                      grid.store.proxy.extraParams.combo = '';
                                                                                                                   grid.store.load();
                                                                                                                   grid.getSelectionModel().deselectAll();
 
                                                                                                                  }
-                                                                                                                 if(tree)
+                                                                                                                 if(tree&& tabpanel===false)
                                                                                                                  {tree.store.proxy.extraParams.parent_id = '';
                                                                                                                   tree.store.load();
                                                                                                                   tree.getSelectionModel().deselectAll();
 
                                                                                                                  }
-                                                                                                                 if(itemPanel.down('toolbar')!=null)
-                                                                                                                     {
-                                                                                                                 if(itemPanel.down('toolbar').down('button[itemId=btnEdit]'))
-                                                                                                                     itemPanel.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
-                                                                                                                 if(itemPanel.down('toolbar').down('button[itemId=btnRemove]'))
-                                                                                                                     itemPanel.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
-                                                                                                                 if(itemPanel.down('toolbar').down('button[itemId=btnAssociate]'))
-                                                                                                                     itemPanel.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
-                                                                                                                     }
+                                                                                                                 if(itemPanel.down('toolbar')!==null)
+                                                                                                                 {
+                                                                                                                     if(itemPanel.down('toolbar').down('button[itemId=btnEdit]'))
+                                                                                                                         itemPanel.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
+                                                                                                                     if(itemPanel.down('toolbar').down('button[itemId=btnRemove]'))
+                                                                                                                         itemPanel.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
+                                                                                                                     if(itemPanel.down('toolbar').down('button[itemId=btnAssociate]'))
+                                                                                                                         itemPanel.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
+                                                                                                                 }
                                                                                                              }
 
                                                                                                          });

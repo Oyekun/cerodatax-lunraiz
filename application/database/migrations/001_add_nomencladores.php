@@ -2254,6 +2254,11 @@ $this->dbforge->add_field(array(
                                 'unique' => TRUE,
                                 'null' => FALSE,
                         ),
+                                'systema' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                   ),  
 
                                 'descripcion' => array(
                                 'type' => 'VARCHAR',
@@ -2461,6 +2466,11 @@ $this->dbforge->add_field(array(
                                 'default' => '0',
                         ),
 
+                                'escritorio' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                   ),  
  
                                 'activo' => array(
                                 'type' => 'INT',

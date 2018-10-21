@@ -102,7 +102,7 @@ else
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
 					}
 				}
-			
+	  $this->db->order_by("date_updated", "desc");//verificar bien
 $q = $this->db->get("$tb"); 
 
 
@@ -158,7 +158,7 @@ $flagrelacion= TRUE;
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
 					}
 				}
-		 
+		         $this->db->order_by("date_updated", "desc");//verificar bien
 			$q = $this->db->get("$tb",$limit, $offset);
 		 
 		}
@@ -191,20 +191,22 @@ $flagrelacion= TRUE;
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
 					}
 				}
-				
+				 $this->db->order_by("date_updated", "desc");//verificar bien
 			$q = $this->db->get("$tb");
 
 			}
+			  $this->db->order_by("date_updated", "desc");//verificar bien
 		$q1 = $this->db->get("$tb");
 		
         if(isset($q->row()->orden) && !isset($request['parent_id'] ))
         {
         	
         	//$this->db->group_by("orden");	
+        	
         	$this->db->order_by("orden", "asc");	
         	if(isset($request['parent_id']))
-        	if($request['parent_id']!='')
-        	{$this->db->where('parent_id', $parent_id); 
+               if($request['parent_id']!='')
+        		$this->db->where('parent_id', $parent_id); 
         	
         	$this->load->model($request['model'],'', TRUE);
 		$nameuuid = new $request['model']; 
@@ -222,8 +224,12 @@ $flagrelacion= TRUE;
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
 					}
 				}
+				// $this->db->order_by("date_updated", "asc");//verificar bien
+			//	print_r($q->row());die;
         	$q = $this->db->get("$tb");
-       }
+       
+
+
         }
   
         if(isset($q->row()->posicion) && !isset($request['parent_id']))
@@ -250,6 +256,7 @@ $flagrelacion= TRUE;
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
 					}
 				}
+				// $this->db->order_by("date_updated", "asc");//verificar bien
         	$q = $this->db->get("$tb");
         }
         

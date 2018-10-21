@@ -31,7 +31,15 @@ Ext.define('cerodatax.model.crm.Oferente', {
         },
         {
             type: 'string',
-            name: 'organismo_id'
+            name: 'representante'
+        },
+        {
+            type: 'string',
+            name: 'descripcion'
+        },
+        {
+            type: 'string',
+            name: 'contacto_id'
         }
     ],
 

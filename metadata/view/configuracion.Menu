@@ -700,7 +700,63 @@
                                 "valueField": "id"
                             },
                             "name": "MyComboBox1",
-                            "designerId": "621e74e6-a4f8-4d65-b134-a39e855c2aac"
+                            "designerId": "621e74e6-a4f8-4d65-b134-a39e855c2aac",
+                            "cn": [
+                                {
+                                    "type": "Ext.view.BoundList",
+                                    "reference": {
+                                        "name": "listConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemSelector": "span"
+                                    },
+                                    "name": "MyBoundList1",
+                                    "designerId": "c5d4bb57-4b54-4b6b-9929-59e91ab9db99",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    "<tpl for=\".\">",
+                                                    "   <tpl if=\"systema=='1'\">",
+                                                    "    <span class=\"x-fa fa-{foto}\" height=\"5px\" style=\"  font-family: FontAwesome; float: left; font-size: large; line-height: 1;\"> </span>",
+                                                    "       {nombre}",
+                                                    "       </tpl>",
+                                                    "    <tpl if=\"systema=='0'\">",
+                                                    "        <img src=\"{foto}\" height=\"20px\" style=\"float:left;\"> {nombre}",
+                                                    "        </tpl> ",
+                                                    "</tpl>"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "4e3cc70d-79bb-4bd3-a2b8-8f5fbff20fab"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Escritorio",
+                                "name": "escritorio"
+                            },
+                            "name": "MyCheckbox",
+                            "designerId": "982e9de3-1338-4ca7-ac26-faf864618f55"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -714,8 +770,8 @@
                                 "fieldLabel": "TabPanel",
                                 "name": "tabpanel"
                             },
-                            "name": "MyCheckbox",
-                            "designerId": "982e9de3-1338-4ca7-ac26-faf864618f55"
+                            "name": "MyCheckbox3",
+                            "designerId": "014b1f59-5fa0-45c0-be5d-4155bd2a8b85"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",

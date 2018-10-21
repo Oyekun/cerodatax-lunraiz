@@ -1,0 +1,57 @@
+[
+    	{
+    		name: 'RRHH',
+    		thumb: 'group', 
+    		url: 'RRHH',
+    		systema:'true',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Actualizaciones',
+    		thumb: 'refresh', 
+    		url: 'Actualizaciones',
+    		systema:'true',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Seguridad',
+    		thumb: 'shield', 
+    		url: 'Seguridad',
+    		systema:'true',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Contacto',
+    		thumb: 'address-book-o', 
+    		url: 'Contacto',
+    		systema:'true',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Estructura',
+    		thumb: 'building', 
+    		url: 'Estructura',
+    		systema:'true',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Módulos',
+    		thumb: 'puzzle-piece', 
+    		url: 'Modulo',
+    		systema:'true',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Venta',
+    		thumb: 'shopping-bag', 
+    		url: 'Venta',
+    		systema:'true',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Compra',
+    		thumb: 'shopping-cart', 
+    		url: 'Compra',
+    		systema:'true',
+    		type: 'svg'
+    	},]

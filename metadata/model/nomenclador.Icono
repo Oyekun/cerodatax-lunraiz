@@ -52,7 +52,7 @@
             "designerId": "0b35325e-4827-468b-9c2b-10ec9a26e3b9"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Boolean",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -61,7 +61,7 @@
             "userConfig": {
                 "name": "systema"
             },
-            "name": "MyString13",
+            "name": "MyBoolean10",
             "designerId": "52d7a114-8483-4eea-9bd6-f5778d89184d"
         },
         {

@@ -52,7 +52,7 @@ Ext.define('cerodatax.store.crm.Cliente', {
                     }
                 },
                 extraParams: {
-                    model: 'contacto',
+                    model: 'cliente',
                     esquema: 'crm'
                 },
                 url: 'index.php/api/restserver/rests/',

@@ -33,7 +33,33 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "organismo_id"
+                "name": "descripcion"
+            },
+            "name": "MyString25",
+            "designerId": "69980aeb-ecbd-4476-ab99-025f87a48d1c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "representante"
+            },
+            "name": "MyString32",
+            "designerId": "55b719c4-cc78-4aab-8fdb-de8ea67fa550"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "contacto_id"
             },
             "name": "MyString96",
             "designerId": "12d81abe-e380-41da-99de-cdae8a9bc612"
@@ -55,7 +81,7 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{model: 'contacto',",
+                    "{model: 'cliente',",
                     "            esquema: 'crm'}"
                 ],
                 "url": "index.php/api/restserver/rests/"

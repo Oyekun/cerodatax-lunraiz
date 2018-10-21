@@ -182,7 +182,7 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
                                             afterLabelTextTpl: [
                                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                             ],
-                                            fieldLabel: 'Direccion',
+                                            fieldLabel: 'Dirección',
                                             name: 'direccion',
                                             allowBlank: false
                                         },

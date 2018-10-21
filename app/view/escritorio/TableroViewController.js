@@ -15,5 +15,13 @@
 
 Ext.define('cerodatax.view.escritorio.TableroViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.escritoriotablero'
+    alias: 'controller.escritoriotablero',
+
+    onDataviewItemClick: function(dataview, record, item, index, e, eOpts) {
+        var id_menu = record.data.url;
+        var menu = Ext.ComponentQuery.query('#'+id_menu)[0];
+        menu.fireEvent('click');
+
+    }
+
 });

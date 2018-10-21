@@ -145,9 +145,78 @@ class Auth extends CI_Controller
 	 */
 	public function entidad()
 	{
+		   		  
 		   		   $identity = $this->session->userdata['user_id'];
 
-		 
+		  $path ="resources/data/escritorio.json";
+    $my_model = fopen($path, "w") or die("Unable to create model file!");
+    
+
+    $model_template = "["; 
+    
+   $tb = 'configuracion_menu'; 
+         
+		$this->load->model('menu');
+	 	
+    $this->db->where('escritorio', 1);   
+    $result = $this->db->get("$tb");
+    	
+    if(count($result->result_array())>0)
+    {	$menus = $result->result_array(); 
+    $tb = 'nomenclador_icono'; 
+$this->load->model('menu');
+	 	
+  //  $this->db->where('systema', 1);   
+    $result = $this->db->get("$tb");
+    	
+    if(count($result->result_array())>0)
+    {	$iconos = $result->result_array();
+    }
+
+    foreach ($menus as $key => $value) {
+    	$icono_id='image';
+    	$systema='false';
+    	$type='image';
+  if(isset($value['icono_id']))  	 
+{    	foreach ($iconos as $row)
+{
+        if($row['id']==$value['icono_id'])
+        	{
+  
+        		$icono_id=$row['foto']; 
+        		if($row['systema']==1)
+        		{$systema='true';
+        		$type='svg';
+        	     }
+        	     
+        	     break;
+              
+}
+    }
+}
+	if($icono_id=='' || strlen($icono_id)< 50)
+        	     	$type='svg';
+        $name=$value['nombre']; 
+        $url=$value['id_menu']; 
+         $thumb=$icono_id; 
+    	$model_template .= "
+    	{
+    		name: '$name',
+    		thumb: '$thumb', 
+    		url: '$url',
+    		systema:'$systema',
+    		type: '$type'
+    	},";	 
+    }
+   // $model_template .= "{name: 'Kitchen Sink',thumb: 'sink.png', url: 'kitchensink',type: 'Application'},";
+    }
+
+
+    $model_template .="]";
+
+    fwrite($my_model, $model_template);
+
+    fclose($my_model);
 	// print_r($result->result_array());die;
     $nombre = '';
     $cantidad = '';
@@ -182,6 +251,9 @@ class Auth extends CI_Controller
 	 	
     $this->db->where('id', $identity);   
     $result = $this->db->get("$tb");
+    
+    $usuarios=[];
+	 if(count($result->result_array()))
 	 $usuarios = $result->result_array()[0];
     $persona=''; 
      if(isset($usuarios['persona_id']))
@@ -196,10 +268,10 @@ class Auth extends CI_Controller
     
     if( count($result->result_array())>0)
 	{ $persona = $result->result_array()[0];
-      $persona['username'] = $usuarios['username'];
+      //$persona['username'] = $usuarios['username'];
       }
     }
-    	$data = array('persona' => $persona,'entidad' => $nombre,'cantidad' =>$cantidad);
+    	$data = array('usuario' => $usuarios,'persona' => $persona,'entidad' => $nombre,'cantidad' =>$cantidad);
 		 $this->output->set_content_type('application/json')
         ->set_output(json_encode(array('success'=>TRUE,'data'=>$data)));
 	

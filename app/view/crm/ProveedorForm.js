@@ -42,7 +42,7 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
     controller: 'nomencladorcrud',
     resizable: false,
     bodyPadding: 10,
-    title: 'Cliente',
+    title: 'Proveedor',
     modal: true,
 
     items: [

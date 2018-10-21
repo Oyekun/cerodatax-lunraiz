@@ -19,10 +19,12 @@ Ext.define('cerodatax.view.escritorio.Tablero', {
 
     requires: [
         'cerodatax.view.escritorio.TableroViewModel',
+        'cerodatax.view.escritorio.TableroViewController',
         'Ext.view.View',
         'Ext.XTemplate'
     ],
 
+    controller: 'escritoriotablero',
     viewModel: {
         type: 'escritoriotablero'
     },
@@ -41,21 +43,49 @@ Ext.define('cerodatax.view.escritorio.Tablero', {
             autoShow: true,
             cls: 'tpl-30jdxw15',
             frame: false,
+            itemId: 'tablero',
             scrollable: 'true',
             tpl: [
-                '<tpl for=".">',
+                '<tpl for="."> ',
+                '    <tpl if="systema==\'true\'">',
+                '    <div class="ticket-wrapper" id="{thumb}"> ',
+                '        <div class="image-ticket">',
+                '            <div  class="x-fa fa-{thumb}" height="5px" ',
+                '                 style="  font-family: FontAwesome; font-size: 40px; line-height: 1; text-align: center;margin-top: 10px;">',
+                '            </div>',
+                '        </div>',
                 '',
-                '    <div class="ticket-wrapper">',
-                '',
-                '        <img class="image-ticket" src="resources/images/touch-icons/{thumb}" />',
                 '        <span class="title">{name}</span>',
                 '    </div>',
-                '    </div>',
+                '         </tpl>',
+                ' <tpl if="systema==\'false\'&& type==\'image\'">',
+                '    ',
+                '      <div class="ticket-wrapper"> ',
+                '        <div class="image-ticket">',
+                '            <img src="{thumb}" height="40px" style="margin-left: 40px;margin-top: 5px;">',
+                '        </div>',
                 '',
+                '        <span class="title">{name}</span>',
+                '          </div>',
+                '     </tpl>',
+                '     <tpl if="systema==\'false\'&& type==\'svg\'">',
+                '      <div class="ticket-wrapper"> ',
+                '        <div class="image-ticket">',
+                '            <div  class="x-fa fa-{thumb}" height="5px" ',
+                '                 style="  font-family: FontAwesome; font-size: 40px; line-height: 1; text-align: center;margin-top: 10px;">',
+                '            </div>',
+                '        </div>',
+                '',
+                '        <span class="title">{name}</span>',
+                '    </div>',
+                '     </tpl>',
                 '</tpl>'
             ],
             itemSelector: 'div.ticket-wrapper',
-            store: 'main'
+            store: 'configuracion.Tablero',
+            listeners: {
+                itemclick: 'onDataviewItemClick'
+            }
         }
     ],
 

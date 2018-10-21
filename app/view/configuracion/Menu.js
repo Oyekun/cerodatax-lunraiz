@@ -269,7 +269,28 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                             displayField: 'nombre',
                             queryMode: 'local',
                             store: 'nomenclador.Icono',
-                            valueField: 'id'
+                            valueField: 'id',
+                            listConfig: {
+                                xtype: 'boundlist',
+                                itemSelector: 'span',
+                                itemTpl: [
+                                    '<tpl for=".">',
+                                    '   <tpl if="systema==\'1\'">',
+                                    '    <span class="x-fa fa-{foto}" height="5px" style="  font-family: FontAwesome; float: left; font-size: large; line-height: 1;"> </span>',
+                                    '       {nombre}',
+                                    '       </tpl>',
+                                    '    <tpl if="systema==\'0\'">',
+                                    '        <img src="{foto}" height="20px" style="float:left;"> {nombre}',
+                                    '        </tpl> ',
+                                    '</tpl>'
+                                ]
+                            }
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            fieldLabel: 'Escritorio',
+                            name: 'escritorio',
+                            checked: true
                         },
                         {
                             xtype: 'checkboxfield',

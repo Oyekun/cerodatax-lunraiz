@@ -548,16 +548,40 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             var objimgold=null;
             for(var compimg in resulimage)
             {var objimg = resulimage[compimg];
-             //objimg.setVisible(false);
+             if(objimg.itemId=='foto')
+             objimg.setVisible(true);
+             else  objimg.setVisible(false);
              if(objimg.config.hidden)
-             {
-                 var img_value= '';
+             { var img_value= '';
+
+                if(record.data.systema!==undefined)
+                    {
+                        if(record.data.systema)
+                            {
+                                var value = record.data[objimg.itemId].toString();
+                                var systema = 'xf1ad@FontAwesome';//'x-fa fa-'+value;
+                               // objimg.setSrc('')
+                                objimg.setGlyph(systema); // no coge el fontawasemo
+                            }
+                        else{
+
                  if(record.data[objimg.itemId])
                      img_value = record.data[objimg.itemId].toString();
 
 
                  if(img_value!=='')
                  { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+                        }
+
+                    }
+                 else{
+                 if(record.data[objimg.itemId])
+                     img_value = record.data[objimg.itemId].toString();
+
+
+                 if(img_value!=='')
+                 { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+                     }
              }
              else
              {
@@ -622,8 +646,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  objcombo.store.load({   scope: this,
                                  callback: function (records, operation, success) {
 
-                                     if(obj.store!==null)
-                                         obj.store.proxy.extraParams.combo ='';
+                                     if(objcombo.store!==null)
+                                         objcombo.store.proxy.extraParams.combo ='';
                                      // itemt.setDisabled(false);
 
                                  }});
@@ -668,7 +692,6 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
             form.loadRecord(newRecord);
             if(record)
-
             {   if(record.data)
                 if(record.data.root!==undefined)
                 if(record.data.root===false)
@@ -768,8 +791,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             var objimgold=null;
             for(var compimg in resulimage)
             {var objimg = resulimage[compimg];
-            console.log(objimg)
-             if(objimg.itemId=='logotipo1')
+
+             if(objimg.itemId=='foto1')
              objimg.setVisible(true);
              else  objimg.setVisible(false);
              if(objimg.config.hidden)
@@ -1043,6 +1066,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                    }
                   }
+
                   var result = [];
                   result = me.searchComponent('combobox',item,result);
                   for(var comp in result)
@@ -1092,7 +1116,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
 
-                         if(dt===null)
+                         if(dt===null)//para adicionar
                          {form.updateRecord();
                            for(var foto in record_foto)
                                  {
@@ -1106,7 +1130,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                           store.commitChanges();
 
                          }
-                         else
+                         else////para modificar
                              if(nombre!=='' &&nombre ===dt.data[campo])
                                 {  mask.unmask();
                                    me.showToast('El elemento ya existe.','error');
@@ -1128,7 +1152,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          }
                      }else{
 
-                         if(dt===null)
+                         if(dt===null)//para adicionar
                          {form.updateRecord();
                            for(var foto in record_foto)
                                  {
@@ -1142,15 +1166,22 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          // store.commitChanges();
 
                          }else
-                             if(nombre!=='' &&nombre ===dt.data[campo])
+                             if(nombre!=='' &&nombre ===dt.data[campo])//para modificar
                              {//console.log(dt)
 
                                  mask.unmask();
                                  if(dt.data.id===record.data.id)
-                                     { form.updateRecord();
+                                     {
                                       var flag=true;
+                                      for(var foto in record_foto)
+                                 {
+                                   record.data[foto]  = record_foto[foto];
+                                 }
+                                         form.updateRecord(record);
+                                      //console.log(form)
+
                                          me.showView('selectMessage');
-        me.showToast('El elemento ha sido modificado satisfactoriamente.','info');
+        //me.showToast('El elemento ha sido modificado satisfactoriamente.','info');
                                      }
                                      else
                                   {me.showToast('El elemento ya existe.','error');
@@ -2253,7 +2284,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                 renderer = rendcheck;
             }
-            console.log(columns[col].dataIndex);
+
             if(columns[col].dataIndex==='foto')
             {
 

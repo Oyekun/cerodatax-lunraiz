@@ -17,7 +17,7 @@
         "resizable": [
             "false"
         ],
-        "title": "Cliente",
+        "title": "Proveedor",
         "width": null
     },
     "name": "crm.ClienteForm1",

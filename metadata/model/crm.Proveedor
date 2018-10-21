@@ -33,7 +33,33 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "organismo_id"
+                "name": "representante"
+            },
+            "name": "MyString56",
+            "designerId": "d7802387-23fb-41e3-957c-f38491084697"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString57",
+            "designerId": "36b32d52-76c9-440c-ac43-6e9fb734f45c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "contacto_id"
             },
             "name": "MyString96",
             "designerId": "b6974cd8-c5f4-4cbc-9a6c-7e09d29afef9"

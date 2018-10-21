@@ -6569,20 +6569,33 @@ tr.x-grid-subtable-row {
 /* line 3, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper {
   float: left;
-  width: 150px;
+  width: 120px;
   height: 100px;
-  margin: 20px; }
-/* line 14, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+  cursor: pointer;
+  margin: 20px;
+  background: lightblue; }
+/* line 15, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.title {
   font-size: 1.2em;
   text-align: center;
   display: block; }
-/* line 21, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
-.tpl-30jdxw15 div.ticket-wrapper img.image-ticket {
-  margin-left: 35px;
-  display: table-caption;
+/* line 22, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+.tpl-30jdxw15 div.ticket-wrapper div.image-ticket {
   margin-top: 5px; }
-/* line 28, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 27, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+.tpl-30jdxw15 div.ticket-wrapper div.image-ticket .x-view-item-focused {
+  background: #DFEDFF;
+  border: 1px solid #6593cf;
+  padding: 4px; }
+/* line 32, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+.tpl-30jdxw15 div.ticket-wrapper div.image-ticket .x-item-selected {
+  background: #DFEDFF;
+  border: 1px solid #6593cf;
+  padding: 4px; }
+/* line 37, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+.tpl-30jdxw15 div.ticket-wrapper .x-item-selected .image-ticket {
+  background: transparent; }
+/* line 42, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.importance {
   display: block;
   width: 80%;
@@ -6592,27 +6605,27 @@ tr.x-grid-subtable-row {
   font-size: 3em;
   text-align: center;
   margin: 10px 10%; }
-/* line 39, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 53, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.importance.importance-1 {
   background-color: green; }
-/* line 40, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 54, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.importance.importance-2 {
   background-color: yellow; }
-/* line 41, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 55, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.importance.importance-3 {
   background-color: orange; }
-/* line 42, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 56, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.importance.importance-4 {
   background-color: pink; }
-/* line 43, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 57, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.importance.importance-5 {
   background-color: red; }
-/* line 46, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 60, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.description {
   padding: 5px;
   display: block;
   text-align: center; }
-/* line 53, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 67, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.status {
   display: block;
   width: 60%;
@@ -6621,12 +6634,12 @@ tr.x-grid-subtable-row {
   text-align: center;
   colow: white;
   font-weight: bold; }
-/* line 63, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 77, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.status.open {
   baackground-color: green; }
-/* line 64, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 78, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.status.in-progress {
   background-color: yellow; }
-/* line 65, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
+/* line 79, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.status.complete {
   background-color: purple; }

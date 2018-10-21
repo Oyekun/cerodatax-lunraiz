@@ -18,7 +18,8 @@ Ext.define('cerodatax.model.nomenclador.Icono', {
     alias: 'model.icono',
 
     requires: [
-        'Ext.data.field.String'
+        'Ext.data.field.String',
+        'Ext.data.field.Boolean'
     ],
 
     fields: [
@@ -35,7 +36,7 @@ Ext.define('cerodatax.model.nomenclador.Icono', {
             name: 'foto'
         },
         {
-            type: 'string',
+            type: 'boolean',
             name: 'systema'
         },
         {

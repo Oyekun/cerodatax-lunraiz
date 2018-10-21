@@ -604,7 +604,48 @@
                                 "valueField": "id"
                             },
                             "name": "MyComboBox7",
-                            "designerId": "c63a15d3-11d0-4437-9320-4c369ec38077"
+                            "designerId": "c63a15d3-11d0-4437-9320-4c369ec38077",
+                            "cn": [
+                                {
+                                    "type": "Ext.view.BoundList",
+                                    "reference": {
+                                        "name": "listConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemSelector": "span"
+                                    },
+                                    "name": "MyBoundList2",
+                                    "designerId": "17bf204a-958c-4ce8-91b3-c07c487e59a9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    "<tpl for=\".\">",
+                                                    "   <tpl if=\"systema=='1'\">",
+                                                    "    <span class=\"x-fa fa-{foto}\" height=\"5px\" style=\"  font-family: FontAwesome; float: left; font-size: large; line-height: 1;\"> </span>",
+                                                    "       {nombre}",
+                                                    "       </tpl>",
+                                                    "    <tpl if=\"systema=='0'\">",
+                                                    "        <img src=\"{foto}\" height=\"20px\" style=\"float:left;\"> {nombre}",
+                                                    "        </tpl> ",
+                                                    "</tpl>"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "03bcc493-6037-4a31-92d1-8e4c9f1c1241"
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",

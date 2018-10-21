@@ -32,7 +32,7 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{model:'contacto',esquema:'crm'}"
+                    "{model:'cliente',esquema:'crm'}"
                 ],
                 "format": "",
                 "url": "index.php/api/restserver/rests/"

@@ -450,7 +450,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
-                                                "fieldLabel": "Direccion",
+                                                "fieldLabel": "Dirección",
                                                 "name": "direccion"
                                             },
                                             "name": "MyTextField18",
