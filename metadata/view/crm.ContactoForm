@@ -260,7 +260,7 @@
                                                         "glyph": null,
                                                         "height": 110,
                                                         "hidden": true,
-                                                        "imgCls": "",
+                                                        "imgCls": null,
                                                         "itemId": "foto",
                                                         "liquidLayout": null,
                                                         "margin": null,
@@ -297,6 +297,7 @@
                                                         "frame": true,
                                                         "glyph": "xf007@FontAwesome",
                                                         "height": 110,
+                                                        "hidden": null,
                                                         "imgCls": null,
                                                         "itemId": "foto1",
                                                         "liquidLayout": null,
@@ -355,6 +356,26 @@
                                                     },
                                                     "name": "onFilefieldChange",
                                                     "designerId": "40874bed-4b7c-41d4-9840-e485931df9ac"
+                                                },
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "fn": "processFoto",
+                                                        "implHandler": [
+                                                            "config.icono = 'address-book';",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "name": "processFoto",
+                                                    "designerId": "92751212-5ebb-4d94-883e-9daf9d551d18"
                                                 }
                                             ]
                                         },
@@ -450,7 +471,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
-                                                "fieldLabel": "Direccion",
+                                                "fieldLabel": "Dirección",
                                                 "name": "direccion"
                                             },
                                             "name": "MyTextField18",
@@ -500,7 +521,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "emptyText": null,
-                                                "fieldLabel": "Telefono",
+                                                "fieldLabel": "Teléfono",
                                                 "inputType": "tel",
                                                 "maskRe": "/\\d/",
                                                 "name": "telefono",

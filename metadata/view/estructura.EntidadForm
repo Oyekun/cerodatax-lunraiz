@@ -174,6 +174,7 @@
                                 "labelPad": -20,
                                 "margin": null,
                                 "name": "logotipo",
+                                "reference": null,
                                 "width": null
                             },
                             "name": "MyFileUpload",
@@ -197,6 +198,26 @@
                                     },
                                     "name": "onFilefieldChange",
                                     "designerId": "8d656faa-29b0-45bd-ac3a-5578b61dcffd"
+                                },
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processLogotipo",
+                                        "implHandler": [
+                                            "config.icono = 'building';",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processLogotipo",
+                                    "designerId": "a3fc25ae-4faa-4beb-be8d-b6d0c09c29bb"
                                 }
                             ]
                         },

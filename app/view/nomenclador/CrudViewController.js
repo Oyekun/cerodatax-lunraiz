@@ -1285,100 +1285,121 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          });
 
          var windows = button.up('window');
-          var form,
-                   mask;
-                 if(windows)
-                 {form = windows.down('form').getForm();
-                  mask = windows.down('form');
+         var form,
+             mask;
+         if(windows)
+         {form = windows.down('form').getForm();
+          mask = windows.down('form');
 
-                 }
-                 else
-                 {form = this.getReferences().form.getForm();
-                  mask= this.getReferences().form;
-                          //  mask.mask('Guardando...');
-                 }
+         }
+         else
+         {form = this.getReferences().form.getForm();
+          mask= this.getReferences().form;
+          //  mask.mask('Guardando...');
+         }
 
          var record = form.getRecord();
 
-        //console.log(record.data)
+
          var me = this;
-        var record_foto = [];
+         var record_foto = [];
 
          // Valid
          if (form.isValid()) {
-         mask.mask('Guardando...');
+             mask.mask('Guardando...');
              // Update associated record with values
 
              var nombre='';
              var campo = '';
              var asociados = [];
              form.owner.items.items.forEach(function (item) {
-                  var resultree = [];
-                  resultree = me.searchComponent('treepanel',item,resultree);
+                 var resultree = [];
+                 resultree = me.searchComponent('treepanel',item,resultree);
                  var checked = function (v) {
 
-                           asociados.push({id: v.data.id,model: v.data.model});
-                       };
-                  for(var comptree in resultree)
-                  {var objtree = resultree[comptree];
-                   if(objtree.xtype=='treepanel')
-                   {
+                     asociados.push({id: v.data.id,model: v.data.model});
+                 };
+                 for(var comptree in resultree)
+                 {var objtree = resultree[comptree];
+                  if(objtree.xtype=='treepanel')
+                  {
 
-                       var checkedstree =objtree.getChecked();
-                       checkedstree.forEach(checked);
+                      var checkedstree =objtree.getChecked();
+                      checkedstree.forEach(checked);
 
 
 
-                   }
                   }
+                 }
 
 
                  //Adicionando imagen base64 a los record fotos
-                   var resultImage = [];
-                  resultImage = me.searchComponent('image',item,resultImage);
-                  for(var compImage in resultImage)
-                  {var objImage = resultImage[compImage];
-                   if(objImage.xtype=='image')
-                   {
-                       var auxImage = objImage.itemId;
+                 var resultImage = [];
+                 resultImage = me.searchComponent('image',item,resultImage);
+                 for(var compImage in resultImage)
+                 {var objImage = resultImage[compImage];
+                  if(objImage.xtype=='image')
+                  {
+                      var auxImage = objImage.itemId;
 
-                       if(auxImage)
-        if(record.data[auxImage]!==undefined)
-                           record_foto[auxImage]=objImage.src;
-
-
+                      if(auxImage)
+                          if(record.data[auxImage]!==undefined)
+                              record_foto[auxImage]=objImage.src;
 
 
-                   }
+
+
                   }
-                  var result = [];
-                  result = me.searchComponent('combobox',item,result);
-                  for(var comp in result)
-                  {var obj = result[comp];
-                   if(obj.xtype=='combobox')
-                   {
-                       var aux1 = obj.name.replace('_id','');
+                 }
 
-                       if(aux1!=obj.name)
+                         /*var resultDisplay = []; Hay q arreglar q quite los displyfield dado q no son campos existenten en las tablas
+                          resultDisplay = me.searchComponent('displayfield',item,resultDisplay);
+                          for(var compDisplay in resultDisplay)
+                          {var objDisplay = resultDisplay[compDisplay];
 
-                           delete(record.data[aux1]);//=obj.rawValue;
+                           if(objDisplay.xtype==='displayfield')
+                           {
+
+                                       var auxDisplay = objDisplay.name;
+                                     //   console.log(resultDisplay.hasOwnProperty(objDisplay))
+                                         for(var displ in record.data)
+                                          {
+                                                  if(displ==auxDisplay)
+                                                  {console.log(displ);
+                                          console.log(auxDisplay);}
+                                         }
+                                         delete(record.data[auxDisplay]);
+                           }
+                          }*/
+
+                 var result = [];
+                 result = me.searchComponent('combobox',item,result);
+                 for(var comp in result)
+                 {var obj = result[comp];
+                  if(obj.xtype=='combobox')
+                  {
+                      var aux1 = obj.name.replace('_id','');
+
+                      if(aux1!=obj.name)
+
+                          delete(record.data[aux1]);//=obj.rawValue;
 
 
 
 
-                   }
                   }
+                 }
 
 
-                 if(item.name){
-                      if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
-                        { nombre = item.value;
-                          campo = item.name;
-                        }
+                 if(item.name ){
+                     if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
+                     { nombre = item.value;
+                      campo = item.name;
+                     }
                      var aux = item.name.replace('_id','');
 
 
-                     if(aux!=item.name)
+                     if(aux!=item.name || item.reference===undefined)
                      {var name_comp = item.name;
                       delete(record.data[aux]); //= item.rawValue;
                       if(item.selection)
@@ -1392,7 +1413,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  }});
 
              // Add to store if new record
-              //form.updateRecord();
+             //form.updateRecord();
              if(asociados.length>0)
                  record.data.asociados=asociados;//Ext.JSON.encode(asociados);
 
@@ -1402,8 +1423,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              store = Ext.StoreManager.lookup(nombreStore);
 
              store.proxy.extraParams.parent_id='save';
-        //verificar prk debe de realizar store y quedarse donde mismo estaba en el caso de q filtree y asocie al mismo tiempo
-        store.clearFilter();
+             //verificar prk debe de realizar store y quedarse donde mismo estaba en el caso de q filtree y asocie al mismo tiempo
+             store.clearFilter();
              var flag=false;
              var write = function(store1, operation, eOpts ) {
 
@@ -1421,12 +1442,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                    store.proxy.extraParams.parent_id='';
                    store.load({
                        callback: function(s,o,e){
-        mask.unmask();
+                           mask.unmask();
                            if(windows)
                                windows.close();
                            else
                                me.showView('selectMessage');
-         me.showToast(json.message,'info');
+                           me.showToast(json.message,'info');
 
 
                            var tree =  Ext.ComponentQuery.query('panel treepanel');
@@ -1441,7 +1462,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                item.getSelectionModel().deselectAll();
                            });
-        var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
+                           var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
                            botonesEditar.forEach(function (item) {
                                item.setDisabled(true);
                            });
@@ -1464,7 +1485,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              };
 
              var dt = store.findRecord(campo,nombre,0,false,false,true);
-
+             console.log(record)
              if (record.phantom) {
 
 
@@ -1472,57 +1493,62 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  if(dt===null)
                  {
 
-        form.updateRecord();
+                     form.updateRecord();
                      for(var foto in record_foto)
-                         {
-                           record.data[foto]  = record_foto[foto];
-                         }
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
                      if(record.data.parentId===null)
 
-                                 record.data.leaf = true;
+                         record.data.leaf = true;
+                     flag= true;
                      record.save({success:write});
 
-                     flag= true;
-                      return;
+
+
                  }
                  else
                      if(nombre!=='' &&nombre ===dt.data[campo])
                      {
                          //store.remove(record);
                          if(dt.data.id===record.data.id)
-                              {
-                                  if(windows)
-                               windows.close();
-                           else
-                               me.showView('selectMessage');
-                              }
+                         {
+                             if(windows)
+                                 windows.close();
                              else
-                                 me.showToast('El elemento ya existe.','error');
+                                 me.showView('selectMessage');
+                         }
+                         else
+                             me.showToast('El elemento ya existe.','error');
 
                          mask.unmask();
-                          return;
-                            }
+                         return;
+                     }
                  else{
-        form.updateRecord();
-                       for(var foto in record_foto)
-                         {
-                           record.data[foto]  = record_foto[foto];
-                         }
-
+                     form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     flag= true;
                      record.save({success:write});
 
-                     flag= true;
-                      return;
+
+
 
                  }
 
              }else{
                  if(dt===null)
                  {form.updateRecord();
-
-                  record.save({success:write});
+                  for(var foto in record_foto)
+                  {
+                      record.data[foto]  = record_foto[foto];
+                  }
                   flag= true;
-                   return;
+                  record.save({success:write,failure: write});
+
+
 
                  }else
                      if(nombre!=='' &&nombre ===dt.data[campo])
@@ -1530,29 +1556,29 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                          //store.remove(record);
                          if(dt.data.id===record.data.id)
-                              {
-                                  if(windows)
-                               windows.close();
-                           else
-                               me.showView('selectMessage');
-                              }
+                         {
+                             if(windows)
+                                 windows.close();
                              else
-                         me.showToast('El elemento ya existe.','error');
+                                 me.showView('selectMessage');
+                         }
+                         else
+                             me.showToast('El elemento ya existe.','error');
 
                          mask.unmask();
-                          return;
+
                      }
                  else{
 
-         form.updateRecord();
-                       for(var foto in record_foto)
-                         {
-                           record.data[foto]  = record_foto[foto];
-                         }
+                     form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
                      record.save({success:write});
 
                      flag= true;
-                     return;
+
 
                  }
 
@@ -1926,136 +1952,137 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
     searchLabel: function(comp, result, is_grid) {
         //Funcion para construir el encabezado de los grid y tree panel
         if(comp.inputType !='password')
-        if(comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )
-        {
+            if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )
+            {
 
-            var xtype = 'gridcolumn';
+                var xtype = 'gridcolumn';
 
-            var listeners = '';
-            var lockable = '';
-            var locked = '';
-            var format= '';
-            var width = '';
-            var renderer = '';
-            var groupable = '';
+                var listeners = '';
+                var lockable = '';
+                var locked = '';
+                var format= '';
+                var width = '';
+                var renderer = '';
+                var groupable = '';
 
-            var dataIndex = comp.name;
-            if (comp.name !='carnet_identidad') // arreglar este problema es prk el _id de carnet coincide o los combobox
-                dataIndex = comp.name.replace('_id','');
-            var emptyText = 'Ingrese el texto del filtro...';
-            var filter = {
-                type: 'string',dataIndex: dataIndex,emptyText:emptyText
-            };
-            if (comp.name =='nombre'||comp.name =='foto'||comp.name =='logotipo')
-            {if(is_grid===true)
-            {lockable = true;
-             locked= true;
-            }
-             if(comp.name =='nombre' &&is_grid===false)
-             {xtype = 'treecolumn';
-              width = 200;
-             }
-             /*if(comp.name =='nombre' &&is_grid===true)
+                var dataIndex = comp.name;
+                if (comp.name !='carnet_identidad') // arreglar este problema es prk el _id de carnet coincide o los combobox
+                    dataIndex = comp.name.replace('_id','');
+                var emptyText = 'Ingrese el texto del filtro...';
+                var filter = {
+                    type: 'string',dataIndex: dataIndex,emptyText:emptyText
+                };
+                if (comp.name =='nombre'||comp.name =='foto'||comp.name =='logotipo')
+                {if(is_grid===true)
+                {lockable = true;
+                 locked= true;
+                }
+                 if(comp.name =='nombre' &&is_grid===false)
+                 {xtype = 'treecolumn';
+                  width = 200;
+                 }
+                 /*if(comp.name =='nombre' &&is_grid===true)
              {
                  width = 200;
              }*/
-             if(comp.name =='foto'||comp.name =='logotipo')
-             {
-                 width = 200;
-                 groupable = false;
+                 if(comp.name =='foto'||comp.name =='logotipo')
+                 {
+                     width = 200;
+                     groupable = false;
 
-                 filter = '';
-                 var clas = 'x-fa fa-building';
-                 if(comp.name =='foto') //Para saber que es una persona
-                     clas = 'x-fa fa-user';
+                     filter = '';
 
 
-                 var  renderer= function(value, metaData, record, rowIndex, colIndex, store, view) {
+                     var clas = 'x-fa fa-'+comp.icono;//fa-building';
 
-                     if(record.data.codigo_registro) //Para saber q es una entidad
-                     {
-                         clas = 'x-fa fa-building';
-                     }
-                     if(record.data.systema===undefined)
-                     {if(value!==''&& value!==null)
-                         return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
-                     else return '<div class="'+clas+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
-                     }
-                     else{
-                         if(record.data.systema)
-                         {var systema = 'x-fa fa-'+value;
-                         return '<div class="'+systema+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
-                     }
-                         else{
-                             if(value!==''&& value!==null)
-                         return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
+
+
+                     var  renderer= function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+
+                         if(record.data.systema===undefined)
+                         {if(value!==''&& value!==null&& value!==undefined)
+                             return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
+                          else return '<div class="'+clas+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
                          }
-                     }
+                         else{
+                             if(record.data.systema)
+                             {var systema = 'x-fa fa-'+value;
+                              return '<div class="'+systema+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
+                             }
+                             else{
+                                 if(value!==''&& value!==null)
+                                     return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
+                             }
+                         }
 
-                 };
-             }
+                     };
+                 }
+                }
+                switch(comp.xtype)
+                {
+                    case 'numberfield':{
+                        xtype = 'numbercolumn';
+                        filter = {
+                            type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'
+                        };
+                        break;
+                    }
+                    case 'datefield':{
+                        xtype = 'datecolumn';
+                        format = 'Y-m-d';
+                        filter = {
+                            type: 'date',fields:{
+                                lt: {
+                                    text: 'Antes'
+                                },
+                                gt: {
+                                    text: 'Después'
+                                },
+                                eq: {
+                                    text: 'En'
+                                }
+                            },dateFormat: format,dataIndex: dataIndex
+                        };
+                        break;
+                    }
+                    case 'checkboxfield':{
+                        xtype = 'checkcolumn';
+                        listeners=  {beforecheckchange:  function(){return false;}};
+                        filter = {
+                            type: 'boolean',noText:'No',yesText:'Si',dataIndex: dataIndex
+                        };
+                        break;
+                    }
+
+                }
+
+                var column = {
+                    xtype: xtype,
+                    dataIndex: dataIndex,
+                    header: comp.fieldLabel,
+                    sortable: true,
+                    groupable:groupable,
+                    // locked:locked,
+                    // lockable:lockable,
+                    // width:width,
+                    align: 'left',
+                    format:format,
+                    renderer:renderer,
+
+                    listeners:listeners,
+                    filter:filter
+                };
+
+
+                var index = result.lastIndexOf(column);
+                //validar q no se repitan las columnas como el caso del usuario confirmar contrase;a
+                if(index===-1)
+                {
+
+                    result.push(column);}
+
             }
-            switch(comp.xtype)
-            {
-                case 'numberfield':{
-                    xtype = 'numbercolumn';
-                    filter = {
-                        type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'
-                    };
-                    break;
-                }
-                case 'datefield':{
-                    xtype = 'datecolumn';
-                    format = 'Y-m-d';
-                    filter = {
-                        type: 'date',fields:{
-                            lt: {
-                                text: 'Antes'
-                            },
-                            gt: {
-                                text: 'Después'
-                            },
-                            eq: {
-                                text: 'En'
-                            }
-                        },dateFormat: format,dataIndex: dataIndex
-                    };
-                    break;
-                }
-                case 'checkboxfield':{
-                    xtype = 'checkcolumn';
-                    listeners=  {beforecheckchange:  function(){return false;}};
-                    filter = {
-                        type: 'boolean',noText:'No',yesText:'Si',dataIndex: dataIndex
-                    };
-                    break;
-                }
-
-            }
-
-            var column = {
-                xtype: xtype,
-                dataIndex: dataIndex,
-                header: comp.fieldLabel,
-                sortable: true,
-                groupable:groupable,
-                // locked:locked,
-                // lockable:lockable,
-               // width:width,
-                align: 'left',
-                format:format,
-                renderer:renderer,
-
-                listeners:listeners,
-                filter:filter
-            };
-
-            var index = result.lastIndexOf(column);
-            //validar q no se repitan las columnas como el caso del usuario confirmar contrase;a
-            if(index===-1)
-            result.push(column);
-
-        }
 
         if(comp.items)
         {
@@ -2202,7 +2229,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                           // console.log(e.target.result)
                                             if(objimage.itemId=='foto'||objimage.itemId=='logotipo')
                                             {objimage.setHidden(false);
+                                             console.log(objimage)
                                                 objimage.setSrc(e.target.result);
+
                                             }else objimage.setHidden(true);
 
                                         }

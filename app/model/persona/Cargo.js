@@ -65,10 +65,10 @@ Ext.define('cerodatax.model.persona.Cargo', {
             name: 'funcionario'
         },
         {
-            name: 'grupo_escala'
+            name: 'grupoescala'
         },
         {
-            name: 'grupo_escala_id'
+            name: 'grupoescala_id'
         }
     ],
 

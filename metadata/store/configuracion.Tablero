@@ -102,10 +102,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "systema"
+                "name": "color"
             },
             "name": "MyString10",
             "designerId": "88d30d67-a38f-4717-9078-7d369de8010d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "systema"
+            },
+            "name": "MyString57",
+            "designerId": "7c60de95-666b-42ca-ab4a-4e12ccfd5fee"
         },
         {
             "type": "Ext.data.field.String",

@@ -370,6 +370,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "activeItem": 1,
                 "bodyBorder": true,
                 "layout": "card",
                 "layout|flex": 0.8,
@@ -381,152 +382,6 @@
             "name": "MyPanel11",
             "designerId": "3475dcfd-d617-4bba-b062-c6946fbadfc1",
             "cn": [
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "container|align": "center",
-                        "container|pack": "center",
-                        "layout": "vbox",
-                        "reference": "selectMessage"
-                    },
-                    "name": "MyPanel12",
-                    "designerId": "ddde24ca-f05e-4778-b4eb-eb1abc37e05d",
-                    "cn": [
-                        {
-                            "type": "Ext.container.Container",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "message",
-                                "html": [
-                                    "\"<h1>Seleccione un Menú</h1>\""
-                                ],
-                                "layout|flex": 1
-                            },
-                            "name": "MyContainer",
-                            "designerId": "d88fcb41-23f1-4141-ba8c-6b2fd3110706"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "bodyPadding": 10,
-                        "reference": "details"
-                    },
-                    "name": "MyPanel13",
-                    "designerId": "87327eec-f5c3-4cb4-a491-5e3ebc33943e",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Usuario",
-                                "value": [
-                                    "{record.usuario}"
-                                ]
-                            },
-                            "name": "MyDisplayField",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "39443ea0-ed8c-4f4f-823a-d1a641229c96"
-                        },
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Correo",
-                                "value": [
-                                    "{record.correo}"
-                                ]
-                            },
-                            "name": "MyDisplayField1",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "985fa77f-7310-4297-b72d-2fedf3f9114b"
-                        },
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Entidad",
-                                "value": [
-                                    "{record.entidad}"
-                                ]
-                            },
-                            "name": "MyDisplayField2",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "6b7e6a82-e185-4460-8066-e9a51bf9d44e"
-                        },
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Persona",
-                                "value": [
-                                    "{record.persona_id}"
-                                ]
-                            },
-                            "name": "MyDisplayField3",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "7c561fec-0311-444c-ba8e-da3dd0568663"
-                        },
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Administrador",
-                                "value": [
-                                    "{record.administrador}"
-                                ]
-                            },
-                            "name": "MyDisplayField4",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "7419cb16-721d-409f-9c83-dbab321123dc"
-                        }
-                    ]
-                },
                 {
                     "type": "Ext.form.Panel",
                     "reference": {
@@ -744,19 +599,19 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.field.Checkbox",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "checked": true,
-                                "fieldLabel": "Escritorio",
-                                "name": "escritorio"
+                                "allowBlank": null,
+                                "fieldLabel": "Color",
+                                "name": "color"
                             },
-                            "name": "MyCheckbox",
-                            "designerId": "982e9de3-1338-4ca7-ac26-faf864618f55"
+                            "name": "MyTextField8",
+                            "designerId": "e0b83c9a-a025-4e1c-bd21-cad1daa46380"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -772,6 +627,21 @@
                             },
                             "name": "MyCheckbox3",
                             "designerId": "014b1f59-5fa0-45c0-be5d-4155bd2a8b85"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Escritorio",
+                                "name": "escritorio"
+                            },
+                            "name": "MyCheckbox",
+                            "designerId": "982e9de3-1338-4ca7-ac26-faf864618f55"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -948,6 +818,152 @@
                                     ]
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "layout": "vbox",
+                        "reference": "selectMessage"
+                    },
+                    "name": "MyPanel12",
+                    "designerId": "ddde24ca-f05e-4778-b4eb-eb1abc37e05d",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "message",
+                                "html": [
+                                    "\"<h1>Seleccione un Menú</h1>\""
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer",
+                            "designerId": "d88fcb41-23f1-4141-ba8c-6b2fd3110706"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "reference": "details"
+                    },
+                    "name": "MyPanel13",
+                    "designerId": "87327eec-f5c3-4cb4-a491-5e3ebc33943e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Usuario",
+                                "value": [
+                                    "{record.usuario}"
+                                ]
+                            },
+                            "name": "MyDisplayField",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "39443ea0-ed8c-4f4f-823a-d1a641229c96"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Correo",
+                                "value": [
+                                    "{record.correo}"
+                                ]
+                            },
+                            "name": "MyDisplayField1",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "985fa77f-7310-4297-b72d-2fedf3f9114b"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Entidad",
+                                "value": [
+                                    "{record.entidad}"
+                                ]
+                            },
+                            "name": "MyDisplayField2",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "6b7e6a82-e185-4460-8066-e9a51bf9d44e"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Persona",
+                                "value": [
+                                    "{record.persona_id}"
+                                ]
+                            },
+                            "name": "MyDisplayField3",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "7c561fec-0311-444c-ba8e-da3dd0568663"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Administrador",
+                                "value": [
+                                    "{record.administrador}"
+                                ]
+                            },
+                            "name": "MyDisplayField4",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "7419cb16-721d-409f-9c83-dbab321123dc"
                         }
                     ]
                 }

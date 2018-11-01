@@ -6572,8 +6572,7 @@ tr.x-grid-subtable-row {
   width: 120px;
   height: 100px;
   cursor: pointer;
-  margin: 20px;
-  background: lightblue; }
+  margin: 20px; }
 /* line 15, C:/xampp/htdocs/cerodatax/build/temp/development/cerodatax/sass/../../../../../packages/ext-theme-crisp-42cb23ca-ec91-40f2-8b23-e99d45e34d8a/sass/src/Component.scss */
 .tpl-30jdxw15 div.ticket-wrapper span.title {
   font-size: 1.2em;

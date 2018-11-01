@@ -1,0 +1,188 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "cuentabancaria",
+        "designer|userClassName": "nomenclador.CuentaBancaria"
+    },
+    "name": "crm.Cliente1",
+    "designerId": "8461b8ef-e5f3-4f40-af4e-2626c7c75c49",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString26",
+            "designerId": "7fb39153-6d40-41b6-adc3-36c86ac16964"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString25",
+            "designerId": "7f52bdcb-7d64-49d6-8639-04a2ce34f230"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "numero"
+            },
+            "name": "MyString32",
+            "designerId": "c5b36465-902a-4e13-b614-ad4784e87954"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "activo"
+            },
+            "name": "MyBoolean12",
+            "designerId": "11c2e5d4-4f75-454e-8bb8-efe638f83b96"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString108",
+            "designerId": "f986f27d-9cd0-48f0-93e4-02768c502786"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "moneda"
+            },
+            "name": "MyString96",
+            "designerId": "d4fd7f85-9b17-4534-a51f-88c2cf45a717"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "moneda_id"
+            },
+            "name": "MyString104",
+            "designerId": "7eb1fa61-3e54-46c2-97d9-b0a6b12331ef"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "banco"
+            },
+            "name": "MyString105",
+            "designerId": "4d8107c4-4a80-4167-9e9b-e273abab0ea0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "banco_id"
+            },
+            "name": "MyString106",
+            "designerId": "29ceb5fa-71e8-41db-99b4-77a420e85b4c"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "add:{url: 'index.php/api/restserver/rests',method: 'POST'},",
+                    "show: {url: 'index.php/api/restserver/rests/',method: 'GET'},",
+                    "save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},",
+                    "remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}",
+                    "}"
+                ],
+                "extraParams": [
+                    "{model: 'cuentabancaria',",
+                    "            esquema: 'nomenclador'}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy4",
+            "designerId": "a8cfff37-21c2-4a07-9985-d8a91daed12e",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "737667e8-e4d5-4dae-978b-6485a1cb5187"
+                },
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "e520710d-29fc-412d-9918-ac4cdf2463eb"
+                }
+            ]
+        }
+    ]
+}

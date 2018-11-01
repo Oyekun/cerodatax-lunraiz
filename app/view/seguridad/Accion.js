@@ -236,7 +236,7 @@ Ext.define('cerodatax.view.seguridad.Accion', {
 
 
             columns = control.searchLabel(formPanel.items,columns,true);
-        control.formatForm(formPanel);
+         control.formatForm(formPanel);
          if(resultgrid.length > 0)
              control.configGridPanel(resultgrid[0],columns);
 

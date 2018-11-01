@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladortipobanco",
+        "designer|userClassName": "nomenclador.TipoBancoViewModel"
+    },
+    "name": "nomenclador.CalificadorViewModel1",
+    "designerId": "251cbee2-708f-47a4-a5d4-f293d68d78fe"
+}

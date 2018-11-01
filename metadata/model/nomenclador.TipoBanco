@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipobanco",
+        "designer|userClassName": "nomenclador.TipoBanco"
+    },
+    "name": "nomenclador.Calificador3",
+    "designerId": "1405be3f-6318-4db4-83ab-56089b5d5230",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString24",
+            "designerId": "d4057efd-d876-4cf9-84c6-7101488739bc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString73",
+            "designerId": "32e2681b-3ab3-476b-8d62-765eab9e1893"
+        }
+    ]
+}

@@ -328,11 +328,13 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "buttonText": "Examinar...",
+                                                "designer|displayName": "",
                                                 "emptyText": "Seleccione",
                                                 "fieldLabel": "Foto",
                                                 "invalidText": "El valor del elemento es invalido",
                                                 "margin": "10 0 0 0",
-                                                "name": "foto"
+                                                "name": "foto",
+                                                "reference": null
                                             },
                                             "name": "MyFileUpload1",
                                             "designerId": "c33d9bc7-ae24-4f97-9e06-9bdbb204087d",
@@ -355,6 +357,27 @@
                                                     },
                                                     "name": "onFilefieldChange",
                                                     "designerId": "e0bc003e-0d1b-4af6-963e-9c9bd67531b9"
+                                                },
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "fn": "processFoto",
+                                                        "implHandler": [
+                                                            "",
+                                                            "config.icono = 'user';",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "name": "processFoto",
+                                                    "designerId": "b814f226-6be9-4a91-a57d-5444d07260cc"
                                                 }
                                             ]
                                         },

@@ -2,13 +2,13 @@
 
     class Cliente extends CI_Model {
 
-    	  public $uuid;
+    	public $uuid;
 		public $relacion;
 
         public function __construct() {
             parent::__construct();
-                $this->uuid = 'nombre'; 
-                $this->relacion = array('continente_id' =>'nomenclador_continente','moneda_id' =>'nomenclador_moneda');
+               $this->uuid = 'contacto_id';
+               $this->relacion = array('contacto_id' =>'crm_contacto','nombre' =>'crm_contacto','apellidos' =>'crm_contacto','direccion' =>'crm_contacto','correo' =>'crm_contacto','telefono' =>'crm_contacto','celular' =>'crm_contacto','web' =>'crm_contacto');
               
         }
     }

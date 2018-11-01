@@ -355,6 +355,26 @@
                                                     },
                                                     "name": "onFilefieldChange",
                                                     "designerId": "71ade758-c28f-4765-9fa5-1b015708aca8"
+                                                },
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "fn": "processFoto",
+                                                        "implHandler": [
+                                                            "config.icono = 'address-book';",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "name": "processFoto",
+                                                    "designerId": "168a4b2d-5b30-422e-9d3a-72dbdf599f93"
                                                 }
                                             ]
                                         },
@@ -450,7 +470,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
-                                                "fieldLabel": "Direccion",
+                                                "fieldLabel": "Dirección",
                                                 "name": "direccion"
                                             },
                                             "name": "MyTextField18",
@@ -500,7 +520,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "emptyText": null,
-                                                "fieldLabel": "Telefono",
+                                                "fieldLabel": "Teléfono",
                                                 "inputType": "tel",
                                                 "maskRe": "/\\d/",
                                                 "name": "telefono",

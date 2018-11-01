@@ -30,9 +30,11 @@ Ext.define('cerodatax.model.crm.Contacto', {
             name: 'id'
         },
         {
+            type: 'string',
             name: 'foto'
         },
         {
+            type: 'string',
             name: 'nombre'
         },
         {
@@ -79,6 +81,7 @@ Ext.define('cerodatax.model.crm.Contacto', {
             name: 'provincia_id'
         },
         {
+            type: 'string',
             name: 'entidad'
         },
         {

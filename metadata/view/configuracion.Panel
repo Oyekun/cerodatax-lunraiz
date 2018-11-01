@@ -582,6 +582,39 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Alias",
+                                "name": "alias"
+                            },
+                            "name": "MyTextField50",
+                            "designerId": "d67f9d0a-0fdc-4666-9cee-cbfc93405458",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "fdb9a09e-622a-460a-a636-3f732ad27056"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",

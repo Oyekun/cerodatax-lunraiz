@@ -1729,7 +1729,7 @@ $this->dbforge->add_field(array(
                         ),
                         'foto' => array(
                                 'type' => 'TEXT',
-                                 
+                                 'default' => '', 
                                 'null' => TRUE
                         ),
                         'donante' => array(
@@ -2456,6 +2456,12 @@ $this->dbforge->add_field(array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => TRUE,
+                        ),
+                                    'color' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '30',
+                                'null' => TRUE,
+                                'default' => 'black',
                         ),
 
 

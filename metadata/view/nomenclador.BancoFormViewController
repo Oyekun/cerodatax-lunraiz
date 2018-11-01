@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorbancoform",
+        "designer|userClassName": "nomenclador.BancoFormViewController"
+    },
+    "name": "crm.ClienteFormViewController1",
+    "designerId": "2acf0198-7921-4a8c-a4eb-efa82ee4054c"
+}

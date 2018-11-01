@@ -26,7 +26,7 @@
             "designerId": "19fa4f4b-65a3-4e8d-b1a1-f3371b110d02"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -35,11 +35,11 @@
             "userConfig": {
                 "name": "foto"
             },
-            "name": "MyField18",
+            "name": "MyString14",
             "designerId": "57357e20-a1de-4668-b33d-62566917c46a"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -48,7 +48,7 @@
             "userConfig": {
                 "name": "nombre"
             },
-            "name": "MyField9",
+            "name": "MyString15",
             "designerId": "844e36fb-d01e-40ed-9aa6-73c37f553201"
         },
         {
@@ -208,7 +208,7 @@
             "designerId": "4bc77661-c2e1-4445-97dc-6b511f3f3bf2"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -217,7 +217,7 @@
             "userConfig": {
                 "name": "entidad"
             },
-            "name": "MyField19",
+            "name": "MyString16",
             "designerId": "2bb383f1-4fa9-411a-9fed-c03bf82e6e27"
         },
         {

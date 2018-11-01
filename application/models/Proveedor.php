@@ -2,13 +2,13 @@
 
     class Proveedor extends CI_Model {
 
-    	  public $uuid;
+    	public $uuid;
 		public $relacion;
 
         public function __construct() {
             parent::__construct();
-                $this->uuid = 'nombre'; 
-                $this->relacion = array('continente_id' =>'nomenclador_continente','moneda_id' =>'nomenclador_moneda');
+               $this->uuid = 'nombre';
+               $this->relacion = array('contacto_id' =>'crm_contacto');
               
         }
     }

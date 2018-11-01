@@ -24,42 +24,18 @@ class Auth extends CI_Controller
 
 		if (!$this->ion_auth->logged_in())
 		{
-			// redirect them to the login page
 			$this->load->view('auth/login');
-			//redirect('inicio', 'refresh');
 		}
-		/*else if (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
+ 		else
 		{
-			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
-		}*/
-		else
-		{
-			// set the flash data error message if there is one
-			//$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-			//list the users
-			/*$this->data['users'] = $this->ion_auth->users()->result();
-			foreach ($this->data['users'] as $k => $user)
-			{
-				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
-			}
-
-			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'index', $this->data);
-		*/
-
+ 
           $this->data['users'] = $this->ion_auth->users()->result();
 			foreach ($this->data['users'] as $k => $user)
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-		//	$this->load->view('auth/login');
 			$this->_render_page('auth/index');
-			 //print_r('dd');die;
-        /* $this->output
-        ->set_content_type('application/json')
-        ->set_output(json_encode(array('success'=>TRUE,'message' => 'El usuario o la contraseña son correctos.','data'=>$this->data)));
-		 */
+		 
 		}
 	}
 
@@ -70,16 +46,7 @@ class Auth extends CI_Controller
 	{
 		 
 		 $this->load->model("Ion_auth_model", "ionAuthModel");
-/*$ip_address = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';;
-		 if($this->ionAuthModel->is_max_login_attempts_exceeded($this->input->post('identity'),$ip_address))
-		 {$this->output
-        ->set_content_type('application/json')
-        ->set_output(json_encode(array('success'=>FALSE,'message' => 'El usuario ha excedido la cantidad de intentos de autenticación.')));
-		 }
-  else*/
-	//	if ($this->input->post('identity')!=''&&$this->input->post('password')!='')
-	//	{    
-	        $remember = (bool)$this->input->post('remember');
+ 	        $remember = (bool)$this->input->post('remember');
              
              
              
@@ -126,18 +93,7 @@ class Auth extends CI_Controller
         ->set_output(json_encode(array('success'=>FALSE,'message' => $mensaje)));
 		 
 		 	}
-		/*}
-		else
-		{
- 
- 
-			
-			 	 
-			$this->output
-        ->set_content_type('application/json')
-        ->set_output(json_encode(array('success'=>FALSE,'message' => 'El usuario o la contraseña son incorrectos.')));
-			 
-		}*/
+	 
 	}
 
 	/**
@@ -158,7 +114,9 @@ class Auth extends CI_Controller
          
 		$this->load->model('menu');
 	 	
-    $this->db->where('escritorio', 1);   
+    $this->db->where('escritorio', 1);  
+     $this->db->order_by("orden", "asc"); 
+     $this->db->order_by("modulo_id", "desc"); 
     $result = $this->db->get("$tb");
     	
     if(count($result->result_array())>0)
@@ -177,6 +135,7 @@ $this->load->model('menu');
     	$icono_id='image';
     	$systema='false';
     	$type='image';
+    	$color='black';
   if(isset($value['icono_id']))  	 
 {    	foreach ($iconos as $row)
 {
@@ -187,6 +146,7 @@ $this->load->model('menu');
         		if($row['systema']==1)
         		{$systema='true';
         		$type='svg';
+        		$color=$value['color'];
         	     }
         	     
         	     break;
@@ -205,6 +165,7 @@ $this->load->model('menu');
     		thumb: '$thumb', 
     		url: '$url',
     		systema:'$systema',
+    		color:'$color',
     		type: '$type'
     	},";	 
     }

@@ -40,6 +40,10 @@ Ext.define('cerodatax.model.configuracion.Menu', {
         },
         {
             type: 'string',
+            name: 'color'
+        },
+        {
+            type: 'string',
             name: 'icono'
         },
         {

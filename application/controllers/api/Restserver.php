@@ -141,8 +141,8 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
     }
 	
 	public function rests_put($id)
-    {
-         $this->_args = $this->security->xss_clean($this->_args);
+    {    //Hubo q comentariar prk a la hora de enviar image eliminanva el data:etc
+         //$this->_args = $this->security->xss_clean($this->_args);
          $id = $this->security->xss_clean($id);
          
 

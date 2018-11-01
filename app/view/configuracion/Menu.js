@@ -26,14 +26,14 @@ Ext.define('cerodatax.view.configuracion.Menu', {
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
         'Ext.grid.filters.Filters',
-        'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.XTemplate',
         'Ext.form.field.ComboBox',
         'Ext.view.BoundList',
         'Ext.form.field.Number',
         'Ext.form.field.Checkbox',
-        'Ext.form.field.TextArea'
+        'Ext.form.field.TextArea',
+        'Ext.form.field.Display'
     ],
 
     controller: 'seguridadusuario',
@@ -146,69 +146,12 @@ Ext.define('cerodatax.view.configuracion.Menu', {
             flex: 0.8,
             region: 'east',
             split: true,
+            activeItem: 1,
             reference: 'display',
             width: 150,
             layout: 'card',
             bodyBorder: true,
             items: [
-                {
-                    xtype: 'panel',
-                    reference: 'selectMessage',
-                    layout: {
-                        type: 'vbox',
-                        align: 'center',
-                        pack: 'center'
-                    },
-                    items: [
-                        {
-                            xtype: 'container',
-                            flex: 1,
-                            html: '<h1>Seleccione un Menú</h1>'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'panel',
-                    reference: 'details',
-                    bodyPadding: 10,
-                    items: [
-                        {
-                            xtype: 'displayfield',
-                            fieldLabel: 'Usuario',
-                            bind: {
-                                value: '{record.usuario}'
-                            }
-                        },
-                        {
-                            xtype: 'displayfield',
-                            fieldLabel: 'Correo',
-                            bind: {
-                                value: '{record.correo}'
-                            }
-                        },
-                        {
-                            xtype: 'displayfield',
-                            fieldLabel: 'Entidad',
-                            bind: {
-                                value: '{record.entidad}'
-                            }
-                        },
-                        {
-                            xtype: 'displayfield',
-                            fieldLabel: 'Persona',
-                            bind: {
-                                value: '{record.persona_id}'
-                            }
-                        },
-                        {
-                            xtype: 'displayfield',
-                            fieldLabel: 'Administrador',
-                            bind: {
-                                value: '{record.administrador}'
-                            }
-                        }
-                    ]
-                },
                 {
                     xtype: 'form',
                     reference: 'form',
@@ -287,15 +230,20 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                             }
                         },
                         {
-                            xtype: 'checkboxfield',
-                            fieldLabel: 'Escritorio',
-                            name: 'escritorio',
-                            checked: true
+                            xtype: 'textfield',
+                            fieldLabel: 'Color',
+                            name: 'color'
                         },
                         {
                             xtype: 'checkboxfield',
                             fieldLabel: 'TabPanel',
                             name: 'tabpanel',
+                            checked: true
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            fieldLabel: 'Escritorio',
+                            name: 'escritorio',
                             checked: true
                         },
                         {
@@ -349,6 +297,64 @@ Ext.define('cerodatax.view.configuracion.Menu', {
                                     }
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    reference: 'selectMessage',
+                    layout: {
+                        type: 'vbox',
+                        align: 'center',
+                        pack: 'center'
+                    },
+                    items: [
+                        {
+                            xtype: 'container',
+                            flex: 1,
+                            html: '<h1>Seleccione un Menú</h1>'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    reference: 'details',
+                    bodyPadding: 10,
+                    items: [
+                        {
+                            xtype: 'displayfield',
+                            fieldLabel: 'Usuario',
+                            bind: {
+                                value: '{record.usuario}'
+                            }
+                        },
+                        {
+                            xtype: 'displayfield',
+                            fieldLabel: 'Correo',
+                            bind: {
+                                value: '{record.correo}'
+                            }
+                        },
+                        {
+                            xtype: 'displayfield',
+                            fieldLabel: 'Entidad',
+                            bind: {
+                                value: '{record.entidad}'
+                            }
+                        },
+                        {
+                            xtype: 'displayfield',
+                            fieldLabel: 'Persona',
+                            bind: {
+                                value: '{record.persona_id}'
+                            }
+                        },
+                        {
+                            xtype: 'displayfield',
+                            fieldLabel: 'Administrador',
+                            bind: {
+                                value: '{record.administrador}'
+                            }
                         }
                     ]
                 }

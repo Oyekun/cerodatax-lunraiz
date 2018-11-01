@@ -25,14 +25,10 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
         'Ext.tab.Tab',
         'Ext.form.FieldSet',
         'Ext.Img',
-        'Ext.form.field.File',
-        'Ext.XTemplate',
         'Ext.form.field.ComboBox',
-        'Ext.tree.Panel',
-        'Ext.tree.View',
-        'Ext.tree.Column',
-        'Ext.grid.filters.filter.String',
-        'Ext.grid.filters.Filters'
+        'Ext.view.BoundList',
+        'Ext.XTemplate',
+        'Ext.form.field.Display'
     ],
 
     controller: 'crmclienteform',
@@ -45,287 +41,230 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
     title: 'Cliente',
     modal: true,
 
-    items: [
-        {
-            xtype: 'form',
-            reference: 'form',
-            alignTarget: 'top',
-            height: 500,
-            width: 460,
-            layout: 'auto',
-            bodyPadding: 10,
-            fieldDefaults: {
-                padding: '0 10 0 0',
-                maxLength: 100,
-                enforceMaxLength: true
-            },
-            dockedItems: [
-                {
-                    xtype: 'container',
-                    dock: 'bottom',
-                    padding: 10,
-                    layout: 'form',
-                    items: [
-                        {
-                            xtype: 'button',
-                            itemId: 'saveButton',
-                            margin: 5,
-                            text: 'Guardar',
-                            listeners: {
-                                click: 'saveTreeWindows'
-                            }
+    initConfig: function(instanceConfig) {
+        var me = this,
+            config = {
+                items: [
+                    {
+                        xtype: 'form',
+                        reference: 'form',
+                        alignTarget: 'top',
+                        height: 500,
+                        width: 620,
+                        layout: 'auto',
+                        bodyPadding: 10,
+                        fieldDefaults: {
+                            padding: '0 10 0 0',
+                            maxLength: 100,
+                            enforceMaxLength: true
                         },
-                        {
-                            xtype: 'button',
-                            itemId: 'cancelButton',
-                            margin: 5,
-                            text: 'Cancelar',
-                            listeners: {
-                                click: 'cancelEdit'
+                        dockedItems: [
+                            {
+                                xtype: 'container',
+                                dock: 'bottom',
+                                padding: 10,
+                                layout: 'form',
+                                items: [
+                                    {
+                                        xtype: 'button',
+                                        itemId: 'saveButton',
+                                        margin: 5,
+                                        text: 'Guardar',
+                                        listeners: {
+                                            click: 'saveTreeWindows'
+                                        }
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        itemId: 'cancelButton',
+                                        margin: 5,
+                                        text: 'Cancelar',
+                                        listeners: {
+                                            click: 'cancelEdit'
+                                        }
+                                    }
+                                ]
                             }
-                        }
-                    ]
-                }
-            ],
-            items: [
-                {
-                    xtype: 'tabpanel',
-                    width: 440,
-                    activeTab: 0,
-                    items: [
-                        {
-                            xtype: 'panel',
-                            title: 'Datos Generales',
-                            items: [
-                                {
-                                    xtype: 'fieldset',
-                                    alignTarget: 'top',
-                                    height: 190,
-                                    margin: '10 0 0 0',
-                                    width: 440,
-                                    layout: 'column',
-                                    title: 'Información',
-                                    items: [
-                                        {
-                                            xtype: 'container',
-                                            height: 130,
-                                            margin: '10 10 0 0',
-                                            width: 110,
-                                            items: [
-                                                {
-                                                    xtype: 'image',
-                                                    alwaysOnTop: true,
-                                                    shim: false,
-                                                    frame: false,
-                                                    height: 110,
-                                                    hidden: true,
-                                                    itemId: 'foto',
-                                                    style: 'font-size: 36px; lineHeight: 36px',
-                                                    width: 100,
-                                                    alt: 'Cargando Foto...',
-                                                    imgCls: ''
-                                                },
-                                                {
-                                                    xtype: 'image',
-                                                    alwaysOnTop: true,
-                                                    shim: false,
-                                                    frame: true,
-                                                    height: 110,
-                                                    itemId: 'foto1',
-                                                    style: 'font-size: 110px; margin: 10px;line-height: 120px;',
-                                                    width: 100,
-                                                    alt: 'Cargando Foto...',
-                                                    glyph: 'xf007@FontAwesome'
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            xtype: 'filefield',
-                                            margin: '10 0 0 0',
-                                            fieldLabel: 'Foto',
-                                            name: 'foto',
-                                            invalidText: 'El valor del elemento es invalido',
-                                            emptyText: 'Seleccione',
-                                            buttonText: 'Examinar...',
-                                            listeners: {
-                                                change: 'onFilefieldChange'
+                        ],
+                        items: [
+                            {
+                                xtype: 'tabpanel',
+                                width: 600,
+                                activeTab: 0,
+                                items: [
+                                    {
+                                        xtype: 'panel',
+                                        title: 'Datos Generales',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                height: 160,
+                                                margin: '10 0 0 0',
+                                                width: 440,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'container',
+                                                        height: 130,
+                                                        margin: '10 10 0 0',
+                                                        width: 110,
+                                                        items: [
+                                                            {
+                                                                xtype: 'image',
+                                                                alwaysOnTop: true,
+                                                                shim: false,
+                                                                frame: false,
+                                                                height: 110,
+                                                                hidden: true,
+                                                                itemId: 'foto',
+                                                                style: 'font-size: 36px; lineHeight: 36px',
+                                                                width: 100,
+                                                                alt: 'Cargando Foto...',
+                                                                imgCls: '',
+                                                                bind: {
+                                                                    src: '{contactocliente.selection.foto}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'image',
+                                                                alwaysOnTop: true,
+                                                                shim: false,
+                                                                frame: true,
+                                                                height: 110,
+                                                                itemId: 'foto1',
+                                                                style: 'font-size: 110px; margin: 10px;line-height: 120px;',
+                                                                width: 100,
+                                                                alt: 'Cargando Foto...',
+                                                                glyph: 'xf007@FontAwesome',
+                                                                bind: {
+                                                                    src: '{contactocliente.selection.foto}'
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    me.processContactocliente({
+                                                        xtype: 'combobox',
+                                                        reference: 'contactocliente',
+                                                        fieldLabel: 'Contacto',
+                                                        name: 'contacto_id',
+                                                        allowBlank: false,
+                                                        emptyText: 'Seleccione',
+                                                        displayField: 'nombre',
+                                                        queryMode: 'local',
+                                                        store: 'crm.Contacto',
+                                                        valueField: 'id',
+                                                        listConfig: {
+                                                            xtype: 'boundlist',
+                                                            itemSelector: 'span',
+                                                            itemTpl: [
+                                                                '<tpl for="."> ',
+                                                                '        <img src="{foto}" height="20px" style="float:left;"> {nombre} ',
+                                                                '</tpl>'
+                                                            ]
+                                                        }
+                                                    }),
+                                                    {
+                                                        xtype: 'displayfield',
+                                                        hidden: true,
+                                                        width: 275,
+                                                        fieldLabel: 'Nombre(s)',
+                                                        name: 'nombre',
+                                                        bind: {
+                                                            value: '{contactocliente.selection.nombre}'
+                                                        }
+                                                    },
+                                                    {
+                                                        xtype: 'displayfield',
+                                                        width: 275,
+                                                        fieldLabel: 'Apellidos',
+                                                        name: 'apellidos',
+                                                        bind: {
+                                                            value: '{contactocliente.selection.apellidos}'
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 0',
+                                                width: 440,
+                                                title: 'Datos del Contacto',
+                                                items: [
+                                                    {
+                                                        xtype: 'displayfield',
+                                                        width: 400,
+                                                        fieldLabel: 'Dirección',
+                                                        name: 'direccion',
+                                                        bind: {
+                                                            value: '{contactocliente.selection.direccion}'
+                                                        }
+                                                    },
+                                                    {
+                                                        xtype: 'displayfield',
+                                                        width: 400,
+                                                        fieldLabel: 'Correo',
+                                                        name: 'correo',
+                                                        bind: {
+                                                            value: '{contactocliente.selection.correo}'
+                                                        }
+                                                    },
+                                                    {
+                                                        xtype: 'displayfield',
+                                                        width: 400,
+                                                        fieldLabel: 'Teléfono',
+                                                        name: 'telefono',
+                                                        bind: {
+                                                            value: '{contactocliente.selection.telefono}'
+                                                        }
+                                                    },
+                                                    {
+                                                        xtype: 'displayfield',
+                                                        width: 400,
+                                                        fieldLabel: 'Celular',
+                                                        name: 'celular',
+                                                        bind: {
+                                                            value: '{contactocliente.selection.celular}'
+                                                        }
+                                                    },
+                                                    {
+                                                        xtype: 'displayfield',
+                                                        width: 400,
+                                                        fieldLabel: 'Web',
+                                                        name: 'web',
+                                                        bind: {
+                                                            value: '{contactocliente.selection.web}'
+                                                        }
+                                                    }
+                                                ]
                                             }
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            afterLabelTextTpl: [
-                                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                            ],
-                                            fieldLabel: 'Nombre(s)',
-                                            name: 'nombre',
-                                            allowBlank: false
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            afterLabelTextTpl: [
-                                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                            ],
-                                            fieldLabel: 'Apellidos',
-                                            name: 'apellidos',
-                                            allowBlank: false
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'fieldset',
-                                    margin: '10 0 0 0',
-                                    width: 440,
-                                    title: 'Contacto',
-                                    items: [
-                                        {
-                                            xtype: 'textfield',
-                                            afterLabelTextTpl: [
-                                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                            ],
-                                            fieldLabel: 'Dirección',
-                                            name: 'direccion',
-                                            allowBlank: false
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            fieldLabel: 'Correo',
-                                            name: 'correo',
-                                            inputType: 'email',
-                                            vtype: 'email'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            fieldLabel: 'Telefono',
-                                            name: 'telefono',
-                                            inputType: 'tel',
-                                            maskRe: /\d/,
-                                            maxLength: 30
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            fieldLabel: 'Celular',
-                                            name: 'celular',
-                                            inputType: 'tel',
-                                            maskRe: /\d/,
-                                            maxLength: 30
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            fieldLabel: 'Web',
-                                            name: 'web',
-                                            inputType: 'tel',
-                                            maskRe: /\d/
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'panel',
-                            margin: '10 0 0 0',
-                            title: 'Otros Datos',
-                            items: [
-                                {
-                                    xtype: 'combobox',
-                                    fieldLabel: 'País',
-                                    name: 'pais_id',
-                                    emptyText: 'Seleccione',
-                                    displayField: 'nombre',
-                                    queryMode: 'local',
-                                    queryParam: 'provincia_id:false,municipio_id:true',
-                                    store: 'nomenclador.Pais',
-                                    valueField: 'id',
-                                    listeners: {
-                                        select: 'onComboboxSelect'
-                                    }
-                                },
-                                {
-                                    xtype: 'combobox',
-                                    disabled: true,
-                                    fieldLabel: 'Provincia',
-                                    name: 'provincia_id',
-                                    emptyText: 'Seleccione',
-                                    displayField: 'nombre',
-                                    queryMode: 'local',
-                                    queryParam: 'municipio_id:false',
-                                    store: 'nomenclador.Provincia',
-                                    valueField: 'id',
-                                    listeners: {
-                                        select: 'onComboboxSelect1'
-                                    }
-                                },
-                                {
-                                    xtype: 'combobox',
-                                    disabled: true,
-                                    fieldLabel: 'Municipio',
-                                    name: 'municipio_id',
-                                    emptyText: 'Seleccione',
-                                    displayField: 'nombre',
-                                    queryMode: 'local',
-                                    store: 'nomenclador.Municipio',
-                                    valueField: 'id'
-                                },
-                                {
-                                    xtype: 'combobox',
-                                    fieldLabel: 'Organismo',
-                                    name: 'organismo_id',
-                                    inputAttrTpl: [
-                                        'Entidades:false'
-                                    ],
-                                    emptyText: 'Seleccione',
-                                    displayField: 'nombre',
-                                    queryMode: 'local',
-                                    queryParam: 'Entidades:false',
-                                    store: 'nomenclador.Organismo',
-                                    valueField: 'id',
-                                    listeners: {
-                                        select: 'onComboboxSelectEntidad'
-                                    }
-                                },
-                                {
-                                    xtype: 'treepanel',
-                                    disabled: true,
-                                    height: 300,
-                                    itemId: 'treePanel',
-                                    margin: '10 0 0 0',
-                                    scrollable: true,
-                                    width: 430,
-                                    title: 'Entidades',
-                                    hideHeaders: false,
-                                    store: 'persona.PersonaEntidad',
-                                    rootVisible: false,
-                                    useArrows: true,
-                                    viewConfig: {
-                                        rootVisible: false
+                                        ]
                                     },
-                                    columns: [
-                                        {
-                                            xtype: 'treecolumn',
-                                            dataIndex: 'nombre',
-                                            text: 'Nombre',
-                                            flex: 3,
-                                            filter: {
-                                                type: 'string',
-                                                emptyText: 'Ingrese el texto del filtro...'
-                                            }
+                                    {
+                                        xtype: 'panel',
+                                        height: 500,
+                                        title: 'Cuentas Bancarias',
+                                        layout: {
+                                            type: 'hbox',
+                                            align: 'stretch'
                                         }
-                                    ],
-                                    listeners: {
-                                        beforeitemexpand: 'onTreePanelBeforeItemExpand1'
-                                    },
-                                    plugins: [
-                                        {
-                                            ptype: 'gridfilters',
-                                            menuFilterText: 'Buscar'
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            };
+        if (instanceConfig) {
+            me.getConfigurator().merge(me, config, instanceConfig);
         }
-    ]
+        return me.callParent([config]);
+    },
+
+    processContactocliente: function(config) {
+        config.icono = 'address-card';
+        return config;
+    }
 
 });

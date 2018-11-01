@@ -136,7 +136,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                       logousuario.setSrc(json.data.persona.foto);
                       var nombre = json.data.persona.nombre +' '+ json.data.persona.apellidos;
                       logousuario.username = json.data.usuario.username;
-                      console.log(logousuario)
+
                       logousuario.title ='<span style=" font-weight:bold" > Nombre: </span><span>'+nombre+'</span>';
 
                      }
@@ -171,19 +171,23 @@ Ext.define('cerodatax.controller.Seguridad', {
                       callback: function (records, operation, success) {
 
                           menus = records;
+                          objmenu.proxy.extraParams.limit=25;
 
                           objmodulo.load({   scope: this,
                                           callback: function (records, operation, success) {
 
                                               modulos = records;
+                                              objmodulo.proxy.extraParams.limit=25;
 
                                               obj.load({   scope: this,
                                                         callback: function (records, operation, success) {
 
                                                             tipos = records;
+                                                            obj.proxy.extraParams.limit=25;
                                                             objpanel.load({   scope: this,
                                                                            callback: function (records, operation, success) {
                                                                                paneles = records;
+                                                                               objpanel.proxy.extraParams.limit=25;
 
                                                                                var require=[];
                                                                                require.push('cerodatax.view.escritorio.Escritorio');
@@ -197,9 +201,7 @@ Ext.define('cerodatax.controller.Seguridad', {
 
                                                                                }
 
-                                                                               // form.unmask();
-                                                                               // form.hide();
-                                                                               // formWindow.destroy();
+
                                                                                var tipomodulos = [];
 
 
@@ -256,7 +258,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                      layout: 'fit'};
                                                                                              }
 
-                                                                                             //console.log(container)
+
 
                                                                                              var maux =  {
                                                                                                  xtype: 'menuitem',
@@ -303,7 +305,7 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                               objpanelp.title= auxnamepanel_item;
 
                                                                                                               container_item.push(objpanelp);
-                                                                                                              //break;
+
 
                                                                                                              }
                                                                                                          }
@@ -317,8 +319,7 @@ Ext.define('cerodatax.controller.Seguridad', {
 
                                                                                                              if(itemPanel.itemId==searchPanel)
                                                                                                              {
-                                                                                                                 // console.log(itemPanel)
-                                                                                                                 itemPanel.setHidden(false);
+                                                                                                                   itemPanel.setHidden(false);
                                                                                                                  var tree = itemPanel.down('treePanel');
                                                                                                                  var grid = itemPanel.down('grid');
 
@@ -331,10 +332,8 @@ Ext.define('cerodatax.controller.Seguridad', {
 
                                                                                                                      var select = itemPanel.down('panel[reference=selectMessage]');
 
-                                                                                                                     //layout.setActiveItem(select);
 
-                                                                                                                 }console.log(tree)
-
+                                                                                                                 }
                                                                                                                  if(grid && tabpanel===false)
                                                                                                                  {if(grid.store.proxy.extraParams!==undefined)
                                                                                                                      grid.store.proxy.extraParams.combo = '';
@@ -394,13 +393,11 @@ Ext.define('cerodatax.controller.Seguridad', {
 
 
                                                                                var menuPanel = Ext.ComponentQuery.query('#menuPanel')[0];
-                                                                               //contentPanel.removeAll();
+
                                                                                menuPanel.add(tipomodulos);
 
 
-                                                                               //var panelPrincipal = Ext.ComponentQuery.query('#panelPrincipal')[0];
-                                                                               //panelPrincipal.removeAll();
-                                                                               //panelPrincipal.add(container);
+
                                                                                myMask.destroy();
 
 

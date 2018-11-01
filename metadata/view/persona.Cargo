@@ -137,7 +137,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "grupo_escala",
+                        "dataIndex": "grupoescala",
                         "text": "Grupo Escala"
                     },
                     "name": "MyColumn11",
@@ -800,7 +800,7 @@
                                 "allowBlank": false,
                                 "displayField": "nombre",
                                 "fieldLabel": "Grupo Escala",
-                                "name": "grupo_escala",
+                                "name": "grupoescala_id",
                                 "queryMode": "local",
                                 "store": "nomenclador.GrupoEscala",
                                 "valueField": "id"

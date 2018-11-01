@@ -149,7 +149,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "grupo_escala"
+                "name": "grupoescala"
             },
             "name": "MyField22",
             "designerId": "401e14fa-6e3e-4a62-b7e7-bdf045f44516"
@@ -162,7 +162,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "grupo_escala_id"
+                "name": "grupoescala_id"
             },
             "name": "MyField37",
             "designerId": "b1c6f67c-ca5f-44db-8caa-cae72a4c973e"

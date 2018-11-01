@@ -31,7 +31,7 @@ Ext.define('cerodatax.controller.Escritorio', {
         if(component.tab)
         {       var grid = component.down('grid');
          var tree = component.down('treePanel');
-         var successCallback = function(o, resp) {
+         var callback = function(o, resp) {
              //debugger;
 
              var json = Ext.JSON.decode(resp._response.responseText);
@@ -48,9 +48,9 @@ Ext.define('cerodatax.controller.Escritorio', {
                      //Ext.ComponentQuery.query('#identity')[0].focus('', 10);
 
                      //this.getController('Seguridad');
-                      alert('La sesión ha expirado.');
-                            window.location = 'index.php?auth/login';
-                            window.location = '';
+                     alert('La sesión ha expirado.');
+                     window.location = 'index.php?auth/login';
+                     window.location = '';
 
                  }
 
@@ -60,7 +60,9 @@ Ext.define('cerodatax.controller.Escritorio', {
          if(grid)
          {if(grid.store.proxy.extraParams!==undefined)
              grid.store.proxy.extraParams.combo = '';
-          grid.store.load();
+          grid.store.proxy.extraParams.limit = 25;
+          grid.store.load({   scope: this,
+                           callback:callback});
           grid.getSelectionModel().deselectAll();
           if(grid.down('toolbar').down('button[itemId=btnEdit]'))
               grid.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
@@ -69,7 +71,7 @@ Ext.define('cerodatax.controller.Escritorio', {
           if(grid.down('toolbar').down('button[itemId=btnAssociate]'))
               grid.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
 
-         }console.log(tree)
+         }
 
          if(tree)
          {tree.store.proxy.extraParams.parent_id = '';
@@ -78,12 +80,13 @@ Ext.define('cerodatax.controller.Escritorio', {
           if(tree.down('toolbar'))
           {if(tree.down('toolbar').down('button[itemId=btnEdit]'))
               tree.down('toolbar').down('button[itemId=btnEdit]').setDisabled(true);
-          if(tree.down('toolbar').down('button[itemId=btnRemove]'))
-              tree.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
-          if(tree.down('toolbar').down('button[itemId=btnAssociate]'))
-              tree.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
+           if(tree.down('toolbar').down('button[itemId=btnRemove]'))
+               tree.down('toolbar').down('button[itemId=btnRemove]').setDisabled(true);
+           if(tree.down('toolbar').down('button[itemId=btnAssociate]'))
+               tree.down('toolbar').down('button[itemId=btnAssociate]').setDisabled(true);
           }
          }
+         // this.showView('selectMessage'); hay que haceresto par q se selecione el mensaje y no se quede activado el formulario
         }
 
 

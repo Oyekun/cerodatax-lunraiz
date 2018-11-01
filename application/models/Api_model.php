@@ -92,14 +92,22 @@ else
         {
 
         	$this->db->select("$tb.*");
+        	$tablas_relacion =[];
         	foreach ($nameuuid->relacion as $campo=>$tabla_campo)
 					{
- 				   $tabla_campo_id = $tabla_campo.'.id';
+ 				    $tabla_campo_id = $tabla_campo.'.id';
                    $igual = $tb.'.'.$campo;
                    $alias = str_replace("_id", "", $campo);
+                   if($alias!=$campo)
                    $ref = $tabla_campo.".nombre as ".$alias;
+                   else
+                   	$ref = $tabla_campo.".".$alias." as ".$alias;
                    $this->db->select("$ref");
+    			   
+    			   if(!isset($tablas_relacion[$tabla_campo]))
+    			   {$tablas_relacion[$tabla_campo]=$tabla_campo; 
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
+    			}
 					}
 				}
 	  $this->db->order_by("date_updated", "desc");//verificar bien
@@ -147,18 +155,26 @@ return $total;
         {
 $flagrelacion= TRUE;
         	$this->db->select("$tb.*");
+        	$tablas_relacion=[];
         	foreach ($nameuuid->relacion as $campo=>$tabla_campo)
 					{
  				   $tabla_campo_id = $tabla_campo.'.id';
                    $igual = $tb.'.'.$campo;
                    $alias = str_replace("_id", "", $campo);
+                   if($alias!=$campo)
                    $ref = $tabla_campo.".nombre as ".$alias;
+                   else
+                   	$ref = $tabla_campo.".".$alias." as ".$alias;
                    $this->db->select("$ref");
     			   
+    			   if(!isset($tablas_relacion[$tabla_campo]))
+    			   {$tablas_relacion[$tabla_campo]=$tabla_campo; 
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
 					}
 				}
-		         $this->db->order_by("date_updated", "desc");//verificar bien
+				}
+		         $this->db->order_by("date_updated", "desc");
+		        // print_r($this->db);die;//verificar bien
 			$q = $this->db->get("$tb",$limit, $offset);
 		 
 		}
@@ -181,14 +197,22 @@ $flagrelacion= TRUE;
         {
 
         	$this->db->select("$tb.*");
+        	$tablas_relacion =[];
         	foreach ($nameuuid->relacion as $campo=>$tabla_campo)
 					{
- 				   $tabla_campo_id = $tabla_campo.'.id';
+ 				    $tabla_campo_id = $tabla_campo.'.id';
                    $igual = $tb.'.'.$campo;
                    $alias = str_replace("_id", "", $campo);
+                   if($alias!=$campo)
                    $ref = $tabla_campo.".nombre as ".$alias;
+                   else
+                   	$ref = $tabla_campo.".".$alias." as ".$alias;
                    $this->db->select("$ref");
+    			   
+    			   if(!isset($tablas_relacion[$tabla_campo]))
+    			   {$tablas_relacion[$tabla_campo]=$tabla_campo; 
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
+    			}
 					}
 				}
 				 $this->db->order_by("date_updated", "desc");//verificar bien
@@ -214,14 +238,22 @@ $flagrelacion= TRUE;
         {
 
         	$this->db->select("$tb.*");
+      $tablas_relacion =[];
         	foreach ($nameuuid->relacion as $campo=>$tabla_campo)
 					{
- 				   $tabla_campo_id = $tabla_campo.'.id';
+ 				    $tabla_campo_id = $tabla_campo.'.id';
                    $igual = $tb.'.'.$campo;
                    $alias = str_replace("_id", "", $campo);
+                   if($alias!=$campo)
                    $ref = $tabla_campo.".nombre as ".$alias;
+                   else
+                   	$ref = $tabla_campo.".".$alias." as ".$alias;
                    $this->db->select("$ref");
+    			   
+    			   if(!isset($tablas_relacion[$tabla_campo]))
+    			   {$tablas_relacion[$tabla_campo]=$tabla_campo; 
     			   $this->db->join(" $tabla_campo"," $tabla_campo_id = $igual"," left");
+    			}
 					}
 				}
 				// $this->db->order_by("date_updated", "asc");//verificar bien
@@ -388,6 +420,8 @@ $cant++;
 				if($nodo)
 				$dataArray["$key"] = 1;	
 			}
+	    if ($this->db->field_exists("$key", "$tb")==FALSE)
+	    	unset($dataArray["$key"]);
 			 
 		}
 
@@ -506,6 +540,7 @@ public function row_update($request,$id) {
 	$tb = $request['esquema'].'_'.$request['model']; 
 
     $dataArray=json_decode($request['data'],TRUE); 
+    
     foreach($dataArray as $key=>$nodo)
 		{
 
@@ -657,5 +692,9 @@ public function row_existe($request) {
 	public function get_db(){
          
         echo $this->db;
+    }
+    private function get_relaciones(){
+         
+         
     }
 }

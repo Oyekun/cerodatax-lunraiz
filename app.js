@@ -66,9 +66,12 @@ Ext.application({
         'nomenclador.TipoModulo',
         'configuracion.Menu',
         'seguridad.UsuarioRol',
-        'crm.Cliente',
         'crm.Proveedor',
-        'crm.Oferente'
+        'crm.Oferente',
+        'nomenclador.TipoBanco',
+        'nomenclador.Banco',
+        'nomenclador.CuentaBancaria',
+        'crm.Cliente'
     ],
     stores: [
         'seguridad.Usuario',
@@ -111,10 +114,13 @@ Ext.application({
         'nomenclador.Icono',
         'configuracion.Panel',
         'crm.Contacto',
-        'configuracion.Tablero',
         'crm.Cliente',
         'crm.Proveedor',
-        'crm.Oferente'
+        'crm.Oferente',
+        'configuracion.Tablero',
+        'nomenclador.TipoBanco',
+        'nomenclador.Banco',
+        'nomenclador.CuentaBancaria'
     ],
     views: [
         'seguridad.Usuario',
@@ -167,7 +173,11 @@ Ext.application({
         'crm.ClienteForm',
         'crm.ProveedorForm',
         'crm.OferenteForm',
-        'escritorio.FormChangePassword'
+        'escritorio.FormChangePassword',
+        'nomenclador.TipoBanco',
+        'nomenclador.Banco',
+        'nomenclador.BancoForm',
+        'nomenclador.CuentaBancaria'
     ],
     controllers: [
         'Escritorio',

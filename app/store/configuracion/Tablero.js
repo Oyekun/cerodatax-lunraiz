@@ -51,6 +51,10 @@ Ext.define('cerodatax.store.configuracion.Tablero', {
                 },
                 {
                     type: 'string',
+                    name: 'color'
+                },
+                {
+                    type: 'string',
                     name: 'systema'
                 },
                 {

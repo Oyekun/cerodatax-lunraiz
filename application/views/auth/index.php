@@ -17,9 +17,13 @@
     <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
 </head>
 <body>
+
  <link rel="stylesheet" type="text/css" href="login/style_loading.css">
 <div id="pre-loading">  
-<div id="pre-content" class="loader"></div>
+<div id="pre-content" >
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+</div>
 
 </body>
 </html>

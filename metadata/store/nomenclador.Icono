@@ -10,6 +10,7 @@
         "autoSync": true,
         "designer|userClassName": "nomenclador.Icono",
         "model": "nomenclador.Icono",
+        "remoteFilter": true,
         "storeId": "nomenclador.Icono"
     },
     "name": "nomenclador.TipoRegistro3",

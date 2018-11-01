@@ -158,7 +158,7 @@ Ext.define('cerodatax.view.crm.Cliente', {
         var results=[];
         columns = control.searchLabel(form.owner.items.items,results,true);
         control.formatForm(form.owner.items);
-         control.configGridPanel(config,columns);
+        control.configGridPanel(config,columns);
         return config;
     }
 

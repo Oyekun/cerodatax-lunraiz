@@ -72,10 +72,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "icono"
+                "name": "color"
             },
             "name": "MyString4",
             "designerId": "deb0215b-36c2-430b-884f-c3b4365b9d4a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "icono"
+            },
+            "name": "MyString56",
+            "designerId": "658515eb-7cf7-4d14-bea2-a9ec343f0089"
         },
         {
             "type": "Ext.data.field.String",

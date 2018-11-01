@@ -229,6 +229,15 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                             allowBlank: false
                         },
                         {
+                            xtype: 'textfield',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
+                            fieldLabel: 'Alias',
+                            name: 'alias',
+                            allowBlank: false
+                        },
+                        {
                             xtype: 'combobox',
                             fieldLabel: 'Menú',
                             name: 'menu_id',

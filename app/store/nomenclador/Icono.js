@@ -27,6 +27,7 @@ Ext.define('cerodatax.store.nomenclador.Icono', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            remoteFilter: true,
             storeId: 'nomenclador.Icono',
             autoLoad: false,
             autoSync: true,

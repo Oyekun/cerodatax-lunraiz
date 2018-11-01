@@ -90,7 +90,7 @@ Ext.define('cerodatax.view.persona.Cargo', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'grupo_escala',
+                    dataIndex: 'grupoescala',
                     text: 'Grupo Escala'
                 }
             ],
@@ -316,7 +316,7 @@ Ext.define('cerodatax.view.persona.Cargo', {
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
                             fieldLabel: 'Grupo Escala',
-                            name: 'grupo_escala',
+                            name: 'grupoescala_id',
                             allowBlank: false,
                             displayField: 'nombre',
                             queryMode: 'local',

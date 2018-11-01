@@ -1,0 +1,368 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "nomencladorbanco",
+        "designer|userClassName": "nomenclador.Banco",
+        "height": 528,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 860
+    },
+    "name": "crm.Cliente2",
+    "designerId": "e66edad9-068c-4b5d-a3dc-a4a2719905c2",
+    "viewControllerInstanceId": "478a12e9-9a76-4b59-8b70-746ed75ef9ee",
+    "viewModelInstanceId": "a2adebb3-c2b1-4ae4-89f1-45280d34c149",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": false,
+                "itemId": "gridPanel",
+                "layout|flex": null,
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "nomenclador.Banco",
+                "title": null
+            },
+            "name": "MyGridPanel19",
+            "designerId": "567fa419-7bde-4ab5-8a4b-8cd52956143c",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Nombre"
+                    },
+                    "name": "MyColumn34",
+                    "designerId": "c90f3664-11e7-44bf-88f5-dfc0d3b0cd20"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "componentCls": "button-view",
+                        "designer|displayName": "toolbar",
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar5",
+                    "designerId": "446d172c-cda0-4e49-99d1-09c3033cc42a",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "glyph": "xf067@FontAwesome",
+                                "iconCls": "null",
+                                "itemId": "btnAdd",
+                                "layout|flex": null,
+                                "text": "Adicionar"
+                            },
+                            "name": "MyButton31",
+                            "designerId": "d010b9da-6642-48e7-af3c-620e1b22eaba",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "addWindows",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "addWindows",
+                                    "designerId": "4593ebfa-b938-4423-9c42-5f4bcc2fccbc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "glyph": null,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnEdit",
+                                "layout|flex": null,
+                                "text": "Editar"
+                            },
+                            "name": "MyButton32",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "e2b4198b-96cf-44e6-8021-e3c4bf61d43e",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "editWindows",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    record = this.getViewModel().get('record');",
+                                            "",
+                                            "// Load record model into form",
+                                            "form.loadRecord(record);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Editar Persona');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "editWindows",
+                                    "designerId": "6ec4b17a-ca52-463e-83f0-7b5c8c6d28d1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "glyph": null,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRemove",
+                                "layout|flex": null,
+                                "text": "Eliminar"
+                            },
+                            "name": "MyButton33",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "e0e0ce12-210b-46bf-ad90-d2fc9f49e44d",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "remove",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            "",
+                                            "// Ask user to confirm this action",
+                                            "Ext.Msg.confirm('Confirm Delete', 'Desea eliminar la persona?', function(result) {",
+                                            "",
+                                            "    // User confirmed yes",
+                                            "    if (result == 'yes') {",
+                                            "",
+                                            "        var record = me.getViewModel().get('record'),",
+                                            "            store = Ext.StoreManager.lookup('Personas');",
+                                            "",
+                                            "        // Delete record from store",
+                                            "        store.remove(record);",
+                                            "",
+                                            "        // Hide display",
+                                            "        me.showView('selectMessage');",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "remove",
+                                    "designerId": "1a0ad67c-b7cd-4076-93de-081f07201068"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "glyph": null,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "iconCls": null,
+                                "itemId": "btnRefresh",
+                                "layout|flex": null,
+                                "text": "Actualizar",
+                                "tooltip": [
+                                    "'<span style=\"  font-weight:bold\"> Actualizar(Ctrl+A) </span>Actualiza elemento(s).'"
+                                ],
+                                "tooltipType": "title",
+                                "width": null
+                            },
+                            "name": "MyButton124",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "9198b143-ff19-4279-b6c2-a0ce8df431b9",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "refresh",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "refresh",
+                                    "designerId": "5e7ff73a-e5ea-40cb-8c4c-fdf6cb138ed0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onToolbarAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onToolbarAfterRender",
+                            "designerId": "8c8dc6a9-f8cf-4ebd-9015-d364c87b2388"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processList",
+                        "implHandler": [
+                            "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController');",
+                            "control.win='';",
+                            "var me = this;",
+                            "var aux = me.config.viewModel.type;",
+                            "control.getWinPanel(aux);",
+                            "var win = control.win;",
+                            "var vista = Ext.create('widget.'+win);",
+                            "form = vista.down('form').getForm();",
+                            "var results=[];",
+                            "columns = control.searchLabel(form.owner.items.items,results,true);",
+                            "control.formatForm(form.owner.items);",
+                            " control.configGridPanel(config,columns);",
+                            "return config;"
+                        ]
+                    },
+                    "name": "processList",
+                    "designerId": "b4e8e838-035f-4b4b-9ebf-670882cf43ee"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuFilterText": "Buscar"
+                    },
+                    "name": "MyGridFiltersPlugin1",
+                    "designerId": "abca45b3-0354-493b-8e9a-33d80b22aa50"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel1",
+                    "designerId": "aac680e6-a017-4c25-8503-381bed6de5ae"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "nomenclador.Banco"
+                    },
+                    "name": "MyPagingToolbar21",
+                    "designerId": "619fbc23-8b7a-47fe-99a6-a49ba0651999"
+                }
+            ]
+        }
+    ]
+}

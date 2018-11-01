@@ -18,10 +18,10 @@ class Migration_create_table_crm extends CI_Migration {
          $this->dbforge->drop_table('crm_tipocontactocontacto',TRUE);
          $this->dbforge->drop_table('crm_entidadcontacto',TRUE);
         $this->dbforge->drop_table('nomenclador_tipocontacto',TRUE);
+        $this->dbforge->drop_table('crm_cuentabancariacliente',TRUE);
         $this->dbforge->drop_table('nomenclador_cuentabancaria',TRUE);
         $this->dbforge->drop_table('nomenclador_banco',TRUE);
         $this->dbforge->drop_table('nomenclador_tipobanco',TRUE);
-        $this->dbforge->drop_table('crm_cuentabancariacliente',TRUE);
         $this->dbforge->drop_table('crm_cliente',TRUE);
         $this->dbforge->drop_table('crm_proveedor',TRUE);
         $this->dbforge->drop_table('crm_oferente',TRUE);
@@ -45,9 +45,9 @@ class Migration_create_table_crm extends CI_Migration {
                                 'constraint' => '100',
                                 'null' => TRUE
                         ),
-                        'foto' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
+                          'foto' => array(
+                                'type' => 'TEXT',
+                                 'default' => '', 
                                 'null' => TRUE
                         ),
                         'direccion' => array(
@@ -184,9 +184,9 @@ class Migration_create_table_crm extends CI_Migration {
                                 'unique' => TRUE,
                                 'null' => FALSE,
                         ),  
-                                 'foto' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
+                              'foto' => array(
+                                'type' => 'TEXT',
+                                 'default' => '', 
                                 'null' => TRUE
                         ),
                                     'direccion' => array(
@@ -204,42 +204,37 @@ class Migration_create_table_crm extends CI_Migration {
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'unique' => TRUE,
-                                'null' => FALSE,
+                                'null' => TRUE,
                         ), 
                                           'fax' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'unique' => TRUE,
-                                'null' => FALSE,
+                                'null' => TRUE,
                         ),      'telex' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'unique' => TRUE,
-                                'null' => FALSE,
+                                'null' => TRUE,
                         ), 
                                 'swift_code' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'unique' => TRUE,
-                                'null' => FALSE,
+                                'null' => TRUE,
+                                ),
                                   'presidente' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'unique' => TRUE,
-                                'null' => FALSE,
-                        ),      'codigo_nit' => array(
+                                'null' => TRUE,
+                        ),     
+                                'web' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'unique' => TRUE,
-                                'null' => FALSE,
-                        ), 
-                                       'web' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'unique' => TRUE,
-                                'null' => FALSE,
-                        ), 
-                                ),'pais_id' => array(
+                                'null' => TRUE
+                       
+                         ),     'pais_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => TRUE,
@@ -306,11 +301,7 @@ class Migration_create_table_crm extends CI_Migration {
                                 'constraint' => '100',
                                 'null' => FALSE,
                         ),  
-                                 'representante' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => TRUE
-                        ) ,
+                                
                                 
                                     'descripcion' => array(
                                 'type' => 'VARCHAR',
@@ -348,7 +339,7 @@ class Migration_create_table_crm extends CI_Migration {
                                 'constraint' => 100,
                                 'unsigned' => TRUE,
                         ),
-                                'titular' => array(
+                                'nombre' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => FALSE,
@@ -368,6 +359,16 @@ class Migration_create_table_crm extends CI_Migration {
                                 'moneda_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
+                                'null' => FALSE,
+                        ),  
+                                        'activo' => array(
+                                'type' => 'INT',
+                                'constraint' => '1',
+                                'default' => '0'
+                   ),  
+                                          'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255',
                                 'null' => FALSE,
                         ),  
                          'date_created' => array(
@@ -407,11 +408,7 @@ class Migration_create_table_crm extends CI_Migration {
                                 'constraint' => '100',
                                 'null' => FALSE,
                         ),  
-                                 'representante' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => TRUE
-                        ) ,
+                                 
                                  
                                     'descripcion' => array(
                                 'type' => 'VARCHAR',
@@ -455,11 +452,6 @@ class Migration_create_table_crm extends CI_Migration {
                                 'constraint' => '100',
                                 'null' => FALSE,
                         ),  
-                                 'representante' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => TRUE
-                        ) ,
                                  
                                     'descripcion' => array(
                                 'type' => 'VARCHAR',
@@ -506,7 +498,9 @@ class Migration_create_table_crm extends CI_Migration {
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => FALSE,
-                   ),  
+                        ),  
+                                 
+                                 
                          'date_created' => array(
                                 'type' => 'TIMESTAMP',  
                                 'null' => FALSE,    
@@ -533,6 +527,50 @@ class Migration_create_table_crm extends CI_Migration {
                 $this->dbforge->add_field('CONSTRAINT cliente_id FOREIGN KEY (cliente_id) REFERENCES crm_cliente (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
                 $this->dbforge->create_table('crm_cuentabancariacliente',TRUE);
+
+
+                  $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ), 
+                                'entidad_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                        ),  
+                                'contacto_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                   ),  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        ),
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        )
+
+                ));
+                $this->dbforge->add_key('entidad_id');
+                $this->dbforge->add_field('CONSTRAINT entidad_entidadcontacto_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_key('persona_id');
+                $this->dbforge->add_field('CONSTRAINT crm_contacto_id FOREIGN KEY (contacto_id) REFERENCES crm_contacto (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_key('id', TRUE);  
+                $this->dbforge->create_table('crm_entidadcontacto',TRUE);
 
                   
 
