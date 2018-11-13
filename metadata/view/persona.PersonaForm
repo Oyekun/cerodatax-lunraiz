@@ -333,6 +333,7 @@
                                                 "fieldLabel": "Foto",
                                                 "invalidText": "El valor del elemento es invalido",
                                                 "margin": "10 0 0 0",
+                                                "maxLength": 255,
                                                 "name": "foto",
                                                 "reference": null
                                             },

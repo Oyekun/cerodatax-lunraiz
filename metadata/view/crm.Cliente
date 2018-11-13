@@ -54,8 +54,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "nombre",
-                        "text": "Nombre"
+                        "dataIndex": "apellidos",
+                        "text": "Apellidos"
                     },
                     "name": "MyColumn34",
                     "designerId": "3ac20de9-fd07-4918-9130-1656688ee298"

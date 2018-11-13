@@ -55,7 +55,7 @@
             "designerId": "e6e7fd7c-bb0e-4ee9-beb3-96e3144dcaf7"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -65,7 +65,7 @@
                 "designer|displayName": "nombre",
                 "name": "nombre"
             },
-            "name": "MyField44",
+            "name": "MyString32",
             "designerId": "ba0bdf2c-9078-48d7-8918-2c386e7f6897"
         },
         {

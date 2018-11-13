@@ -1,0 +1,15 @@
+[{
+   		id:'34642510-bc9c-513e-be32-76f8eabd1027',nombre:'Tipo de Banco',descripcion:'Para la gestion de los tipos de bancos',icono_id:'',orden:'0',modulo_id:'fd35b898-efd3-5ed0-9b6e-2cf525fc1692',id_menu:'TipoBanco',color:'black',tabpanel:'0',escritorio:'0',activo:'1',date_created:'2018-11-03 00:42:48',date_updated:'2018-11-03 00:42:48',created_from_ip:'::1',updated_from_ip:'::1',
+   },{
+   		id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',nombre:'Contacto',descripcion:'Muestra los menu principales que son Contacto',icono_id:'2c7b926e-0eb9-5bd0-959f-d45de62bfd74',orden:'0',modulo_id:'36031921-3ccc-5899-8dfa-daf026c445be',id_menu:'Contacto',color:'lightgreen',tabpanel:'1',escritorio:'1',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-11-03 00:37:53',created_from_ip:'127.0.0.1',updated_from_ip:'::1',
+   },{
+   		id:'6330f38e-3ec6-5996-8ee0-0942dbb429fe',nombre:'Banco',descripcion:'Para la gestión de los bancos.',icono_id:'',orden:'1',modulo_id:'fd35b898-efd3-5ed0-9b6e-2cf525fc1692',id_menu:'Banco',color:'black',tabpanel:'1',escritorio:'0',activo:'1',date_created:'2018-11-03 00:44:31',date_updated:'2018-11-03 01:01:15',created_from_ip:'::1',updated_from_ip:'::1',
+   },{
+   		id:'805ed33d-2fb0-5fef-a43d-3bb7cd1e9b22',nombre:'Venta',descripcion:'El menú Venta se visualiza las Ventas de los Clientes',icono_id:'56600bcc-593c-5541-b6be-d638152b38bb',orden:'1',modulo_id:'36031921-3ccc-5899-8dfa-daf026c445be',id_menu:'Venta',color:'forestgreen',tabpanel:'1',escritorio:'1',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-26 04:45:50',created_from_ip:'127.0.0.1',updated_from_ip:'::1',
+   },{
+   		id:'a169eb6c-d986-51ed-8c2e-726a29b7754f',nombre:'RRHH',descripcion:'El menú RRHH se utiliza para gestionar las personas y cargos de las mismas.',icono_id:'98e9226f-5740-5405-b8a1-d673826112b8',orden:'2',modulo_id:'8b4b13b3-7004-5afc-ba9f-3ce13e002a83',id_menu:'RRHH',color:'lightsalmon',tabpanel:'1',escritorio:'1',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-26 04:48:49',created_from_ip:'127.0.0.1',updated_from_ip:'::1',
+   },{
+   		id:'6cb7405c-d0e2-5950-a889-637fc7c24f19',nombre:'Compra',descripcion:'El menú Compra se visualiza las Compras de los Clientes',icono_id:'f87f26e3-d8ae-57cf-9b26-d11e83a4b2af',orden:'2',modulo_id:'36031921-3ccc-5899-8dfa-daf026c445be',id_menu:'Compra',color:'crimson',tabpanel:'1',escritorio:'1',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-26 04:46:13',created_from_ip:'127.0.0.1',updated_from_ip:'::1',
+   },{
+   		id:'71552098-c033-5581-ae74-db08e4004c04',nombre:'Actualizaciones',descripcion:'El menú Actualización se utiliza para actualizar las funcionalidades y características del Sistema.',icono_id:'5e6ac786-6683-53b2-9e78-1f0888b484fb',orden:'3',modulo_id:'8b4b13b3-7004-5afc-ba9f-3ce13e002a83',id_menu:'Actualizaciones',color:'lightskyblue',tabpanel:'0',escritorio:'1',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-11-03 00:38:41',created_from_ip:'127.0.0.1',updated_from_ip:'::1',
+   },]

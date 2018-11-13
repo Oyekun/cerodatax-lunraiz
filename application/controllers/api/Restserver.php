@@ -185,9 +185,11 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
         $datos =  Array();  
 		$datos['esquema']=$this->_args['esquema'];
 		$datos['model']=$this->_args['model'];
-$result=0;
+
+        $result=0;
         if($this->ion_auth->logged_in()) 
-		$result = $this->Api_model->row_delete($datos,$id); 
+		if(!isset($this->_args['grid']))
+        $result = $this->Api_model->row_delete($datos,$id); 
           
         // Validate the id.
 		$success= FALSE;

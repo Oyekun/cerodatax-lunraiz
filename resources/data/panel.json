@@ -1,0 +1,25 @@
+[{
+   		id:'34642510-bc9c-513e-be32-76f8eabd1027',nombre:'Tipo de Banco',orden:'0',id_contenedor:'TipoBanco',alias:'nomenclador',menu_id:'34642510-bc9c-513e-be32-76f8eabd1027',activo:'1',date_created:'2018-11-03 00:46:24',date_updated:'2018-11-03 00:57:37',created_from_ip:'::1',updated_from_ip:'::1',
+   },{
+   		id:'6330f38e-3ec6-5996-8ee0-0942dbb429fe',nombre:'Banco',orden:'0',id_contenedor:'Banco',alias:'nomenclador',menu_id:'6330f38e-3ec6-5996-8ee0-0942dbb429fe',activo:'1',date_created:'2018-11-03 00:50:03',date_updated:'2018-11-03 01:06:56',created_from_ip:'::1',updated_from_ip:'::1',
+   },{
+   		id:'6cb7405c-d0e2-5950-a889-637fc7c24f19',nombre:'Compra',orden:'0',id_contenedor:'Compra',alias:'crm',menu_id:'6cb7405c-d0e2-5950-a889-637fc7c24f19',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'71552098-c033-5581-ae74-db08e4004c04',nombre:'Actualizaciones',orden:'0',id_contenedor:'Actualizacion',alias:'actualizacion',menu_id:'71552098-c033-5581-ae74-db08e4004c04',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'805ed33d-2fb0-5fef-a43d-3bb7cd1e9b22',nombre:'Venta',orden:'0',id_contenedor:'Venta',alias:'crm',menu_id:'805ed33d-2fb0-5fef-a43d-3bb7cd1e9b22',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'88472c67-57f1-59c4-9d05-ecf2f21a210c',nombre:'Personas',orden:'0',id_contenedor:'Persona',alias:'persona',menu_id:'a169eb6c-d986-51ed-8c2e-726a29b7754f',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',nombre:'Contacto',orden:'0',id_contenedor:'Contacto',alias:'crm',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'2bb8ca21-5b32-5d59-be07-7089ee423311',nombre:'Cuentas Bancarias',orden:'1',id_contenedor:'CuentaBancaria',alias:'nomenclador',menu_id:'6330f38e-3ec6-5996-8ee0-0942dbb429fe',activo:'1',date_created:'2018-11-03 00:50:42',date_updated:'2018-11-03 01:08:25',created_from_ip:'::1',updated_from_ip:'::1',
+   },{
+   		id:'c0df395a-27ba-57cf-8e06-5a8f99ded46b',nombre:'Cliente',orden:'1',id_contenedor:'Cliente',alias:'crm',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'e5c47224-e495-5d73-acea-7999ef544331',nombre:'Cargos',orden:'1',id_contenedor:'Cargo',alias:'persona',menu_id:'a169eb6c-d986-51ed-8c2e-726a29b7754f',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'d5ad60df-b773-56ee-859d-472d2a544926',nombre:'Proveedor',orden:'2',id_contenedor:'Proveedor',alias:'crm',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'71d89798-8d2b-57f6-ba9d-1dfdde27088d',nombre:'Oferente',orden:'3',id_contenedor:'Oferente',alias:'crm',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },]

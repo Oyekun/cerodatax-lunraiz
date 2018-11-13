@@ -556,7 +556,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "fieldLabel": "Descripcón",
+                                "fieldLabel": "Descripción",
                                 "maxLength": 255,
                                 "name": "description"
                             },
@@ -589,12 +589,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "hidden": true,
-                                "store": "configuracion.Modulo",
-                                "title": "Modulos"
+                                "addToolText": "Busca un elemento para adicionar",
+                                "emptyText": "No existen elementos que mostrar",
+                                "fieldName": "nombre",
+                                "height": 200,
+                                "removeRowTip": "Elimina este elemento",
+                                "store": "seguridad.RolMenu",
+                                "title": "Menus"
                             },
-                            "name": "MyMultiSelector",
-                            "designerId": "fc1f94a9-fe80-4907-9d5c-ee8abb801852",
+                            "name": "MyMultiSelector4",
+                            "designerId": "a5baff03-14ee-4705-9cf0-0a59aa7bfbb6",
                             "cn": [
                                 {
                                     "type": "Ext.view.MultiSelectorSearch",
@@ -604,11 +608,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "field": "modulo",
-                                        "store": "configuracion.Modulo"
+                                        "field": "nombre",
+                                        "searchText": "Buscar...",
+                                        "store": "configuracion.Menu"
                                     },
-                                    "name": "MyMultiSelectorSearch",
-                                    "designerId": "95cfac76-3efe-4366-890f-63f37c03504f"
+                                    "name": "MyMultiSelectorSearch2",
+                                    "designerId": "4948b74a-b92c-436c-8672-2b1b4dbd4a7c"
                                 },
                                 {
                                     "type": "Ext.view.Table",
@@ -618,10 +623,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "deferEmptyText": false
+                                        "deferEmptyText": false,
+                                        "designer|displayName": "nombre"
                                     },
-                                    "name": "MyTable1",
-                                    "designerId": "e7c75de5-5d57-43fb-9fb5-49208ab5118e"
+                                    "name": "MyTable3",
+                                    "designerId": "5e1ac1c0-cc3e-4dab-a901-01ceefe17e9e"
                                 }
                             ]
                         },
@@ -766,25 +772,25 @@
                 "fn": "processSeguridadRol",
                 "implHandler": [
                     "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
-                    "    result = [],",
-                    "    columns=[],",
-                    "    resultgrid = [];",
-                    "result = control.searchComponent('form', this, result);",
-                    "resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
+                    "            result = [],",
+                    "            columns=[],",
+                    "            resultgrid = [];",
+                    "        result = control.searchComponent('form', this, result);",
+                    "        resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
                     "",
-                    "if(result.length > 0)",
-                    "{var formPanel = result[0],",
-                    "",
-                    "",
-                    "    columns = control.searchLabel(formPanel.items,columns,true);",
-                    "control.formatForm(formPanel);",
-                    " if(resultgrid.length > 0)",
-                    "     control.configGridPanel(resultgrid[0],columns);",
-                    "",
-                    "}",
+                    "        if(result.length > 0)",
+                    "        {var formPanel = result[0],",
                     "",
                     "",
-                    "return config;"
+                    "            columns = control.searchLabel(formPanel.items,columns,true);",
+                    "        control.formatForm(formPanel);",
+                    "         if(resultgrid.length > 0)",
+                    "             control.configGridPanel(resultgrid[0],columns);",
+                    "         control.createDetails(this,columns);",
+                    "        }",
+                    "",
+                    "",
+                    "        return config;"
                 ]
             },
             "name": "processSeguridadRol",

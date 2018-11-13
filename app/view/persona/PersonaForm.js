@@ -153,6 +153,7 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                                         name: 'foto',
                                                         invalidText: 'El valor del elemento es invalido',
                                                         emptyText: 'Seleccione',
+                                                        maxLength: 255,
                                                         buttonText: 'Examinar...',
                                                         listeners: {
                                                             change: 'onFilefieldChange'

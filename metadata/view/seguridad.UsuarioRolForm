@@ -56,7 +56,7 @@
                     "userConfig": {
                         "dock": null,
                         "fieldLabel": "Usuario",
-                        "name": "identity",
+                        "name": "username",
                         "value": null,
                         "width": 380
                     },
@@ -74,7 +74,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "store": "seguridad.Rol",
+                        "addToolText": "Busca un elemento para adicionar",
+                        "emptyText": "No existen elementos que mostrar",
+                        "removeRowTip": "Elimina este elemento",
+                        "store": "seguridad.UsuarioRol",
                         "title": "Roles"
                     },
                     "name": "MyMultiSelector2",
@@ -88,6 +91,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "field": "name",
+                                "searchText": "Buscar...",
                                 "store": "seguridad.Rol"
                             },
                             "name": "MyMultiSelectorSearch2",

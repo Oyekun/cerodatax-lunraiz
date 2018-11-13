@@ -9,7 +9,8 @@
         "designer|userAlias": "rol",
         "designer|userClassName": "seguridad.Rol"
     },
-    "designerId": "c417d64f-367e-48da-94d9-80467280fd4a",
+    "name": "estructura.EntidadArea2",
+    "designerId": "3cfe9357-30df-4d07-9b90-84903db026e9",
     "cn": [
         {
             "type": "Ext.data.field.String",
@@ -19,10 +20,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "id",
                 "name": "id"
             },
-            "name": "MyString6",
-            "designerId": "56a9003e-d0f9-4bef-9f1b-b5736de3c5f5"
+            "name": "MyString58",
+            "designerId": "08149544-be47-47b0-90f3-6d29d0430fa9"
         },
         {
             "type": "Ext.data.field.String",
@@ -32,10 +34,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "name",
                 "name": "name"
             },
-            "name": "MyString7",
-            "designerId": "08deae07-62df-4735-a07f-c27cc9ec016c"
+            "name": "MyString27",
+            "designerId": "7bc443e1-783c-49ce-992e-2135d0506384"
         },
         {
             "type": "Ext.data.field.String",
@@ -45,10 +48,61 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "description",
                 "name": "description"
             },
-            "name": "MyString97",
-            "designerId": "7f0f0dc4-aa88-49f3-b9f4-687b4f81f790"
+            "name": "MyString20",
+            "designerId": "08ac589d-203b-4463-a1c4-80b9dc5fb568"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{add:{url: 'index.php/api/restserver/rests',method: 'POST'},show: {url: 'index.php/api/restserver/rests/',method: 'GET'},save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}}"
+                ],
+                "extraParams": [
+                    "{ model: 'rol',",
+                    "esquema: 'seguridad'}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy4",
+            "designerId": "66292ce1-6494-456d-8a43-5505a09664e8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "69681d76-79db-4932-9f02-4ec59bdb9e91"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "96066ead-0a8b-47f2-80c4-c71488596cce"
+                }
+            ]
         }
     ]
 }

@@ -38,6 +38,7 @@ Ext.define('cerodatax.model.seguridad.UsuarioRol', {
             name: 'user_id'
         },
         {
+            type: 'string',
             name: 'nombre'
         },
         {

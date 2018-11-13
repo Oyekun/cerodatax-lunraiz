@@ -33,10 +33,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "nombre"
+                "name": "descripcion"
             },
             "name": "MyString71",
             "designerId": "5b0a6c99-74a2-4893-8601-a9f7ad241cba"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString38",
+            "designerId": "b6bebba3-59e4-4926-be0c-710f4df27c4b"
         },
         {
             "type": "Ext.data.field.Field",

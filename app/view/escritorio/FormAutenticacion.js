@@ -68,6 +68,7 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                     fieldLabel: 'Usuario',
                     name: 'identity',
                     allowBlank: false,
+                    blankText: 'Este campo es obligatorio',
                     selectOnFocus: true
                 },
                 {
@@ -76,7 +77,8 @@ Ext.define('cerodatax.view.escritorio.FormAutenticacion', {
                     fieldLabel: 'Contraseña',
                     name: 'password',
                     inputType: 'password',
-                    allowBlank: false
+                    allowBlank: false,
+                    blankText: 'Este campo es obligatorio'
                 },
                 {
                     xtype: 'checkboxfield',

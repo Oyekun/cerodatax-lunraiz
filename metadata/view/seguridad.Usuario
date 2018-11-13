@@ -16,11 +16,12 @@
         "layout": "border",
         "shrinkWrap": 0,
         "title": null,
-        "width": 865
+        "width": 827
     },
-    "designerId": "65c90145-665d-44f3-b403-302e4b1c8dff",
-    "viewControllerInstanceId": "c4f5c030-a4ce-42d0-8fb6-f21cc91c9c86",
-    "viewModelInstanceId": "2d6aefd7-2cac-4f05-a196-efd74fe770f6",
+    "name": "seguridad.Rol2",
+    "designerId": "aeb631e1-ee03-4927-8eea-389cfe4a8b61",
+    "viewControllerInstanceId": "b99f2be8-1600-4edd-a133-5e95394a937f",
+    "viewModelInstanceId": "77b59c18-24bd-4b49-8288-ff014ba77876",
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -43,7 +44,7 @@
                 "title": ""
             },
             "name": "MyGridPanel3",
-            "designerId": "5cfe732c-99b5-4e20-b70a-b1fdc601f508",
+            "designerId": "4bf10d2d-fc8d-454a-b393-71bf2bbd90f3",
             "cn": [
                 {
                     "type": "Ext.grid.column.Column",
@@ -514,7 +515,7 @@
                 "width": 150
             },
             "name": "MyPanel11",
-            "designerId": "41dd833f-58ce-44c4-884b-c8ba585293bc",
+            "designerId": "33dae5e9-8162-401e-9789-4389c802f7de",
             "cn": [
                 {
                     "type": "Ext.panel.Panel",
@@ -907,8 +908,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "checked": true,
                                 "fieldLabel": "Activo",
-                                "hidden": true,
+                                "hidden": null,
                                 "name": "active"
                             },
                             "name": "MyCheckbox5",
@@ -1217,31 +1219,29 @@
                 "fn": "processSeguridadUsuario",
                 "implHandler": [
                     "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
-                    "    result = [],",
-                    "    columns=[],",
-                    "    resultgrid = [];",
-                    "result = control.searchComponent('form', this, result);",
+                    "            result = [],",
+                    "            columns=[],",
+                    "            resultgrid = [];",
+                    "        result = control.searchComponent('form', this, result);",
+                    "        resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
                     "",
-                    "resultgrid = control.searchComponent('gridpanel', this, resultgrid);",
-                    "",
-                    "if(result.length > 0)",
-                    "{var formPanel = result[0],",
-                    "",
-                    "",
-                    "    columns = control.searchLabel(formPanel.items,columns,true);",
-                    " control.formatForm(formPanel);",
-                    "",
-                    " if(resultgrid.length > 0)",
-                    "     control.configGridPanel(resultgrid[0],columns);",
-                    " control.createDetails(this,columns);",
-                    "}",
+                    "        if(result.length > 0)",
+                    "        {var formPanel = result[0],",
                     "",
                     "",
-                    "return config;"
+                    "            columns = control.searchLabel(formPanel.items,columns,true);",
+                    "        control.formatForm(formPanel);",
+                    "         if(resultgrid.length > 0)",
+                    "             control.configGridPanel(resultgrid[0],columns);",
+                    "         control.createDetails(this,columns);",
+                    "        }",
+                    "",
+                    "",
+                    "        return config;"
                 ]
             },
             "name": "processSeguridadUsuario",
-            "designerId": "292ea44c-efa3-438f-a1f8-088cf136e7e5"
+            "designerId": "b7af6152-a0bb-4cfc-bca0-04b76a5913f2"
         }
     ]
 }

@@ -18,8 +18,8 @@ Ext.define('cerodatax.view.configuracion.Menu', {
     alias: 'widget.configuracionmenu',
 
     requires: [
-        'cerodatax.view.seguridad.UsuarioViewModel',
-        'cerodatax.view.seguridad.UsuarioViewController',
+        'cerodatax.view.configuracion.MenuViewModel',
+        'cerodatax.view.configuracion.MenuViewController',
         'Ext.grid.Panel',
         'Ext.grid.column.Column',
         'Ext.button.Button',
@@ -36,9 +36,9 @@ Ext.define('cerodatax.view.configuracion.Menu', {
         'Ext.form.field.Display'
     ],
 
-    controller: 'seguridadusuario',
+    controller: 'configuracionmenu',
     viewModel: {
-        type: 'seguridadusuario'
+        type: 'configuracionmenu'
     },
     controller: 'nomencladorcrud',
     height: 528,

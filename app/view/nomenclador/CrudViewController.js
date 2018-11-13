@@ -601,6 +601,39 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                               }});}*/
             //var result = [];
             // result = me.searchComponent('combobox',item,result);
+           if(item.xtype=='multiselector')
+            {
+                if(record!==null)
+                    item.store.proxy.extraParams.id_asociado =record.data.id;
+                else
+                    item.store.proxy.extraParams.id_asociado ='';
+                item.store.proxy.extraParams.detalles ='edit';
+                item.store.proxy.extraParams.combo ='combo';
+               // item.store.load();
+
+                var store = Ext.data.StoreManager.lookup(item.config.search.store);
+
+                store.proxy.extraParams.id_asociado ='';
+
+                store.proxy.extraParams.detalles ='edit';
+                store.proxy.extraParams.grid =false;
+                store.proxy.extraParams.combo ='combo';
+
+                  item.store.load({   scope: this,
+                                           callback: function (records, operation, success) {
+
+                                                        console.log(records)
+
+                                                 store.load({   scope: this,
+                                           callback: function (recordss, operation, success) {
+
+                                               console.log(recordss)
+                                           }});
+                                           }});
+
+
+            }
+
             var objcombo = item;
             if(objcombo.xtype=='combobox')
             {
@@ -812,6 +845,28 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
             }
+
+
+             if(item.xtype=='multiselector')
+            {
+
+                    item.store.proxy.extraParams.id_asociado ='';
+                item.store.proxy.extraParams.detalles ='edit';
+                item.store.proxy.extraParams.combo ='combo';
+                item.store.load();
+
+                var store = Ext.data.StoreManager.lookup(item.config.search.store);
+
+                store.proxy.extraParams.id_asociado ='';
+
+                store.proxy.extraParams.detalles ='edit';
+                store.proxy.extraParams.grid =false;
+                store.proxy.extraParams.combo ='combo';
+                store.load();
+
+
+            }
+
                 if(focus===false)
                 if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
                 {item.focus('', 10);
@@ -1003,13 +1058,13 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      nombre = item.store.storeId;
          });
 
-          var windows = button.up('window');
+         var windows = button.up('window');
          var form,
-           mask;
+             mask;
          if(windows)
          {form = windows.down('form').getForm();
           mask = windows.down('form');
-         // mask.mask('Guardando...');
+          // mask.mask('Guardando...');
          }
          else
          {form = this.getReferences().form.getForm();
@@ -1017,196 +1072,283 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
          }
          var record = form.getRecord(),
-         store = Ext.StoreManager.lookup(nombre);
+             store = Ext.StoreManager.lookup(nombre);
          var me = this;
 
-        var record_foto = [];
+         var record_foto = [];
          // Valid
+
          if (form.isValid()) {
-              mask.mask('Guardando...');
-         //form.updateRecord();
+             mask.mask('Guardando...');
+             //form.updateRecord();
              // Update associated record with values
 
              var nombre='';
              var campo = '';
-        var asociados = [];
+             var asociados = [];
              form.owner.items.items.forEach(function (item) {
-                  var resultree = [];
-                  resultree = me.searchComponent('treepanel',item,resultree);
+                 var resultree = [];
+                 resultree = me.searchComponent('treepanel',item,resultree);
                  var checked = function (v) {
 
-                           asociados.push({id: v.data.id,model: v.data.model});
-                       };
-                  for(var comptree in resultree)
-                  {var objtree = resultree[comptree];
-                   if(objtree.xtype=='treepanel')
-                   {
+                     asociados.push({id: v.data.id,model: v.data.model});
+                 };
+                 for(var comptree in resultree)
+                 {var objtree = resultree[comptree];
+                  if(objtree.xtype=='treepanel')
+                  {
 
-                       var checkedstree =objtree.getChecked();
-                       checkedstree.forEach(checked);
+                      var checkedstree =objtree.getChecked();
+                      checkedstree.forEach(checked);
 
 
 
-                   }
                   }
-                        var resultImage = [];
-                  resultImage = me.searchComponent('image',item,resultImage);
-                  for(var compImage in resultImage)
-                  {var objImage = resultImage[compImage];
-                   if(objImage.xtype=='image')
-                   {
-                       var auxImage = objImage.itemId;
+                 }
 
-                       if(auxImage)
-        if(record.data[auxImage]!==undefined)
-                           record_foto[auxImage]=objImage.src;
+                 var resultmulti = [];
+                 resultmulti = me.searchComponent('multiselector',item,resultmulti);
+                 var checkedmulti = function (v) {
+                     var modelo = v.store.config.proxy.extraParams.model;
+                     asociados.push({id: v.data.id,model: modelo});
+                 };
+                 for(var compmulti in resultmulti)
+                 {var objmulti = resultmulti[compmulti];
+
+                  var checkedsmulti =objmulti.store.data.items;
+                  checkedsmulti.forEach(checkedmulti);
+
+
+                 }
+
+                 var resultImage = [];
+                 resultImage = me.searchComponent('image',item,resultImage);
+                 for(var compImage in resultImage)
+                 {var objImage = resultImage[compImage];
+                  if(objImage.xtype=='image')
+                  {
+                      var auxImage = objImage.itemId;
+
+                      if(auxImage)
+                          if(record.data[auxImage]!==undefined)
+                              record_foto[auxImage]=objImage.src;
 
 
 
 
-                   }
                   }
+                 }
 
-                  var result = [];
-                  result = me.searchComponent('combobox',item,result);
-                  for(var comp in result)
-                  {var obj = result[comp];
-                   if(obj.xtype=='combobox')
-                   {
-                       var aux1 = obj.name.replace('_id','');
+                 var result = [];
+                 result = me.searchComponent('combobox',item,result);
+                 for(var comp in result)
+                 {var obj = result[comp];
+                  if(obj.xtype=='combobox')
+                  {
+                      var aux1 = obj.name.replace('_id','');
 
                       // if(obj.inputAttrTpl)
-            //delete(record.data[aux]); Hay que arreglar en la BD que tenga relacion con el 2do nivel Ejp usuario_entidad_organismo
+                      //delete(record.data[aux]); Hay que arreglar en la BD que tenga relacion con el 2do nivel Ejp usuario_entidad_organismo
 
-                       if(aux1!=obj.name)
+                      if(aux1!=obj.name)
 
-                           delete(record.data[aux1]);//=obj.rawValue;
-
-
+                          delete(record.data[aux1]);//=obj.rawValue;
 
 
-                   }
+
+
                   }
+                 }
 
                  if(item.name){
 
-                 if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
+                     if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
                      { nombre = item.value;
                       campo = item.name;}
-                   var      auxname = item.name.replace('_id','');
+                     var      auxname = item.name.replace('_id','');
 
 
-                // if(auxname!=item.name)
+                     // if(auxname!=item.name)
 
-                    // delete(record.data[auxname]); //=item.rawValue;
+                     // delete(record.data[auxname]); //=item.rawValue;
                  }});
+        var write = function(store1, operation, eOpts ) {
 
+
+
+
+                         if(flag)
+                         {var json = Ext.JSON.decode(operation._response.responseText);
+
+                          if (json.id !== null &&flag)
+                          {flag = false;
+
+
+
+                           store.proxy.extraParams.parent_id='';
+                           store.load({
+                               callback: function(s,o,e){
+
+                                   if(windows)
+                                       windows.close();
+                                   else
+                                   {mask.unmask(); me.showView('selectMessage');}
+                                   me.showToast(json.message,'info');
+
+
+                                   var tree =  Ext.ComponentQuery.query('panel treepanel');
+
+                                   tree.forEach(function (item) {
+
+                                       item.getSelectionModel().deselectAll();
+                                   });
+                                   var grid =  Ext.ComponentQuery.query('panel gridpanel');
+
+                                   grid.forEach(function (item) {
+
+                                       item.getSelectionModel().deselectAll();
+                                   });
+                                   var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
+                                   botonesEditar.forEach(function (item) {
+                                       item.setDisabled(true);
+                                   });
+                                   var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
+                                   botones.forEach(function (item) {
+                                       item.setDisabled(true);
+                                   });
+                                   var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
+                                   btnAssociate.forEach(function (item) {
+                                       item.setDisabled(true);
+                                   });
+
+                               }
+                           });
+
+
+                          }
+                         }
+
+                     };
              // Add to store if new record
 
-        if(nombre!=='')
-             var dt = store.findRecord(campo,nombre,0,false,false,true);
+             if(nombre!=='')
+                 var dt = store.findRecord(campo,nombre,0,false,false,true);
 
-            if(asociados.length>0)
+             if(asociados.length>0)
                  record.data.asociados=asociados;//Ext.JSON.encode(asociados);
 
-        store.proxy.extraParams.parent_id='save';
+             store.proxy.extraParams.parent_id='save';
              if (record.phantom) {
 
 
 
 
 
-                         if(dt===null)//para adicionar
-                         {form.updateRecord();
-                           for(var foto in record_foto)
-                                 {
-                                   record.data[foto]  = record_foto[foto];
-                                 }
-                             if(record.data.parentId===null)
+                 if(dt===null)//para adicionar
+                 {form.updateRecord();
+                  for(var foto in record_foto)
+                  {
+                      record.data[foto]  = record_foto[foto];
+                  }
+                  if(record.data.parentId===null)
 
-                                         record.data.leaf = true;
-                          store.add(record);
-                          var flag=true;
-                          store.commitChanges();
+                      record.data.leaf = true;
+                  store.add(record);
+                  var flag=true;
+                  store.commitChanges();
 
-                         }
-                         else////para modificar
-                             if(nombre!=='' &&nombre ===dt.data[campo])
-                                {  mask.unmask();
-                                   me.showToast('El elemento ya existe.','error');
-                                   var flag=false;
-                                }
-
-                         else{
-                             form.updateRecord();
-                              for(var foto in record_foto)
-                                 {
-                                   record.data[foto]  = record_foto[foto];
-                                 }
-                             if(record.data.parentId===null)
-
-                                         record.data.leaf = true;
-                             store.add(record);
-                             var flag=true;
-                             store.commitChanges();
-                         }
-                     }else{
-
-                         if(dt===null)//para adicionar
-                         {form.updateRecord();
-                           for(var foto in record_foto)
-                                 {
-                                   record.data[foto]  = record_foto[foto];
-                                 }
-                             if(record.data.parentId===null)
-
-                                         record.data.leaf = true;
-                          //store.add(record);
-                          var flag=true;
-                         // store.commitChanges();
-
-                         }else
-                             if(nombre!=='' &&nombre ===dt.data[campo])//para modificar
-                             {//console.log(dt)
-
-                                 mask.unmask();
-                                 if(dt.data.id===record.data.id)
-                                     {
-                                      var flag=true;
-                                      for(var foto in record_foto)
-                                 {
-                                   record.data[foto]  = record_foto[foto];
-                                 }
-                                         form.updateRecord(record);
-                                      //console.log(form)
-
-                                         me.showView('selectMessage');
-        //me.showToast('El elemento ha sido modificado satisfactoriamente.','info');
-                                     }
-                                     else
-                                  {me.showToast('El elemento ya existe.','error');
-                             var flag=false;
-                                  }
-                             }
-
-                         else{
-                             form.updateRecord();
-                              for(var foto in record_foto)
-                                 {
-                                   record.data[foto]  = record_foto[foto];
-                                 }
-                             if(record.data.parentId===null)
-
-                                         record.data.leaf = true;
-                             var flag=true;
-                             store.commitChanges();
-
-                         }
-
-
+                 }
+                 else////para modificar
+                     if(nombre!=='' &&nombre ===dt.data[campo])
+                     {  mask.unmask();
+                      me.showToast('El elemento ya existe.','error');
+                      var flag=false;
                      }
 
-                     // Commit changes
+                 else{
+                     form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     if(record.data.parentId===null)
+
+                         record.data.leaf = true;
+                     store.add(record);
+                     var flag=true;
+                     store.commitChanges();
+                 }
+             }else{
+
+                 if(dt===null)//para adicionar
+                 {form.updateRecord();
+                  for(var foto in record_foto)
+                  {
+                      record.data[foto]  = record_foto[foto];
+                  }
+                  if(record.data.parentId===null)
+
+                      record.data.leaf = true;
+                  //store.add(record);
+                  var flag=true;
+                  // store.commitChanges();
+
+                 }else
+                     if(nombre!=='' &&nombre ===dt.data[campo])//para modificar
+                     {//console.log(dt)
+
+                         mask.unmask();
+                         if(dt.data.id===record.data.id)
+                         {
+                             var flag=true;
+                             for(var foto in record_foto)
+                             {
+                                 record.data[foto]  = record_foto[foto];
+                             }
+                             form.updateRecord(record);
+                             //console.log(form)
+        if(asociados.length>0)
+                             {
+                                  form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     flag= true;
+
+
+                                 store.commitChanges();
+                     record.save({success:write});
+
+                                 //me.showToast('El elemento ha sido modificado satisfactoriamente.','info');
+                             }
+                             me.showView('selectMessage');
+                             //
+                         }
+                         else
+                         {me.showToast('El elemento ya existe.','error');
+                          var flag=false;
+                         }
+                     }
+
+                 else{
+                     form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     if(record.data.parentId===null)
+
+                         record.data.leaf = true;
+                     var flag=true;
+                     store.commitChanges();
+
+                 }
+
+
+             }
+
+             // Commit changes
 
 
              store.on('write',fn = function(store, operation, eOpts ) {
@@ -1219,8 +1361,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   { this.load({
                       callback: function(s,o,e){
                           flag = false;
-                         mask.unmask();
-                        /*   Ext.MessageBox.show({
+                          mask.unmask();
+                          /*   Ext.MessageBox.show({
                        title: 'Información',
                        msg: json.message,
                        buttons: Ext.MessageBox.OK,
@@ -1245,10 +1387,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                           botonesEditar.forEach(function (item) {
                               item.setDisabled(true);
                           });
-                           var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-                                   btnAssociate.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
+                          var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
+                          btnAssociate.forEach(function (item) {
+                              item.setDisabled(true);
+                          });
                       }
                   });
 
@@ -1256,9 +1398,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   }
                   else{
 
-                       mask.unmask();
+                      mask.unmask();
 
-                       me.showToast(json.message,'error');
+                      me.showToast(json.message,'error');
 
 
                   }}
@@ -1312,6 +1454,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              var nombre='';
              var campo = '';
              var asociados = [];
+             var asociadosmulti = [];
              form.owner.items.items.forEach(function (item) {
                  var resultree = [];
                  resultree = me.searchComponent('treepanel',item,resultree);
@@ -1331,6 +1474,20 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                   }
                  }
+                 var resultmulti = [];
+                         resultmulti = me.searchComponent('multiselector',item,resultmulti);
+                         var checkedmulti = function (v) {
+         var modelo = v.store.config.proxy.extraParams.model;
+                             asociados.push({id: v.data.id,model: modelo});
+                         };
+                         for(var compmulti in resultmulti)
+                         {var objmulti = resultmulti[compmulti];
+
+                              var checkedsmulti =objmulti.store.data.items;
+                              checkedsmulti.forEach(checkedmulti);
+
+
+                         }
 
 
                  //Adicionando imagen base64 a los record fotos
@@ -1442,11 +1599,11 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                    store.proxy.extraParams.parent_id='';
                    store.load({
                        callback: function(s,o,e){
-                           mask.unmask();
+
                            if(windows)
                                windows.close();
                            else
-                               me.showView('selectMessage');
+                           {mask.unmask(); me.showView('selectMessage');}
                            me.showToast(json.message,'info');
 
 
@@ -1512,7 +1669,16 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      {
                          //store.remove(record);
                          if(dt.data.id===record.data.id)
-                         {
+                         { if(asociados.length>0)
+                             {
+                                  form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     flag= true;
+                     record.save({success:write});
+                             }
                              if(windows)
                                  windows.close();
                              else
@@ -1558,14 +1724,24 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          if(dt.data.id===record.data.id)
                          {
                              if(windows)
+                                 { form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     record.save({success:write});
+
+                     flag= true;}
+                             if(windows)
                                  windows.close();
                              else
-                                 me.showView('selectMessage');
+                             {me.showView('selectMessage');
+                              mask.unmask();}
                          }
                          else
                              me.showToast('El elemento ya existe.','error');
 
-                         mask.unmask();
+
 
                      }
                  else{
@@ -1753,14 +1929,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             if(item.xtype=='treepanel')
             {
                 if(record!==null)
-                item.store.proxy.extraParams.id_asociado =record.data.id;
-             else
-                 item.store.proxy.extraParams.id_asociado ='';
-             item.store.proxy.extraParams.parent_id ='';
-             item.store.proxy.extraParams.detalles ='edit';
+                    item.store.proxy.extraParams.id_asociado =record.data.id;
+                else
+                    item.store.proxy.extraParams.id_asociado ='';
+                item.store.proxy.extraParams.parent_id ='';
+                item.store.proxy.extraParams.detalles ='edit';
                 item.store.proxy.extraParams.combo ='combo';
 
-             item.store.load();
+                item.store.load();
             }
             if(item.xtype=='tabpanel')
             {  var result = [];
@@ -1770,33 +1946,33 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
               if(obj.xtype=='combobox')
               {
                   if(record.data[obj.name]!=='')
-                  obj.setDisabled(false);
+                      obj.setDisabled(false);
                   if(obj.store.proxy.extraParams)
-              { obj.store.proxy.extraParams.combo ='combo';
-               obj.store.load({   scope: this,
-                               callback: function (records, operation, success) {
+                  { obj.store.proxy.extraParams.combo ='combo';
+                   obj.store.load({   scope: this,
+                                   callback: function (records, operation, success) {
 
-                                   obj.store.proxy.extraParams.combo ='';
-                               }});
-              }}
+                                       obj.store.proxy.extraParams.combo ='';
+                                   }});
+                  }}
              }
 
              var resultree = [];
-                    resultree = me.searchComponent('treepanel',item,resultree);
-                 for(var comptree in resultree)
-                            {var objtree = resultree[comptree];
-                                 if(objtree.xtype=='treepanel')
-                        {    if(record!==null)
-                            objtree.store.proxy.extraParams.id_asociado =record.data.id;
-                            else
-                                objtree.store.proxy.extraParams.id_asociado ='';
-                            objtree.store.proxy.extraParams.parent_id ='';
-                            objtree.store.proxy.extraParams.detalles ='edit';
-                         objtree.store.proxy.extraParams.combo ='combo';
+             resultree = me.searchComponent('treepanel',item,resultree);
+             for(var comptree in resultree)
+             {var objtree = resultree[comptree];
+              if(objtree.xtype=='treepanel')
+              {    if(record!==null)
+                  objtree.store.proxy.extraParams.id_asociado =record.data.id;
+               else
+                   objtree.store.proxy.extraParams.id_asociado ='';
+               objtree.store.proxy.extraParams.parent_id ='';
+               objtree.store.proxy.extraParams.detalles ='edit';
+               objtree.store.proxy.extraParams.combo ='combo';
 
-        objtree.store.load();
-                        }
-                            }
+               objtree.store.load();
+              }
+             }
 
 
             }
@@ -1812,16 +1988,26 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                }});
              }}
             if(item.xtype=='multiselector')
-            {if(record.data[item.name]!=='')
-                item.setDisabled(false);
-             if(item.store.proxy.extraParams)
-             { item.store.proxy.extraParams.combo ='combo';
-              item.store.load({   scope: this,
-                               callback: function (records, operation, success) {
+            {
+                if(record!==null)
+                    item.store.proxy.extraParams.id_asociado =record.data.id;
+                else
+                    item.store.proxy.extraParams.id_asociado ='';
+                item.store.proxy.extraParams.detalles ='edit';
+                item.store.proxy.extraParams.combo ='combo';
+                item.store.load();
 
-                                   item.store.proxy.extraParams.combo ='';
-                               }});
-             }}
+                var store = Ext.data.StoreManager.lookup(item.config.search.store);
+
+                store.proxy.extraParams.id_asociado ='';
+
+                store.proxy.extraParams.detalles ='edit';
+                store.proxy.extraParams.grid =false;
+                store.proxy.extraParams.combo ='combo';
+                store.load();
+
+
+            }
 
 
         });
@@ -1830,9 +2016,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         for(var obj in record.data)
         {var aux1 = obj.replace('_id','');
 
-                       if(aux1!=obj)
-                           delete(record.data[aux1]);
-                           }
+         if(aux1!=obj)
+             delete(record.data[aux1]);
+        }
         form.loadRecord(record);
         vista.show();
     },
@@ -2424,24 +2610,30 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          {
 
              if(form[campos].initialConfig!==undefined){
+                 form[campos].initialConfig.maxLength = 255;
                  form[campos].initialConfig.emptyText = 'Seleccione';
                  form[campos].initialConfig.buttonText ='Examinar...';
                  form[campos].initialConfig.listeners ={change: 'onFilefieldChange'};
              }
              else{
+                 form[campos].maxLength = 255;
                  form[campos].emptyText = 'Seleccione';
                  form[campos].buttonText ='Examinar...';
                  form[campos].listeners ={change: 'onFilefieldChange'};
              }
 
+
          }
          if(form[campos].inputType ==='password')
          {
              if(form[campos].initialConfig!==undefined)
-             {form[campos].initialConfig.regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,100}$/;
+             {
+              form[campos].initialConfig.maxLength = 60;
+              form[campos].initialConfig.regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,100}$/;
               form[campos].initialConfig.regexText = 'La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula.';
              }
              else{
+                 form[campos].maxLength = 60;
                  form[campos].regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,100}$/;
                  form[campos].regexText = 'La contraseña debe tener más de 6 caracteres, al menos un caracter numérico y una letra mayúscula.';
 

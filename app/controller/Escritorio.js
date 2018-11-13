@@ -48,7 +48,7 @@ Ext.define('cerodatax.controller.Escritorio', {
                      //Ext.ComponentQuery.query('#identity')[0].focus('', 10);
 
                      //this.getController('Seguridad');
-                     alert('La sesión ha expirado.');
+
                      window.location = 'index.php?auth/login';
                      window.location = '';
 
@@ -61,6 +61,13 @@ Ext.define('cerodatax.controller.Escritorio', {
          {if(grid.store.proxy.extraParams!==undefined)
              grid.store.proxy.extraParams.combo = '';
           grid.store.proxy.extraParams.limit = 25;
+           if(grid.store.proxy.extraParams.detalles!==undefined)
+          delete(grid.store.proxy.extraParams.detalles);
+          if(grid.store.proxy.extraParams.id_asociado!==undefined)
+          delete(grid.store.proxy.extraParams.id_asociado);
+          if(grid.store.proxy.extraParams.grid!==undefined)
+          delete(grid.store.proxy.extraParams.grid);
+
           grid.store.load({   scope: this,
                            callback:callback});
           grid.getSelectionModel().deselectAll();

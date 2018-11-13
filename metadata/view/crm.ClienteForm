@@ -417,28 +417,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fieldLabel": "Nombre(s)",
-                                                "hidden": true,
-                                                "name": "nombre",
-                                                "value": [
-                                                    "{contactocliente.selection.nombre}"
-                                                ],
-                                                "width": 275
-                                            },
-                                            "name": "MyDisplayField",
-                                            "configAlternates": {
-                                                "value": "binding"
-                                            },
-                                            "designerId": "c96863b8-ebd1-4b4c-a856-6aece78f96ac"
-                                        },
-                                        {
-                                            "type": "Ext.form.field.Display",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
                                                 "fieldLabel": "Apellidos",
                                                 "name": "apellidos",
                                                 "value": [

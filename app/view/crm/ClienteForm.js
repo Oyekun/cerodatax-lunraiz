@@ -167,16 +167,6 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
                                                     }),
                                                     {
                                                         xtype: 'displayfield',
-                                                        hidden: true,
-                                                        width: 275,
-                                                        fieldLabel: 'Nombre(s)',
-                                                        name: 'nombre',
-                                                        bind: {
-                                                            value: '{contactocliente.selection.nombre}'
-                                                        }
-                                                    },
-                                                    {
-                                                        xtype: 'displayfield',
                                                         width: 275,
                                                         fieldLabel: 'Apellidos',
                                                         name: 'apellidos',

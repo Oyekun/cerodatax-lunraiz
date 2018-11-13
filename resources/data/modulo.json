@@ -1,0 +1,7 @@
+[{
+   		id:'36031921-3ccc-5899-8dfa-daf026c445be',nombre:'Generales',descripcion:' las ventas y compras.',icono_id:'',orden:'0',tipo_modulo_id:'fd35b898-efd3-5ed0-9b6e-2cf525fc1692',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'8b4b13b3-7004-5afc-ba9f-3ce13e002a83',nombre:'Generales',descripcion:'Este módulo tiene las funciones principales del sistema.',icono_id:'',orden:'0',tipo_modulo_id:'21327d3a-c77d-56c7-9971-0121f3ed5768',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
+   		id:'fd35b898-efd3-5ed0-9b6e-2cf525fc1692',nombre:'CRM',descripcion:'Gestiona los nomencladores de los menú Contactos, Venta y Compra.',icono_id:'',orden:'5',tipo_modulo_id:'ee3caef1-49a7-5447-9552-008a56501ce7',activo:'1',date_created:'2018-11-03 00:41:54',date_updated:'2018-11-03 00:41:54',created_from_ip:'::1',updated_from_ip:'::1',
+   },]

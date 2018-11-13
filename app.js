@@ -27,7 +27,6 @@ Ext.application({
     ],
     models: [
         'seguridad.Usuario',
-        'seguridad.Rol',
         'seguridad.Accion',
         'estructura.Entidad',
         'estructura.Area',
@@ -71,7 +70,9 @@ Ext.application({
         'nomenclador.TipoBanco',
         'nomenclador.Banco',
         'nomenclador.CuentaBancaria',
-        'crm.Cliente'
+        'crm.Cliente',
+        'seguridad.RolMenu',
+        'seguridad.Rol'
     ],
     stores: [
         'seguridad.Usuario',
@@ -120,10 +121,15 @@ Ext.application({
         'configuracion.Tablero',
         'nomenclador.TipoBanco',
         'nomenclador.Banco',
-        'nomenclador.CuentaBancaria'
+        'nomenclador.CuentaBancaria',
+        'seguridad.UsuarioRol',
+        'seguridad.RolMenu',
+        'configuracion.MenuTablero',
+        'configuracion.ModuloTablero',
+        'configuracion.PanelTablero',
+        'configuracion.TipoModuloTablero'
     ],
     views: [
-        'seguridad.Usuario',
         'seguridad.Rol',
         'seguridad.Accion',
         'estructura.Entidad',
@@ -159,7 +165,6 @@ Ext.application({
         'nomenclador.Moneda',
         'estructura.EntidadAreaForm',
         'configuracion.Modulo',
-        'configuracion.Menu',
         'nomenclador.TipoModulo',
         'nomenclador.Icono',
         'configuracion.Panel',
@@ -177,7 +182,9 @@ Ext.application({
         'nomenclador.TipoBanco',
         'nomenclador.Banco',
         'nomenclador.BancoForm',
-        'nomenclador.CuentaBancaria'
+        'nomenclador.CuentaBancaria',
+        'configuracion.Menu',
+        'seguridad.Usuario'
     ],
     controllers: [
         'Escritorio',

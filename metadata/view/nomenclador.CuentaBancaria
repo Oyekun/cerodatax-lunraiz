@@ -760,7 +760,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "cancelEdit1",
+                                                "fn": "cancelEdit",
                                                 "implHandler": [
                                                     "// Show details",
                                                     "this.showView('details');"
@@ -768,7 +768,7 @@
                                                 "name": "click",
                                                 "scope": "me"
                                             },
-                                            "name": "cancelEdit1",
+                                            "name": "cancelEdit",
                                             "designerId": "9610eb77-c4dc-46fe-965d-b72ba2d7af96"
                                         }
                                     ]

@@ -2097,12 +2097,12 @@ $this->dbforge->add_field(array(
                 'constraint'     => '100',
                 'unsigned'       => TRUE,
             ),
-            'user_id' => array(
+            'usuario_id' => array(
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'unsigned'   => TRUE
             ),
-            'group_id' => array(
+            'rol_id' => array(
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'unsigned'   => TRUE
@@ -2135,8 +2135,8 @@ $this->dbforge->add_field(array(
         $data = array(
             array(
                 'id'=>$uuidUno,
-                'user_id'  => $user_id,
-                'group_id' => $rol_id,
+                'usuario_id'  => $user_id,
+                'rol_id' => $rol_id,
             ) 
         );
         $this->db->insert_batch($this->tables['users_groups'], $data);
@@ -2546,6 +2546,12 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => TRUE,
                         ),
+                                   'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255',
+                                'null' => FALSE,
+                        ),
+
 
                                 
                                 'activo' => array(

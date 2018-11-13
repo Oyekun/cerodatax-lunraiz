@@ -128,7 +128,7 @@ Ext.define('cerodatax.view.nomenclador.CalificadorViewController2', {
         }
     },
 
-    cancelEdit1: function(button, e, eOpts) {
+    cancelEdit: function(button, e, eOpts) {
         // Show details
         this.showView('details');
     }

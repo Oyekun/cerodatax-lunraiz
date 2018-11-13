@@ -18,8 +18,6 @@ Ext.define('cerodatax.view.configuracion.Panel', {
     alias: 'widget.configuracionpanel',
 
     requires: [
-        'cerodatax.view.seguridad.UsuarioViewModel',
-        'cerodatax.view.seguridad.UsuarioViewController',
         'Ext.grid.Panel',
         'Ext.grid.column.Column',
         'Ext.button.Button',
@@ -35,10 +33,6 @@ Ext.define('cerodatax.view.configuracion.Panel', {
         'Ext.form.field.TextArea'
     ],
 
-    controller: 'seguridadusuario',
-    viewModel: {
-        type: 'seguridadusuario'
-    },
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,

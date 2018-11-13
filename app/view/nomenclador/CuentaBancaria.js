@@ -274,7 +274,7 @@ Ext.define('cerodatax.view.nomenclador.CuentaBancaria', {
                                     margin: 5,
                                     text: 'Cancelar',
                                     listeners: {
-                                        click: 'cancelEdit1'
+                                        click: 'cancelEdit'
                                     }
                                 }
                             ]

@@ -1,42 +1,10 @@
 [
     	{
-    		name: 'Seguridad',
-    		thumb: 'shield', 
-    		url: 'Seguridad',
-    		systema:'true',
-    		color:'dodgerblue',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Módulos',
-    		thumb: 'puzzle-piece', 
-    		url: 'Modulo',
-    		systema:'true',
-    		color:'cornflowerblue',
-    		type: 'svg'
-    	},
-    	{
     		name: 'Contacto',
     		thumb: 'address-book-o', 
     		url: 'Contacto',
     		systema:'true',
-    		color:'lawngreen',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Continentes',
-    		thumb: 'telegram', 
-    		url: 'Continente',
-    		systema:'true',
-    		color:'',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Estructura',
-    		thumb: 'building', 
-    		url: 'Estructura',
-    		systema:'true',
-    		color:'darkseagreen',
+    		color:'lightgreen',
     		type: 'svg'
     	},
     	{
@@ -68,6 +36,6 @@
     		thumb: 'refresh', 
     		url: 'Actualizaciones',
     		systema:'true',
-    		color:'mediumspringgreen',
+    		color:'lightskyblue',
     		type: 'svg'
     	},]

@@ -1,0 +1,124 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "configuracion.ModuloTablero",
+        "storeId": "configuracion.ModuloTablero"
+    },
+    "name": "configuracion.MenuTablero1",
+    "designerId": "5c6ec423-7618-4bcd-8b52-37c68fb93444",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "simpleSortMode": true,
+                "url": "resources/data/modulo.json"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "2e130c92-e987-4db8-bdf7-6732f32f4d5e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": ""
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "902029d8-12e8-49a0-ac59-889828d322e3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString39",
+            "designerId": "ce18c030-57c4-42a4-80f1-a97db5da6728"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString40",
+            "designerId": "df244b45-bb1c-430f-8246-53b1d5dd14f7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipo_modulo_id"
+            },
+            "name": "MyString41",
+            "designerId": "8490ed20-c1cc-4052-baa4-a3b3c2d2862e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "color"
+            },
+            "name": "MyString10",
+            "designerId": "68970bd4-409d-4113-98ac-14be8004814c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "activo"
+            },
+            "name": "MyBoolean5",
+            "designerId": "29e9809a-0ea5-423f-ab63-221b94de142d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString9",
+            "designerId": "683c668f-8249-4116-8c82-488fae3f4635"
+        }
+    ]
+}

@@ -215,20 +215,25 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
-                            fieldLabel: 'Descripcón',
+                            fieldLabel: 'Descripción',
                             name: 'description',
                             allowBlank: false,
                             maxLength: 255
                         },
                         {
                             xtype: 'multiselector',
-                            hidden: true,
-                            title: 'Modulos',
-                            store: 'configuracion.Modulo',
+                            height: 200,
+                            title: 'Menus',
+                            emptyText: 'No existen elementos que mostrar',
+                            store: 'seguridad.RolMenu',
+                            addToolText: 'Busca un elemento para adicionar',
+                            fieldName: 'nombre',
+                            removeRowTip: 'Elimina este elemento',
                             search: {
                                 xtype: 'multiselector-search',
-                                store: 'configuracion.Modulo',
-                                field: 'modulo'
+                                searchText: 'Buscar...',
+                                store: 'configuracion.Menu',
+                                field: 'nombre'
                             },
                             viewConfig: {
                                 deferEmptyText: false
@@ -284,25 +289,25 @@ Ext.define('cerodatax.view.seguridad.Rol', {
 
     processSeguridadRol: function(config) {
         var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),
-            result = [],
-            columns=[],
-            resultgrid = [];
-        result = control.searchComponent('form', this, result);
-        resultgrid = control.searchComponent('gridpanel', this, resultgrid);
+                    result = [],
+                    columns=[],
+                    resultgrid = [];
+                result = control.searchComponent('form', this, result);
+                resultgrid = control.searchComponent('gridpanel', this, resultgrid);
 
-        if(result.length > 0)
-        {var formPanel = result[0],
-
-
-            columns = control.searchLabel(formPanel.items,columns,true);
-        control.formatForm(formPanel);
-         if(resultgrid.length > 0)
-             control.configGridPanel(resultgrid[0],columns);
-
-        }
+                if(result.length > 0)
+                {var formPanel = result[0],
 
 
-        return config;
+                    columns = control.searchLabel(formPanel.items,columns,true);
+                control.formatForm(formPanel);
+                 if(resultgrid.length > 0)
+                     control.configGridPanel(resultgrid[0],columns);
+                 control.createDetails(this,columns);
+                }
+
+
+                return config;
     }
 
 });

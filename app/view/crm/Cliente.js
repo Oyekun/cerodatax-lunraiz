@@ -64,8 +64,8 @@ Ext.define('cerodatax.view.crm.Cliente', {
                         columns: [
                             {
                                 xtype: 'gridcolumn',
-                                dataIndex: 'nombre',
-                                text: 'Nombre'
+                                dataIndex: 'apellidos',
+                                text: 'Apellidos'
                             }
                         ],
                         dockedItems: [

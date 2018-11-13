@@ -9,5 +9,6 @@
         "designer|userAlias": "seguridadusuario",
         "designer|userClassName": "seguridad.UsuarioViewModel"
     },
-    "designerId": "2d6aefd7-2cac-4f05-a196-efd74fe770f6"
+    "name": "seguridad.RolViewModel1",
+    "designerId": "77b59c18-24bd-4b49-8288-ff014ba77876"
 }

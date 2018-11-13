@@ -45,7 +45,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
     controller: 'nomencladorcrud',
     height: 528,
     shrinkWrap: 0,
-    width: 865,
+    width: 827,
     layout: 'border',
     collapsed: false,
 
@@ -336,9 +336,9 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                         },
                         {
                             xtype: 'checkboxfield',
-                            hidden: true,
                             fieldLabel: 'Activo',
-                            name: 'active'
+                            name: 'active',
+                            checked: true
                         },
                         {
                             xtype: 'combobox',
@@ -448,27 +448,25 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
 
     processSeguridadUsuario: function(config) {
         var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),
-            result = [],
-            columns=[],
-            resultgrid = [];
-        result = control.searchComponent('form', this, result);
+                    result = [],
+                    columns=[],
+                    resultgrid = [];
+                result = control.searchComponent('form', this, result);
+                resultgrid = control.searchComponent('gridpanel', this, resultgrid);
 
-        resultgrid = control.searchComponent('gridpanel', this, resultgrid);
-
-        if(result.length > 0)
-        {var formPanel = result[0],
-
-
-            columns = control.searchLabel(formPanel.items,columns,true);
-         control.formatForm(formPanel);
-
-         if(resultgrid.length > 0)
-             control.configGridPanel(resultgrid[0],columns);
-         control.createDetails(this,columns);
-        }
+                if(result.length > 0)
+                {var formPanel = result[0],
 
 
-        return config;
+                    columns = control.searchLabel(formPanel.items,columns,true);
+                control.formatForm(formPanel);
+                 if(resultgrid.length > 0)
+                     control.configGridPanel(resultgrid[0],columns);
+                 control.createDetails(this,columns);
+                }
+
+
+                return config;
     }
 
 });

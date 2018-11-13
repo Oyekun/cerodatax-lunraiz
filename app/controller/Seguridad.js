@@ -148,14 +148,25 @@ Ext.define('cerodatax.controller.Seguridad', {
             }
             // failure: failureCallback
         });
+        Ext.Ajax.request({
+            url: 'index.php/auth/arbol',
+            method: 'POST',
 
-        var obj =    Ext.create('cerodatax.store.nomenclador.TipoModulo');
-        var objmenu =    Ext.create('cerodatax.store.configuracion.Menu');
-        var objmodulo =    Ext.create('cerodatax.store.configuracion.Modulo');
-        var objpanel =    Ext.create('cerodatax.store.configuracion.Panel');
+            success: function(resp){
+                var json = Ext.JSON.decode(resp.responseText);
+
+
+
+                if(json.success===true)
+                {
+        var obj =    Ext.create('cerodatax.store.configuracion.TipoModuloTablero');
+        var objmenu =    Ext.create('cerodatax.store.configuracion.MenuTablero');
+        var objmodulo =    Ext.create('cerodatax.store.configuracion.ModuloTablero');
+        var objpanel =    Ext.create('cerodatax.store.configuracion.PanelTablero');
         var objpanelp;
-        var me = this;
 
+        var me = this;
+        console.log(objmenu)
         obj.proxy.extraParams.combo='';
         obj.proxy.extraParams.limit='';
         objmenu.proxy.extraParams.combo='';
@@ -171,19 +182,19 @@ Ext.define('cerodatax.controller.Seguridad', {
                       callback: function (records, operation, success) {
 
                           menus = records;
-                          objmenu.proxy.extraParams.limit=25;
+
 
                           objmodulo.load({   scope: this,
                                           callback: function (records, operation, success) {
 
                                               modulos = records;
-                                              objmodulo.proxy.extraParams.limit=25;
+
 
                                               obj.load({   scope: this,
                                                         callback: function (records, operation, success) {
 
                                                             tipos = records;
-                                                            obj.proxy.extraParams.limit=25;
+
                                                             objpanel.load({   scope: this,
                                                                            callback: function (records, operation, success) {
                                                                                paneles = records;
@@ -337,6 +348,12 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                                                                                  if(grid && tabpanel===false)
                                                                                                                  {if(grid.store.proxy.extraParams!==undefined)
                                                                                                                      grid.store.proxy.extraParams.combo = '';
+                                                                                                                                                                                                                          if(grid.store.proxy.extraParams.detalles!==undefined)
+                                                                                                                  delete(grid.store.proxy.extraParams.detalles);
+                                                                                                                  if(grid.store.proxy.extraParams.id_asociado!==undefined)
+                                                                                                                  delete(grid.store.proxy.extraParams.id_asociado);
+                                                                                                                  if(grid.store.proxy.extraParams.grid!==undefined)
+                                                                                                                  delete(grid.store.proxy.extraParams.grid);
                                                                                                                   grid.store.load();
                                                                                                                   grid.getSelectionModel().deselectAll();
 
@@ -405,6 +422,10 @@ Ext.define('cerodatax.controller.Seguridad', {
                                                         }});
                                           }});
                       }});
+                        }
+                 }
+            // failure: failureCallback
+        });
 
     }
 

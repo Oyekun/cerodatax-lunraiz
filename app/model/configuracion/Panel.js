@@ -29,6 +29,10 @@ Ext.define('cerodatax.model.configuracion.Panel', {
         },
         {
             type: 'string',
+            name: 'descripcion'
+        },
+        {
+            type: 'string',
             name: 'nombre'
         },
         {

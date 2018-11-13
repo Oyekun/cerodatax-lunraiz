@@ -117,7 +117,7 @@ $q = $this->db->get("$tb");
 if(isset($request['asociados'])&&isset($request['id_asociado']))  
 {$total_actual = count($q->result_array());
 $total = $q->result_array();
-
+$arrayS = array();;
 	for($i=0;$i<$total_actual;$i++){
 		
 		if($request['asociados']!=''&&$request['id_asociado']!=''||($request['detalles']=='detalles'||$request['detalles']=='edit'))  
@@ -130,13 +130,26 @@ $idasociadoDos = $request['asociados'].'_id';
 		$this->db->where("$idasociadoUno", $total[$i]['id']);
 		$this->db->where("$idasociadoDos", $request['id_asociado']);
 	    $r = $this->db->get("$tbDos");
+
 		$total[$i]['checked']=count($r->result_array())>0 ? TRUE: FALSE;
 		
+		//print_r('fff');die;
 	}
 	else $total[$i]['checked'] = FALSE;
 	$total[$i]['model'] = $modelo;
+	if(isset($request['grid']))
+		if($request['grid']==TRUE)
+          if($total[$i]['checked']===FALSE)
+          unset($total[$i]);
+          else
+          {
+          	$arrayS[]=$total[$i];
+          }
 
 }
+if(isset($request['grid']))
+		if($request['grid']==TRUE)
+		return $arrayS;
 
 return $total;
 
@@ -174,7 +187,7 @@ $flagrelacion= TRUE;
 				}
 				}
 		         $this->db->order_by("date_updated", "desc");
-		        // print_r($this->db);die;//verificar bien
+		         //verificar bien
 			$q = $this->db->get("$tb",$limit, $offset);
 		 
 		}
@@ -258,6 +271,9 @@ $flagrelacion= TRUE;
 				}
 				// $this->db->order_by("date_updated", "asc");//verificar bien
 			//	print_r($q->row());die;
+				if($limit)
+					$q = $this->db->get("$tb",$limit, $offset);
+				else
         	$q = $this->db->get("$tb");
        
 
@@ -289,6 +305,9 @@ $flagrelacion= TRUE;
 					}
 				}
 				// $this->db->order_by("date_updated", "asc");//verificar bien
+        		if($limit)
+					$q = $this->db->get("$tb",$limit, $offset);
+				else
         	$q = $this->db->get("$tb");
         }
         
@@ -425,6 +444,7 @@ $cant++;
 			 
 		}
 
+
 		$this->load->model($request['model']);
 		$nameuuid = new $request['model']; 
 		$uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"],'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
@@ -447,6 +467,8 @@ if(isset($dataArray['asociados']))
 	    $dataArray['date_created'] = $dataArray['date_updated'] = date('Y-m-d H:i:s');
         $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
 		$this->db->set('id', $uuid);
+           //print_r($tb);die;
+           
            if($tb=='seguridad_usuario')		
 	    	{
 	    		// $this->load->model("Register_model", "registerModel");
@@ -456,10 +478,13 @@ if(isset($dataArray['asociados']))
 	    		$email = $dataArray['email'];
 	    		$identity = $dataArray['username'];
 	    		$dataArray['ip_address'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
+	    		
 	    		unset($dataArray['password']);
 	    		unset($dataArray['email']);
 	    		unset($dataArray['username']);
-	    		$this->ionAuthModel->register($uuid,$identity, $password, $email, $dataArray, $groups = array());
+	    		$salida = $this->ionAuthModel->register($uuid,$identity, $password, $email, $dataArray, $groups = array());
+	    		if($salida==FALSE)
+	    			return NULL;
 	    	}else{
 		 
 		$this->db->insert("$tb", $dataArray); 
@@ -523,10 +548,13 @@ if(isset($dataArray['asociados']))
  * @return      string
  */
 	public function row_delete($request,$id) { 
+
+	 	
 	$tb = $request['esquema'].'_'.$request['model']; 		
     $this->db->where('id', $id);   
     $this->db->delete("$tb");
     return $this->db->affected_rows();
+    
 }
 
 /**

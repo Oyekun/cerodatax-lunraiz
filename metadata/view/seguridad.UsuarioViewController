@@ -9,7 +9,8 @@
         "designer|userAlias": "seguridadusuario",
         "designer|userClassName": "seguridad.UsuarioViewController"
     },
-    "designerId": "c4f5c030-a4ce-42d0-8fb6-f21cc91c9c86",
+    "name": "seguridad.RolViewController1",
+    "designerId": "b99f2be8-1600-4edd-a133-5e95394a937f",
     "cn": [
         {
             "type": "basicfunction",
@@ -29,7 +30,7 @@
                 ]
             },
             "name": "showView",
-            "designerId": "cd1544b1-5d6b-4b0f-80dd-7d354972efc2"
+            "designerId": "49958652-8a6a-4f49-acca-e0987cb2adf9"
         }
     ]
 }

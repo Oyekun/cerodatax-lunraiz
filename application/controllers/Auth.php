@@ -95,6 +95,179 @@ class Auth extends CI_Controller
 		 	}
 	 
 	}
+	public function arbol()
+	{
+		 $identity = $this->session->userdata['user_id'];
+
+	
+
+    $path ="resources/data/menu.json";
+    $my_model = fopen($path, "w") or die("Unable to create model file!");
+    
+
+ 
+	    $tb = 'configuracion_menu'; 
+         
+		$this->load->model('menu');
+		if(!$this->ion_auth->is_admin())
+		{$this->db->select("configuracion_menu.*");
+		$this->db->distinct();
+	 	$this->db->join("seguridad_menurol","seguridad_menurol.menu_id=configuracion_menu.id"," right");
+	 	$this->db->join("seguridad_rolusuario","seguridad_rolusuario.rol_id=seguridad_menurol.rol_id"," right");
+		$this->db->where('usuario_id', $identity);   
+	   }
+        $this->db->order_by("orden", "asc"); 
+        $this->db->order_by("modulo_id", "desc");
+     $result = $this->db->get("$tb");
+     	//print_r($this->db->queries);die;
+    $model_template = "["; 
+    if(count($result->result_array())>0)
+    {	$menus = $result->result_array(); 
+        
+   foreach ($menus as $key => $value) {
+   	$model_template .= "{
+   		"; 
+   	 foreach ($value as $key1 => $value1) {
+   {
+$model_template .=$key1.':';
+$model_template .="'$value1',";
+   	} 
+   }
+   	$model_template .= "
+   },";
+   }
+    	  $model_template .="]";
+    fwrite($my_model, $model_template);
+    fclose($my_model);
+    $tb = 'configuracion_modulo'; 
+    $this->load->model('modulo');
+	 	if(!$this->ion_auth->is_admin())
+	 	{
+	 	$this->db->select("configuracion_modulo.*");
+		$this->db->distinct();
+	 	$this->db->join("configuracion_menu","configuracion_modulo.id=configuracion_menu.modulo_id"," right");
+		$this->db->join("seguridad_menurol","seguridad_menurol.menu_id=configuracion_menu.id"," right");
+	 	$this->db->join("seguridad_rolusuario","seguridad_rolusuario.rol_id=seguridad_menurol.rol_id"," right");
+		$this->db->where('usuario_id', $identity);   
+		 }
+		 $this->db->order_by("orden", "asc"); 
+        
+    $result = $this->db->get("$tb");
+     
+    	$path ="resources/data/modulo.json";
+    $my_model = fopen($path, "w") or die("Unable to create model file!");
+    if(count($result->result_array())>0)
+    {	$modulos = $result->result_array();
+
+    	 $model_template = "["; 
+   
+   foreach ($modulos as $key => $value) {
+   	$model_template .= "{
+   		"; 
+   	 foreach ($value as $key1 => $value1) {
+   {
+$model_template .=$key1.':';
+$model_template .="'$value1',";
+   	} 
+   }
+   	$model_template .= "
+   },";
+   }
+    	  $model_template .="]";
+    fwrite($my_model, $model_template);
+    fclose($my_model);
+
+
+    	 
+    $tb = 'nomenclador_tipomodulo'; 
+    $this->load->model('tipomodulo');
+if(!$this->ion_auth->is_admin())
+{
+    $this->db->select("nomenclador_tipomodulo.*");
+		$this->db->distinct();
+	 	$this->db->join("configuracion_modulo","nomenclador_tipomodulo.id=configuracion_modulo.tipo_modulo_id"," right");
+		$this->db->join("configuracion_menu","configuracion_modulo.id=configuracion_menu.modulo_id"," right");
+		$this->db->join("seguridad_menurol","seguridad_menurol.menu_id=configuracion_menu.id"," right");
+	 	$this->db->join("seguridad_rolusuario","seguridad_rolusuario.rol_id=seguridad_menurol.rol_id"," right");
+		$this->db->where('usuario_id', $identity);   
+	 	 }
+	 	 $this->db->order_by("orden", "asc"); 
+        
+    $result = $this->db->get("$tb");
+    	
+    if(count($result->result_array())>0)
+    {	$tipomodulo = $result->result_array();
+
+
+$path ="resources/data/tipomodulo.json";
+    $my_model = fopen($path, "w") or die("Unable to create model file!");
+    	$model_template = "["; 
+   
+   foreach ($tipomodulo as $key => $value) {
+   	$model_template .= "{
+   		"; 
+   	 foreach ($value as $key1 => $value1) {
+   {
+$model_template .=$key1.':';
+$model_template .="'$value1',";
+   	} 
+   }
+   	$model_template .= "
+   },";
+   }
+    	  $model_template .="]";
+    fwrite($my_model, $model_template);
+    fclose($my_model);
+
+      $tb = 'configuracion_panel'; 
+    $this->load->model('panel');
+	 	if(!$this->ion_auth->is_admin())
+	 	{
+	 	$this->db->select("configuracion_panel.*");
+		$this->db->distinct();
+	 	$this->db->join("configuracion_menu","configuracion_panel.menu_id=configuracion_menu.id"," right");
+		$this->db->join("seguridad_menurol","seguridad_menurol.menu_id=configuracion_menu.id"," right");
+	 	$this->db->join("seguridad_rolusuario","seguridad_rolusuario.rol_id=seguridad_menurol.rol_id"," right");
+		$this->db->where('usuario_id', $identity);   
+		 }
+		 $this->db->order_by("orden", "asc"); 
+        
+
+    $result = $this->db->get("$tb");
+    	
+    if(count($result->result_array())>0)
+    {	$tipomodulo = $result->result_array();
+
+
+$path ="resources/data/panel.json";
+    $my_model = fopen($path, "w") or die("Unable to create model file!");
+    	$model_template = "["; 
+   
+   foreach ($tipomodulo as $key => $value) {
+   	$model_template .= "{
+   		"; 
+   	 foreach ($value as $key1 => $value1) {
+   {
+$model_template .=$key1.':';
+$model_template .="'$value1',";
+   	} 
+   }
+   	$model_template .= "
+   },";
+   }
+    	  $model_template .="]";
+    fwrite($my_model, $model_template);
+    fclose($my_model);
+    }
+    	
+    }
+
+    }
+
+	}
+	 $this->output->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>TRUE)));
+}
 
 	/**
 	 * Log the user out
@@ -108,12 +281,20 @@ class Auth extends CI_Controller
     $my_model = fopen($path, "w") or die("Unable to create model file!");
     
 
+
     $model_template = "["; 
     
-   $tb = 'configuracion_menu'; 
+    $tb = 'configuracion_menu'; 
          
 		$this->load->model('menu');
-	 	
+		
+		if(!$this->ion_auth->is_admin())
+		{$this->db->select("configuracion_menu.*");
+			$this->db->distinct();
+	 	$this->db->join("seguridad_menurol","seguridad_menurol.menu_id=configuracion_menu.id"," right");
+	 	$this->db->join("seguridad_rolusuario","seguridad_rolusuario.rol_id=seguridad_menurol.rol_id"," right");
+		$this->db->where('usuario_id', $identity);
+	      }   
     $this->db->where('escritorio', 1);  
      $this->db->order_by("orden", "asc"); 
      $this->db->order_by("modulo_id", "desc"); 

@@ -1,37 +1,10 @@
 [
     	{
-    		name: 'RRHH',
-    		thumb: 'group', 
-    		url: 'RRHH',
-    		systema:'true',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Actualizaciones',
-    		thumb: 'refresh', 
-    		url: 'Actualizaciones',
-    		systema:'true',
-    		type: 'svg'
-    	},
-    	{
     		name: 'Seguridad',
     		thumb: 'shield', 
     		url: 'Seguridad',
     		systema:'true',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Contacto',
-    		thumb: 'address-book-o', 
-    		url: 'Contacto',
-    		systema:'true',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Estructura',
-    		thumb: 'building', 
-    		url: 'Estructura',
-    		systema:'true',
+    		color:'dodgerblue',
     		type: 'svg'
     	},
     	{
@@ -39,6 +12,23 @@
     		thumb: 'puzzle-piece', 
     		url: 'Modulo',
     		systema:'true',
+    		color:'cornflowerblue',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Contacto',
+    		thumb: 'address-book-o', 
+    		url: 'Contacto',
+    		systema:'true',
+    		color:'lightgreen',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Estructura',
+    		thumb: 'building', 
+    		url: 'Estructura',
+    		systema:'true',
+    		color:'darkseagreen',
     		type: 'svg'
     	},
     	{
@@ -46,6 +36,15 @@
     		thumb: 'shopping-bag', 
     		url: 'Venta',
     		systema:'true',
+    		color:'forestgreen',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'RRHH',
+    		thumb: 'group', 
+    		url: 'RRHH',
+    		systema:'true',
+    		color:'lightsalmon',
     		type: 'svg'
     	},
     	{
@@ -53,5 +52,14 @@
     		thumb: 'shopping-cart', 
     		url: 'Compra',
     		systema:'true',
+    		color:'crimson',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Actualizaciones',
+    		thumb: 'refresh', 
+    		url: 'Actualizaciones',
+    		systema:'true',
+    		color:'lightskyblue',
     		type: 'svg'
     	},]

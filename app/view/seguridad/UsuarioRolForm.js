@@ -55,15 +55,20 @@ Ext.define('cerodatax.view.seguridad.UsuarioRolForm', {
                     xtype: 'displayfield',
                     width: 380,
                     fieldLabel: 'Usuario',
-                    name: 'identity'
+                    name: 'username'
                 },
                 {
                     xtype: 'multiselector',
                     title: 'Roles',
-                    store: 'seguridad.Rol',
+                    emptyText: 'No existen elementos que mostrar',
+                    store: 'seguridad.UsuarioRol',
+                    addToolText: 'Busca un elemento para adicionar',
+                    removeRowTip: 'Elimina este elemento',
                     search: {
                         xtype: 'multiselector-search',
-                        store: 'seguridad.Rol'
+                        searchText: 'Buscar...',
+                        store: 'seguridad.Rol',
+                        field: 'name'
                     },
                     viewConfig: {
                         deferEmptyText: false
