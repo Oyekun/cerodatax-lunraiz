@@ -369,7 +369,8 @@ $nodo['checked']=FALSE;
 	   }
 	   if($request['detalles']=='edit')  
 		{ 
-			 
+			 //var_dump($tree);die;
+			if(isset($nodo["parent_id"]))
 			$tree->addChild($nodo,$nodo["parent_id"],$parent_id);
 	     
 		 
@@ -419,11 +420,11 @@ $cant++;
 	 $rsl = $this->row_existe($request);
 	  
 	    if(!$this->row_existe($request))
-	    {
+	    { 
 	    	$tb = $request['esquema'].'_'.$request['model']; 
 
 		$dataArray=json_decode($request['data'],TRUE); 
-		
+		 
 		foreach($dataArray as $key=>$nodo)
 		{
 			if($nodo==='' || $nodo==='NULL' )
@@ -447,6 +448,7 @@ $cant++;
 
 		$this->load->model($request['model']);
 		$nameuuid = new $request['model']; 
+
 		$uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"],'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
 		unset($dataArray['id']);  
 
@@ -455,6 +457,7 @@ $cant++;
 		unset($dataArray['checked']);		
 		unset($dataArray['model']);
 		$asociados=FALSE;
+
 if(isset($dataArray['asociados']))		
 {
 	
@@ -486,9 +489,10 @@ if(isset($dataArray['asociados']))
 	    		if($salida==FALSE)
 	    			return NULL;
 	    	}else{
-		 
+		  
 		$this->db->insert("$tb", $dataArray); 
        }
+
         if(isset($dataArray['parent_id']))		
 		if($dataArray['parent_id']!='')
 		{$dataArray1 = array();
@@ -503,9 +507,11 @@ if(isset($dataArray['asociados']))
 			
 			
 		}
+
 		 if($asociados)	
 		 { 
-		 
+
+		 	 
 		$modeloLogico = $dataArray2[0]['model'].$request['model'];
 		$modelofisico = ucwords($dataArray2[0]['model']).ucwords($request['model']);
 		$tb1 = $request['esquema'].'_'.$modeloLogico;
@@ -516,8 +522,7 @@ if(isset($dataArray['asociados']))
 		foreach($dataArray2 as $nodo)
 		{
 			 
-		
-		//print_r(mt_rand(0, 0xffff));die;
+		 
 		$rand=mt_rand(0, 0xffff);
 		$uuidUno = $this->uuid->v5($rand,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
 		$this->db->set('id', $uuidUno);
@@ -527,12 +532,17 @@ if(isset($dataArray['asociados']))
 		$modeldos = $request['model'].'_id';
 		$dataArray3["$modeluno"]=$nodo['id'];
 		$dataArray3["$modeldos"]=$uuid;
+		 $escritura = 0;
+				if($nodo['escritura'])
+				$escritura = 1;	
+			$dataArray3['escritura']=$escritura;
 	 
          $dataArray3['date_created'] = $dataArray3['date_updated'] = date('Y-m-d H:i:s');
         $dataArray3['created_from_ip'] = $dataArray3['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';
 
 		$this->db->insert("$tb1", $dataArray3); 
 		}
+		 
 			 
 		 }
 			 
@@ -591,6 +601,7 @@ public function row_update($request,$id) {
 	
 
 		}
+
 		$this->load->model($request['model']);
 		$nameuuid = new $request['model']; 	
 		$uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"],'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
@@ -662,9 +673,13 @@ if(isset($dataArray['asociados']))
 		
 		$dataArray3["$modeluno"]=$nodo['id'];
 		$dataArray3["$modeldos"]=$uuid;
-		 
-		//$dataArray3['entidad_id']=$nodo['id'];
-		//$dataArray3['area_id']=$uuidUno;
+		 if(isset($nodo['escritura']))
+		{
+              $escritura = 0;
+				if($nodo['escritura'])
+				$escritura = 1;	
+			$dataArray3['escritura']=$escritura;
+		}//$dataArray3['area_id']=$uuidUno;
 		//print_r($dataArray3);die;
 		 $dataArray3['date_created'] = $dataArray3['date_updated'] = date('Y-m-d H:i:s');
         $dataArray3['created_from_ip'] = $dataArray3['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR']: '127.0.0.1';

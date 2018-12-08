@@ -18,7 +18,11 @@ Ext.define('cerodatax.model.nomenclador.TipoModulo', {
     alias: 'model.tipomodulo',
 
     requires: [
-        'Ext.data.field.String'
+        'Ext.data.field.String',
+        'Ext.data.proxy.Rest',
+        'Ext.data.reader.Json',
+        'Ext.data.writer.Json',
+        'Ext.data.field.Boolean'
     ],
 
     fields: [
@@ -36,6 +40,51 @@ Ext.define('cerodatax.model.nomenclador.TipoModulo', {
         {
             type: 'string',
             name: 'descripcion'
+        },
+        {
+            type: 'boolean',
+            name: 'activo'
+        },
+        {
+            type: 'string',
+            name: 'codigo'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        api: {
+            add: {
+                url: 'index.php/api/restserver/rests',
+                method: 'POST'
+            },
+            show: {
+                url: 'index.php/api/restserver/rests/',
+                method: 'GET'
+            },
+            save: {
+                url: 'index.php/api/restserver/rests/id/{id}',
+                method: 'PUT'
+            },
+            remove: {
+                url: 'index.php/api/restserver/rests/id/{id}',
+                method: 'DELETE'
+            }
+        },
+        extraParams: {
+            model: 'licencia',
+            esquema: 'administracion'
+        },
+        url: 'index.php/api/restserver/rests/',
+        reader: {
+            type: 'json',
+            rootProperty: 'data'
+        },
+        writer: {
+            type: 'json',
+            writeAllFields: true,
+            encode: true,
+            rootProperty: 'data'
+        }
+    }
 });

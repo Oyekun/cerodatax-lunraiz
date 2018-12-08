@@ -221,19 +221,22 @@ $model_template .="'$value1',";
 
       $tb = 'configuracion_panel'; 
     $this->load->model('panel');
+	 	$this->db->select("configuracion_panel.*,nomenclador_alias.nombre as alias");
 	 	if(!$this->ion_auth->is_admin())
 	 	{
-	 	$this->db->select("configuracion_panel.*");
+	 	
 		$this->db->distinct();
 	 	$this->db->join("configuracion_menu","configuracion_panel.menu_id=configuracion_menu.id"," right");
 		$this->db->join("seguridad_menurol","seguridad_menurol.menu_id=configuracion_menu.id"," right");
 	 	$this->db->join("seguridad_rolusuario","seguridad_rolusuario.rol_id=seguridad_menurol.rol_id"," right");
 		$this->db->where('usuario_id', $identity);   
 		 }
+		 $this->db->join("nomenclador_alias","configuracion_panel.alias_id=nomenclador_alias.id"," right");
+	 	
 		 $this->db->order_by("orden", "asc"); 
         
-
     $result = $this->db->get("$tb");
+
     	
     if(count($result->result_array())>0)
     {	$tipomodulo = $result->result_array();

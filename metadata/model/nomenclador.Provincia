@@ -38,7 +38,7 @@
             "designerId": "723b9bb4-b955-4e54-95c8-3fb9ed30e985"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -47,7 +47,7 @@
             "userConfig": {
                 "name": "siglas"
             },
-            "name": "MyField47",
+            "name": "MyString99",
             "designerId": "e3a8b453-e764-4483-b708-8b50ffbf00f3"
         },
         {
@@ -77,7 +77,7 @@
             "designerId": "4f4f2662-0984-43b0-a1bd-98823a6bcf77"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -86,7 +86,7 @@
             "userConfig": {
                 "name": "codigo"
             },
-            "name": "MyField36",
+            "name": "MyString97",
             "designerId": "d8ff4afa-1fb4-4a73-a58c-316042e76d20"
         }
     ]

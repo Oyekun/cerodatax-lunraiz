@@ -155,10 +155,7 @@ Ext.define('cerodatax.view.nomenclador.BancoForm', {
                                                         ],
                                                         fieldLabel: 'Nombre',
                                                         name: 'nombre',
-                                                        allowBlank: false,
-                                                        bind: {
-                                                            value: '{record.nombre}'
-                                                        }
+                                                        allowBlank: false
                                                     },
                                                     {
                                                         xtype: 'combobox',

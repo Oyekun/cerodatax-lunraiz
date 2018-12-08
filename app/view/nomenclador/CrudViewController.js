@@ -242,16 +242,16 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             }
 
 
-        if(focus===false)
-        {var resulttext = [];
-                resulttext = me.searchComponent('textfield',item,resulttext);
+            if(focus===false)
+            {var resulttext = [];
+             resulttext = me.searchComponent('textfield',item,resulttext);
 
-                if(resulttext.length>0)
-                   { resulttext[0].focus('',10);
-                    itemfocus = resulttext[0];
-                focus = true;
-                   }
-        }
+             if(resulttext.length>0)
+             { resulttext[0].focus('',10);
+              itemfocus = resulttext[0];
+              focus = true;
+             }
+            }
 
 
             var resulimage = [];
@@ -263,8 +263,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              if(objimg.config.hidden)
              {
                  var img_value= '';
-                  if(record.data[objimg.itemId])
-                   img_value = record.data[objimg.itemId].toString();
+                 if(record.data[objimg.itemId])
+                     img_value = record.data[objimg.itemId].toString();
 
 
                  if(img_value!=='')
@@ -282,93 +282,93 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             if(item.xtype=='tabpanel')
             {
                 var result = [];
-             result = me.searchComponent('combobox',item,result);
-              var callback = function (records, operation, success) {
+                result = me.searchComponent('combobox',item,result);
+                var callback = function (records, operation, success) {
 
-                                       if(obj.store!==null)
-                                       obj.store.proxy.extraParams.combo ='';
-                                       // itemt.setDisabled(false);
+                    if(obj.store!==null)
+                        obj.store.proxy.extraParams.combo ='';
+                    // itemt.setDisabled(false);
 
-                                   };
-             for(var comp in result)
-             {var obj = result[comp];
-              if(obj.xtype=='combobox')
-              {
-                  if(obj.config.inputAttrTpl)
-                  {  var form =obj.up('form');
-                   var acciones = obj.config.inputAttrTpl[0].split(',');
-                   // console.log(obj.config.inputAttrTpl)
+                };
+                for(var comp in result)
+                {var obj = result[comp];
+                 if(obj.xtype=='combobox')
+                 {
+                     if(obj.config.inputAttrTpl)
+                     {  var form =obj.up('form');
+                      var acciones = obj.config.inputAttrTpl[0].split(',');
+                      // console.log(obj.config.inputAttrTpl)
 
-                   for(var accion in acciones)
-                   {
+                      for(var accion in acciones)
+                      {
 
-                       var campo = acciones[accion].split(':');
+                          var campo = acciones[accion].split(':');
 
-                       var itemt = form.down('treepanel[title='+campo[0]+']');
+                          var itemt = form.down('treepanel[title='+campo[0]+']');
 
 
-                       if(itemt!==null)
-                       {      if(campo[1]==='false')
-                       {
-                           if(record!==null)
-                           {var filter = [];
+                          if(itemt!==null)
+                          {      if(campo[1]==='false')
+                          {
+                              if(record!==null)
+                              {var filter = [];
 
-                            filter.campo_id = record.data[obj.name].toString();
-                            //  console.log(record.data[obj.name])
-                            itemt.store.proxy.extraParams.combo='combo';
-                            filter.push({value:filter.campo_id,name_id:obj.name});
-                            itemt.store.proxy.extraParams.filter=Ext.JSON.encode(filter);
+                               filter.campo_id = record.data[obj.name].toString();
+                               //  console.log(record.data[obj.name])
+                               itemt.store.proxy.extraParams.combo='combo';
+                               filter.push({value:filter.campo_id,name_id:obj.name});
+                               itemt.store.proxy.extraParams.filter=Ext.JSON.encode(filter);
 
+                              }
+                          }
+                           else {
+                               itemt.setDisabled(true);
                            }
-                       }
-                        else {
-                            itemt.setDisabled(true);
-                        }
-                        if(record.data[obj.name]!=='')
-                            itemt.setDisabled(false);
-                        //  itemt.store.load()
-                       }
-                   }
-                  }
+                           if(record.data[obj.name]!=='')
+                               itemt.setDisabled(false);
+                           //  itemt.store.load()
+                          }
+                      }
+                     }
 
 
-                  if(obj.store.proxy.extraParams)
-                  { obj.store.proxy.extraParams.combo ='combo';
+                     if(obj.store.proxy.extraParams)
+                     { obj.store.proxy.extraParams.combo ='combo';
 
-                   obj.store.load({   scope: this,
-                                   callback: callback});
-                  }}
-             }
+                      obj.store.load({   scope: this,
+                                      callback: callback});
+                     }}
+                }
 
 
 
-             var resultree = [];
-             resultree = me.searchComponent('treepanel',item,resultree);
-             var callbacktree = function (records, operation, success) {
-                                          objtree.setDisabled(false);
-                                                  if(objtree.clearFilters)
-                                                      objtree.clearFilters();
-                                                  objtree.store.proxy.extraParams.combo = '';
-                                                  objtree.store.proxy.extraParams.filter ='';
+                var resultree = [];
+                resultree = me.searchComponent('treepanel',item,resultree);
+                var callbacktree = function (records, operation, success) {
+                    objtree.setDisabled(false);
+                    if(objtree.clearFilters)
+                        objtree.clearFilters();
+                    objtree.store.proxy.extraParams.combo = '';
+                    objtree.store.proxy.extraParams.filter ='';
 
-                                      };
-             for(var comptree in resultree)
-             {var objtree = resultree[comptree];
-              if(objtree.xtype=='treepanel')
-              {   // console.log(record)
-                  if(record!==null)
-                  {objtree.setDisabled(false);
-                   objtree.store.proxy.extraParams.id_asociado =record.data.id;
-                  }   else
-                      objtree.store.proxy.extraParams.id_asociado ='';
-                  objtree.store.proxy.extraParams.parent_id ='';
-                  objtree.store.proxy.extraParams.detalles ='edit';
+                };
+                for(var comptree in resultree)
+                {var objtree = resultree[comptree];
+                 if(objtree.xtype=='treepanel')
+                 {   // console.log(record)
+                     if(record!==null)
+                     {objtree.setDisabled(false);
+                      objtree.store.proxy.extraParams.id_asociado =record.data.id;
+                     }   else
+                         objtree.store.proxy.extraParams.id_asociado ='';
+                     objtree.store.proxy.extraParams.parent_id ='';
+                     objtree.store.proxy.extraParams.detalles ='edit';
 
-                  //objtree.store.load();
-                  objtree.store.load({   scope: this,
-                                      callback: callbacktree});
-              }
-             }
+                     //objtree.store.load();
+                     objtree.store.load({   scope: this,
+                                         callback: callbacktree});
+                 }
+                }
 
             }
 
@@ -391,10 +391,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              resultcombo = me.searchComponent('combobox',item,resultcombo);
              var callbackobjcombo =  function (records, operation, success) {
 
-                                            objcombo.store.proxy.extraParams.combo ='';
-                                            //  itemtcombo.setDisabled(false);
+                 objcombo.store.proxy.extraParams.combo ='';
+                 //  itemtcombo.setDisabled(false);
 
-                                        };
+             };
              for(var compcombo in resultcombo)
              {var objcombo = resultcombo[compcombo];
               if(objcombo.xtype=='combobox')
@@ -446,21 +446,21 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              }
             }
 
-        if(focus===false)
+            if(focus===false)
                 if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
                 {item.focus('', 10);
-                focus = true;
+                 focus = true;
                 }
 
         });
         // Show form
         form.loadRecord(record);
-        form.isValid();
+        this.isValid(form);
 
         var callbackfocus = function (){
-        if(itemfocus)
-        itemfocus.focus('', 10);
-            };
+            if(itemfocus)
+                itemfocus.focus('', 10);
+        };
         vista.show(null,callbackfocus);
     },
 
@@ -468,7 +468,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         var formPanel = this.getReferences().form,
             form = formPanel.getForm(),
             record = this.getViewModel().get('record');
-
+        console.log(target)
         // Load record model into form
         form.loadRecord(record);
         //console.log(form)
@@ -530,8 +530,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              result = me.searchComponent('combobox',item,result);
              var callbackcombobox = function (records, operation, success) {
 
-                                   obj.store.proxy.extraParams.combo ='';
-                               };
+                 obj.store.proxy.extraParams.combo ='';
+             };
              for(var comp in result)
              {var obj = result[comp];
               if(obj.xtype=='combobox')
@@ -549,39 +549,39 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             for(var compimg in resulimage)
             {var objimg = resulimage[compimg];
              if(objimg.itemId=='foto')
-             objimg.setVisible(true);
+                 objimg.setVisible(true);
              else  objimg.setVisible(false);
              if(objimg.config.hidden)
              { var img_value= '';
 
-                if(record.data.systema!==undefined)
-                    {
-                        if(record.data.systema)
-                            {
-                                var value = record.data[objimg.itemId].toString();
-                                var systema = 'xf1ad@FontAwesome';//'x-fa fa-'+value;
-                               // objimg.setSrc('')
-                                objimg.setGlyph(systema); // no coge el fontawasemo
-                            }
-                        else{
+              if(record.data.systema!==undefined)
+              {
+                  if(record.data.systema)
+                  {
+                      var value = record.data[objimg.itemId].toString();
+                      var systema = 'xf1ad@FontAwesome';//'x-fa fa-'+value;
+                      // objimg.setSrc('')
+                      objimg.setGlyph(systema); // no coge el fontawasemo
+                  }
+                  else{
 
-                 if(record.data[objimg.itemId])
-                     img_value = record.data[objimg.itemId].toString();
-
-
-                 if(img_value!=='')
-                 { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
-                        }
-
-                    }
-                 else{
-                 if(record.data[objimg.itemId])
-                     img_value = record.data[objimg.itemId].toString();
+                      if(record.data[objimg.itemId])
+                          img_value = record.data[objimg.itemId].toString();
 
 
-                 if(img_value!=='')
-                 { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
-                     }
+                      if(img_value!=='')
+                      { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+                  }
+
+              }
+              else{
+                  if(record.data[objimg.itemId])
+                      img_value = record.data[objimg.itemId].toString();
+
+
+                  if(img_value!=='')
+                  { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+              }
              }
              else
              {
@@ -601,7 +601,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                               }});}*/
             //var result = [];
             // result = me.searchComponent('combobox',item,result);
-           if(item.xtype=='multiselector')
+            if(item.xtype=='multiselector')
             {
                 if(record!==null)
                     item.store.proxy.extraParams.id_asociado =record.data.id;
@@ -609,7 +609,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                     item.store.proxy.extraParams.id_asociado ='';
                 item.store.proxy.extraParams.detalles ='edit';
                 item.store.proxy.extraParams.combo ='combo';
-               // item.store.load();
+                // item.store.load();
 
                 var store = Ext.data.StoreManager.lookup(item.config.search.store);
 
@@ -619,17 +619,17 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 store.proxy.extraParams.grid =false;
                 store.proxy.extraParams.combo ='combo';
 
-                  item.store.load({   scope: this,
-                                           callback: function (records, operation, success) {
+                item.store.load({   scope: this,
+                                 callback: function (records, operation, success) {
 
-                                                        console.log(records)
+                                     console.log(records)
 
-                                                 store.load({   scope: this,
-                                           callback: function (recordss, operation, success) {
+                                     store.load({   scope: this,
+                                                 callback: function (recordss, operation, success) {
 
-                                               console.log(recordss)
-                                           }});
-                                           }});
+                                                     console.log(recordss)
+                                                 }});
+                                 }});
 
 
             }
@@ -677,13 +677,13 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 if(objcombo.store.proxy.extraParams)
                 { objcombo.store.proxy.extraParams.combo ='combo';
                  objcombo.store.load({   scope: this,
-                                 callback: function (records, operation, success) {
+                                      callback: function (records, operation, success) {
 
-                                     if(objcombo.store!==null)
-                                         objcombo.store.proxy.extraParams.combo ='';
-                                     // itemt.setDisabled(false);
+                                          if(objcombo.store!==null)
+                                              objcombo.store.proxy.extraParams.combo ='';
+                                          // itemt.setDisabled(false);
 
-                                 }});
+                                      }});
                 }}
 
             if(focus===false)
@@ -697,7 +697,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         });
         // Show form
 
-        form.isValid();
+        this.isValid(form);
         this.showView('form');
     },
 
@@ -918,19 +918,24 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             var isTree=false;
             var sm;
             var aux = this.view.items.items.forEach(function (item) {
-                if(item.componentCls == 'x-panel')
-                    if(item.store)
-                        nombre = item.store.storeId;
-            });
-            var grid =  Ext.ComponentQuery.query('panel #gridPanel');
-            grid.forEach(function (item) {
-                if(item.store)
-                    if(nombre==item.store.storeId)
-                    { sm = item.getSelectionModel().selected;
+                        if(item.componentCls == 'x-panel')
+                            if(item.store)
+                                {nombre = item.store.storeId;
 
-                    }
+                                sm = item.getSelectionModel().selected;
+                    }});
+                    var grid =  Ext.ComponentQuery.query('panel #gridPanel');
 
-            });
+                    if(sm===undefined)
+                    {
+                            grid.forEach(function (item) {
+                        if(item.store)
+                            if(nombre==item.store.storeId)
+                            { sm = item.getSelectionModel().selected;
+
+                            }
+
+                    });}
             var tree =  Ext.ComponentQuery.query('panel #treePanel');
             tree.forEach(function (item) {
                 if(item.store)
@@ -955,7 +960,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                         store = Ext.StoreManager.lookup(nombre);
                     // Delete record from store
 
-
+        console.log(record)
 
                     // Deselect grid
 
@@ -1061,6 +1066,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          var windows = button.up('window');
          var form,
              mask;
+         if(button.up('form')!==undefined)
+                   windows=false;
          if(windows)
          {form = windows.down('form').getForm();
           mask = windows.down('form');
@@ -1071,6 +1078,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
           mask= this.getReferences().form;
 
          }
+           console.log(form)
          var record = form.getRecord(),
              store = Ext.StoreManager.lookup(nombre);
          var me = this;
@@ -1078,7 +1086,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          var record_foto = [];
          // Valid
 
-         if (form.isValid()) {
+         if (this.isValid(form)) {
              mask.mask('Guardando...');
              //form.updateRecord();
              // Update associated record with values
@@ -1108,9 +1116,13 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                  var resultmulti = [];
                  resultmulti = me.searchComponent('multiselector',item,resultmulti);
+                 console.log(resultmulti)
                  var checkedmulti = function (v) {
                      var modelo = v.store.config.proxy.extraParams.model;
-                     asociados.push({id: v.data.id,model: modelo});
+                       var asoc ={id: v.data.id,model: modelo};
+                             if(v.data.escritura!==undefined)
+                             asoc.escritura = v.data.escritura;
+                             asociados.push(asoc);
                  };
                  for(var compmulti in resultmulti)
                  {var objmulti = resultmulti[compmulti];
@@ -1413,6 +1425,377 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         }
     },
 
+    savelocal: function(button, e, eOpts) {
+        if((typeof eOpts)!=='undefined')
+        {var nombre='';
+
+
+         var aux = this.view.items.items.forEach(function (item) {
+             if(item.componentCls == 'x-panel')
+                 if(item.store)
+                     nombre = item.store.storeId;
+         });
+
+         var windows = button.up('window');
+         var form,
+             mask;
+         if(button.up('form')!==undefined)
+                   windows=false;
+         if(windows)
+         {form = windows.down('form').getForm();
+          mask = windows.down('form');
+          // mask.mask('Guardando...');
+         }
+         else
+         {form = this.getReferences().form.getForm();
+          mask= this.getReferences().form;
+
+         }
+           console.log(form)
+         var record = form.getRecord(),
+             store = Ext.StoreManager.lookup(nombre);
+         var me = this;
+
+         var record_foto = [];
+         // Valid
+
+         if (this.isValid(form)) {
+             mask.mask('Guardando...');
+             //form.updateRecord();
+             // Update associated record with values
+
+             var nombre='';
+             var campo = '';
+             var asociados = [];
+             form.owner.items.items.forEach(function (item) {
+                 var resultree = [];
+                 resultree = me.searchComponent('treepanel',item,resultree);
+                 var checked = function (v) {
+
+                     asociados.push({id: v.data.id,model: v.data.model});
+                 };
+                 for(var comptree in resultree)
+                 {var objtree = resultree[comptree];
+                  if(objtree.xtype=='treepanel')
+                  {
+
+                      var checkedstree =objtree.getChecked();
+                      checkedstree.forEach(checked);
+
+
+
+                  }
+                 }
+
+                 var resultmulti = [];
+                 resultmulti = me.searchComponent('multiselector',item,resultmulti);
+                 console.log(resultmulti)
+                 var checkedmulti = function (v) {
+                     var modelo = v.store.config.proxy.extraParams.model;
+                       var asoc ={id: v.data.id,model: modelo};
+                             if(v.data.escritura!==undefined)
+                             asoc.escritura = v.data.escritura;
+                             asociados.push(asoc);
+                 };
+                 for(var compmulti in resultmulti)
+                 {var objmulti = resultmulti[compmulti];
+
+                  var checkedsmulti =objmulti.store.data.items;
+                  checkedsmulti.forEach(checkedmulti);
+
+
+                 }
+
+                 var resultImage = [];
+                 resultImage = me.searchComponent('image',item,resultImage);
+                 for(var compImage in resultImage)
+                 {var objImage = resultImage[compImage];
+                  if(objImage.xtype=='image')
+                  {
+                      var auxImage = objImage.itemId;
+
+                      if(auxImage)
+                          if(record.data[auxImage]!==undefined)
+                              record_foto[auxImage]=objImage.src;
+
+
+
+
+                  }
+                 }
+
+                 var result = [];
+                 result = me.searchComponent('combobox',item,result);
+                 for(var comp in result)
+                 {var obj = result[comp];
+                  if(obj.xtype=='combobox')
+                  {
+                      var aux1 = obj.name.replace('_id','');
+
+                      // if(obj.inputAttrTpl)
+                      //delete(record.data[aux]); Hay que arreglar en la BD que tenga relacion con el 2do nivel Ejp usuario_entidad_organismo
+
+                      if(aux1!=obj.name)
+
+                          record.data[aux1]=obj.rawValue;
+
+
+
+
+                  }
+                 }
+
+                 if(item.name){
+
+                     if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
+                     { nombre = item.value;
+                      campo = item.name;}
+                     var      auxname = item.name.replace('_id','');
+
+
+                     // if(auxname!=item.name)
+
+                     // delete(record.data[auxname]); //=item.rawValue;
+                 }});
+        var write = function(store1, operation, eOpts ) {
+
+
+
+
+                         if(flag)
+                         {var json = Ext.JSON.decode(operation._response.responseText);
+
+                          if (json.id !== null &&flag)
+                          {flag = false;
+
+
+
+                           store.proxy.extraParams.parent_id='';
+                           store.load({
+                               callback: function(s,o,e){
+
+                                   if(windows)
+                                       windows.close();
+                                   else
+                                   {mask.unmask(); me.showView('selectMessage');}
+                                   me.showToast(json.message,'info');
+
+
+                                   var tree =  Ext.ComponentQuery.query('panel treepanel');
+
+                                   tree.forEach(function (item) {
+
+                                       item.getSelectionModel().deselectAll();
+                                   });
+                                   var grid =  Ext.ComponentQuery.query('panel gridpanel');
+
+                                   grid.forEach(function (item) {
+
+                                       item.getSelectionModel().deselectAll();
+                                   });
+                                   var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
+                                   botonesEditar.forEach(function (item) {
+                                       item.setDisabled(true);
+                                   });
+                                   var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
+                                   botones.forEach(function (item) {
+                                       item.setDisabled(true);
+                                   });
+                                   var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
+                                   btnAssociate.forEach(function (item) {
+                                       item.setDisabled(true);
+                                   });
+
+                               }
+                           });
+
+
+                          }
+                         }
+
+                     };
+             // Add to store if new record
+
+             if(nombre!=='')
+                 var dt = store.findRecord(campo,nombre,0,false,false,true);
+
+             if(asociados.length>0)
+                 record.data.asociados=asociados;//Ext.JSON.encode(asociados);
+
+             store.proxy.extraParams.parent_id='save';
+             if (record.phantom) {
+
+
+
+
+
+                 if(dt===null)//para adicionar
+                 {form.updateRecord();
+                  for(var foto in record_foto)
+                  {
+                      record.data[foto]  = record_foto[foto];
+                  }
+                  if(record.data.parentId===null)
+
+                      record.data.leaf = true;
+                  store.add(record);
+                  var flag=true;
+                  //store.commitChanges();
+
+                 }
+                 /*else////para modificar
+                     if(nombre!=='' &&nombre ===dt.data[campo])
+                     {  mask.unmask();
+                      me.showToast('El elemento ya existe.','error');
+                      var flag=false;
+                     }*/
+
+                 else{
+                     form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     if(record.data.parentId===null)
+
+                         record.data.leaf = true;
+                     store.add(record);
+                     var flag=true;
+                    // store.commitChanges();
+                 }
+             }else{
+
+                 if(dt===null)//para adicionar
+                 {form.updateRecord();
+                  for(var foto in record_foto)
+                  {
+                      record.data[foto]  = record_foto[foto];
+                  }
+                  if(record.data.parentId===null)
+
+                      record.data.leaf = true;
+                  //store.add(record);
+                  var flag=true;
+                  // store.commitChanges();
+
+                 }else
+                     if(nombre!=='' &&nombre ===dt.data[campo])//para modificar
+                     {//console.log(dt)
+
+                         mask.unmask();
+                         if(dt.data.id===record.data.id)
+                         {
+                             var flag=true;
+                             for(var foto in record_foto)
+                             {
+                                 record.data[foto]  = record_foto[foto];
+                             }
+                             form.updateRecord(record);
+                             //console.log(form)
+        if(asociados.length>0)
+                             {
+                                  form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     flag= true;
+
+
+                                // store.commitChanges();
+                     record.save({success:write});
+
+                                 //me.showToast('El elemento ha sido modificado satisfactoriamente.','info');
+                             }
+                             me.showView('selectMessage');
+                             //
+                         }
+                         else
+                         {me.showToast('El elemento ya existe.','error');
+                          var flag=false;
+                         }
+                     }
+
+                 else{
+                     form.updateRecord();
+                     for(var foto in record_foto)
+                     {
+                         record.data[foto]  = record_foto[foto];
+                     }
+                     if(record.data.parentId===null)
+
+                         record.data.leaf = true;
+                     var flag=true;
+                     //store.commitChanges();
+
+                 }
+
+
+             }
+
+             mask.unmask();
+             me.showView('selectMessage');
+                                   me.showToast('El elemento ha sido insertado satisfactoriamente.','info');
+
+             // Commit changes
+
+
+             /*store.on('write',fn = function(store, operation, eOpts ) {
+
+
+                 if(flag)
+                 {var json = Ext.JSON.decode(operation._response.responseText);
+
+                  if (json.id !== null)
+                  { this.load({
+                      callback: function(s,o,e){
+                          flag = false;
+                          mask.unmask();
+
+                          me.showToast(json.message,'info');
+                          me.showView('selectMessage');
+                          var grid =  Ext.ComponentQuery.query('panel gridpanel');
+
+                          grid.forEach(function (item) {
+
+                              item.getSelectionModel().deselectAll();
+                          });
+
+                          var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
+                          botones.forEach(function (item) {
+                              item.setDisabled(true);
+                          });
+                          var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
+                          botonesEditar.forEach(function (item) {
+                              item.setDisabled(true);
+                          });
+                          var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
+                          btnAssociate.forEach(function (item) {
+                              item.setDisabled(true);
+                          });
+                      }
+                  });
+
+
+                  }
+                  else{
+
+                      mask.unmask();
+
+                      me.showToast(json.message,'error');
+
+
+                  }}
+
+             });*/
+         }
+             // Display record
+         }
+
+
+
+    },
+
     saveTreeWindows: function(button, e, eOpts) {
         if((typeof eOpts)!=='undefined')
         {var nombreStore='';
@@ -1441,13 +1824,13 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          }
 
          var record = form.getRecord();
-
+        console.log(record)
 
          var me = this;
          var record_foto = [];
 
          // Valid
-         if (form.isValid()) {
+         if (this.isValid(form)) {
              mask.mask('Guardando...');
              // Update associated record with values
 
@@ -1473,6 +1856,29 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
                   }
+                 }
+
+                  var resulgrid = [];
+                 resulgrid = me.searchComponent('gridpanel',item,resultree);
+                 var checkedgrid = function (v) {
+
+                     v.data.model = v.store.proxy.extraParams.model;
+                     v.data.esquema = v.store.proxy.extraParams.esquema_asociado;
+
+
+                             asociados.push(v.data);
+                 };
+                 for(var compgrid in resulgrid)
+                 {var objgrid = resulgrid[compgrid];
+
+        console.log(objgrid)
+        if(objgrid.xtype!=='treepanel')
+        {var checkedsgrid =objgrid.store.data.items;
+                      checkedsgrid.forEach(checkedgrid);
+        }
+
+
+
                  }
                  var resultmulti = [];
                          resultmulti = me.searchComponent('multiselector',item,resultmulti);
@@ -2265,7 +2671,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 //validar q no se repitan las columnas como el caso del usuario confirmar contrase;a
                 if(index===-1)
                 {
-
+        if(comp.fieldLabel!==undefined)
                     result.push(column);}
 
             }
@@ -2292,8 +2698,11 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                         sortable: false,
                         //groupable:false,
                         align: 'center',
-                        columns:columns
+                        columns:columns,
+
                     };
+        console.log(column)
+                    if(items[item].title!==undefined && columns.length!==0)
                     result.push(column);
 
 
@@ -2313,6 +2722,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 this.searchLabel(comp[item],result,is_grid);
             }
         }
+        if(result.length!==0)
         return result;
     },
 
@@ -2323,34 +2733,33 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
     getWinPanel: function(aux, asociar) {
         var model = '';
         var win = '';
+        var ethis =this;
+        console.log(asociar)
         if (asociar === undefined)
             asociar = '';
 
-        {model =aux.replace('nomenclador','model.');
-                 win = aux.replace('nomenclador','')+asociar+'Form';
-                }       if(aux==model)
-                {model =aux.replace('seguridad','model.');
-                win = aux.replace('seguridad','')+asociar+'Form';}
-                        if(aux==model)
-                        {model =aux.replace('persona','model.');
-                        win = aux.replace('persona','')+asociar+'Form';}
+        {
 
-                        if(aux==model)
-                        {model =aux.replace('estructura','model.');
-                         win = aux.replace('estructura','')+asociar+'Form';}
-                        if(aux==model)
-                        {model =aux.replace('actualizacion','model.');
-                        win = aux.replace('actualizacion','')+asociar+'Form';}
-                        if(aux==model)
-                        {model =aux.replace('crm','model.');
-                        win = aux.replace('crm','')+asociar+'Form';}
-                     if(aux==model)
-                        {model =aux.replace('configuracion','model.');
-                        win = aux.replace('configuracion','')+asociar+'Form';}
+                           var alias = Ext.data.StoreManager.lookup('nomenclador.Alias').data.items;
+                          for(var alia in alias)
+                              {
+                                  var namealias =  alias[alia].data.nombre;
 
 
-        this.model= model;
+                                  model =aux.replace(namealias,'model.');
+                 win = aux.replace(namealias,'')+asociar+'Form';
+                       if(aux!=model)
+                { break;
+                }
+
+                              }
+         this.model= model;
         this.win=win;
+
+
+        }
+
+
     },
 
     onComboboxSelectEntidad: function(combo, record, eOpts) {
@@ -2698,6 +3107,22 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                     slideInDuration: 400,
                     minWidth: 400
                 });
+    },
+
+    isValid: function(form) {
+        var me = form,
+                    invalid;
+                Ext.suspendLayouts();
+                invalid = me.getFields().filterBy(function(field) {
+                    if(field.up('form').up('panel').up('form')===undefined)
+                    return !field.validate();
+                });
+                Ext.resumeLayouts(true);
+                return invalid.length < 1;
+    },
+
+    cancelEdit1: function(button, e, eOpts) {
+        this.cancelEdit(button, e, eOpts);
     }
 
 });

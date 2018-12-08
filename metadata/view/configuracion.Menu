@@ -655,8 +655,8 @@
                                 "fieldLabel": "Activo",
                                 "name": "activo"
                             },
-                            "name": "MyCheckbox2",
-                            "designerId": "d1412cbf-83a1-409d-a2dc-64bf1c48f336"
+                            "name": "MyCheckbox4",
+                            "designerId": "aff117e5-779a-46c9-b6b6-ad2d328a536e"
                         },
                         {
                             "type": "Ext.form.field.TextArea",

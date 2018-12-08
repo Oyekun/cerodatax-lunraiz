@@ -61,6 +61,8 @@ $this->load->library('uuid');
                 $this->dbforge->drop_table('seguridad_modulo',TRUE);
                 $this->dbforge->drop_table('seguridad_rol',TRUE);
                  $this->dbforge->drop_table('configuracion_modulo',TRUE);
+                 $this->dbforge->drop_table('nomenclador_alias',TRUE);
+                 $this->dbforge->drop_table('configuracion_panel',TRUE);
 
                 $this->dbforge->add_field(array(
                                 'id' => array(
@@ -2311,6 +2313,16 @@ $this->dbforge->add_field(array(
                                 'unique' => TRUE,
                                 'null' => FALSE,
                         ),
+                                 'activo' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                        ),  
+                                'codigo' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255', 
+                                'null' => TRUE,
+                   ), 
 
                                 'descripcion' => array(
                                 'type' => 'VARCHAR',
@@ -2509,9 +2521,50 @@ $this->dbforge->add_field(array(
                  
                 $this->dbforge->add_field('CONSTRAINT modulo_menu_id FOREIGN KEY (modulo_id) REFERENCES configuracion_modulo (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT icono_menu_id FOREIGN KEY (icono_id) REFERENCES nomenclador_icono (id) ON UPDATE CASCADE');
-               
                 $this->dbforge->create_table('configuracion_menu',TRUE);  
 
+ $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ),
+                                'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                        ),
+
+                                'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                         ),  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        ),
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        ),
+
+                ));
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->create_table('nomenclador_alias',TRUE);
+              
                                 $this->dbforge->add_field(array(
                                 'id' => array(
                                 'type' => 'VARCHAR',
@@ -2535,7 +2588,9 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => TRUE,
                         ),
-                                'alias' => array(
+                                
+
+                                'alias_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => TRUE,
@@ -2544,12 +2599,12 @@ $this->dbforge->add_field(array(
                                 'menu_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
-                                'null' => TRUE,
+                                'null' => FALSE,
                         ),
                                    'descripcion' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '255',
-                                'null' => FALSE,
+                                'null' => TRUE,
                         ),
 
 
@@ -2580,8 +2635,11 @@ $this->dbforge->add_field(array(
 
                 ));
                 $this->dbforge->add_key('id', TRUE); 
-                 $this->dbforge->add_key('menu_id');
+                 $this->dbforge->add_key('alias_id');
+                $this->dbforge->add_field('CONSTRAINT alias_id FOREIGN KEY (alias_id) REFERENCES nomenclador_alias (id) ON UPDATE CASCADE');
+                $this->dbforge->add_key('menu_id');
                 $this->dbforge->add_field('CONSTRAINT menu_id FOREIGN KEY (menu_id) REFERENCES configuracion_menu (id) ON UPDATE CASCADE');
+                
                 $this->dbforge->create_table('configuracion_panel',TRUE);
 
                 

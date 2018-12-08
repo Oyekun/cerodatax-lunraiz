@@ -157,13 +157,13 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
         
         }
         else{
-			//arbol
+					//arbol
 			$id = 0;
 			$parent_id = $this->_args['parent_id'];
 		if($this->ion_auth->logged_in())	 
 		if($parent_id!="") 		
         {$id =$this->Api_model->row_update($datos,$id);  
-       // print_r($id);die;	
+        	
 		}
     }
 

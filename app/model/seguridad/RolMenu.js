@@ -19,6 +19,7 @@ Ext.define('cerodatax.model.seguridad.RolMenu', {
 
     requires: [
         'Ext.data.field.String',
+        'Ext.data.field.Boolean',
         'Ext.data.proxy.Rest',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json'
@@ -40,6 +41,10 @@ Ext.define('cerodatax.model.seguridad.RolMenu', {
         {
             type: 'string',
             name: 'nombre'
+        },
+        {
+            type: 'boolean',
+            name: 'escritura'
         },
         {
             type: 'string',

@@ -223,13 +223,14 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                             allowBlank: false
                         },
                         {
-                            xtype: 'textfield',
+                            xtype: 'combobox',
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
                             fieldLabel: 'Alias',
-                            name: 'alias',
-                            allowBlank: false
+                            name: 'alias_id',
+                            allowBlank: false,
+                            store: 'nomenclador.Alias'
                         },
                         {
                             xtype: 'combobox',

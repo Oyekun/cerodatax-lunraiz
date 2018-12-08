@@ -72,7 +72,11 @@ Ext.application({
         'nomenclador.CuentaBancaria',
         'crm.Cliente',
         'seguridad.RolMenu',
-        'seguridad.Rol'
+        'seguridad.Rol',
+        'crm.CuentaBancariaCliente',
+        'administracion.Licencia',
+        'administracion.Traza',
+        'nomenclador.Alias'
     ],
     stores: [
         'seguridad.Usuario',
@@ -127,7 +131,11 @@ Ext.application({
         'configuracion.MenuTablero',
         'configuracion.ModuloTablero',
         'configuracion.PanelTablero',
-        'configuracion.TipoModuloTablero'
+        'configuracion.TipoModuloTablero',
+        'crm.CuentaBancariaCliente',
+        'administracion.Licencia',
+        'administracion.Traza',
+        'nomenclador.Alias'
     ],
     views: [
         'seguridad.Rol',
@@ -184,7 +192,11 @@ Ext.application({
         'nomenclador.BancoForm',
         'nomenclador.CuentaBancaria',
         'configuracion.Menu',
-        'seguridad.Usuario'
+        'seguridad.Usuario',
+        'crm.ClienteCuentaBancariaForm',
+        'administracion.Licencia',
+        'administracion.Traza',
+        'nomenclador.Alias'
     ],
     controllers: [
         'Escritorio',
@@ -197,7 +209,8 @@ Ext.application({
         'cerodatax.actualizacion',
         'cerodatax.estructura',
         'cerodatax.crm',
-        'cerodatax.configuracion'
+        'cerodatax.configuracion',
+        'cerodatax.administracion'
     ],
 
     launch: function() {

@@ -59,7 +59,11 @@
             "nomenclador.CuentaBancaria",
             "crm.Cliente",
             "seguridad.RolMenu",
-            "seguridad.Rol"
+            "seguridad.Rol",
+            "crm.CuentaBancariaCliente",
+            "administracion.Licencia",
+            "administracion.Traza",
+            "nomenclador.Alias"
         ],
         "name": "cerodatax",
         "namespaces": [
@@ -68,7 +72,8 @@
             "cerodatax.actualizacion",
             "cerodatax.estructura",
             "cerodatax.crm",
-            "cerodatax.configuracion"
+            "cerodatax.configuracion",
+            "cerodatax.administracion"
         ],
         "requires": [
             "cerodatax.view.escritorio.FormAutenticacion",
@@ -127,7 +132,11 @@
             "configuracion.MenuTablero",
             "configuracion.ModuloTablero",
             "configuracion.PanelTablero",
-            "configuracion.TipoModuloTablero"
+            "configuracion.TipoModuloTablero",
+            "crm.CuentaBancariaCliente",
+            "administracion.Licencia",
+            "administracion.Traza",
+            "nomenclador.Alias"
         ],
         "views": [
             "seguridad.Rol",
@@ -184,7 +193,11 @@
             "nomenclador.BancoForm",
             "nomenclador.CuentaBancaria",
             "configuracion.Menu",
-            "seguridad.Usuario"
+            "seguridad.Usuario",
+            "crm.ClienteCuentaBancariaForm",
+            "administracion.Licencia",
+            "administracion.Traza",
+            "nomenclador.Alias"
         ]
     },
     "name": "Application",

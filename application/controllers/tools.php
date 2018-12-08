@@ -14,6 +14,7 @@ class Tools extends CI_Controller {
 
         $this->load->dbforge();
 
+
         // initiate faker
        // $this->faker = Factory::create();
     }
@@ -253,8 +254,25 @@ protected function make_model_file($name) {
 
     echo "$path model has successfully been created." . PHP_EOL;
 }
+/*public function create_backup()
+{
+   $this->load->dbutil();
+       // echo 'Inicializando Utility dbutil...'.PHP_EOL;;
+         
+     //   $this->load->database();
+        
+$prefs = array(
+        'tables'        => array('nomenclador_icono','nomenclador_tipomodulo', 'configuracion_modulo','configuracion_menu','configuracion_panel','nomenclador_alias'),   // Array of tables to backup.
+        'ignore'        => array(),                     // List of tables to omit from the backup
+        'format'        => 'txt',                       // gzip, zip, txt
+        'filename'      => 'alias_menu_modulo_panel_tipomodulo_icono1.sql',              // File name - NEEDED ONLY WITH ZIP FILES
+        'add_insert'    => TRUE,                        // Whether to add INSERT data to backup file
+        'newline'       => "\n"                         // Newline character used in backup file
+);
 
-  
+$this->dbutil->backup($prefs);
+
+  }*/
 
 
 

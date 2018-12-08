@@ -582,7 +582,7 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -591,9 +591,10 @@
                             "userConfig": {
                                 "allowBlank": false,
                                 "fieldLabel": "Alias",
-                                "name": "alias"
+                                "name": "alias_id",
+                                "store": "nomenclador.Alias"
                             },
-                            "name": "MyTextField50",
+                            "name": "MyComboBox4",
                             "designerId": "d67f9d0a-0fdc-4666-9cee-cbfc93405458",
                             "cn": [
                                 {

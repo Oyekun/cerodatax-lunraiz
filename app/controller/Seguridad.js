@@ -148,6 +148,7 @@ Ext.define('cerodatax.controller.Seguridad', {
             }
             // failure: failureCallback
         });
+        var ethis= this;
         Ext.Ajax.request({
             url: 'index.php/auth/arbol',
             method: 'POST',
@@ -164,6 +165,11 @@ Ext.define('cerodatax.controller.Seguridad', {
         var objmodulo =    Ext.create('cerodatax.store.configuracion.ModuloTablero');
         var objpanel =    Ext.create('cerodatax.store.configuracion.PanelTablero');
         var objpanelp;
+
+        var objalias =    Ext.create('cerodatax.store.nomenclador.Alias');
+         objalias.proxy.extraParams.combo='';
+        objalias.proxy.extraParams.limit='';
+        objalias.load();
 
         var me = this;
         console.log(objmenu)

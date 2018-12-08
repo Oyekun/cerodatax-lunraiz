@@ -20,18 +20,18 @@ Ext.define('cerodatax.view.seguridad.Rol', {
     requires: [
         'cerodatax.view.seguridad.RolViewModel',
         'cerodatax.view.seguridad.RolViewController',
-        'Ext.grid.column.Column',
         'Ext.button.Button',
         'Ext.toolbar.Paging',
         'Ext.selection.RowModel',
         'Ext.grid.filters.Filters',
         'Ext.form.field.Display',
+        'Ext.form.Panel',
+        'Ext.XTemplate',
+        'Ext.form.field.TextArea',
         'Ext.view.MultiSelector',
         'Ext.view.MultiSelectorSearch',
         'Ext.view.Table',
-        'Ext.form.Panel',
-        'Ext.XTemplate',
-        'Ext.form.field.TextArea'
+        'Ext.grid.column.Check'
     ],
 
     controller: 'seguridadrol',
@@ -60,7 +60,7 @@ Ext.define('cerodatax.view.seguridad.Rol', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'description',
+                    dataIndex: 'name',
                     text: 'Rol'
                 }
             ],
@@ -176,18 +176,6 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                             bind: {
                                 value: '{record.rol}'
                             }
-                        },
-                        {
-                            xtype: 'multiselector',
-                            title: 'Modulos',
-                            search: {
-                                xtype: 'multiselector-search',
-                                store: 'seguridad.ModuloDesabilitado',
-                                field: 'modulo'
-                            },
-                            viewConfig: {
-                                deferEmptyText: false
-                            }
                         }
                     ]
                 },
@@ -237,7 +225,23 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                             },
                             viewConfig: {
                                 deferEmptyText: false
-                            }
+                            },
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    width: 100,
+                                    dataIndex: 'nombre',
+                                    text: 'Menú'
+                                },
+                                {
+                                    xtype: 'checkcolumn',
+                                    dataIndex: 'escritura',
+                                    text: 'Escritura',
+                                    listeners: {
+                                        beforecheckchange: 'onCheckcolumnBeforeCheckChange'
+                                    }
+                                }
+                            ]
                         },
                         {
                             xtype: 'container',

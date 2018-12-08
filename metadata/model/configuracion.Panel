@@ -128,6 +128,19 @@
             },
             "name": "MyString93",
             "designerId": "ea788730-d57a-414e-bf3e-41373d621f1e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "alias_id"
+            },
+            "name": "MyString29",
+            "designerId": "cc93e491-8352-4757-be37-a6340cb687e3"
         }
     ]
 }

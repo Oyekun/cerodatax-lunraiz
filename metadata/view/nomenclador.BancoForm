@@ -391,14 +391,9 @@
                                                 "allowBlank": false,
                                                 "fieldLabel": "Nombre",
                                                 "name": "nombre",
-                                                "value": [
-                                                    "{record.nombre}"
-                                                ]
+                                                "value": null
                                             },
                                             "name": "MyTextField14",
-                                            "configAlternates": {
-                                                "value": "binding"
-                                            },
                                             "designerId": "4a2e2137-126d-4052-9e1a-56fcdb15ac3e",
                                             "cn": [
                                                 {

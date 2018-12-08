@@ -392,6 +392,8 @@ class Migration_create_table_crm extends CI_Migration {
 
                 ));
                 $this->dbforge->add_key('id', TRUE);
+                 $this->dbforge->add_key('banco_id');
+                  $this->dbforge->add_key('moneda_id');
                 $this->dbforge->add_field('CONSTRAINT banco_id FOREIGN KEY (banco_id) REFERENCES nomenclador_banco (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT moneda_id FOREIGN KEY (moneda_id) REFERENCES nomenclador_moneda (id) ON UPDATE CASCADE');
                 $this->dbforge->create_table('nomenclador_cuentabancaria',TRUE);
@@ -523,7 +525,7 @@ class Migration_create_table_crm extends CI_Migration {
                 ));
                 $this->dbforge->add_key('cuenta_bancaria_id');
                 $this->dbforge->add_field('CONSTRAINT cuenta_bancaria_id FOREIGN KEY (cuenta_bancaria_id) REFERENCES nomenclador_cuentabancaria (id) ON UPDATE CASCADE ON DELETE CASCADE');
-                $this->dbforge->add_key('persona_id');
+                $this->dbforge->add_key('cliente_id');
                 $this->dbforge->add_field('CONSTRAINT cliente_id FOREIGN KEY (cliente_id) REFERENCES crm_cliente (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
                 $this->dbforge->create_table('crm_cuentabancariacliente',TRUE);
@@ -567,7 +569,7 @@ class Migration_create_table_crm extends CI_Migration {
                 ));
                 $this->dbforge->add_key('entidad_id');
                 $this->dbforge->add_field('CONSTRAINT entidad_entidadcontacto_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
-                $this->dbforge->add_key('persona_id');
+                $this->dbforge->add_key('contacto_id');
                 $this->dbforge->add_field('CONSTRAINT crm_contacto_id FOREIGN KEY (contacto_id) REFERENCES crm_contacto (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
                 $this->dbforge->create_table('crm_entidadcontacto',TRUE);

@@ -43,7 +43,7 @@
                 "layout": "auto",
                 "reference": "form",
                 "title": null,
-                "width": 620
+                "width": 460
             },
             "name": "MyForm6",
             "designerId": "9cbc025d-1285-476a-815b-fff40aaeb7a4",
@@ -176,7 +176,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "activeTab": 0,
-                        "width": 600
+                        "width": null
                     },
                     "name": "MyTabPanel",
                     "designerId": "46957dc0-bb47-46ba-99e2-fd2f9c50ce78",
@@ -377,8 +377,16 @@
                                                             "userConfig": {
                                                                 "designer|displayName": "itemTpl",
                                                                 "implHandler": [
-                                                                    "<tpl for=\".\"> ",
-                                                                    "        <img src=\"{foto}\" height=\"20px\" style=\"float:left;\"> {nombre} ",
+                                                                    " ",
+                                                                    "<tpl for=\".\">",
+                                                                    "    ",
+                                                                    "    <tpl if=\"foto==''\">",
+                                                                    "         {nombre}",
+                                                                    "        </tpl> ",
+                                                                    "     <tpl if=\"foto!=''\">",
+                                                                    "        <img src=\"{foto}\" height=\"20px\" style=\"float:left;\"> {nombre}",
+                                                                    "        </tpl> ",
+                                                                    "    ",
                                                                     "</tpl>"
                                                                 ]
                                                             },
@@ -564,14 +572,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "container|align": "stretch",
-                                "controller": null,
-                                "height": 500,
-                                "layout": "hbox",
-                                "title": "Cuentas Bancarias"
+                                "title": "Observaciones"
                             },
-                            "name": "MyPanel2",
-                            "designerId": "dd143358-ae2b-4346-9206-cbaaa2e00f2b",
+                            "name": "MyPanel4",
+                            "designerId": "305cba04-e9e2-48bc-8c01-6d3e9092a2ae",
                             "cn": [
                                 {
                                     "type": "Ext.tab.Tab",
@@ -581,7 +585,24 @@
                                     },
                                     "codeClass": null,
                                     "name": "TabConfig",
-                                    "designerId": "7ca36d2d-c398-4193-88cd-0b24d7924956"
+                                    "designerId": "4f7875aa-5f5b-4824-add0-07db9a46d4c4"
+                                },
+                                {
+                                    "type": "Ext.form.field.TextArea",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": null,
+                                        "fieldLabel": "Descripción",
+                                        "height": null,
+                                        "maxLength": 255,
+                                        "name": "descripcion"
+                                    },
+                                    "name": "MyTextArea1",
+                                    "designerId": "6d6f6774-a07a-4325-846a-bc1aba5b9c7a"
                                 }
                             ]
                         }

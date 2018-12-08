@@ -233,6 +233,53 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseParams": [
+                                    "cuentabancaria"
+                                ],
+                                "designer|createAlias": "button",
+                                "designer|displayName": "btnAssociate",
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnAssociate",
+                                "layout|flex": null,
+                                "text": "Asociar Cuenta Bancaria"
+                            },
+                            "name": "MyButton2",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "04887190-6518-46d6-b18b-39262deb2c56",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "associate",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "associate",
+                                    "designerId": "d2ad4ae9-c2dc-48da-b4e5-01df0082f35b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
                                 "glyph": null,
                                 "hidden": [
                                     "{!record}"
@@ -313,6 +360,7 @@
                             "form = vista.down('form').getForm();",
                             "var results=[];",
                             "columns = control.searchLabel(form.owner.items.items,results,true);",
+                            "console.log(columns)",
                             "control.formatForm(form.owner.items);",
                             "control.configGridPanel(config,columns);",
                             "return config;"

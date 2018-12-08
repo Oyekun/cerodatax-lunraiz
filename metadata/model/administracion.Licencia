@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "licencia",
+        "designer|userClassName": "administracion.Licencia"
+    },
+    "name": "nomenclador.TipoModulo2",
+    "designerId": "b353f209-511e-437c-8fc2-b3be24b8432c",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "02dcd84a-bb3c-4f3a-937e-d7f8a1e8dcc2"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "activo"
+            },
+            "name": "MyBoolean14",
+            "designerId": "daf23127-38b7-4104-9e6b-52716f44da0d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString88",
+            "designerId": "04df041e-25a0-477a-904b-67992c3028d0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "menu"
+            },
+            "name": "MyString78",
+            "designerId": "607e7ef4-b784-48b6-8f4c-3b9145091825"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "menu_id"
+            },
+            "name": "MyString84",
+            "designerId": "02c66f7c-95ca-4c2b-96d1-8f095c0adb93"
+        }
+    ]
+}

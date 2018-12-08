@@ -110,6 +110,19 @@ Ext.define('cerodatax.view.crm.Cliente', {
                                     },
                                     {
                                         xtype: 'button',
+                                        disabled: true,
+                                        itemId: 'btnAssociate',
+                                        baseParams: 'cuentabancaria',
+                                        text: 'Asociar Cuenta Bancaria',
+                                        bind: {
+                                            hidden: '{!record}'
+                                        },
+                                        listeners: {
+                                            click: 'associate'
+                                        }
+                                    },
+                                    {
+                                        xtype: 'button',
                                         itemId: 'btnRefresh',
                                         text: 'Actualizar',
                                         tooltip: '<span style="  font-weight:bold"> Actualizar(Ctrl+A) </span>Actualiza elemento(s).',
@@ -157,6 +170,7 @@ Ext.define('cerodatax.view.crm.Cliente', {
         form = vista.down('form').getForm();
         var results=[];
         columns = control.searchLabel(form.owner.items.items,results,true);
+        console.log(columns)
         control.formatForm(form.owner.items);
         control.configGridPanel(config,columns);
         return config;

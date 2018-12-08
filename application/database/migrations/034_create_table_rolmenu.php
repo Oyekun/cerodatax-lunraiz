@@ -33,6 +33,11 @@ class Migration_create_table_rolmenu extends CI_Migration {
                 'constraint' => '100',
                 'unsigned'   => TRUE
             ),  
+              'escritura' => array(
+                                'type' => 'INT',
+                                'constraint' => '1', 
+                                'default' => '0',
+                   ),  
                          'date_created' => array(
                                 'type' => 'TIMESTAMP',  
                                 'null' => TRUE,    
@@ -54,10 +59,12 @@ class Migration_create_table_rolmenu extends CI_Migration {
         ));
                 $this->dbforge->add_key('menu_id');
                 $this->dbforge->add_field('CONSTRAINT seguridad_menu_id FOREIGN KEY (menu_id) REFERENCES configuracion_menu (id) ON UPDATE CASCADE ON DELETE CASCADE');
-                $this->dbforge->add_key('persona_id');
+                $this->dbforge->add_key('rol_id');
                 $this->dbforge->add_field('CONSTRAINT seguridad_rol_id FOREIGN KEY (rol_id) REFERENCES seguridad_rol (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('seguridad_menurol');
+
+  
     }
 }

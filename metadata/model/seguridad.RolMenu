@@ -69,6 +69,20 @@
             "designerId": "51a483fe-d60e-4858-abda-b548462df07d"
         },
         {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "escritura",
+                "name": "escritura"
+            },
+            "name": "MyBoolean10",
+            "designerId": "466b873d-5770-4560-9e79-359c949f5ba5"
+        },
+        {
             "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",

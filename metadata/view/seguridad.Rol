@@ -53,7 +53,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "description",
+                        "dataIndex": "name",
                         "text": "Rol"
                     },
                     "name": "MyColumn4",
@@ -447,48 +447,6 @@
                                 "value": "binding"
                             },
                             "designerId": "99c85fce-070b-480a-8d47-93fb9b8a20e1"
-                        },
-                        {
-                            "type": "Ext.view.MultiSelector",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "title": "Modulos"
-                            },
-                            "name": "MyMultiSelector5",
-                            "designerId": "be95985d-5fb9-4d66-bd63-0663eccf2303",
-                            "cn": [
-                                {
-                                    "type": "Ext.view.MultiSelectorSearch",
-                                    "reference": {
-                                        "name": "search",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "field": "modulo",
-                                        "store": "seguridad.ModuloDesabilitado"
-                                    },
-                                    "name": "MyMultiSelectorSearch",
-                                    "designerId": "bf4100b4-e3a1-4b04-a110-82802fd05b8f"
-                                },
-                                {
-                                    "type": "Ext.view.Table",
-                                    "reference": {
-                                        "name": "viewConfig",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "deferEmptyText": false
-                                    },
-                                    "name": "MyTable1",
-                                    "designerId": "727b0c72-1885-40de-ac06-52754dd7aed3"
-                                }
-                            ]
                         }
                     ]
                 },
@@ -594,6 +552,8 @@
                                 "fieldName": "nombre",
                                 "height": 200,
                                 "removeRowTip": "Elimina este elemento",
+                                "reserveScrollbar": null,
+                                "scrollable": null,
                                 "store": "seguridad.RolMenu",
                                 "title": "Menus"
                             },
@@ -628,6 +588,52 @@
                                     },
                                     "name": "MyTable3",
                                     "designerId": "5e1ac1c0-cc3e-4dab-a901-01ceefe17e9e"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "nombre",
+                                        "text": "Menú",
+                                        "width": 100
+                                    },
+                                    "name": "MyColumn",
+                                    "designerId": "bb26507d-e920-436c-8e60-ea2004c2ac0c"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Check",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "escritura",
+                                        "text": "Escritura"
+                                    },
+                                    "name": "MyCheck",
+                                    "designerId": "38d231ee-0976-4cce-8e4e-30ab8063e32f",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCheckcolumnBeforeCheckChange",
+                                                "name": "beforecheckchange",
+                                                "scope": "me"
+                                            },
+                                            "name": "onCheckcolumnBeforeCheckChange",
+                                            "designerId": "1f75c80b-f61e-4eb6-bf52-cad56ab31bb1"
+                                        }
+                                    ]
                                 }
                             ]
                         },

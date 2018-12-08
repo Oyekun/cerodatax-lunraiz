@@ -94,6 +94,10 @@ Ext.define('cerodatax.view.seguridad.RolViewController', {
 
     },
 
+    onCheckcolumnBeforeCheckChange: function(checkcolumn, rowIndex, checked, eOpts) {
+
+    },
+
     save: function(button, e, eOpts) {
         var form = this.getReferences().form.getForm(),
             record = form.getRecord(),

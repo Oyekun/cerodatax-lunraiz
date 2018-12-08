@@ -31,6 +31,7 @@ Ext.define('cerodatax.model.nomenclador.Provincia', {
             name: 'nombre'
         },
         {
+            type: 'string',
             name: 'siglas'
         },
         {
@@ -42,6 +43,7 @@ Ext.define('cerodatax.model.nomenclador.Provincia', {
             name: 'pais_id'
         },
         {
+            type: 'string',
             name: 'codigo'
         }
     ]

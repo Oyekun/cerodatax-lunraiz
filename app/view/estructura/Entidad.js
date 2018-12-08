@@ -177,7 +177,7 @@ Ext.define('cerodatax.view.estructura.Entidad', {
         control.win='';
          var me = this;
         var aux = me.config.viewModel.type;
-        control.getWinPanel(aux);
+         control.getWinPanel(aux);
         var win = control.win;
         var vista = Ext.create('widget.'+win);
         form = vista.down('form').getForm();

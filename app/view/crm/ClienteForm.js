@@ -28,7 +28,8 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
         'Ext.form.field.ComboBox',
         'Ext.view.BoundList',
         'Ext.XTemplate',
-        'Ext.form.field.Display'
+        'Ext.form.field.Display',
+        'Ext.form.field.TextArea'
     ],
 
     controller: 'crmclienteform',
@@ -50,7 +51,7 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
                         reference: 'form',
                         alignTarget: 'top',
                         height: 500,
-                        width: 620,
+                        width: 460,
                         layout: 'auto',
                         bodyPadding: 10,
                         fieldDefaults: {
@@ -89,7 +90,6 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
                         items: [
                             {
                                 xtype: 'tabpanel',
-                                width: 600,
                                 activeTab: 0,
                                 items: [
                                     {
@@ -159,8 +159,16 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
                                                             xtype: 'boundlist',
                                                             itemSelector: 'span',
                                                             itemTpl: [
-                                                                '<tpl for="."> ',
-                                                                '        <img src="{foto}" height="20px" style="float:left;"> {nombre} ',
+                                                                ' ',
+                                                                '<tpl for=".">',
+                                                                '    ',
+                                                                '    <tpl if="foto==\'\'">',
+                                                                '         {nombre}',
+                                                                '        </tpl> ',
+                                                                '     <tpl if="foto!=\'\'">',
+                                                                '        <img src="{foto}" height="20px" style="float:left;"> {nombre}',
+                                                                '        </tpl> ',
+                                                                '    ',
                                                                 '</tpl>'
                                                             ]
                                                         }
@@ -233,12 +241,15 @@ Ext.define('cerodatax.view.crm.ClienteForm', {
                                     },
                                     {
                                         xtype: 'panel',
-                                        height: 500,
-                                        title: 'Cuentas Bancarias',
-                                        layout: {
-                                            type: 'hbox',
-                                            align: 'stretch'
-                                        }
+                                        title: 'Observaciones',
+                                        items: [
+                                            {
+                                                xtype: 'textareafield',
+                                                fieldLabel: 'Descripción',
+                                                name: 'descripcion',
+                                                maxLength: 255
+                                            }
+                                        ]
                                     }
                                 ]
                             }

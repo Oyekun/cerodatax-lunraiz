@@ -22,15 +22,16 @@ class Migration_init_menu_modulo_panel_tipomodulo_icono extends CI_Migration {
                 $this->load->dbforge();
                 $this->load->library('uuid'); 
 
-  $string = read_file(APPPATH.'hooks/menu_modulo_panel_tipomodulo_icono.sql');
+  $string = read_file(APPPATH.'hooks/alias_menu_modulo_panel_tipomodulo_icono.sql');
         
         $salida = explode("\n", $string);
         $nombre = ''; 
-        $this->db->simple_query('TRUNCATE configuracion_panel CASCADE;');
         $this->db->simple_query('TRUNCATE configuracion_menu CASCADE;');
+        $this->db->simple_query('TRUNCATE configuracion_panel CASCADE;');
         $this->db->simple_query('TRUNCATE configuracion_modulo CASCADE;');
         $this->db->simple_query('TRUNCATE nomenclador_tipomodulo CASCADE;');
         $this->db->simple_query('TRUNCATE nomenclador_icono CASCADE;');
+        $this->db->simple_query('TRUNCATE nomenclador_alias CASCADE;');
      
          foreach ($salida as $key => $value) {
 

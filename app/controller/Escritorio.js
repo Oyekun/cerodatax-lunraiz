@@ -61,6 +61,7 @@ Ext.define('cerodatax.controller.Escritorio', {
          {if(grid.store.proxy.extraParams!==undefined)
              grid.store.proxy.extraParams.combo = '';
           grid.store.proxy.extraParams.limit = 25;
+          console.log(grid.store.proxy.extraParams)
            if(grid.store.proxy.extraParams.detalles!==undefined)
           delete(grid.store.proxy.extraParams.detalles);
           if(grid.store.proxy.extraParams.id_asociado!==undefined)
