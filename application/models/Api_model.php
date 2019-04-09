@@ -618,7 +618,7 @@ class Api_model extends CI_Model
             unset($dataArray['asociados']);
         }
 
-
+ //print_r($dataArray);die;
         $this->db->where('id', $id);
         $dataArray['date_updated'] = date('Y-m-d H:i:s');
         $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';

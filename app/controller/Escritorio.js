@@ -195,6 +195,7 @@ Ext.define('cerodatax.controller.Escritorio', {
         var search = obj[1];
 
         var panelPrincipal = Ext.ComponentQuery.query('#panelPrincipal')[0];
+
         panelPrincipal.items.each(function(itemPanel){
             searchPanel = 'panel'+search;
 
@@ -218,7 +219,7 @@ Ext.define('cerodatax.controller.Escritorio', {
 
              if(grid)
              {if(grid.store.proxy.extraParams!==undefined)
-               grid.store.proxy.extraParams.combo = '';
+                 grid.store.proxy.extraParams.combo = '';
               grid.store.load();
               grid.getSelectionModel().deselectAll();
 

@@ -1909,23 +1909,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   }
                  }
 
-                         /*var resultDisplay = []; Hay q arreglar q quite los displyfield dado q no son campos existenten en las tablas
+                         /*var resultDisplay = []; //Hay q arreglar q quite los displyfield dado q no son campos existenten en las tablas
                           resultDisplay = me.searchComponent('displayfield',item,resultDisplay);
                           for(var compDisplay in resultDisplay)
                           {var objDisplay = resultDisplay[compDisplay];
 
                            if(objDisplay.xtype==='displayfield')
                            {
-
-                                       var auxDisplay = objDisplay.name;
-                                     //   console.log(resultDisplay.hasOwnProperty(objDisplay))
-                                         for(var displ in record.data)
-                                          {
-                                                  if(displ==auxDisplay)
-                                                  {console.log(displ);
-                                          console.log(auxDisplay);}
-                                         }
-                                         delete(record.data[auxDisplay]);
+         delete(record.data[objDisplay.name]);
                            }
                           }*/
 
@@ -2107,10 +2098,25 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              }else{
                  if(dt===null)
                  {form.updateRecord();
+                  //  displyfield se comentario momentanamente para ver si funciona el cliente en aso de ser asi dejarlo
                   for(var foto in record_foto)
                   {
                       record.data[foto]  = record_foto[foto];
                   }
+
+                         form.owner.items.items.forEach(function (item) {
+                          var resultDisplay = []; //Hay q arreglar q quite los displyfield dado q no son campos existenten en las tablas
+                                  resultDisplay = me.searchComponent('displayfield',item,resultDisplay);
+                                  for(var compDisplay in resultDisplay)
+                                  {var objDisplay = resultDisplay[compDisplay];
+
+                                   if(objDisplay.xtype==='displayfield')
+                                   {
+                 delete(record.data[objDisplay.name]);
+                                   }
+                                  }
+                          });
+
                   flag= true;
                   record.save({success:write,failure: write});
 
