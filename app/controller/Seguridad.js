@@ -170,7 +170,7 @@ Ext.define('cerodatax.controller.Seguridad', {
          objalias.proxy.extraParams.combo='';
         objalias.proxy.extraParams.limit='';
         objalias.load();
-
+        objalias.proxy.extraParams.limit=25;
         var me = this;
         console.log(objmenu)
         obj.proxy.extraParams.combo='';

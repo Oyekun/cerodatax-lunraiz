@@ -1,5 +1,5 @@
 [{
-   		id:'21327d3a-c77d-56c7-9971-0121f3ed5768',nombre:'Administración',orden:'0',activo:'1',codigo:'34534534',descripcion:'Se utiliza para la administración de los módulos principales del marco de trabajo.',date_created:'2018-10-21 00:25:09',date_updated:'2019-03-15 18:53:05',created_from_ip:'127.0.0.1',updated_from_ip:'::1',
+   		id:'21327d3a-c77d-56c7-9971-0121f3ed5768',nombre:'Administración',orden:'0',activo:'0',codigo:'d',descripcion:'Se utiliza para la administración de los módulos principales del marco de trabajo.',date_created:'2018-10-21 00:25:09',date_updated:'2018-12-18 01:46:07',created_from_ip:'127.0.0.1',updated_from_ip:'::1',
    },{
    		id:'ee3caef1-49a7-5447-9552-008a56501ce7',nombre:'Nomencladores',orden:'1',activo:'0',codigo:'',descripcion:'Se utiliza para gestionar todos los nomencladores del sistema.',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },{

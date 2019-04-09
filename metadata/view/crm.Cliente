@@ -360,7 +360,7 @@
                             "form = vista.down('form').getForm();",
                             "var results=[];",
                             "columns = control.searchLabel(form.owner.items.items,results,true);",
-                            "console.log(columns)",
+                            "",
                             "control.formatForm(form.owner.items);",
                             "control.configGridPanel(config,columns);",
                             "return config;"
@@ -411,6 +411,27 @@
             },
             "name": "MyPagingToolbar21",
             "designerId": "b1a46ac8-c196-4f7d-8597-316233160bf3"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCrmCliente",
+                "implHandler": [
+                    "console.log(config)",
+                    "config.gridasociado=true;",
+                    "return config;"
+                ]
+            },
+            "name": "processCrmCliente",
+            "designerId": "2034ea45-6340-4050-a96b-bd89782268e0"
         }
     ]
 }

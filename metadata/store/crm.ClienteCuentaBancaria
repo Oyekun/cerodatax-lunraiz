@@ -8,12 +8,13 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "designer|userClassName": "crm.Cliente",
-        "model": "crm.Cliente",
-        "storeId": "crm.Cliente"
+        "designer|userClassName": "crm.ClienteCuentaBancaria",
+        "model": "crm.ClienteCuentaBancaria",
+        "remoteFilter": null,
+        "storeId": "crm.ClienteCuentaBancaria"
     },
-    "name": "crm.Contacto4",
-    "designerId": "cdd2141f-0d6c-4a4a-b822-2fd778a6886e",
+    "name": "nomenclador.CuentaBancaria2",
+    "designerId": "5556049c-36cf-44fb-9168-a252d10b3713",
     "cn": [
         {
             "type": "Ext.data.proxy.Rest",
@@ -25,20 +26,21 @@
             "userConfig": {
                 "api": [
                     "{",
-                    "add:{url: 'index.php/api/restserver/rests',method: 'POST'},",
+                    " ",
                     "show: {url: 'index.php/api/restserver/rests/',method: 'GET'},",
-                    "save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},",
-                    "remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}",
+                    " ",
+                    " ",
                     "}"
                 ],
                 "extraParams": [
-                    "{model:'cliente',esquema:'crm'}"
+                    "{model:'cuentabancaria',esquema:'nomenclador',esquema_asociado:'crm',asociados: 'cliente',",
+                    "                    id_asociado: '',gridasociado:'true',detalles:'edit'}"
                 ],
                 "format": "",
                 "url": "index.php/api/restserver/rests/"
             },
             "name": "MyRestProxy",
-            "designerId": "29eaf4b1-2a95-4d2d-9621-df4e87294c9a",
+            "designerId": "9cea9cef-873d-4a62-af43-595add146c0f",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -51,7 +53,7 @@
                         "rootProperty": "data"
                     },
                     "name": "MyJsonReader",
-                    "designerId": "21ce4188-e9aa-4c30-a087-9e8e9319fb6d"
+                    "designerId": "5e4f47d8-9dee-4a24-a9de-2b9268fb527c"
                 },
                 {
                     "type": "Ext.data.writer.Json",
@@ -66,7 +68,7 @@
                         "writeAllFields": true
                     },
                     "name": "MyJsonWriter",
-                    "designerId": "81264ae2-2f9e-47cc-8cdb-24e2cc1b4de3"
+                    "designerId": "58b4ac42-e442-4cd9-aa1f-b23eebb17d53"
                 }
             ]
         }

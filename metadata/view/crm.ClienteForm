@@ -10,7 +10,7 @@
         "controller": [
             "nomencladorcrud"
         ],
-        "designer|userAlias": "clienteForm",
+        "designer|userAlias": "crmclienteForm",
         "designer|userClassName": "crm.ClienteForm",
         "height": null,
         "modal": true,

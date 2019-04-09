@@ -132,8 +132,7 @@ Ext.define('cerodatax.model.crm.Cliente', {
         },
         extraParams: {
             model: 'cliente',
-            esquema: 'crm',
-            gridasociado: 'true'
+            esquema: 'crm'
         },
         url: 'index.php/api/restserver/rests/',
         writer: {

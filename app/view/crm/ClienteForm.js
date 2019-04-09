@@ -15,7 +15,7 @@
 
 Ext.define('cerodatax.view.crm.ClienteForm', {
     extend: 'Ext.window.Window',
-    alias: 'widget.clienteForm',
+    alias: 'widget.crmclienteForm',
 
     requires: [
         'cerodatax.view.crm.ClienteFormViewModel',

@@ -15,7 +15,7 @@
 
 Ext.define('cerodatax.view.crm.ClienteCuentaBancariaForm', {
     extend: 'Ext.window.Window',
-    alias: 'widget.crmclientecuentabancaria',
+    alias: 'widget.crmclientecuentabancariaForm',
 
     requires: [
         'Ext.grid.Panel',
@@ -53,7 +53,7 @@ Ext.define('cerodatax.view.crm.ClienteCuentaBancariaForm', {
             resizable: false,
             title: '',
             forceFit: true,
-            store: 'crm.CuentaBancariaCliente',
+            store: 'crm.ClienteCuentaBancaria',
             columns: [
                 {
                     xtype: 'gridcolumn',
@@ -70,7 +70,7 @@ Ext.define('cerodatax.view.crm.ClienteCuentaBancariaForm', {
                     dock: 'bottom',
                     width: 360,
                     displayInfo: true,
-                    store: 'crm.CuentaBancariaCliente'
+                    store: 'crm.ClienteCuentaBancaria'
                 },
                 {
                     xtype: 'toolbar',
@@ -148,6 +148,7 @@ Ext.define('cerodatax.view.crm.ClienteCuentaBancariaForm', {
                 {
                     xtype: 'panel',
                     reference: 'selectMessage',
+                    hidden: true,
                     layout: {
                         type: 'vbox',
                         align: 'center',

@@ -10,7 +10,7 @@
         "controller": [
             "nomencladorcrud"
         ],
-        "designer|userAlias": "crmclientecuentabancaria",
+        "designer|userAlias": "crmclientecuentabancariaForm",
         "designer|userClassName": "crm.ClienteCuentaBancariaForm",
         "height": 480,
         "layout": "border",
@@ -43,7 +43,7 @@
                 "resizable": [
                     "false"
                 ],
-                "store": "crm.CuentaBancariaCliente",
+                "store": "crm.ClienteCuentaBancaria",
                 "title": ""
             },
             "name": "MyGridPanel17",
@@ -95,7 +95,7 @@
                     "userConfig": {
                         "displayInfo": true,
                         "dock": "bottom",
-                        "store": "crm.CuentaBancariaCliente",
+                        "store": "crm.ClienteCuentaBancaria",
                         "width": 360
                     },
                     "name": "MyPagingToolbar1",
@@ -429,6 +429,7 @@
                     "userConfig": {
                         "container|align": "center",
                         "container|pack": "center",
+                        "hidden": true,
                         "layout": "vbox",
                         "reference": "selectMessage"
                     },
@@ -500,6 +501,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "designer|createAlias": null,
                         "designer|uiInterfaceName": "default-framed",
                         "dock": null,
                         "fieldDefaults": [

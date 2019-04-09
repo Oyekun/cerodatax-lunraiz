@@ -536,6 +536,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
+                        "designer|createAlias": "",
                         "designer|uiInterfaceName": "default-framed",
                         "fieldDefaults": [
                             "{maxLength: 100,",

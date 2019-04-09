@@ -491,7 +491,7 @@ class Migration_create_table_crm extends CI_Migration {
                                 'constraint' => 100,
                                 'unsigned' => TRUE,
                         ), 
-                                'cuenta_bancaria_id' => array(
+                                'cuentabancaria_id' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => FALSE,
@@ -524,11 +524,11 @@ class Migration_create_table_crm extends CI_Migration {
 
                 ));
                 $this->dbforge->add_key('cuenta_bancaria_id');
-                $this->dbforge->add_field('CONSTRAINT cuenta_bancaria_id FOREIGN KEY (cuenta_bancaria_id) REFERENCES nomenclador_cuentabancaria (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                $this->dbforge->add_field('CONSTRAINT cuenta_bancaria_id FOREIGN KEY (cuentabancaria_id) REFERENCES nomenclador_cuentabancaria (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('cliente_id');
                 $this->dbforge->add_field('CONSTRAINT cliente_id FOREIGN KEY (cliente_id) REFERENCES crm_cliente (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
-                $this->dbforge->create_table('crm_cuentabancariacliente',TRUE);
+                $this->dbforge->create_table('crm_clientecuentabancaria',TRUE);
 
 
                   $this->dbforge->add_field(array(

@@ -73,7 +73,7 @@ Ext.application({
         'crm.Cliente',
         'seguridad.RolMenu',
         'seguridad.Rol',
-        'crm.CuentaBancariaCliente',
+        'crm.ClienteCuentaBancaria',
         'administracion.Licencia',
         'administracion.Traza',
         'nomenclador.Alias'
@@ -132,7 +132,7 @@ Ext.application({
         'configuracion.ModuloTablero',
         'configuracion.PanelTablero',
         'configuracion.TipoModuloTablero',
-        'crm.CuentaBancariaCliente',
+        'crm.ClienteCuentaBancaria',
         'administracion.Licencia',
         'administracion.Traza',
         'nomenclador.Alias'
