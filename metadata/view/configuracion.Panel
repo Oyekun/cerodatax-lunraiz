@@ -591,12 +591,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
+                                "designer|displayName": null,
+                                "displayField": "nombre",
+                                "emptyText": "Seleccione",
                                 "fieldLabel": "Alias",
                                 "name": "alias_id",
-                                "store": "nomenclador.Alias"
+                                "queryMode": "local",
+                                "store": "nomenclador.Alias",
+                                "valueField": "id"
                             },
-                            "name": "MyComboBox4",
-                            "designerId": "d67f9d0a-0fdc-4666-9cee-cbfc93405458",
+                            "name": "MyComboBox",
+                            "designerId": "2976e5fb-2e86-40b4-b1f4-4dc608be5ce7",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -612,7 +617,7 @@
                                         ]
                                     },
                                     "name": "afterLabelTextTpl",
-                                    "designerId": "fdb9a09e-622a-460a-a636-3f732ad27056"
+                                    "designerId": "5c50f4ae-8651-42a4-ad75-efea4a9b1f19"
                                 }
                             ]
                         },

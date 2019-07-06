@@ -239,8 +239,8 @@
                                                 "margin": "10 10 0 0",
                                                 "width": 110
                                             },
-                                            "name": "MyContainer63",
-                                            "designerId": "4214862c-5a5f-42c7-bff2-510d7219be10",
+                                            "name": "MyContainer",
+                                            "designerId": "666e7899-4f1c-41c6-921a-5c34f984431e",
                                             "cn": [
                                                 {
                                                     "type": "Ext.Img",
@@ -278,7 +278,7 @@
                                                         "width": 100
                                                     },
                                                     "name": "MyImg",
-                                                    "designerId": "21a97df5-1fe8-491b-8bcb-cfbad49441b4"
+                                                    "designerId": "3255f0a3-5692-4606-bbf6-18667fbdb5a4"
                                                 },
                                                 {
                                                     "type": "Ext.Img",
@@ -316,7 +316,7 @@
                                                         "width": 100
                                                     },
                                                     "name": "MyImg3",
-                                                    "designerId": "a4a09fc1-0a2d-420a-b238-cce9be21f343"
+                                                    "designerId": "51b94762-a59b-4557-9ccf-4bfe2b93d957"
                                                 }
                                             ]
                                         },

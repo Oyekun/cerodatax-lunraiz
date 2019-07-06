@@ -32,6 +32,14 @@
     		type: 'svg'
     	},
     	{
+    		name: 'Productos y Servicios',
+    		thumb: 'gift', 
+    		url: 'ProductosServicios',
+    		systema:'true',
+    		color:'bisque',
+    		type: 'svg'
+    	},
+    	{
     		name: 'Venta',
     		thumb: 'shopping-bag', 
     		url: 'Venta',

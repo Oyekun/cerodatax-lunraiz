@@ -64,8 +64,8 @@ Ext.define('cerodatax.view.crm.Proveedor', {
                         columns: [
                             {
                                 xtype: 'gridcolumn',
-                                dataIndex: 'nombre',
-                                text: 'Nombre'
+                                dataIndex: 'apellidos',
+                                text: 'Apellidos'
                             }
                         ],
                         dockedItems: [
@@ -110,6 +110,19 @@ Ext.define('cerodatax.view.crm.Proveedor', {
                                     },
                                     {
                                         xtype: 'button',
+                                        disabled: true,
+                                        itemId: 'btnAssociate',
+                                        baseParams: 'cuentabancaria',
+                                        text: 'Asociar Cuenta Bancaria',
+                                        bind: {
+                                            hidden: '{!record}'
+                                        },
+                                        listeners: {
+                                            click: 'associate'
+                                        }
+                                    },
+                                    {
+                                        xtype: 'button',
                                         itemId: 'btnRefresh',
                                         text: 'Actualizar',
                                         tooltip: '<span style="  font-weight:bold"> Actualizar(Ctrl+A) </span>Actualiza elemento(s).',
@@ -140,6 +153,7 @@ Ext.define('cerodatax.view.crm.Proveedor', {
                     })
                 ]
             };
+        me.processCrmCliente(config);
         if (instanceConfig) {
             me.getConfigurator().merge(me, config, instanceConfig);
         }
@@ -157,8 +171,15 @@ Ext.define('cerodatax.view.crm.Proveedor', {
         form = vista.down('form').getForm();
         var results=[];
         columns = control.searchLabel(form.owner.items.items,results,true);
+
         control.formatForm(form.owner.items);
-         control.configGridPanel(config,columns);
+        control.configGridPanel(config,columns);
+        return config;
+    },
+
+    processCrmCliente: function(config) {
+
+        config.gridasociado=true;
         return config;
     }
 

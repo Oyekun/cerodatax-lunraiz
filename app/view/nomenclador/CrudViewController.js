@@ -1064,6 +1064,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          });
 
          var windows = button.up('window');
+         var ethis= this;
          var form,
              mask;
          if(button.up('form')!==undefined)
@@ -1094,6 +1095,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              var nombre='';
              var campo = '';
              var asociados = [];
+             var migration = [];
+
+
              form.owner.items.items.forEach(function (item) {
                  var resultree = [];
                  resultree = me.searchComponent('treepanel',item,resultree);
@@ -1143,7 +1147,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                       if(auxImage)
                           if(record.data[auxImage]!==undefined)
-                              record_foto[auxImage]=objImage.src;
+                          {record_foto[auxImage]=objImage.src;
+                           migration.push({nombre:auxImage,tipo:'TEXT',nullfield:'TRUE'});
+                          }
 
 
 
@@ -1158,7 +1164,12 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   if(obj.xtype=='combobox')
                   {
                       var aux1 = obj.name.replace('_id','');
+                      var nullcampo ='FALSE';
+                      if(obj.allowBlank)
+                          nullcampo ='TRUE';
 
+                      var tabla = obj.store.proxy.extraParams.esquema+"_"+obj.store.proxy.extraParams.model;
+                        migration.push({nombre:obj.name,tipo:'VARCHAR',constraint:'100',nullfield:nullcampo,tabla:tabla});
                       // if(obj.inputAttrTpl)
                       //delete(record.data[aux]); Hay que arreglar en la BD que tenga relacion con el 2do nivel Ejp usuario_entidad_organismo
 
@@ -1172,12 +1183,15 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   }
                  }
 
+        migration = ethis.migrationTable(item,migration);
                  if(item.name){
 
                      if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
                      { nombre = item.value;
-                      campo = item.name;}
-                     var      auxname = item.name.replace('_id','');
+                      campo = item.name;
+
+                     }
+                   //var      auxname = item.name.replace('_id','');
 
 
                      // if(auxname!=item.name)
@@ -1249,7 +1263,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              if(asociados.length>0)
                  record.data.asociados=asociados;//Ext.JSON.encode(asociados);
 
+             store.proxy.extraParams.migration= '';
              store.proxy.extraParams.parent_id='save';
+
              if (record.phantom) {
 
 
@@ -1258,6 +1274,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                  if(dt===null)//para adicionar
                  {form.updateRecord();
+                  store.proxy.extraParams.migration=Ext.JSON.encode(migration);
                   for(var foto in record_foto)
                   {
                       record.data[foto]  = record_foto[foto];
@@ -1267,6 +1284,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                       record.data.leaf = true;
                   store.add(record);
                   var flag=true;
+
+
                   store.commitChanges();
 
                  }
@@ -1794,6 +1813,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         if((typeof eOpts)!=='undefined')
         {var nombreStore='';
          var store='';
+         var ethis=this;
 
          var aux = this.view.items.items.forEach(function (item) {
              if(item.componentCls == 'x-panel')
@@ -1818,10 +1838,11 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          }
 
          var record = form.getRecord();
-        console.log(record)
+         console.log(record)
 
          var me = this;
          var record_foto = [];
+         var record_radio = [];
 
          // Valid
          if (this.isValid(form)) {
@@ -1832,6 +1853,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              var campo = '';
              var asociados = [];
              var asociadosmulti = [];
+             var migration = [];
+
              form.owner.items.items.forEach(function (item) {
                  var resultree = [];
                  resultree = me.searchComponent('treepanel',item,resultree);
@@ -1852,7 +1875,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   }
                  }
 
-                  var resulgrid = [];
+                 var resulgrid = [];
                  resulgrid = me.searchComponent('gridpanel',item,resultree);
                  var checkedgrid = function (v) {
 
@@ -1860,34 +1883,34 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      v.data.esquema = v.store.proxy.extraParams.esquema_asociado;
 
 
-                             asociados.push(v.data);
+                     asociados.push(v.data);
                  };
                  for(var compgrid in resulgrid)
                  {var objgrid = resulgrid[compgrid];
 
-        console.log(objgrid)
-        if(objgrid.xtype!=='treepanel')
-        {var checkedsgrid =objgrid.store.data.items;
-                      checkedsgrid.forEach(checkedgrid);
-        }
+                  console.log(objgrid)
+                  if(objgrid.xtype!=='treepanel')
+                  {var checkedsgrid =objgrid.store.data.items;
+                   checkedsgrid.forEach(checkedgrid);
+                  }
 
 
 
                  }
                  var resultmulti = [];
-                         resultmulti = me.searchComponent('multiselector',item,resultmulti);
-                         var checkedmulti = function (v) {
-         var modelo = v.store.config.proxy.extraParams.model;
-                             asociados.push({id: v.data.id,model: modelo});
-                         };
-                         for(var compmulti in resultmulti)
-                         {var objmulti = resultmulti[compmulti];
+                 resultmulti = me.searchComponent('multiselector',item,resultmulti);
+                 var checkedmulti = function (v) {
+                     var modelo = v.store.config.proxy.extraParams.model;
+                     asociados.push({id: v.data.id,model: modelo});
+                 };
+                 for(var compmulti in resultmulti)
+                 {var objmulti = resultmulti[compmulti];
 
-                              var checkedsmulti =objmulti.store.data.items;
-                              checkedsmulti.forEach(checkedmulti);
+                  var checkedsmulti =objmulti.store.data.items;
+                  checkedsmulti.forEach(checkedmulti);
 
 
-                         }
+                 }
 
 
                  //Adicionando imagen base64 a los record fotos
@@ -1898,6 +1921,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   if(objImage.xtype=='image')
                   {
                       var auxImage = objImage.itemId;
+                      migration.push({nombre:auxImage,tipo:'TEXT',nullfield:'TRUE'});
 
                       if(auxImage)
                           if(record.data[auxImage]!==undefined)
@@ -1909,7 +1933,29 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   }
                  }
 
-                         /*var resultDisplay = []; //Hay q arreglar q quite los displyfield dado q no son campos existenten en las tablas
+                 //Adicionando imagen base64 a los record fotos
+                 var resultRadio = [];
+                 resultRadio = me.searchComponent('radiofield',item,resultRadio);
+                 for(var compRadio in resultRadio)
+                 {var objRadio = resultRadio[compRadio];
+                  if(objRadio.xtype=='radiofield')
+                  {console.log(objRadio)
+                  var auxRadio = objRadio.checked;
+                   //migration.push({nombre:auxImage,tipo:'TEXT',nullfield:'TRUE'});
+
+                   if(auxRadio)
+                       if(record.data[objRadio.name]!==undefined)
+                           record_radio[objRadio.name]=objRadio.initialConfig.value;
+
+
+
+
+                  }
+                 }
+
+
+
+                 /*var resultDisplay = []; //Hay q arreglar q quite los displyfield dado q no son campos existenten en las tablas
                           resultDisplay = me.searchComponent('displayfield',item,resultDisplay);
                           for(var compDisplay in resultDisplay)
                           {var objDisplay = resultDisplay[compDisplay];
@@ -1927,6 +1973,15 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   if(obj.xtype=='combobox')
                   {
                       var aux1 = obj.name.replace('_id','');
+                      var nullcampo ='FALSE';
+                      if(obj.allowBlank===undefined)
+                          nullcampo ='TRUE';
+                      else if(obj.allowBlank===true)
+                          nullcampo ='TRUE';
+
+                      var tabla = obj.store.proxy.extraParams.esquema+"_"+obj.store.proxy.extraParams.model;
+                      migration.push({nombre:obj.name,tipo:'VARCHAR',constraint:'100',nullfield:nullcampo,tabla:tabla});
+
 
                       if(aux1!=obj.name)
 
@@ -1937,6 +1992,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                   }
                  }
+                 migration= ethis.migrationTable(item,migration);
 
 
                  if(item.name ){
@@ -1962,14 +2018,17 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
              // Add to store if new record
              //form.updateRecord();
+             console.log(migration)
              if(asociados.length>0)
                  record.data.asociados=asociados;//Ext.JSON.encode(asociados);
+             if(migration.length>0)
+                 record.data.migration=migration;//Ext.JSON.encode(migration);
 
              //record.data.children=false;
              //record.data.text = nombre;
              nombreStore = record.entityName.replace('cerodatax.model.','');
              store = Ext.StoreManager.lookup(nombreStore);
-
+             store.proxy.extraParams.migration= '';
              store.proxy.extraParams.parent_id='save';
              //verificar prk debe de realizar store y quedarse donde mismo estaba en el caso de q filtree y asocie al mismo tiempo
              store.clearFilter();
@@ -2042,9 +2101,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  {
 
                      form.updateRecord();
+                     //store.proxy.extraParams.migration=Ext.JSON.encode(migration);
                      for(var foto in record_foto)
                      {
                          record.data[foto]  = record_foto[foto];
+                     }
+                     for(var radio in record_radio)
+                     {
+                         record.data[radio]  = record_radio[radio];
                      }
                      if(record.data.parentId===null)
 
@@ -2061,19 +2125,23 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          //store.remove(record);
                          if(dt.data.id===record.data.id)
                          { if(asociados.length>0)
+                         {
+                             form.updateRecord();
+                             for(var foto in record_foto)
                              {
-                                  form.updateRecord();
-                     for(var foto in record_foto)
-                     {
-                         record.data[foto]  = record_foto[foto];
-                     }
-                     flag= true;
-                     record.save({success:write});
+                                 record.data[foto]  = record_foto[foto];
                              }
-                             if(windows)
-                                 windows.close();
-                             else
-                                 me.showView('selectMessage');
+                             for(var radio in record_radio)
+                             {
+                                 record.data[radio]  = record_radio[radio];
+                             }
+                             flag= true;
+                             record.save({success:write});
+                         }
+                          if(windows)
+                              windows.close();
+                          else
+                              me.showView('selectMessage');
                          }
                          else
                              me.showToast('El elemento ya existe.','error');
@@ -2086,6 +2154,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      for(var foto in record_foto)
                      {
                          record.data[foto]  = record_foto[foto];
+                     }
+                     for(var radio in record_radio)
+                     {
+                         record.data[radio]  = record_radio[radio];
                      }
                      flag= true;
                      record.save({success:write});
@@ -2103,19 +2175,23 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                   {
                       record.data[foto]  = record_foto[foto];
                   }
+                  for(var radio in record_radio)
+                  {
+                      record.data[radio]  = record_radio[radio];
+                  }
 
-                         form.owner.items.items.forEach(function (item) {
-                          var resultDisplay = []; //Hay q arreglar q quite los displyfield dado q no son campos existenten en las tablas
-                                  resultDisplay = me.searchComponent('displayfield',item,resultDisplay);
-                                  for(var compDisplay in resultDisplay)
-                                  {var objDisplay = resultDisplay[compDisplay];
+                  form.owner.items.items.forEach(function (item) {
+                      var resultDisplay = []; //Probando solucion
+                      resultDisplay = me.searchComponent('displayfield',item,resultDisplay);
+                      for(var compDisplay in resultDisplay)
+                      {var objDisplay = resultDisplay[compDisplay];
 
-                                   if(objDisplay.xtype==='displayfield')
-                                   {
-                 delete(record.data[objDisplay.name]);
-                                   }
-                                  }
-                          });
+                       if(objDisplay.xtype==='displayfield')
+                       {
+                           delete(record.data[objDisplay.name]);
+                       }
+                      }
+                  });
 
                   flag= true;
                   record.save({success:write,failure: write});
@@ -2130,14 +2206,18 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          if(dt.data.id===record.data.id)
                          {
                              if(windows)
-                                 { form.updateRecord();
-                     for(var foto in record_foto)
-                     {
-                         record.data[foto]  = record_foto[foto];
-                     }
-                     record.save({success:write});
+                             { form.updateRecord();
+                              for(var foto in record_foto)
+                              {
+                                  record.data[foto]  = record_foto[foto];
+                              }
+                              for(var radio in record_radio)
+                              {
+                                  record.data[radio]  = record_radio[radio];
+                              }
+                              record.save({success:write});
 
-                     flag= true;}
+                              flag= true;}
                              if(windows)
                                  windows.close();
                              else
@@ -2156,6 +2236,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      for(var foto in record_foto)
                      {
                          record.data[foto]  = record_foto[foto];
+                     }
+                     for(var radio in record_radio)
+                     {
+                         record.data[radio]  = record_radio[radio];
                      }
                      record.save({success:write});
 
@@ -3162,6 +3246,76 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
     cancelEdit1: function(button, e, eOpts) {
         this.cancelEdit(button, e, eOpts);
+    },
+
+    migrationTable: function(item, migration) {
+        console.log(item.name)
+        if(item.name){
+
+            if(item.name == 'nombre' ||item.name == 'username'||item.name == 'name')
+            { nombre = item.value;
+             campo = item.name;
+
+            }
+            var nullcampofield ='FALSE';
+            if(item.allowBlank===undefined)
+                nullcampofield ='TRUE';
+            else
+            {if(item.allowBlank)
+                nullcampofield ='TRUE';
+            }
+            if(item.xtype=='textfield')
+            {
+                migration.push({nombre:item.name,tipo:'VARCHAR',constraint:'100',nullfield:nullcampofield});
+            }
+            if(item.xtype=='textareafield')
+            {
+                migration.push({nombre:item.name,tipo:'VARCHAR',constraint:'255',nullfield:nullcampofield});
+            }
+            if(item.xtype=='checkboxfield')
+            {
+                migration.push({nombre:item.name,tipo:'INT',constraint:'1'});
+            }
+            if(item.xtype=='slider'||item.xtype=='numberfield')
+            {
+                migration.push({nombre:item.name,tipo:'FLOAT',constraint:'10',nullfield:nullcampofield});
+            }
+            if(item.xtype=='datefield')
+            {
+                migration.push({nombre:item.name,tipo:'DATE',nullfield:nullcampofield});
+            }
+            if(item.xtype=='radiofield')
+            {
+                addcolum=true;
+                migration.forEach(function (colum) {
+                    if(colum.nombre==item.name)
+                        addcolum = false;
+                });
+                if(addcolum)
+                    migration.push({nombre:item.name,tipo:'INT',constraint:'1'});
+            }
+        }
+        else
+        {
+            if(item.items!==undefined)
+            {var form = item.items;
+
+                if(item.items.items)
+                    form = item.items.items;
+
+            for(var campos in form)
+            {var xtype = form[campos].xtype;
+
+             // if(xtype === 'tabpanel'||xtype === 'panel'||xtype === 'fieldset'||xtype === 'container')
+             //{
+
+
+             this.migrationTable(form[campos],migration);
+             //}
+            }
+        }
+        }
+        return migration;
     }
 
 });

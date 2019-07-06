@@ -33,8 +33,10 @@
                 "itemId": "panelPrincipal",
                 "layout": "fit",
                 "layout|region": "center",
+                "layout|weight": null,
                 "margin": "5 0 0 0",
-                "title": null
+                "title": null,
+                "weight": null
             },
             "name": "MyPanel5",
             "designerId": "2237de08-4f75-4718-a567-54f2f9f80bbf",
@@ -131,7 +133,7 @@
                 "title": "   Navegación",
                 "titleAlign": null,
                 "titleCollapse": true,
-                "width": 145
+                "width": 185
             },
             "name": "MyPanel6",
             "designerId": "3dc55aaa-6ff6-4ac5-81ed-2793609eed3f",

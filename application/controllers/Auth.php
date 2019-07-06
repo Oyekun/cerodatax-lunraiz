@@ -108,7 +108,7 @@ class Auth extends CI_Controller
  
 	    $tb = 'configuracion_menu'; 
          
-		$this->load->model('menu');
+		$this->load->model('configuracion/menu');
 		if(!$this->ion_auth->is_admin())
 		{$this->db->select("configuracion_menu.*");
 		$this->db->distinct();
@@ -140,7 +140,7 @@ $model_template .="'$value1',";
     fwrite($my_model, $model_template);
     fclose($my_model);
     $tb = 'configuracion_modulo'; 
-    $this->load->model('modulo');
+    $this->load->model('configuracion/modulo');
 	 	if(!$this->ion_auth->is_admin())
 	 	{
 	 	$this->db->select("configuracion_modulo.*");
@@ -180,7 +180,7 @@ $model_template .="'$value1',";
 
     	 
     $tb = 'nomenclador_tipomodulo'; 
-    $this->load->model('tipomodulo');
+    $this->load->model('nomenclador/tipomodulo');
 if(!$this->ion_auth->is_admin())
 {
     $this->db->select("nomenclador_tipomodulo.*");
@@ -220,7 +220,7 @@ $model_template .="'$value1',";
     fclose($my_model);
 
       $tb = 'configuracion_panel'; 
-    $this->load->model('panel');
+    $this->load->model('configuracion/panel');
 	 	$this->db->select("configuracion_panel.*,nomenclador_alias.nombre as alias");
 	 	if(!$this->ion_auth->is_admin())
 	 	{
@@ -289,7 +289,7 @@ $model_template .="'$value1',";
     
     $tb = 'configuracion_menu'; 
          
-		$this->load->model('menu');
+		$this->load->model('configuracion/menu');
 		
 		if(!$this->ion_auth->is_admin())
 		{$this->db->select("configuracion_menu.*");
@@ -306,7 +306,7 @@ $model_template .="'$value1',";
     if(count($result->result_array())>0)
     {	$menus = $result->result_array(); 
     $tb = 'nomenclador_icono'; 
-$this->load->model('menu');
+$this->load->model('nomenclador/menu');
 	 	
   //  $this->db->where('systema', 1);   
     $result = $this->db->get("$tb");
@@ -369,7 +369,7 @@ $this->load->model('menu');
     {   
        $tb = 'seguridad_entidadusuario'; 
          
-		$this->load->model('entidadusuario');
+		$this->load->model('seguridad/entidadusuario');
 	 	
     $this->db->where('usuario_id', $identity);   
     $result = $this->db->get("$tb");
@@ -379,7 +379,7 @@ $this->load->model('menu');
     	
 	   $tb = 'estructura_entidad'; 
          
-		$this->load->model('entidad');
+		$this->load->model('estructura/entidad');
 	 	
     $this->db->where('id', $entidades['entidad_id']);   
     $result = $this->db->get("$tb");
@@ -392,7 +392,7 @@ $this->load->model('menu');
  }
        $tb = 'seguridad_usuario'; 
          
-		$this->load->model('usuario');
+		$this->load->model('seguridad/usuario');
 	 	
     $this->db->where('id', $identity);   
     $result = $this->db->get("$tb");
@@ -406,7 +406,7 @@ $this->load->model('menu');
 	 
 	 $tb = 'persona_persona'; 
          
-		$this->load->model('persona');
+		$this->load->model('persona/persona');
 	 	
     $this->db->where('id', $persona_id);   
     $result = $this->db->get("$tb");

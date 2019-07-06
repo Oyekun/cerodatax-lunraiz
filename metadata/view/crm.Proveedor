@@ -18,10 +18,10 @@
         "title": null,
         "width": 860
     },
-    "name": "crm.Contacto8",
-    "designerId": "4ae24fc5-af88-481a-8dd1-e59a5d12ab44",
-    "viewControllerInstanceId": "8c36a0f6-ed7a-43c7-bbef-dca0ac773a29",
-    "viewModelInstanceId": "c6fec98c-0fe9-4b11-a3a1-04ad955b724f",
+    "name": "crm.Contacto7",
+    "designerId": "1d4b874b-c476-416b-909b-6ef6ad1ac7a5",
+    "viewControllerInstanceId": "86d545f6-3d91-4cd4-8a48-cec5189e526e",
+    "viewModelInstanceId": "519f7283-3242-42aa-98eb-c60e6a76f146",
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -44,7 +44,7 @@
                 "title": null
             },
             "name": "MyGridPanel19",
-            "designerId": "2b836825-fee1-4011-9d06-d691cc90964d",
+            "designerId": "100d7df5-5047-4a8d-bcd0-c374f6d76fd9",
             "cn": [
                 {
                     "type": "Ext.grid.column.Column",
@@ -54,11 +54,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "nombre",
-                        "text": "Nombre"
+                        "dataIndex": "apellidos",
+                        "text": "Apellidos"
                     },
                     "name": "MyColumn34",
-                    "designerId": "74d60592-6f60-4fd3-9ef2-0b3255ff2492"
+                    "designerId": "3461d1c2-0fca-4006-b5a7-487b7db152a4"
                 },
                 {
                     "type": "Ext.toolbar.Toolbar",
@@ -73,7 +73,7 @@
                         "dock": "top"
                     },
                     "name": "MyToolbar5",
-                    "designerId": "171af20b-258a-4b62-95c0-31f04ebc14ec",
+                    "designerId": "7ef68968-fe5d-4cc5-b0eb-479bddb5dca5",
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -90,7 +90,7 @@
                                 "text": "Adicionar"
                             },
                             "name": "MyButton31",
-                            "designerId": "b94c4526-9ed0-417f-96a1-2fcdd885d40e",
+                            "designerId": "827fc1db-e152-49ae-bb39-d9602596f671",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -105,7 +105,7 @@
                                         "scope": "me"
                                     },
                                     "name": "addWindows",
-                                    "designerId": "490ab002-044c-4176-a089-6552e854cc5a"
+                                    "designerId": "70fcc9aa-b795-43c6-bd04-7bc0362e8fca"
                                 }
                             ]
                         },
@@ -130,7 +130,7 @@
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "d3086f53-d177-478d-9534-d9b1d64fb0ed",
+                            "designerId": "c921f1e6-96e0-48c2-82ef-cd22f0a21965",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -159,7 +159,7 @@
                                         "scope": "me"
                                     },
                                     "name": "editWindows",
-                                    "designerId": "d9c42ccd-a83c-4e5e-a08b-b130fa01f8be"
+                                    "designerId": "ae4e7b5b-c768-4f40-8aee-0af094d6b560"
                                 }
                             ]
                         },
@@ -184,7 +184,7 @@
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "98dcf5fc-b7a3-4b96-a02c-d459a8bbaec7",
+                            "designerId": "ca9977fc-052e-4284-9d2a-a463cd1fa530",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -221,7 +221,54 @@
                                         "scope": "me"
                                     },
                                     "name": "remove",
-                                    "designerId": "616f9c73-33a5-49c7-8cf5-38555f49f5a9"
+                                    "designerId": "6a53ae54-b2b0-480b-b938-da982f2bf368"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseParams": [
+                                    "cuentabancaria"
+                                ],
+                                "designer|createAlias": "button",
+                                "designer|displayName": "btnAssociate",
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnAssociate",
+                                "layout|flex": null,
+                                "text": "Asociar Cuenta Bancaria"
+                            },
+                            "name": "MyButton2",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "508f346d-2d43-451e-a905-48f4fb1df473",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "associate",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "associate",
+                                    "designerId": "00287d34-911a-442e-b783-01a35731c126"
                                 }
                             ]
                         },
@@ -251,7 +298,7 @@
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "339a8719-dc01-4022-81c1-d6f791631072",
+                            "designerId": "6c0bfd6a-00a5-4495-8f6c-67772059c482",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -269,7 +316,7 @@
                                         "scope": "me"
                                     },
                                     "name": "refresh",
-                                    "designerId": "0cfe6a66-dd5c-4f86-838e-7e7c951d23b0"
+                                    "designerId": "b2b992d4-5556-4282-8667-971a24ad8b61"
                                 }
                             ]
                         },
@@ -286,7 +333,7 @@
                                 "scope": "me"
                             },
                             "name": "onToolbarAfterRender",
-                            "designerId": "483f1c81-74b8-4bc7-b954-5e92f2b04454"
+                            "designerId": "1bc024fd-befb-43cc-9d41-de26b17f4876"
                         }
                     ]
                 },
@@ -313,13 +360,14 @@
                             "form = vista.down('form').getForm();",
                             "var results=[];",
                             "columns = control.searchLabel(form.owner.items.items,results,true);",
+                            "",
                             "control.formatForm(form.owner.items);",
-                            " control.configGridPanel(config,columns);",
+                            "control.configGridPanel(config,columns);",
                             "return config;"
                         ]
                     },
                     "name": "processList",
-                    "designerId": "a2a0499e-f83c-4952-8b98-961069adfd9e"
+                    "designerId": "c26271c5-9f26-46b4-98f2-eeb0ccec7db7"
                 },
                 {
                     "type": "Ext.grid.filters.Filters",
@@ -332,7 +380,7 @@
                         "menuFilterText": "Buscar"
                     },
                     "name": "MyGridFiltersPlugin1",
-                    "designerId": "61047c12-b72a-4c32-981f-fad9e7f10407"
+                    "designerId": "e6557562-783c-4172-81d0-0886d4935e89"
                 },
                 {
                     "type": "Ext.selection.RowModel",
@@ -345,7 +393,7 @@
                         "mode": "MULTI"
                     },
                     "name": "MyRowSelectionModel1",
-                    "designerId": "816c5e5c-24ba-4b73-8d18-333e4af6dd60"
+                    "designerId": "899b87d7-16d0-4ef7-a7c6-cfce91e84df0"
                 }
             ]
         },
@@ -362,7 +410,28 @@
                 "store": "crm.Proveedor"
             },
             "name": "MyPagingToolbar21",
-            "designerId": "4a7619bd-5f85-49ee-8dbb-3974b565c32b"
+            "designerId": "ad3125ab-6632-4584-b3ab-f910d07bfae7"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCrmCliente",
+                "implHandler": [
+                    "",
+                    "config.gridasociado=true;",
+                    "return config;"
+                ]
+            },
+            "name": "processCrmCliente",
+            "designerId": "88e1c1d1-a017-4f77-b5b2-1f2a17e42854"
         }
     ]
 }

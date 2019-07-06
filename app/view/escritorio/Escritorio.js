@@ -77,7 +77,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
             split: true,
             itemId: 'menuPanel',
             margin: '5 0 0 0',
-            width: 145,
+            width: 185,
             layout: 'accordion',
             animCollapse: true,
             collapseDirection: 'left',

@@ -54,27 +54,6 @@ Ext.define('cerodatax.view.crm.ProveedorFormViewController', {
     cancelEdit: function(button, e, eOpts) {
         // Show details
         this.showView('details');
-    },
-
-    onFilefieldChange: function(filefield, value, eOpts) {
-        console.log(filefield)
-        console.log(value)
-    },
-
-    onComboboxSelect: function(combo, record, eOpts) {
-
-    },
-
-    onComboboxSelect1: function(combo, record, eOpts) {
-
-    },
-
-    onComboboxSelectEntidad: function(combo, record, eOpts) {
-
-    },
-
-    onTreePanelBeforeItemExpand1: function(nodeinterface, eOpts) {
-
     }
 
 });

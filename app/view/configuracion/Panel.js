@@ -230,7 +230,11 @@ Ext.define('cerodatax.view.configuracion.Panel', {
                             fieldLabel: 'Alias',
                             name: 'alias_id',
                             allowBlank: false,
-                            store: 'nomenclador.Alias'
+                            emptyText: 'Seleccione',
+                            displayField: 'nombre',
+                            queryMode: 'local',
+                            store: 'nomenclador.Alias',
+                            valueField: 'id'
                         },
                         {
                             xtype: 'combobox',

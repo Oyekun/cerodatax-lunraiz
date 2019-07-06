@@ -10,7 +10,7 @@
         "controller": [
             "nomencladorcrud"
         ],
-        "designer|userAlias": "oferenteForm",
+        "designer|userAlias": "crmoferenteForm",
         "designer|userClassName": "crm.OferenteForm",
         "height": null,
         "modal": true,
@@ -20,10 +20,10 @@
         "title": "Oferente",
         "width": null
     },
-    "name": "crm.ClienteForm2",
-    "designerId": "69be4690-2c0f-4622-9943-0b4d363d5b23",
-    "viewControllerInstanceId": "f0a9e012-f108-448c-b661-2e3e408140f0",
-    "viewModelInstanceId": "ee700a14-59ef-4f50-ba03-a6f0e85aab9c",
+    "name": "crm.ProveedorForm2",
+    "designerId": "eabbd4c3-c545-4fe1-b00f-d49d772ecbb1",
+    "viewControllerInstanceId": "52e97dfe-6558-4d6b-bcad-3c9608635b25",
+    "viewModelInstanceId": "9f5beae0-c12e-4e0a-acf7-783dc1d0a1f6",
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -46,7 +46,7 @@
                 "width": 460
             },
             "name": "MyForm6",
-            "designerId": "e9f76694-8e5e-4545-a369-89b8ab58f876",
+            "designerId": "e1479d0a-13ad-4f81-be63-2c4e14cf3b95",
             "cn": [
                 {
                     "type": "Ext.container.Container",
@@ -62,7 +62,7 @@
                         "padding": 10
                     },
                     "name": "MyContainer11",
-                    "designerId": "9bb9b890-6899-47a5-b6ea-54ce40073cea",
+                    "designerId": "831940ee-ea95-4d68-bd39-389664221e7d",
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -77,7 +77,7 @@
                                 "text": "Guardar"
                             },
                             "name": "MyButton29",
-                            "designerId": "7e7e0057-5c4d-452e-b4d7-7c86413f2de7",
+                            "designerId": "6bf69ffa-56ff-4af8-b8f1-071fe987963a",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -125,7 +125,7 @@
                                         "scope": "me"
                                     },
                                     "name": "saveTreeWindows",
-                                    "designerId": "835e2fb9-326d-42f4-95af-855fb3342613"
+                                    "designerId": "95cce5c9-2889-44df-a4bd-e4f2855ab0ff"
                                 }
                             ]
                         },
@@ -142,7 +142,7 @@
                                 "text": "Cancelar"
                             },
                             "name": "MyButton30",
-                            "designerId": "837afb34-ec12-41f8-aa50-b8a5d486f1cb",
+                            "designerId": "767d129c-560b-4d34-8822-4ab593f7b31b",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -161,7 +161,7 @@
                                         "scope": "me"
                                     },
                                     "name": "cancelEdit",
-                                    "designerId": "1e941c5a-23ae-4653-bf19-290e531ed94a"
+                                    "designerId": "c3aea596-5a15-4d41-9960-629534b612fa"
                                 }
                             ]
                         }
@@ -176,10 +176,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "activeTab": 0,
-                        "width": 440
+                        "width": null
                     },
                     "name": "MyTabPanel",
-                    "designerId": "cdef69a3-c7c9-4fed-b47e-d0fe8f5f0a81",
+                    "designerId": "b94740b6-ca0b-4a7f-9b69-3b32a902ca71",
                     "cn": [
                         {
                             "type": "Ext.panel.Panel",
@@ -192,7 +192,7 @@
                                 "title": "Datos Generales"
                             },
                             "name": "MyPanel",
-                            "designerId": "b90b474e-c0b0-4257-818e-6186ba8dfc0b",
+                            "designerId": "d6b3e1a1-7cde-47d9-8193-3ecc8b586369",
                             "cn": [
                                 {
                                     "type": "Ext.tab.Tab",
@@ -202,7 +202,7 @@
                                     },
                                     "codeClass": null,
                                     "name": "TabConfig",
-                                    "designerId": "fb9b6c25-ce42-499f-bff5-59de0f037c7d"
+                                    "designerId": "38940ccc-f6d6-4074-8fd5-5831764fd7ba"
                                 },
                                 {
                                     "type": "Ext.form.FieldSet",
@@ -215,7 +215,7 @@
                                         "alignTarget": "top",
                                         "defaults": null,
                                         "dock": null,
-                                        "height": 190,
+                                        "height": 160,
                                         "layout": "column",
                                         "margin": "10 0 0 0",
                                         "padding": null,
@@ -224,7 +224,7 @@
                                         "width": 440
                                     },
                                     "name": "MyFieldSet1",
-                                    "designerId": "378a7723-c297-4e57-91af-0ebd7a0b02cf",
+                                    "designerId": "a1bbdc55-4c56-41e1-8868-2986f2adb890",
                                     "cn": [
                                         {
                                             "type": "Ext.container.Container",
@@ -240,7 +240,7 @@
                                                 "width": 110
                                             },
                                             "name": "MyContainer63",
-                                            "designerId": "8cd1fe16-2128-4a1c-bb6a-06d6422bcd71",
+                                            "designerId": "fecd177b-8e6e-4b4e-a36e-810b13c1df04",
                                             "cn": [
                                                 {
                                                     "type": "Ext.Img",
@@ -271,6 +271,9 @@
                                                         "shadowOffset": null,
                                                         "shim": false,
                                                         "shrinkWrap": null,
+                                                        "src": [
+                                                            "{contactocliente.selection.foto}"
+                                                        ],
                                                         "style": [
                                                             "'font-size: 36px; lineHeight: 36px'"
                                                         ],
@@ -278,7 +281,10 @@
                                                         "width": 100
                                                     },
                                                     "name": "MyImg",
-                                                    "designerId": "7df25038-91d9-4752-b61a-1a20b5bc21f1"
+                                                    "configAlternates": {
+                                                        "src": "binding"
+                                                    },
+                                                    "designerId": "1b1252c7-0cc3-4ab9-8870-076b75e63d6f"
                                                 },
                                                 {
                                                     "type": "Ext.Img",
@@ -308,6 +314,9 @@
                                                         "shadowOffset": null,
                                                         "shim": false,
                                                         "shrinkWrap": null,
+                                                        "src": [
+                                                            "{contactocliente.selection.foto}"
+                                                        ],
                                                         "style": [
                                                             "'font-size: 110px; margin: 10px;line-height: 120px;'"
                                                         ],
@@ -315,46 +324,76 @@
                                                         "width": 100
                                                     },
                                                     "name": "MyImg3",
-                                                    "designerId": "12c32b45-ee77-4d5a-9ac8-776bc8205b97"
+                                                    "configAlternates": {
+                                                        "src": "binding"
+                                                    },
+                                                    "designerId": "bedafa56-e197-4af2-855c-fdbfa88ebf94"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.File",
+                                            "type": "Ext.form.field.ComboBox",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "buttonText": "Examinar...",
+                                                "allowBlank": false,
+                                                "designer|displayName": null,
+                                                "displayField": "nombre",
                                                 "emptyText": "Seleccione",
-                                                "fieldLabel": "Foto",
-                                                "invalidText": "El valor del elemento es invalido",
-                                                "margin": "10 0 0 0",
-                                                "name": "foto"
+                                                "fieldLabel": "Oferente",
+                                                "itemId": null,
+                                                "name": "contacto_id",
+                                                "queryMode": "local",
+                                                "reference": "contactocliente",
+                                                "store": "crm.Contacto",
+                                                "valueField": "id"
                                             },
-                                            "name": "MyFileUpload1",
-                                            "designerId": "8df4f581-3cd7-4402-a391-d50d826abb9b",
+                                            "name": "MyComboBox9",
+                                            "designerId": "7205eaea-a404-4848-bc37-22187dda5b01",
                                             "cn": [
                                                 {
-                                                    "type": "viewcontrollereventbinding",
+                                                    "type": "Ext.view.BoundList",
                                                     "reference": {
-                                                        "name": "listeners",
-                                                        "type": "array"
+                                                        "name": "listConfig",
+                                                        "type": "object"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "onFilefieldChange",
-                                                        "implHandler": [
-                                                            "console.log(filefield)",
-                                                            "console.log(value)"
-                                                        ],
-                                                        "name": "change",
-                                                        "scope": "me"
+                                                        "itemSelector": "span"
                                                     },
-                                                    "name": "onFilefieldChange",
-                                                    "designerId": "40ac57c3-dabe-4911-a27d-6152def04261"
+                                                    "name": "MyBoundList1",
+                                                    "designerId": "913b5e14-f82a-4911-8a4c-b56006bf90c5",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "itemTpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "itemTpl",
+                                                                "implHandler": [
+                                                                    " ",
+                                                                    "<tpl for=\".\">",
+                                                                    "    ",
+                                                                    "    <tpl if=\"foto==''\">",
+                                                                    "         {nombre}",
+                                                                    "        </tpl> ",
+                                                                    "     <tpl if=\"foto!=''\">",
+                                                                    "        <img src=\"{foto}\" height=\"20px\" style=\"float:left;\"> {nombre}",
+                                                                    "        </tpl> ",
+                                                                    "    ",
+                                                                    "</tpl>"
+                                                                ]
+                                                            },
+                                                            "name": "itemTpl",
+                                                            "designerId": "1f947059-8241-4cf6-ba62-286d727402c2"
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "type": "processcfgfunction",
@@ -367,82 +406,37 @@
                                                         "designer|params": [
                                                             "config"
                                                         ],
-                                                        "fn": "processFoto",
+                                                        "fn": "processContactocliente",
                                                         "implHandler": [
-                                                            "config.icono = 'address-book';",
+                                                            "config.icono = 'address-card';",
                                                             "return config;"
                                                         ]
                                                     },
-                                                    "name": "processFoto",
-                                                    "designerId": "52618aab-32e9-459f-8702-4dbaa18bc3d5"
+                                                    "name": "processContactocliente",
+                                                    "designerId": "a0fe15d4-5324-4c3c-a5ee-b18a6b0c540f"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Display",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "allowBlank": false,
-                                                "fieldLabel": "Nombre(s)",
-                                                "name": "nombre"
-                                            },
-                                            "name": "MyTextField14",
-                                            "designerId": "e49b464b-b837-4539-b409-20359cc51702",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.XTemplate",
-                                                    "reference": {
-                                                        "name": "afterLabelTextTpl",
-                                                        "type": "object"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|displayName": "afterLabelTextTpl",
-                                                        "implHandler": [
-                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                                        ]
-                                                    },
-                                                    "name": "afterLabelTextTpl",
-                                                    "designerId": "6532d558-ef2e-4533-83eb-37253c864db9"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.form.field.Text",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "allowBlank": false,
                                                 "fieldLabel": "Apellidos",
-                                                "name": "apellidos"
+                                                "name": "apellidos",
+                                                "value": [
+                                                    "{contactocliente.selection.apellidos}"
+                                                ],
+                                                "width": 275
                                             },
-                                            "name": "MyTextField15",
-                                            "designerId": "3ba11fd9-826e-48bf-9914-57a3e118dd6d",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.XTemplate",
-                                                    "reference": {
-                                                        "name": "afterLabelTextTpl",
-                                                        "type": "object"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|displayName": "afterLabelTextTpl",
-                                                        "implHandler": [
-                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                                        ]
-                                                    },
-                                                    "name": "afterLabelTextTpl",
-                                                    "designerId": "5998062f-fabd-460e-b3c3-5867473c0d21"
-                                                }
-                                            ]
+                                            "name": "MyDisplayField1",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "8ef135b4-f8fb-48f9-91d8-6ba38644d27b"
                                         }
                                     ]
                                 },
@@ -455,82 +449,77 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "margin": "10 0 0 0",
-                                        "title": "Contacto",
+                                        "title": "Datos del Contacto",
                                         "width": 440
                                     },
                                     "name": "MyFieldSet5",
-                                    "designerId": "0e8e1d35-073a-4bb1-bd3b-541b2474f0d1",
+                                    "designerId": "248856a1-cc39-4845-b290-00bc4e341743",
                                     "cn": [
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Display",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "allowBlank": false,
                                                 "fieldLabel": "Dirección",
-                                                "name": "direccion"
+                                                "name": "direccion",
+                                                "value": [
+                                                    "{contactocliente.selection.direccion}"
+                                                ],
+                                                "width": 400
                                             },
-                                            "name": "MyTextField18",
-                                            "designerId": "e74fddf7-9e8b-4310-bffb-81e64752766c",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.XTemplate",
-                                                    "reference": {
-                                                        "name": "afterLabelTextTpl",
-                                                        "type": "object"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|displayName": "afterLabelTextTpl",
-                                                        "implHandler": [
-                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                                        ]
-                                                    },
-                                                    "name": "afterLabelTextTpl",
-                                                    "designerId": "8e55d9f9-edd5-4981-812a-ae20eafd948c"
-                                                }
-                                            ]
+                                            "name": "MyDisplayField2",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "b8858980-f6e4-4e43-82ef-cc02bb5ccd15"
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Display",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "emptyText": null,
                                                 "fieldLabel": "Correo",
-                                                "inputType": "email",
                                                 "name": "correo",
-                                                "vtype": "email"
+                                                "value": [
+                                                    "{contactocliente.selection.correo}"
+                                                ],
+                                                "width": 400
                                             },
-                                            "name": "MyTextField19",
-                                            "designerId": "12c13867-1860-465b-872b-b06e44c27e05"
+                                            "name": "MyDisplayField3",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "77b80852-defd-48db-8aaa-8b4cb441e3f6"
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Display",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "emptyText": null,
                                                 "fieldLabel": "Teléfono",
-                                                "inputType": "tel",
-                                                "maskRe": "/\\d/",
                                                 "name": "telefono",
-                                                "width": null
+                                                "value": [
+                                                    "{contactocliente.selection.telefono}"
+                                                ],
+                                                "width": 400
                                             },
-                                            "name": "MyTextField7",
-                                            "designerId": "d47b6e2c-99c7-4edd-9d6a-932a3abecb85"
+                                            "name": "MyDisplayField4",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "d01783b7-23ac-432d-9893-f66254321e58"
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Display",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -538,16 +527,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "fieldLabel": "Celular",
-                                                "inputType": "tel",
-                                                "maskRe": "/\\d/",
                                                 "name": "celular",
-                                                "width": null
+                                                "value": [
+                                                    "{contactocliente.selection.celular}"
+                                                ],
+                                                "width": 400
                                             },
-                                            "name": "MyTextField10",
-                                            "designerId": "4ba780a6-055e-476a-a77f-74919e4887eb"
+                                            "name": "MyDisplayField5",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "68419b8b-88a6-424c-9894-b77fa054558b"
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Display",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -555,13 +548,17 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "fieldLabel": "Web",
-                                                "inputType": "tel",
-                                                "maskRe": "/\\d/",
                                                 "name": "web",
-                                                "width": null
+                                                "value": [
+                                                    "{contactocliente.selection.web}"
+                                                ],
+                                                "width": 400
                                             },
-                                            "name": "MyTextField42",
-                                            "designerId": "f22b7682-d0f0-435a-9df4-45bb510bab21"
+                                            "name": "MyDisplayField6",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "574d1a6f-4f43-49a5-932a-6806b15f25bb"
                                         }
                                     ]
                                 }
@@ -575,11 +572,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "margin": "10 0 0 0",
-                                "title": "Otros Datos"
+                                "title": "Observaciones"
                             },
-                            "name": "MyPanel1",
-                            "designerId": "25a50f11-7ad6-469c-a90d-05c9bfc3b699",
+                            "name": "MyPanel4",
+                            "designerId": "6fb1c5a1-89d4-4f57-96ea-610449913109",
                             "cn": [
                                 {
                                     "type": "Ext.tab.Tab",
@@ -588,109 +584,11 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "name": "TabConfig1",
-                                    "designerId": "cb317662-4366-4595-9989-bf2924f7983e"
+                                    "name": "TabConfig",
+                                    "designerId": "dc555061-5fa9-4723-a307-1e4826b8d6f9"
                                 },
                                 {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": null,
-                                        "displayField": "nombre",
-                                        "emptyText": "Seleccione",
-                                        "fieldLabel": "País",
-                                        "name": "pais_id",
-                                        "queryMode": "local",
-                                        "queryParam": "provincia_id:false,municipio_id:true",
-                                        "store": "nomenclador.Pais",
-                                        "valueField": "id"
-                                    },
-                                    "name": "MyComboBox11",
-                                    "designerId": "179aeb6c-4fda-482c-be01-7f27010a53d2",
-                                    "cn": [
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onComboboxSelect",
-                                                "name": "select",
-                                                "scope": "me"
-                                            },
-                                            "name": "onComboboxSelect",
-                                            "designerId": "eccb560f-30c3-41c6-8c1c-47c14155fc12"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": null,
-                                        "disabled": true,
-                                        "displayField": "nombre",
-                                        "emptyText": "Seleccione",
-                                        "fieldLabel": "Provincia",
-                                        "name": "provincia_id",
-                                        "queryMode": "local",
-                                        "queryParam": "municipio_id:false",
-                                        "store": "nomenclador.Provincia",
-                                        "valueField": "id"
-                                    },
-                                    "name": "MyComboBox15",
-                                    "designerId": "ce64dc02-b644-47c1-aaf4-4b94f4748234",
-                                    "cn": [
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onComboboxSelect1",
-                                                "name": "select",
-                                                "scope": "me"
-                                            },
-                                            "name": "onComboboxSelect1",
-                                            "designerId": "a3c4386e-c11e-43f4-8971-786e2ca79bd2"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": null,
-                                        "disabled": true,
-                                        "displayField": "nombre",
-                                        "emptyText": "Seleccione",
-                                        "fieldLabel": "Municipio",
-                                        "name": "municipio_id",
-                                        "queryMode": "local",
-                                        "store": "nomenclador.Municipio",
-                                        "valueField": "id"
-                                    },
-                                    "name": "MyComboBox2",
-                                    "designerId": "2eaf70e2-ff2d-4429-b889-6124e572a134"
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
+                                    "type": "Ext.form.field.TextArea",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -698,155 +596,13 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": null,
-                                        "designer|displayName": null,
-                                        "displayField": "nombre",
-                                        "emptyText": "Seleccione",
-                                        "fieldLabel": "Organismo",
-                                        "name": "organismo_id",
-                                        "queryMode": "local",
-                                        "queryParam": "Entidades:false",
-                                        "store": "nomenclador.Organismo",
-                                        "valueField": "id"
+                                        "fieldLabel": "Descripción",
+                                        "height": null,
+                                        "maxLength": 255,
+                                        "name": "descripcion"
                                     },
-                                    "name": "MyComboBox",
-                                    "designerId": "7f9a6171-0264-45ee-9508-c85b67290b75",
-                                    "cn": [
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onComboboxSelectEntidad",
-                                                "name": "select",
-                                                "scope": "me"
-                                            },
-                                            "name": "onComboboxSelectEntidad",
-                                            "designerId": "a01c4926-e4be-48d6-be5c-61751a97436c"
-                                        },
-                                        {
-                                            "type": "Ext.XTemplate",
-                                            "reference": {
-                                                "name": "inputAttrTpl",
-                                                "type": "object"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|displayName": "inputAttrTpl",
-                                                "implHandler": [
-                                                    "Entidades:false"
-                                                ]
-                                            },
-                                            "name": "inputAttrTpl",
-                                            "designerId": "37ea4587-5e3e-46b7-84b0-4ccd4d50696f"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.tree.Panel",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "controller": null,
-                                        "designer|displayName": "entidad",
-                                        "disabled": true,
-                                        "height": 300,
-                                        "hideHeaders": false,
-                                        "itemId": "treePanel",
-                                        "margin": "10 0 0 0",
-                                        "reserveScrollbar": null,
-                                        "rootVisible": false,
-                                        "scrollable": true,
-                                        "store": "persona.PersonaEntidad",
-                                        "title": "Entidades",
-                                        "useArrows": true,
-                                        "width": 430
-                                    },
-                                    "name": "MyTreePanel2",
-                                    "configAlternates": {
-                                        "scrollable": "boolean"
-                                    },
-                                    "designerId": "9ee552a0-4777-4a02-9035-c7a7a0c53dee",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.tree.View",
-                                            "reference": {
-                                                "name": "viewConfig",
-                                                "type": "object"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "preserveScrollOnRefresh": null,
-                                                "rootVisible": false
-                                            },
-                                            "name": "MyTreeView",
-                                            "designerId": "0623673c-64e0-4b5e-a8b7-048f904a869c"
-                                        },
-                                        {
-                                            "type": "Ext.tree.Column",
-                                            "reference": {
-                                                "name": "columns",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "dataIndex": "nombre",
-                                                "flex": 3,
-                                                "text": "Nombre",
-                                                "width": null
-                                            },
-                                            "name": "MyTreeColumn1",
-                                            "designerId": "cc757c66-9a3c-4019-a294-e2be779ff914",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.grid.filters.filter.String",
-                                                    "reference": {
-                                                        "name": "filter",
-                                                        "type": "object"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "emptyText": "Ingrese el texto del filtro..."
-                                                    },
-                                                    "name": "MyStringFilter",
-                                                    "designerId": "bff09574-39f5-45dd-a985-6f0b08754043"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onTreePanelBeforeItemExpand1",
-                                                "name": "beforeitemexpand",
-                                                "scope": "me"
-                                            },
-                                            "name": "onTreePanelBeforeItemExpand1",
-                                            "designerId": "1f94b004-ee92-4b4b-a918-ad290e956e5a"
-                                        },
-                                        {
-                                            "type": "Ext.grid.filters.Filters",
-                                            "reference": {
-                                                "name": "plugins",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "menuFilterText": "Buscar"
-                                            },
-                                            "name": "MyGridFiltersPlugin",
-                                            "designerId": "fd876445-9be7-458a-892f-6f907b77dfb3"
-                                        }
-                                    ]
+                                    "name": "MyTextArea1",
+                                    "designerId": "e2259869-d3ec-4833-b9a7-4daf6a22e64c"
                                 }
                             ]
                         }

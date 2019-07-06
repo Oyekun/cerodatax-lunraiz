@@ -31,7 +31,74 @@ Ext.define('cerodatax.model.crm.Oferente', {
         },
         {
             type: 'string',
-            name: 'representante'
+            name: 'foto'
+        },
+        {
+            type: 'string',
+            name: 'nombre'
+        },
+        {
+            type: 'string',
+            name: 'apellidos'
+        },
+        {
+            type: 'string',
+            name: 'direccion'
+        },
+        {
+            type: 'string',
+            name: 'correo'
+        },
+        {
+            type: 'string',
+            name: 'celular'
+        },
+        {
+            type: 'string',
+            name: 'telefono'
+        },
+        {
+            type: 'string',
+            name: 'web'
+        },
+        {
+            type: 'string',
+            name: 'pais'
+        },
+        {
+            type: 'string',
+            name: 'pais_id'
+        },
+        {
+            type: 'string',
+            name: 'municipio'
+        },
+        {
+            type: 'string',
+            name: 'municipio_id'
+        },
+        {
+            type: 'string',
+            name: 'provincia'
+        },
+        {
+            type: 'string',
+            name: 'provincia_id'
+        },
+        {
+            name: 'entidad'
+        },
+        {
+            type: 'string',
+            name: 'entidad_id'
+        },
+        {
+            type: 'string',
+            name: 'organismo'
+        },
+        {
+            type: 'string',
+            name: 'organismo_id'
         },
         {
             type: 'string',
@@ -64,7 +131,7 @@ Ext.define('cerodatax.model.crm.Oferente', {
             }
         },
         extraParams: {
-            model: 'contacto',
+            model: 'oferente',
             esquema: 'crm'
         },
         url: 'index.php/api/restserver/rests/',

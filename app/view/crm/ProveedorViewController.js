@@ -59,6 +59,10 @@ Ext.define('cerodatax.view.crm.ProveedorViewController', {
         });
     },
 
+    associate: function(button, e, eOpts) {
+ 
+    },
+
     refresh: function(button, e, eOpts) {
  
     },

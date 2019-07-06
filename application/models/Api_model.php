@@ -11,8 +11,9 @@
  */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+define('DS', DIRECTORY_SEPARATOR); 
 require APPPATH . 'libraries/TreeExtJS.php';
-
+require APPPATH . 'libraries/Tools.php';
 class Api_model extends CI_Model
 {
 
@@ -33,7 +34,25 @@ class Api_model extends CI_Model
      */
     public function get_all($request)
     {
+        $esquema = $request['esquema'];
+         $existFolder = APPPATH . "models/$esquema";
+    if(!is_dir($existFolder))
+        mkdir($existFolder);
 
+$subdireccion =  $request['esquema'] . '/' . $request['model'];
+$existFile = APPPATH . "models/$subdireccion.php";
+$existefile=FALSE;
+if (file_exists($existFile)) 
+    $existefile=TRUE;
+    else
+        { $total = array();
+            $total['data'] = '';
+                    $total['total'] = 0;
+                    return $total;}
+    
+        if ($existefile) 
+        {
+        
         $total = array();
         $limit = FALSE;
         $parent_id = '';
@@ -55,6 +74,7 @@ class Api_model extends CI_Model
                 $parent_id = $request['parent_id'];
 
         }
+
 
         if (isset($request['esquema']) && isset($request['model'])) {
             $modelo = $request['model'];
@@ -81,7 +101,7 @@ class Api_model extends CI_Model
                             }
                         }
                     }
-                    $this->load->model($request['model'], '', TRUE);
+                    $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                     $nameuuid = new $request['model'];
 
                     if (isset($nameuuid->relacion)) {
@@ -89,19 +109,42 @@ class Api_model extends CI_Model
                         $this->db->select("$tb.*");
                         $tablas_relacion = [];
                         foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                            $tabla_campo_id = $tabla_campo . '.id';
-                            $igual = $tb . '.' . $campo;
-                            $alias = str_replace("_id", "", $campo);
-                            if ($alias != $campo)
-                                $ref = $tabla_campo . ".nombre as " . $alias;
-                            else
-                                $ref = $tabla_campo . "." . $alias . " as " . $alias;
-                            $this->db->select("$ref");
+                           if(count($tabla_campo)==1)
+                        {$tabla_campo_id = $tabla_campo . '.id';                        
+                        $igual = $tb . '.' . $campo;
+                        $alias = str_replace("_id", "", $campo);
+                        if ($alias != $campo)
+                            $ref = $tabla_campo . ".nombre as " . $alias;
+                        else
+                            $ref = $tabla_campo . "." . $alias . " as " . $alias;
+                        $this->db->select("$ref");
 
-                            if (!isset($tablas_relacion[$tabla_campo])) {
-                                $tablas_relacion[$tabla_campo] = $tabla_campo;
-                                $this->db->join(" $tabla_campo", " $tabla_campo_id = $igual", " left");
+                        if (!isset($tablas_relacion[$tabla_campo])) {
+                            $tablas_relacion[$tabla_campo] = $tabla_campo;
+                            $this->db->join(" $tabla_campo", " $tabla_campo_id = $igual", " left");
+                        }
+                     }
+                     else{
+
+                        $tabla_campo_id = $tabla_campo['model'] . '.id';                        
+                        $igual = $tabla_campo['relacion'] . '.' . $campo;
+                        $alias = str_replace("_id", "", $campo);
+                        if ($alias != $campo)
+                            {$ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                             $ref .=  "," .$tabla_campo['model'] . ".id"." as " . $campo;
                             }
+                        else
+                            $ref = $tabla_campo['model'] . "." . $alias . " as " . $alias;
+                        $this->db->select("$ref");
+
+                        if (!isset($tablas_relacion[$tabla_campo['model']])) {
+                            $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
+                            $tbcampo= $tabla_campo['model'];
+                            $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
+                        }
+
+
+                     }
                         }
                     }
                     $this->db->order_by("date_updated", "desc");//verificar bien
@@ -163,7 +206,9 @@ class Api_model extends CI_Model
                         $this->db->where("$idasociadoDos", $request['id_asociado']);
                     }
                 }
-                $this->load->model($request['model'], '', TRUE);
+                if(isset($request['asociados']))
+                $this->load->model($request['esquema_asociado'].'/'.$request['model'], '', TRUE);
+                $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
 
                 if (isset($nameuuid->relacion)) {
@@ -171,8 +216,11 @@ class Api_model extends CI_Model
                     $this->db->select("$tb.*");
 
                     $tablas_relacion = [];
+
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                        $tabla_campo_id = $tabla_campo . '.id';
+                        
+                        if(count($tabla_campo)==1)
+                        {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
                         if ($alias != $campo)
@@ -185,8 +233,33 @@ class Api_model extends CI_Model
                             $tablas_relacion[$tabla_campo] = $tabla_campo;
                             $this->db->join(" $tabla_campo", " $tabla_campo_id = $igual", " left");
                         }
+                     }
+                     else{
+
+                        $tabla_campo_id = $tabla_campo['model'] . '.id';                        
+                        $igual = $tabla_campo['relacion'] . '.' . $campo;
+                        $alias = str_replace("_id", "", $campo);
+                        if ($alias != $campo)
+                            {$ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                             $ref .=  "," .$tabla_campo['model'] . ".id"." as " . $campo;
+                            }
+                        else
+                            $ref = $tabla_campo['model'] . "." . $alias . " as " . $alias;
+                        $this->db->select("$ref");
+
+                        if (!isset($tablas_relacion[$tabla_campo['model']])) {
+                            $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
+                            $tbcampo= $tabla_campo['model'];
+                            $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
+                        }
+
+
+                     }
+
                     }
+
                 }
+                //print_r($this->db);die; 
                 $this->db->order_by("date_updated", "desc");
                 //verificar bien
                 $q = $this->db->get("$tb", $limit, $offset);
@@ -200,14 +273,17 @@ class Api_model extends CI_Model
                     $this->db->where('parent_id', $parent_id);
 
                 }
-                $this->load->model($request['model'], '', TRUE);
+                $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
                 if (isset($nameuuid->relacion)) {
 
                     $this->db->select("$tb.*");
                     $tablas_relacion = [];
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                        $tabla_campo_id = $tabla_campo . '.id';
+                        
+
+                        if(count($tabla_campo)==1)
+                        {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
                         if ($alias != $campo)
@@ -220,6 +296,28 @@ class Api_model extends CI_Model
                             $tablas_relacion[$tabla_campo] = $tabla_campo;
                             $this->db->join(" $tabla_campo", " $tabla_campo_id = $igual", " left");
                         }
+                     }
+                     else{
+
+                        $tabla_campo_id = $tabla_campo['model'] . '.id';                        
+                        $igual = $tabla_campo['relacion'] . '.' . $campo;
+                        $alias = str_replace("_id", "", $campo);
+                        if ($alias != $campo)
+                            {$ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                             $ref .=  "," .$tabla_campo['model'] . ".id"." as " . $campo;
+                            }
+                        else
+                            $ref = $tabla_campo['model'] . "." . $alias . " as " . $alias;
+                        $this->db->select("$ref");
+
+                        if (!isset($tablas_relacion[$tabla_campo['model']])) {
+                            $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
+                            $tbcampo= $tabla_campo['model'];
+                            $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
+                        }
+
+
+                     }
                     }
                 }
                 $this->db->order_by("date_updated", "desc");//verificar bien
@@ -239,14 +337,15 @@ class Api_model extends CI_Model
                     if ($request['parent_id'] != '')
                         $this->db->where('parent_id', $parent_id);
 
-                $this->load->model($request['model'], '', TRUE);
+                $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
                 if (isset($nameuuid->relacion)) {
 
                     $this->db->select("$tb.*");
                     $tablas_relacion = [];
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                        $tabla_campo_id = $tabla_campo . '.id';
+                      if(count($tabla_campo)==1)
+                        {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
                         if ($alias != $campo)
@@ -259,6 +358,28 @@ class Api_model extends CI_Model
                             $tablas_relacion[$tabla_campo] = $tabla_campo;
                             $this->db->join(" $tabla_campo", " $tabla_campo_id = $igual", " left");
                         }
+                     }
+                     else{
+
+                        $tabla_campo_id = $tabla_campo['model'] . '.id';                        
+                        $igual = $tabla_campo['relacion'] . '.' . $campo;
+                        $alias = str_replace("_id", "", $campo);
+                        if ($alias != $campo)
+                            {$ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                             $ref .=  "," .$tabla_campo['model'] . ".id"." as " . $campo;
+                            }
+                        else
+                            $ref = $tabla_campo['model'] . "." . $alias . " as " . $alias;
+                        $this->db->select("$ref");
+
+                        if (!isset($tablas_relacion[$tabla_campo['model']])) {
+                            $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
+                            $tbcampo= $tabla_campo['model'];
+                            $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
+                        }
+
+
+                     }
                     }
                 }
                 // $this->db->order_by("date_updated", "asc");//verificar bien
@@ -271,50 +392,74 @@ class Api_model extends CI_Model
 
             }
 
-            if (isset($q->row()->posicion) && !isset($request['parent_id'])) {
 
+            if (isset($q->row()->posicion) && !isset($request['parent_id'])) {
 
                 $this->db->order_by("posicion", "asc");
                 if (isset($request['parent_id']))
                     if ($request['parent_id'] != '')
                         $this->db->where('parent_id', $parent_id);
-                $this->load->model($request['model'], '', TRUE);
+                $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
+                
                 if (isset($nameuuid->relacion)) {
 
                     $this->db->select("$tb.*");
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                        $tabla_campo_id = $tabla_campo . '.id';
+                          if(count($tabla_campo)==1)
+                        {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
-                        $ref = $tabla_campo . ".nombre as " . $alias;
-                        //$this->db->select("$ref");
-                        $this->db->join(" $tabla_campo", " $tabla_campo_id = $igual", " left");
+                        if ($alias != $campo)
+                            $ref = $tabla_campo . ".nombre as " . $alias;
+                        else
+                            $ref = $tabla_campo . "." . $alias . " as " . $alias;
+                        $this->db->select("$ref");
+
+                        if (!isset($tablas_relacion[$tabla_campo])) {
+                            $tablas_relacion[$tabla_campo] = $tabla_campo;
+                            $this->db->join(" $tabla_campo", " $tabla_campo_id = $igual", " left");
+                        }
+                     }
+                     else{
+
+                        $tabla_campo_id = $tabla_campo['model'] . '.id';                        
+                        $igual = $tabla_campo['relacion'] . '.' . $campo;
+                        $alias = str_replace("_id", "", $campo);
+                        if ($alias != $campo)
+                            {$ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                             $ref .=  "," .$tabla_campo['model'] . ".id"." as " . $campo;
+                            }
+                        else
+                            $ref = $tabla_campo['model'] . "." . $alias . " as " . $alias;
+                        $this->db->select("$ref");
+
+                        if (!isset($tablas_relacion[$tabla_campo['model']])) {
+                            $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
+                            $tbcampo= $tabla_campo['model'];
+                            $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
+                        }
+
+
+                     }
                     }
                 }
                 // $this->db->order_by("date_updated", "asc");//verificar bien
+                
                 if ($limit)
                     $q = $this->db->get("$tb", $limit, $offset);
                 else
                     $q = $this->db->get("$tb");
             }
 
-
+  
             $total['data'] = $q->result_array();
 
 
             $total_actual = count($q->result_array());
 
             $total['total'] = count($q1->result_array());
-            /*if(isset($request['asociados'])&&isset($request['id_asociado'])&&isset($request['esquema_asociado'])&&isset($request['detalles']))
-            {
-                if($request['asociados']!=''&&$request['id_asociado']==''&&$request['detalles']=='')
-                {
-                    $total['total'] = $total_actual;
-                    return $total;
-                }
-
-            }*/
+            
 
             if ($total['total'] > 0) {
 
@@ -366,10 +511,10 @@ class Api_model extends CI_Model
                             $cant++;
 
                             $tree->addChild($nodo, $nodo["parent_id"], $parent_id);
-//print_r($nodo["parent_id"]."\n");
+ 
                         }
                     }
-//print_r($tree->tree);die;
+ 
 
                     $total['data'] = $tree->tree;
                     $total['total'] = $tree->cont;
@@ -381,7 +526,7 @@ class Api_model extends CI_Model
 
         }
         return $total;
-
+}
     }
 
     /**
@@ -420,7 +565,7 @@ class Api_model extends CI_Model
             }
 
 
-            $this->load->model($request['model']);
+            $this->load->model($request['esquema'].'/'.$request['model']);
             $nameuuid = new $request['model'];
 
             $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
@@ -487,7 +632,7 @@ class Api_model extends CI_Model
                 $modeloLogico = $request['asociados'] . $request['model'];
                 $tb1 = $request['esquema_asociado'] . '_' . $modeloLogico;
 
-                $this->load->model($modeloLogico);
+                $this->load->model($request['esquema_asociado'].'/'.$modeloLogico);
                 $rand = mt_rand(0, 0xffff);
                 $uuidUno = $this->uuid->v5($rand, '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
                 $this->db->set('id', $uuidUno);
@@ -510,7 +655,7 @@ class Api_model extends CI_Model
                 $modelofisico = ucwords($dataArray2[0]['model']) . ucwords($request['model']);
                 $tb1 = $request['esquema'] . '_' . $modeloLogico;
 
-                $this->load->model($modelofisico);
+                $this->load->model($request['esquema'].'/'.$modelofisico);
 
                 $nameuuidUno = new $modelofisico;
                 foreach ($dataArray2 as $nodo) {
@@ -591,7 +736,7 @@ class Api_model extends CI_Model
 
         }
 
-        $this->load->model($request['model']);
+        $this->load->model($request['esquema'].'/'.$request['model']);
         $nameuuid = new $request['model'];
         $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
         if ($id == 0)
@@ -618,6 +763,14 @@ class Api_model extends CI_Model
             unset($dataArray['asociados']);
         }
 
+          if (isset($dataArray['migration'])) {
+
+            
+            unset($dataArray['migration']);
+        }
+        
+
+
  //print_r($dataArray);die;
         $this->db->where('id', $id);
         $dataArray['date_updated'] = date('Y-m-d H:i:s');
@@ -640,7 +793,7 @@ class Api_model extends CI_Model
             $modeloLogico = $request['asociados'] . $request['model'];
             $tb1 = $request['esquema_asociado'] . '_' . $modeloLogico;
 
-            $this->load->model($modelofisico);
+            $this->load->model($request['esquema'].'/'.$modelofisico);
             $rand = mt_rand(0, 0xffff);
             $uuidUno = $this->uuid->v5($rand, '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
 
@@ -675,7 +828,7 @@ class Api_model extends CI_Model
 
             foreach ($dataArray2 as $nodo) {
 
-                $this->load->model($modelofisico);
+                $this->load->model($request['esquema'].'/'.$modelofisico);
 
                 $nameuuidUno = new $modelofisico;
                 $rand = mt_rand(0, 0xffff);
@@ -731,11 +884,70 @@ class Api_model extends CI_Model
     {
         $tb = $request['esquema'] . '_' . $request['model'];
         $dataArray = json_decode($request['data'], TRUE);
-        $this->load->model($request['model']);
+        //$existtable = $this->db->get($tb);
+        //print_r($existtable);die;
+        
+        $subdireccion =  $request['esquema'] . DS . $request['model'];
+        //$subdireccion =  /*$request['esquema'] . '/' .*/ $request['model'];
+$existFile = APPPATH . "models".DS."$subdireccion.php";
+        if (!file_exists($existFile)) 
+        //if (!class_exists($subdireccion)) 
+        {
+            $tools = new Tools();
+            $aux = explode('.', $dataArray['id']);
+if(count($aux)>0)
+{//print_r($aux[count($aux)-1]);die;
+    $aux1 = explode('-', $aux[count($aux)-1]);
+if(count($aux1)>0)
+    {$modelClass = $aux1[0]; 
+         
+        $existFileOrigen = APPPATH . "models".DS."$modelClass.php";
+       // print_r($dataArray);die;
+        if (file_exists($existFileOrigen)) 
+        {
+            
+            $destino=  $request['esquema'] . DS . "$modelClass.php";
+        //$subdireccion =  /*$request['esquema'] . '/' .*/ $request['model'];
+            $existFile = APPPATH . "models".DS. "$destino";
+           // print_r($existFile);
+           // print_r($existFileOrigen);die;
+            rename($existFileOrigen, $existFile);
+
+            
+        
+        }
+        else{
+            if(isset($request['migration']))
+             {$dataMigration = json_decode($request['migration'], TRUE);
+             $tools->make_model_file($request['esquema'],$modelClass,$dataMigration);
+             $tools->make_migration_file($request['esquema'],$modelClass,$dataMigration);
+             $tools->migrate();
+         }else 
+            if(isset($dataArray['migration']))
+            {
+                // print_r($dataArray);die;
+                $dataMigration = $dataArray['migration'];
+
+             $tools->make_model_file($request['esquema'],$modelClass,$dataMigration);
+             $tools->make_migration_file($request['esquema'],$modelClass,$dataMigration);
+             $tools->migrate();
+            }
+          
+           
+}
+}
+}
+        }
+        //$this->verificar_model($request['esquema'],$modelClass);
+        $this->load->model($request['esquema'].'/'.$request['model']);
         $nameuuid = new $request['model'];
         $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
-
+        
+        //print_r($request['model']);
+        //print_r($dataArray);
+        //print_r($nameuuid);die;
         $this->db->where('id', $uuid);
+//print_r($this->db);die;
         $result = $this->db->get("$tb");
 
         return count($result->result_array()) > 0 ? TRUE : FALSE;
@@ -751,6 +963,26 @@ class Api_model extends CI_Model
     private function get_relaciones()
     {
 
+
+    }
+
+     private function verificar_model($esquema,$model)
+    {
+        
+         $existFolder = APPPATH . "models/$esquema";
+    if(!is_dir($existFolder))
+        mkdir($existFolder);
+        $subdireccion =  $esquema . '/' . $model;
+        //$subdireccion =  /*$request['esquema'] . '/' .*/ $request['model'];
+        $existFileEsquema = APPPATH . "models/$subdireccion.php";
+        if (!file_exists($existFileEsquema)) 
+        //if (!class_exists($subdireccion)) 
+        {
+            $existFile = APPPATH . "models/$model.php";
+        if (file_exists($existFile)) 
+            rename($existFile, $existFileEsquema);
+        }
+      
 
     }
 }

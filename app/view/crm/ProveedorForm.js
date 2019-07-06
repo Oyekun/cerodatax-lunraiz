@@ -15,7 +15,7 @@
 
 Ext.define('cerodatax.view.crm.ProveedorForm', {
     extend: 'Ext.window.Window',
-    alias: 'widget.proveedorForm',
+    alias: 'widget.crmproveedorForm',
 
     requires: [
         'cerodatax.view.crm.ProveedorFormViewModel',
@@ -25,14 +25,11 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
         'Ext.tab.Tab',
         'Ext.form.FieldSet',
         'Ext.Img',
-        'Ext.form.field.File',
-        'Ext.XTemplate',
         'Ext.form.field.ComboBox',
-        'Ext.tree.Panel',
-        'Ext.tree.View',
-        'Ext.tree.Column',
-        'Ext.grid.filters.filter.String',
-        'Ext.grid.filters.Filters'
+        'Ext.view.BoundList',
+        'Ext.XTemplate',
+        'Ext.form.field.Display',
+        'Ext.form.field.TextArea'
     ],
 
     controller: 'crmproveedorform',
@@ -53,8 +50,6 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
                         xtype: 'form',
                         reference: 'form',
                         alignTarget: 'top',
-                        height: 500,
-                        width: 460,
                         layout: 'auto',
                         bodyPadding: 10,
                         fieldDefaults: {
@@ -93,7 +88,6 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
                         items: [
                             {
                                 xtype: 'tabpanel',
-                                width: 440,
                                 activeTab: 0,
                                 items: [
                                     {
@@ -103,7 +97,7 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
                                             {
                                                 xtype: 'fieldset',
                                                 alignTarget: 'top',
-                                                height: 190,
+                                                height: 160,
                                                 margin: '10 0 0 0',
                                                 width: 440,
                                                 layout: 'column',
@@ -126,7 +120,10 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
                                                                 style: 'font-size: 36px; lineHeight: 36px',
                                                                 width: 100,
                                                                 alt: 'Cargando Foto...',
-                                                                imgCls: ''
+                                                                imgCls: '',
+                                                                bind: {
+                                                                    src: '{contactocliente.selection.foto}'
+                                                                }
                                                             },
                                                             {
                                                                 xtype: 'image',
@@ -138,39 +135,50 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
                                                                 style: 'font-size: 110px; margin: 10px;line-height: 120px;',
                                                                 width: 100,
                                                                 alt: 'Cargando Foto...',
-                                                                glyph: 'xf007@FontAwesome'
+                                                                glyph: 'xf007@FontAwesome',
+                                                                bind: {
+                                                                    src: '{contactocliente.selection.foto}'
+                                                                }
                                                             }
                                                         ]
                                                     },
-                                                    me.processFoto({
-                                                        xtype: 'filefield',
-                                                        margin: '10 0 0 0',
-                                                        fieldLabel: 'Foto',
-                                                        name: 'foto',
-                                                        invalidText: 'El valor del elemento es invalido',
+                                                    me.processContactocliente({
+                                                        xtype: 'combobox',
+                                                        reference: 'contactocliente',
+                                                        fieldLabel: 'Proveedor',
+                                                        name: 'contacto_id',
+                                                        allowBlank: false,
                                                         emptyText: 'Seleccione',
-                                                        buttonText: 'Examinar...',
-                                                        listeners: {
-                                                            change: 'onFilefieldChange'
+                                                        displayField: 'nombre',
+                                                        queryMode: 'local',
+                                                        store: 'crm.Contacto',
+                                                        valueField: 'id',
+                                                        listConfig: {
+                                                            xtype: 'boundlist',
+                                                            itemSelector: 'span',
+                                                            itemTpl: [
+                                                                ' ',
+                                                                '<tpl for=".">',
+                                                                '    ',
+                                                                '    <tpl if="foto==\'\'">',
+                                                                '         {nombre}',
+                                                                '        </tpl> ',
+                                                                '     <tpl if="foto!=\'\'">',
+                                                                '        <img src="{foto}" height="20px" style="float:left;"> {nombre}',
+                                                                '        </tpl> ',
+                                                                '    ',
+                                                                '</tpl>'
+                                                            ]
                                                         }
                                                     }),
                                                     {
-                                                        xtype: 'textfield',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
-                                                        fieldLabel: 'Nombre(s)',
-                                                        name: 'nombre',
-                                                        allowBlank: false
-                                                    },
-                                                    {
-                                                        xtype: 'textfield',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
+                                                        xtype: 'displayfield',
+                                                        width: 275,
                                                         fieldLabel: 'Apellidos',
                                                         name: 'apellidos',
-                                                        allowBlank: false
+                                                        bind: {
+                                                            value: '{contactocliente.selection.apellidos}'
+                                                        }
                                                     }
                                                 ]
                                             },
@@ -178,44 +186,52 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
                                                 xtype: 'fieldset',
                                                 margin: '10 0 0 0',
                                                 width: 440,
-                                                title: 'Contacto',
+                                                title: 'Datos del Contacto',
                                                 items: [
                                                     {
-                                                        xtype: 'textfield',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
+                                                        xtype: 'displayfield',
+                                                        width: 400,
                                                         fieldLabel: 'Dirección',
                                                         name: 'direccion',
-                                                        allowBlank: false
+                                                        bind: {
+                                                            value: '{contactocliente.selection.direccion}'
+                                                        }
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'displayfield',
+                                                        width: 400,
                                                         fieldLabel: 'Correo',
                                                         name: 'correo',
-                                                        inputType: 'email',
-                                                        vtype: 'email'
+                                                        bind: {
+                                                            value: '{contactocliente.selection.correo}'
+                                                        }
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'displayfield',
+                                                        width: 400,
                                                         fieldLabel: 'Teléfono',
                                                         name: 'telefono',
-                                                        inputType: 'tel',
-                                                        maskRe: /\d/
+                                                        bind: {
+                                                            value: '{contactocliente.selection.telefono}'
+                                                        }
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'displayfield',
+                                                        width: 400,
                                                         fieldLabel: 'Celular',
                                                         name: 'celular',
-                                                        inputType: 'tel',
-                                                        maskRe: /\d/
+                                                        bind: {
+                                                            value: '{contactocliente.selection.celular}'
+                                                        }
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'displayfield',
+                                                        width: 400,
                                                         fieldLabel: 'Web',
                                                         name: 'web',
-                                                        inputType: 'tel',
-                                                        maskRe: /\d/
+                                                        bind: {
+                                                            value: '{contactocliente.selection.web}'
+                                                        }
                                                     }
                                                 ]
                                             }
@@ -223,103 +239,13 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
                                     },
                                     {
                                         xtype: 'panel',
-                                        margin: '10 0 0 0',
-                                        title: 'Otros Datos',
+                                        title: 'Observaciones',
                                         items: [
                                             {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'País',
-                                                name: 'pais_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                queryParam: 'provincia_id:false,municipio_id:true',
-                                                store: 'nomenclador.Pais',
-                                                valueField: 'id',
-                                                listeners: {
-                                                    select: 'onComboboxSelect'
-                                                }
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                disabled: true,
-                                                fieldLabel: 'Provincia',
-                                                name: 'provincia_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                queryParam: 'municipio_id:false',
-                                                store: 'nomenclador.Provincia',
-                                                valueField: 'id',
-                                                listeners: {
-                                                    select: 'onComboboxSelect1'
-                                                }
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                disabled: true,
-                                                fieldLabel: 'Municipio',
-                                                name: 'municipio_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                store: 'nomenclador.Municipio',
-                                                valueField: 'id'
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'Organismo',
-                                                name: 'organismo_id',
-                                                inputAttrTpl: [
-                                                    'Entidades:false'
-                                                ],
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                queryParam: 'Entidades:false',
-                                                store: 'nomenclador.Organismo',
-                                                valueField: 'id',
-                                                listeners: {
-                                                    select: 'onComboboxSelectEntidad'
-                                                }
-                                            },
-                                            {
-                                                xtype: 'treepanel',
-                                                disabled: true,
-                                                height: 300,
-                                                itemId: 'treePanel',
-                                                margin: '10 0 0 0',
-                                                scrollable: true,
-                                                width: 430,
-                                                title: 'Entidades',
-                                                hideHeaders: false,
-                                                store: 'persona.PersonaEntidad',
-                                                rootVisible: false,
-                                                useArrows: true,
-                                                viewConfig: {
-                                                    rootVisible: false
-                                                },
-                                                columns: [
-                                                    {
-                                                        xtype: 'treecolumn',
-                                                        dataIndex: 'nombre',
-                                                        text: 'Nombre',
-                                                        flex: 3,
-                                                        filter: {
-                                                            type: 'string',
-                                                            emptyText: 'Ingrese el texto del filtro...'
-                                                        }
-                                                    }
-                                                ],
-                                                listeners: {
-                                                    beforeitemexpand: 'onTreePanelBeforeItemExpand1'
-                                                },
-                                                plugins: [
-                                                    {
-                                                        ptype: 'gridfilters',
-                                                        menuFilterText: 'Buscar'
-                                                    }
-                                                ]
+                                                xtype: 'textareafield',
+                                                fieldLabel: 'Descripción',
+                                                name: 'descripcion',
+                                                maxLength: 255
                                             }
                                         ]
                                     }
@@ -335,8 +261,8 @@ Ext.define('cerodatax.view.crm.ProveedorForm', {
         return me.callParent([config]);
     },
 
-    processFoto: function(config) {
-        config.icono = 'address-book';
+    processContactocliente: function(config) {
+        config.icono = 'address-card';
         return config;
     }
 

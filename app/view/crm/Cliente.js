@@ -178,7 +178,7 @@ Ext.define('cerodatax.view.crm.Cliente', {
     },
 
     processCrmCliente: function(config) {
-        console.log(config)
+
         config.gridasociado=true;
         return config;
     }

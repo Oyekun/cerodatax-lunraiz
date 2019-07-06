@@ -9,6 +9,6 @@
         "designer|userAlias": "crmproveedor",
         "designer|userClassName": "crm.ProveedorViewModel"
     },
-    "name": "crm.ContactoViewModel2",
-    "designerId": "c6fec98c-0fe9-4b11-a3a1-04ad955b724f"
+    "name": "crm.ContactoViewModel1",
+    "designerId": "519f7283-3242-42aa-98eb-c60e6a76f146"
 }
