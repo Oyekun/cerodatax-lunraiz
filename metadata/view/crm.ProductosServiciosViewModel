@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "crmproductosservicios",
+        "designer|userClassName": "crm.ProductosServiciosViewModel"
+    },
+    "name": "persona.PersonaViewModel1",
+    "designerId": "3290a08e-ce8d-45d9-90d4-1cbe193cba78"
+}

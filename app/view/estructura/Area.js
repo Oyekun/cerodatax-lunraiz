@@ -79,7 +79,6 @@ Ext.define('cerodatax.view.estructura.Area', {
                         {
                             xtype: 'button',
                             itemId: 'btnAdd',
-                            text: 'Adicionar',
                             listeners: {
                                 click: 'add'
                             }
@@ -88,7 +87,6 @@ Ext.define('cerodatax.view.estructura.Area', {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'btnEdit',
-                            text: 'Editar',
                             bind: {
                                 hidden: '{!record}'
                             },
@@ -100,7 +98,6 @@ Ext.define('cerodatax.view.estructura.Area', {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'btnRemove',
-                            text: 'Eliminar',
                             bind: {
                                 hidden: '{!record}'
                             },
@@ -110,8 +107,19 @@ Ext.define('cerodatax.view.estructura.Area', {
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
+                            itemId: 'btnAssociate',
+                            baseParams: 'plaza',
+                            bind: {
+                                hidden: '{!record}'
+                            },
+                            listeners: {
+                                click: 'associate'
+                            }
+                        },
+                        {
+                            xtype: 'button',
                             itemId: 'btnRefresh',
-                            text: 'Actualizar',
                             bind: {
                                 hidden: '{!record}'
                             },

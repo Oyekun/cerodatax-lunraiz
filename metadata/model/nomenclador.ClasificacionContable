@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "clasificacioncontable",
+        "designer|userClassName": "nomenclador.ClasificacionContable"
+    },
+    "name": "nomenclador.AgrupacionCentroCosto5",
+    "designerId": "22c42049-c844-4b31-9feb-d1e9562b80bb",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "63dfe49e-8a85-450b-b282-59d0e07d6f27"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "a5a2cde3-773e-4b6f-bcb1-8b2f14a1fa02"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString88",
+            "designerId": "5d4f9c3c-bfce-4c4a-a674-1b4376bc19b7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipoclasificacioncontable"
+            },
+            "name": "MyString30",
+            "designerId": "ee47c168-0627-4fcc-81d2-86b1d269cf0d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipoclasificacioncontable_id"
+            },
+            "name": "MyString31",
+            "designerId": "1237f77e-1c9a-4a79-b3fd-b9782d7e7958"
+        }
+    ]
+}

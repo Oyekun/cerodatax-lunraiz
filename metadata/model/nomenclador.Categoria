@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoria",
+        "designer|userClassName": "nomenclador.Categoria"
+    },
+    "name": "nomenclador.SubcategoriaProducto1",
+    "designerId": "dfb25dd8-2ee8-4763-b337-eaa13e545645",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "a6d2d84d-7d26-4bd6-97cd-b42b3ec87d2a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "7fe43a86-5170-43a8-808d-31d17440edd5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString88",
+            "designerId": "347627dd-2291-4de4-845b-16d130519459"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "subcategoriaproducto"
+            },
+            "name": "MyString13",
+            "designerId": "422927bd-4928-4182-a647-c28cfbedeba9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "subcategoriaproducto_id"
+            },
+            "name": "MyString28",
+            "designerId": "fd90dad0-7fc8-447a-9487-d9d618814347"
+        }
+    ]
+}

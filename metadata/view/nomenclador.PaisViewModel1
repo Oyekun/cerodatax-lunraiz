@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "estructuraplazas",
+        "designer|userClassName": "nomenclador.PaisViewModel1"
+    },
+    "name": "nomenclador.PaisViewModel1",
+    "designerId": "aa7f4a4f-25f8-4522-83e9-a90465976081"
+}

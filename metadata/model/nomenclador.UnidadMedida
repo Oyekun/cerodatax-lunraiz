@@ -1,0 +1,107 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "unidadmedida",
+        "designer|userClassName": "nomenclador.UnidadMedida"
+    },
+    "name": "nomenclador.AgrupacionCentroCosto22",
+    "designerId": "78d058ec-4f27-4a7f-8ab2-1af91c629328",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "4cab1f10-1034-4061-bbb2-1cda339e46c4"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "95eb10e4-c687-480c-bd45-387f7b407007"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "simbolo"
+            },
+            "name": "MyString88",
+            "designerId": "cc946dfc-d458-4472-b871-7d25ca932ffe"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "valor_si"
+            },
+            "name": "MyString59",
+            "designerId": "effb044a-f3de-453e-9c0b-21088ce83c5b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "magnitud"
+            },
+            "name": "MyString86",
+            "designerId": "00d76fcf-4f45-4fa5-99b2-9f023512680f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "magnitud_id"
+            },
+            "name": "MyString91",
+            "designerId": "2042686c-7ba6-438f-b2b9-d5aae6a3cf72"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString60",
+            "designerId": "37296662-a93a-4a79-b9a8-6ba2fdaeb59d"
+        }
+    ]
+}

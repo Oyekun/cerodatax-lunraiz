@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "criteriosalida",
+        "designer|userClassName": "nomenclador.CriterioSalida"
+    },
+    "name": "nomenclador.AgrupacionCentroCosto3",
+    "designerId": "db5565a5-ee96-4cf3-8c5c-f82990415e82",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "50fdb84b-025f-4b6c-a554-b51e7b065acc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "423aa377-5ab1-4d33-816c-79bb5c110a7e"
+        }
+    ]
+}

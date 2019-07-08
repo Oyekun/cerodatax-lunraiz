@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "crmproductosservicios",
+        "designer|userClassName": "crm.ProductosServiciosViewController"
+    },
+    "name": "persona.PersonaViewController1",
+    "designerId": "09234b87-b492-40ee-bc2e-48a0214ddb69"
+}

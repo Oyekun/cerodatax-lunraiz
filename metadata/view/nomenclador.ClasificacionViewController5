@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladordestino",
+        "designer|userClassName": "nomenclador.ClasificacionViewController5"
+    },
+    "name": "nomenclador.ClasificacionViewController5",
+    "designerId": "d54ccbb2-380f-4d0f-a72e-96ea2119f093",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "8436ff7b-7ce1-41d5-94f3-da9007a09272"
+        }
+    ]
+}

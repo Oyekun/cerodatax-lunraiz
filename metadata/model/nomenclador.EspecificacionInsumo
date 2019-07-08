@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "especificacioninsumo",
+        "designer|userClassName": "nomenclador.EspecificacionInsumo"
+    },
+    "name": "nomenclador.AgrupacionCentroCosto4",
+    "designerId": "de61c45a-e699-4e1f-9fc9-94f38a7f53b6",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "fe395b26-fc2e-4da9-a190-458c4963b7b3"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString71",
+            "designerId": "4701c10a-aabb-467a-a101-4db06542f829"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString29",
+            "designerId": "2cc65ab7-bbfd-4c29-ad8d-4c6ea7dc10e6"
+        }
+    ]
+}

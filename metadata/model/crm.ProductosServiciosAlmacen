@@ -1,0 +1,150 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "productosserviciosalmacen",
+        "designer|userClassName": "crm.ProductosServiciosAlmacen"
+    },
+    "name": "seguridad.RolMenu1",
+    "designerId": "e81ca25c-dc84-4662-9de3-ecb0700f3234",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "id",
+                "name": "id"
+            },
+            "name": "MyString58",
+            "designerId": "f29a25e2-b241-4e86-93f4-3338e2254fc6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "productoservicio_id",
+                "name": "productoservicio_id"
+            },
+            "name": "MyString27",
+            "designerId": "a5fdd0ab-eb05-4ebc-bd10-baa25a33a325"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "almacen_id",
+                "name": "almacen_id"
+            },
+            "name": "MyString20",
+            "designerId": "6250e24c-6ee4-4074-90e2-49077fc3a632"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tipoentrada_id",
+                "name": "tipoentrada_id"
+            },
+            "name": "MyString32",
+            "designerId": "01a470ce-3c12-4021-a23d-009a9a2807c2"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "criteriosalida_id",
+                "name": "criteriosalida_id"
+            },
+            "name": "MyString65",
+            "designerId": "acb150bc-59ad-4472-b6e1-9470ec51fc6c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "componentes",
+                "name": "componentes"
+            },
+            "name": "MyBoolean10",
+            "designerId": "013dcc13-c2e8-4834-b2d2-e2c8b7beb4e7"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{add:{url: 'index.php/api/restserver/rests',method: 'POST'},show: {url: 'index.php/api/restserver/rests/',method: 'GET'},save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}}"
+                ],
+                "extraParams": [
+                    "{ model: 'productosservicios_almacen',",
+                    "esquema: 'crm',asociados: ''}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy4",
+            "designerId": "efcd79b2-7592-458c-b70e-204411036b72",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "fb80582a-8afa-4a0f-8f26-646a6a0a7100"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "492aa1e3-1ffe-4ba7-9025-936bcec20bdc"
+                }
+            ]
+        }
+    ]
+}

@@ -778,6 +778,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "hidden": true,
                                 "title": "Cuentas Bancarias"
                             },
                             "name": "MyPanel2",

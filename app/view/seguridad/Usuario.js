@@ -348,6 +348,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                                 'Entidades:false'
                             ],
                             emptyText: 'Seleccione',
+                            maxLength: 100,
                             displayField: 'nombre',
                             queryMode: 'local',
                             queryParam: 'Entidades:false',

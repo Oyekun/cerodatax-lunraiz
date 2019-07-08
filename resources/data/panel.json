@@ -3,6 +3,12 @@
    },{
    		id:'ab656f58-c421-5dba-84fc-3b34801abe51',nombre:'Licencías',orden:'0',id_contenedor:'Licencia',alias_id:'ebb8edcc-8848-5c47-982f-b82992a7d6e1',menu_id:'ab656f58-c421-5dba-84fc-3b34801abe51',descripcion:'',activo:'1',date_created:'2018-11-21 02:01:30',date_updated:'2018-11-21 02:01:30',created_from_ip:'::1',updated_from_ip:'::1',alias:'administracion',
    },{
+   		id:'88472c67-57f1-59c4-9d05-ecf2f21a210c',nombre:'Personas',orden:'0',id_contenedor:'Persona',alias_id:'ece97326-3294-5e23-9447-c8177233cdb5',menu_id:'b4f8b02d-3688-56d3-b418-762711a069a0',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'persona',
+   },{
+   		id:'17c47eda-97f8-5cc5-b3ab-0a3a749de1e3',nombre:'División NAE',orden:'0',id_contenedor:'DivisionNAE',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'17c47eda-97f8-5cc5-b3ab-0a3a749de1e3',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
+   },{
+   		id:'240246f1-65e4-518a-91b4-db36362468c7',nombre:'Sección NAE',orden:'0',id_contenedor:'SeccionNAE',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'240246f1-65e4-518a-91b4-db36362468c7',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
+   },{
    		id:'66d45629-7e4b-5483-bef8-4058802cd244',nombre:'Categoría Entidad',orden:'0',id_contenedor:'CategoriaEntidad',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'66d45629-7e4b-5483-bef8-4058802cd244',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
    },{
    		id:'b09f430e-0423-59a9-910b-b44ae9f4f3ba',nombre:'Tipo de Registro',orden:'0',id_contenedor:'TipoRegistro',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'b09f430e-0423-59a9-910b-b44ae9f4f3ba',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
@@ -22,8 +28,6 @@
    		id:'efebe7b0-778f-50cd-8572-e54760dea7c2',nombre:'Continentes',orden:'0',id_contenedor:'Continente',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'efebe7b0-778f-50cd-8572-e54760dea7c2',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
    },{
    		id:'7a33f50c-0236-5906-80c9-7c0dface663d',nombre:'Trazas',orden:'0',id_contenedor:'Traza',alias_id:'ebb8edcc-8848-5c47-982f-b82992a7d6e1',menu_id:'7a33f50c-0236-5906-80c9-7c0dface663d',descripcion:'',activo:'1',date_created:'2018-11-23 02:20:53',date_updated:'2018-11-23 02:20:53',created_from_ip:'::1',updated_from_ip:'::1',alias:'administracion',
-   },{
-   		id:'88472c67-57f1-59c4-9d05-ecf2f21a210c',nombre:'Personas',orden:'0',id_contenedor:'Persona',alias_id:'ece97326-3294-5e23-9447-c8177233cdb5',menu_id:'a169eb6c-d986-51ed-8c2e-726a29b7754f',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'persona',
    },{
    		id:'58028f56-7ea1-5921-8a2a-b6b637d3dbee',nombre:'Entidades',orden:'0',id_contenedor:'Entidad',alias_id:'aa422a3d-b876-55e4-830c-399a9358fdf9',menu_id:'88176fbe-aa72-5ddb-bc71-775fda9ac9e2',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'estructura',
    },{
@@ -107,27 +111,27 @@
    },{
    		id:'4d1d0f1b-109d-5cba-934c-1ccf169fa0cc',nombre:'NAE',orden:'0',id_contenedor:'NAE',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'4d1d0f1b-109d-5cba-934c-1ccf169fa0cc',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
    },{
-   		id:'17c47eda-97f8-5cc5-b3ab-0a3a749de1e3',nombre:'División NAE',orden:'0',id_contenedor:'DivisionNAE',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'17c47eda-97f8-5cc5-b3ab-0a3a749de1e3',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
-   },{
-   		id:'240246f1-65e4-518a-91b4-db36362468c7',nombre:'Sección NAE',orden:'0',id_contenedor:'SeccionNAE',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'240246f1-65e4-518a-91b4-db36362468c7',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
-   },{
-   		id:'e5c47224-e495-5d73-acea-7999ef544331',nombre:'Cargos',orden:'1',id_contenedor:'Cargo',alias_id:'ece97326-3294-5e23-9447-c8177233cdb5',menu_id:'a169eb6c-d986-51ed-8c2e-726a29b7754f',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'persona',
-   },{
-   		id:'062317f7-849d-5c46-ac80-9cd78b7a79c5',nombre:'Menú',orden:'1',id_contenedor:'Menu',alias_id:'e7d3482b-e146-5f49-9d85-16a98f242d4c',menu_id:'cbc445c3-2a44-5ca9-a04b-1dbdd360ef78',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'configuracion',
-   },{
-   		id:'69599e00-8fce-5de6-8981-461349cc91a0',nombre:'Áreas',orden:'1',id_contenedor:'Area',alias_id:'aa422a3d-b876-55e4-830c-399a9358fdf9',menu_id:'88176fbe-aa72-5ddb-bc71-775fda9ac9e2',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'estructura',
+   		id:'e5c47224-e495-5d73-acea-7999ef544331',nombre:'Cargos',orden:'1',id_contenedor:'Cargo',alias_id:'ece97326-3294-5e23-9447-c8177233cdb5',menu_id:'b4f8b02d-3688-56d3-b418-762711a069a0',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'persona',
    },{
    		id:'9675922a-99a8-5fbf-98f3-bda44c290192',nombre:'Roles',orden:'1',id_contenedor:'Rol',alias_id:'b7e0029a-7cb0-529f-bbfa-8b49eb7207d3',menu_id:'5eef535a-49a0-521f-baa2-b2afb0d84413',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'seguridad',
    },{
    		id:'c0df395a-27ba-57cf-8e06-5a8f99ded46b',nombre:'Cliente',orden:'1',id_contenedor:'Cliente',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
    },{
+   		id:'6fa40d5e-bcdc-57a5-a01a-55fb93546371',nombre:'Magnitud',orden:'1',id_contenedor:'Magnitud',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'227ac17d-f83b-5668-81ad-92c0439f6abe',descripcion:'Magnitud',activo:'1',date_created:'2019-07-08 02:36:26',date_updated:'2019-07-08 02:59:19',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
+   },{
+   		id:'062317f7-849d-5c46-ac80-9cd78b7a79c5',nombre:'Menú',orden:'1',id_contenedor:'Menu',alias_id:'e7d3482b-e146-5f49-9d85-16a98f242d4c',menu_id:'cbc445c3-2a44-5ca9-a04b-1dbdd360ef78',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'configuracion',
+   },{
    		id:'2bb8ca21-5b32-5d59-be07-7089ee423311',nombre:'Cuentas Bancarias',orden:'1',id_contenedor:'CuentaBancaria',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'6330f38e-3ec6-5996-8ee0-0942dbb429fe',descripcion:'',activo:'1',date_created:'2018-11-03 00:50:42',date_updated:'2018-11-03 01:08:25',created_from_ip:'::1',updated_from_ip:'::1',alias:'nomenclador',
    },{
-   		id:'d5ad60df-b773-56ee-859d-472d2a544926',nombre:'Proveedor',orden:'2',id_contenedor:'Proveedor',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
+   		id:'69599e00-8fce-5de6-8981-461349cc91a0',nombre:'Áreas',orden:'1',id_contenedor:'Area',alias_id:'aa422a3d-b876-55e4-830c-399a9358fdf9',menu_id:'88176fbe-aa72-5ddb-bc71-775fda9ac9e2',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'estructura',
+   },{
+   		id:'106bff06-47af-52c5-a70b-5986ca4c5a1f',nombre:'Plazas',orden:'2',id_contenedor:'Plazas',alias_id:'aa422a3d-b876-55e4-830c-399a9358fdf9',menu_id:'88176fbe-aa72-5ddb-bc71-775fda9ac9e2',descripcion:'Plazas',activo:'1',date_created:'2019-07-07 20:02:20',date_updated:'2019-07-07 20:02:20',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'estructura',
+   },{
+   		id:'103728ac-0639-5e2f-8ecf-b9bc4192db31',nombre:'Panel',orden:'2',id_contenedor:'Panel',alias_id:'e7d3482b-e146-5f49-9d85-16a98f242d4c',menu_id:'cbc445c3-2a44-5ca9-a04b-1dbdd360ef78',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'configuracion',
    },{
    		id:'9f99c2ec-62c5-5bcb-a5f4-1a6a06350dbc',nombre:'Acciones',orden:'2',id_contenedor:'Accion',alias_id:'b7e0029a-7cb0-529f-bbfa-8b49eb7207d3',menu_id:'5eef535a-49a0-521f-baa2-b2afb0d84413',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'seguridad',
    },{
-   		id:'103728ac-0639-5e2f-8ecf-b9bc4192db31',nombre:'Panel',orden:'2',id_contenedor:'Panel',alias_id:'e7d3482b-e146-5f49-9d85-16a98f242d4c',menu_id:'cbc445c3-2a44-5ca9-a04b-1dbdd360ef78',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'configuracion',
+   		id:'d5ad60df-b773-56ee-859d-472d2a544926',nombre:'Proveedor',orden:'2',id_contenedor:'Proveedor',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
    },{
    		id:'71d89798-8d2b-57f6-ba9d-1dfdde27088d',nombre:'Oferente',orden:'3',id_contenedor:'Oferente',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
    },]

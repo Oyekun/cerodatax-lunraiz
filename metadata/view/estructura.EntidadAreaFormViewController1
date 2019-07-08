@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "estructuraareaplazaform",
+        "designer|userClassName": "estructura.EntidadAreaFormViewController1"
+    },
+    "name": "estructura.EntidadAreaFormViewController1",
+    "designerId": "3a2ae899-378c-459c-9b7e-777a4aaed6ea"
+}

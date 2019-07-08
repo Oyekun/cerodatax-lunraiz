@@ -191,7 +191,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
             if(focus===false)
-                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                if(item.xtype==='combobox'||item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
                 {item.focus('', 10);
                  focus = true;
                 }
@@ -447,7 +447,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             }
 
             if(focus===false)
-                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                if(item.xtype==='combobox'||item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
                 {item.focus('', 10);
                  focus = true;
                 }
@@ -687,7 +687,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 }}
 
             if(focus===false)
-                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                if(item.xtype==='combobox'||item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
                 {item.focus('', 10);
                  focus = true;
                 }
@@ -868,7 +868,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             }
 
                 if(focus===false)
-                if(item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+                if(item.xtype==='combobox'||item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
                 {item.focus('', 10);
                 focus = true;
                 }
@@ -885,19 +885,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                 item.getSelectionModel().deselectAll();
             });
-            var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
-            botones.forEach(function (item) {
-                item.setDisabled(true);
-            });
-            var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
-            botones.forEach(function (item) {
-                item.setDisabled(true);
-            });
-            var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-            btnAssociate.forEach(function (item) {
-                item.setDisabled(true);
-            });
-
+            this.estadoBotonesDisabled(button);
             var tree =  Ext.ComponentQuery.query('panel #treepanel');
 
             tree.forEach(function (item) {
@@ -990,15 +978,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                         }
                         flag = false;
-                        button.setDisabled(true);
-                        var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
-                        botones.forEach(function (item) {
-                            item.setDisabled(true);
-                        });
-                         var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-                                   btnAssociate.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
+                        this.estadoBotonesDisabled(button);
 
                     };
 
@@ -1034,16 +1014,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                         me.showView('selectMessage');
                         //Disabled Button
 
-                        button.setDisabled(true);
-                        var botonesEdit = Ext.ComponentQuery.query('panel toolbar #btnEdit');
-                        botonesEdit.forEach(function (item) {
-                            item.setDisabled(true);
-                        });
-                     var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-                                   btnAssociate.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
-                   // }
+                         this.estadoBotonesDisabled(button);
 
                 }
 
@@ -1234,18 +1205,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                        item.getSelectionModel().deselectAll();
                                    });
-                                   var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
-                                   botonesEditar.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
-                                   var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
-                                   botones.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
-                                   var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-                                   btnAssociate.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
+                                   this.estadoBotonesDisabled(null);
 
                                }
                            });
@@ -1272,7 +1232,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
 
-                 if(dt===null)//para adicionar
+                 if(dt===null||dt===undefined)//para adicionar
                  {form.updateRecord();
                   store.proxy.extraParams.migration=Ext.JSON.encode(migration);
                   for(var foto in record_foto)
@@ -1311,7 +1271,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  }
              }else{
 
-                 if(dt===null)//para adicionar
+                 if(dt===null ||dt===undefined)//para adicionar
                  {form.updateRecord();
                   for(var foto in record_foto)
                   {
@@ -1372,6 +1332,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                          record.data.leaf = true;
                      var flag=true;
+                     store.proxy.extraParams.migration=Ext.JSON.encode(migration);
                      store.commitChanges();
 
                  }
@@ -1606,18 +1567,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                        item.getSelectionModel().deselectAll();
                                    });
-                                   var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
-                                   botonesEditar.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
-                                   var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
-                                   botones.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
-                                   var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-                                   btnAssociate.forEach(function (item) {
-                                       item.setDisabled(true);
-                                   });
+                                   this.estadoBotonesDisabled(null);
 
                                }
                            });
@@ -2069,18 +2019,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                item.getSelectionModel().deselectAll();
                            });
-                           var botonesEditar =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
-                           botonesEditar.forEach(function (item) {
-                               item.setDisabled(true);
-                           });
-                           var botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
-                           botones.forEach(function (item) {
-                               item.setDisabled(true);
-                           });
-                           var btnAssociate = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
-                           btnAssociate.forEach(function (item) {
-                               item.setDisabled(true);
-                           });
+                           this.estadoBotonesDisabled(null);
 
                        }
                    });
@@ -2097,7 +2036,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
 
-                 if(dt===null)
+                 if(dt===null ||dt===undefined)
                  {
 
                      form.updateRecord();
@@ -2377,8 +2316,19 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          tree.getSelectionModel().deselectAll();
 
         }
-        }
-        var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
+        var toolbar = bottom.up('toolbar');
+                var  btnEdit = toolbar.query('#btnEdit');
+                if(btnEdit.length>0)
+                btnEdit[0].setDisabled(true);
+                var  btnRemove = toolbar.query('#btnRemove');
+                if(btnRemove.length>0)
+                    btnRemove[0].setDisabled(true);
+                var  btnAssociate = toolbar.query('#btnAssociate');
+                if(btnAssociate.length>0)
+                    btnAssociate[0].setDisabled(true);
+                }
+                else{
+                        var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
         botones.forEach(function (item) {
             item.setDisabled(true);
         });
@@ -2390,6 +2340,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         btnAssociate.forEach(function (item) {
             item.setDisabled(true);
         });
+                }
         this.showView('selectMessage');
     },
 
@@ -2617,9 +2568,11 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         for(var item in items)
         {
             var obj= items[item];
-
+            obj.setText('');
             if(obj.itemId==='btnAdd')
-            {obj.setGlyph('xf055@FontAwesome');
+            {//console.log(obj);
+
+                obj.setGlyph('xf055@FontAwesome');
              obj.setTooltip('<span style=" font-weight:bold" >Adicionar (Ctrl+Mayus+N) </span><span> Adiciona un elemento en la lista.</span>');
             }
             if(obj.itemId==='btnEdit')
@@ -3316,6 +3269,72 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         }
         }
         return migration;
+    },
+
+    AdicionarGrid: function(button, e, eOpts) {
+                var toolbar = button.up('toolbar');
+                var gridpanel = toolbar.up('gridpanel');
+                var store = gridpanel.store
+                var record = this.getViewModel().get('record');
+                console.log(store)
+                var u = new store.recordType([
+                {
+                    type: 'string',
+                    name: 'id'
+                },
+                {
+                    type: 'string',
+                    name: 'productoservicio_id'
+                },
+                {
+                    type: 'string',
+                    name: 'almacen_id'
+                },
+                {
+                    type: 'string',
+                    name: 'tipoentrada_id'
+                },
+                {
+                    type: 'string',
+                    name: 'criteriosalida_id'
+                },
+                {
+                    type: 'boolean',
+                    name: 'componentes'
+                }]);
+                gridpanel.stopEditing();
+                store.insert(0, u);
+                gridpanel.startEditing(0, 1);
+    },
+
+    estadoBotonesDisabled: function(button) {
+         if(button!==null)
+                {
+                var toolbar = button.up('toolbar');
+                        var  btnEdit = toolbar.query('#btnEdit');
+                        if(btnEdit.length>0)
+                            btnEdit[0].setDisabled(true);
+                        var  btnRemove = toolbar.query('#btnRemove');
+                        if(btnRemove.length>0)
+                            btnRemove[0].setDisabled(true);
+                        var  btnAssociate = toolbar.query('#btnAssociate');
+                        if(btnAssociate.length>0)
+                            btnAssociate[0].setDisabled(true);
+                        }
+                        else{
+                                var botones =  Ext.ComponentQuery.query('panel toolbar #btnEdit');
+                botones.forEach(function (item) {
+                    item.setDisabled(true);
+                });
+                  botones =  Ext.ComponentQuery.query('panel toolbar #btnRemove');
+                botones.forEach(function (item) {
+                    item.setDisabled(true);
+                });
+                  botones = Ext.ComponentQuery.query('panel toolbar #btnAssociate');
+                botones.forEach(function (item) {
+                    item.setDisabled(true);
+                });
+                        }
     }
 
 });

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladoralmacenform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewModel"
+    },
+    "name": "nomenclador.BancoFormViewModel3",
+    "designerId": "bda88c18-60bd-422b-8c3d-9e0c12655722"
+}

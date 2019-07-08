@@ -1,0 +1,133 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "centrocosto",
+        "designer|userClassName": "nomenclador.CentroCosto"
+    },
+    "name": "nomenclador.CuentaBancaria1",
+    "designerId": "9b128684-19dd-4161-81a9-7d3ea864434a",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString26",
+            "designerId": "4d18cc7a-36a3-47a5-9500-d6fa0cf222a9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString32",
+            "designerId": "eae94541-4636-40ca-bb50-126d271dd074"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString25",
+            "designerId": "6443fdb5-2cf7-4a6a-89f0-2f0eacb073a2"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "activo"
+            },
+            "name": "MyBoolean12",
+            "designerId": "bafb940b-2d4f-4b17-868d-401165493ca6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString108",
+            "designerId": "186c82a1-1a9c-4999-8036-51b398c8ffd0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "grupo_centrocosto"
+            },
+            "name": "MyString96",
+            "designerId": "fd3bbf10-f9ec-4343-aae7-d256b16d3297"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "grupo_centrocosto_id"
+            },
+            "name": "MyString104",
+            "designerId": "494315b7-518b-4f95-a24a-be58849ffa89"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "agrupacion_centrocosto"
+            },
+            "name": "MyString105",
+            "designerId": "d7856041-2eb2-481f-bb7a-205020f02b4b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "agrupacion_centrocosto_id"
+            },
+            "name": "MyString106",
+            "designerId": "788312a0-7d1c-4516-b6f9-bc27ef91f5d4"
+        }
+    ]
+}

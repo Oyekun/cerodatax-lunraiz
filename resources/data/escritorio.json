@@ -32,14 +32,6 @@
     		type: 'svg'
     	},
     	{
-    		name: 'Productos y Servicios',
-    		thumb: 'gift', 
-    		url: 'ProductosServicios',
-    		systema:'true',
-    		color:'bisque',
-    		type: 'svg'
-    	},
-    	{
     		name: 'Venta',
     		thumb: 'shopping-bag', 
     		url: 'Venta',
@@ -48,7 +40,15 @@
     		type: 'svg'
     	},
     	{
-    		name: 'RRHH',
+    		name: 'Productos y Servicios',
+    		thumb: 'gift', 
+    		url: 'ProductosServicios',
+    		systema:'true',
+    		color:'bisque',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Persona',
     		thumb: 'group', 
     		url: 'RRHH',
     		systema:'true',
@@ -72,18 +72,18 @@
     		type: 'svg'
     	},
     	{
-    		name: 'Licencías',
-    		thumb: 'unlock-alt', 
-    		url: 'Licencia',
-    		systema:'true',
-    		color:'darkseagreen',
-    		type: 'svg'
-    	},
-    	{
     		name: 'Trazas',
     		thumb: 'server', 
     		url: 'Traza',
     		systema:'true',
     		color:'yellowgreen',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Licencías',
+    		thumb: 'unlock-alt', 
+    		url: 'Licencia',
+    		systema:'true',
+    		color:'darkseagreen',
     		type: 'svg'
     	},]

@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "estructuraplazas",
+        "designer|userClassName": "nomenclador.PaisViewController1"
+    },
+    "name": "nomenclador.PaisViewController1",
+    "designerId": "fd2df4cd-ec29-40e5-a413-b27c36701c15",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "2c5abc91-bda1-4319-b5f4-cee912bd8e03"
+        }
+    ]
+}

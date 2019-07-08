@@ -929,6 +929,7 @@
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
                                 "fieldLabel": "Organismo",
+                                "maxLength": 100,
                                 "name": "organismo_id",
                                 "queryMode": "local",
                                 "queryParam": "Entidades:false",

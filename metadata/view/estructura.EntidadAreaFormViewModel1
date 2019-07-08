@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "estructuraareaplazaform",
+        "designer|userClassName": "estructura.EntidadAreaFormViewModel1"
+    },
+    "name": "estructura.EntidadAreaFormViewModel1",
+    "designerId": "da0dbd9f-56fa-43b4-9dbb-d2e3d84d16c1"
+}

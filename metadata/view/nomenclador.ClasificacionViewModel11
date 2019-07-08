@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcriteriosalida",
+        "designer|userClassName": "nomenclador.ClasificacionViewModel11"
+    },
+    "name": "nomenclador.ClasificacionViewModel11",
+    "designerId": "0effd02f-a8cf-42e9-85df-30fb94b0c139"
+}

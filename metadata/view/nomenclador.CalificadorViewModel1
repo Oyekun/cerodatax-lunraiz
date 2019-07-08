@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcentrocosto",
+        "designer|userClassName": "nomenclador.CalificadorViewModel1"
+    },
+    "name": "nomenclador.CalificadorViewModel1",
+    "designerId": "f4c44d59-9ef5-45cc-9eab-4cd52c629b61"
+}

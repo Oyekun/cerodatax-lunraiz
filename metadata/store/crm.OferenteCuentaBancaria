@@ -1,0 +1,76 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "designer|userClassName": "crm.OferenteCuentaBancaria",
+        "model": "crm.OferenteCuentaBancaria",
+        "remoteFilter": null,
+        "storeId": "crm.OferenteCuentaBancaria"
+    },
+    "name": "crm.ProveedorCuentaBancaria1",
+    "designerId": "f18837ce-faa5-408d-97d9-37138eaa19b4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    " ",
+                    "show: {url: 'index.php/api/restserver/rests/',method: 'GET'},",
+                    " ",
+                    " ",
+                    "}"
+                ],
+                "extraParams": [
+                    "{model:'cuentabancaria',esquema:'nomenclador',esquema_asociado:'crm',asociados: 'oferente',",
+                    "                    id_asociado: '',gridasociado:'true',detalles:'edit'}"
+                ],
+                "format": "",
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy",
+            "designerId": "06850c03-80aa-4dc7-be97-9b6729ae9991",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "c43b3159-f7d2-450f-b0a8-434729c4913e"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "425fa60d-0c1d-45d3-9956-8aa2682a0074"
+                }
+            ]
+        }
+    ]
+}

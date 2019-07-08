@@ -95,7 +95,11 @@ Ext.application({
         'nomenclador.Subcategoria',
         'nomenclador.Categoria',
         'nomenclador.UnidadMedida',
-        'nomenclador.TipoClasificacionContable'
+        'nomenclador.TipoClasificacionContable',
+        'crm.ProductosServiciosAlmacen',
+        'estructura.Plazas',
+        'nomenclador.Magnitud',
+        'estructura.AreaPlaza'
     ],
     stores: [
         'seguridad.Usuario',
@@ -173,7 +177,11 @@ Ext.application({
         'nomenclador.CriterioSalida',
         'nomenclador.ClasificacionContable',
         'nomenclador.TipoClasificacionContable',
-        'crm.ProveedorCuentaBancaria'
+        'crm.ProveedorCuentaBancaria',
+        'crm.ProductosServiciosAlmacen',
+        'estructura.Plazas',
+        'nomenclador.Magnitud',
+        'estructura.AreaPlaza'
     ],
     views: [
         'seguridad.Rol',
@@ -254,7 +262,10 @@ Ext.application({
         'nomenclador.CriterioSalida',
         'nomenclador.TipoClasificacionContable',
         'nomenclador.EspecificacionInsumo',
-        'nomenclador.AlmacenForm'
+        'nomenclador.AlmacenForm',
+        'estructura.Plazas',
+        'nomenclador.Magnitud',
+        'estructura.AreaPlazaForm'
     ],
     controllers: [
         'Escritorio',

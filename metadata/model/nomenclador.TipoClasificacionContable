@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipoclasificacioncontable",
+        "designer|userClassName": "nomenclador.TipoClasificacionContable"
+    },
+    "name": "nomenclador.ClasificacionContable2",
+    "designerId": "207ff898-d338-4cea-a38e-bc185bd44fcf",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "83f9525e-8b63-4196-af91-80ad254d1f9d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "b3812a59-b771-470b-8722-09d3c9189754"
+        }
+    ]
+}

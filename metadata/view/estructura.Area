@@ -168,7 +168,7 @@
                             "userConfig": {
                                 "itemId": "btnAdd",
                                 "layout|flex": null,
-                                "text": "Adicionar"
+                                "text": null
                             },
                             "name": "MyButton26",
                             "designerId": "7df35cec-13b9-40f1-9987-e4d7691976bb",
@@ -221,7 +221,7 @@
                                 ],
                                 "itemId": "btnEdit",
                                 "layout|flex": null,
-                                "text": "Editar"
+                                "text": null
                             },
                             "name": "MyButton27",
                             "configAlternates": {
@@ -274,7 +274,7 @@
                                 ],
                                 "itemId": "btnRemove",
                                 "layout|flex": null,
-                                "text": "Eliminar"
+                                "text": null
                             },
                             "name": "MyButton28",
                             "configAlternates": {
@@ -329,12 +329,59 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseParams": [
+                                    "plaza"
+                                ],
+                                "designer|createAlias": "button",
+                                "designer|displayName": "btnAssociate",
+                                "disabled": true,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnAssociate",
+                                "layout|flex": null,
+                                "text": null
+                            },
+                            "name": "MyButton4",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "83f73dfc-be3d-46c4-b9a8-77ba2182ed86",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "associate",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "associate",
+                                    "designerId": "03e7f55f-7334-4082-9941-9be6c0c23a90"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
                                 "hidden": [
                                     "{!record}"
                                 ],
                                 "itemId": "btnRefresh",
                                 "layout|flex": null,
-                                "text": "Actualizar"
+                                "text": null
                             },
                             "name": "MyButton106",
                             "configAlternates": {

@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "subcategoria",
+        "designer|userClassName": "nomenclador.Subcategoria"
+    },
+    "name": "nomenclador.AgrupacionCentroCosto10",
+    "designerId": "db62efad-257f-46b6-a02b-3d742b5a7e52",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "74c46a91-41e7-4a04-8eaf-347fef2765ad"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "0bb8a57c-e41d-4464-a5c5-f87d0c569421"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString88",
+            "designerId": "9c8c79de-cf6f-445c-b05c-d658082cdb1c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoria"
+            },
+            "name": "MyString2",
+            "designerId": "ac34341a-8086-4335-841d-90256b4797a9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoria_id"
+            },
+            "name": "MyString4",
+            "designerId": "28c43695-916c-462b-870b-36f2ed1375a8"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladortipoclasificacioncontable",
+        "designer|userClassName": "nomenclador.ClasificacionViewModel12"
+    },
+    "name": "nomenclador.ClasificacionViewModel12",
+    "designerId": "f2f25ade-2e6c-4763-a57a-2d73c1047a3e"
+}

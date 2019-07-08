@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipocosto",
+        "designer|userClassName": "nomenclador.TipoCosto"
+    },
+    "name": "nomenclador.AgrupacionCentroCosto6",
+    "designerId": "350e8a3a-b131-4e60-a34c-12d4033a2441",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "c123a5bf-25b8-45dd-811a-745a8666aa16"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "4b56b586-a5b4-4cbc-a4a5-2952e904aaf3"
+        }
+    ]
+}

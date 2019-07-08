@@ -715,8 +715,8 @@
                                 "store": "nomenclador.Continente",
                                 "valueField": "id"
                             },
-                            "name": "MyComboBox18",
-                            "designerId": "04a8822e-2fee-4faf-b811-a512e6986c55",
+                            "name": "MyComboBox26",
+                            "designerId": "2683d937-ed6e-4d2c-ad31-31b1f45d8b14",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -732,7 +732,7 @@
                                         ]
                                     },
                                     "name": "afterLabelTextTpl",
-                                    "designerId": "0ddf200e-f42c-4e76-99f4-df54d269c5b1"
+                                    "designerId": "3346de2c-5183-4262-8dd5-ed41de1d5a84"
                                 }
                             ]
                         },

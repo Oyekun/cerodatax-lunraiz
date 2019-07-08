@@ -294,6 +294,7 @@ Ext.define('cerodatax.view.nomenclador.BancoForm', {
                                     },
                                     {
                                         xtype: 'panel',
+                                        hidden: true,
                                         title: 'Cuentas Bancarias'
                                     }
                                 ]

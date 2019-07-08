@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladoragrupacioncentrocosto",
+        "designer|userClassName": "nomenclador.ClasificacionViewModel1"
+    },
+    "name": "nomenclador.ClasificacionViewModel1",
+    "designerId": "e7b3822e-d5a2-4971-858b-f7f40ad969cf"
+}

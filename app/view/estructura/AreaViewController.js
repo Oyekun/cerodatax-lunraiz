@@ -94,6 +94,10 @@ Ext.define('cerodatax.view.estructura.AreaViewController', {
         });
     },
 
+    associate: function(button, e, eOpts) {
+ 
+    },
+
     refresh: function(button, e, eOpts) {
  
     },

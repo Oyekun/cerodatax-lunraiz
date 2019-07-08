@@ -102,6 +102,7 @@ if (file_exists($existFile))
                         }
                     }
                     $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
+                    
                     $nameuuid = new $request['model'];
 
                     if (isset($nameuuid->relacion)) {
@@ -207,7 +208,7 @@ if (file_exists($existFile))
                     }
                 }
                 if(isset($request['asociados']))
-                $this->load->model($request['esquema_asociado'].'/'.$request['model'], '', TRUE);
+                $this->load->model($request['esquema_asociado'].'/'. $request['model'], '', TRUE);//.$request['asociados'] verificar si es asociados o model
                 $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
 
@@ -463,12 +464,13 @@ if (file_exists($existFile))
 
             if ($total['total'] > 0) {
 
-                if ((isset($total['data'][0]['parent_id']) && $parent_id != '') || isset($request['id_asociado']) && !isset($request['gridasociado'])) {
-
+                   //quite esto && $parent_id != '' estaba asi ((isset($total['data'][0]['parent_id']) && $parent_id != '')
+                    //var_dump(exist($total['data'][0]['parent_id']));die;
+                if ((isset($total['data'][0]['parent_id'])) || isset($request['id_asociado']) && !isset($request['gridasociado'])) {
 
                     // Creating the Tree
-                    $tree = new TreeExtJS();
                     $cant = 0;
+                    $tree = new TreeExtJS();
 
                     for ($i = 0; $i < $total_actual; $i++) {
                         $nodo = $total['data'][$i];
@@ -917,6 +919,7 @@ if(count($aux1)>0)
         
         }
         else{
+           // print_r($request['migration']);die;
             if(isset($request['migration']))
              {$dataMigration = json_decode($request['migration'], TRUE);
              $tools->make_model_file($request['esquema'],$modelClass,$dataMigration);
@@ -925,12 +928,13 @@ if(count($aux1)>0)
          }else 
             if(isset($dataArray['migration']))
             {
-                // print_r($dataArray);die;
+                 
                 $dataMigration = $dataArray['migration'];
-
-             $tools->make_model_file($request['esquema'],$modelClass,$dataMigration);
+             if(count($dataMigration)>0)
+             {$tools->make_model_file($request['esquema'],$modelClass,$dataMigration);
              $tools->make_migration_file($request['esquema'],$modelClass,$dataMigration);
              $tools->migrate();
+            }
             }
           
            

@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "destino",
+        "designer|userClassName": "nomenclador.DestinoProducto"
+    },
+    "name": "nomenclador.AgrupacionCentroCosto8",
+    "designerId": "b515d440-de5d-4be1-82f4-1fafb2e14eeb",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "805d4353-bef0-49ca-b6f7-de6cf506bb64"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "cbb527d3-31d9-462c-9cfd-75b67e853b72"
+        }
+    ]
+}
