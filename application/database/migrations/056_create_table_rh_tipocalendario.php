@@ -3,14 +3,14 @@
         /**
  * NombreClase
  *
- * @package     estructura
- * @subpackage  Plazas
+ * @package     rh
+ * @subpackage  TipoCalendario
  * @author      Leandro L. Céspedes Lara
  * @link        https://cerodatax.com
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_create_table_estructura_plazas extends CI_Migration {
+class Migration_create_table_rh_tipocalendario extends CI_Migration {
 
     public function up() {
         $this->dbforge->add_field(array(
@@ -19,24 +19,30 @@ class Migration_create_table_estructura_plazas extends CI_Migration {
                                 'constraint' => 100,
                                 'unsigned' => TRUE
                         ),
-                                'cargo_id'=> array(
+                                'codigo'=> array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'null' => FALSE
                         ),
-                                'aprobadas'=> array(
+                                'nombre'=> array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE
+                        ),
+                                'dias_laborables'=> array(
                                 'type' => 'FLOAT',
                                 'constraint' => '10',
                                 'null' => FALSE
                         ),
-                                'ocupadas'=> array(
+                                'fondo_tiempo_mes'=> array(
                                 'type' => 'FLOAT',
                                 'constraint' => '10',
                                 'null' => FALSE
                         ),
-                                'activo'=> array(
-                                'type' => 'INT',
-                                'constraint' => '1',
+                                'fondo_tiempo_dia'=> array(
+                                'type' => 'FLOAT',
+                                'constraint' => '10',
+                                'null' => FALSE
                         ),
                                 'date_created' => array(
                                 'type' => 'TIMESTAMP',  
@@ -58,15 +64,13 @@ class Migration_create_table_estructura_plazas extends CI_Migration {
                         )
         ));
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->add_key('cargo_id');
-$this->dbforge->add_field('CONSTRAINT cargo_id FOREIGN KEY (cargo_id) REFERENCES persona_cargo (id) ON UPDATE CASCADE ON DELETE CASCADE');
-
-        $this->dbforge->create_table('estructura_plazas');
+        
+        $this->dbforge->create_table('rh_tipocalendario');
                
     }
 
     public function down() {
-        $this->dbforge->drop_table('estructura_plazas');
+        $this->dbforge->drop_table('rh_tipocalendario');
     }
 
 }

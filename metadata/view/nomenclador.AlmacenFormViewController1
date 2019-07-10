@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rhcalendarioform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewController1"
+    },
+    "name": "nomenclador.AlmacenFormViewController1",
+    "designerId": "9d160c98-64db-4c28-b546-37e8d91ebfac"
+}

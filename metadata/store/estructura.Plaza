@@ -8,12 +8,12 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "designer|userClassName": "estructura.AreaPlaza",
-        "model": "estructura.AreaPlaza",
-        "storeId": "estructura.AreaPlaza"
+        "designer|userClassName": "estructura.Plaza",
+        "model": "estructura.Plaza",
+        "storeId": "estructura.Plaza"
     },
-    "name": "estructura.Plazas1",
-    "designerId": "8fb9e261-5d2b-4483-9bee-e5e9acdd09f8",
+    "name": "crm.Proveedor1",
+    "designerId": "4c75a423-85f2-4662-84fd-70e3ee617212",
     "cn": [
         {
             "type": "Ext.data.proxy.Rest",
@@ -32,20 +32,13 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{ model: 'plaza',",
-                    "                    esquema: 'estructura',",
-                    "                    parent_id: '',",
-                    "                    esquema_asociado: 'estructura',",
-                    "                    asociados: 'area',",
-                    "                    id_asociado: '',",
-                    "                    grid: 'true',",
-                    "                    detalles: ''}"
+                    "{model:'plaza',esquema:'estructura'}"
                 ],
                 "format": "",
                 "url": "index.php/api/restserver/rests/"
             },
             "name": "MyRestProxy",
-            "designerId": "45214144-5258-4f1d-9c29-376a29f3d5ab",
+            "designerId": "a02ae9a0-f4c8-4571-a4fc-1a820789bb2a",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -58,7 +51,7 @@
                         "rootProperty": "data"
                     },
                     "name": "MyJsonReader",
-                    "designerId": "0302e112-16f9-4ba0-bebc-4904a8bf3c69"
+                    "designerId": "27be9959-e3f4-4057-8192-e2e63da68e66"
                 },
                 {
                     "type": "Ext.data.writer.Json",
@@ -73,7 +66,7 @@
                         "writeAllFields": true
                     },
                     "name": "MyJsonWriter",
-                    "designerId": "39de7b7e-5a9a-4bcc-bdc7-370b418de2c5"
+                    "designerId": "03ac5e70-c9ee-4d41-a956-d726942dcca9"
                 }
             ]
         }

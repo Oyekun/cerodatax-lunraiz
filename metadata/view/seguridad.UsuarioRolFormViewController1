@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "estructuraareaplazaform",
-        "designer|userClassName": "estructura.EntidadAreaFormViewController1"
+        "designer|userClassName": "seguridad.UsuarioRolFormViewController1"
     },
-    "name": "estructura.EntidadAreaFormViewController1",
-    "designerId": "3a2ae899-378c-459c-9b7e-777a4aaed6ea"
+    "name": "seguridad.UsuarioRolFormViewController1",
+    "designerId": "482e9fef-2a7c-4d3b-87f5-775e2cfa543a"
 }

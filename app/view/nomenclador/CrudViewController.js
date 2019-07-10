@@ -1014,7 +1014,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                         me.showView('selectMessage');
                         //Disabled Button
 
-                         this.estadoBotonesDisabled(button);
+                         me.estadoBotonesDisabled(button);
 
                 }
 
@@ -1205,7 +1205,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                        item.getSelectionModel().deselectAll();
                                    });
-                                   this.estadoBotonesDisabled(null);
+                                   me.estadoBotonesDisabled(null);
 
                                }
                            });
@@ -1567,7 +1567,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                        item.getSelectionModel().deselectAll();
                                    });
-                                   this.estadoBotonesDisabled(null);
+                                   me.estadoBotonesDisabled(null);
 
                                }
                            });
@@ -2019,7 +2019,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                                item.getSelectionModel().deselectAll();
                            });
-                           this.estadoBotonesDisabled(null);
+                           me.estadoBotonesDisabled(null);
 
                        }
                    });
@@ -2612,187 +2612,192 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
     searchLabel: function(comp, result, is_grid) {
         //Funcion para construir el encabezado de los grid y tree panel
-        if(comp.inputType !='password')
-            if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )
-            {
-
-                var xtype = 'gridcolumn';
-
-                var listeners = '';
-                var lockable = '';
-                var locked = '';
-                var format= '';
-                var width = '';
-                var renderer = '';
-                var groupable = '';
-
-                var dataIndex = comp.name;
-                if (comp.name !='carnet_identidad') // arreglar este problema es prk el _id de carnet coincide o los combobox
-                    dataIndex = comp.name.replace('_id','');
-                var emptyText = 'Ingrese el texto del filtro...';
-                var filter = {
-                    type: 'string',dataIndex: dataIndex,emptyText:emptyText
-                };
-                if (comp.name =='nombre'||comp.name =='foto'||comp.name =='logotipo')
-                {if(is_grid===true)
-                {lockable = true;
-                 locked= true;
-                }
-                 if(comp.name =='nombre' &&is_grid===false)
-                 {xtype = 'treecolumn';
-                  width = 200;
-                 }
-                 /*if(comp.name =='nombre' &&is_grid===true)
-             {
-                 width = 200;
-             }*/
-                 if(comp.name =='foto'||comp.name =='logotipo')
-                 {
-                     width = 200;
-                     groupable = false;
-
-                     filter = '';
-
-
-                     var clas = 'x-fa fa-'+comp.icono;//fa-building';
-
-
-
-                     var  renderer= function(value, metaData, record, rowIndex, colIndex, store, view) {
-
-
-                         if(record.data.systema===undefined)
-                         {if(value!==''&& value!==null&& value!==undefined)
-                             return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
-                          else return '<div class="'+clas+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
-                         }
-                         else{
-                             if(record.data.systema)
-                             {var systema = 'x-fa fa-'+value;
-                              return '<div class="'+systema+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
-                             }
-                             else{
-                                 if(value!==''&& value!==null)
-                                     return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
-                             }
-                         }
-
-                     };
-                 }
-                }
-                switch(comp.xtype)
-                {
-                    case 'numberfield':{
-                        xtype = 'numbercolumn';
-                        filter = {
-                            type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'
-                        };
-                        break;
-                    }
-                    case 'datefield':{
-                        xtype = 'datecolumn';
-                        format = 'Y-m-d';
-                        filter = {
-                            type: 'date',fields:{
-                                lt: {
-                                    text: 'Antes'
-                                },
-                                gt: {
-                                    text: 'Después'
-                                },
-                                eq: {
-                                    text: 'En'
-                                }
-                            },dateFormat: format,dataIndex: dataIndex
-                        };
-                        break;
-                    }
-                    case 'checkboxfield':{
-                        xtype = 'checkcolumn';
-                        listeners=  {beforecheckchange:  function(){return false;}};
-                        filter = {
-                            type: 'boolean',noText:'No',yesText:'Si',dataIndex: dataIndex
-                        };
-                        break;
-                    }
-
-                }
-
-                var column = {
-                    xtype: xtype,
-                    dataIndex: dataIndex,
-                    header: comp.fieldLabel,
-                    sortable: true,
-                    groupable:groupable,
-                    // locked:locked,
-                    // lockable:lockable,
-                    // width:width,
-                    align: 'left',
-                    format:format,
-                    renderer:renderer,
-
-                    listeners:listeners,
-                    filter:filter
-                };
-
-
-                var index = result.lastIndexOf(column);
-                //validar q no se repitan las columnas como el caso del usuario confirmar contrase;a
-                if(index===-1)
-                {
-        if(comp.fieldLabel!==undefined)
-                    result.push(column);}
-
-            }
-
-        if(comp.items)
-        {
-            var items = comp.items.items;
-
-            for(var item in items)
-            {
-                if(items[item].xtype==='panel'||items[item].xtype==='fieldset'||items[item].xtype==='container')
-                {
-                    var aux = items[item].items.items;
-                    var columns=[];
-
-
-                    for (var j in aux)
+                //console.log(comp,result)
+        //if(comp.itemid!='temporal')
+                    console.log(comp)
+                //temporal es para q no se visualice en el header del grid o tree
+                if(comp.inputType !='password' && comp.itemid!='temporal')
+                    if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )
                     {
-                        this.searchLabel(aux[j],columns,is_grid);
+
+                        var xtype = 'gridcolumn';
+
+                        var listeners = '';
+                        var lockable = '';
+                        var locked = '';
+                        var format= '';
+                        var width = '';
+                        var renderer = '';
+                        var groupable = '';
+
+                        var dataIndex = comp.name;
+                        if (comp.name !='carnet_identidad') // arreglar este problema es prk el _id de carnet coincide o los combobox
+                            dataIndex = comp.name.replace('_id','');
+                        var emptyText = 'Ingrese el texto del filtro...';
+                        var filter = {
+                            type: 'string',dataIndex: dataIndex,emptyText:emptyText
+                        };
+                        if (comp.name =='nombre'||comp.name =='foto'||comp.name =='logotipo')
+                        {if(is_grid===true)
+                        {lockable = true;
+                         locked= true;
+                        }
+                         if(comp.name =='nombre' &&is_grid===false)
+                         {xtype = 'treecolumn';
+                          width = 200;
+                         }
+                         /*if(comp.name =='nombre' &&is_grid===true)
+                     {
+                         width = 200;
+                     }*/
+                         if(comp.name =='foto'||comp.name =='logotipo')
+                         {
+                             width = 200;
+                             groupable = false;
+
+                             filter = '';
+
+
+                             var clas = 'x-fa fa-'+comp.icono;//fa-building';
+
+
+
+                             var  renderer= function(value, metaData, record, rowIndex, colIndex, store, view) {
+
+
+                                 if(record.data.systema===undefined)
+                                 {if(value!==''&& value!==null&& value!==undefined)
+                                     return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
+                                  else return '<div class="'+clas+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
+                                 }
+                                 else{
+                                     if(record.data.systema)
+                                     {var systema = 'x-fa fa-'+value;
+                                      return '<div class="'+systema+'" height="30px" style="    font-family: FontAwesome; float: left; font-size: xx-large; line-height: 1; margin-left: 13px;">';
+                                     }
+                                     else{
+                                         if(value!==''&& value!==null)
+                                             return '<img src="'+value+'" height="30px" style="float:left;margin:0 10px 5px 0">';
+                                     }
+                                 }
+
+                             };
+                         }
+                        }
+                        switch(comp.xtype)
+                        {
+                            case 'numberfield':{
+                                xtype = 'numbercolumn';
+                                filter = {
+                                    type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'
+                                };
+                                break;
+                            }
+                            case 'datefield':{
+                                xtype = 'datecolumn';
+                                format = 'Y-m-d';
+                                filter = {
+                                    type: 'date',fields:{
+                                        lt: {
+                                            text: 'Antes'
+                                        },
+                                        gt: {
+                                            text: 'Después'
+                                        },
+                                        eq: {
+                                            text: 'En'
+                                        }
+                                    },dateFormat: format,dataIndex: dataIndex
+                                };
+                                break;
+                            }
+                            case 'checkboxfield':{
+                                xtype = 'checkcolumn';
+                                listeners=  {beforecheckchange:  function(){return false;}};
+                                filter = {
+                                    type: 'boolean',noText:'No',yesText:'Si',dataIndex: dataIndex
+                                };
+                                break;
+                            }
+
+                        }
+
+                        var column = {
+                            xtype: xtype,
+                            dataIndex: dataIndex,
+                            header: comp.fieldLabel,
+                            sortable: true,
+                            groupable:groupable,
+                            // locked:locked,
+                            // lockable:lockable,
+                            // width:width,
+                            align: 'left',
+                            format:format,
+                            renderer:renderer,
+
+                            listeners:listeners,
+                            filter:filter
+                        };
+
+
+                        var index = result.lastIndexOf(column);
+                        //validar q no se repitan las columnas como el caso del usuario confirmar contrase;a
+                        if(index===-1)
+                        {
+                if(comp.fieldLabel!==undefined)
+                            result.push(column);}
+
                     }
-                    var column = {
-                        xtype: 'gridcolumn',
-                        header: items[item].title,
-                        sortable: false,
-                        //groupable:false,
-                        align: 'center',
-                        columns:columns,
 
-                    };
+                if(comp.items)
+                {
+                    var items = comp.items.items;
 
-                    if(items[item].title!==undefined && columns.length!==0)
-                    result.push(column);
+                    for(var item in items)
+                    {
+                        if(items[item].xtype==='panel'||items[item].xtype==='fieldset'||items[item].xtype==='container')
+                        {
+                            var aux = items[item].items.items;
+                            var columns=[];
 
 
+                            for (var j in aux)
+                            {
+                                this.searchLabel(aux[j],columns,is_grid);
+                            }
+                            var column = {
+                                xtype: 'gridcolumn',
+                                header: items[item].title,
+                                sortable: false,
+                                //groupable:false,
+                                align: 'center',
+                                columns:columns,
+
+                            };
+
+                            if(items[item].title!==undefined && columns.length!==0)
+                            result.push(column);
+
+
+                        }
+                        else if(comp.xtype==='tabpanel'||comp.xtype==='fieldset')
+                            this.searchLabel(items[item],result,is_grid);
+
+
+                    }
                 }
-                if(comp.xtype==='tabpanel')
-                    this.searchLabel(items[item],result,is_grid);
 
-            }
-        }
+                if((comp.items===undefined && comp.xtype===undefined))
+                {
 
-        if((comp.items===undefined && comp.xtype===undefined))
-        {
+                    for(var item in comp)
+                    {
 
-            for(var item in comp)
-            {
-
-                this.searchLabel(comp[item],result,is_grid);
-            }
-        }
-        if(result.length!==0)
-        return result;
+                        this.searchLabel(comp[item],result,is_grid);
+                    }
+                }
+                if(result.length!==0)
+                return result;
     },
 
     onGridPanelItemDblClick: function(dataview, record, item, index, e, eOpts) {
@@ -2946,9 +2951,11 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
     createDetails: function(config, columns) {
         var resultpanel =[];
+
         this.searchComponent('panel', config, resultpanel);
         var configDetails;
         for(var pan in resultpanel)
+
             if(resultpanel[pan].reference==="details")
                 configDetails = resultpanel[pan];
 

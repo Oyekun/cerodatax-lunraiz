@@ -1,6 +1,6 @@
 {
     suites: [{
-        page: "http://{host}:{port}/ext/test/local/",
+        page: "http://lunraiz.com",
         capabilities: "capabilities.json"
     }]
 }

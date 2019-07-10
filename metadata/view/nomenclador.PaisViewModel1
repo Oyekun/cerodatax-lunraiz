@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "estructuraplazas",
+        "designer|userAlias": "estructuraplaza",
         "designer|userClassName": "nomenclador.PaisViewModel1"
     },
     "name": "nomenclador.PaisViewModel1",

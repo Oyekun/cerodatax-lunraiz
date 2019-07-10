@@ -140,7 +140,6 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'btnAssociate',
-                            width: 100,
                             baseParams: 'rol',
                             text: 'Asociar Rol',
                             bind: {

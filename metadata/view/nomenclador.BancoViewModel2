@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rhcalendario",
+        "designer|userClassName": "nomenclador.BancoViewModel2"
+    },
+    "name": "nomenclador.BancoViewModel2",
+    "designerId": "668979a7-23b5-4611-90e6-fd81370673d6"
+}

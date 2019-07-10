@@ -18,15 +18,15 @@ Ext.define('cerodatax.view.estructura.AreaPlazaForm', {
     alias: 'widget.areaplazaForm',
 
     requires: [
-        'cerodatax.view.estructura.EntidadAreaFormViewModel1',
-        'cerodatax.view.estructura.EntidadAreaFormViewController1',
+        'cerodatax.view.seguridad.UsuarioRolFormViewModel1',
+        'cerodatax.view.seguridad.UsuarioRolFormViewController1',
         'Ext.form.Panel',
         'Ext.form.field.Display',
-        'Ext.grid.Panel',
-        'Ext.grid.column.Number',
-        'Ext.grid.column.Check',
-        'Ext.toolbar.Paging',
-        'Ext.selection.RowModel',
+        'Ext.view.MultiSelector',
+        'Ext.view.MultiSelectorSearch',
+        'Ext.view.Table',
+        'Ext.grid.column.Column',
+        'Ext.grid.filters.filter.String',
         'Ext.grid.filters.Filters',
         'Ext.button.Button'
     ],
@@ -57,55 +57,46 @@ Ext.define('cerodatax.view.estructura.AreaPlazaForm', {
                 {
                     xtype: 'displayfield',
                     width: 380,
-                    fieldLabel: 'Entidad',
+                    fieldLabel: 'Área',
+                    labelWidth: 40,
                     name: 'nombre'
                 },
                 {
-                    xtype: 'gridpanel',
-                    reference: 'list',
-                    itemId: 'gridPanel',
-                    resizable: false,
-                    title: '',
-                    forceFit: true,
+                    xtype: 'multiselector',
+                    height: 400,
+                    scrollable: 'true',
+                    title: 'Plazas',
+                    emptyText: 'No existen elementos que mostrar',
+                    reserveScrollbar: true,
                     store: 'estructura.AreaPlaza',
+                    addToolText: 'Busca un elemento para adicionar',
+                    removeRowTip: 'Elimina este elemento',
+                    search: {
+                        xtype: 'multiselector-search',
+                        searchText: 'Buscar...',
+                        store: 'estructura.Plaza',
+                        field: 'cargo'
+                    },
+                    viewConfig: {
+                        width: 360,
+                        deferEmptyText: false
+                    },
                     columns: [
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'cargo',
-                            text: 'Cargo'
-                        },
-                        {
-                            xtype: 'numbercolumn',
-                            dataIndex: 'aprobadas',
-                            text: 'Aprobadas'
-                        },
-                        {
-                            xtype: 'numbercolumn',
-                            dataIndex: 'ocupadas',
-                            text: 'Ocupadas'
-                        },
-                        {
-                            xtype: 'checkcolumn',
-                            dataIndex: 'activo',
-                            text: 'Activo'
+                            text: 'Cargo',
+                            flex: 2,
+                            filter: {
+                                type: 'string',
+                                emptyText: 'Ingrese el texto del filtro...'
+                            }
                         }
                     ],
-                    dockedItems: [
-                        {
-                            xtype: 'pagingtoolbar',
-                            dock: 'bottom',
-                            width: 360,
-                            displayInfo: true,
-                            store: 'estructura.AreaPlaza'
-                        }
-                    ],
-                    selModel: {
-                        selType: 'rowmodel',
-                        mode: 'MULTI'
-                    },
                     plugins: [
                         {
-                            ptype: 'gridfilters'
+                            ptype: 'gridfilters',
+                            menuFilterText: 'Buscar'
                         }
                     ]
                 }

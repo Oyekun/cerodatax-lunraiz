@@ -41,6 +41,7 @@ class Api_model extends CI_Model
 
 $subdireccion =  $request['esquema'] . '/' . $request['model'];
 $existFile = APPPATH . "models/$subdireccion.php";
+//print_r($existFile);die;
 $existefile=FALSE;
 if (file_exists($existFile)) 
     $existefile=TRUE;
@@ -74,6 +75,34 @@ if (file_exists($existFile))
                 $parent_id = $request['parent_id'];
 
         }
+
+        //////////Para crear modelo relacional prueba////////////// hAY Q MADURARLO LA CREACION DE MODELO
+  /*      if(isset($request['asociados']))
+                {
+            $modelo = $request['model'];
+
+                    $modelClass = ucwords($modelo) . ucwords($request['asociados']);
+                    $subdireccion = $modelClass;
+                    $existFile = APPPATH . "models".DS.$request['esquema'].DS."$subdireccion.php";
+                    
+        if (!file_exists($existFile))
+{            $dataMigration = array();   
+             $dataMigration[0]= ['nombre'=>$modelo.'_id','tabla'=>$request['esquema'].'_'.$modelo,"tipo"=>"VARCHAR","constraint"=>"100","nullfield"=>"FALSE"];
+             $dataMigration[1]= ['nombre'=>$request['asociados'].'_id','tabla'=>$request['esquema_asociado'].'_'.$request['asociados'],"tipo"=>"VARCHAR","constraint"=>"100","nullfield"=>"FALSE"];
+             $tools = new Tools();
+             
+             $tools->make_model_relation_file($request['esquema'], $modelClass,$dataMigration);
+             
+             $tools->make_migration_file($request['esquema'],$modelClass,$dataMigration);
+            
+             $tools->migrate();
+
+}
+}
+*/
+//print_r($existFile);die;
+
+        //////////////////////////////////////////////////////////
 
 
         if (isset($request['esquema']) && isset($request['model'])) {
@@ -208,7 +237,12 @@ if (file_exists($existFile))
                     }
                 }
                 if(isset($request['asociados']))
+                { 
+
+
                 $this->load->model($request['esquema_asociado'].'/'. $request['model'], '', TRUE);//.$request['asociados'] verificar si es asociados o model
+                
+                }
                 $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
 
@@ -569,7 +603,9 @@ if (file_exists($existFile))
 
             $this->load->model($request['esquema'].'/'.$request['model']);
             $nameuuid = new $request['model'];
-
+            if(isset($nameuuid->uuid2)) 
+            $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"].$dataArray["$nameuuid->uuid2"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+            else    
             $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
             unset($dataArray['id']);
 
@@ -740,6 +776,9 @@ if (file_exists($existFile))
 
         $this->load->model($request['esquema'].'/'.$request['model']);
         $nameuuid = new $request['model'];
+        if(isset($nameuuid->uuid2)) 
+            $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"].$dataArray["$nameuuid->uuid2"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+            else  
         $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
         if ($id == 0)
             $id = $dataArray['id'];

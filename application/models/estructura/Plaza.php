@@ -1,12 +1,14 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-    class Area extends CI_Model {
+    class Plaza extends CI_Model {
         public $uuid;
         public $relacion;
         public function __construct() {
             parent::__construct();
-                $this->uuid = 'nombre';
- 
+                $this->uuid = 'cargo_id';
+$this->relacion = array(
+'cargo_id'=> 'persona_cargo',
+              ); 
                
         }
     }

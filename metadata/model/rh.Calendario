@@ -1,0 +1,228 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "calendario",
+        "designer|userClassName": "rh.Calendario"
+    },
+    "name": "nomenclador.Almacen2",
+    "designerId": "f982c8e7-f92a-4bd6-bdb2-fa43362e315c",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString26",
+            "designerId": "2abc67ce-8f90-45f0-a3b8-4c1745429ecb"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString36",
+            "designerId": "1146e775-64de-4280-9ca9-b729a3a0beae"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "name": "MyString33",
+            "designerId": "c7d24b6f-2a2c-49b5-8df1-1abecaf9abc6"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes"
+            },
+            "name": "MyDate5",
+            "designerId": "dd96cf16-4c3a-4fad-9bf0-644f2e35035a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocalendario"
+            },
+            "name": "MyString110",
+            "designerId": "0fc966f6-1bf4-4921-bede-b20daf13eff9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocalendario_id"
+            },
+            "name": "MyString90",
+            "designerId": "997bed02-56d0-486b-be7d-fa896515812b"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ano"
+            },
+            "name": "MyDate2",
+            "designerId": "37389d4c-b116-41f0-9221-9a9cbf0c5d83"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados"
+            },
+            "name": "MyString101",
+            "designerId": "c878e3ba-12a7-41f8-85e3-bc4dbc60d27f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena"
+            },
+            "name": "MyString102",
+            "designerId": "48201999-f9c5-44b1-9767-d60341e3e8d4"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena"
+            },
+            "name": "MyString91",
+            "designerId": "b8140bb7-4531-469c-a94c-8d45248fd097"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos"
+            },
+            "name": "MyString98",
+            "designerId": "5017f60d-7572-4479-a85f-ae55b7a80c2d"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "Y-m-d",
+                "name": "fecha_alta"
+            },
+            "name": "MyDate1",
+            "designerId": "e07435f6-f389-4abb-906a-d55041919b38"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "add:{url: 'index.php/api/restserver/rests',method: 'POST'},",
+                    "show: {url: 'index.php/api/restserver/rests/',method: 'GET'},",
+                    "save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},",
+                    "remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}",
+                    "}"
+                ],
+                "extraParams": [
+                    "{model: 'calendario',",
+                    "            esquema: 'rh'}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy4",
+            "designerId": "5e6e4fb4-2b59-40da-8098-6d54b2584d6f",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "ce43f4a6-24ea-4fcb-999b-e2b5510b949b"
+                },
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "9f1ec0b1-b092-48cd-82e8-e548a842ffb9"
+                }
+            ]
+        }
+    ]
+}

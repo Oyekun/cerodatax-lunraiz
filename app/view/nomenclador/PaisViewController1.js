@@ -15,7 +15,7 @@
 
 Ext.define('cerodatax.view.nomenclador.PaisViewController1', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.estructuraplazas',
+    alias: 'controller.estructuraplaza',
 
     showView: function(view) {
         var layout = this.getReferences().display.getLayout();

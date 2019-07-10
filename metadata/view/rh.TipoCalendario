@@ -10,18 +10,18 @@
         "controller": [
             "nomencladorcrud"
         ],
-        "designer|userAlias": "estructuraplazas",
-        "designer|userClassName": "estructura.Plazas",
+        "designer|userAlias": "rhtipocalendario",
+        "designer|userClassName": "rh.TipoCalendario",
         "height": 600,
         "layout": "border",
         "shrinkWrap": 0,
         "title": null,
-        "width": 825
+        "width": 824
     },
-    "name": "nomenclador.Pais1",
-    "designerId": "80bf9b98-cc1f-4829-91e1-74373af3a8f1",
-    "viewControllerInstanceId": "fd2df4cd-ec29-40e5-a413-b27c36701c15",
-    "viewModelInstanceId": "aa7f4a4f-25f8-4522-83e9-a90465976081",
+    "name": "nomenclador.Alias2",
+    "designerId": "80dbc9bb-4d14-402b-89e5-12656c9463a5",
+    "viewControllerInstanceId": "60ddddb3-0c96-4ac1-b7df-0219ba58bec2",
+    "viewModelInstanceId": "a6d3f195-fe61-4e1a-80aa-e02fb5cd2ea8",
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -40,26 +40,12 @@
                 "resizable": [
                     "false"
                 ],
-                "store": "estructura.Plazas",
+                "store": "rh.TipoCalendario",
                 "title": ""
             },
-            "name": "MyGridPanel1",
-            "designerId": "e8effbb2-d45f-4e45-a6a9-c6ac7a96af06",
+            "name": "MyGridPanel12",
+            "designerId": "4c175102-67f7-4469-a00e-886a0d9c3a9f",
             "cn": [
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "codigo",
-                        "text": "Código"
-                    },
-                    "name": "MyColumn30",
-                    "designerId": "78082eb0-b7f6-4172-b027-2b078676f865"
-                },
                 {
                     "type": "Ext.grid.column.Column",
                     "reference": {
@@ -71,8 +57,8 @@
                         "dataIndex": "nombre",
                         "text": "Nombre"
                     },
-                    "name": "MyColumn15",
-                    "designerId": "c2d6a242-2526-4fde-a004-9b562023962c"
+                    "name": "MyColumn23",
+                    "designerId": "d6ba3165-c558-41aa-a087-f7f0a9394e96"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -82,39 +68,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "siglas",
-                        "text": "Siglas"
+                        "dataIndex": "menu_id",
+                        "text": "Descripción"
                     },
-                    "name": "MyColumn31",
-                    "designerId": "33698466-2831-4e86-ab65-609e0387bdcb"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "continente",
-                        "text": "Continente"
-                    },
-                    "name": "MyColumn32",
-                    "designerId": "65d69c07-c56b-4bff-8c9a-12e03b73b063"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "moneda",
-                        "text": "Moneda"
-                    },
-                    "name": "MyColumn66",
-                    "designerId": "29afb40f-780a-400e-b9b6-88bb93f021ad"
+                    "name": "MyColumn61",
+                    "designerId": "fbd22442-3b88-4350-b893-6f826ef2b2b5"
                 },
                 {
                     "type": "viewcontrollereventbinding",
@@ -136,7 +94,23 @@
                         "scope": "me"
                     },
                     "name": "select",
-                    "designerId": "fd1c9517-6db3-4e3a-8c11-30ff811c5c5d"
+                    "designerId": "65541e21-ceeb-44b3-aa67-2443e8a06981"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "rh.TipoCalendario",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar15",
+                    "designerId": "b22e4c78-f0e5-40cc-acf0-9735e265f4a3"
                 },
                 {
                     "type": "Ext.toolbar.Toolbar",
@@ -149,8 +123,8 @@
                         "designer|displayName": "toolbar",
                         "dock": "top"
                     },
-                    "name": "MyToolbar7",
-                    "designerId": "81fd7564-ec26-483c-a086-1dc5bca50651",
+                    "name": "MyToolbar14",
+                    "designerId": "c13533d5-bdce-4aee-b7ba-638215560a76",
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -164,8 +138,8 @@
                                 "layout|flex": null,
                                 "text": "Adicionar"
                             },
-                            "name": "MyButton36",
-                            "designerId": "d0e9ec89-c863-4d2b-beee-66aa5d1aad12",
+                            "name": "MyButton69",
+                            "designerId": "43020bd6-e10c-4593-b453-6716fcb5dbf7",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -179,7 +153,7 @@
                                         "implHandler": [
                                             "var formPanel = this.getReferences().form,",
                                             "    form = formPanel.getForm(),",
-                                            "    newRecord = Ext.create('model.paises');",
+                                            "    newRecord = Ext.create('model.tiposentidades');",
                                             "",
                                             "// Clear form",
                                             "form.reset();",
@@ -188,7 +162,7 @@
                                             "form.loadRecord(newRecord);",
                                             "",
                                             "// Set title",
-                                            "formPanel.setTitle('Adicionar Paises');",
+                                            "formPanel.setTitle('Adicionar Tipo Entidad');",
                                             "",
                                             "// Show form",
                                             "this.showView('form');"
@@ -197,7 +171,7 @@
                                         "scope": "me"
                                     },
                                     "name": "add",
-                                    "designerId": "f125c5ef-0cd8-4f66-b04b-144d7c57bd62"
+                                    "designerId": "b1393129-66d8-47f0-9ec9-28832e696111"
                                 }
                             ]
                         },
@@ -217,11 +191,11 @@
                                 "layout|flex": null,
                                 "text": "Editar"
                             },
-                            "name": "MyButton37",
+                            "name": "MyButton70",
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "cc1c3e8f-c08c-484f-ab5a-fc439c460e1d",
+                            "designerId": "3d6dc04e-4af7-4373-a91a-747b91ca4902",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -241,7 +215,7 @@
                                             "form.loadRecord(record);",
                                             "",
                                             "// Set title",
-                                            "formPanel.setTitle('Editar Paises');",
+                                            "formPanel.setTitle('Editar Tipo Entidad');",
                                             "",
                                             "// Show form",
                                             "this.showView('form');"
@@ -250,7 +224,7 @@
                                         "scope": "me"
                                     },
                                     "name": "edit",
-                                    "designerId": "9b72b054-c244-480d-b438-ebc6ca7a1864"
+                                    "designerId": "3d49850a-3a7b-495e-ba9f-3fe0bf445b73"
                                 }
                             ]
                         },
@@ -270,11 +244,11 @@
                                 "layout|flex": null,
                                 "text": "Eliminar"
                             },
-                            "name": "MyButton38",
+                            "name": "MyButton71",
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "b57910e2-61da-49c4-a8fb-b1fcd0d68830",
+                            "designerId": "04c4b144-2c62-430f-9caf-2a671e203c8e",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -289,13 +263,13 @@
                                             "var me = this;",
                                             "",
                                             "// Ask user to confirm this action",
-                                            "Ext.Msg.confirm('Confirm Delete', 'Esta seguro que desea eliminar el elemento?', function(result) {",
+                                            "Ext.Msg.confirm('Confirm Delete', 'Are you sure you want to delete this tiposentidades?', function(result) {",
                                             "",
                                             "    // User confirmed yes",
                                             "    if (result == 'yes') {",
                                             "",
                                             "        var record = me.getViewModel().get('record'),",
-                                            "            store = Ext.StoreManager.lookup('Paises');",
+                                            "            store = Ext.StoreManager.lookup('TiposEntidades');",
                                             "",
                                             "        // Delete record from store",
                                             "        store.remove(record);",
@@ -311,7 +285,7 @@
                                         "scope": "me"
                                     },
                                     "name": "remove",
-                                    "designerId": "d21ea934-8030-4550-adbc-4b2438ba3237"
+                                    "designerId": "0ce719c6-fab6-4ae8-9126-81826cf1b547"
                                 }
                             ]
                         },
@@ -328,13 +302,14 @@
                                 ],
                                 "itemId": "btnRefresh",
                                 "layout|flex": null,
-                                "text": "Actualizar"
+                                "text": "Actualizar",
+                                "width": null
                             },
-                            "name": "MyButton119",
+                            "name": "MyButton116",
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "4e71d814-cc71-49a6-a23d-432ca8d47dc0",
+                            "designerId": "fada36b2-4a9e-47f7-ac32-49d7c2be32b5",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -352,7 +327,7 @@
                                         "scope": "me"
                                     },
                                     "name": "refresh",
-                                    "designerId": "18e5ef1d-7481-4307-b638-a1c2304cf2ec"
+                                    "designerId": "2692f103-4023-46a4-a836-ad95f5188269"
                                 }
                             ]
                         },
@@ -369,26 +344,9 @@
                                 "scope": "me"
                             },
                             "name": "onToolbarAfterRender",
-                            "designerId": "f4bafc4e-f056-401f-85d5-16b0f8b8fc06"
+                            "designerId": "a065440a-96cb-49f2-b9d6-ec16c0af576b"
                         }
                     ]
-                },
-                {
-                    "type": "Ext.toolbar.Paging",
-                    "reference": {
-                        "name": "dockedItems",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "displayInfo": true,
-                        "dock": "bottom",
-                        "height": null,
-                        "store": "nomenclador.Pais",
-                        "width": 360
-                    },
-                    "name": "MyPagingToolbar13",
-                    "designerId": "adee1585-f5c5-44b8-a036-d9b9d111c5bb"
                 },
                 {
                     "type": "Ext.selection.RowModel",
@@ -397,11 +355,8 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "mode": "MULTI"
-                    },
-                    "name": "MyRowSelectionModel4",
-                    "designerId": "b1dcd368-80d5-4afe-ba54-0975afc3fa1c"
+                    "name": "MyRowSelectionModel6",
+                    "designerId": "bd8fd804-ebc0-4d68-ac75-2ac84037c93f"
                 },
                 {
                     "type": "Ext.grid.filters.Filters",
@@ -410,8 +365,8 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "name": "MyGridFiltersPlugin23",
-                    "designerId": "d1d927de-ea6b-4f88-9ac8-91d1b6d84303"
+                    "name": "MyGridFiltersPlugin28",
+                    "designerId": "cb096a7d-7bf1-4e95-adf2-f0f944dc27c1"
                 }
             ]
         },
@@ -431,8 +386,8 @@
                 "reference": "display",
                 "width": 150
             },
-            "name": "MyPanel30",
-            "designerId": "47c4a283-7543-411d-8c5c-d7035859324a",
+            "name": "MyPanel46",
+            "designerId": "438f11fb-bdbd-4fc0-9cbc-c354323c2fa9",
             "cn": [
                 {
                     "type": "Ext.panel.Panel",
@@ -447,8 +402,8 @@
                         "layout": "vbox",
                         "reference": "selectMessage"
                     },
-                    "name": "MyPanel31",
-                    "designerId": "2a3dfd94-69f5-4cc6-ad04-90c2be49e5ec",
+                    "name": "MyPanel50",
+                    "designerId": "f9f792bd-99a7-42c2-ba3b-aeb6565bf630",
                     "cn": [
                         {
                             "type": "Ext.container.Container",
@@ -460,12 +415,12 @@
                             "userConfig": {
                                 "designer|displayName": "message",
                                 "html": [
-                                    "\"<h1>Seleccione la Plaza</h1>\""
+                                    "\"<h1>Seleccione el Tipo de Calendario</h1>\""
                                 ],
                                 "layout|flex": 1
                             },
-                            "name": "MyContainer13",
-                            "designerId": "6208c849-bda4-4f4a-be0e-b66abacbe4ef"
+                            "name": "MyContainer35",
+                            "designerId": "92281087-b307-4c88-8b8c-c39a7d7b3a3b"
                         }
                     ]
                 },
@@ -480,28 +435,9 @@
                         "bodyPadding": 10,
                         "reference": "details"
                     },
-                    "name": "MyPanel32",
-                    "designerId": "9f543f26-bef0-422d-b4fb-710b39ee8f06",
+                    "name": "MyPanel51",
+                    "designerId": "a85c1988-e9f0-4491-861d-ce2e54140776",
                     "cn": [
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Código",
-                                "value": [
-                                    "{record.codigo}"
-                                ]
-                            },
-                            "name": "MyDisplayField6",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "49ec56ca-576d-4a40-bf04-021433c55a81"
-                        },
                         {
                             "type": "Ext.form.field.Display",
                             "reference": {
@@ -515,11 +451,11 @@
                                     "{record.nombre}"
                                 ]
                             },
-                            "name": "MyDisplayField65",
+                            "name": "MyDisplayField58",
                             "configAlternates": {
                                 "value": "binding"
                             },
-                            "designerId": "116dd9cd-8b0f-4063-bd18-99bf9c87634a"
+                            "designerId": "0fd56cb4-d129-473c-beb8-7c4aed69cea1"
                         },
                         {
                             "type": "Ext.form.field.Display",
@@ -529,54 +465,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Siglas",
+                                "fieldLabel": "Descripción",
                                 "value": [
-                                    "{record.siglas}"
+                                    "{record.descripcion}"
                                 ]
                             },
-                            "name": "MyDisplayField66",
+                            "name": "MyDisplayField73",
                             "configAlternates": {
                                 "value": "binding"
                             },
-                            "designerId": "715c382d-faea-4c31-b9a6-5b4173c685e3"
-                        },
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Continente",
-                                "value": [
-                                    "{record.continente}"
-                                ]
-                            },
-                            "name": "MyDisplayField67",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "a06b3506-07bd-4c14-bfff-6cb4361ad484"
-                        },
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Moneda",
-                                "value": [
-                                    "{record.moneda}"
-                                ]
-                            },
-                            "name": "MyDisplayField34",
-                            "configAlternates": {
-                                "value": "binding"
-                            },
-                            "designerId": "322028c2-78e8-4b5d-b3d1-134c16de3d63"
+                            "designerId": "46dcdf0a-4e40-47a5-a5de-cd9571a44583"
                         }
                     ]
                 },
@@ -590,17 +488,17 @@
                     "userConfig": {
                         "bodyPadding": 10,
                         "fieldDefaults": [
-                            "{maxLength: 100,",
+                            "{maxLength: 50,",
                             "        enforceMaxLength: true}"
                         ],
                         "reference": "form",
-                        "title": "Editar País"
+                        "title": "Editar Tipo Entidad"
                     },
-                    "name": "MyForm7",
-                    "designerId": "b08141ee-68aa-4c2b-9cac-239cd8cc5825",
+                    "name": "MyForm14",
+                    "designerId": "c1da7aa3-b4ab-4861-a4db-47db8e4d9688",
                     "cn": [
                         {
-                            "type": "Ext.form.field.ComboBox",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -608,17 +506,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "designer|displayName": null,
-                                "displayField": "nombre",
-                                "emptyText": "Seleccione",
-                                "fieldLabel": "Cargo",
-                                "name": "cargo_id",
-                                "queryMode": "local",
-                                "store": "persona.Cargo",
-                                "valueField": "id"
+                                "fieldLabel": "Código",
+                                "name": "codigo"
                             },
-                            "name": "MyComboBox18",
-                            "designerId": "e98b2a8f-2a70-4e56-b875-7bd0f4e1ac8c",
+                            "name": "MyTextField28",
+                            "designerId": "f1b5d824-2400-4640-bb04-fa42332fb5c2",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -634,7 +526,40 @@
                                         ]
                                     },
                                     "name": "afterLabelTextTpl",
-                                    "designerId": "fb42cb93-c087-4f83-86c5-4fe9c5234e2c"
+                                    "designerId": "4ebbac69-b216-41eb-9985-9d700dc132c5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "name": "nombre"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "166ef6b0-cd1b-4283-a255-0ae2d9d87f2f",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "5e3b362f-a1dd-4199-8cc8-ebd6692954e8"
                                 }
                             ]
                         },
@@ -647,19 +572,83 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "allowDecimals": null,
-                                "decimalPrecision": null,
-                                "decimalSeparator": null,
-                                "fieldLabel": "Aprobada(s)",
-                                "maxValue": 999,
-                                "minValue": 0,
-                                "name": "aprobadas",
-                                "step": null,
-                                "value": null,
-                                "width": 180
+                                "fieldLabel": "Días Laborables (d)",
+                                "maxValue": 31,
+                                "minValue": 1,
+                                "name": "dias_laborables"
+                            },
+                            "name": "MyNumberField",
+                            "designerId": "597c2249-4a9c-4c8c-83f7-a254c5bc22c0",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "d2ba83d5-3e6f-4f20-af28-30387d8ddbe0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Fondo de Tiempo del Mes (h)",
+                                "maxValue": 744,
+                                "minValue": 1,
+                                "name": "fondo_tiempo_mes"
+                            },
+                            "name": "MyNumberField4",
+                            "designerId": "d1e70eb7-8ca9-45f3-b2f3-6b35251ee5c0",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "bd8e4804-0293-4cec-b539-e531ebcea431"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Fondo de Tiempo del Día (h)",
+                                "maxValue": 24,
+                                "minValue": 1,
+                                "name": "fondo_tiempo_dia"
                             },
                             "name": "MyNumberField5",
-                            "designerId": "5e8a83e8-0f13-446c-9193-5631fda08717",
+                            "designerId": "c6bfd86f-c8cb-4a04-8401-556d03ed8eb5",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -674,67 +663,10 @@
                                             "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
                                         ]
                                     },
-                                    "name": "afterLabelTextTpl5",
-                                    "designerId": "4b9e5a65-9b39-4870-9a60-fbf044a569c1"
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "31d7cf96-0e7c-46d8-983e-c9b8d8586c86"
                                 }
                             ]
-                        },
-                        {
-                            "type": "Ext.form.field.Number",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "allowDecimals": null,
-                                "decimalPrecision": null,
-                                "decimalSeparator": null,
-                                "fieldLabel": "Ocupada(s)",
-                                "maxValue": 999,
-                                "minValue": null,
-                                "minWidth": 0,
-                                "name": "ocupadas",
-                                "step": null,
-                                "value": null,
-                                "width": 180
-                            },
-                            "name": "MyNumberField8",
-                            "designerId": "594777a8-d630-485f-8fa0-53746b3c8346",
-                            "cn": [
-                                {
-                                    "type": "Ext.XTemplate",
-                                    "reference": {
-                                        "name": "afterLabelTextTpl",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": "afterLabelTextTpl",
-                                        "implHandler": [
-                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                        ]
-                                    },
-                                    "name": "afterLabelTextTpl4",
-                                    "designerId": "d56305c5-f75e-4496-9916-0355a11fe59a"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "checked": true,
-                                "fieldLabel": "Activo",
-                                "name": "activo"
-                            },
-                            "name": "MyCheckbox4",
-                            "designerId": "5e91a715-8e81-4b85-be2e-c1e239bae312"
                         },
                         {
                             "type": "Ext.container.Container",
@@ -751,8 +683,8 @@
                                 "layout": "hbox",
                                 "padding": 10
                             },
-                            "name": "MyContainer14",
-                            "designerId": "d0297824-4b4d-459d-9392-608bab7d7032",
+                            "name": "MyContainer36",
+                            "designerId": "afbb969c-8b5d-49a7-b28a-46c2f236c1d1",
                             "cn": [
                                 {
                                     "type": "Ext.button.Button",
@@ -768,8 +700,8 @@
                                         "margin": 5,
                                         "text": "Guardar"
                                     },
-                                    "name": "MyButton34",
-                                    "designerId": "97199e48-47d0-47fc-89b9-afbe2846f446",
+                                    "name": "MyButton67",
+                                    "designerId": "a7504afa-b776-479f-bb5b-b3c79d65973c",
                                     "cn": [
                                         {
                                             "type": "viewcontrollereventbinding",
@@ -783,7 +715,7 @@
                                                 "implHandler": [
                                                     "var form = this.getReferences().form.getForm(),",
                                                     "    record = form.getRecord(),",
-                                                    "    store = Ext.StoreManager.lookup('Paises');",
+                                                    "    store = Ext.StoreManager.lookup('TiposEntidades');",
                                                     "",
                                                     "// Valid",
                                                     "if (form.isValid()) {",
@@ -817,7 +749,7 @@
                                                 "scope": "me"
                                             },
                                             "name": "save",
-                                            "designerId": "d061921b-ceb8-41bd-8434-ea13a96ab21b"
+                                            "designerId": "68fbd558-278c-4e9e-96b9-44a5663dd39d"
                                         }
                                     ]
                                 },
@@ -834,8 +766,8 @@
                                         "margin": 5,
                                         "text": "Cancelar"
                                     },
-                                    "name": "MyButton35",
-                                    "designerId": "552700c0-aeeb-4421-98a9-9773686a8fa4",
+                                    "name": "MyButton68",
+                                    "designerId": "627b8d1d-eaa6-4f12-b467-a08796f141b2",
                                     "cn": [
                                         {
                                             "type": "viewcontrollereventbinding",
@@ -854,7 +786,7 @@
                                                 "scope": "me"
                                             },
                                             "name": "cancelEdit",
-                                            "designerId": "9332b5aa-f612-4b1a-88f5-3ae0e096d9ad"
+                                            "designerId": "0f8f2309-69d6-4f3e-8048-1ab8396bb9b4"
                                         }
                                     ]
                                 }
@@ -875,7 +807,7 @@
                 "designer|params": [
                     "config"
                 ],
-                "fn": "processEstructuraPlaza",
+                "fn": "processNomencladorAlias",
                 "implHandler": [
                     "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
                     "    result = [],",
@@ -899,8 +831,8 @@
                     "return config;"
                 ]
             },
-            "name": "processEstructuraPlaza",
-            "designerId": "0bea3108-49e8-4095-8c2b-527e796b5da4"
+            "name": "processNomencladorAlias",
+            "designerId": "ddfd3dbc-1ac4-4029-8f59-37d052a91cfe"
         }
     ]
 }

@@ -62,10 +62,24 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "nombre",
-                "name": "nombre"
+                "name": "cargo"
             },
             "name": "MyString109",
             "designerId": "d48bf1a6-ef35-43d1-a290-f86fd69c4c1e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "nombre",
+                "name": "nombre"
+            },
+            "name": "MyString7",
+            "designerId": "661bad83-5b05-4688-be7b-d25a41fcbbff"
         },
         {
             "type": "Ext.data.field.String",

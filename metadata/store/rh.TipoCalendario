@@ -8,12 +8,12 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "designer|userClassName": "estructura.AreaPlaza",
-        "model": "estructura.AreaPlaza",
-        "storeId": "estructura.AreaPlaza"
+        "designer|userClassName": "rh.TipoCalendario",
+        "model": "rh.TipoCalendario",
+        "storeId": "rh.TipoCalendario"
     },
-    "name": "estructura.Plazas1",
-    "designerId": "8fb9e261-5d2b-4483-9bee-e5e9acdd09f8",
+    "name": "nomenclador.Alias1",
+    "designerId": "f7f0f877-5484-483b-8962-8d3364cf4a7a",
     "cn": [
         {
             "type": "Ext.data.proxy.Rest",
@@ -32,20 +32,13 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{ model: 'plaza',",
-                    "                    esquema: 'estructura',",
-                    "                    parent_id: '',",
-                    "                    esquema_asociado: 'estructura',",
-                    "                    asociados: 'area',",
-                    "                    id_asociado: '',",
-                    "                    grid: 'true',",
-                    "                    detalles: ''}"
+                    "{model:'tipocalendario',esquema:'rh'}"
                 ],
                 "format": "",
                 "url": "index.php/api/restserver/rests/"
             },
             "name": "MyRestProxy",
-            "designerId": "45214144-5258-4f1d-9c29-376a29f3d5ab",
+            "designerId": "58390c12-6af6-4399-8406-310d22b885f4",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -58,7 +51,7 @@
                         "rootProperty": "data"
                     },
                     "name": "MyJsonReader",
-                    "designerId": "0302e112-16f9-4ba0-bebc-4904a8bf3c69"
+                    "designerId": "4dfd40ff-e2c1-4bcf-8f4a-8059648d8104"
                 },
                 {
                     "type": "Ext.data.writer.Json",
@@ -73,7 +66,7 @@
                         "writeAllFields": true
                     },
                     "name": "MyJsonWriter",
-                    "designerId": "39de7b7e-5a9a-4bcc-bdc7-370b418de2c5"
+                    "designerId": "10ece19b-b0ff-49d4-9857-d9d480484e58"
                 }
             ]
         }

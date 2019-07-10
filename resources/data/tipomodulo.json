@@ -5,5 +5,7 @@
    },{
    		id:'feb8d576-badd-5099-a09f-bdac962aaa47',nombre:'Configuración',orden:'2',activo:'0',codigo:'',descripcion:'Se utiliza para gestionar la configuración y personalización del sistema.',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },{
+   		id:'1c131eee-facc-5895-abbb-cc456207358c',nombre:'RH',orden:'3',activo:'0',codigo:'',descripcion:'Recursos Humano',date_created:'2019-07-09 21:34:07',date_updated:'2019-07-09 21:34:07',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
    		id:'fd35b898-efd3-5ed0-9b6e-2cf525fc1692',nombre:'CRM',orden:'4',activo:'0',codigo:'',descripcion:'Se utiliza para la gestionar los contactos',date_created:'2018-10-21 00:25:09',date_updated:'2019-07-07 17:48:51',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },]

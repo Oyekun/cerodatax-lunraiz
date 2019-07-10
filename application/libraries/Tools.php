@@ -244,6 +244,64 @@ if(isset($campo['tabla']))
 
    //  echo "$path model has successfully been created." . PHP_EOL;
 }
+
+public function make_model_relation_file($modulo,$name,$dataArray) {
+        $subdireccion =  $modulo . '/' . $name;
+
+  //  $path = APPPATH . "modules/admin/models/$name.php"; Esyo es importante hacer las modelos por modulos
+    $existFolder = APPPATH . "models/$modulo";
+    if(!is_dir($existFolder))
+        mkdir($existFolder);
+    $path = APPPATH . "models/$subdireccion.php";
+    $my_model = fopen($path, "w") or die("Unable to create model file!");
+    $existeRelacion=FALSE;
+    $relacion ="\$this->relacion = array(\n";
+    $nameuuid = '';
+    foreach ($dataArray as $campo) {
+       if($campo['nombre']=='nombre')
+            $nameuuid =$campo['nombre'];
+if(isset($campo['tabla']))
+       { $nameCampo = $campo['nombre'];
+         
+         
+         $auxUno = explode("_id", $nameCampo);
+        if(count($auxUno)>1)
+        { if ($nameuuid=='')
+            $nameuuid =$campo['nombre'];
+            $existeRelacion=TRUE;
+            $tablaCampo = $campo['tabla'];
+          $relacion .="'$nameCampo'=> '$tablaCampo',\n";      
+        }
+    }
+    if ($nameuuid=='')
+            $nameuuid =$campo['nombre'];
+    
+    }
+     $relacion .="              );";
+ 
+
+    $model_template = "<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
+
+    class $name extends CI_Model {
+        public \$uuid;
+        public \$relacion;
+        public function __construct() {
+            parent::__construct();
+                \$this->uuid = 'nombre';\n";
+
+     $model_template .=" 
+               
+        }
+    }
+    ";
+ //\$this->relacion = array('continente_id' =>'nomenclador_continente','moneda_id' =>'nomenclador_moneda');
+              
+    fwrite($my_model, $model_template);
+
+    fclose($my_model);
+
+   //  echo "$path model has successfully been created." . PHP_EOL;
+}
 /*public function create_backup()
 {
    $this->load->dbutil();

@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "plazas",
-        "designer|userClassName": "estructura.Plazas"
+        "designer|userAlias": "plaza",
+        "designer|userClassName": "estructura.Plaza"
     },
     "name": "estructura.Area1",
     "designerId": "5c2778cc-66c5-438a-b82a-64612fddb9f6",
@@ -102,7 +102,7 @@
                     "{add:{url: 'index.php/api/restserver/rests',method: 'POST'},show: {url: 'index.php/api/restserver/rests/',method: 'GET'},save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}}"
                 ],
                 "extraParams": [
-                    "{ model: 'plazas',",
+                    "{ model: 'plaza',",
                     "esquema: 'estructura'}"
                 ],
                 "url": "index.php/api/restserver/rests/"

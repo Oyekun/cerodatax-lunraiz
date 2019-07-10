@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rhcalendarioform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewModel1"
+    },
+    "name": "nomenclador.AlmacenFormViewModel1",
+    "designerId": "68bc30aa-0a9c-44a0-8e4a-d7fe2cabe769"
+}

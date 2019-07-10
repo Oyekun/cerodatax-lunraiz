@@ -97,9 +97,11 @@ Ext.application({
         'nomenclador.UnidadMedida',
         'nomenclador.TipoClasificacionContable',
         'crm.ProductosServiciosAlmacen',
-        'estructura.Plazas',
+        'estructura.Plaza',
         'nomenclador.Magnitud',
-        'estructura.AreaPlaza'
+        'estructura.AreaPlaza',
+        'rh.Calendario',
+        'rh.TipoCalendario'
     ],
     stores: [
         'seguridad.Usuario',
@@ -179,9 +181,11 @@ Ext.application({
         'nomenclador.TipoClasificacionContable',
         'crm.ProveedorCuentaBancaria',
         'crm.ProductosServiciosAlmacen',
-        'estructura.Plazas',
+        'estructura.Plaza',
         'nomenclador.Magnitud',
-        'estructura.AreaPlaza'
+        'estructura.AreaPlaza',
+        'rh.TipoCalendario',
+        'rh.Calendario'
     ],
     views: [
         'seguridad.Rol',
@@ -263,9 +267,12 @@ Ext.application({
         'nomenclador.TipoClasificacionContable',
         'nomenclador.EspecificacionInsumo',
         'nomenclador.AlmacenForm',
-        'estructura.Plazas',
+        'estructura.Plaza',
         'nomenclador.Magnitud',
-        'estructura.AreaPlazaForm'
+        'estructura.AreaPlazaForm',
+        'rh.Calendario',
+        'rh.TipoCalendario',
+        'rh.CalendarioForm'
     ],
     controllers: [
         'Escritorio',

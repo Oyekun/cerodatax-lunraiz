@@ -38,7 +38,7 @@ Ext.define('cerodatax.view.nomenclador.AlmacenForm', {
     controller: 'nomencladorcrud',
     resizable: false,
     bodyPadding: 10,
-    title: 'Banco',
+    title: 'Almacen',
     modal: true,
 
     initConfig: function(instanceConfig) {

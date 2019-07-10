@@ -367,7 +367,7 @@
                                 "itemId": "btnAssociate",
                                 "layout|flex": null,
                                 "text": "Asociar Rol",
-                                "width": 100
+                                "width": null
                             },
                             "name": "MyButton6",
                             "configAlternates": {

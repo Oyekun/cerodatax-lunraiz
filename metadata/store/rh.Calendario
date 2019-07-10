@@ -8,12 +8,13 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "designer|userClassName": "estructura.Plazas",
-        "model": "estructura.Plazas",
-        "storeId": "estructura.Plazas"
+        "designer|userClassName": "rh.Calendario",
+        "model": "rh.Calendario",
+        "remoteFilter": null,
+        "storeId": "rh.Calendario"
     },
-    "name": "crm.Proveedor1",
-    "designerId": "4c75a423-85f2-4662-84fd-70e3ee617212",
+    "name": "nomenclador.Almacen3",
+    "designerId": "8c1fd484-7f27-4024-8914-ec4e4dbce924",
     "cn": [
         {
             "type": "Ext.data.proxy.Rest",
@@ -32,13 +33,13 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{model:'plazas',esquema:'estructura'}"
+                    "{model:'calendario',esquema:'rh'}"
                 ],
                 "format": "",
                 "url": "index.php/api/restserver/rests/"
             },
             "name": "MyRestProxy",
-            "designerId": "a02ae9a0-f4c8-4571-a4fc-1a820789bb2a",
+            "designerId": "c47a82d1-efd9-4441-93fe-6ca08aefded3",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -51,7 +52,7 @@
                         "rootProperty": "data"
                     },
                     "name": "MyJsonReader",
-                    "designerId": "27be9959-e3f4-4057-8192-e2e63da68e66"
+                    "designerId": "ddea6116-7a61-41f1-833b-edb5a63eafa1"
                 },
                 {
                     "type": "Ext.data.writer.Json",
@@ -66,7 +67,7 @@
                         "writeAllFields": true
                     },
                     "name": "MyJsonWriter",
-                    "designerId": "03ac5e70-c9ee-4d41-a956-d726942dcca9"
+                    "designerId": "059bd5d0-8949-480e-802e-519d6fa25ee4"
                 }
             ]
         }

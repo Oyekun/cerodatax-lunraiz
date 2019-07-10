@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rhcalendario",
+        "designer|userClassName": "nomenclador.BancoViewController2"
+    },
+    "name": "nomenclador.BancoViewController2",
+    "designerId": "6d781e91-907e-45bd-bd09-fe51e69c9f17"
+}

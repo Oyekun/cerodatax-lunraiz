@@ -1,11 +1,13 @@
 [{
-   		id:'8b4b13b3-7004-5afc-ba9f-3ce13e002a83',nombre:'Generales',descripcion:'Este módulo tiene las funciones principales del sistema.',icono_id:'',orden:'0',tipo_modulo_id:'21327d3a-c77d-56c7-9971-0121f3ed5768',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   		id:'b50e5172-a6fa-54ad-8414-4a735ea17ef3',nombre:'Generales',descripcion:'RH',icono_id:'',orden:'0',tipo_modulo_id:'1c131eee-facc-5895-abbb-cc456207358c',activo:'1',date_created:'2019-07-09 22:01:35',date_updated:'2019-07-09 22:01:35',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },{
    		id:'03a87e66-9b7e-53c8-966d-8890f108a788',nombre:'Generales',descripcion:'En este Módulo se encuentran los nomencladores que se utilizan en todo el sistema sin distinción de Módulo.',icono_id:'',orden:'0',tipo_modulo_id:'ee3caef1-49a7-5447-9552-008a56501ce7',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },{
+   		id:'42cfbdb9-2c5f-568b-a5ad-5f132b04f801',nombre:'Generales',descripcion:'Muestra la configuración general del sistema.',icono_id:'',orden:'0',tipo_modulo_id:'feb8d576-badd-5099-a09f-bdac962aaa47',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   },{
    		id:'36031921-3ccc-5899-8dfa-daf026c445be',nombre:'Generales',descripcion:' las ventas y compras.',icono_id:'',orden:'0',tipo_modulo_id:'fd35b898-efd3-5ed0-9b6e-2cf525fc1692',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },{
-   		id:'42cfbdb9-2c5f-568b-a5ad-5f132b04f801',nombre:'Generales',descripcion:'Muestra la configuración general del sistema.',icono_id:'',orden:'0',tipo_modulo_id:'feb8d576-badd-5099-a09f-bdac962aaa47',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
+   		id:'8b4b13b3-7004-5afc-ba9f-3ce13e002a83',nombre:'Generales',descripcion:'Este módulo tiene las funciones principales del sistema.',icono_id:'',orden:'0',tipo_modulo_id:'21327d3a-c77d-56c7-9971-0121f3ed5768',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },{
    		id:'aa5c9ec6-98e0-5a1c-bb59-dd8e6601027d',nombre:'Entidad',descripcion:'Gestionar las características principales de las entidades.',icono_id:'',orden:'1',tipo_modulo_id:'ee3caef1-49a7-5447-9552-008a56501ce7',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',
    },{

@@ -1,5 +1,5 @@
 [{
-   		id:'6406eff1-72f2-51ca-a2e4-a54166a15fbf',nombre:'Escritorio',orden:'0',id_contenedor:'Tablero',alias_id:'584148cc-e30a-55e5-9e24-a4126fac25af',menu_id:'6406eff1-72f2-51ca-a2e4-a54166a15fbf',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'escritorio',
+   		id:'77af4c0a-3b4e-53d9-a28f-523e3d0d9809',nombre:'Calendario',orden:'0',id_contenedor:'Calendario',alias_id:'83577388-c47a-595b-91b2-6fd9e9846d7c',menu_id:'77af4c0a-3b4e-53d9-a28f-523e3d0d9809',descripcion:'Calendario',activo:'1',date_created:'2019-07-09 22:15:15',date_updated:'2019-07-09 22:15:15',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'rh',
    },{
    		id:'ab656f58-c421-5dba-84fc-3b34801abe51',nombre:'Licencías',orden:'0',id_contenedor:'Licencia',alias_id:'ebb8edcc-8848-5c47-982f-b82992a7d6e1',menu_id:'ab656f58-c421-5dba-84fc-3b34801abe51',descripcion:'',activo:'1',date_created:'2018-11-21 02:01:30',date_updated:'2018-11-21 02:01:30',created_from_ip:'::1',updated_from_ip:'::1',alias:'administracion',
    },{
@@ -26,6 +26,8 @@
    		id:'de061dc0-8941-53c8-907a-7e0bb07aaa5f',nombre:'País',orden:'0',id_contenedor:'Pais',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'1b2b1259-e852-5f78-95d6-c241931a55ca',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
    },{
    		id:'efebe7b0-778f-50cd-8572-e54760dea7c2',nombre:'Continentes',orden:'0',id_contenedor:'Continente',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'efebe7b0-778f-50cd-8572-e54760dea7c2',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
+   },{
+   		id:'6406eff1-72f2-51ca-a2e4-a54166a15fbf',nombre:'Escritorio',orden:'0',id_contenedor:'Tablero',alias_id:'584148cc-e30a-55e5-9e24-a4126fac25af',menu_id:'6406eff1-72f2-51ca-a2e4-a54166a15fbf',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'escritorio',
    },{
    		id:'7a33f50c-0236-5906-80c9-7c0dface663d',nombre:'Trazas',orden:'0',id_contenedor:'Traza',alias_id:'ebb8edcc-8848-5c47-982f-b82992a7d6e1',menu_id:'7a33f50c-0236-5906-80c9-7c0dface663d',descripcion:'',activo:'1',date_created:'2018-11-23 02:20:53',date_updated:'2018-11-23 02:20:53',created_from_ip:'::1',updated_from_ip:'::1',alias:'administracion',
    },{
@@ -115,23 +117,25 @@
    },{
    		id:'9675922a-99a8-5fbf-98f3-bda44c290192',nombre:'Roles',orden:'1',id_contenedor:'Rol',alias_id:'b7e0029a-7cb0-529f-bbfa-8b49eb7207d3',menu_id:'5eef535a-49a0-521f-baa2-b2afb0d84413',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'seguridad',
    },{
-   		id:'c0df395a-27ba-57cf-8e06-5a8f99ded46b',nombre:'Cliente',orden:'1',id_contenedor:'Cliente',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
-   },{
-   		id:'6fa40d5e-bcdc-57a5-a01a-55fb93546371',nombre:'Magnitud',orden:'1',id_contenedor:'Magnitud',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'227ac17d-f83b-5668-81ad-92c0439f6abe',descripcion:'Magnitud',activo:'1',date_created:'2019-07-08 02:36:26',date_updated:'2019-07-08 02:59:19',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
+   		id:'2bb8ca21-5b32-5d59-be07-7089ee423311',nombre:'Cuentas Bancarias',orden:'1',id_contenedor:'CuentaBancaria',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'6330f38e-3ec6-5996-8ee0-0942dbb429fe',descripcion:'',activo:'1',date_created:'2018-11-03 00:50:42',date_updated:'2018-11-03 01:08:25',created_from_ip:'::1',updated_from_ip:'::1',alias:'nomenclador',
    },{
    		id:'062317f7-849d-5c46-ac80-9cd78b7a79c5',nombre:'Menú',orden:'1',id_contenedor:'Menu',alias_id:'e7d3482b-e146-5f49-9d85-16a98f242d4c',menu_id:'cbc445c3-2a44-5ca9-a04b-1dbdd360ef78',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'configuracion',
    },{
-   		id:'2bb8ca21-5b32-5d59-be07-7089ee423311',nombre:'Cuentas Bancarias',orden:'1',id_contenedor:'CuentaBancaria',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'6330f38e-3ec6-5996-8ee0-0942dbb429fe',descripcion:'',activo:'1',date_created:'2018-11-03 00:50:42',date_updated:'2018-11-03 01:08:25',created_from_ip:'::1',updated_from_ip:'::1',alias:'nomenclador',
+   		id:'1ed6d3f6-9a28-501e-97d5-4308b05916f8',nombre:'Tipo de Calendario',orden:'1',id_contenedor:'TipoCalendario',alias_id:'83577388-c47a-595b-91b2-6fd9e9846d7c',menu_id:'77af4c0a-3b4e-53d9-a28f-523e3d0d9809',descripcion:'Tipo de Calendarios',activo:'1',date_created:'2019-07-09 23:35:12',date_updated:'2019-07-10 01:55:45',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'rh',
+   },{
+   		id:'6fa40d5e-bcdc-57a5-a01a-55fb93546371',nombre:'Magnitud',orden:'1',id_contenedor:'Magnitud',alias_id:'f9d8afa1-b3a4-599b-a903-3b9e7c7f3d5a',menu_id:'227ac17d-f83b-5668-81ad-92c0439f6abe',descripcion:'Magnitud',activo:'1',date_created:'2019-07-08 02:36:26',date_updated:'2019-07-08 02:59:19',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'nomenclador',
    },{
    		id:'69599e00-8fce-5de6-8981-461349cc91a0',nombre:'Áreas',orden:'1',id_contenedor:'Area',alias_id:'aa422a3d-b876-55e4-830c-399a9358fdf9',menu_id:'88176fbe-aa72-5ddb-bc71-775fda9ac9e2',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'estructura',
    },{
-   		id:'106bff06-47af-52c5-a70b-5986ca4c5a1f',nombre:'Plazas',orden:'2',id_contenedor:'Plazas',alias_id:'aa422a3d-b876-55e4-830c-399a9358fdf9',menu_id:'88176fbe-aa72-5ddb-bc71-775fda9ac9e2',descripcion:'Plazas',activo:'1',date_created:'2019-07-07 20:02:20',date_updated:'2019-07-07 20:02:20',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'estructura',
+   		id:'c0df395a-27ba-57cf-8e06-5a8f99ded46b',nombre:'Cliente',orden:'1',id_contenedor:'Cliente',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
+   },{
+   		id:'28736881-0460-52b9-bb0c-fe536571b956',nombre:'Plaza',orden:'2',id_contenedor:'Plaza',alias_id:'aa422a3d-b876-55e4-830c-399a9358fdf9',menu_id:'88176fbe-aa72-5ddb-bc71-775fda9ac9e2',descripcion:'Plazas',activo:'1',date_created:'2019-07-07 20:02:20',date_updated:'2019-07-08 19:29:36',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'estructura',
+   },{
+   		id:'d5ad60df-b773-56ee-859d-472d2a544926',nombre:'Proveedor',orden:'2',id_contenedor:'Proveedor',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
    },{
    		id:'103728ac-0639-5e2f-8ecf-b9bc4192db31',nombre:'Panel',orden:'2',id_contenedor:'Panel',alias_id:'e7d3482b-e146-5f49-9d85-16a98f242d4c',menu_id:'cbc445c3-2a44-5ca9-a04b-1dbdd360ef78',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'configuracion',
    },{
    		id:'9f99c2ec-62c5-5bcb-a5f4-1a6a06350dbc',nombre:'Acciones',orden:'2',id_contenedor:'Accion',alias_id:'b7e0029a-7cb0-529f-bbfa-8b49eb7207d3',menu_id:'5eef535a-49a0-521f-baa2-b2afb0d84413',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:09',date_updated:'2018-10-21 00:25:09',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'seguridad',
-   },{
-   		id:'d5ad60df-b773-56ee-859d-472d2a544926',nombre:'Proveedor',orden:'2',id_contenedor:'Proveedor',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
    },{
    		id:'71d89798-8d2b-57f6-ba9d-1dfdde27088d',nombre:'Oferente',orden:'3',id_contenedor:'Oferente',alias_id:'bd77a0cd-4447-547c-80af-6d0c65884307',menu_id:'d3cf26fd-cd09-52e2-a9e6-97fe82e6792e',descripcion:'',activo:'1',date_created:'2018-10-21 00:25:10',date_updated:'2018-10-21 00:25:10',created_from_ip:'127.0.0.1',updated_from_ip:'127.0.0.1',alias:'crm',
    },]

@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipocalendario",
+        "designer|userClassName": "rh.TipoCalendario"
+    },
+    "name": "nomenclador.TipoEntrada1",
+    "designerId": "5bbd88b1-ffdf-4396-ae51-234d718eb1ee",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "426816e7-ac87-4bcf-a77d-da590f47cd72"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString71",
+            "designerId": "fbd8e372-4a35-4322-be0a-7a8b13563cc2"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString16",
+            "designerId": "fa867571-4101-4470-9ce0-6f5853b92560"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_laborables"
+            },
+            "name": "MyInteger5",
+            "designerId": "52d8dddf-e675-4fc5-ad02-b1e3e3512816"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fondo_tiempo_mes"
+            },
+            "name": "MyNumber1",
+            "designerId": "5e28798c-6655-4c28-9984-e543821bf887"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fondo_tiempo_dia"
+            },
+            "name": "MyNumber2",
+            "designerId": "4303fdfc-557a-4179-b61c-0ae60b7fb1e2"
+        }
+    ]
+}
