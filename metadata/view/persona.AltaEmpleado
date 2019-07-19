@@ -1,0 +1,798 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": false,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "personaaltaempleado",
+        "designer|userClassName": "persona.AltaEmpleado",
+        "height": 528,
+        "layout": "border",
+        "shrinkWrap": 0,
+        "title": null,
+        "width": 860
+    },
+    "name": "persona.Persona1",
+    "designerId": "8ef3ed3c-72f7-425d-aeb6-5058590c6656",
+    "viewControllerInstanceId": "8d72d4ed-40e7-4c98-9161-36f57aee6339",
+    "viewModelInstanceId": "35146a10-60f0-4b0e-88a0-393ceaccdf32",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": false,
+                "itemId": "gridPanel",
+                "layout|flex": null,
+                "layout|region": "center",
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "persona.AltaEmpleado",
+                "title": null
+            },
+            "name": "MyGridPanel19",
+            "designerId": "d05cba5b-ad57-45e9-b2b7-37c022117475",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "x-fa",
+                            "fa-user"
+                        ],
+                        "dataIndex": "foto",
+                        "lockable": true,
+                        "locked": true,
+                        "renderData": null,
+                        "text": "Foto"
+                    },
+                    "name": "MyColumn33",
+                    "designerId": "f73f928a-9c08-44f9-a3e4-ad58ca6a9ffb"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Nombre"
+                    },
+                    "name": "MyColumn34",
+                    "designerId": "e81d325e-2a38-404f-8bf3-48acc779ea50"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "apellidos",
+                        "text": "Apellidos"
+                    },
+                    "name": "MyColumn36",
+                    "designerId": "0cf07bfd-bcf0-462d-987e-3b344a2d79d8"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "entidad",
+                        "text": "Entidad"
+                    },
+                    "name": "MyColumn37",
+                    "designerId": "47679b58-3512-4407-89fa-7d62f0c75917"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "carnet_identidad",
+                        "format": "00",
+                        "text": "Carnet Identidad"
+                    },
+                    "name": "MyNumberColumn1",
+                    "designerId": "5fdd0b92-dd91-49bb-80e6-517e01ae367b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "sexo",
+                        "text": "Sexo"
+                    },
+                    "name": "MyColumn38",
+                    "designerId": "4f73640d-c847-47f8-a26b-62de44d9f562"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "estado_civil",
+                        "text": "Estado Civil"
+                    },
+                    "name": "MyColumn39",
+                    "designerId": "2bac7a3c-1297-41c9-88e5-9e0a60ff1d8e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "color_piel",
+                        "text": "Color Piel"
+                    },
+                    "name": "MyColumn40",
+                    "designerId": "f1a63857-86ee-4b14-829d-7ef6c7774671"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "registro_civil",
+                        "text": "Registro Civil"
+                    },
+                    "name": "MyColumn41",
+                    "designerId": "777dd0ee-cd54-4253-a03a-783418af0475"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "padre",
+                        "text": "Padre"
+                    },
+                    "name": "MyColumn42",
+                    "designerId": "614f8ab3-986e-485d-8c7d-d6e994fda5ee"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "madre",
+                        "text": "Madre"
+                    },
+                    "name": "MyColumn43",
+                    "designerId": "8325e02e-e218-4da9-95f6-b6c6c933095b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "tomo",
+                        "text": "Tomo"
+                    },
+                    "name": "MyColumn44",
+                    "designerId": "1a7e8ad3-88a5-4693-beb2-62e119ffc310"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "folio",
+                        "text": "Folio"
+                    },
+                    "name": "MyColumn45",
+                    "designerId": "868d149d-6e2b-41d5-9418-9752e584dbcb"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ano",
+                        "text": "Año"
+                    },
+                    "name": "MyColumn46",
+                    "designerId": "3a01af47-19ac-46c1-b59f-4d12358def9f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "direccion",
+                        "text": "Dirección"
+                    },
+                    "name": "MyColumn47",
+                    "designerId": "35c4b545-2bb7-4527-8c69-44ab7c91d6ae"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "correo",
+                        "text": "Correo"
+                    },
+                    "name": "MyColumn48",
+                    "designerId": "c3a75788-907d-4f9a-b3ce-054bc7e8bd28"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "edad",
+                        "format": "00",
+                        "text": "Telefono"
+                    },
+                    "name": "MyNumberColumn2",
+                    "designerId": "2341c8f8-07c7-4a93-8e27-35b3c3d4d6e0"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "estatura",
+                        "text": "Estatura"
+                    },
+                    "name": "MyNumberColumn3",
+                    "designerId": "38d5ce2b-fca9-49dc-b4fa-bd20cc605564"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "peso",
+                        "text": "Peso"
+                    },
+                    "name": "MyNumberColumn4",
+                    "designerId": "2dee8bcb-d17f-43bf-95be-c9a7ea905556"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "municipio",
+                        "text": "Municipio"
+                    },
+                    "name": "MyColumn49",
+                    "designerId": "0e6e234e-76a2-4e48-a040-9b5ce78f259c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "provincia",
+                        "text": "Provincia"
+                    },
+                    "name": "MyColumn50",
+                    "designerId": "59c19560-7a78-41a1-956d-fc8da29e7bf6"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nivel_educacional",
+                        "text": "Nivel Educacional"
+                    },
+                    "name": "MyColumn51",
+                    "designerId": "f8be36ff-10e7-4634-be80-3aca86103916"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "situacion_defensa",
+                        "text": "Situacion Defensa"
+                    },
+                    "name": "MyColumn53",
+                    "designerId": "df4115a1-b266-4b75-a797-5b2ebe157c6b"
+                },
+                {
+                    "type": "Ext.grid.column.Check",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "donante",
+                        "lockable": false,
+                        "text": "Donante"
+                    },
+                    "name": "MyCheck",
+                    "designerId": "2996e78f-0e3d-4bcb-a6ce-bba35d3faa78",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCheckcolumnBeforeCheckChange",
+                                "implHandler": [
+                                    "return false;"
+                                ],
+                                "name": "beforecheckchange",
+                                "scope": "me"
+                            },
+                            "name": "onCheckcolumnBeforeCheckChange",
+                            "designerId": "d82d2f1b-be82-4595-b5bb-39b303c300fb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Check",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "trabaja",
+                        "text": "Trabaja"
+                    },
+                    "name": "MyCheck1",
+                    "designerId": "61b513b9-88fb-4ab9-8162-e350bc3a2213",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCheckcolumnBeforeCheckChange1",
+                                "implHandler": [
+                                    "return false;"
+                                ],
+                                "name": "beforecheckchange",
+                                "scope": "me"
+                            },
+                            "name": "onCheckcolumnBeforeCheckChange1",
+                            "designerId": "bc271247-9910-4541-a321-6eb4f94da2e0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "fecha_nacimiento",
+                        "format": "Y-m-d",
+                        "text": "Fecha Nacimiento"
+                    },
+                    "name": "MyDateColumn1",
+                    "designerId": "08a3e071-9282-4aae-b6e3-5944efe7d620"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "cantidad_hijos",
+                        "format": "00",
+                        "text": "Cantidad Hijos"
+                    },
+                    "name": "MyNumberColumn5",
+                    "designerId": "8af09061-8dc7-4ee1-a61f-c468ed224c92"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "grupo_sanguineo",
+                        "text": "Grupo Sanguineo"
+                    },
+                    "name": "MyColumn55",
+                    "designerId": "f3fa6b73-d68f-4b3c-ae0e-60e727e3a031"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "componentCls": "button-view",
+                        "designer|displayName": "toolbar",
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar5",
+                    "designerId": "c6740493-84db-4d7e-a00b-086d187a93ad",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "glyph": "xf067@FontAwesome",
+                                "iconCls": "null",
+                                "itemId": "btnAdd",
+                                "layout|flex": null,
+                                "text": "Adicionar"
+                            },
+                            "name": "MyButton31",
+                            "designerId": "9e971f2f-d84b-47b6-b426-2f8b11e2873c",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "addWindows",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "addWindows",
+                                    "designerId": "15d90466-b94a-4ed9-ac87-041f08211290"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "glyph": null,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnEdit",
+                                "layout|flex": null,
+                                "text": "Editar"
+                            },
+                            "name": "MyButton32",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "2ef7f2c5-2c04-48aa-bbd2-ca21a4eae3be",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "editWindows",
+                                        "implHandler": [
+                                            "var formPanel = this.getReferences().form,",
+                                            "    form = formPanel.getForm(),",
+                                            "    record = this.getViewModel().get('record');",
+                                            "",
+                                            "// Load record model into form",
+                                            "form.loadRecord(record);",
+                                            "",
+                                            "// Set title",
+                                            "formPanel.setTitle('Editar Persona');",
+                                            "",
+                                            "// Show form",
+                                            "this.showView('form');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "editWindows",
+                                    "designerId": "6d884fce-a8a9-4b8b-8653-7a54bb7fbd54"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "glyph": null,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "itemId": "btnRemove",
+                                "layout|flex": null,
+                                "text": "Eliminar"
+                            },
+                            "name": "MyButton33",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "e7d312a2-b227-40dd-bcb1-803fd759e485",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "remove",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            "",
+                                            "// Ask user to confirm this action",
+                                            "Ext.Msg.confirm('Confirm Delete', 'Desea eliminar la persona?', function(result) {",
+                                            "",
+                                            "    // User confirmed yes",
+                                            "    if (result == 'yes') {",
+                                            "",
+                                            "        var record = me.getViewModel().get('record'),",
+                                            "            store = Ext.StoreManager.lookup('Personas');",
+                                            "",
+                                            "        // Delete record from store",
+                                            "        store.remove(record);",
+                                            "",
+                                            "        // Hide display",
+                                            "        me.showView('selectMessage');",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "remove",
+                                    "designerId": "c885d094-d722-4b4f-a062-f525bd7407fd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "glyph": null,
+                                "hidden": [
+                                    "{!record}"
+                                ],
+                                "iconCls": null,
+                                "itemId": "btnRefresh",
+                                "layout|flex": null,
+                                "text": "Actualizar",
+                                "tooltip": [
+                                    "'<span style=\"  font-weight:bold\"> Actualizar(Ctrl+A) </span>Actualiza elemento(s).'"
+                                ],
+                                "tooltipType": "title",
+                                "width": null
+                            },
+                            "name": "MyButton124",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "90185665-849b-487f-ac67-46c5ab485cc6",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "refresh",
+                                        "implHandler": [
+                                            " "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "refresh",
+                                    "designerId": "2e00e38e-68ca-474a-8d84-60a595d2febd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onToolbarAfterRender",
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onToolbarAfterRender",
+                            "designerId": "dc23567a-7288-4d5a-b028-1570625857c2"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processList",
+                        "implHandler": [
+                            "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController');",
+                            "control.win='';",
+                            "var me = this;",
+                            "var aux = me.config.viewModel.type;",
+                            "control.getWinPanel(aux);",
+                            "var win = control.win;",
+                            "var vista = Ext.create('widget.'+win);",
+                            "form = vista.down('form').getForm();",
+                            "var results=[];",
+                            "columns = control.searchLabel(form.owner.items.items,results,true);",
+                            "control.formatForm(form.owner.items);",
+                            " control.configGridPanel(config,columns);",
+                            "return config;"
+                        ]
+                    },
+                    "name": "processList",
+                    "designerId": "147ae52d-7fb2-4904-a598-8fedfed774fc"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuFilterText": "Buscar"
+                    },
+                    "name": "MyGridFiltersPlugin1",
+                    "designerId": "b26ecf9b-3c0c-47f7-93ca-76339ce4759c"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel1",
+                    "designerId": "2f2ea095-6141-4b61-aa64-8e4bb152f26c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "store": "persona.AltaEmpleado"
+            },
+            "name": "MyPagingToolbar21",
+            "designerId": "424d5b22-f37c-4d71-b6e0-58e076e6fd15"
+        }
+    ]
+}

@@ -54,7 +54,7 @@ Ext.define('cerodatax.view.nomenclador.AgrupacionCentroCosto', {
             resizable: false,
             title: '',
             forceFit: true,
-            store: 'nomenclador.SubcategoriaProducto',
+            store: 'nomenclador.AgrupacionCentroCosto',
             columns: [
                 {
                     xtype: 'gridcolumn',
@@ -128,7 +128,7 @@ Ext.define('cerodatax.view.nomenclador.AgrupacionCentroCosto', {
                     dock: 'bottom',
                     width: 360,
                     displayInfo: true,
-                    store: 'nomenclador.SubcategoriaProducto'
+                    store: 'nomenclador.AgrupacionCentroCosto'
                 }
             ],
             selModel: {

@@ -459,7 +459,7 @@
                                                 "fieldLabel": "CI",
                                                 "maskRe": "/\\d/",
                                                 "maxLength": 11,
-                                                "minLength": 11,
+                                                "minLength": 4,
                                                 "name": "carnet_identidad",
                                                 "value": null
                                             },

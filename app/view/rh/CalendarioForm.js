@@ -100,6 +100,7 @@ Ext.define('cerodatax.view.rh.CalendarioForm', {
                                         ],
                                         fieldLabel: 'Tipo de Calendario',
                                         name: 'tipocalendario_id',
+                                        readOnly: true,
                                         allowBlank: false,
                                         emptyText: 'Seleccione',
                                         displayField: 'nombre',
@@ -109,7 +110,6 @@ Ext.define('cerodatax.view.rh.CalendarioForm', {
                                     },
                                     {
                                         xtype: 'textareafield',
-                                        height: '',
                                         fieldLabel: 'Descripción',
                                         name: 'descripcion'
                                     }
@@ -137,42 +137,49 @@ Ext.define('cerodatax.view.rh.CalendarioForm', {
                                                 title: 'Información',
                                                 items: [
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: 'Días Feriados',
-                                                        name: 'dias_feriados',
+                                                        name: 'dias_feriados_enero',
                                                         allowBlank: false,
-                                                        maxLength: 100
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: '1ra Quincena',
-                                                        name: 'primera_quincena',
+                                                        name: 'primera_quincena_enero',
                                                         allowBlank: false,
-                                                        maxLength: 5
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: '2da Quincena',
-                                                        name: 'segunda_quincena',
+                                                        name: 'segunda_quincena_enero',
                                                         allowBlank: false,
-                                                        maxLength: 5
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         fieldLabel: 'Domingos del mes',
-                                                        name: 'domingos',
+                                                        name: 'domingos_enero',
                                                         inputType: 'tel',
-                                                        maskRe: /\d/,
-                                                        maxLength: 30
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
                                                     }
                                                 ]
                                             },
@@ -184,15 +191,15 @@ Ext.define('cerodatax.view.rh.CalendarioForm', {
                                                 items: [
                                                     {
                                                         xtype: 'textfield',
+                                                        formBind: false,
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: 'Mes',
                                                         labelWidth: 120,
                                                         name: 'mes_enero',
-                                                        value: 1,
-                                                        readOnly: true,
-                                                        allowBlank: false
+                                                        value: '1',
+                                                        readOnly: true
                                                     },
                                                     {
                                                         xtype: 'datefield',
@@ -225,42 +232,49 @@ Ext.define('cerodatax.view.rh.CalendarioForm', {
                                                 title: 'Información',
                                                 items: [
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: 'Días Feriados',
-                                                        name: 'dias_feriados',
+                                                        name: 'dias_feriados_febrero',
                                                         allowBlank: false,
-                                                        maxLength: 100
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: '1ra Quincena',
-                                                        name: 'primera_quincena',
+                                                        name: 'primera_quincena_febrero',
                                                         allowBlank: false,
-                                                        maxLength: 5
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: '2da Quincena',
-                                                        name: 'segunda_quincena',
+                                                        name: 'segunda_quincena_febrero',
                                                         allowBlank: false,
-                                                        maxLength: 5
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
                                                     },
                                                     {
-                                                        xtype: 'textfield',
+                                                        xtype: 'numberfield',
                                                         fieldLabel: 'Domingos del mes',
-                                                        name: 'domingos',
+                                                        name: 'domingos_febrero',
                                                         inputType: 'tel',
-                                                        maskRe: /\d/,
-                                                        maxLength: 30
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
                                                     }
                                                 ]
                                             },
@@ -271,17 +285,966 @@ Ext.define('cerodatax.view.rh.CalendarioForm', {
                                                 title: 'Generales',
                                                 items: [
                                                     {
-                                                        xtype: 'numberfield',
+                                                        xtype: 'textfield',
+                                                        formBind: false,
                                                         afterLabelTextTpl: [
                                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                         ],
                                                         fieldLabel: 'Mes',
                                                         labelWidth: 120,
                                                         name: 'mes_febrero',
-                                                        readOnly: true,
+                                                        value: '2',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Marzo',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_marzo',
                                                         allowBlank: false,
-                                                        maxValue: 12,
-                                                        minValue: 1
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_marzo',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_marzo',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_marzo',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_marzo',
+                                                        value: '3',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Abril',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_abril',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_abril',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_abril',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_abril',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_abril',
+                                                        value: '4',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Mayo',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_mayo',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_mayo',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_mayo',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_mayo',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_mayo',
+                                                        value: '5',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Junio',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_junio',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_junio',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_junio',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_junio',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_junio',
+                                                        value: '6',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Julio',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_julio',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_julio',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_julio',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_julio',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_julio',
+                                                        value: '7',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Agosto',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_agosto',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_agosto',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_agosto',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_agosto',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_enero',
+                                                        value: '8',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Septiembre',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_septiembre',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_septiembre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_septiembre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_septiembre',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_septiembre',
+                                                        value: '9',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Octubre',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_octubre',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_octubre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_octubre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_octubre',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_octubre',
+                                                        value: '10',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Noviembre',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_noviembre',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_noviembre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_noviembre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_noviembre',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_noviembre',
+                                                        value: '11',
+                                                        readOnly: true
+                                                    },
+                                                    {
+                                                        xtype: 'datefield',
+                                                        shim: true,
+                                                        itemId: 'temporal',
+                                                        fieldLabel: 'Verificar Domingos',
+                                                        labelWidth: 120,
+                                                        editable: false,
+                                                        altFormats: 'Y-m',
+                                                        format: 'Y-m',
+                                                        submitFormat: 'Y-m'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        height: 439,
+                                        width: 548,
+                                        layout: 'table',
+                                        title: 'Diciembre',
+                                        items: [
+                                            {
+                                                xtype: 'fieldset',
+                                                alignTarget: 'top',
+                                                margin: '10 0 0 0',
+                                                width: 300,
+                                                layout: 'column',
+                                                title: 'Información',
+                                                items: [
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Días Feriados',
+                                                        name: 'dias_feriados_diciembre',
+                                                        allowBlank: false,
+                                                        maxLength: 100,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '1ra Quincena',
+                                                        name: 'primera_quincena_diciembre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: '2da Quincena',
+                                                        name: 'segunda_quincena_diciembre',
+                                                        allowBlank: false,
+                                                        maxLength: 5,
+                                                        maxValue: 5,
+                                                        minValue: 0
+                                                    },
+                                                    {
+                                                        xtype: 'numberfield',
+                                                        fieldLabel: 'Domingos del mes',
+                                                        name: 'domingos_diciembre',
+                                                        inputType: 'tel',
+                                                        maxLength: 30,
+                                                        maxValue: 5,
+                                                        minValue: 3
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                margin: '10 0 0 10',
+                                                width: 321,
+                                                title: 'Generales',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        formBind: false,
+                                                        afterLabelTextTpl: [
+                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                        ],
+                                                        fieldLabel: 'Mes',
+                                                        labelWidth: 120,
+                                                        name: 'mes_diciembre',
+                                                        value: '12',
+                                                        readOnly: true
                                                     },
                                                     {
                                                         xtype: 'datefield',

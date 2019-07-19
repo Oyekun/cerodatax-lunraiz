@@ -1,0 +1,529 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "claveausenciaForm",
+        "designer|userClassName": "rh.ClaveAusenciaForm",
+        "height": 520,
+        "modal": true,
+        "resizable": [
+            "false"
+        ],
+        "title": "Clave Ausencia",
+        "width": 435
+    },
+    "name": "nomenclador.AlmacenForm1",
+    "designerId": "46bbe38d-444e-4d39-8a2f-621ae825030d",
+    "viewControllerInstanceId": "6bcaa5d6-40fd-45e6-a34e-33cdae9ccbea",
+    "viewModelInstanceId": "df53c57a-0154-4449-98d4-3ead3df3c304",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "fieldDefaults": [
+                    "{maxLength: 100,",
+                    "        enforceMaxLength: true}"
+                ],
+                "height": 491,
+                "reference": "form",
+                "title": null,
+                "width": 420
+            },
+            "name": "MyForm7",
+            "designerId": "f2ac525f-3d16-44d5-af3b-8705554f86ed",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "alignTarget": "top",
+                        "defaults": null,
+                        "dock": null,
+                        "height": 215,
+                        "margin": null,
+                        "padding": null,
+                        "title": "Información",
+                        "twoWayBindable": null,
+                        "width": 402
+                    },
+                    "name": "MyFieldSet3",
+                    "designerId": "cb70ab05-1aed-41c2-8a74-c945d9ba226e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Código",
+                                "maxLength": 100,
+                                "name": "codigo",
+                                "value": null
+                            },
+                            "name": "MyTextField31",
+                            "designerId": "54af2b8b-73b2-4d63-a6f2-c0f46fdf4ed2",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "adfb56fa-5ee1-40bf-af3d-93dc745ceb23"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "maxLength": 100,
+                                "name": "nombre",
+                                "value": null
+                            },
+                            "name": "MyTextField30",
+                            "designerId": "ecabf2c0-6493-4774-96f6-1a9e0322f238",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "cedb86f3-51f3-4005-9518-f7791ea2a05b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": null,
+                                "displayField": "nombre",
+                                "emptyText": "Seleccione",
+                                "fieldLabel": "Tipo Causa de Ausencia",
+                                "name": "tipocausaausencia_id",
+                                "queryMode": "local",
+                                "store": "nomenclador.TipoCausaAusencia",
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox18",
+                            "designerId": "2eaa52e5-c768-4255-8362-286bbf939380",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "b88779f2-2624-4daa-a36d-1c3c5fe9e101"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Deducible",
+                                "name": "deducible"
+                            },
+                            "name": "MyCheckbox4",
+                            "designerId": "1caeec56-019c-4e8c-b66b-ef3ee5b0b3bf"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": null,
+                                "designer|displayName": null,
+                                "displayField": "nombre",
+                                "emptyText": "Seleccione",
+                                "fieldLabel": "A Pagar Por",
+                                "name": "apagarpor_id",
+                                "queryMode": "local",
+                                "store": "nomenclador.APagarPor",
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox4",
+                            "designerId": "d1f95a4e-b48e-4ae6-870c-f4bcb20f55f7"
+                        },
+                        {
+                            "type": "Ext.form.field.Spinner",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": null,
+                                "fieldLabel": "Porciento",
+                                "minWidth": 0,
+                                "name": "porciento",
+                                "value": null,
+                                "width": 180
+                            },
+                            "name": "MySpinnerField1",
+                            "designerId": "bf4ec85c-66b8-4800-bf86-367ad863a057"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 167,
+                        "layout": "column",
+                        "margin": null,
+                        "title": "Generales",
+                        "width": 401
+                    },
+                    "name": "MyFieldSet4",
+                    "designerId": "3e68704a-5ae4-43e4-b540-752760886363",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "No Acumala Vacaciones de Días e Importe",
+                                "name": "no_acumala_vacaciones_dias_importe",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox5",
+                            "designerId": "534f41de-7793-4fae-b283-d4130b02b8fe"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Afecta Subsidio",
+                                "margin": "0 0 0 10",
+                                "name": "afecta_subsidio",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox6",
+                            "designerId": "83f5b730-c83d-489c-8952-2bc301fc4ec5"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Afecta Tarjeta Día y Tarjeta Importe",
+                                "margin": "0 0 0 10",
+                                "name": "afecta_tarjeta_dias_importe",
+                                "width": 100
+                            },
+                            "name": "MyCheckbox8",
+                            "designerId": "4495d665-e58b-43fe-9e24-83307fe92288"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Afecta Evaluación",
+                                "name": "afecta_evaluacion",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox9",
+                            "designerId": "379354cf-27bf-453a-bea2-90ccb8e6b15e"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Afecta Estímulo",
+                                "margin": "0 0 0 10",
+                                "name": "afecta_estimulo",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox10",
+                            "designerId": "de5ae767-fcef-4684-941b-1324e132988a"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Afecta Reporte de Ausencias",
+                                "margin": "0 0 0 10",
+                                "name": "afecta_reporte_ausencia",
+                                "width": 100
+                            },
+                            "name": "MyCheckbox11",
+                            "designerId": "6e5cb03e-2193-40b5-8c26-a66a932a0651"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Afecta Prom. Total de Trab.",
+                                "name": "afecta_promedio_total_trab",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox12",
+                            "designerId": "42d85755-d4e7-42e7-a3bf-3550465c800f"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Clasificación Fdo. De Tiempo",
+                                "margin": "0 0 0 10",
+                                "name": "fondo_tiempo",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox13",
+                            "designerId": "b4d024d8-94a2-47cc-95a7-1df4eef58e88"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processForm",
+                        "implHandler": [
+                            "return config;"
+                        ]
+                    },
+                    "name": "processForm",
+                    "designerId": "cb503c82-09ba-4bd5-be25-b79f8d7eed31"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "buttons",
+                        "dock": "bottom",
+                        "height": 84,
+                        "layout": "form",
+                        "padding": 10
+                    },
+                    "name": "MyContainer11",
+                    "designerId": "3eea4d2f-5642-488d-9843-f7c2a9dda700",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "saveButton",
+                                "margin": 5,
+                                "text": "Guardar"
+                            },
+                            "name": "MyButton29",
+                            "designerId": "1602c565-a33b-4d77-acbb-b7a7a4872ea0",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "saveTreeWindows",
+                                        "implHandler": [
+                                            "var form = this.getReferences().form.getForm(),",
+                                            "    record = form.getRecord(),",
+                                            "    store = Ext.StoreManager.lookup('Personas');",
+                                            "",
+                                            " // Valid",
+                                            "if (form.isValid()) {",
+                                            "",
+                                            "    // Update associated record with values",
+                                            "    form.updateRecord();",
+                                            "",
+                                            "    // Add to store if new record",
+                                            "    if (record.phantom) {",
+                                            "",
+                                            "        // TODO: Assign the record's ID from data source",
+                                            "        // Normally, this value would be auto-generated,",
+                                            "        // or returned from the server",
+                                            "        var id = store.count() + 1;",
+                                            "        record.set('id', id);",
+                                            "",
+                                            "        // Add to store",
+                                            "        store.add(record);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "    // Commit changes",
+                                            "    store.commitChanges();",
+                                            "",
+                                            "    // Display record",
+                                            "    this.select(this, record);",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "saveTreeWindows",
+                                    "designerId": "1b4d83d3-44ab-4243-b6da-825f778bbefd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cancelButton",
+                                "margin": 5,
+                                "text": "Cancelar"
+                            },
+                            "name": "MyButton30",
+                            "designerId": "fc8ca57f-c700-494a-9983-bbb43003059e",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "cancelEdit",
+                                        "implHandler": [
+                                            "// Show details",
+                                            "this.showView('details');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "cancelEdit",
+                                    "designerId": "55009c1c-142b-4bbe-997f-c4b0b61b985a"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

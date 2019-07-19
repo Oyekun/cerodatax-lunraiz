@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipodeduccion",
+        "designer|userClassName": "nomenclador.rh.TipoDeduccion"
+    },
+    "name": "rh.ClaveAusencia1",
+    "designerId": "f1ecf73f-8b52-4be1-b122-fb347ae6ab1d",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "5857d63c-6962-4c06-a782-9a2a2310c105"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "bb02932d-b1ec-4375-ba5d-6713e294ddda"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "f39b2b65-cbbe-4574-b41c-16945fbcae7d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cuentacontable"
+            },
+            "name": "MyString117",
+            "designerId": "6e55ea97-2493-48b3-b03d-b43b9bf03240"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cuentacontable_id"
+            },
+            "name": "MyString38",
+            "designerId": "16ff76a6-2766-4d5f-8fd5-6f52cbfe2038"
+        }
+    ]
+}

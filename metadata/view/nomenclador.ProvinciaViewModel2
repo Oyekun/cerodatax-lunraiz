@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontabilidadclasificaciontipocuenta",
+        "designer|userClassName": "nomenclador.ProvinciaViewModel2"
+    },
+    "name": "nomenclador.ProvinciaViewModel2",
+    "designerId": "19285b0c-0a1a-4658-947e-04583fbe2c68"
+}

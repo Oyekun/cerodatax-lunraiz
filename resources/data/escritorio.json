@@ -1,5 +1,13 @@
 [
     	{
+    		name: 'Contacto',
+    		thumb: 'address-book-o', 
+    		url: 'Contacto',
+    		systema:'true',
+    		color:'lightgreen',
+    		type: 'svg'
+    	},
+    	{
     		name: 'Seguridad',
     		thumb: 'shield', 
     		url: 'Seguridad',
@@ -13,22 +21,6 @@
     		url: 'Modulo',
     		systema:'true',
     		color:'cornflowerblue',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Contacto',
-    		thumb: 'address-book-o', 
-    		url: 'Contacto',
-    		systema:'true',
-    		color:'lightgreen',
-    		type: 'svg'
-    	},
-    	{
-    		name: 'Estructura',
-    		thumb: 'building', 
-    		url: 'Estructura',
-    		systema:'true',
-    		color:'darkseagreen',
     		type: 'svg'
     	},
     	{
@@ -48,11 +40,11 @@
     		type: 'svg'
     	},
     	{
-    		name: 'Persona',
-    		thumb: 'group', 
-    		url: 'RRHH',
+    		name: 'Estructura',
+    		thumb: 'building', 
+    		url: 'Estructura',
     		systema:'true',
-    		color:'lightsalmon',
+    		color:'darkseagreen',
     		type: 'svg'
     	},
     	{
@@ -61,6 +53,14 @@
     		url: 'Compra',
     		systema:'true',
     		color:'crimson',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Persona',
+    		thumb: 'group', 
+    		url: 'RRHH',
+    		systema:'true',
+    		color:'lightsalmon',
     		type: 'svg'
     	},
     	{

@@ -19,7 +19,7 @@ Ext.define('cerodatax.model.rh.Calendario', {
 
     requires: [
         'Ext.data.field.String',
-        'Ext.data.field.Date',
+        'Ext.data.field.Integer',
         'Ext.data.proxy.Rest',
         'Ext.data.writer.Json',
         'Ext.data.reader.Json'
@@ -39,8 +39,8 @@ Ext.define('cerodatax.model.rh.Calendario', {
             name: 'descripcion'
         },
         {
-            type: 'date',
-            name: 'mes'
+            type: 'int',
+            name: 'ano'
         },
         {
             type: 'string',
@@ -51,29 +51,244 @@ Ext.define('cerodatax.model.rh.Calendario', {
             name: 'tipocalendario_id'
         },
         {
-            type: 'date',
-            name: 'ano'
+            type: 'int',
+            name: 'mes_enero'
         },
         {
-            type: 'string',
-            name: 'dias_feriados'
+            type: 'int',
+            name: 'mes_febrero'
         },
         {
-            type: 'string',
-            name: 'primera_quincena'
+            type: 'int',
+            name: 'mes_marzo'
         },
         {
-            type: 'string',
-            name: 'segunda_quincena'
+            type: 'int',
+            name: 'mes_abril'
         },
         {
-            type: 'string',
-            name: 'domingos'
+            type: 'int',
+            name: 'mes_mayo'
         },
         {
-            type: 'date',
-            name: 'fecha_alta',
-            dateFormat: 'Y-m-d'
+            type: 'int',
+            name: 'mes_junio'
+        },
+        {
+            type: 'int',
+            name: 'mes_julio'
+        },
+        {
+            type: 'int',
+            name: 'mes_agosto'
+        },
+        {
+            type: 'int',
+            name: 'mes_septiembre'
+        },
+        {
+            type: 'int',
+            name: 'mes_octubre'
+        },
+        {
+            type: 'int',
+            name: 'mes_noviembre'
+        },
+        {
+            type: 'int',
+            name: 'mes_diciembre'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_enero'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_febrero'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_marzo'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_abril'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_mayo'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_junio'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_julio'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_agosto'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_septiembre'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_octubre'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_noviembre'
+        },
+        {
+            type: 'int',
+            name: 'dias_feriados_diciembre'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_enero'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_febrero'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_marzo'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_abril'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_mayo'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_junio'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_julio'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_agosto'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_septiembre'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_octubre'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_noviembre'
+        },
+        {
+            type: 'int',
+            name: 'primera_quincena_diciembre'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_enero'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_febrero'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_marzo'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_abril'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_mayo'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_junio'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_julio'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_agosto'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_septiembre'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_octubre'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_noviembre'
+        },
+        {
+            type: 'int',
+            name: 'segunda_quincena_diciembre'
+        },
+        {
+            type: 'int',
+            name: 'domingos_enero'
+        },
+        {
+            type: 'int',
+            name: 'domingos_febrero'
+        },
+        {
+            type: 'int',
+            name: 'domingos_marzo'
+        },
+        {
+            type: 'int',
+            name: 'domingos_abril'
+        },
+        {
+            type: 'int',
+            name: 'domingos_mayo'
+        },
+        {
+            type: 'int',
+            name: 'domingos_junio'
+        },
+        {
+            type: 'int',
+            name: 'domingos_julio'
+        },
+        {
+            type: 'int',
+            name: 'domingos_agosto'
+        },
+        {
+            type: 'int',
+            name: 'domingos_septiembre'
+        },
+        {
+            type: 'int',
+            name: 'domingos_octubre'
+        },
+        {
+            type: 'int',
+            name: 'domingos_noviembre'
+        },
+        {
+            type: 'int',
+            name: 'domingos_diciembre'
         }
     ],
 

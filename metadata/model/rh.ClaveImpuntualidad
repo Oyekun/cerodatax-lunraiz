@@ -1,0 +1,68 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "claveimpuntualidad",
+        "designer|userClassName": "rh.ClaveImpuntualidad"
+    },
+    "name": "rh.TipoCalendario1",
+    "designerId": "56245cd4-ae72-40a7-bebc-f69252536bf1",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "c4d3b8e6-fcb2-4754-ac8f-99c551a93352"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString71",
+            "designerId": "648c18c4-6ecd-4ac7-8708-2a107751bb96"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString16",
+            "designerId": "8445f38e-a077-43f6-b123-0acc831df8b3"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "justificada"
+            },
+            "name": "MyBoolean22",
+            "designerId": "a3f06b81-85b6-4b79-a77b-7c9339de952e"
+        }
+    ]
+}

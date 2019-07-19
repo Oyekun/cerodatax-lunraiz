@@ -1,0 +1,68 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "clasificaciontipocuenta",
+        "designer|userClassName": "nomenclador.contabilidad.ClasificacionTipoCuenta"
+    },
+    "name": "nomenclador.contabilidad.TipoCuenta1",
+    "designerId": "e0ef4f65-a932-4118-8bc5-335e794ae162",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString34",
+            "designerId": "d2db886f-f78a-4771-bb81-48d35c5fc943"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString10",
+            "designerId": "759c0f99-0712-41fd-aea8-a5b640176830"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocuenta_id"
+            },
+            "name": "MyString15",
+            "designerId": "0333d9ae-7f48-4f0c-94d0-c0c9f926d965"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocuenta"
+            },
+            "name": "MyString14",
+            "designerId": "966cba25-457a-4d7c-8dd7-cd639d4e9e18"
+        }
+    ]
+}

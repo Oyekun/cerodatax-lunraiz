@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rhclavesubsidio",
+        "designer|userClassName": "nomenclador.PaisViewModel3"
+    },
+    "name": "nomenclador.PaisViewModel3",
+    "designerId": "701563dd-f730-4d52-98b7-12ac8431a69a"
+}

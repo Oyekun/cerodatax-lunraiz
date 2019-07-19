@@ -186,7 +186,7 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                                         name: 'carnet_identidad',
                                                         maskRe: /\d/,
                                                         maxLength: 11,
-                                                        minLength: 11
+                                                        minLength: 4
                                                     },
                                                     {
                                                         xtype: 'slider',

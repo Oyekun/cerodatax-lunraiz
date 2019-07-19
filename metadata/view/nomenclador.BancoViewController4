@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontabilidadcuentacontable",
+        "designer|userClassName": "nomenclador.BancoViewController4"
+    },
+    "name": "nomenclador.BancoViewController4",
+    "designerId": "6de769f6-13ec-4212-892c-23837e7ef06c"
+}

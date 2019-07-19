@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorapagarpor",
+        "designer|userClassName": "nomenclador.ClasificacionViewModel15"
+    },
+    "name": "nomenclador.ClasificacionViewModel15",
+    "designerId": "9def08e4-00f4-44e1-b162-3185cb134dcd"
+}

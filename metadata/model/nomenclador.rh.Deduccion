@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "deduccion",
+        "designer|userClassName": "nomenclador.rh.Deduccion"
+    },
+    "name": "nomenclador.rh.TipoDeduccion2",
+    "designerId": "d690d16b-2cbe-4cc1-b6cc-b6dfe3b2d1b2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "55a51c62-3bb8-488f-a6ae-1618711e2d38"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "157bdf71-3255-4fa7-a7b6-ecc5412501a6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "4b4a2bbd-b9ed-4663-aae1-ca7425026f47"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipodeduccion"
+            },
+            "name": "MyString117",
+            "designerId": "05dc9ac5-b1e3-4964-beea-411bdaeda2df"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipodeduccion_id"
+            },
+            "name": "MyString38",
+            "designerId": "c64f6d4a-a38c-413f-8ed0-9b4620d3b50b"
+        }
+    ]
+}

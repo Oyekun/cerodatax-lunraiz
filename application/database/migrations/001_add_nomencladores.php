@@ -1160,7 +1160,13 @@ $this->dbforge->add_field(array(
                                 'constraint' => 100,
                                 'unsigned' => TRUE
                         ),
-                        'nombre' => array(
+                        'codigo' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE
+                        ),
+                         'nombre' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '100',
                                 'unique' => TRUE,

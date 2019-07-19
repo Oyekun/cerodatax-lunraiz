@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontabilidadcuentacontableform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewModel3"
+    },
+    "name": "nomenclador.AlmacenFormViewModel3",
+    "designerId": "508f4f93-3ba2-4b5c-b033-3cfae751c66e"
+}

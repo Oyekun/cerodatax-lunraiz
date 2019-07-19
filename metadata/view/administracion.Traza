@@ -374,9 +374,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Parámetros",
+                                "height": null,
                                 "name": "params"
                             },
-                            "name": "MyTextField11",
+                            "name": "MyTextField26",
                             "designerId": "ec4e8467-caf4-405c-b6c3-f315f6540bb3"
                         },
                         {

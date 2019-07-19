@@ -40,7 +40,7 @@
                 "resizable": [
                     "false"
                 ],
-                "store": "nomenclador.SubcategoriaProducto",
+                "store": "nomenclador.AgrupacionCentroCosto",
                 "title": ""
             },
             "name": "MyGridPanel11",
@@ -342,7 +342,7 @@
                     "userConfig": {
                         "displayInfo": true,
                         "dock": "bottom",
-                        "store": "nomenclador.SubcategoriaProducto",
+                        "store": "nomenclador.AgrupacionCentroCosto",
                         "width": 360
                     },
                     "name": "MyPagingToolbar6",

@@ -34,12 +34,15 @@ class Api_model extends CI_Model
      */
     public function get_all($request)
     {
-        $esquema = $request['esquema'];
+         $esquema = $request['esquema'];
+         $esquema = str_replace('.',DS,$esquema);
+         $request['esquema'] = str_replace('.','_',$request['esquema']);
+
          $existFolder = APPPATH . "models/$esquema";
     if(!is_dir($existFolder))
         mkdir($existFolder);
 
-$subdireccion =  $request['esquema'] . '/' . $request['model'];
+$subdireccion =  $esquema . '/' . $request['model'];
 $existFile = APPPATH . "models/$subdireccion.php";
 //print_r($existFile);die;
 $existefile=FALSE;
@@ -130,7 +133,7 @@ if (file_exists($existFile))
                             }
                         }
                     }
-                    $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
+                    $this->load->model($esquema.'/'.$request['model'], '', TRUE);
                     
                     $nameuuid = new $request['model'];
 
@@ -243,7 +246,7 @@ if (file_exists($existFile))
                 $this->load->model($request['esquema_asociado'].'/'. $request['model'], '', TRUE);//.$request['asociados'] verificar si es asociados o model
                 
                 }
-                $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
+                $this->load->model($esquema.'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
 
                 if (isset($nameuuid->relacion)) {
@@ -302,12 +305,15 @@ if (file_exists($existFile))
             } else {
 
 
-                if ($parent_id != '') {
+                if ($parent_id == '') {
 
                     //  $this->db->order_by("parent", "desc");
-                    $this->db->where('parent_id', $parent_id);
+                   // $this->db->where('parent_id', '');
 
                 }
+                else
+                    $this->db->where('parent_id', $parent_id);
+
                 $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
                 if (isset($nameuuid->relacion)) {
@@ -575,8 +581,10 @@ if (file_exists($existFile))
     public function posts($request)
     {
 
-
-        $rsl = $this->row_existe($request);
+         //$esquema = $request['esquema'];
+         //$esquema = str_replace('.',DS,$esquema);
+         $request['esquema'] = str_replace('.','_',$request['esquema']);
+        //$rsl = $this->row_existe($request);
 
         if (!$this->row_existe($request)) {
             $tb = $request['esquema'] . '_' . $request['model'];
@@ -736,7 +744,9 @@ if (file_exists($existFile))
     public function row_delete($request, $id)
     {
 
-
+         //$esquema = $request['esquema'];
+         //$esquema = str_replace('.',DS,$esquema);
+         $request['esquema'] = str_replace('.','_',$request['esquema']);
         $tb = $request['esquema'] . '_' . $request['model'];
         $this->db->where('id', $id);
         $this->db->delete("$tb");
@@ -752,7 +762,9 @@ if (file_exists($existFile))
      */
     public function row_update($request, $id)
     {
-
+         //$esquema = $request['esquema'];
+         $esquema = str_replace('.',DS,$request['esquema']);
+         $request['esquema'] = str_replace('.','_',$request['esquema']);
         $tb = $request['esquema'] . '_' . $request['model'];
 
         $dataArray = json_decode($request['data'], TRUE);
@@ -774,7 +786,7 @@ if (file_exists($existFile))
 
         }
 
-        $this->load->model($request['esquema'].'/'.$request['model']);
+        $this->load->model($esquema.'/'.$request['model']);
         $nameuuid = new $request['model'];
         if(isset($nameuuid->uuid2)) 
             $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"].$dataArray["$nameuuid->uuid2"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
@@ -834,7 +846,7 @@ if (file_exists($existFile))
             $modeloLogico = $request['asociados'] . $request['model'];
             $tb1 = $request['esquema_asociado'] . '_' . $modeloLogico;
 
-            $this->load->model($request['esquema'].'/'.$modelofisico);
+            $this->load->model($esquema.'/'.$modelofisico);
             $rand = mt_rand(0, 0xffff);
             $uuidUno = $this->uuid->v5($rand, '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
 
@@ -869,7 +881,7 @@ if (file_exists($existFile))
 
             foreach ($dataArray2 as $nodo) {
 
-                $this->load->model($request['esquema'].'/'.$modelofisico);
+                $this->load->model($esquema.'/'.$modelofisico);
 
                 $nameuuidUno = new $modelofisico;
                 $rand = mt_rand(0, 0xffff);
@@ -923,12 +935,16 @@ if (file_exists($existFile))
 
     public function row_existe($request)
     {
+//print_r($request);die;
+         $esquema = str_replace('_',DS,$request['esquema']);
+         $request['esquema'] = str_replace('.','_',$request['esquema']);
+
         $tb = $request['esquema'] . '_' . $request['model'];
         $dataArray = json_decode($request['data'], TRUE);
         //$existtable = $this->db->get($tb);
         //print_r($existtable);die;
         
-        $subdireccion =  $request['esquema'] . DS . $request['model'];
+        $subdireccion =  $esquema . DS . $request['model'];
         //$subdireccion =  /*$request['esquema'] . '/' .*/ $request['model'];
 $existFile = APPPATH . "models".DS."$subdireccion.php";
         if (!file_exists($existFile)) 
@@ -947,7 +963,7 @@ if(count($aux1)>0)
         if (file_exists($existFileOrigen)) 
         {
             
-            $destino=  $request['esquema'] . DS . "$modelClass.php";
+            $destino=  $esquema . DS . "$modelClass.php";
         //$subdireccion =  /*$request['esquema'] . '/' .*/ $request['model'];
             $existFile = APPPATH . "models".DS. "$destino";
            // print_r($existFile);
@@ -982,13 +998,17 @@ if(count($aux1)>0)
 }
         }
         //$this->verificar_model($request['esquema'],$modelClass);
-        $this->load->model($request['esquema'].'/'.$request['model']);
+        $this->load->model($esquema.'/'.$request['model']);
         $nameuuid = new $request['model'];
         $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
         
         //print_r($request['model']);
-        //print_r($dataArray);
         //print_r($nameuuid);die;
+        
+        if(isset($nameuuid->unique))
+        {//print_r('ddd');die;
+            return FALSE;
+        }
         $this->db->where('id', $uuid);
 //print_r($this->db);die;
         $result = $this->db->get("$tb");
@@ -1011,11 +1031,15 @@ if(count($aux1)>0)
 
      private function verificar_model($esquema,$model)
     {
+         //$esquema = $request['esquema'];
+         $esquema = str_replace('.',DS,$esquema);
+         $esquema = str_replace('_',DS,$esquema);
+        // $request['esquema'] = str_replace('.','_',$request['esquema']);
         
          $existFolder = APPPATH . "models/$esquema";
     if(!is_dir($existFolder))
         mkdir($existFolder);
-        $subdireccion =  $esquema . '/' . $model;
+        $subdireccion =  $esquema . DS . $model;
         //$subdireccion =  /*$request['esquema'] . '/' .*/ $request['model'];
         $existFileEsquema = APPPATH . "models/$subdireccion.php";
         if (!file_exists($existFileEsquema)) 

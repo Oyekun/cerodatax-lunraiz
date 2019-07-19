@@ -31,12 +31,18 @@ Ext.define('cerodatax.model.estructura.Area', {
             name: 'id'
         },
         {
+            type: 'string',
+            name: 'codigo'
+        },
+        {
+            type: 'string',
             name: 'nombre'
         },
         {
             name: 'parent'
         },
         {
+            type: 'string',
             name: 'parent_id'
         },
         {

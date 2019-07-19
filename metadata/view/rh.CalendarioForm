@@ -161,6 +161,7 @@
                                 "labelWidth": null,
                                 "name": "tipocalendario_id",
                                 "queryMode": "local",
+                                "readOnly": true,
                                 "store": "rh.TipoCalendario",
                                 "valueField": "id"
                             },
@@ -195,7 +196,7 @@
                             "userConfig": {
                                 "allowBlank": null,
                                 "fieldLabel": "Descripción",
-                                "height": "",
+                                "height": null,
                                 "name": "descripcion",
                                 "width": null
                             },
@@ -268,7 +269,7 @@
                                     "designerId": "0ff9ea79-0369-4e91-84ef-d8c819b57242",
                                     "cn": [
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -278,10 +279,12 @@
                                                 "allowBlank": false,
                                                 "fieldLabel": "Días Feriados",
                                                 "maxLength": 100,
-                                                "name": "dias_feriados",
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_enero",
                                                 "value": null
                                             },
-                                            "name": "MyTextField",
+                                            "name": "MyNumberField11",
                                             "designerId": "55c77c3e-caff-4de5-a199-ff0b40bc2252",
                                             "cn": [
                                                 {
@@ -303,7 +306,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -313,10 +316,12 @@
                                                 "allowBlank": false,
                                                 "fieldLabel": "1ra Quincena",
                                                 "maxLength": 5,
-                                                "name": "primera_quincena",
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_enero",
                                                 "value": null
                                             },
-                                            "name": "MyTextField1",
+                                            "name": "MyNumberField12",
                                             "designerId": "e38c6e01-1999-4333-bea9-abeebef73759",
                                             "cn": [
                                                 {
@@ -338,7 +343,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -348,10 +353,12 @@
                                                 "allowBlank": false,
                                                 "fieldLabel": "2da Quincena",
                                                 "maxLength": 5,
-                                                "name": "segunda_quincena",
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_enero",
                                                 "value": null
                                             },
-                                            "name": "MyTextField4",
+                                            "name": "MyNumberField13",
                                             "designerId": "ea458223-5640-497a-a604-48b5e61469b8",
                                             "cn": [
                                                 {
@@ -373,7 +380,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -383,12 +390,13 @@
                                                 "emptyText": null,
                                                 "fieldLabel": "Domingos del mes",
                                                 "inputType": "tel",
-                                                "maskRe": "/\\d/",
                                                 "maxLength": 30,
-                                                "name": "domingos",
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_enero",
                                                 "width": null
                                             },
-                                            "name": "MyTextField7",
+                                            "name": "MyNumberField14",
                                             "designerId": "30bc721f-3a75-43e7-bba9-6b668ad965db"
                                         }
                                     ]
@@ -417,13 +425,14 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "allowBlank": false,
+                                                "allowBlank": null,
                                                 "fieldLabel": "Mes",
+                                                "formBind": false,
                                                 "labelWidth": 120,
                                                 "name": "mes_enero",
                                                 "readOnly": true,
                                                 "value": [
-                                                    "1"
+                                                    "'1'"
                                                 ]
                                             },
                                             "name": "MyTextField5",
@@ -488,8 +497,8 @@
                                 "title": "Febrero",
                                 "width": 548
                             },
-                            "name": "MyPanel5",
-                            "designerId": "984cffa4-58f3-429a-88eb-7c9dc21af3b3",
+                            "name": "MyPanel16",
+                            "designerId": "eaff53a4-23bf-4be5-80d4-fe82e8b50690",
                             "cn": [
                                 {
                                     "type": "Ext.tab.Tab",
@@ -499,7 +508,7 @@
                                     },
                                     "codeClass": null,
                                     "name": "TabConfig",
-                                    "designerId": "cac362a3-1c9d-4319-bdbf-9717f338a0bb"
+                                    "designerId": "a06d9eef-ca1e-4eeb-a707-9d6edb6c7dd7"
                                 },
                                 {
                                     "type": "Ext.form.FieldSet",
@@ -521,10 +530,10 @@
                                         "width": 300
                                     },
                                     "name": "MyFieldSet",
-                                    "designerId": "c15c2c73-f2f5-4865-888d-e427374a0924",
+                                    "designerId": "a0b09861-21f2-40f6-8ea4-1f3c035a2e79",
                                     "cn": [
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -534,11 +543,13 @@
                                                 "allowBlank": false,
                                                 "fieldLabel": "Días Feriados",
                                                 "maxLength": 100,
-                                                "name": "dias_feriados",
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_febrero",
                                                 "value": null
                                             },
-                                            "name": "MyTextField",
-                                            "designerId": "14246cdd-cbd1-4740-8e60-d7d2e8ca2c79",
+                                            "name": "MyNumberField11",
+                                            "designerId": "90666157-48c8-4251-94e8-962f12dd8081",
                                             "cn": [
                                                 {
                                                     "type": "Ext.XTemplate",
@@ -554,12 +565,12 @@
                                                         ]
                                                     },
                                                     "name": "afterLabelTextTpl",
-                                                    "designerId": "70b839e2-0760-4028-9d0a-5c5fd4f6f606"
+                                                    "designerId": "e030b490-a183-4e39-9b8c-0db4844281ff"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -569,11 +580,13 @@
                                                 "allowBlank": false,
                                                 "fieldLabel": "1ra Quincena",
                                                 "maxLength": 5,
-                                                "name": "primera_quincena",
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_febrero",
                                                 "value": null
                                             },
-                                            "name": "MyTextField1",
-                                            "designerId": "af06cf6b-9376-447e-8403-9023de29dbe9",
+                                            "name": "MyNumberField12",
+                                            "designerId": "156cfc8f-345a-4349-8854-161dda810ec5",
                                             "cn": [
                                                 {
                                                     "type": "Ext.XTemplate",
@@ -589,12 +602,12 @@
                                                         ]
                                                     },
                                                     "name": "afterLabelTextTpl",
-                                                    "designerId": "ae1e37f1-98d5-401f-9c55-b870f2713d74"
+                                                    "designerId": "66d4b2ca-6bdb-4e67-bf77-2891adb33e1a"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -604,11 +617,13 @@
                                                 "allowBlank": false,
                                                 "fieldLabel": "2da Quincena",
                                                 "maxLength": 5,
-                                                "name": "segunda_quincena",
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_febrero",
                                                 "value": null
                                             },
-                                            "name": "MyTextField4",
-                                            "designerId": "16d63044-b8a0-4579-b127-8aa755a9fe01",
+                                            "name": "MyNumberField13",
+                                            "designerId": "510479f4-4beb-4a9d-bce6-a7a08972e6d2",
                                             "cn": [
                                                 {
                                                     "type": "Ext.XTemplate",
@@ -624,12 +639,12 @@
                                                         ]
                                                     },
                                                     "name": "afterLabelTextTpl",
-                                                    "designerId": "34525c48-b8ef-49f0-9e01-5663fade19f0"
+                                                    "designerId": "e839663f-3a6e-4508-a983-d4a9dcd02da4"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.Number",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -639,13 +654,14 @@
                                                 "emptyText": null,
                                                 "fieldLabel": "Domingos del mes",
                                                 "inputType": "tel",
-                                                "maskRe": "/\\d/",
                                                 "maxLength": 30,
-                                                "name": "domingos",
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_febrero",
                                                 "width": null
                                             },
-                                            "name": "MyTextField7",
-                                            "designerId": "ad28d35e-86b0-4257-b982-adfaa652c01a"
+                                            "name": "MyNumberField14",
+                                            "designerId": "939bb12a-eb7f-4f53-b63d-62df18d291a9"
                                         }
                                     ]
                                 },
@@ -663,26 +679,28 @@
                                         "width": 321
                                     },
                                     "name": "MyFieldSet5",
-                                    "designerId": "fea9a245-c9ef-42e4-b99d-d1ddd403775a",
+                                    "designerId": "42781c05-839d-4404-8087-ab6883cbab21",
                                     "cn": [
                                         {
-                                            "type": "Ext.form.field.Number",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "allowBlank": false,
+                                                "allowBlank": null,
                                                 "fieldLabel": "Mes",
+                                                "formBind": false,
                                                 "labelWidth": 120,
-                                                "maxValue": 12,
-                                                "minValue": 1,
                                                 "name": "mes_febrero",
-                                                "readOnly": true
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'2'"
+                                                ]
                                             },
-                                            "name": "MyNumberField8",
-                                            "designerId": "eb8eb4f2-9b52-424d-a011-a518bb20c86b",
+                                            "name": "MyTextField5",
+                                            "designerId": "3f7a2d98-9266-4b92-95eb-d692e7fd91a4",
                                             "cn": [
                                                 {
                                                     "type": "Ext.XTemplate",
@@ -698,7 +716,7 @@
                                                         ]
                                                     },
                                                     "name": "afterLabelTextTpl3",
-                                                    "designerId": "b009f226-6fe6-4c3d-a8c4-c8fdb81f354e"
+                                                    "designerId": "277d1498-cd06-491c-bd40-2fa553ef3da0"
                                                 }
                                             ]
                                         },
@@ -720,10 +738,2651 @@
                                                 "name": null,
                                                 "readOnly": null,
                                                 "shim": true,
-                                                "submitFormat": "Y-m"
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
                                             },
                                             "name": "MyDateField2",
-                                            "designerId": "48bb8f63-8d1e-42ab-ab81-65f6b8490dea"
+                                            "designerId": "05fbdd85-b87f-4d34-92c2-9b09cd679272"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Marzo",
+                                "width": 548
+                            },
+                            "name": "MyPanel17",
+                            "designerId": "865d6f13-93c9-4d91-ba7e-209b9b1e03b5",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "ce365162-1634-494b-86b0-8156116a59d1"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "1d01fd98-c322-4fae-ab41-2ee14af85ebd",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_marzo",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "4b9f2910-4cd6-44a5-a544-9432be75f1e2",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "0fa8cff8-3da5-47f4-8189-c562c85a2f9e"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_marzo",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "1f2227d9-ebb1-4e8c-995d-169c44659b86",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "273fd654-acf7-41c2-8b85-f6ed6a49f70f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_marzo",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "daab4b22-a70f-4a0e-a359-d9eeca8560c7",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "c1a55fc6-4241-4901-a0e6-3392d48b510b"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_marzo",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "12ab0162-1222-4a96-be70-96d5308799be"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "ede4c6ed-c86a-43f8-94bf-23747d9965b0",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_marzo",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'3'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "18b4be5e-96df-41a2-bc13-dfe469397df4",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "d164ff5e-df88-4e8f-9595-d2c3b6c1f956"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "822384cb-a00d-49e7-9688-378eef2b2838"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Abril",
+                                "width": 548
+                            },
+                            "name": "MyPanel18",
+                            "designerId": "4b36d74f-871f-41e7-bb01-41794ad6d5d1",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "948059a4-19d6-4eee-b729-b4c984c426c7"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "20091a09-2f71-448a-9dc8-693b0db71620",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_abril",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "0fe294f8-9696-49f1-87e2-7690db26c7c6",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "897ed446-807a-4479-af96-8ef6c04721fe"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_abril",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "85b63216-52d9-4f6d-b5d7-89ecc1760c4f",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "d508c631-fdfa-4eb2-9f1c-e4e309953eb1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_abril",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "fceca25b-4339-4c08-b27e-67d7dbb8b698",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "1a98b655-9ace-4e35-9722-0f02aa59a819"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_abril",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "1cf5f460-8a6f-45f2-95d1-831931657a7a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "796b7ee9-f9e6-49d6-bc6e-b08c67114ee6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_abril",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'4'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "7e7c795b-161b-4ebd-9fb6-7a73de3ffcfe",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "8431f3cd-575b-4a74-8ccb-27ed10eca70a"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "a2339f0d-764c-4d08-99c9-bce8eca72fd8"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Mayo",
+                                "width": 548
+                            },
+                            "name": "MyPanel20",
+                            "designerId": "882be4c3-8ccd-4ed2-97a6-730eb047a7d6",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "c353c4ad-e853-4c9f-a457-d6edca8b2c9f"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "3ae04690-6028-4bf7-b93f-d1e177d742d8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_mayo",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "47995b27-06f7-4632-b43f-2e10ab6a1405",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "700e2cc8-5551-4f96-b979-27f4200f2792"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_mayo",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "dddbc5b8-2a49-4d86-9e90-9064d703ac6d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "866eaa20-1c62-4d6f-b00e-93a51d604251"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_mayo",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "2761fbc2-a08c-4979-8abc-aa8b8ce44aa2",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "5ab5c1c5-1eb6-4fac-a7cb-e71f77952750"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_mayo",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "d4f45790-7958-4a4d-b207-1e2f7e72c2ce"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "5c2b993c-4f77-4034-9dbd-6bb9cfa9592f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_mayo",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'5'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "77f46615-34bb-4c37-9be0-a4efcb2ebbfa",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "0fde213e-89e1-43bc-ade0-648467af7006"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "1511150e-5a7a-483d-8de4-1a49bdebdee7"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Junio",
+                                "width": 548
+                            },
+                            "name": "MyPanel22",
+                            "designerId": "71740b44-022c-48e4-ac51-108c4d7185e5",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "2cf6dfb1-c7ea-4ef4-bd57-89e6847cc484"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "4fed1645-e5cf-442d-9a66-53fdb3c5cfad",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_junio",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "e2602a71-52e6-4cbb-8fce-9fa5e56f092d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "a82cba1a-94d1-4984-a928-5a07bdb71549"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_junio",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "3e7d6c42-8e0e-43bc-85e5-83876a796c70",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "bb0316e9-54b3-4c3b-af42-cc0627995e98"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_junio",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "b5ea1db6-b7a0-4697-a39f-eb053d408008",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "f4172cc0-72be-4c78-ba37-75dd6575adae"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_junio",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "bcf10643-ffb0-434a-8b9d-b46f871dcc45"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "5a077090-a358-45c0-abb1-26ac0989fb43",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_junio",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'6'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "d0d0a915-15ca-466f-bd5a-e044ed8a8899",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "765f494c-4f0d-407b-a123-e83517c8483f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "2059a960-2643-4f75-b084-025ab137171f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Julio",
+                                "width": 548
+                            },
+                            "name": "MyPanel23",
+                            "designerId": "ec88d3f2-5a13-4e68-891f-c15b25d8fbe2",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "993b149f-6716-4631-9aab-ae17cd4cfba3"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "f030673b-abfe-434e-b9aa-3ac71ba511b5",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_julio",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "f06b1b83-151c-494d-a738-00b5cce002fa",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "bc08175f-2aa0-4a64-a9bf-390f938f4f99"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_julio",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "6ff9bd89-26ea-47c0-a649-d523299919b2",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "092137d9-ca99-42d4-8cb9-fff51902b0b9"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_julio",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "67d37f13-db69-420d-90a9-cdbe84fe8618",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "732f10e0-79f1-44fb-a102-0863f5c43f04"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_julio",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "cc31c2fa-ce6d-4055-9b44-eda2d7ae2c90"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "74bea941-591a-42cd-a83d-ba69b0b1a4b2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_julio",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'7'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "c45f7d5f-f2cb-440b-b148-5e76aa6dc57d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "7de11a09-3c66-401a-8098-877d9dea10d8"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "abc3c2d6-30cd-4e46-83d6-b3ce888ced44"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Agosto",
+                                "width": 548
+                            },
+                            "name": "MyPanel25",
+                            "designerId": "84eca3f5-426d-4658-b8be-e017c885abc9",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "4119d28b-e091-46fd-a54a-9e98685841f1"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "2da5bcaa-6f2f-4c41-8bf4-c7f861c1f501",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_agosto",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "a2fc5b1d-21c8-4de9-a9dc-0d98ecc9ca66",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "0d36bda7-dd4d-4177-93a7-7f418b7976bc"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_agosto",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "0a1cd5da-601a-4e44-872d-9cfbf3e1b8ac",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "ac15b48a-bf24-484c-8fea-4508ac2f2d38"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_agosto",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "85758cfe-0184-4f63-bae4-52c4894b152e",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "6f7bbd84-2810-4b7b-88c3-01903b78e4cd"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_agosto",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "149a008d-55c9-406d-ad5c-2c9894f7c8ec"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "e8dba433-aa7b-486e-b3ce-1a01e5005ba9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_enero",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'8'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "0eec52c1-1b41-46f9-ae1b-69215d72e862",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "a2181564-8bc3-4f60-9372-541c1013941c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "a0b2fcea-d8aa-439c-b0bb-37faa8024d13"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Septiembre",
+                                "width": 548
+                            },
+                            "name": "MyPanel26",
+                            "designerId": "d56b13e3-71cb-4a61-8bf5-cbcc9e3388f5",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "cae2b610-e89b-438c-aa84-05de23e776fd"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "363ca800-541a-4b37-a148-e033e5c8e8ae",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_septiembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "88a8fffe-051b-4257-aad1-1260703cf41f",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "5e9b5d01-4f19-472a-92d9-293c9a59c5de"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_septiembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "b08a2f75-27cb-4288-a107-4e868510a920",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "94907ea5-669c-4ccc-b3ff-b3c0832a1334"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_septiembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "ce17bc01-b6bc-449f-873b-79fc333895e7",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "be41055b-3d67-4c11-94e8-ad12191b3214"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_septiembre",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "dec5ce0c-9c4e-4b6e-9a56-97b471b5101f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "71809d1d-da83-4fff-a969-b86ab4d5b8f9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_septiembre",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'9'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "4a80748f-84d3-4eb9-9239-2e846f3a98ad",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "0d11c0bc-343d-4d35-adc3-2fe9a7801310"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "28e1a36b-b42f-4afb-8088-4030e192e839"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Octubre",
+                                "width": 548
+                            },
+                            "name": "MyPanel24",
+                            "designerId": "87563293-73ca-40ee-82cf-7fe35a1384d3",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "0be6b034-ffc6-448b-81cd-c1028e716007"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "eb709e54-2a43-455d-a239-5eb36b9180aa",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_octubre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "b0dc94ec-6b70-450a-8fc9-6bd03b21c044",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "d777f0a9-9466-4af0-bb0e-06b8e559b1f2"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_octubre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "186d0701-3bde-4e19-9a50-b24f633bb5e4",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "1d11a5c9-173b-4be3-b5ff-7e8ca1db0376"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_octubre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "3805cdfa-606e-4c78-aa4f-6b761db58f92",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "3a73396d-2b21-42b8-9dd1-cbf79c68ea10"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_octubre",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "9e7e9721-69b8-4280-b4a0-1264b82279e1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "dfcc845d-5fc6-46af-a1a3-aa7ad7de29a9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_octubre",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'10'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "d51c244a-eaff-475c-801c-d4565f4b046c",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "091bd0b4-1d17-434f-9310-c737ef01ad80"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "a0749aa8-c6e8-4a3c-affb-ef3a9ed219f4"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Noviembre",
+                                "width": 548
+                            },
+                            "name": "MyPanel21",
+                            "designerId": "f868b379-2a1a-471b-aac0-4ef83b45f346",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "617cb8e0-c2b3-4bb7-b697-6a1aa99607af"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "60ec6b4e-e4ed-432e-b750-15b6b12c01c9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_noviembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "f8634982-61b3-463d-9a5d-a5cfc22fbb86",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "25718549-2af4-4eeb-addc-39411e8082b4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_noviembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "be44ed1a-4f37-4f1b-861f-721afb7f74ba",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "21dec6e5-2dea-45c8-a32c-97424fa3ecc8"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_noviembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "a2f74550-f219-40b5-8fda-f97fb3a3b452",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "ac8b5bbf-27ed-449d-ac40-1991ff229287"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_noviembre",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "52a38040-bcc8-4f6b-a212-ac70b43aab38"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "c546d50b-938b-4824-bdee-1f2693f8f086",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_noviembre",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'11'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "5c49d4aa-ff84-4ae0-98e8-6c37727b7773",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "dec5f06e-46d9-4b39-8d41-3ee2da7cea3e"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "cb2549ff-16f4-4add-8fa2-f312e7b7daa5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 439,
+                                "layout": "table",
+                                "title": "Diciembre",
+                                "width": 548
+                            },
+                            "name": "MyPanel19",
+                            "designerId": "4239b65e-5272-404a-93f4-dec7955d2040",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "designerId": "b494218c-538d-4da5-bf22-6b5fd7d22d77"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "alignTarget": "top",
+                                        "defaults": null,
+                                        "dock": null,
+                                        "height": null,
+                                        "layout": "column",
+                                        "margin": "10 0 0 0",
+                                        "padding": null,
+                                        "title": "Información",
+                                        "twoWayBindable": null,
+                                        "width": 300
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "e3214050-a91e-4cd2-8055-e15d98ac4b3d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Días Feriados",
+                                                "maxLength": 100,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "dias_feriados_diciembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "61dd09c4-67cf-4f2d-804b-8d7ff158d054",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "c9417bf5-8e60-4f3c-bca6-0181782e2d65"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "1ra Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "primera_quincena_diciembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "b13a42b5-5f80-43cc-b64d-f69db281a021",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "73a859ad-5bd9-4049-8051-65807e0e9302"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "2da Quincena",
+                                                "maxLength": 5,
+                                                "maxValue": 5,
+                                                "minValue": 0,
+                                                "name": "segunda_quincena_diciembre",
+                                                "value": null
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "d3d9030c-a1e9-4398-be80-8169d69670a5",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl",
+                                                    "designerId": "1a9805f2-2418-4f79-9eaa-b06d78f0d53e"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Domingos del mes",
+                                                "inputType": "tel",
+                                                "maxLength": 30,
+                                                "maxValue": 5,
+                                                "minValue": 3,
+                                                "name": "domingos_diciembre",
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "c48139fe-0891-4cfa-b42a-ef06c0ca3b5f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "10 0 0 10",
+                                        "title": "Generales",
+                                        "width": 321
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "c13f225d-2909-44f7-8121-f899210743e4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "fieldLabel": "Mes",
+                                                "formBind": false,
+                                                "labelWidth": 120,
+                                                "name": "mes_diciembre",
+                                                "readOnly": true,
+                                                "value": [
+                                                    "'12'"
+                                                ]
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "2f83e786-d5b5-4bfd-8fd8-c945986050d8",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "afterLabelTextTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "afterLabelTextTpl",
+                                                        "implHandler": [
+                                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                        ]
+                                                    },
+                                                    "name": "afterLabelTextTpl3",
+                                                    "designerId": "a6e4d3f4-bb88-4093-bd1e-dc612c07b6e3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": null,
+                                                "altFormats": "Y-m",
+                                                "editable": false,
+                                                "fieldLabel": "Verificar Domingos",
+                                                "format": "Y-m",
+                                                "itemId": "temporal",
+                                                "labelWidth": 120,
+                                                "name": null,
+                                                "readOnly": null,
+                                                "shim": true,
+                                                "submitFormat": "Y-m",
+                                                "vtype": null
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "45b2a25c-f2cf-4d3f-b7e9-92a532106440"
                                         }
                                     ]
                                 }

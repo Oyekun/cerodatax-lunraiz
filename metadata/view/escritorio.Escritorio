@@ -75,22 +75,72 @@
                     "designerId": "6bd3ed96-a85f-46a5-8aea-0d11b03bbd71",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Display",
+                            "type": "Ext.button.Segmented",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Entidad",
-                                "itemId": "entidadlabel",
-                                "labelWidth": 50,
-                                "layout|flex": null,
-                                "value": null,
-                                "width": 330
+                                "layout|flex": null
                             },
-                            "name": "MyDisplayField6",
-                            "designerId": "68963d44-e510-41bb-b016-0a28b3e2614f"
+                            "name": "MySegmentedButton",
+                            "designerId": "f3750723-5f30-4f17-85cf-67893218b7c8",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "E"
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "f86bc73e-2cde-4923-a38a-7436b53c8038",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick",
+                                                "implHandler": [
+                                                    "",
+                                                    "var escritorio = Ext.ComponentQuery.query('#Escritorio')[0];",
+                                                    "escritorio.fireEvent('click');",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onButtonClick",
+                                            "designerId": "f7fd70c1-6f8f-4dc7-b8d2-1cb71e853f97"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Entidad",
+                                        "itemId": "entidadlabel",
+                                        "labelWidth": 50,
+                                        "value": null,
+                                        "width": 330
+                                    },
+                                    "name": "MyDisplayField6",
+                                    "designerId": "68963d44-e510-41bb-b016-0a28b3e2614f"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -129,11 +179,15 @@
                 "layout|flex": null,
                 "layout|region": "west",
                 "layout|split": true,
+                "layout|splitterResize": false,
                 "margin": "5 0 0 0",
+                "resizable": [
+                    "false"
+                ],
                 "title": "   Navegación",
                 "titleAlign": null,
                 "titleCollapse": true,
-                "width": 185
+                "width": 180
             },
             "name": "MyPanel6",
             "designerId": "3dc55aaa-6ff6-4ac5-81ed-2793609eed3f",

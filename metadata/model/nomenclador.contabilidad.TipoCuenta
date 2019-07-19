@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipocuenta",
+        "designer|userClassName": "nomenclador.contabilidad.TipoCuenta"
+    },
+    "name": "nomenclador.Pais1",
+    "designerId": "71d40291-e8f6-4065-9191-9a09dd1145ca",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString34",
+            "designerId": "3b7487c8-b74c-409c-8591-377e134d4ef6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString10",
+            "designerId": "34974b78-9a9d-43ba-8131-84741a2c1a46"
+        }
+    ]
+}

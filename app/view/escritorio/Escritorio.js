@@ -22,6 +22,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
         'cerodatax.view.escritorio.EscritorioViewController',
         'cerodatax.view.escritorio.Tablero',
         'Ext.toolbar.Toolbar',
+        'Ext.button.Segmented',
         'Ext.form.field.Display',
         'Ext.Img',
         'Ext.button.Split',
@@ -36,6 +37,7 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
     },
     itemId: 'viewportEscritorio',
     layout: 'border',
+    defaultListenerScope: true,
 
     items: [
         {
@@ -45,7 +47,10 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
             margin: '5 0 0 0',
             layout: 'fit',
             listeners: {
-                activate: 'onPanelPrincipalActivate'
+                activate: {
+                    fn: 'onPanelPrincipalActivate',
+                    scope: 'controller'
+                }
             },
             dockedItems: [
                 {
@@ -56,11 +61,22 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                     width: 150,
                     items: [
                         {
-                            xtype: 'displayfield',
-                            itemId: 'entidadlabel',
-                            width: 330,
-                            fieldLabel: 'Entidad',
-                            labelWidth: 50
+                            xtype: 'segmentedbutton',
+                            items: [
+                                {
+                                    text: 'E',
+                                    listeners: {
+                                        click: 'onButtonClick'
+                                    }
+                                },
+                                {
+                                    xtype: 'displayfield',
+                                    itemId: 'entidadlabel',
+                                    width: 330,
+                                    fieldLabel: 'Entidad',
+                                    labelWidth: 50
+                                }
+                            ]
                         }
                     ]
                 }
@@ -75,9 +91,11 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
             xtype: 'panel',
             region: 'west',
             split: true,
+            splitterResize: false,
             itemId: 'menuPanel',
             margin: '5 0 0 0',
-            width: 185,
+            resizable: false,
+            width: 180,
             layout: 'accordion',
             animCollapse: true,
             collapseDirection: 'left',
@@ -224,6 +242,13 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                 }
             ]
         }
-    ]
+    ],
+
+    onButtonClick: function(button, e, eOpts) {
+
+        var escritorio = Ext.ComponentQuery.query('#Escritorio')[0];
+        escritorio.fireEvent('click');
+
+    }
 
 });

@@ -194,6 +194,15 @@ Ext.define('cerodatax.view.estructura.Area', {
                             afterLabelTextTpl: [
                                 '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
+                            fieldLabel: 'Código',
+                            name: 'codigo',
+                            allowBlank: false
+                        },
+                        {
+                            xtype: 'textfield',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
                             fieldLabel: 'Nombre',
                             name: 'nombre',
                             allowBlank: false

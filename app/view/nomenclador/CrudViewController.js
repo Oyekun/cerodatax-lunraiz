@@ -178,16 +178,27 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                  }}
             }
 
-            if(focus===false)
-            {var resulttext = [];
-             resulttext = me.searchComponent('textfield',item,resulttext);
+            var resulttext = [];
+                        resulttext = me.searchComponent('textfield',item,resulttext);
+                         for(var comptext in resulttext)
+                    {var objtext = resulttext[comptext];
 
-             if(resulttext.length>0)
-             { resulttext[0].focus('',10);
-              itemfocus = resulttext[0];
-              focus = true;
-             }
-            }
+                     if(objtext.config.value!==undefined)
+                          {
+                                  objtext.setValue(objtext.config.value);
+                          }
+                    }
+
+                    if(focus===false)
+                    {
+
+
+                     if(resulttext.length>0)
+                     { resulttext[0].focus('',10);
+                      itemfocus = resulttext[0];
+                      focus = true;
+                     }
+                    }
 
 
             if(focus===false)
@@ -1225,7 +1236,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
              store.proxy.extraParams.migration= '';
              store.proxy.extraParams.parent_id='save';
-
+        var flag= false;
              if (record.phantom) {
 
 
@@ -1250,10 +1261,37 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                  }
                  else////para modificar
-                     if(nombre!=='' &&nombre ===dt.data[campo])
+                     {  var objarray = dt.data;
+                              console.log(record)
+                              for(var name_obj in objarray)
+                          {
+                              var camponame  = objarray[name_obj];
+                              if(name_obj!=='nombre' ||name_obj!=='id' ||name_obj!=='date_created' ||name_obj!=='date_updated'||name_obj!=='created_from_ip'||name_obj!=='updated_from_ip')
+                          {
+                               var otrovalor= record[name_obj]
+                               if(camponame!=otrovalor)
+                               {
+                                           form.updateRecord();
+                             for(var foto in record_foto)
+                             {
+                                 record.data[foto]  = record_foto[foto];
+                             }
+                             if(record.data.parentId===null)
+
+                                 record.data.leaf = true;
+                             store.add(record);
+                               flag=true;
+                             store.commitChanges();
+
+                               }
+
+
+                          }
+                          }
+                       if(nombre!=='' &&nombre ===dt.data[campo] && flag===false)
                      {  mask.unmask();
                       me.showToast('El elemento ya existe.','error');
-                      var flag=false;
+                        flag=false;
                      }
 
                  else{
@@ -1266,9 +1304,11 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                          record.data.leaf = true;
                      store.add(record);
-                     var flag=true;
+                       flag=true;
                      store.commitChanges();
                  }
+                     }
+
              }else{
 
                  if(dt===null ||dt===undefined)//para adicionar
@@ -1291,7 +1331,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          mask.unmask();
                          if(dt.data.id===record.data.id)
                          {
-                             var flag=true;
+                               flag=true;
                              for(var foto in record_foto)
                              {
                                  record.data[foto]  = record_foto[foto];
@@ -1318,7 +1358,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                          }
                          else
                          {me.showToast('El elemento ya existe.','error');
-                          var flag=false;
+                            flag=false;
                          }
                      }
 
@@ -1331,7 +1371,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                      if(record.data.parentId===null)
 
                          record.data.leaf = true;
-                     var flag=true;
+                       flag=true;
                      store.proxy.extraParams.migration=Ext.JSON.encode(migration);
                      store.commitChanges();
 
@@ -2614,9 +2654,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         //Funcion para construir el encabezado de los grid y tree panel
                 //console.log(comp,result)
         //if(comp.itemid!='temporal')
-                    console.log(comp)
+
                 //temporal es para q no se visualice en el header del grid o tree
-                if(comp.inputType !='password' && comp.itemid!='temporal')
+                if(comp.inputType !='password' && comp.itemId!='temporal')
                     if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )
                     {
 
@@ -2792,7 +2832,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                     for(var item in comp)
                     {
-
+                        //if(comp[item].itemId==='temporal');
                         this.searchLabel(comp[item],result,is_grid);
                     }
                 }
@@ -2817,14 +2857,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                            var alias = Ext.data.StoreManager.lookup('nomenclador.Alias').data.items;
                           for(var alia in alias)
                               {
-                                  var namealias =  alias[alia].data.nombre;
+                                  var namealias =  alias[alia].data.nombre.replace('.','');
 
-
+        //namealia7s =aux.replace(namealias,'model.');
                                   model =aux.replace(namealias,'model.');
                  win = aux.replace(namealias,'')+asociar+'Form';
                        if(aux!=model)
                 {
-                    if(ethis.view!=null)
+                    if(ethis.view!==null)
                       if(ethis.view.gridasociado!==undefined)
                         {
                               win =   aux+asociar+'Form';

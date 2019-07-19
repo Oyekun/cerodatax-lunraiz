@@ -555,8 +555,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "fieldLabel": "Nombre",
-                                "name": "nombre"
+                                "fieldLabel": "Código",
+                                "name": "codigo"
                             },
                             "name": "MyTextField13",
                             "designerId": "126d74aa-1c8a-4999-bb2c-48ae38804b5a",
@@ -576,6 +576,39 @@
                                     },
                                     "name": "afterLabelTextTpl",
                                     "designerId": "a6745646-9377-4d4c-842d-2541f6e6d6f1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "name": "nombre"
+                            },
+                            "name": "MyTextField9",
+                            "designerId": "ad4ac3ed-3247-460f-94fe-6a4693aed2af",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "15d4c74f-408c-4ae3-95ef-d73f48d0da72"
                                 }
                             ]
                         },

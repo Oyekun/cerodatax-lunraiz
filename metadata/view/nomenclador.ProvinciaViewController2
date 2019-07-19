@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontabilidadclasificaciontipocuenta",
+        "designer|userClassName": "nomenclador.ProvinciaViewController2"
+    },
+    "name": "nomenclador.ProvinciaViewController2",
+    "designerId": "4f05b011-96d8-45bd-ba11-f75f1b0f40d4",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "b2526200-f30c-46cc-80e2-3de937f47c9f"
+        }
+    ]
+}

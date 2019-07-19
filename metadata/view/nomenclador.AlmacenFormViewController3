@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontabilidadcuentacontableform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewController3"
+    },
+    "name": "nomenclador.AlmacenFormViewController3",
+    "designerId": "594e7b25-885a-4f51-ba8b-744ba5b55759"
+}

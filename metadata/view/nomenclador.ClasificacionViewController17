@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorcontabilidadtipocuenta",
+        "designer|userClassName": "nomenclador.ClasificacionViewController17"
+    },
+    "name": "nomenclador.ClasificacionViewController17",
+    "designerId": "54dbfc1f-77ed-4f6a-9854-ccea6286a968",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "9357c5bc-3708-4732-a47e-1c1c6b2f2daf"
+        }
+    ]
+}

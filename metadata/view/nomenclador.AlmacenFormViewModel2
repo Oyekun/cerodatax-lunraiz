@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rhclaveausenciaform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewModel2"
+    },
+    "name": "nomenclador.AlmacenFormViewModel2",
+    "designerId": "df53c57a-0154-4449-98d4-3ead3df3c304"
+}

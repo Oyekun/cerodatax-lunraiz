@@ -4,10 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * This class creates a Tree structure of information for the TreePanel component
  * of the ExtJS library.
  *
- * @author Crysfel Villa
- * @date 12/18/2009
+ * @author Leandro Lazaro
+ * @date 12/18/2019
  *
  */
+ 
 class Tools extends CI_Model  {
 
    public function __construct()
@@ -29,6 +30,7 @@ class Tools extends CI_Model  {
                         show_error($this->migration->error_string());
                 }*/
                   $datos = $this->migration->find_migrations();
+                  $this->db->get("migrations");
                    // print_r($datos);die;
                   // echo('Corriendo Migraciones CERODATAX'."\n");
                   $row = $this->db->select('version')->get('migrations')->row();
@@ -64,6 +66,7 @@ class Tools extends CI_Model  {
     }
 
     public function make_migration_file($esquema,$name,$dataArray) {
+         $esquema = str_replace('.','_',$esquema);
         $date = new DateTime();
         $timestamp = $date->format('YmdHis');
         $row = $this->db->select('version')->get('migrations')->row();
@@ -87,6 +90,8 @@ if(isset($campo['tabla']))
         $auxUno = explode("_id", $nameCampo);
         if(count($auxUno)>1)
         { 
+         $campo['tabla'] = str_replace('.','_',$campo['tabla']);
+
          $tablaCampo = $campo['tabla'];
           $foreign .="\$this->dbforge->add_key('$nameCampo');\n";      
           $foreign .="\$this->dbforge->add_field('CONSTRAINT $nameCampo FOREIGN KEY ($nameCampo) REFERENCES $tablaCampo (id) ON UPDATE CASCADE ON DELETE CASCADE');\n";      
@@ -186,7 +191,10 @@ class Migration_create_table_$table_name extends CI_Migration {
  
 
 public function make_model_file($modulo,$name,$dataArray) {
-        $subdireccion =  $modulo . '/' . $name;
+      $modulo = str_replace('_',DIRECTORY_SEPARATOR,$modulo);
+       //print_r($modulo);die; 
+       
+        $subdireccion =  $modulo . DIRECTORY_SEPARATOR . $name;
 
   //  $path = APPPATH . "modules/admin/models/$name.php"; Esyo es importante hacer las modelos por modulos
     $existFolder = APPPATH . "models/$modulo";
@@ -209,6 +217,8 @@ if(isset($campo['tabla']))
         { if ($nameuuid=='')
             $nameuuid =$campo['nombre'];
             $existeRelacion=TRUE;
+         $campo['tabla'] = str_replace('.','_',$campo['tabla']);
+
             $tablaCampo = $campo['tabla'];
           $relacion .="'$nameCampo'=> '$tablaCampo',\n";      
         }
@@ -246,7 +256,9 @@ if(isset($campo['tabla']))
 }
 
 public function make_model_relation_file($modulo,$name,$dataArray) {
-        $subdireccion =  $modulo . '/' . $name;
+      $modulo = str_replace('_',DIRECTORY_SEPARATOR,$modulo);
+
+        $subdireccion =  $modulo . DIRECTORY_SEPARATOR . $name;
 
   //  $path = APPPATH . "modules/admin/models/$name.php"; Esyo es importante hacer las modelos por modulos
     $existFolder = APPPATH . "models/$modulo";
@@ -269,6 +281,8 @@ if(isset($campo['tabla']))
         { if ($nameuuid=='')
             $nameuuid =$campo['nombre'];
             $existeRelacion=TRUE;
+         $campo['tabla'] = str_replace('.','_',$campo['tabla']);
+            
             $tablaCampo = $campo['tabla'];
           $relacion .="'$nameCampo'=> '$tablaCampo',\n";      
         }

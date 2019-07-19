@@ -52,17 +52,17 @@
             "designerId": "c7d24b6f-2a2c-49b5-8df1-1abecaf9abc6"
         },
         {
-            "type": "Ext.data.field.Date",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "mes"
+                "name": "ano"
             },
-            "name": "MyDate5",
-            "designerId": "dd96cf16-4c3a-4fad-9bf0-644f2e35035a"
+            "name": "MyInteger17",
+            "designerId": "37389d4c-b116-41f0-9221-9a9cbf0c5d83"
         },
         {
             "type": "Ext.data.field.String",
@@ -91,83 +91,784 @@
             "designerId": "997bed02-56d0-486b-be7d-fa896515812b"
         },
         {
-            "type": "Ext.data.field.Date",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "ano"
+                "name": "mes_enero"
             },
-            "name": "MyDate2",
-            "designerId": "37389d4c-b116-41f0-9221-9a9cbf0c5d83"
+            "name": "MyInteger6",
+            "designerId": "dd96cf16-4c3a-4fad-9bf0-644f2e35035a"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "dias_feriados"
+                "name": "mes_febrero"
             },
-            "name": "MyString101",
+            "name": "MyInteger11",
+            "designerId": "cfaddbe3-e105-49d9-9dc0-887b631aa454"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_marzo"
+            },
+            "name": "MyInteger18",
+            "designerId": "0791eb11-1d52-4db6-acc4-ccb70d98e0d5"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_abril"
+            },
+            "name": "MyInteger19",
+            "designerId": "f26e75fa-28e5-4bfd-b07a-a7c9981381fb"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_mayo"
+            },
+            "name": "MyInteger27",
+            "designerId": "3fd02d3d-a9be-4f23-88d1-81d73892077d"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_junio"
+            },
+            "name": "MyInteger26",
+            "designerId": "c0d72167-9269-4d5b-96a4-6befc7f416a3"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_julio"
+            },
+            "name": "MyInteger25",
+            "designerId": "11ca4045-6f82-4e06-a8e1-6906bc9458cb"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_agosto"
+            },
+            "name": "MyInteger24",
+            "designerId": "22fd6547-97d5-43bc-b363-c530cb0b5717"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_septiembre"
+            },
+            "name": "MyInteger23",
+            "designerId": "025c9862-7bac-420f-946f-e351b2312c72"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_octubre"
+            },
+            "name": "MyInteger22",
+            "designerId": "3532f3f4-0429-47f1-9d25-29d6584ce27c"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_noviembre"
+            },
+            "name": "MyInteger20",
+            "designerId": "039558d2-9adf-46b5-8fd1-d20e0f6ea409"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mes_diciembre"
+            },
+            "name": "MyInteger21",
+            "designerId": "264c81f3-631b-4c42-9a08-71c85a571df6"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_enero"
+            },
+            "name": "MyInteger10",
             "designerId": "c878e3ba-12a7-41f8-85e3-bc4dbc60d27f"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "primera_quincena"
+                "name": "dias_feriados_febrero"
             },
-            "name": "MyString102",
+            "name": "MyInteger13",
+            "designerId": "f29eb898-1bbf-441e-a15a-e9c03fdf2a21"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_marzo"
+            },
+            "name": "MyInteger31",
+            "designerId": "a4d2443a-e71a-468f-a282-e710d59972c4"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_abril"
+            },
+            "name": "MyInteger37",
+            "designerId": "88d7ff99-2a7c-40f0-87c5-78da8f29c017"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_mayo"
+            },
+            "name": "MyInteger36",
+            "designerId": "9177e797-974c-4f47-a0ac-935a496892f0"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_junio"
+            },
+            "name": "MyInteger35",
+            "designerId": "53634c99-ee21-46b1-bc38-e9bd09437bfa"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_julio"
+            },
+            "name": "MyInteger34",
+            "designerId": "d4b04f16-6a55-4b74-979d-61c46a8218d4"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_agosto"
+            },
+            "name": "MyInteger33",
+            "designerId": "538103d2-4721-420c-9471-8279ac08bca5"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_septiembre"
+            },
+            "name": "MyInteger32",
+            "designerId": "b7d49055-4be8-490e-bad7-8fff61c786ef"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_octubre"
+            },
+            "name": "MyInteger30",
+            "designerId": "1ad00ea5-a063-4b43-8bae-43661e33af83"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_noviembre"
+            },
+            "name": "MyInteger28",
+            "designerId": "6e362e25-6c4f-4bd0-8308-9bf023da29d0"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_feriados_diciembre"
+            },
+            "name": "MyInteger29",
+            "designerId": "50eae7fc-f83d-4942-854b-4f999719547e"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_enero"
+            },
+            "name": "MyInteger9",
             "designerId": "48201999-f9c5-44b1-9767-d60341e3e8d4"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "segunda_quincena"
+                "name": "primera_quincena_febrero"
             },
-            "name": "MyString91",
+            "name": "MyInteger14",
+            "designerId": "3748b6b5-d80a-4f44-8e55-2b11242c57fa"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_marzo"
+            },
+            "name": "MyInteger38",
+            "designerId": "0d8fc925-b021-4d23-8703-8d3e4d1d7b23"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_abril"
+            },
+            "name": "MyInteger39",
+            "designerId": "d5dd8aa2-1ec7-459d-bd62-82d7122a16ef"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_mayo"
+            },
+            "name": "MyInteger40",
+            "designerId": "e72fa7b8-8834-42a5-976b-5835c6390074"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_junio"
+            },
+            "name": "MyInteger44",
+            "designerId": "07c8918a-eebc-4263-9f58-d0fa1051549f"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_julio"
+            },
+            "name": "MyInteger42",
+            "designerId": "a47dbb0d-d366-4d8a-9510-17b64671ae92"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_agosto"
+            },
+            "name": "MyInteger45",
+            "designerId": "9c0592c0-f685-4ecd-8dfe-4a77745d3a0d"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_septiembre"
+            },
+            "name": "MyInteger47",
+            "designerId": "6e135436-0333-450a-b89a-b0de54349872"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_octubre"
+            },
+            "name": "MyInteger46",
+            "designerId": "6534de7b-164d-4ba5-a00d-b23f1ddbef22"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_noviembre"
+            },
+            "name": "MyInteger43",
+            "designerId": "1078aea5-1516-49f9-820a-bbc5e45f4a84"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "primera_quincena_diciembre"
+            },
+            "name": "MyInteger41",
+            "designerId": "8bb04d7b-8f54-4c8e-acd2-d855ef82798c"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_enero"
+            },
+            "name": "MyInteger8",
             "designerId": "b8140bb7-4531-469c-a94c-8d45248fd097"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "domingos"
+                "name": "segunda_quincena_febrero"
             },
-            "name": "MyString98",
+            "name": "MyInteger15",
+            "designerId": "715854c4-c035-481d-99b9-d8411e4830dd"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_marzo"
+            },
+            "name": "MyInteger48",
+            "designerId": "cec07ee0-cfa9-4421-ba10-fcb2e692a99e"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_abril"
+            },
+            "name": "MyInteger53",
+            "designerId": "e20db730-fd60-43c7-9d61-d7af78ef094b"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_mayo"
+            },
+            "name": "MyInteger57",
+            "designerId": "72cdaa7c-fbd0-4ff6-b1eb-264c5592a6ab"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_junio"
+            },
+            "name": "MyInteger56",
+            "designerId": "8cc05c22-6538-455e-b74e-d7e4d2b19571"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_julio"
+            },
+            "name": "MyInteger55",
+            "designerId": "390ee4ee-8e88-4385-8e84-ba45e2292baa"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_agosto"
+            },
+            "name": "MyInteger54",
+            "designerId": "c93d010c-9692-4b11-889a-73e9a81a30a7"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_septiembre"
+            },
+            "name": "MyInteger52",
+            "designerId": "48ce1522-8f16-48b9-be32-adbd75e45ffc"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_octubre"
+            },
+            "name": "MyInteger49",
+            "designerId": "d8b4f419-a15f-45c3-a445-dfa020e15d87"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_noviembre"
+            },
+            "name": "MyInteger50",
+            "designerId": "f08063df-93bf-4916-9f49-e7e9731f9883"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "segunda_quincena_diciembre"
+            },
+            "name": "MyInteger51",
+            "designerId": "08548232-caa9-4223-a3c6-132752017905"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_enero"
+            },
+            "name": "MyInteger7",
             "designerId": "5017f60d-7572-4479-a85f-ae55b7a80c2d"
         },
         {
-            "type": "Ext.data.field.Date",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "dateFormat": "Y-m-d",
-                "name": "fecha_alta"
+                "name": "domingos_febrero"
             },
-            "name": "MyDate1",
-            "designerId": "e07435f6-f389-4abb-906a-d55041919b38"
+            "name": "MyInteger16",
+            "designerId": "d3609ad7-d4cd-46d8-b352-de910cc35706"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_marzo"
+            },
+            "name": "MyInteger58",
+            "designerId": "3f8ea656-d7e1-439b-b12c-5f0e628590ac"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_abril"
+            },
+            "name": "MyInteger66",
+            "designerId": "2c7ce5eb-4b44-4033-a87e-671318bfc55f"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_mayo"
+            },
+            "name": "MyInteger67",
+            "designerId": "500a915c-a4d9-4592-bdfc-591651b6db24"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_junio"
+            },
+            "name": "MyInteger65",
+            "designerId": "76322033-c940-473e-a76b-73b27b06b6e0"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_julio"
+            },
+            "name": "MyInteger64",
+            "designerId": "31e0c41b-3843-4f93-8d0f-8bbf43b491a4"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_agosto"
+            },
+            "name": "MyInteger63",
+            "designerId": "c629e304-4cef-40bb-b0ad-804abcfcc546"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_septiembre"
+            },
+            "name": "MyInteger62",
+            "designerId": "a7185b75-e8ba-45a1-9492-81782886deda"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_octubre"
+            },
+            "name": "MyInteger61",
+            "designerId": "d0267bf2-53d0-45ac-ab8d-bdc256416633"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_noviembre"
+            },
+            "name": "MyInteger59",
+            "designerId": "627fa7f8-03c9-4b86-ab8b-ade26023dc66"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "domingos_diciembre"
+            },
+            "name": "MyInteger60",
+            "designerId": "007c56d9-c23e-42f2-b022-329c4ed8194c"
         },
         {
             "type": "Ext.data.proxy.Rest",
