@@ -111,8 +111,10 @@ $datosnae["$clase"]['division'] = $division;
                 if(isset($value['descripcion']))
                 $descripcion = $value['descripcion'];
              $model = 'DivisionNAE';
-        $this->load->model($model);
+        $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
         $nameuuid = new $model; 
+        
         $uuid = $this->uuid->v5($nombre,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
         $dataArray = array();
         $dataArray['nombre'] = $nombre;                  
@@ -133,7 +135,8 @@ $datosnae["$clase"]['division'] = $division;
                 if(isset($value['descripcion']))
                 $descripcion = $value['descripcion'];
              $model = 'SeccionNAE';
-        $this->load->model($model);
+       $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
         $nameuuid = new $model; 
         $uuid = $this->uuid->v5($nombre,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
         $dataArray = array();
@@ -160,7 +163,8 @@ $datosnae["$clase"]['division'] = $division;
                 if(isset($value['descripcion']))
                 $descripcion = $value['descripcion'];
              $model = 'SeccionNAE';
-        $this->load->model($model);
+       $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
         $nameuuid = new $model; 
         $uuid = $this->uuid->v5($nombre,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
         $dataArray = array();

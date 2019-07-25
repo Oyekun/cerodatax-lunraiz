@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorrhtipocausa",
+        "designer|userClassName": "nomenclador.ProvinciaViewController5"
+    },
+    "name": "nomenclador.ProvinciaViewController5",
+    "designerId": "ff3c8720-8884-4d02-a224-bdfa9ef46429",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "202a7ceb-d517-47e6-896f-9762a2bbd814"
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "idioma",
+        "designer|userClassName": "nomenclador.general.Idioma"
+    },
+    "name": "nomenclador.rh.TipoPago5",
+    "designerId": "a89cce1f-4719-48f0-93b9-4346c942e788",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "6c97e849-a85c-4f76-a924-d9f3bcc16d0f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "44ba0f11-60ce-4c26-82e3-b79326405133"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "18d122d3-6a3a-43cc-a442-7d1c5ab06e2e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pais"
+            },
+            "name": "MyString86",
+            "designerId": "2509a5c0-b5f5-4fd4-90c3-5fbe6bf57ab8"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pais_id"
+            },
+            "name": "MyString80",
+            "designerId": "6bd5d023-659e-456a-9ca1-ec5930426999"
+        }
+    ]
+}

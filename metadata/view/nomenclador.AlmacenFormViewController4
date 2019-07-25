@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorrhtipocontratoform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewController4"
+    },
+    "name": "nomenclador.AlmacenFormViewController4",
+    "designerId": "e316ded3-e9c1-4f42-8d2a-85cc74fa8613"
+}

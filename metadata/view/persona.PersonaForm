@@ -12,7 +12,7 @@
         ],
         "designer|userAlias": "personaForm",
         "designer|userClassName": "persona.PersonaForm",
-        "height": null,
+        "height": 566,
         "modal": true,
         "resizable": [
             "false"
@@ -39,7 +39,7 @@
                     "{padding: '0 10 0 0',maxLength: 50,",
                     "        enforceMaxLength: true}"
                 ],
-                "height": 500,
+                "height": 540,
                 "layout": "auto",
                 "reference": "form",
                 "title": null,
@@ -559,6 +559,118 @@
                                                     "designerId": "b4eafcd9-d84f-438a-9dd7-e6a5578ee2de"
                                                 }
                                             ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 52,
+                                        "layout": "table",
+                                        "margin": "10 0 0 0",
+                                        "title": "Talla de Ropas y Zapato",
+                                        "width": 440
+                                    },
+                                    "name": "MyFieldSet6",
+                                    "designerId": "e80d5cff-abb0-4e1f-ac82-81bb9cc5c720",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Camisa",
+                                                "inputType": null,
+                                                "labelWidth": 50,
+                                                "margin": "0 0 0 10",
+                                                "name": "camisa",
+                                                "value": null,
+                                                "vtype": null,
+                                                "width": 100
+                                            },
+                                            "name": "MyTextField3",
+                                            "designerId": "a563acda-1ae3-4684-a74c-71d87e7df458"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Saya",
+                                                "inputType": null,
+                                                "labelWidth": 50,
+                                                "margin": "0 0 0 10",
+                                                "name": "saya",
+                                                "value": null,
+                                                "vtype": null,
+                                                "width": 100
+                                            },
+                                            "name": "MyTextField2",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "c7a2edc5-0e6c-4906-86ea-d00f30d3c3c7"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Pantalón",
+                                                "inputType": null,
+                                                "labelWidth": 50,
+                                                "margin": "0 0 0 10",
+                                                "name": "pantalon",
+                                                "value": null,
+                                                "vtype": null,
+                                                "width": 100
+                                            },
+                                            "name": "MyTextField5",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "c4fe6dec-785a-46b3-9a15-42882854e4f1"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "Zapato",
+                                                "inputType": null,
+                                                "labelWidth": 50,
+                                                "margin": "0 0 0 10",
+                                                "name": "zapato",
+                                                "value": null,
+                                                "vtype": null,
+                                                "width": 100
+                                            },
+                                            "name": "MyTextField4",
+                                            "configAlternates": {
+                                                "value": "binding"
+                                            },
+                                            "designerId": "7ba9fd19-fdaf-4f8c-8a45-4e3d195d26ab"
                                         }
                                     ]
                                 },

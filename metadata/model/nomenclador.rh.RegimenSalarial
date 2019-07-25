@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "regimensalarial",
+        "designer|userClassName": "nomenclador.rh.RegimenSalarial"
+    },
+    "name": "nomenclador.rh.TipoPago1",
+    "designerId": "eb8a5025-e857-4e10-b9ff-ce8271b46a84",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "568bea18-1e07-4657-ae0b-95b3c830db40"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "f00b91ea-1f69-4d03-8246-31adeca59330"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "dfffe953-a029-4a1e-b099-0eb5b5f96b08"
+        }
+    ]
+}

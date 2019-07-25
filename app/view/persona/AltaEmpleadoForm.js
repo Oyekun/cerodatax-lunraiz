@@ -21,13 +21,13 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
         'cerodatax.view.persona.PersonaFormViewModel2',
         'cerodatax.view.persona.PersonaFormViewController2',
         'Ext.form.Panel',
+        'Ext.form.field.ComboBox',
+        'Ext.view.BoundList',
+        'Ext.XTemplate',
         'Ext.tab.Panel',
         'Ext.tab.Tab',
         'Ext.form.FieldSet',
         'Ext.Img',
-        'Ext.form.field.ComboBox',
-        'Ext.view.BoundList',
-        'Ext.XTemplate',
         'Ext.form.field.File',
         'Ext.slider.Single',
         'Ext.form.field.Number',
@@ -37,7 +37,10 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
         'Ext.tree.Column',
         'Ext.grid.filters.filter.String',
         'Ext.grid.filters.Filters',
-        'Ext.form.field.Date'
+        'Ext.form.field.Date',
+        'Ext.view.MultiSelector',
+        'Ext.view.MultiSelectorSearch',
+        'Ext.grid.column.Number'
     ],
 
     controller: 'personaaltaempleadoform',
@@ -45,9 +48,10 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
         type: 'personaaltaempleadoform'
     },
     controller: 'nomencladorcrud',
+    height: 669,
     resizable: false,
     bodyPadding: 10,
-    title: 'Persona',
+    title: 'Alta Empleado',
     modal: true,
 
     initConfig: function(instanceConfig) {
@@ -58,7 +62,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                         xtype: 'form',
                         reference: 'form',
                         alignTarget: 'top',
-                        height: 500,
+                        height: 640,
                         width: 460,
                         layout: 'auto',
                         bodyPadding: 10,
@@ -71,6 +75,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                             {
                                 xtype: 'container',
                                 dock: 'bottom',
+                                height: 99,
                                 padding: 10,
                                 layout: 'form',
                                 items: [
@@ -96,6 +101,35 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                             }
                         ],
                         items: [
+                            me.processPersonaaltaempleado({
+                                xtype: 'combobox',
+                                reference: 'personaaltaempleado',
+                                fieldLabel: 'Persona',
+                                name: 'persona_id',
+                                allowBlank: false,
+                                emptyText: 'Seleccione',
+                                displayField: 'nombre',
+                                queryMode: 'local',
+                                store: 'persona.Persona',
+                                valueField: 'id',
+                                listConfig: {
+                                    xtype: 'boundlist',
+                                    itemSelector: 'span',
+                                    itemTpl: [
+                                        ' ',
+                                        '<tpl for=".">',
+                                        '    ',
+                                        '    <tpl if="foto==\'\'">',
+                                        '         {nombre}',
+                                        '        </tpl> ',
+                                        '     <tpl if="foto!=\'\'">',
+                                        '        <img src="{foto}" height="20px" style="float:left;"> {nombre}',
+                                        '        </tpl> ',
+                                        '    ',
+                                        '</tpl>'
+                                    ]
+                                }
+                            }),
                             {
                                 xtype: 'tabpanel',
                                 width: 440,
@@ -106,186 +140,893 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                         title: 'Datos Personales',
                                         items: [
                                             {
-                                                xtype: 'fieldset',
-                                                alignTarget: 'top',
-                                                height: 190,
-                                                margin: '10 0 0 0',
+                                                xtype: 'tabpanel',
                                                 width: 440,
-                                                layout: 'column',
-                                                title: 'Información',
+                                                activeTab: 0,
                                                 items: [
                                                     {
-                                                        xtype: 'container',
-                                                        height: 130,
-                                                        margin: '10 10 0 0',
-                                                        width: 110,
+                                                        xtype: 'panel',
+                                                        title: 'Personales',
                                                         items: [
                                                             {
-                                                                xtype: 'image',
-                                                                alwaysOnTop: true,
-                                                                shim: false,
-                                                                frame: false,
-                                                                height: 110,
-                                                                hidden: true,
-                                                                itemId: 'foto',
-                                                                style: 'font-size: 36px; lineHeight: 36px',
-                                                                width: 100,
-                                                                alt: 'Cargando Foto...',
-                                                                imgCls: ''
+                                                                xtype: 'fieldset',
+                                                                alignTarget: 'top',
+                                                                height: 207,
+                                                                margin: '10 0 0 0',
+                                                                width: 440,
+                                                                layout: 'column',
+                                                                title: 'Información',
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'container',
+                                                                        height: 130,
+                                                                        margin: '10 10 0 0',
+                                                                        width: 110,
+                                                                        items: [
+                                                                            {
+                                                                                xtype: 'image',
+                                                                                alwaysOnTop: true,
+                                                                                shim: false,
+                                                                                frame: false,
+                                                                                height: 110,
+                                                                                hidden: true,
+                                                                                itemId: 'foto',
+                                                                                style: 'font-size: 36px; lineHeight: 36px',
+                                                                                width: 100,
+                                                                                alt: 'Cargando Foto...',
+                                                                                imgCls: ''
+                                                                            },
+                                                                            {
+                                                                                xtype: 'image',
+                                                                                alwaysOnTop: true,
+                                                                                shim: false,
+                                                                                frame: true,
+                                                                                height: 110,
+                                                                                itemId: 'foto1',
+                                                                                style: 'font-size: 110px; margin: 10px;line-height: 120px;',
+                                                                                width: 100,
+                                                                                alt: 'Cargando Foto...',
+                                                                                glyph: 'xf007@FontAwesome'
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    me.processFoto({
+                                                                        xtype: 'filefield',
+                                                                        margin: '10 0 0 0',
+                                                                        fieldLabel: 'Foto',
+                                                                        name: 'foto',
+                                                                        invalidText: 'El valor del elemento es invalido',
+                                                                        emptyText: 'Seleccione',
+                                                                        maxLength: 255,
+                                                                        buttonText: 'Examinar...',
+                                                                        listeners: {
+                                                                            change: 'onFilefieldChange'
+                                                                        }
+                                                                    }),
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        afterLabelTextTpl: [
+                                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                        ],
+                                                                        fieldLabel: 'Nombre(s)',
+                                                                        name: 'nombre',
+                                                                        allowBlank: false,
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.nombre}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        afterLabelTextTpl: [
+                                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                        ],
+                                                                        fieldLabel: 'Apellidos',
+                                                                        name: 'apellidos',
+                                                                        allowBlank: false,
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.apellidos}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        afterLabelTextTpl: [
+                                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                        ],
+                                                                        fieldLabel: 'CI',
+                                                                        name: 'carnet_identidad',
+                                                                        maskRe: /\d/,
+                                                                        maxLength: 11,
+                                                                        minLength: 4,
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.carnet_identidad}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'slider',
+                                                                        reference: 'edad',
+                                                                        width: 285,
+                                                                        fieldLabel: 'Edad',
+                                                                        name: 'edad',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.edad}'
+                                                                        },
+                                                                        listeners: {
+                                                                            change: 'onSliderChange'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'combobox',
+                                                                        margin: '0 0 0 120',
+                                                                        afterLabelTextTpl: [
+                                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                        ],
+                                                                        fieldLabel: 'Sexo',
+                                                                        name: 'sexo_id',
+                                                                        allowBlank: false,
+                                                                        emptyText: 'Seleccione',
+                                                                        displayField: 'nombre',
+                                                                        queryMode: 'local',
+                                                                        store: 'nomenclador.Sexo',
+                                                                        valueField: 'id',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.sexo_id}'
+                                                                        }
+                                                                    }
+                                                                ]
                                                             },
                                                             {
-                                                                xtype: 'image',
-                                                                alwaysOnTop: true,
-                                                                shim: false,
-                                                                frame: true,
-                                                                height: 110,
-                                                                itemId: 'foto1',
-                                                                style: 'font-size: 110px; margin: 10px;line-height: 120px;',
-                                                                width: 100,
-                                                                alt: 'Cargando Foto...',
-                                                                glyph: 'xf007@FontAwesome'
+                                                                xtype: 'fieldset',
+                                                                height: 52,
+                                                                margin: '10 0 0 0',
+                                                                width: 440,
+                                                                layout: 'table',
+                                                                title: 'Talla de Ropas y Zapato',
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 100,
+                                                                        fieldLabel: 'Camisa',
+                                                                        labelWidth: 50,
+                                                                        name: 'camisa',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.camisa}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        width: 100,
+                                                                        fieldLabel: 'Saya',
+                                                                        labelWidth: 50,
+                                                                        name: 'saya',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.saya}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 100,
+                                                                        fieldLabel: 'Pantalón',
+                                                                        labelWidth: 50,
+                                                                        name: 'pantalon',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.pantalon}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 100,
+                                                                        fieldLabel: 'Zapato',
+                                                                        labelWidth: 50,
+                                                                        name: 'zapato',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.zapato}'
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 139,
+                                                                margin: '10 0 0 0',
+                                                                width: 440,
+                                                                title: 'Contacto',
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        afterLabelTextTpl: [
+                                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                        ],
+                                                                        fieldLabel: 'Direccion',
+                                                                        name: 'direccion',
+                                                                        allowBlank: false,
+                                                                        maxLength: 100,
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.direccion}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        fieldLabel: 'Correo',
+                                                                        name: 'correo',
+                                                                        inputType: 'email',
+                                                                        vtype: 'email',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.correo}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        fieldLabel: 'Telefono',
+                                                                        name: 'telefono',
+                                                                        inputType: 'tel',
+                                                                        maskRe: /\d/,
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.telefono}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'textfield',
+                                                                        fieldLabel: 'Celular',
+                                                                        name: 'celular',
+                                                                        inputType: 'tel',
+                                                                        maskRe: /\d/,
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.celular}'
+                                                                        }
+                                                                    }
+                                                                ]
                                                             }
                                                         ]
                                                     },
-                                                    me.processPersonaaltaempleado({
-                                                        xtype: 'combobox',
-                                                        reference: 'personaaltaempleado',
-                                                        fieldLabel: 'Contacto',
-                                                        name: 'persona_id',
-                                                        allowBlank: false,
-                                                        emptyText: 'Seleccione',
-                                                        displayField: 'nombre',
-                                                        queryMode: 'local',
-                                                        store: 'persona.Persona',
-                                                        valueField: 'id',
-                                                        listConfig: {
-                                                            xtype: 'boundlist',
-                                                            itemSelector: 'span',
-                                                            itemTpl: [
-                                                                ' ',
-                                                                '<tpl for=".">',
-                                                                '    ',
-                                                                '    <tpl if="foto==\'\'">',
-                                                                '         {nombre}',
-                                                                '        </tpl> ',
-                                                                '     <tpl if="foto!=\'\'">',
-                                                                '        <img src="{foto}" height="20px" style="float:left;"> {nombre}',
-                                                                '        </tpl> ',
-                                                                '    ',
-                                                                '</tpl>'
-                                                            ]
-                                                        }
-                                                    }),
-                                                    me.processFoto({
-                                                        xtype: 'filefield',
+                                                    {
+                                                        xtype: 'panel',
                                                         margin: '10 0 0 0',
-                                                        fieldLabel: 'Foto',
-                                                        name: 'foto',
-                                                        invalidText: 'El valor del elemento es invalido',
-                                                        emptyText: 'Seleccione',
-                                                        maxLength: 255,
-                                                        buttonText: 'Examinar...',
-                                                        listeners: {
-                                                            change: 'onFilefieldChange'
-                                                        }
-                                                    }),
-                                                    {
-                                                        xtype: 'textfield',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
-                                                        fieldLabel: 'Nombre(s)',
-                                                        name: 'nombre',
-                                                        allowBlank: false,
-                                                        bind: {
-                                                            value: '{personaaltaempleado.selection.nombre}'
-                                                        }
+                                                        title: 'Otros Datos',
+                                                        items: [
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Color Piel',
+                                                                name: 'color_piel_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.ColorPiel',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.color_piel_id}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'País',
+                                                                name: 'pais_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                queryParam: 'provincia_id:false,municipio_id:true',
+                                                                store: 'nomenclador.Pais',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.pais_id}'
+                                                                },
+                                                                listeners: {
+                                                                    select: 'onComboboxSelect'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                disabled: true,
+                                                                fieldLabel: 'Provincia',
+                                                                name: 'provincia_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                queryParam: 'municipio_id:false',
+                                                                store: 'nomenclador.Provincia',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.provincia_id}'
+                                                                },
+                                                                listeners: {
+                                                                    select: 'onComboboxSelect1'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                disabled: true,
+                                                                fieldLabel: 'Municipio',
+                                                                name: 'municipio_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.Municipio',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.municipio_id}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Estado Civil',
+                                                                name: 'estado_civil_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.EstadoCivil',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.estado_civil_id}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Situacion Defensa',
+                                                                name: 'situacion_defensa_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.Defensa',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.situacion_defensa_id}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'textfield',
+                                                                fieldLabel: 'Padre',
+                                                                name: 'padre',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.padre}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'textfield',
+                                                                fieldLabel: 'Madre',
+                                                                name: 'madre',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.madre}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'numberfield',
+                                                                width: 180,
+                                                                fieldLabel: 'Estatura (m)',
+                                                                name: 'estatura',
+                                                                decimalPrecision: 3,
+                                                                decimalSeparator: '.',
+                                                                maxValue: 2.2,
+                                                                minValue: 0.3,
+                                                                step: 0.1,
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.estatura}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'numberfield',
+                                                                width: 180,
+                                                                fieldLabel: 'Peso (Kg)',
+                                                                name: 'peso',
+                                                                decimalPrecision: 3,
+                                                                decimalSeparator: '.',
+                                                                maxValue: 500,
+                                                                minValue: 3,
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.peso}'
+                                                                }
+                                                            }
+                                                        ]
                                                     },
                                                     {
-                                                        xtype: 'textfield',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
-                                                        fieldLabel: 'Apellidos',
-                                                        name: 'apellidos',
-                                                        allowBlank: false,
-                                                        bind: {
-                                                            value: '{personaltaempleado.selection.apellidos}'
-                                                        }
+                                                        xtype: 'panel',
+                                                        margin: '10 0 0 0',
+                                                        title: 'Laborales',
+                                                        items: [
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Nivel Escolar',
+                                                                name: 'nivel_educacional_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.NivelEducacional',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.nivel_educacional_id}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'checkboxfield',
+                                                                fieldLabel: 'Trabaja',
+                                                                name: 'trabaja',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.trabaja}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Organismo',
+                                                                name: 'organismo_id',
+                                                                inputAttrTpl: [
+                                                                    'Entidades:false'
+                                                                ],
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                queryParam: 'Entidades:false',
+                                                                store: 'nomenclador.Organismo',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.organismo_id}'
+                                                                },
+                                                                listeners: {
+                                                                    select: 'onComboboxSelectEntidad1'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'treepanel',
+                                                                disabled: true,
+                                                                height: 300,
+                                                                itemId: 'treePanel',
+                                                                margin: '10 0 0 0',
+                                                                scrollable: true,
+                                                                width: 430,
+                                                                title: 'Entidades',
+                                                                hideHeaders: false,
+                                                                store: 'persona.PersonaEntidad',
+                                                                rootVisible: false,
+                                                                useArrows: true,
+                                                                viewConfig: {
+                                                                    rootVisible: false
+                                                                },
+                                                                columns: [
+                                                                    {
+                                                                        xtype: 'treecolumn',
+                                                                        dataIndex: 'nombre',
+                                                                        text: 'Nombre',
+                                                                        flex: 3,
+                                                                        filter: {
+                                                                            type: 'string',
+                                                                            emptyText: 'Ingrese el texto del filtro...'
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                listeners: {
+                                                                    beforeitemexpand: 'onTreePanelBeforeItemExpand'
+                                                                },
+                                                                plugins: [
+                                                                    {
+                                                                        ptype: 'gridfilters',
+                                                                        menuFilterText: 'Buscar'
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     },
                                                     {
-                                                        xtype: 'textfield',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
-                                                        fieldLabel: 'CI',
-                                                        name: 'carnet_identidad',
-                                                        maskRe: /\d/,
-                                                        maxLength: 11,
-                                                        minLength: 4
-                                                    },
-                                                    {
-                                                        xtype: 'slider',
-                                                        reference: 'edad',
-                                                        width: 285,
-                                                        fieldLabel: 'Edad',
-                                                        name: 'edad',
-                                                        listeners: {
-                                                            change: 'onSliderChange'
-                                                        }
-                                                    },
-                                                    {
-                                                        xtype: 'combobox',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
-                                                        fieldLabel: 'Sexo',
-                                                        name: 'sexo_id',
-                                                        allowBlank: false,
-                                                        emptyText: 'Seleccione',
-                                                        displayField: 'nombre',
-                                                        queryMode: 'local',
-                                                        store: 'nomenclador.Sexo',
-                                                        valueField: 'id'
+                                                        xtype: 'panel',
+                                                        margin: '10 0 0 0',
+                                                        title: 'Registro Civil',
+                                                        items: [
+                                                            {
+                                                                xtype: 'datefield',
+                                                                fieldLabel: 'Fecha nacimiento',
+                                                                name: 'fecha_nacimiento',
+                                                                altFormats: '',
+                                                                format: 'Y-m-d',
+                                                                submitFormat: 'Y-m-d',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.fecha_nacimiento}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Grupo Sanguineo',
+                                                                name: 'grupo_sanguineo_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.GrupoSanguineo',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.grupo_sanguineo_id}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'numberfield',
+                                                                width: 180,
+                                                                fieldLabel: 'Cantidad de Hijos',
+                                                                name: 'cantidad_hijos',
+                                                                enforceMaxLength: false,
+                                                                maxValue: 30,
+                                                                minValue: 0,
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.cantidad_hijos}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'checkboxfield',
+                                                                fieldLabel: 'Donante',
+                                                                name: 'donante',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.donante}'
+                                                                }
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                margin: '10 0 0 0',
+                                                                title: 'Datos del registro',
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'combobox',
+                                                                        fieldLabel: 'País',
+                                                                        name: 'pais_registro_civil_id',
+                                                                        emptyText: 'Seleccione',
+                                                                        displayField: 'nombre',
+                                                                        queryMode: 'local',
+                                                                        queryParam: 'provincia_id:false,municipio_id:true',
+                                                                        store: 'nomenclador.Pais',
+                                                                        valueField: 'id',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.pais_registro_civil_id}'
+                                                                        },
+                                                                        listeners: {
+                                                                            select: 'onComboboxSelect'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'combobox',
+                                                                        fieldLabel: 'Provincia',
+                                                                        name: 'provincia_registro_civil_id',
+                                                                        emptyText: 'Seleccione',
+                                                                        displayField: 'nombre',
+                                                                        queryMode: 'local',
+                                                                        queryParam: 'municipio_id:false',
+                                                                        store: 'nomenclador.Provincia',
+                                                                        valueField: 'id',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.provincia_registro_civil_id}'
+                                                                        },
+                                                                        listeners: {
+                                                                            select: 'onComboboxSelect1'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'combobox',
+                                                                        fieldLabel: 'Municipio',
+                                                                        name: 'municipio_registro_civil_id',
+                                                                        emptyText: 'Seleccione',
+                                                                        displayField: 'nombre',
+                                                                        queryMode: 'local',
+                                                                        store: 'nomenclador.Municipio',
+                                                                        valueField: 'id',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.municipio_registro_civil_id}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        width: 180,
+                                                                        fieldLabel: 'Tomo',
+                                                                        name: 'tomo',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.tomo}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        width: 180,
+                                                                        fieldLabel: 'Folio',
+                                                                        name: 'folio',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.folio}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'datefield',
+                                                                        width: 180,
+                                                                        fieldLabel: 'Año',
+                                                                        name: 'ano',
+                                                                        format: 'Y',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.ano}'
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     }
                                                 ]
-                                            },
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        margin: '10 0 0 0',
+                                        title: 'Plantilla',
+                                        items: [
                                             {
-                                                xtype: 'fieldset',
-                                                margin: '10 0 0 0',
-                                                width: 440,
-                                                title: 'Contacto',
+                                                xtype: 'tabpanel',
+                                                activeTab: 0,
                                                 items: [
                                                     {
-                                                        xtype: 'textfield',
-                                                        afterLabelTextTpl: [
-                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                        ],
-                                                        fieldLabel: 'Direccion',
-                                                        name: 'direccion',
-                                                        allowBlank: false,
-                                                        maxLength: 100
+                                                        xtype: 'panel',
+                                                        title: 'Datos de la Plantilla',
+                                                        items: [
+                                                            {
+                                                                xtype: 'numberfield',
+                                                                width: 180,
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Solapín',
+                                                                name: 'no_solapin',
+                                                                allowBlank: false
+                                                            },
+                                                            {
+                                                                xtype: 'numberfield',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'No Tarjeta Asistencia',
+                                                                name: 'no_tarjeta_asistencia',
+                                                                allowBlank: false
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Tipo Contrato',
+                                                                name: 'tipocontrato_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.rh.TipoContrato',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Causa Alta',
+                                                                name: 'causa_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                queryParam: 'provincia_id:false,municipio_id:true',
+                                                                store: 'nomenclador.rh.Causa',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Área',
+                                                                name: 'area_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                queryParam: 'areaplaza_id:false,grupoescala_id:true,categoria_cargo_id:true',
+                                                                store: 'estructura.AreaCombo',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                disabled: true,
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Plaza',
+                                                                name: 'areaplaza_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'cargo',
+                                                                queryMode: 'local',
+                                                                queryParam: 'grupoescala_id:false,categoria_cargo_id:false',
+                                                                store: 'estructura.AreaPlaza',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                disabled: true,
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Grupo Escala',
+                                                                name: 'grupoescala_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.GrupoEscala',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                disabled: true,
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Categoría',
+                                                                name: 'categoria_cargo_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.CategoriaCargo',
+                                                                valueField: 'id'
+                                                            }
+                                                        ]
                                                     },
                                                     {
-                                                        xtype: 'textfield',
-                                                        fieldLabel: 'Correo',
-                                                        name: 'correo',
-                                                        inputType: 'email',
-                                                        vtype: 'email'
+                                                        xtype: 'panel',
+                                                        title: 'Datos de Alta',
+                                                        items: [
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 79,
+                                                                width: 275,
+                                                                title: 'Antiguedad',
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        width: 180,
+                                                                        fieldLabel: 'Año Inicio',
+                                                                        name: 'ano_inicio',
+                                                                        maxLength: 4,
+                                                                        minLength: 4,
+                                                                        maxValue: 3000,
+                                                                        minValue: 1960
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        width: 180,
+                                                                        fieldLabel: 'Años Interrupto',
+                                                                        name: 'ano_interrupto'
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'datefield',
+                                                                fieldLabel: 'Fecha Alta Cargo',
+                                                                name: 'fecha_alta_cargo',
+                                                                altFormats: '',
+                                                                format: 'Y-m-d',
+                                                                submitFormat: 'Y-m-d'
+                                                            },
+                                                            {
+                                                                xtype: 'datefield',
+                                                                fieldLabel: 'Fecha Alta Entidad',
+                                                                name: 'fecha_alta_entidad',
+                                                                altFormats: '',
+                                                                format: 'Y-m-d',
+                                                                submitFormat: 'Y-m-d'
+                                                            },
+                                                            {
+                                                                xtype: 'datefield',
+                                                                fieldLabel: 'Fecha Terminación Cargo',
+                                                                name: 'fecha_terminacion_cargo',
+                                                                altFormats: '',
+                                                                format: 'Y-m-d',
+                                                                submitFormat: 'Y-m-d'
+                                                            },
+                                                            {
+                                                                xtype: 'datefield',
+                                                                fieldLabel: 'Fecha Firma Designado',
+                                                                name: 'fecha_firma_designado',
+                                                                altFormats: '',
+                                                                format: 'Y-m-d',
+                                                                submitFormat: 'Y-m-d'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Categoría Docente',
+                                                                name: 'categoriadocente_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.CategoriaDocente',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Categoría Científica',
+                                                                name: 'categoriacientifica_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.CategoriaCientifica',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Tipo Jefe',
+                                                                name: 'tipojefe_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.rh.TipoJefe',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                fieldLabel: 'Profesión',
+                                                                name: 'profesion_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.rh.Profesion',
+                                                                valueField: 'id'
+                                                            }
+                                                        ]
                                                     },
                                                     {
-                                                        xtype: 'textfield',
-                                                        fieldLabel: 'Telefono',
-                                                        name: 'telefono',
-                                                        inputType: 'tel',
-                                                        maskRe: /\d/
-                                                    },
-                                                    {
-                                                        xtype: 'textfield',
-                                                        fieldLabel: 'Celular',
-                                                        name: 'celular',
-                                                        inputType: 'tel',
-                                                        maskRe: /\d/
+                                                        xtype: 'panel',
+                                                        title: 'Organizaciones e Idioma',
+                                                        items: [
+                                                            {
+                                                                xtype: 'multiselector',
+                                                                height: 200,
+                                                                title: 'Organizaciones',
+                                                                emptyText: 'No existen elementos que mostrar',
+                                                                store: 'nomenclador.rh.AltaEmpleadoOrganizacionPolitica',
+                                                                addToolText: 'Busca un elemento para adicionar',
+                                                                fieldName: 'nombre',
+                                                                removeRowTip: 'Elimina este elemento',
+                                                                search: {
+                                                                    xtype: 'multiselector-search',
+                                                                    searchText: 'Buscar...',
+                                                                    store: 'nomenclador.rh.OrganizacionPolitica',
+                                                                    field: 'nombre'
+                                                                },
+                                                                viewConfig: {
+                                                                    deferEmptyText: false
+                                                                },
+                                                                columns: [
+                                                                    {
+                                                                        xtype: 'gridcolumn',
+                                                                        width: 222,
+                                                                        dataIndex: 'nombre',
+                                                                        text: 'Nombre'
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'multiselector',
+                                                                height: 200,
+                                                                title: 'Idiomas',
+                                                                emptyText: 'No existen elementos que mostrar',
+                                                                store: 'nomenclador.rh.AltaEmpleadoIdioma',
+                                                                addToolText: 'Busca un elemento para adicionar',
+                                                                fieldName: 'nombre',
+                                                                removeRowTip: 'Elimina este elemento',
+                                                                search: {
+                                                                    xtype: 'multiselector-search',
+                                                                    searchText: 'Buscar...',
+                                                                    store: 'nomenclador.general.Idioma',
+                                                                    field: 'nombre'
+                                                                },
+                                                                viewConfig: {
+                                                                    deferEmptyText: false
+                                                                },
+                                                                columns: [
+                                                                    {
+                                                                        xtype: 'gridcolumn',
+                                                                        width: 222,
+                                                                        dataIndex: 'nombre',
+                                                                        text: 'Nombre'
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     }
                                                 ]
                                             }
@@ -294,286 +1035,430 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                     {
                                         xtype: 'panel',
                                         margin: '10 0 0 0',
-                                        title: 'Otros Datos',
+                                        title: 'Salario y Pagos',
                                         items: [
                                             {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'Color Piel',
-                                                name: 'color_piel_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                store: 'nomenclador.ColorPiel',
-                                                valueField: 'id'
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'País',
-                                                name: 'pais_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                queryParam: 'provincia_id:false,municipio_id:true',
-                                                store: 'nomenclador.Pais',
-                                                valueField: 'id',
-                                                listeners: {
-                                                    select: 'onComboboxSelect'
-                                                }
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                disabled: true,
-                                                fieldLabel: 'Provincia',
-                                                name: 'provincia_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                queryParam: 'municipio_id:false',
-                                                store: 'nomenclador.Provincia',
-                                                valueField: 'id',
-                                                listeners: {
-                                                    select: 'onComboboxSelect1'
-                                                }
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                disabled: true,
-                                                fieldLabel: 'Municipio',
-                                                name: 'municipio_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                store: 'nomenclador.Municipio',
-                                                valueField: 'id'
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'Estado Civil',
-                                                name: 'estado_civil_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                store: 'nomenclador.EstadoCivil',
-                                                valueField: 'id'
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'Situacion Defensa',
-                                                name: 'situacion_defensa_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                store: 'nomenclador.Defensa',
-                                                valueField: 'id'
-                                            },
-                                            {
-                                                xtype: 'textfield',
-                                                fieldLabel: 'Padre',
-                                                name: 'padre'
-                                            },
-                                            {
-                                                xtype: 'textfield',
-                                                fieldLabel: 'Madre',
-                                                name: 'madre'
-                                            },
-                                            {
-                                                xtype: 'numberfield',
-                                                width: 180,
-                                                fieldLabel: 'Estatura (m)',
-                                                name: 'estatura',
-                                                decimalPrecision: 3,
-                                                decimalSeparator: '.',
-                                                maxValue: 2.2,
-                                                minValue: 0.3,
-                                                step: 0.1
-                                            },
-                                            {
-                                                xtype: 'numberfield',
-                                                width: 180,
-                                                fieldLabel: 'Peso (Kg)',
-                                                name: 'peso',
-                                                decimalPrecision: 3,
-                                                decimalSeparator: '.',
-                                                maxValue: 300,
-                                                minValue: 3
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        xtype: 'panel',
-                                        margin: '10 0 0 0',
-                                        title: 'Laborales',
-                                        items: [
-                                            {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'Nivel Escolar',
-                                                name: 'nivel_educacional_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                store: 'nomenclador.NivelEducacional',
-                                                valueField: 'id'
-                                            },
-                                            {
-                                                xtype: 'checkboxfield',
-                                                fieldLabel: 'Trabaja',
-                                                name: 'trabaja'
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'Organismo',
-                                                name: 'organismo_id',
-                                                inputAttrTpl: [
-                                                    'Entidades:false'
-                                                ],
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                queryParam: 'Entidades:false',
-                                                store: 'nomenclador.Organismo',
-                                                valueField: 'id',
-                                                listeners: {
-                                                    select: 'onComboboxSelectEntidad'
-                                                }
-                                            },
-                                            {
-                                                xtype: 'treepanel',
-                                                disabled: true,
-                                                height: 300,
-                                                itemId: 'treePanel',
-                                                margin: '10 0 0 0',
-                                                scrollable: true,
-                                                width: 430,
-                                                title: 'Entidades',
-                                                hideHeaders: false,
-                                                store: 'persona.PersonaEntidad',
-                                                rootVisible: false,
-                                                useArrows: true,
-                                                viewConfig: {
-                                                    rootVisible: false
-                                                },
-                                                columns: [
-                                                    {
-                                                        xtype: 'treecolumn',
-                                                        dataIndex: 'nombre',
-                                                        text: 'Nombre',
-                                                        flex: 3,
-                                                        filter: {
-                                                            type: 'string',
-                                                            emptyText: 'Ingrese el texto del filtro...'
-                                                        }
-                                                    }
-                                                ],
-                                                listeners: {
-                                                    beforeitemexpand: 'onTreePanelBeforeItemExpand1'
-                                                },
-                                                plugins: [
-                                                    {
-                                                        ptype: 'gridfilters',
-                                                        menuFilterText: 'Buscar'
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        xtype: 'panel',
-                                        margin: '10 0 0 0',
-                                        title: 'Registro Civil',
-                                        items: [
-                                            {
-                                                xtype: 'datefield',
-                                                fieldLabel: 'Fecha nacimiento',
-                                                name: 'fecha_nacimiento',
-                                                altFormats: '',
-                                                format: 'Y-m-d',
-                                                submitFormat: 'Y-m-d'
-                                            },
-                                            {
-                                                xtype: 'combobox',
-                                                fieldLabel: 'Grupo Sanguineo',
-                                                name: 'grupo_sanguineo_id',
-                                                emptyText: 'Seleccione',
-                                                displayField: 'nombre',
-                                                queryMode: 'local',
-                                                store: 'nomenclador.GrupoSanguineo',
-                                                valueField: 'id'
-                                            },
-                                            {
-                                                xtype: 'numberfield',
-                                                width: 180,
-                                                fieldLabel: 'Cantidad de Hijos',
-                                                name: 'cantidad_hijos',
-                                                enforceMaxLength: false,
-                                                maxValue: 30,
-                                                minValue: 0
-                                            },
-                                            {
-                                                xtype: 'checkboxfield',
-                                                fieldLabel: 'Donante',
-                                                name: 'donante'
-                                            },
-                                            {
-                                                xtype: 'fieldset',
-                                                margin: '10 0 0 0',
-                                                title: 'Datos del registro',
+                                                xtype: 'tabpanel',
+                                                activeTab: 0,
                                                 items: [
                                                     {
-                                                        xtype: 'combobox',
-                                                        fieldLabel: 'País',
-                                                        name: 'pais_registro_civil_id',
-                                                        emptyText: 'Seleccione',
-                                                        displayField: 'nombre',
-                                                        queryMode: 'local',
-                                                        queryParam: 'provincia_id:false,municipio_id:true',
-                                                        store: 'nomenclador.Pais',
-                                                        valueField: 'id',
-                                                        listeners: {
-                                                            select: 'onComboboxSelect'
-                                                        }
+                                                        xtype: 'panel',
+                                                        height: 400,
+                                                        title: 'Datos Generales',
+                                                        items: [
+                                                            {
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Tipo de Pago',
+                                                                labelWidth: 120,
+                                                                name: 'tipopago_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.rh.TipoPago',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Regimen Salarial',
+                                                                labelWidth: 120,
+                                                                name: 'regimensalarial_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.rh.RegimenSalarial',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 85,
+                                                                width: 295,
+                                                                title: 'Salario Escala',
+                                                                layout: {
+                                                                    type: 'table',
+                                                                    columns: 2
+                                                                },
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Básico',
+                                                                        labelWidth: 70,
+                                                                        name: 'basico',
+                                                                        readOnly: true
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Estimulo',
+                                                                        labelWidth: 50,
+                                                                        name: 'estimulo'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '10 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Antiguedad',
+                                                                        labelWidth: 70,
+                                                                        name: 'antiguedad'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '10 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Plus',
+                                                                        labelWidth: 50,
+                                                                        name: 'plus'
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 85,
+                                                                width: 295,
+                                                                title: 'Otros Datos',
+                                                                layout: {
+                                                                    type: 'table',
+                                                                    columns: 2
+                                                                },
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Tarifa',
+                                                                        labelWidth: 70,
+                                                                        name: 'tarifa',
+                                                                        readOnly: true
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Otros',
+                                                                        labelWidth: 50,
+                                                                        name: 'otros'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '10 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Porciento',
+                                                                        labelWidth: 70,
+                                                                        name: 'porciento'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '10 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Cargo',
+                                                                        labelWidth: 50,
+                                                                        name: 'salario_cargo'
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 70,
+                                                                width: 430,
+                                                                layout: 'table',
+                                                                title: 'Vacaciones',
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'checkboxfield',
+                                                                        margin: '10 0 0 0',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Acumula Vacaciones',
+                                                                        labelWidth: 130,
+                                                                        name: 'acumula_vacaciones',
+                                                                        value: {
+                                                                            dias: false,
+                                                                            importe: false
+                                                                        },
+                                                                        listeners: {
+                                                                            change: 'onCheckboxfieldChange'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        disabled: true,
+                                                                        margin: '0 0 0 10',
+                                                                        width: 100,
+                                                                        fieldLabel: 'Días',
+                                                                        labelWidth: 30,
+                                                                        name: 'dias'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        disabled: true,
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Importe',
+                                                                        labelWidth: 50,
+                                                                        name: 'importe'
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 65,
+                                                                width: 430,
+                                                                title: 'Salario Divisa',
+                                                                layout: {
+                                                                    type: 'table',
+                                                                    columns: 3
+                                                                },
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Divisa',
+                                                                        labelWidth: 50,
+                                                                        name: 'divisa'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Tarifa',
+                                                                        labelWidth: 70,
+                                                                        name: 'tarifa_divisa',
+                                                                        readOnly: true
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Coeficiente Tarifa',
+                                                                        labelWidth: 70,
+                                                                        name: 'coeficiente_tarifa_divisa'
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     },
                                                     {
-                                                        xtype: 'combobox',
-                                                        fieldLabel: 'Provincia',
-                                                        name: 'provincia_registro_civil_id',
-                                                        emptyText: 'Seleccione',
-                                                        displayField: 'nombre',
-                                                        queryMode: 'local',
-                                                        queryParam: 'municipio_id:false',
-                                                        store: 'nomenclador.Provincia',
-                                                        valueField: 'id',
-                                                        listeners: {
-                                                            select: 'onComboboxSelect1'
-                                                        }
+                                                        xtype: 'panel',
+                                                        height: 400,
+                                                        title: 'Horario y Estimulación',
+                                                        items: [
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 99,
+                                                                width: 440,
+                                                                title: 'Horario',
+                                                                layout: {
+                                                                    type: 'table',
+                                                                    columns: 2
+                                                                },
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'combobox',
+                                                                        reference: 'tipocalendarioaltaempleado',
+                                                                        afterLabelTextTpl: [
+                                                                            '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                        ],
+                                                                        fieldLabel: 'Tipo de Calendario',
+                                                                        labelWidth: 110,
+                                                                        name: 'tipocalendario_id',
+                                                                        allowBlank: false,
+                                                                        emptyText: 'Seleccione',
+                                                                        displayField: 'nombre',
+                                                                        queryMode: 'local',
+                                                                        store: 'rh.TipoCalendario',
+                                                                        valueField: 'id'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Días Laborables',
+                                                                        labelWidth: 70,
+                                                                        name: 'dias_laborables',
+                                                                        readOnly: true,
+                                                                        bind: {
+                                                                            value: '{tipocalendarioaltaempleado.selection.dias_laborables}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'checkboxfield',
+                                                                        margin: '10 0 0 0',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Acumula Vacaciones',
+                                                                        labelWidth: 130,
+                                                                        name: 'descontar_sabados',
+                                                                        value: {
+                                                                            dias: false,
+                                                                            importe: false
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                reference: 'salarioadicionalaltaempleado',
+                                                                fieldLabel: 'Salario Adicional',
+                                                                labelWidth: 110,
+                                                                name: 'salarioadicional_id',
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.rh.SalarioAdicional',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 67,
+                                                                width: 440,
+                                                                title: 'Idoneidad',
+                                                                layout: {
+                                                                    type: 'table',
+                                                                    columns: 3
+                                                                },
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Idoneidad Fijo',
+                                                                        labelWidth: 70,
+                                                                        name: 'idoneidad_fijo',
+                                                                        readOnly: true,
+                                                                        bind: {
+                                                                            value: '{salarioadicionalaltaempleado.selection.idoneidad_fijo}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Idoneidad Movil',
+                                                                        labelWidth: 70,
+                                                                        name: 'idoneidad_movil',
+                                                                        readOnly: true,
+                                                                        bind: {
+                                                                            value: '{salarioadicionalaltaempleado.selection.idoneidad_movil}'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 170,
+                                                                        fieldLabel: '% Retribuición Complementaria',
+                                                                        name: 'porciento_retribuicion_complementaria',
+                                                                        readOnly: true,
+                                                                        bind: {
+                                                                            value: '{salarioadicionalaltaempleado.selection.porciento_retribuicion_complementaria}'
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 56,
+                                                                width: 295,
+                                                                title: 'Pago en Divisa',
+                                                                layout: {
+                                                                    type: 'table',
+                                                                    columns: 2
+                                                                },
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Valor',
+                                                                        labelWidth: 70,
+                                                                        name: 'pago_divisa_valor'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Valor %',
+                                                                        labelWidth: 50,
+                                                                        name: 'pago_divisa_porciento'
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'fieldset',
+                                                                height: 53,
+                                                                width: 295,
+                                                                title: 'Estimulación',
+                                                                layout: {
+                                                                    type: 'table',
+                                                                    columns: 2
+                                                                },
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 140,
+                                                                        fieldLabel: 'Valor',
+                                                                        labelWidth: 70,
+                                                                        name: 'estimulacion_valor'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numberfield',
+                                                                        margin: '0 0 0 10',
+                                                                        width: 120,
+                                                                        fieldLabel: 'Valor %',
+                                                                        labelWidth: 50,
+                                                                        name: 'estimulacion_porciento'
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     },
                                                     {
-                                                        xtype: 'combobox',
-                                                        fieldLabel: 'Municipio',
-                                                        name: 'municipio_registro_civil_id',
-                                                        emptyText: 'Seleccione',
-                                                        displayField: 'nombre',
-                                                        queryMode: 'local',
-                                                        store: 'nomenclador.Municipio',
-                                                        valueField: 'id'
-                                                    },
-                                                    {
-                                                        xtype: 'numberfield',
-                                                        width: 180,
-                                                        fieldLabel: 'Tomo',
-                                                        name: 'tomo'
-                                                    },
-                                                    {
-                                                        xtype: 'numberfield',
-                                                        width: 180,
-                                                        fieldLabel: 'Folio',
-                                                        name: 'folio'
-                                                    },
-                                                    {
-                                                        xtype: 'datefield',
-                                                        width: 180,
-                                                        fieldLabel: 'Año',
-                                                        name: 'ano',
-                                                        format: 'Y'
+                                                        xtype: 'panel',
+                                                        title: 'Centros de Costo',
+                                                        items: [
+                                                            {
+                                                                xtype: 'multiselector',
+                                                                height: 200,
+                                                                title: 'Centros de Costo',
+                                                                emptyText: 'No existen elementos que mostrar',
+                                                                store: 'nomenclador.rh.AltaEmpleadoCentroCosto',
+                                                                addToolText: 'Busca un elemento para adicionar',
+                                                                fieldName: 'nombre',
+                                                                removeRowTip: 'Elimina este elemento',
+                                                                search: {
+                                                                    xtype: 'multiselector-search',
+                                                                    searchText: 'Buscar...',
+                                                                    store: 'nomenclador.CentroCosto',
+                                                                    field: 'nombre'
+                                                                },
+                                                                viewConfig: {
+                                                                    deferEmptyText: false
+                                                                },
+                                                                columns: [
+                                                                    {
+                                                                        xtype: 'gridcolumn',
+                                                                        width: 222,
+                                                                        dataIndex: 'nombre',
+                                                                        text: 'Nombre'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'numbercolumn',
+                                                                        width: 120,
+                                                                        dataIndex: 'porciento_fondo_tiempo',
+                                                                        text: '% Fondo Tiempo'
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     }
                                                 ]
                                             }

@@ -3078,10 +3078,10 @@
                     "//Funcion para construir el encabezado de los grid y tree panel",
                     "        //console.log(comp,result)",
                     "//if(comp.itemid!='temporal')",
-                    "             ",
+                    "",
                     "        //temporal es para q no se visualice en el header del grid o tree",
                     "        if(comp.inputType !='password' && comp.itemId!='temporal')",
-                    "            if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )",
+                    "            if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype=='spinnerfield'||comp.xtype==='slider' ||comp.xtype==='filefield' )",
                     "            {",
                     "",
                     "                var xtype = 'gridcolumn';",
@@ -3157,6 +3157,14 @@
                     "                        };",
                     "                        break;",
                     "                    }",
+                    "                         case 'spinnerfield':{",
+                    "                        xtype = 'numbercolumn';",
+                    "                        filter = {",
+                    "                            type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'",
+                    "                        };",
+                    "                        break;",
+                    "                    }",
+                    "                         ",
                     "                    case 'datefield':{",
                     "                        xtype = 'datecolumn';",
                     "                        format = 'Y-m-d';",
@@ -3881,6 +3889,10 @@
                     "    {",
                     "        migration.push({nombre:item.name,tipo:'INT',constraint:'1'});",
                     "    }",
+                    "    if(item.xtype=='spinnerfield')",
+                    "    {",
+                    "        migration.push({nombre:item.name,tipo:'INT',constraint:'10'});",
+                    "    }",
                     "    if(item.xtype=='slider'||item.xtype=='numberfield')",
                     "    {",
                     "        migration.push({nombre:item.name,tipo:'FLOAT',constraint:'10',nullfield:nullcampofield});",
@@ -4023,6 +4035,78 @@
             },
             "name": "estadoBotonesDisabled",
             "designerId": "4c546e16-adc2-4b7e-b4d5-ab711a3b31ac"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "checkcolumn, rowIndex, checked, eOpts"
+                ],
+                "fn": "onCheckcolumnBeforeCheckChange"
+            },
+            "name": "onCheckcolumnBeforeCheckChange",
+            "designerId": "3ae61643-6c46-4f19-a4e7-f2159a9c001d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "fn": "onCheckboxfieldChange",
+                "implHandler": [
+                    "var form =field.up('form'); ",
+                    "var acciones = field.initialConfig.value; ",
+                    "for(var accion in acciones)",
+                    "{",
+                    "",
+                    "    var valor = acciones[accion];",
+                    "    var item = '';",
+                    "    var itemC = '';",
+                    "    var itemT = '';",
+                    "    item = form.down('spinnerfield[name='+accion+']');",
+                    "    itemC = form.down('combobox[name='+accion+']');              ",
+                    "    itemT = form.down('textfield[name='+accion+']');",
+                    "",
+                    "    if(item!==null)",
+                    "    {item.setValue('');",
+                    "     if(valor===false)",
+                    "         item.setDisabled(!newValue);",
+                    "     else ",
+                    "         item.setDisabled(true);",
+                    "    }",
+                    "    if(itemC!==null)",
+                    "    {itemC.setValue('');",
+                    "     if(valor===false)",
+                    "         itemC.setDisabled(!newValue);",
+                    "     else ",
+                    "         itemC.setDisabled(true);",
+                    "    }",
+                    "    if(itemT!==null)",
+                    "    {itemT.setValue('');",
+                    "     if(valor===false)",
+                    "         itemT.setDisabled(!newValue);",
+                    "     else ",
+                    "         itemT.setDisabled(true);",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "onCheckboxfieldChange",
+            "designerId": "a82135b6-0121-46ac-8f4c-b77cd4890847"
         }
     ]
 }

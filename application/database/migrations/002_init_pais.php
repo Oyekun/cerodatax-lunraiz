@@ -46,8 +46,11 @@ $string = read_file(APPPATH.'hooks/paises.csv');
 	 
           $existe = count($result->result_array())>0 ? TRUE: FALSE;
         if($existe==FALSE)
-        {$model = 'Continente';
-        	$this->load->model($model);
+        {
+            $model = 'Continente';
+            $dirmodel = 'nomenclador/continente';
+        	
+            $this->load->model($dirmodel);
 		$nameuuid = new $model; 
 		$uuid = $this->uuid->v5($continente,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
 		$dataArray = array();
@@ -70,8 +73,10 @@ $string = read_file(APPPATH.'hooks/paises.csv');
           $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
         if($existe==FALSE)
-        {$model = 'Pais';
-        	$this->load->model($model);
+        {   
+            $model = 'Pais';
+            $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
 		$nameuuid = new $model; 
 		$uuid = $this->uuid->v5($nombre,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
 		$dataArray = array();

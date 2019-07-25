@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoriacientifica",
+        "designer|userClassName": "nomenclador.CategoriaCientifica"
+    },
+    "name": "nomenclador.CategoriaDocente1",
+    "designerId": "915daaee-3332-4c08-8ce6-c65ada31f4a9",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "7317b2ef-fcfc-4424-83dd-7d297ab7403c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "a4162c84-9c1a-4d88-b0cd-26d2a9ff9d02"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "ae2f37de-2a24-44cd-81ef-63326d12b581"
+        }
+    ]
+}

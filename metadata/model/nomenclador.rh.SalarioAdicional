@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "salarioadicional",
+        "designer|userClassName": "nomenclador.rh.SalarioAdicional"
+    },
+    "name": "nomenclador.rh.TipoPago1",
+    "designerId": "7d9abe11-65d6-47dd-8a9e-866ea23d4432",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "5a1f7bfd-b53c-4707-b497-f1008c44aca4"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "0e029554-5c08-4674-ba7e-2f9cba28aa82"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "03926b16-8f59-4c17-92d0-1a9833bf3073"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idoneidad_fijo"
+            },
+            "name": "MyInteger2",
+            "designerId": "9a8e649f-da2a-4e0f-abf6-b9b0ac2a5e82"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idoneidad_movil"
+            },
+            "name": "MyInteger4",
+            "designerId": "abc53405-b21f-4dbc-a26e-900743e17028"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "porciento_retribuicion_complementaria"
+            },
+            "name": "MyInteger3",
+            "designerId": "e13aae9b-746d-4141-bed9-522967b59270"
+        }
+    ]
+}

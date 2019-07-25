@@ -20,6 +20,8 @@ class Menu extends CI_Model {
 			//	$this->load->model('TipoMenu'); 
 			//$this->persona_id = $this->Persona->id;
 				$this->uuid = 'nombre';
+				$this->uuid2 = 'modulo_id';
+
                 $this->relacion = array('modulo_id' =>'configuracion_modulo','icono_id' =>'nomenclador_icono');
         }
 }

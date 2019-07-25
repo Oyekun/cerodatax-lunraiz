@@ -650,6 +650,58 @@
             "designerId": "6f7a0142-5a73-4f73-86de-ca45e8f24859"
         },
         {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "saya"
+            },
+            "name": "MyString70",
+            "designerId": "b19d0caa-ef61-437f-9baf-c3b279b7c472"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "camisa"
+            },
+            "name": "MyString72",
+            "designerId": "3c1d4b42-c44e-4f4b-9ac8-24c3b88d46c3"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pantalon"
+            },
+            "name": "MyString73",
+            "designerId": "c84c8151-cc3a-425d-ac8a-7c862de9d886"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "zapato"
+            },
+            "name": "MyString75",
+            "designerId": "ea039939-74ed-46f2-a6e0-a53ea5205840"
+        },
+        {
             "type": "Ext.data.proxy.Rest",
             "reference": {
                 "name": "proxy",

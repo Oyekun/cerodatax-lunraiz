@@ -2657,7 +2657,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
                 //temporal es para q no se visualice en el header del grid o tree
                 if(comp.inputType !='password' && comp.itemId!='temporal')
-                    if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype==='slider' ||comp.xtype==='filefield' )
+                    if(comp.xtype==='displayfield'|| comp.xtype==='textfield'||comp.xtype==='textareafield'||comp.xtype==='numberfield' ||comp.xtype==='checkboxfield' ||comp.xtype==='datefield' ||comp.xtype==='combobox' ||comp.xtype=='spinnerfield'||comp.xtype==='slider' ||comp.xtype==='filefield' )
                     {
 
                         var xtype = 'gridcolumn';
@@ -2733,6 +2733,14 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                 };
                                 break;
                             }
+                                 case 'spinnerfield':{
+                                xtype = 'numbercolumn';
+                                filter = {
+                                    type: 'numeric',dataIndex: dataIndex,emptyText:'Entre el número...'
+                                };
+                                break;
+                            }
+
                             case 'datefield':{
                                 xtype = 'datecolumn';
                                 format = 'Y-m-d';
@@ -3276,6 +3284,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             {
                 migration.push({nombre:item.name,tipo:'INT',constraint:'1'});
             }
+            if(item.xtype=='spinnerfield')
+            {
+                migration.push({nombre:item.name,tipo:'INT',constraint:'10'});
+            }
             if(item.xtype=='slider'||item.xtype=='numberfield')
             {
                 migration.push({nombre:item.name,tipo:'FLOAT',constraint:'10',nullfield:nullcampofield});
@@ -3382,6 +3394,48 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                     item.setDisabled(true);
                 });
                         }
+    },
+
+    onCheckcolumnBeforeCheckChange: function(checkcolumn, rowIndex, checked, eOpts) {
+
+    },
+
+    onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {
+        var form =field.up('form');
+        var acciones = field.initialConfig.value;
+        for(var accion in acciones)
+        {
+
+            var valor = acciones[accion];
+            var item = '';
+            var itemC = '';
+            var itemT = '';
+            item = form.down('spinnerfield[name='+accion+']');
+            itemC = form.down('combobox[name='+accion+']');
+            itemT = form.down('textfield[name='+accion+']');
+
+            if(item!==null)
+            {item.setValue('');
+             if(valor===false)
+                 item.setDisabled(!newValue);
+             else
+                 item.setDisabled(true);
+            }
+            if(itemC!==null)
+            {itemC.setValue('');
+             if(valor===false)
+                 itemC.setDisabled(!newValue);
+             else
+                 itemC.setDisabled(true);
+            }
+            if(itemT!==null)
+            {itemT.setValue('');
+             if(valor===false)
+                 itemT.setDisabled(!newValue);
+             else
+                 itemT.setDisabled(true);
+            }
+        }
     }
 
 });

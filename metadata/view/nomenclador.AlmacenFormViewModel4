@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorrhtipocontratoform",
+        "designer|userClassName": "nomenclador.AlmacenFormViewModel4"
+    },
+    "name": "nomenclador.AlmacenFormViewModel4",
+    "designerId": "bb000716-0c7f-4bdc-8100-44f686987b52"
+}

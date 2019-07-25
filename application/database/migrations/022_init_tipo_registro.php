@@ -43,7 +43,8 @@ $string = read_file(APPPATH.'hooks/tipo_registro.csv');
         
         if($existe==FALSE)
         {$model = 'TipoRegistro';
-            $this->load->model($model);
+           $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
         $nameuuid = new $model; 
         $uuid = $this->uuid->v5($value,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
         $dataArray = array();

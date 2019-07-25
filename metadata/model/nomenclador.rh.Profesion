@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "profesion",
+        "designer|userClassName": "nomenclador.rh.Profesion"
+    },
+    "name": "nomenclador.rh.TipoJefe1",
+    "designerId": "eabcdfd3-edba-4117-9498-04ba6f3638ea",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "ced4c3ea-e0b9-465f-b934-6da756065241"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString71",
+            "designerId": "4004e266-14e4-4a86-8295-c59002b6b15b"
+        }
+    ]
+}

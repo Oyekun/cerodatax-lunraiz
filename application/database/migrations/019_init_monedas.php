@@ -49,8 +49,8 @@ $string = read_file(APPPATH.'hooks/monedas.csv');
        
         if($existe==FALSE)
         {$model = 'Moneda';
-            $this->load->model($model);
-        $nameuuid = new $model; 
+         $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
         $uuid = $this->uuid->v5($nombre,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
         $dataArray = array();
         $dataArray['nombre'] = $nombre;  

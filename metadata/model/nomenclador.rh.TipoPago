@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipopago",
+        "designer|userClassName": "nomenclador.rh.TipoPago"
+    },
+    "name": "nomenclador.rh.TipoCausa3",
+    "designerId": "bfe46cdc-2c74-41a4-b65d-5e50842e0186",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "05fc3bac-fa48-42f4-97a6-ab2021b39cf7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "5f3f7fd2-79ac-405a-9f8a-2fc4c5b60038"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "9db3088f-d6f8-43b2-88b6-50cc7d5e75fb"
+        }
+    ]
+}

@@ -60,9 +60,10 @@ $string = read_file(APPPATH.'hooks/municipios.csv');
         
         if($existe==FALSE)
         {$model = 'Municipio';
-          $this->load->model($model);
-    $nameuuid = new $model; 
-    $uuid = $this->uuid->v5($codigo,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
+               $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
+    
+           $uuid = $this->uuid->v5($codigo,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
     $dataArray = array();
     $dataArray['nombre'] = $nombre;     
     $dataArray['codigo'] = $codigo;     

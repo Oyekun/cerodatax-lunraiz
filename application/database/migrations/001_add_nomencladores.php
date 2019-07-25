@@ -1761,6 +1761,30 @@ $this->dbforge->add_field(array(
                                 'null' => TRUE 
 
                         ),
+                         'pantalon' => array(
+                                'type' => 'INT',
+                                'constraint' => '2',
+                                'null' => TRUE 
+
+                        ),
+                         'camisa' => array(
+                                'type' => 'INT',
+                                'constraint' => '2',
+                                'null' => TRUE 
+
+                        ),
+                         'zaya' => array(
+                                'type' => 'INT',
+                                'constraint' => '2',
+                                'null' => TRUE 
+
+                        ),
+                         'zapato' => array(
+                                'type' => 'INT',
+                                'constraint' => '2',
+                                'null' => TRUE 
+
+                        ),
                         
                           'grupo_sanguineo_id' => array(
                                 'type' => 'VARCHAR',
@@ -2441,8 +2465,7 @@ $this->dbforge->add_field(array(
                         ),
                                 'nombre' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'unique' => TRUE,
+                                'constraint' => '100', 
                                 'null' => FALSE,
                         ),
 

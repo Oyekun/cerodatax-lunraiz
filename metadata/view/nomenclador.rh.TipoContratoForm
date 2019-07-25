@@ -1,0 +1,438 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "tipocontratoForm",
+        "designer|userClassName": "nomenclador.rh.TipoContratoForm",
+        "height": 452,
+        "modal": true,
+        "resizable": [
+            "false"
+        ],
+        "title": "Tipo de Contrato",
+        "width": 360
+    },
+    "name": "rh.ClaveAusenciaForm1",
+    "designerId": "0edd7967-8bc7-48c1-a01e-e070cdb703d8",
+    "viewControllerInstanceId": "e316ded3-e9c1-4f42-8d2a-85cc74fa8613",
+    "viewModelInstanceId": "bb000716-0c7f-4bdc-8100-44f686987b52",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "fieldDefaults": [
+                    "{maxLength: 100,",
+                    "        enforceMaxLength: true}"
+                ],
+                "height": 416,
+                "reference": "form",
+                "title": null,
+                "width": 350
+            },
+            "name": "MyForm7",
+            "designerId": "aa6c7152-c891-40da-8a99-eea56d438803",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "alignTarget": "top",
+                        "defaults": null,
+                        "dock": null,
+                        "height": 114,
+                        "margin": null,
+                        "padding": null,
+                        "title": "Información",
+                        "twoWayBindable": null,
+                        "width": 320
+                    },
+                    "name": "MyFieldSet3",
+                    "designerId": "7a88fd7a-8f52-4f5a-bc08-d494eb7a98ff",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Código",
+                                "maxLength": 100,
+                                "name": "codigo",
+                                "value": null
+                            },
+                            "name": "MyTextField31",
+                            "designerId": "2440c48e-37e9-4bb6-91ba-0d494c1c715d",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "e69d85f8-c40d-4ed0-b496-1bad26f3e2f2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Nombre",
+                                "maxLength": 100,
+                                "name": "nombre",
+                                "value": null
+                            },
+                            "name": "MyTextField30",
+                            "designerId": "86924875-615e-4026-9df8-9f39cd261e16",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "a7776914-0e0a-466f-affa-b79c542d8510"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Identificación",
+                                "maxLength": 100,
+                                "name": "identificacion",
+                                "value": null
+                            },
+                            "name": "MyTextField5",
+                            "designerId": "dddecebd-72af-4adc-9eb5-dd8d12855975",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "b973312a-777a-4ee3-9710-f9a09d7ae60a"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 197,
+                        "layout": "form",
+                        "margin": null,
+                        "title": "Generales",
+                        "width": 320
+                    },
+                    "name": "MyFieldSet4",
+                    "designerId": "a4379a52-e997-4378-abb8-5dcc9d06a367",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Plantilla",
+                                "name": "plantilla",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox",
+                            "designerId": "8600e519-8d96-41bc-aa5a-eebfe72cf6b8"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Liquidar Vacaciones",
+                                "margin": "0 0 0 10",
+                                "name": "liquidar_vacaciones",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox6",
+                            "designerId": "20e2e153-ef47-404c-8d49-db9f64dbeea6"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Medida Salarial Pago a Medida",
+                                "margin": "0 0 0 10",
+                                "name": "ms_pago_medida",
+                                "width": 100
+                            },
+                            "name": "MyCheckbox8",
+                            "designerId": "1ef41fb6-dcda-4d04-871f-e860cd537bd8"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Medida Salarial Estimulo por Resultado",
+                                "name": "ms_estimulo_resultado",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox9",
+                            "designerId": "ceeae722-472d-42b4-ba47-4297934b9d82"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Medida Salarial Área Económica",
+                                "margin": "0 0 0 10",
+                                "name": "ms_estimulo_area_economica",
+                                "width": 120
+                            },
+                            "name": "MyCheckbox10",
+                            "designerId": "1ea566e1-faaa-4801-9610-047cfbdda761"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "checked": true,
+                                "fieldLabel": "Excluir Pago Fecha Fin Contrato",
+                                "margin": "0 0 0 10",
+                                "name": "excluir_pago_fecha_fin_contrato",
+                                "width": 100
+                            },
+                            "name": "MyCheckbox11",
+                            "designerId": "e4aedb2d-69d3-4574-a796-68a554a162e2"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processForm",
+                        "implHandler": [
+                            "return config;"
+                        ]
+                    },
+                    "name": "processForm",
+                    "designerId": "c791741c-7759-44e4-a0b6-b1d950d9aa6a"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "buttons",
+                        "dock": "bottom",
+                        "height": 84,
+                        "layout": "form",
+                        "padding": 10
+                    },
+                    "name": "MyContainer11",
+                    "designerId": "17c94073-9f86-4175-91a2-1267704254a6",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "saveButton",
+                                "margin": 5,
+                                "text": "Guardar"
+                            },
+                            "name": "MyButton29",
+                            "designerId": "215412ff-2d94-4148-922d-a938881aea63",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "saveTreeWindows",
+                                        "implHandler": [
+                                            "var form = this.getReferences().form.getForm(),",
+                                            "    record = form.getRecord(),",
+                                            "    store = Ext.StoreManager.lookup('Personas');",
+                                            "",
+                                            " // Valid",
+                                            "if (form.isValid()) {",
+                                            "",
+                                            "    // Update associated record with values",
+                                            "    form.updateRecord();",
+                                            "",
+                                            "    // Add to store if new record",
+                                            "    if (record.phantom) {",
+                                            "",
+                                            "        // TODO: Assign the record's ID from data source",
+                                            "        // Normally, this value would be auto-generated,",
+                                            "        // or returned from the server",
+                                            "        var id = store.count() + 1;",
+                                            "        record.set('id', id);",
+                                            "",
+                                            "        // Add to store",
+                                            "        store.add(record);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "    // Commit changes",
+                                            "    store.commitChanges();",
+                                            "",
+                                            "    // Display record",
+                                            "    this.select(this, record);",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "saveTreeWindows",
+                                    "designerId": "bb0141b8-e4f8-47af-84fc-284b0502261a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cancelButton",
+                                "margin": 5,
+                                "text": "Cancelar"
+                            },
+                            "name": "MyButton30",
+                            "designerId": "8bb497d4-bb27-4e89-85fe-512636920b71",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "cancelEdit",
+                                        "implHandler": [
+                                            "// Show details",
+                                            "this.showView('details');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "cancelEdit",
+                                    "designerId": "18fb5b0d-1355-465d-aaeb-c994396d1bce"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -59,8 +59,11 @@ $string = read_file(APPPATH.'hooks/provincias.csv');
           $existe = count($result->result_array())>0 ? TRUE: FALSE;
         
         if($existe==FALSE)
-        {$model = 'Provincia';
-          $this->load->model($model);
+        {
+          $model = 'Provincia';
+             $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
+    
     $nameuuid = new $model; 
     $uuid = $this->uuid->v5($nombre,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
     

@@ -206,6 +206,22 @@ Ext.define('cerodatax.model.persona.Persona', {
         {
             type: 'string',
             name: 'foto'
+        },
+        {
+            type: 'string',
+            name: 'saya'
+        },
+        {
+            type: 'string',
+            name: 'camisa'
+        },
+        {
+            type: 'string',
+            name: 'pantalon'
+        },
+        {
+            type: 'string',
+            name: 'zapato'
         }
     ],
 

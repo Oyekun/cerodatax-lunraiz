@@ -677,6 +677,773 @@
             "designerId": "b33e464c-5b27-4482-a228-7c12cc3000c9"
         },
         {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "no_solapin"
+            },
+            "name": "MyInteger",
+            "designerId": "4f2106f4-9626-426e-8c08-97f7d1d5733b"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "no_tarjeta_asistencia"
+            },
+            "name": "MyInteger1",
+            "designerId": "71573bbd-dbec-4bec-a7ec-a937e654cda3"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocontrato"
+            },
+            "name": "MyString30",
+            "designerId": "c600d8fa-531a-4400-af5f-5f218e0d3b22"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocontrato_id"
+            },
+            "name": "MyString29",
+            "designerId": "221543d9-ac4c-4df5-ba83-01eed553df0e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "causa"
+            },
+            "name": "MyString16",
+            "designerId": "e2798f46-234c-4b81-8193-2c6b637fedf8"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "causa_id"
+            },
+            "name": "MyString15",
+            "designerId": "e5ad3112-d3ec-40fb-bb38-7496fc57c7c6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "area"
+            },
+            "name": "MyString31",
+            "designerId": "69d17ffd-4e58-45eb-a54c-8f0d6a57a5b5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "area_id"
+            },
+            "name": "MyString33",
+            "designerId": "fe000a9e-7e59-4f14-99b5-0d83d7d77ef0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cargo"
+            },
+            "name": "MyString36",
+            "designerId": "b567fde1-cf9f-441b-afca-cfe7202ce481"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "areaplaza_id"
+            },
+            "name": "MyString39",
+            "designerId": "590fce52-dd7d-44b8-930e-236f2b9d18ca"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fecha_alta_cargo"
+            },
+            "name": "MyDate",
+            "designerId": "f935a0e9-9f03-4f98-b145-ff2766945fd1"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fecha_alta_entidad"
+            },
+            "name": "MyDate1",
+            "designerId": "66e3aa9c-45db-47ed-8de9-c15ae3d597b6"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fecha_firma_designado"
+            },
+            "name": "MyDate2",
+            "designerId": "97e64444-0b16-4641-9629-5fcd4c3650a1"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fecha_terminacion_cargo"
+            },
+            "name": "MyDate4",
+            "designerId": "c83a2eb6-4c54-46ce-b7e6-e78d43e38005"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoriadocente"
+            },
+            "name": "MyString42",
+            "designerId": "8a6c7172-96dd-46f1-b05f-324cac4235de"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoriadocente_id"
+            },
+            "name": "MyString43",
+            "designerId": "1a874340-fa1b-432a-8495-4eea833eae1f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoriacientifica"
+            },
+            "name": "MyString44",
+            "designerId": "63c7d88d-5263-4345-bb63-9a59f882b3cb"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoriacientifica_id"
+            },
+            "name": "MyString59",
+            "designerId": "34a62217-5186-4d47-ae0f-0be15194013a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipojefe"
+            },
+            "name": "MyString62",
+            "designerId": "ee20227b-cb60-439f-895c-a54ee82218f4"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipojefe_id"
+            },
+            "name": "MyString63",
+            "designerId": "86219d97-0960-4ebc-a344-32b887c3971d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "profesion"
+            },
+            "name": "MyString68",
+            "designerId": "fa85cbab-c1c8-4356-a81c-143c014d8153"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "profesion_id"
+            },
+            "name": "MyString69",
+            "designerId": "af0b2934-1b65-423f-8a08-0361765a822b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "camisa"
+            },
+            "name": "MyString77",
+            "designerId": "e9605c1e-745a-4e49-9749-5969e7b06a25"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pantalon"
+            },
+            "name": "MyString78",
+            "designerId": "0fade592-9692-4419-9a1d-0077e01ad5a2"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "zapato"
+            },
+            "name": "MyString79",
+            "designerId": "2b8e625a-1634-4024-9d5b-14a736b19c26"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "saya"
+            },
+            "name": "MyString84",
+            "designerId": "0c4392b8-d026-4498-889b-8cf6a0b24c29"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ano_inicio"
+            },
+            "name": "MyString76",
+            "designerId": "705f8159-b0d9-452b-93f7-dc5b3bce46f0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ano_interrupto"
+            },
+            "name": "MyString85",
+            "designerId": "c28742e3-ad27-47eb-800f-6390a06d158b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipopago"
+            },
+            "name": "MyString98",
+            "designerId": "a7d4ee20-b5b5-4b42-98c0-9786daa8905a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipopago_id"
+            },
+            "name": "MyString111",
+            "designerId": "aafadb7e-7ddb-4fa2-aea8-0173447706de"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regimensalarial_id"
+            },
+            "name": "MyString112",
+            "designerId": "695b342f-fb8f-4fd5-8da6-88701435f470"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "regimensalarial"
+            },
+            "name": "MyString113",
+            "designerId": "466390e1-bdba-4988-b738-4f13bbb98240"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "basico"
+            },
+            "name": "MyNumber3",
+            "designerId": "cc6e9f0e-275c-4cdc-97f5-41faaa2aa3e7"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "estimulo"
+            },
+            "name": "MyNumber4",
+            "designerId": "df073a90-1640-4aff-9366-23338bb8a4a9"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "antiguedad"
+            },
+            "name": "MyNumber5",
+            "designerId": "a88badd4-5099-484b-a8ed-86b1cf2f84ce"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "plus"
+            },
+            "name": "MyNumber6",
+            "designerId": "28b93393-96f9-4d5e-80c3-18fd9180fa2d"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tarifa"
+            },
+            "name": "MyNumber7",
+            "designerId": "d59c4ed7-0be1-4f1b-8240-5699c6dad44d"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "otros"
+            },
+            "name": "MyNumber8",
+            "designerId": "1490abd6-1a21-465f-93b8-3eb8ffd4e3af"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "porciento"
+            },
+            "name": "MyInteger70",
+            "designerId": "d0b2fea7-f886-4f1f-ace4-7fbaf3992f51"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salario_cargo"
+            },
+            "name": "MyNumber10",
+            "designerId": "be8cd105-9db6-43c2-9ec9-ca76d748d5a0"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "acumula_vacaciones"
+            },
+            "name": "MyBoolean22",
+            "designerId": "93dfdfb6-44bf-42bf-a7ca-c3148413bdd3"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias"
+            },
+            "name": "MyInteger72",
+            "designerId": "b1f00aed-e95a-48b9-8eb8-d5a29ddac01f"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "importe"
+            },
+            "name": "MyNumber12",
+            "designerId": "eee97a5e-907e-4ac1-a4ce-aea542e59ee3"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "divisa"
+            },
+            "name": "MyNumber13",
+            "designerId": "ef4d07ae-9cf9-42c2-b954-6f8bf3070037"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tarifa_divisa"
+            },
+            "name": "MyNumber14",
+            "designerId": "e7a7e898-f148-4de5-8061-8f8b45169b16"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "coeficiente_tarifa_divisa"
+            },
+            "name": "MyNumber15",
+            "designerId": "76941aa4-c742-41d4-8e59-784a96abe386"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocalendario_id"
+            },
+            "name": "MyString123",
+            "designerId": "dc211d9f-3f41-409a-9dc7-f766fd7556e9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocalendario"
+            },
+            "name": "MyString124",
+            "designerId": "d0fad748-6069-4d88-b1ff-666fbb78a722"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dias_laborables"
+            },
+            "name": "MyNumber17",
+            "designerId": "c8dffe3a-5767-4cd2-8786-8d68c1633046"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descontar_sabados"
+            },
+            "name": "MyBoolean24",
+            "designerId": "c14de789-3c7c-4f5e-9853-532ec51ee113"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salarioadicional_id"
+            },
+            "name": "MyString126",
+            "designerId": "ccf3bd10-d799-4de2-86bc-54c5c90106ef"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salarioadicional"
+            },
+            "name": "MyString127",
+            "designerId": "d5136553-5fd1-44f9-997e-1b9d7fe79121"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idoneidad_fijo"
+            },
+            "name": "MyNumber19",
+            "designerId": "cb56282d-2074-413c-a9e8-f7cb23811569"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idoneidad_movil"
+            },
+            "name": "MyNumber20",
+            "designerId": "eeb33d80-296c-40b1-9e8a-0b39ade5ba21"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "porciento_retribuicion_complementaria"
+            },
+            "name": "MyNumber22",
+            "designerId": "8e1007ef-6b40-43e5-a56f-5eb16393b622"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pago_divisa_valor"
+            },
+            "name": "MyNumber23",
+            "designerId": "8cde607e-014e-4737-98fc-d38c868f05af"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pago_divisa_porciento"
+            },
+            "name": "MyNumber24",
+            "designerId": "c300c687-8fe4-4508-b356-e89671267baa"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "estimulacion_valor"
+            },
+            "name": "MyNumber25",
+            "designerId": "ff55538e-2f7a-48db-a0fe-67a62b3e08e2"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "estimulacion_porciento"
+            },
+            "name": "MyNumber26",
+            "designerId": "543deb98-ccdf-4cb9-9fd5-f7a92b7ba174"
+        },
+        {
             "type": "Ext.data.proxy.Rest",
             "reference": {
                 "name": "proxy",

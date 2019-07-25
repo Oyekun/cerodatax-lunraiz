@@ -44,6 +44,7 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
         type: 'personapersonaform'
     },
     controller: 'nomencladorcrud',
+    height: 566,
     resizable: false,
     bodyPadding: 10,
     title: 'Persona',
@@ -57,7 +58,7 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                         xtype: 'form',
                         reference: 'form',
                         alignTarget: 'top',
-                        height: 500,
+                        height: 540,
                         width: 460,
                         layout: 'auto',
                         bodyPadding: 10,
@@ -211,6 +212,48 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                                         queryMode: 'local',
                                                         store: 'nomenclador.Sexo',
                                                         valueField: 'id'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                height: 52,
+                                                margin: '10 0 0 0',
+                                                width: 440,
+                                                layout: 'table',
+                                                title: 'Talla de Ropas y Zapato',
+                                                items: [
+                                                    {
+                                                        xtype: 'textfield',
+                                                        margin: '0 0 0 10',
+                                                        width: 100,
+                                                        fieldLabel: 'Camisa',
+                                                        labelWidth: 50,
+                                                        name: 'camisa'
+                                                    },
+                                                    {
+                                                        xtype: 'textfield',
+                                                        margin: '0 0 0 10',
+                                                        width: 100,
+                                                        fieldLabel: 'Saya',
+                                                        labelWidth: 50,
+                                                        name: 'saya'
+                                                    },
+                                                    {
+                                                        xtype: 'textfield',
+                                                        margin: '0 0 0 10',
+                                                        width: 100,
+                                                        fieldLabel: 'Pantalón',
+                                                        labelWidth: 50,
+                                                        name: 'pantalon'
+                                                    },
+                                                    {
+                                                        xtype: 'textfield',
+                                                        margin: '0 0 0 10',
+                                                        width: 100,
+                                                        fieldLabel: 'Zapato',
+                                                        labelWidth: 50,
+                                                        name: 'zapato'
                                                     }
                                                 ]
                                             },

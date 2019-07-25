@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "nomencladorrhsalarioadicional",
+        "designer|userClassName": "nomenclador.ProvinciaViewController11"
+    },
+    "name": "nomenclador.ProvinciaViewController11",
+    "designerId": "a147fbcd-ea3a-442c-8d9f-70b00d4f782d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var layout = this.getReferences().display.getLayout();",
+                    "layout.setActiveItem(this.lookupReference(view));"
+                ]
+            },
+            "name": "showView",
+            "designerId": "4454d551-70f1-4cd2-bff2-8d54252af20b"
+        }
+    ]
+}

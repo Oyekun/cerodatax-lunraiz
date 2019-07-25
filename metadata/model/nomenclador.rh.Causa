@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "causa",
+        "designer|userClassName": "nomenclador.rh.Causa"
+    },
+    "name": "nomenclador.rh.Deduccion2",
+    "designerId": "33c78eb4-5c95-4293-bc0a-a625d2bee7b1",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "955669cc-ecfe-4bcc-9f5c-2f9910ff74bf"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "31593c4c-22b4-4a00-9d11-e8d7347ee64b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "9eb51e82-02ff-4b90-ab5f-b8f679c2ecdf"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocausa"
+            },
+            "name": "MyString117",
+            "designerId": "177cfb0a-8ca4-4a72-895b-f4dd282e4730"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipocausa_id"
+            },
+            "name": "MyString38",
+            "designerId": "9e7a75d0-9004-4db7-bf4f-10c587d75867"
+        }
+    ]
+}

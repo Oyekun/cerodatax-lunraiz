@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "organizacionpolitica",
+        "designer|userClassName": "nomenclador.rh.OrganizacionPolitica"
+    },
+    "name": "nomenclador.rh.TipoPago2",
+    "designerId": "026ad3ca-f0a0-4c3f-9dc7-7c268f872264",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "9a58a0d9-2fe9-4092-84eb-e022d27128a0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "7c693130-51b3-4108-a69d-a104f75fc2d1"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "9000f25c-e177-4cfc-8f50-9a546e74ffc7"
+        }
+    ]
+}

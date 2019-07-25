@@ -343,8 +343,8 @@ Ext.define('cerodatax.view.crm.ProductosServiciosForm', {
                                                 columns: [
                                                     {
                                                         xtype: 'widgetcolumn',
-                                                        dataIndex: 'string',
                                                         width: 130,
+                                                        dataIndex: 'string',
                                                         text: 'Almacen',
                                                         widget: {
                                                             xtype: 'combobox',

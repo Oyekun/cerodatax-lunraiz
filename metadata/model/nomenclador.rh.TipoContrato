@@ -1,0 +1,196 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tipocontrato",
+        "designer|userClassName": "nomenclador.rh.TipoContrato"
+    },
+    "name": "nomenclador.rh.TipoDeduccion1",
+    "designerId": "03066ea8-025a-4238-b7c8-4404360022e2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "2c386459-06c7-45d7-af43-47c238e5779c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "5bc7c723-5ef0-4f18-b891-3234f0784bec"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "97c53a79-897a-4152-bddd-90f89f89e83f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "identificacion"
+            },
+            "name": "MyString60",
+            "designerId": "691421f8-348b-40d5-b6cd-334a2e1bcdbd"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "plantilla"
+            },
+            "name": "MyBoolean",
+            "designerId": "50201117-8158-4bc0-8617-b29c4149b56e"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "liquidar_vacaciones"
+            },
+            "name": "MyBoolean1",
+            "designerId": "bb4ff071-aad5-4ec9-89a5-c9e47e89d22f"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ms_pago_medida"
+            },
+            "name": "MyBoolean4",
+            "designerId": "26e17d0b-c35c-4328-9202-382e7e8253db"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ms_estimulo_resultado"
+            },
+            "name": "MyBoolean5",
+            "designerId": "bed898cc-4f31-4be1-8ee7-bd9fa3fc715c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ms_estimulo_area_economica"
+            },
+            "name": "MyBoolean11",
+            "designerId": "d31404da-bbd4-4fbc-b59f-ea95d0180b0c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "excluir_pago_fecha_fin_contrato"
+            },
+            "name": "MyBoolean8",
+            "designerId": "cc6d15f4-7282-470a-b928-9e29a3bd00a1"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{add:{url: 'index.php/api/restserver/rests',method: 'POST'},show: {url: 'index.php/api/restserver/rests/',method: 'GET'},save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}}"
+                ],
+                "extraParams": [
+                    "{ model: 'tipocontrato',",
+                    "esquema: 'nomenclador.rh'}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy3",
+            "designerId": "a8ca9a56-ba1e-4192-afed-7044d998dc55",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "f1114340-67ec-49b1-a2f4-35159cf34d75"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter1",
+                    "designerId": "fc578a90-5f0c-4678-bec5-1ccd37c8ba9a"
+                }
+            ]
+        }
+    ]
+}

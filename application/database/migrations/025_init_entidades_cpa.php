@@ -229,7 +229,8 @@ $datosentidad["$key"]['codigo_parent']= $sub;
           }
  		             
              $model = 'Entidad';
-        $this->load->model($model);
+       $dirmodel = "estructura/$model";
+            $this->load->model($dirmodel);
         $nameuuid = new $model; 
         $uuid = $this->uuid->v5($key,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7'); 
         $dataArray = array();

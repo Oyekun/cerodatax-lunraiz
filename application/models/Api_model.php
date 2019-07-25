@@ -1000,6 +1000,9 @@ if(count($aux1)>0)
         //$this->verificar_model($request['esquema'],$modelClass);
         $this->load->model($esquema.'/'.$request['model']);
         $nameuuid = new $request['model'];
+        if(isset($nameuuid->uuid2)) 
+            $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"].$dataArray["$nameuuid->uuid2"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+            else  
         $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
         
         //print_r($request['model']);

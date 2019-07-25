@@ -40,8 +40,8 @@ $string = read_file(APPPATH.'hooks/categorias_entidad.csv');
          
         if($existe==FALSE)
         {$model = 'CategoriaEntidad';
-            $this->load->model($model);
-        $nameuuid = new $model; 
+          $dirmodel = "nomenclador/$model";
+            $this->load->model($dirmodel);
         $uuid = $this->uuid->v5($value,'8d3dc6d8-3a0d-4c03-8a04-1155445658f7');  
         $dataArray = array();
         $dataArray['nombre'] = $value;                  
