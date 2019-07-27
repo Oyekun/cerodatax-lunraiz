@@ -176,7 +176,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": false,
+                        "allowBlank": null,
                         "designer|displayName": null,
                         "displayField": "nombre",
                         "emptyText": "Seleccione",
@@ -459,9 +459,15 @@
                                                                 "margin": "10 0 0 0",
                                                                 "maxLength": 255,
                                                                 "name": "foto",
-                                                                "reference": null
+                                                                "reference": null,
+                                                                "value": [
+                                                                    "{personaaltaempleado.selection.foto}"
+                                                                ]
                                                             },
                                                             "name": "MyFileUpload1",
+                                                            "configAlternates": {
+                                                                "value": "binding"
+                                                            },
                                                             "designerId": "f6207f2c-a938-42e7-a358-ed60c73f051c",
                                                             "cn": [
                                                                 {
@@ -2067,10 +2073,50 @@
                                                         "designer|displayName": null,
                                                         "displayField": "nombre",
                                                         "emptyText": "Seleccione",
+                                                        "fieldLabel": "Fundamentación Alta",
+                                                        "name": "fundamentacionalta_id",
+                                                        "queryMode": "local",
+                                                        "queryParam": "provincia_id:false,municipio_id:true",
+                                                        "store": "nomenclador.rh.FundamentacionAlta",
+                                                        "valueField": "id"
+                                                    },
+                                                    "name": "MyComboBox16",
+                                                    "designerId": "3d62cf1c-366c-43d4-a536-cb895692a6b6",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "afterLabelTextTpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "afterLabelTextTpl",
+                                                                "implHandler": [
+                                                                    "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                                ]
+                                                            },
+                                                            "name": "afterLabelTextTpl2",
+                                                            "designerId": "082ae498-9698-47e8-8d28-63bfa0885df2"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "designer|displayName": null,
+                                                        "displayField": "nombre",
+                                                        "emptyText": "Seleccione",
                                                         "fieldLabel": "Área",
                                                         "name": "area_id",
                                                         "queryMode": "local",
-                                                        "queryParam": "areaplaza_id:false,grupoescala_id:true,categoria_cargo_id:true",
+                                                        "queryParam": "cargo_id:false",
                                                         "store": "estructura.AreaCombo",
                                                         "valueField": "id"
                                                     },
@@ -2092,6 +2138,21 @@
                                                             },
                                                             "name": "afterLabelTextTpl2",
                                                             "designerId": "91f029a6-aebe-49b8-8b3f-59ba73b09e6b"
+                                                        },
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onComboboxSelect",
+                                                                "name": "select",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onComboboxSelect",
+                                                            "designerId": "b718c076-f043-4311-aeec-ab01b468a66f"
                                                         }
                                                     ]
                                                 },
@@ -2109,10 +2170,11 @@
                                                         "displayField": "cargo",
                                                         "emptyText": "Seleccione",
                                                         "fieldLabel": "Plaza",
-                                                        "name": "areaplaza_id",
+                                                        "name": "cargo_id",
                                                         "queryMode": "local",
-                                                        "queryParam": "grupoescala_id:false,categoria_cargo_id:false",
-                                                        "store": "estructura.AreaPlaza",
+                                                        "queryParam": null,
+                                                        "reference": "plazaaltaempleado",
+                                                        "store": "estructura.Plaza",
                                                         "valueField": "id"
                                                     },
                                                     "name": "MyComboBox5",
@@ -2137,86 +2199,46 @@
                                                     ]
                                                 },
                                                 {
-                                                    "type": "Ext.form.field.ComboBox",
+                                                    "type": "Ext.form.field.Display",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "allowBlank": false,
                                                         "designer|displayName": null,
-                                                        "disabled": true,
-                                                        "displayField": "nombre",
-                                                        "emptyText": "Seleccione",
                                                         "fieldLabel": "Grupo Escala",
-                                                        "name": "grupoescala_id",
-                                                        "queryMode": "local",
-                                                        "queryParam": null,
-                                                        "store": "nomenclador.GrupoEscala",
-                                                        "valueField": "id"
+                                                        "name": "grupoescala",
+                                                        "value": [
+                                                            "{plazaaltaempleado.selection.grupoescala}"
+                                                        ]
                                                     },
-                                                    "name": "MyComboBox16",
-                                                    "designerId": "c572aacc-8be0-4a9c-9678-d8d53507415c",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.XTemplate",
-                                                            "reference": {
-                                                                "name": "afterLabelTextTpl",
-                                                                "type": "object"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "afterLabelTextTpl",
-                                                                "implHandler": [
-                                                                    "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                                                ]
-                                                            },
-                                                            "name": "afterLabelTextTpl2",
-                                                            "designerId": "0dcd1397-5ae8-4247-b55f-37e7613a7d41"
-                                                        }
-                                                    ]
+                                                    "name": "MyDisplayField4",
+                                                    "configAlternates": {
+                                                        "value": "binding"
+                                                    },
+                                                    "designerId": "c572aacc-8be0-4a9c-9678-d8d53507415c"
                                                 },
                                                 {
-                                                    "type": "Ext.form.field.ComboBox",
+                                                    "type": "Ext.form.field.Display",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "allowBlank": false,
                                                         "designer|displayName": null,
-                                                        "disabled": true,
-                                                        "displayField": "nombre",
-                                                        "emptyText": "Seleccione",
                                                         "fieldLabel": "Categoría",
-                                                        "name": "categoria_cargo_id",
-                                                        "queryMode": "local",
-                                                        "queryParam": null,
-                                                        "store": "nomenclador.CategoriaCargo",
-                                                        "valueField": "id"
+                                                        "name": "categoria_cargo",
+                                                        "value": [
+                                                            "{plazaaltaempleado.selection.categoria_cargo}"
+                                                        ]
                                                     },
-                                                    "name": "MyComboBox17",
-                                                    "designerId": "daefe15c-7b67-4a1d-b7c9-2f12b2a832a0",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.XTemplate",
-                                                            "reference": {
-                                                                "name": "afterLabelTextTpl",
-                                                                "type": "object"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "afterLabelTextTpl",
-                                                                "implHandler": [
-                                                                    "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
-                                                                ]
-                                                            },
-                                                            "name": "afterLabelTextTpl2",
-                                                            "designerId": "65b16755-70e2-494e-a174-064b3b8b6409"
-                                                        }
-                                                    ]
+                                                    "name": "MyDisplayField5",
+                                                    "configAlternates": {
+                                                        "value": "binding"
+                                                    },
+                                                    "designerId": "daefe15c-7b67-4a1d-b7c9-2f12b2a832a0"
                                                 }
                                             ]
                                         },
@@ -2784,7 +2806,7 @@
                                                         "height": 85,
                                                         "layout": "table",
                                                         "title": "Salario Escala",
-                                                        "width": 295
+                                                        "width": 320
                                                     },
                                                     "name": "MyFieldSet11",
                                                     "designerId": "078787c7-055f-4648-82a8-3ccdcf93eeee",
@@ -2803,9 +2825,15 @@
                                                                 "margin": "0 0 0 10",
                                                                 "name": "basico",
                                                                 "readOnly": true,
+                                                                "value": [
+                                                                    "{plazaaltaempleado.selection.salario}"
+                                                                ],
                                                                 "width": 140
                                                             },
                                                             "name": "MyNumberField15",
+                                                            "configAlternates": {
+                                                                "value": "binding"
+                                                            },
                                                             "designerId": "1878f60c-b61a-482d-9724-a963636f18d4"
                                                         },
                                                         {
@@ -2821,7 +2849,7 @@
                                                                 "labelWidth": 50,
                                                                 "margin": "0 0 0 10",
                                                                 "name": "estimulo",
-                                                                "width": 120
+                                                                "width": 130
                                                             },
                                                             "name": "MyNumberField14",
                                                             "designerId": "4e1d7563-eaeb-4690-94f4-21ffcd16639b"
@@ -2857,7 +2885,7 @@
                                                                 "labelWidth": 50,
                                                                 "margin": "10 0 0 10",
                                                                 "name": "plus",
-                                                                "width": 120
+                                                                "width": 130
                                                             },
                                                             "name": "MyNumberField12",
                                                             "designerId": "a937c0a1-8e2c-4bfb-97d7-5530846f660c"
@@ -2876,7 +2904,7 @@
                                                         "height": 85,
                                                         "layout": "table",
                                                         "title": "Otros Datos",
-                                                        "width": 295
+                                                        "width": 320
                                                     },
                                                     "name": "MyFieldSet12",
                                                     "designerId": "c80960d4-8345-4a1e-9c6e-24458c92bbb9",
@@ -2913,7 +2941,7 @@
                                                                 "labelWidth": 50,
                                                                 "margin": "0 0 0 10",
                                                                 "name": "otros",
-                                                                "width": 120
+                                                                "width": 130
                                                             },
                                                             "name": "MyNumberField10",
                                                             "designerId": "af44ed5f-7a4f-4f03-8433-65650da4d33a"
@@ -2949,7 +2977,7 @@
                                                                 "labelWidth": 50,
                                                                 "margin": "10 0 0 10",
                                                                 "name": "salario_cargo",
-                                                                "width": 120
+                                                                "width": 130
                                                             },
                                                             "name": "MyNumberField8",
                                                             "designerId": "38ee7b4e-2b4f-4f24-a1e3-28dc9665ce81"
@@ -3043,7 +3071,7 @@
                                                                 "labelWidth": 50,
                                                                 "margin": "0 0 0 10",
                                                                 "name": "importe",
-                                                                "width": 120
+                                                                "width": 130
                                                             },
                                                             "name": "MyNumberField16",
                                                             "designerId": "b3046049-2eb1-4b5d-87e2-173ff9811ab4"

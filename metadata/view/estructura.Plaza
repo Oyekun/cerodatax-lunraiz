@@ -614,6 +614,7 @@
                                 "fieldLabel": "Cargo",
                                 "name": "cargo_id",
                                 "queryMode": "local",
+                                "reference": "plazacargo",
                                 "store": "persona.Cargo",
                                 "valueField": "id"
                             },
@@ -635,6 +636,87 @@
                                     },
                                     "name": "afterLabelTextTpl",
                                     "designerId": "fb42cb93-c087-4f83-86c5-4fe9c5234e2c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "fieldLabel": "Grupo Escala",
+                                "name": "grupoescala",
+                                "value": [
+                                    "{plazacargo.selection.grupoescala}"
+                                ]
+                            },
+                            "name": "MyDisplayField2",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "bf246ad2-b5fd-4b06-b754-e98ea8771947"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "fieldLabel": "Categoría Cargo",
+                                "name": "categoria_cargo",
+                                "value": [
+                                    "{plazacargo.selection.categoria_cargo}"
+                                ]
+                            },
+                            "name": "MyDisplayField3",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "c16217c8-afce-46bd-a4e6-9f2c9cdfff08"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": null,
+                                "displayField": "nombre",
+                                "emptyText": "Seleccione",
+                                "fieldLabel": "Área",
+                                "name": "area_id",
+                                "queryMode": "local",
+                                "store": "estructura.AreaCombo",
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox25",
+                            "designerId": "fbaad26b-ad64-4c25-a959-350b114080ec",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "afterLabelTextTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
+                                    },
+                                    "name": "afterLabelTextTpl",
+                                    "designerId": "59df4217-ac00-410d-8a69-d3cb59f43004"
                                 }
                             ]
                         },

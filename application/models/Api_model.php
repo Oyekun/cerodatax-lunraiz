@@ -59,7 +59,7 @@ if (file_exists($existFile))
         
         $total = array();
         $limit = FALSE;
-        $parent_id = '';
+        $parent_id = NULL;
         if (isset($request['page']))
             $page = $request['page'];
         if (isset($request['start']))
@@ -231,8 +231,10 @@ if (file_exists($existFile))
 
                 if (isset($request['gridasociado'])) {
                     if (isset($request['asociados'])) {
-                        $request['model'] = $request['asociados'] . $request['model'];
-                        $tb = $request['esquema_asociado'] . '_' . $request['model'];
+                        //$request['model'] = $request['asociados'] . $request['model'];
+                       // $esquema = $request['esquema_asociado'];
+                        $modelasoc = $request['asociados'] . $request['model'];
+                        $tb = $request['esquema_asociado'] . '_' . $modelasoc;
 
                         $idasociadoDos = $request['asociados'] . '_id';
                         // $this->db->where("$idasociadoUno", $total[$i]['id']);
@@ -242,13 +244,25 @@ if (file_exists($existFile))
                 if(isset($request['asociados']))
                 { 
 
-
-                $this->load->model($request['esquema_asociado'].'/'. $request['model'], '', TRUE);//.$request['asociados'] verificar si es asociados o model
+                $request['esquema_asociado'] = str_replace('.',DS,$request['esquema_asociado']);
+                //print_r($request);die;
+                $existFile = $request['esquema_asociado'].'/'. $request['asociados'];
+                 if (file_exists($existFile)) 
+                $this->load->model($existFile, '', TRUE);//.$request['asociados'] verificar si es asociados o model
                 
                 }
-                $this->load->model($esquema.'/'.$request['model'], '', TRUE);
+if (isset($request['gridasociado']))
+{
+                $this->load->model($request['esquema_asociado'].'/'.$request['asociados'] . $request['model'], '', TRUE);
+                        $modelasoc = $request['asociados'] . $request['model'];
+                
+                $nameuuid = new $modelasoc;
+}
+    else
+             {  $this->load->model($esquema.'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
-
+            }
+//print_r($nameuuid);die;
                 if (isset($nameuuid->relacion)) {
                     $flagrelacion = TRUE;
                     $this->db->select("$tb.*");
@@ -273,46 +287,69 @@ if (file_exists($existFile))
                         }
                      }
                      else{
+                        $tabla_campo_id = $tabla_campo['model'] . '.id';   
+                        if(isset($tabla_campo['campo']))
+                        $tabla_campo_id = $tabla_campo['model'] . '.'.$tabla_campo['campo'];   
 
-                        $tabla_campo_id = $tabla_campo['model'] . '.id';                        
+                         $igual = $tb . '.' . $campo;
+                         if(isset($tabla_campo['relacion']))                         
                         $igual = $tabla_campo['relacion'] . '.' . $campo;
+                    if(isset($tabla_campo['campo']))
+                        $igual = $tabla_campo['relacion'] . '.id';
+                    
                         $alias = str_replace("_id", "", $campo);
                         if ($alias != $campo)
-                            {$ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                            { 
+                                   $ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                             if(!isset($tabla_campo['id'])) 
                              $ref .=  "," .$tabla_campo['model'] . ".id"." as " . $campo;
                             }
                         else
                             $ref = $tabla_campo['model'] . "." . $alias . " as " . $alias;
+                        if(!isset($tabla_campo['campo']))
                         $this->db->select("$ref");
-
+                           
                         if (!isset($tablas_relacion[$tabla_campo['model']])) {
                             $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
                             $tbcampo= $tabla_campo['model'];
+                            //if(isset($tabla_campo['relacion']))  
                             $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
                         }
+                        
+                        
 
 
                      }
 
                     }
-
                 }
-                //print_r($this->db);die; 
+                
+               //print_r($this->db);die; 
                 $this->db->order_by("date_updated", "desc");
                 //verificar bien
+                //print_r($this->db);die; 
                 $q = $this->db->get("$tb", $limit, $offset);
 
             } else {
 
-
-                if ($parent_id == '') {
+                if ($parent_id === '') {
+ 
 
                     //  $this->db->order_by("parent", "desc");
-                   // $this->db->where('parent_id', '');
+                    $parent_id=NULL;
+
+                    $this->db->where('parent_id', $parent_id);//verificar
 
                 }
                 else
-                    $this->db->where('parent_id', $parent_id);
+                    {
+
+                         if ($parent_id != NULL)
+                        {$this->db->where('parent_id', $parent_id);
+
+                }
+
+}
 
                 $this->load->model($request['esquema'].'/'.$request['model'], '', TRUE);
                 $nameuuid = new $request['model'];
@@ -361,6 +398,7 @@ if (file_exists($existFile))
                      }
                     }
                 }
+
                 $this->db->order_by("date_updated", "desc");//verificar bien
                 $q = $this->db->get("$tb");
 
@@ -424,7 +462,7 @@ if (file_exists($existFile))
                     }
                 }
                 // $this->db->order_by("date_updated", "asc");//verificar bien
-                //	print_r($q->row());die;
+                //  print_r($q->row());die;
                 if ($limit)
                     $q = $this->db->get("$tb", $limit, $offset);
                 else

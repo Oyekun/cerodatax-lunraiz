@@ -48,8 +48,99 @@
             "userConfig": {
                 "name": "cargo_id"
             },
+            "name": "MyString132",
+            "designerId": "0931e978-8281-4d09-92d2-54fbfea3ddcf"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "grupoescala_id"
+            },
             "name": "MyString38",
             "designerId": "0918a41c-44c8-41da-adfe-6bad061bd3b3"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "grupoescala"
+            },
+            "name": "MyString133",
+            "designerId": "1bdc3b45-063c-43ce-97e9-6569b9f3eb15"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salario"
+            },
+            "name": "MyNumber27",
+            "designerId": "af88fb34-441d-44d9-bf92-6b1d749ba94e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoria_cargo"
+            },
+            "name": "MyString134",
+            "designerId": "1f4c2842-ea16-4e4e-be4a-b7f2f57913dc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "categoria_cargo_id"
+            },
+            "name": "MyString135",
+            "designerId": "e71aac2a-efe3-44d9-a612-ec5491e6937c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "area"
+            },
+            "name": "MyString130",
+            "designerId": "fa9e7c6f-3780-4b2a-9989-ae35d82fd2ef"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "area_id"
+            },
+            "name": "MyString129",
+            "designerId": "a27123d6-c161-4901-bae1-45ed6f43302e"
         },
         {
             "type": "Ext.data.field.Integer",

@@ -762,6 +762,32 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "fundamentacionalta_id"
+            },
+            "name": "MyString13",
+            "designerId": "d3883cc1-14f6-4c93-8985-c6c6503d996e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fundamentacionalta"
+            },
+            "name": "MyString14",
+            "designerId": "cf153f5a-cfb3-4194-acaf-a6c17c431584"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "area"
             },
             "name": "MyString31",
@@ -801,10 +827,36 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "areaplaza_id"
+                "name": "cargo_id"
+            },
+            "name": "MyString136",
+            "designerId": "b7d98056-b1e3-42cb-a21c-16297f8872a0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "plaza_id"
             },
             "name": "MyString39",
             "designerId": "590fce52-dd7d-44b8-930e-236f2b9d18ca"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "plaza"
+            },
+            "name": "MyString131",
+            "designerId": "e4447462-559d-444b-b6e6-fb1dc4c29aae"
         },
         {
             "type": "Ext.data.field.Date",

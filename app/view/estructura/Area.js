@@ -111,7 +111,7 @@ Ext.define('cerodatax.view.estructura.Area', {
                             itemId: 'btnAssociate',
                             baseParams: 'plaza',
                             bind: {
-                                hidden: '{!record}'
+                                hidden: 'true'
                             },
                             listeners: {
                                 click: 'associate'

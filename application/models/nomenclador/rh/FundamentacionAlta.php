@@ -1,6 +1,6 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-    class CuentabancariaCliente extends CI_Model {
+    class FundamentacionAlta extends CI_Model {
         public $uuid;
         public $relacion;
         public function __construct() {

@@ -10,54 +10,44 @@
         "controller": [
             "nomencladorcrud"
         ],
-        "designer|userAlias": "estructuraarea",
-        "designer|userClassName": "estructura.Area",
-        "height": 528,
+        "designer|userAlias": "nomencladorrhcausamovimiento",
+        "designer|userClassName": "nomenclador.rh.CausaMovimiento",
+        "height": 600,
         "layout": "border",
         "shrinkWrap": 0,
         "title": null,
-        "width": 809
+        "width": 880
     },
-    "designerId": "df299778-c07f-4461-90d1-e21dfa254cbd",
-    "viewControllerInstanceId": "a53f40b7-86c7-4408-b552-54413337d319",
-    "viewModelInstanceId": "2b1f41b6-fe8e-4a5b-9f90-6d18e00278e1",
+    "name": "nomenclador.rh.FundamentacionAlta3",
+    "designerId": "ace15525-7d49-489a-8f3a-6e75ca671fdf",
+    "viewControllerInstanceId": "daea9f54-bdea-42c8-b1af-03cb2944726d",
+    "viewModelInstanceId": "6e062649-f03c-46c8-a6ab-a9ee5dae83e3",
     "cn": [
         {
-            "type": "Ext.tree.Panel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "hidden": null,
-                "itemId": "treePanel",
+                "forceFit": true,
+                "itemId": "gridPanel",
+                "layout|flex": 1,
                 "layout|region": "center",
-                "rootVisible": false,
-                "store": "estructura.Area",
-                "title": null
+                "layout|split": true,
+                "reference": "list",
+                "resizable": [
+                    "false"
+                ],
+                "store": "nomenclador.rh.CausaMovimiento",
+                "title": ""
             },
-            "name": "TreeGrid1",
-            "designerId": "34eb526a-ac65-4f96-a650-8d6fe765bf40",
-            "isBuiltIn": true,
-            "iconCls": "icon-treegridpanel",
-            "autoName": "TreeGrid",
+            "name": "MyGridPanel7",
+            "designerId": "868ade2d-e95b-4793-8268-fd0fba7f3fe9",
             "cn": [
                 {
-                    "type": "Ext.tree.View",
-                    "reference": {
-                        "name": "viewConfig",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "rootVisible": false
-                    },
-                    "name": "MyTreeView1",
-                    "designerId": "505d5a64-2fc9-4821-a74c-2042b9395e1b"
-                },
-                {
-                    "type": "Ext.tree.Column",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -65,11 +55,24 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "nombre",
-                        "flex": 1,
                         "text": "Nombre"
                     },
-                    "name": "MyTreeColumn",
-                    "designerId": "0c8b0cac-5d85-4cdb-9b18-99890fdaa78d"
+                    "name": "MyColumn16",
+                    "designerId": "4be7672c-2b96-4a1c-9c70-0b361b1ba6ca"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "pais",
+                        "text": "Pais"
+                    },
+                    "name": "MyColumn52",
+                    "designerId": "31ce9573-b730-4087-9afe-57915c8a87c0"
                 },
                 {
                     "type": "viewcontrollereventbinding",
@@ -79,70 +82,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onTreePanelSelect",
+                        "fn": "select",
+                        "implHandler": [
+                            "// Set selected record",
+                            "this.getViewModel().set('record', record);",
+                            "",
+                            "// Show details",
+                            "this.showView('details');"
+                        ],
                         "name": "select",
                         "scope": "me"
                     },
-                    "name": "onTreePanelSelect",
-                    "designerId": "2acbb5c3-e988-40f3-9274-1aa7232f080d"
-                },
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onTreePanelAfterItemExpand",
-                        "name": "afteritemexpand",
-                        "scope": "me"
-                    },
-                    "name": "onTreePanelAfterItemExpand",
-                    "designerId": "182010e0-37c6-4a6e-9502-8aca70cb0b11"
-                },
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onTreePanelBeforeItemExpand",
-                        "implHandler": [
-                            ""
-                        ],
-                        "name": "beforeitemexpand",
-                        "scope": "me"
-                    },
-                    "name": "onTreePanelBeforeItemExpand",
-                    "designerId": "c2a83c73-730a-4e12-8f9d-7fb5a4e9f2c9"
-                },
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onTreePanelSelectionChange",
-                        "name": "selectionchange",
-                        "scope": "me"
-                    },
-                    "name": "onTreePanelSelectionChange",
-                    "designerId": "57eec3f3-4b6a-425b-8b6e-8170154e27da"
-                },
-                {
-                    "type": "Ext.selection.CheckboxModel",
-                    "reference": {
-                        "name": "selModel",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "name": "MyCheckboxSelectionModel1",
-                    "designerId": "ce83e022-abbd-46d4-a9ae-07c5579237f1"
+                    "name": "select",
+                    "designerId": "7c013d3c-d1c4-4a81-84db-9b1a82f0df0d"
                 },
                 {
                     "type": "Ext.toolbar.Toolbar",
@@ -155,8 +107,8 @@
                         "designer|displayName": "toolbar",
                         "dock": "top"
                     },
-                    "name": "MyToolbar4",
-                    "designerId": "c227265b-63f6-44c5-b0e8-b8292168dd36",
+                    "name": "MyToolbar8",
+                    "designerId": "4c235c58-064c-4d14-a744-3ee635514acb",
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -168,10 +120,10 @@
                             "userConfig": {
                                 "itemId": "btnAdd",
                                 "layout|flex": null,
-                                "text": null
+                                "text": "Adicionar"
                             },
-                            "name": "MyButton26",
-                            "designerId": "7df35cec-13b9-40f1-9987-e4d7691976bb",
+                            "name": "MyButton41",
+                            "designerId": "828ccbdd-722c-4f47-b902-9e31a96b63c9",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -185,7 +137,7 @@
                                         "implHandler": [
                                             "var formPanel = this.getReferences().form,",
                                             "    form = formPanel.getForm(),",
-                                            "    newRecord = Ext.create('model.areas');",
+                                            "    newRecord = Ext.create('model.provincias');",
                                             "",
                                             "// Clear form",
                                             "form.reset();",
@@ -194,7 +146,7 @@
                                             "form.loadRecord(newRecord);",
                                             "",
                                             "// Set title",
-                                            "formPanel.setTitle('Adicionar Areas');",
+                                            "formPanel.setTitle('Adicionar Provincias');",
                                             "",
                                             "// Show form",
                                             "this.showView('form');"
@@ -203,7 +155,7 @@
                                         "scope": "me"
                                     },
                                     "name": "add",
-                                    "designerId": "855a9d68-5b1a-490c-9308-f687281e9277"
+                                    "designerId": "4d209c48-94d7-4541-8a30-7459b8fb89ff"
                                 }
                             ]
                         },
@@ -221,13 +173,13 @@
                                 ],
                                 "itemId": "btnEdit",
                                 "layout|flex": null,
-                                "text": null
+                                "text": "Editar"
                             },
-                            "name": "MyButton27",
+                            "name": "MyButton42",
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "919669f6-7612-4a21-a59a-93abaf37ac95",
+                            "designerId": "79d74a1e-8eb2-4010-baf6-58e9ae5048ac",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -247,7 +199,7 @@
                                             "form.loadRecord(record);",
                                             "",
                                             "// Set title",
-                                            "formPanel.setTitle('Editar Areas');",
+                                            "formPanel.setTitle('Editar Provincias');",
                                             "",
                                             "// Show form",
                                             "this.showView('form');"
@@ -256,7 +208,7 @@
                                         "scope": "me"
                                     },
                                     "name": "edit",
-                                    "designerId": "7be2158d-ec56-47dc-a7da-57bafaf62048"
+                                    "designerId": "0f008086-688c-4b75-b549-ec0f55e8e0a4"
                                 }
                             ]
                         },
@@ -274,13 +226,13 @@
                                 ],
                                 "itemId": "btnRemove",
                                 "layout|flex": null,
-                                "text": null
+                                "text": "Eliminar"
                             },
-                            "name": "MyButton28",
+                            "name": "MyButton43",
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "acff3f47-5764-4f5e-9fd2-b61f4f1fca86",
+                            "designerId": "7b34cea9-8382-4fd3-9c20-5a3f919c0697",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -295,13 +247,13 @@
                                             "var me = this;",
                                             "",
                                             "// Ask user to confirm this action",
-                                            "Ext.Msg.confirm('Confirm Delete', 'Esta seguro que desea eliminar el Area?', function(result) {",
+                                            "Ext.Msg.confirm('Confirm Delete', 'Esta seguro de eliminar el elemento seleccionado?', function(result) {",
                                             "",
                                             "    // User confirmed yes",
                                             "    if (result == 'yes') {",
                                             "",
                                             "        var record = me.getViewModel().get('record'),",
-                                            "            store = Ext.StoreManager.lookup('Areas');",
+                                            "            store = Ext.StoreManager.lookup('Provincias');",
                                             "",
                                             "        // Delete record from store",
                                             "        store.remove(record);",
@@ -317,54 +269,7 @@
                                         "scope": "me"
                                     },
                                     "name": "remove",
-                                    "designerId": "f5d74725-71f9-4a03-b7b3-f67658b5eb62"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "baseParams": [
-                                    "plaza"
-                                ],
-                                "designer|createAlias": "button",
-                                "designer|displayName": "btnAssociate",
-                                "disabled": true,
-                                "hidden": [
-                                    "true"
-                                ],
-                                "itemId": "btnAssociate",
-                                "layout|flex": null,
-                                "text": null
-                            },
-                            "name": "MyButton4",
-                            "configAlternates": {
-                                "hidden": "binding"
-                            },
-                            "designerId": "83f73dfc-be3d-46c4-b9a8-77ba2182ed86",
-                            "cn": [
-                                {
-                                    "type": "viewcontrollereventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "associate",
-                                        "implHandler": [
-                                            " "
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "associate",
-                                    "designerId": "03e7f55f-7334-4082-9941-9be6c0c23a90"
+                                    "designerId": "6f345cf1-7a0a-41a1-a3d4-f60b3bdf82ec"
                                 }
                             ]
                         },
@@ -381,13 +286,14 @@
                                 ],
                                 "itemId": "btnRefresh",
                                 "layout|flex": null,
-                                "text": null
+                                "text": "Actualizar",
+                                "width": null
                             },
-                            "name": "MyButton106",
+                            "name": "MyButton118",
                             "configAlternates": {
                                 "hidden": "binding"
                             },
-                            "designerId": "6c17d8c6-1a99-4be1-92cb-bbb10dc547b8",
+                            "designerId": "ed2ad5ee-7674-4023-8fa0-c9c2e6babaf0",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -405,7 +311,7 @@
                                         "scope": "me"
                                     },
                                     "name": "refresh",
-                                    "designerId": "143215d0-75bc-4a7f-a775-5b2c0e239f3f"
+                                    "designerId": "7223da63-d58b-46f4-8609-212f741b4cfe"
                                 }
                             ]
                         },
@@ -422,9 +328,50 @@
                                 "scope": "me"
                             },
                             "name": "onToolbarAfterRender",
-                            "designerId": "90d71c9c-a023-4f88-9408-1253cc1ce97e"
+                            "designerId": "497be8f5-f387-4c62-ab70-1f86d7acfbe8"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "nomenclador.rh.CausaMovimiento",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar14",
+                    "designerId": "f6fa9e40-42a0-49a8-b2e8-d22c2bbe7480"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyRowSelectionModel2",
+                    "designerId": "11c2c738-278b-4329-a169-9173f34fb4cd"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelectionChange",
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelSelectionChange",
+                    "designerId": "32d73cde-b472-4116-8224-b069d804f967"
                 },
                 {
                     "type": "Ext.grid.filters.Filters",
@@ -433,8 +380,8 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "name": "MyGridFiltersPlugin34",
-                    "designerId": "edda62bb-e9eb-45f9-98d7-63c7e3f44bc8"
+                    "name": "MyGridFiltersPlugin24",
+                    "designerId": "4ed63194-93a4-4628-9112-2ed918f12bb5"
                 }
             ]
         },
@@ -448,14 +395,14 @@
             "userConfig": {
                 "bodyBorder": true,
                 "layout": "card",
-                "layout|flex": 1,
+                "layout|flex": 0.6,
                 "layout|region": "east",
                 "layout|split": true,
                 "reference": "display",
                 "width": 150
             },
-            "name": "MyPanel22",
-            "designerId": "332a2482-64cc-4d73-924d-f7fc9f0b19e1",
+            "name": "MyPanel34",
+            "designerId": "d5d110ef-57ad-4448-9b4b-f90575c9b8c3",
             "cn": [
                 {
                     "type": "Ext.panel.Panel",
@@ -470,8 +417,8 @@
                         "layout": "vbox",
                         "reference": "selectMessage"
                     },
-                    "name": "MyPanel23",
-                    "designerId": "b9d1bea6-aa28-49d7-9ed9-715914d21542",
+                    "name": "MyPanel35",
+                    "designerId": "5650d8b2-b11e-447c-bedc-5628162e665d",
                     "cn": [
                         {
                             "type": "Ext.container.Container",
@@ -483,12 +430,12 @@
                             "userConfig": {
                                 "designer|displayName": "message",
                                 "html": [
-                                    "\"<h1>Seleccione el Área</h1>\""
+                                    "\"<h1>Seleccione la Provincia</h1>\""
                                 ],
                                 "layout|flex": 1
                             },
-                            "name": "MyContainer8",
-                            "designerId": "ac66b47d-43c6-4c40-8284-14c801a8d2d0"
+                            "name": "MyContainer15",
+                            "designerId": "874e8729-18a8-4c1d-88a4-13b6631ac12a"
                         }
                     ]
                 },
@@ -503,8 +450,8 @@
                         "bodyPadding": 10,
                         "reference": "details"
                     },
-                    "name": "MyPanel24",
-                    "designerId": "1b4183ce-c694-40b5-a6a0-bf01748df322",
+                    "name": "MyPanel36",
+                    "designerId": "042f69b3-1bdd-4fb4-8d22-3dd12109b369",
                     "cn": [
                         {
                             "type": "Ext.form.field.Display",
@@ -519,11 +466,68 @@
                                     "{record.nombre}"
                                 ]
                             },
-                            "name": "MyDisplayField23",
+                            "name": "MyDisplayField7",
                             "configAlternates": {
                                 "value": "binding"
                             },
-                            "designerId": "e7ece177-bd87-4a81-afe8-205440f71c9b"
+                            "designerId": "4bc17e9b-b417-4f79-a7bd-90a972a68fa2"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Código",
+                                "value": [
+                                    "{record.codigo}"
+                                ]
+                            },
+                            "name": "MyDisplayField21",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "401ddc5d-a2ed-4642-8b80-f172b10849ae"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Siglas",
+                                "value": [
+                                    "{record.siglas}"
+                                ]
+                            },
+                            "name": "MyDisplayField26",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "e0723ef7-d763-482f-9db9-39c478f8155d"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "País",
+                                "value": [
+                                    "{record.pais}"
+                                ]
+                            },
+                            "name": "MyDisplayField22",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "ba514a0d-0add-49d9-b1b5-ea5c55345a3a"
                         }
                     ]
                 },
@@ -537,14 +541,14 @@
                     "userConfig": {
                         "bodyPadding": 10,
                         "fieldDefaults": [
-                            "{maxLength: 255,",
+                            "{maxLength: 50,",
                             "        enforceMaxLength: true}"
                         ],
                         "reference": "form",
-                        "title": "Editar Área"
+                        "title": "Editar Provincia"
                     },
-                    "name": "MyForm5",
-                    "designerId": "7ad96d8a-188f-492b-ad16-b0a6e3fefae3",
+                    "name": "MyForm8",
+                    "designerId": "d2142f15-8cd4-4adb-aaea-ee360ca8c4e0",
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -558,8 +562,8 @@
                                 "fieldLabel": "Código",
                                 "name": "codigo"
                             },
-                            "name": "MyTextField13",
-                            "designerId": "126d74aa-1c8a-4999-bb2c-48ae38804b5a",
+                            "name": "MyTextField36",
+                            "designerId": "ff9187bc-1741-4bf7-be75-42adcb79b2eb",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -575,7 +579,7 @@
                                         ]
                                     },
                                     "name": "afterLabelTextTpl",
-                                    "designerId": "a6745646-9377-4d4c-842d-2541f6e6d6f1"
+                                    "designerId": "d4a2d547-9e90-4330-b56c-85f43527468e"
                                 }
                             ]
                         },
@@ -591,8 +595,8 @@
                                 "fieldLabel": "Nombre",
                                 "name": "nombre"
                             },
-                            "name": "MyTextField9",
-                            "designerId": "ad4ac3ed-3247-460f-94fe-6a4693aed2af",
+                            "name": "MyTextField21",
+                            "designerId": "17a89f2c-c8c5-4c81-a4f7-51a2acf5f947",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -608,7 +612,7 @@
                                         ]
                                     },
                                     "name": "afterLabelTextTpl",
-                                    "designerId": "15d4c74f-408c-4ae3-95ef-d73f48d0da72"
+                                    "designerId": "9fd44204-4173-429e-80b0-97a815ec3c98"
                                 }
                             ]
                         },
@@ -627,8 +631,8 @@
                                 "layout": "hbox",
                                 "padding": 10
                             },
-                            "name": "MyContainer9",
-                            "designerId": "511f534f-a615-48c9-955b-5e7a0eb30825",
+                            "name": "MyContainer16",
+                            "designerId": "6add32d3-7454-4c31-beab-cf7af511b88d",
                             "cn": [
                                 {
                                     "type": "Ext.button.Button",
@@ -638,15 +642,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "disabled": null,
                                         "formBind": true,
                                         "itemId": "saveButton",
                                         "layout|flex": 1,
                                         "margin": 5,
                                         "text": "Guardar"
                                     },
-                                    "name": "MyButton24",
-                                    "designerId": "4de749f2-2ad2-43c8-990a-38b4e74fad2f",
+                                    "name": "MyButton39",
+                                    "designerId": "e4374661-63e9-446a-be83-bf94bfb90ebe",
                                     "cn": [
                                         {
                                             "type": "viewcontrollereventbinding",
@@ -656,15 +659,45 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "saveTreeWindows",
+                                                "fn": "save",
                                                 "implHandler": [
-                                                    " "
+                                                    "var form = this.getReferences().form.getForm(),",
+                                                    "    record = form.getRecord(),",
+                                                    "    store = Ext.StoreManager.lookup('Provincias');",
+                                                    "",
+                                                    "// Valid",
+                                                    "if (form.isValid()) {",
+                                                    "",
+                                                    "    // Update associated record with values",
+                                                    "    form.updateRecord();",
+                                                    "",
+                                                    "    // Add to store if new record",
+                                                    "    if (record.phantom) {",
+                                                    "",
+                                                    "        // TODO: Assign the record's ID from data source",
+                                                    "        // Normally, this value would be auto-generated,",
+                                                    "        // or returned from the server",
+                                                    "        var id = store.count() + 1;",
+                                                    "        record.set('id', id);",
+                                                    "",
+                                                    "        // Add to store",
+                                                    "        store.add(record);",
+                                                    "",
+                                                    "    }",
+                                                    "",
+                                                    "    // Commit changes",
+                                                    "    store.commitChanges();",
+                                                    "",
+                                                    "    // Display record",
+                                                    "    this.select(this, record);",
+                                                    "",
+                                                    "}"
                                                 ],
                                                 "name": "click",
                                                 "scope": "me"
                                             },
-                                            "name": "saveTreeWindows",
-                                            "designerId": "f70ef8f7-5d0f-417d-884f-7c9bd66b4d98"
+                                            "name": "save",
+                                            "designerId": "f339a83b-5adc-4f8a-ab59-cb1d815085f1"
                                         }
                                     ]
                                 },
@@ -681,8 +714,8 @@
                                         "margin": 5,
                                         "text": "Cancelar"
                                     },
-                                    "name": "MyButton25",
-                                    "designerId": "b628e8db-797e-435f-83fe-8d185c217005",
+                                    "name": "MyButton40",
+                                    "designerId": "5e36de49-a148-4397-865d-351fab2c55fb",
                                     "cn": [
                                         {
                                             "type": "viewcontrollereventbinding",
@@ -701,7 +734,7 @@
                                                 "scope": "me"
                                             },
                                             "name": "cancelEdit",
-                                            "designerId": "369a843a-efb7-49a4-b2f2-c07b0070cf36"
+                                            "designerId": "c952b4c7-a1a1-4408-8917-62050b87ce88"
                                         }
                                     ]
                                 }
@@ -722,7 +755,7 @@
                 "designer|params": [
                     "config"
                 ],
-                "fn": "processEstructuraArea",
+                "fn": "processNomencladorProvincia",
                 "implHandler": [
                     "var control = Ext.create('cerodatax.view.nomenclador.CrudViewController'),",
                     "    result = [],",
@@ -735,10 +768,11 @@
                     "{var formPanel = result[0],",
                     "",
                     "",
-                    "    columns = control.searchLabel(formPanel.items,columns,false);",
+                    "    columns = control.searchLabel(formPanel.items,columns,true);",
                     "control.formatForm(formPanel);",
                     " if(resultgrid.length > 0)",
                     "     control.configGridPanel(resultgrid[0],columns);",
+                    "  control.createDetails(this,columns);",
                     "",
                     "}",
                     "",
@@ -746,8 +780,8 @@
                     "return config;"
                 ]
             },
-            "name": "processEstructuraArea",
-            "designerId": "1ab72dc6-4875-4fac-8894-32c636665345"
+            "name": "processNomencladorProvincia",
+            "designerId": "86a746ee-0b66-498b-9f69-e412183057a9"
         }
     ]
 }

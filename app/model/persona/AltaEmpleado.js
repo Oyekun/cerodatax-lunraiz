@@ -242,6 +242,14 @@ Ext.define('cerodatax.model.persona.AltaEmpleado', {
         },
         {
             type: 'string',
+            name: 'fundamentacionalta_id'
+        },
+        {
+            type: 'string',
+            name: 'fundamentacionalta'
+        },
+        {
+            type: 'string',
             name: 'area'
         },
         {
@@ -254,7 +262,15 @@ Ext.define('cerodatax.model.persona.AltaEmpleado', {
         },
         {
             type: 'string',
-            name: 'areaplaza_id'
+            name: 'cargo_id'
+        },
+        {
+            type: 'string',
+            name: 'plaza_id'
+        },
+        {
+            type: 'string',
+            name: 'plaza'
         },
         {
             type: 'date',

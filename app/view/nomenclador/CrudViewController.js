@@ -72,7 +72,8 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
     cancelEdit: function(button, e, eOpts) {
         // Show details
-        var windows = button.up('window');
+        if(eOpts!==undefined)
+        {var windows = button.up('window');
         if(windows)
             windows.close();
         //else this.showView('details');
@@ -85,6 +86,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          {var boton = button.up('panel').up('panel').up('panel').down('treepanel').down('button');
           this.refresh(boton);
          }
+        }
         }
 
     },
@@ -2336,7 +2338,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         this.showView('details');
     },
 
-    refresh: function(bottom) {
+    refresh: function(bottom, e, eOpts) {
         if(bottom!==null)
         {var tree = bottom.up('treepanel');
         var grid = bottom.up('gridpanel');
@@ -3241,15 +3243,36 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
     },
 
     isValid: function(form) {
-        var me = form,
-                    invalid;
-                Ext.suspendLayouts();
-                invalid = me.getFields().filterBy(function(field) {
-                    if(field.up('form').up('panel').up('form')===undefined)
-                    return !field.validate();
-                });
-                Ext.resumeLayouts(true);
-                return invalid.length < 1;
+
+                 var me = form,
+                                    invalid,fieldaux;
+                                Ext.suspendLayouts();
+                                invalid = me.getFields().filterBy(function(field) {
+                                    if(fieldaux===undefined)
+                                    if(!field.validate())
+                                    {
+                                            if(field.up('tabpanel')!==undefined)
+                                            fieldaux = field;
+                                    }
+                                    if(field.up('form').up('panel').up('form')===undefined)
+                                    {
+
+                                            return !field.validate();
+                                    }
+                                });
+
+                                if(fieldaux!==undefined)
+                                    {var tabpanel = fieldaux.up('tabpanel');
+                                    if(tabpanel.up('tabpanel')!==undefined)
+                                    {var tabpanelaux = tabpanel.up('tabpanel');
+                                     var  panelaux = tabpanel.up('panel');
+                                    tabpanelaux.setActiveItem(panelaux);
+                                    }
+                                     var  panel = fieldaux.up('panel');
+                                         tabpanel.setActiveItem(panel);
+                                    }
+                        Ext.resumeLayouts(true);
+                        return invalid.length < 1;
     },
 
     cancelEdit1: function(button, e, eOpts) {

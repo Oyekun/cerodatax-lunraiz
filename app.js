@@ -129,7 +129,9 @@ Ext.application({
         'nomenclador.rh.OrganizacionPolitica',
         'nomenclador.rh.AltaEmpleadoOrganizacionPolitica',
         'nomenclador.general.Idioma',
-        'nomenclador.rh.AltaEmpleadoIdioma'
+        'nomenclador.rh.AltaEmpleadoIdioma',
+        'nomenclador.rh.FundamentacionAlta',
+        'nomenclador.rh.CausaMovimiento'
     ],
     stores: [
         'seguridad.Usuario',
@@ -242,7 +244,9 @@ Ext.application({
         'nomenclador.rh.OrganizacionPolitica',
         'nomenclador.rh.AltaEmpleadoOrganizacionPolitica',
         'nomenclador.general.Idioma',
-        'nomenclador.rh.AltaEmpleadoIdioma'
+        'nomenclador.rh.AltaEmpleadoIdioma',
+        'nomenclador.rh.FundamentacionAlta',
+        'nomenclador.rh.CausaMovimiento'
     ],
     views: [
         'seguridad.Rol',
@@ -358,7 +362,9 @@ Ext.application({
         'nomenclador.rh.RegimenSalarial',
         'nomenclador.rh.SalarioAdicional',
         'nomenclador.rh.OrganizacionPolitica',
-        'nomenclador.general.Idioma'
+        'nomenclador.general.Idioma',
+        'nomenclador.rh.FundamentacionAlta',
+        'nomenclador.rh.CausaMovimiento'
     ],
     controllers: [
         'Escritorio',

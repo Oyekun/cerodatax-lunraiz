@@ -138,7 +138,8 @@
                 "fn": "cancelEdit",
                 "implHandler": [
                     "// Show details",
-                    "var windows = button.up('window');",
+                    "if(eOpts!==undefined)",
+                    "{var windows = button.up('window');",
                     "if(windows)",
                     "    windows.close();",
                     "//else this.showView('details');",
@@ -151,6 +152,7 @@
                     " {var boton = button.up('panel').up('panel').up('panel').down('treepanel').down('button');",
                     "  this.refresh(boton);",
                     " }",
+                    "}",
                     "}",
                     ""
                 ],
@@ -2622,7 +2624,9 @@
             "codeClass": null,
             "userConfig": {
                 "designer|params": [
-                    "bottom"
+                    "bottom",
+                    "e",
+                    "eOpts"
                 ],
                 "fn": "refresh",
                 "implHandler": [
@@ -3813,15 +3817,36 @@
                 ],
                 "fn": "isValid",
                 "implHandler": [
-                    "var me = form,",
-                    "            invalid;",
-                    "        Ext.suspendLayouts();",
-                    "        invalid = me.getFields().filterBy(function(field) {",
-                    "            if(field.up('form').up('panel').up('form')===undefined)",
-                    "            return !field.validate();",
-                    "        });",
-                    "        Ext.resumeLayouts(true);",
-                    "        return invalid.length < 1;"
+                    "",
+                    "         var me = form,",
+                    "                            invalid,fieldaux;",
+                    "                        Ext.suspendLayouts();",
+                    "                        invalid = me.getFields().filterBy(function(field) {",
+                    "                            if(fieldaux===undefined)",
+                    "                            if(!field.validate())",
+                    "                            {",
+                    "                                    if(field.up('tabpanel')!==undefined)",
+                    "                                    fieldaux = field;",
+                    "                            }",
+                    "                            if(field.up('form').up('panel').up('form')===undefined)",
+                    "                            {",
+                    "",
+                    "                                    return !field.validate();",
+                    "                            }",
+                    "                        });",
+                    "",
+                    "                        if(fieldaux!==undefined)",
+                    "                            {var tabpanel = fieldaux.up('tabpanel');",
+                    "                            if(tabpanel.up('tabpanel')!==undefined)",
+                    "                            {var tabpanelaux = tabpanel.up('tabpanel');",
+                    "                             var  panelaux = tabpanel.up('panel');",
+                    "                            tabpanelaux.setActiveItem(panelaux);",
+                    "                            }",
+                    "                             var  panel = fieldaux.up('panel');",
+                    "                                 tabpanel.setActiveItem(panel);",
+                    "                            }",
+                    "                Ext.resumeLayouts(true);",
+                    "                return invalid.length < 1;"
                 ]
             },
             "name": "isValid",

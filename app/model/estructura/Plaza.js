@@ -19,7 +19,7 @@ Ext.define('cerodatax.model.estructura.Plaza', {
 
     requires: [
         'Ext.data.field.String',
-        'Ext.data.field.Integer',
+        'Ext.data.field.Number',
         'Ext.data.field.Boolean',
         'Ext.data.proxy.Rest',
         'Ext.data.reader.Json',
@@ -38,6 +38,34 @@ Ext.define('cerodatax.model.estructura.Plaza', {
         {
             type: 'string',
             name: 'cargo_id'
+        },
+        {
+            type: 'string',
+            name: 'grupoescala_id'
+        },
+        {
+            type: 'string',
+            name: 'grupoescala'
+        },
+        {
+            type: 'float',
+            name: 'salario'
+        },
+        {
+            type: 'string',
+            name: 'categoria_cargo'
+        },
+        {
+            type: 'string',
+            name: 'categoria_cargo_id'
+        },
+        {
+            type: 'string',
+            name: 'area'
+        },
+        {
+            type: 'string',
+            name: 'area_id'
         },
         {
             type: 'int',

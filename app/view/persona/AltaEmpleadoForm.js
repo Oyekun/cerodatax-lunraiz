@@ -38,6 +38,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
         'Ext.grid.filters.filter.String',
         'Ext.grid.filters.Filters',
         'Ext.form.field.Date',
+        'Ext.form.field.Display',
         'Ext.view.MultiSelector',
         'Ext.view.MultiSelectorSearch',
         'Ext.grid.column.Number'
@@ -106,7 +107,6 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                 reference: 'personaaltaempleado',
                                 fieldLabel: 'Persona',
                                 name: 'persona_id',
-                                allowBlank: false,
                                 emptyText: 'Seleccione',
                                 displayField: 'nombre',
                                 queryMode: 'local',
@@ -199,6 +199,9 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                         emptyText: 'Seleccione',
                                                                         maxLength: 255,
                                                                         buttonText: 'Examinar...',
+                                                                        bind: {
+                                                                            value: '{personaaltaempleado.selection.foto}'
+                                                                        },
                                                                         listeners: {
                                                                             change: 'onFilefieldChange'
                                                                         }
@@ -808,61 +811,65 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                 afterLabelTextTpl: [
                                                                     '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                                 ],
+                                                                fieldLabel: 'Fundamentación Alta',
+                                                                name: 'fundamentacionalta_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                queryParam: 'provincia_id:false,municipio_id:true',
+                                                                store: 'nomenclador.rh.FundamentacionAlta',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
                                                                 fieldLabel: 'Área',
                                                                 name: 'area_id',
                                                                 allowBlank: false,
                                                                 emptyText: 'Seleccione',
                                                                 displayField: 'nombre',
                                                                 queryMode: 'local',
-                                                                queryParam: 'areaplaza_id:false,grupoescala_id:true,categoria_cargo_id:true',
+                                                                queryParam: 'cargo_id:false',
                                                                 store: 'estructura.AreaCombo',
-                                                                valueField: 'id'
+                                                                valueField: 'id',
+                                                                listeners: {
+                                                                    select: 'onComboboxSelect'
+                                                                }
                                                             },
                                                             {
                                                                 xtype: 'combobox',
+                                                                reference: 'plazaaltaempleado',
                                                                 disabled: true,
                                                                 afterLabelTextTpl: [
                                                                     '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                                 ],
                                                                 fieldLabel: 'Plaza',
-                                                                name: 'areaplaza_id',
+                                                                name: 'cargo_id',
                                                                 allowBlank: false,
                                                                 emptyText: 'Seleccione',
                                                                 displayField: 'cargo',
                                                                 queryMode: 'local',
-                                                                queryParam: 'grupoescala_id:false,categoria_cargo_id:false',
-                                                                store: 'estructura.AreaPlaza',
+                                                                store: 'estructura.Plaza',
                                                                 valueField: 'id'
                                                             },
                                                             {
-                                                                xtype: 'combobox',
-                                                                disabled: true,
-                                                                afterLabelTextTpl: [
-                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                                ],
+                                                                xtype: 'displayfield',
                                                                 fieldLabel: 'Grupo Escala',
-                                                                name: 'grupoescala_id',
-                                                                allowBlank: false,
-                                                                emptyText: 'Seleccione',
-                                                                displayField: 'nombre',
-                                                                queryMode: 'local',
-                                                                store: 'nomenclador.GrupoEscala',
-                                                                valueField: 'id'
+                                                                name: 'grupoescala',
+                                                                bind: {
+                                                                    value: '{plazaaltaempleado.selection.grupoescala}'
+                                                                }
                                                             },
                                                             {
-                                                                xtype: 'combobox',
-                                                                disabled: true,
-                                                                afterLabelTextTpl: [
-                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                                ],
+                                                                xtype: 'displayfield',
                                                                 fieldLabel: 'Categoría',
-                                                                name: 'categoria_cargo_id',
-                                                                allowBlank: false,
-                                                                emptyText: 'Seleccione',
-                                                                displayField: 'nombre',
-                                                                queryMode: 'local',
-                                                                store: 'nomenclador.CategoriaCargo',
-                                                                valueField: 'id'
+                                                                name: 'categoria_cargo',
+                                                                bind: {
+                                                                    value: '{plazaaltaempleado.selection.categoria_cargo}'
+                                                                }
                                                             }
                                                         ]
                                                     },
@@ -1079,7 +1086,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                             {
                                                                 xtype: 'fieldset',
                                                                 height: 85,
-                                                                width: 295,
+                                                                width: 320,
                                                                 title: 'Salario Escala',
                                                                 layout: {
                                                                     type: 'table',
@@ -1093,12 +1100,15 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                         fieldLabel: 'Básico',
                                                                         labelWidth: 70,
                                                                         name: 'basico',
-                                                                        readOnly: true
+                                                                        readOnly: true,
+                                                                        bind: {
+                                                                            value: '{plazaaltaempleado.selection.salario}'
+                                                                        }
                                                                     },
                                                                     {
                                                                         xtype: 'numberfield',
                                                                         margin: '0 0 0 10',
-                                                                        width: 120,
+                                                                        width: 130,
                                                                         fieldLabel: 'Estimulo',
                                                                         labelWidth: 50,
                                                                         name: 'estimulo'
@@ -1114,7 +1124,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                     {
                                                                         xtype: 'numberfield',
                                                                         margin: '10 0 0 10',
-                                                                        width: 120,
+                                                                        width: 130,
                                                                         fieldLabel: 'Plus',
                                                                         labelWidth: 50,
                                                                         name: 'plus'
@@ -1124,7 +1134,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                             {
                                                                 xtype: 'fieldset',
                                                                 height: 85,
-                                                                width: 295,
+                                                                width: 320,
                                                                 title: 'Otros Datos',
                                                                 layout: {
                                                                     type: 'table',
@@ -1143,7 +1153,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                     {
                                                                         xtype: 'numberfield',
                                                                         margin: '0 0 0 10',
-                                                                        width: 120,
+                                                                        width: 130,
                                                                         fieldLabel: 'Otros',
                                                                         labelWidth: 50,
                                                                         name: 'otros'
@@ -1159,7 +1169,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                     {
                                                                         xtype: 'numberfield',
                                                                         margin: '10 0 0 10',
-                                                                        width: 120,
+                                                                        width: 130,
                                                                         fieldLabel: 'Cargo',
                                                                         labelWidth: 50,
                                                                         name: 'salario_cargo'
@@ -1201,7 +1211,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                         xtype: 'numberfield',
                                                                         disabled: true,
                                                                         margin: '0 0 0 10',
-                                                                        width: 120,
+                                                                        width: 130,
                                                                         fieldLabel: 'Importe',
                                                                         labelWidth: 50,
                                                                         name: 'importe'

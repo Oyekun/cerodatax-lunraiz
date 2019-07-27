@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "causamovimiento",
+        "designer|userClassName": "nomenclador.rh.CausaMovimiento"
+    },
+    "name": "nomenclador.rh.FundamentacionAlta1",
+    "designerId": "7cf96757-456b-43dd-95ea-0f9a54642156",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "e6fc9135-5618-41da-949c-ed9627f18c77"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "c30d3a7e-6c50-4008-9754-7cc89a0535fc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "467edf2a-cf55-40a0-8833-f17bca014dc1"
+        }
+    ]
+}
