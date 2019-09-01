@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "personamovimientoempleadoform",
+        "designer|userClassName": "persona.PersonaFormViewController4"
+    },
+    "name": "persona.PersonaFormViewController4",
+    "designerId": "4d1f50d1-20e3-4d5e-b252-0aefd59c3901"
+}

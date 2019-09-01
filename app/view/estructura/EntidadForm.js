@@ -115,6 +115,7 @@ Ext.define('cerodatax.view.estructura.EntidadForm', {
                                     {
                                         xtype: 'textfield',
                                         itemId: 'nombreentidad',
+                                        width: 285,
                                         afterLabelTextTpl: [
                                             '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                         ],

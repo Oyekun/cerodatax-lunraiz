@@ -616,24 +616,7 @@
                                         "text": "Escritura"
                                     },
                                     "name": "MyCheck",
-                                    "designerId": "38d231ee-0976-4cce-8e4e-30ab8063e32f",
-                                    "cn": [
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onCheckcolumnBeforeCheckChange",
-                                                "name": "beforecheckchange",
-                                                "scope": "me"
-                                            },
-                                            "name": "onCheckcolumnBeforeCheckChange",
-                                            "designerId": "1f75c80b-f61e-4eb6-bf52-cad56ab31bb1"
-                                        }
-                                    ]
+                                    "designerId": "38d231ee-0976-4cce-8e4e-30ab8063e32f"
                                 }
                             ]
                         },

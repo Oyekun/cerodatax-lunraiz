@@ -34,10 +34,16 @@ class Api_model extends CI_Model
      */
     public function get_all($request)
     {
+        //Para filtrar por owner
+         
+         if(isset($this->session->userdata['entidad_id']))
+         $identity = $this->session->userdata['entidad_id'];
+         //print_r($this->session);die;
+         $is_admin = $this->ion_auth->is_admin();
+         //Para la tabla
          $esquema = $request['esquema'];
          $esquema = str_replace('.',DS,$esquema);
          $request['esquema'] = str_replace('.','_',$request['esquema']);
-
          $existFolder = APPPATH . "models/$esquema";
     if(!is_dir($existFolder))
         mkdir($existFolder);
@@ -80,29 +86,48 @@ if (file_exists($existFile))
         }
 
         //////////Para crear modelo relacional prueba////////////// hAY Q MADURARLO LA CREACION DE MODELO
-  /*      if(isset($request['asociados']))
+        if(isset($request['asociados']))
                 {
-            $modelo = $request['model'];
 
-                    $modelClass = ucwords($modelo) . ucwords($request['asociados']);
-                    $subdireccion = $modelClass;
-                    $existFile = APPPATH . "models".DS.$request['esquema'].DS."$subdireccion.php";
-                    
-        if (!file_exists($existFile))
-{            $dataMigration = array();   
+                    $modelo = $request['model']; 
+                    $asociados = $request['asociados']; 
+                    $modelClass =  $request['model'] .$request['asociados'];
+                    //$subdireccion = $request['model'].$request['asociados'];
+                    $esquemaA = str_replace('.',DS,$request['esquema_asociado']);
+
+                    $existFile = APPPATH . "models".DS.$request['esquema_asociado'].DS."$modelClass.php";
+                    $existFileM = APPPATH . "models".DS.$esquema.DS."$modelo.php";
+                    $existFileA = APPPATH . "models".DS.$esquemaA.DS."$asociados.php";
+                   
+
+        if (!file_exists($existFile)&&file_exists($existFileM)&&file_exists($existFileA))
+        {       $loadM = $esquema.'/'.$modelo;
+                    $this->load->model($loadM, '',TRUE);
+                    $modelM = new $modelo;
+                    $nameClassM = get_class($modelM);
+
+                    $loadA = $esquemaA.'/'. $asociados;
+                    $this->load->model($loadA, '',TRUE);
+                      $modelA = new  $asociados;
+                    $nameClassA = get_class($modelA);
+                    $modelClass =  $nameClassM.$nameClassA;
+                    //var_dump($modelClass);die;
+             $dataMigration = array();   
+             $esquema_asociado = str_replace('.','_',$request['esquema_asociado']);
              $dataMigration[0]= ['nombre'=>$modelo.'_id','tabla'=>$request['esquema'].'_'.$modelo,"tipo"=>"VARCHAR","constraint"=>"100","nullfield"=>"FALSE"];
-             $dataMigration[1]= ['nombre'=>$request['asociados'].'_id','tabla'=>$request['esquema_asociado'].'_'.$request['asociados'],"tipo"=>"VARCHAR","constraint"=>"100","nullfield"=>"FALSE"];
+             $dataMigration[1]= ['nombre'=>$request['asociados'].'_id','tabla'=>$esquema_asociado.'_'.$request['asociados'],"tipo"=>"VARCHAR","constraint"=>"100","nullfield"=>"FALSE"];
              $tools = new Tools();
+           
              
-             $tools->make_model_relation_file($request['esquema'], $modelClass,$dataMigration);
-             
-             $tools->make_migration_file($request['esquema'],$modelClass,$dataMigration);
+             $tools->make_model_relation_file($request['esquema_asociado'], $modelClass,$dataMigration);
+             $tools->make_migration_file($request['esquema_asociado'],$modelClass,$dataMigration);
+            // print_r($dataMigration);die;
             
              $tools->migrate();
 
 }
 }
-*/
+
 //print_r($existFile);die;
 
         //////////////////////////////////////////////////////////
@@ -145,7 +170,18 @@ if (file_exists($existFile))
                            if(count($tabla_campo)==1)
                         {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
+
                         $alias = str_replace("_id", "", $campo);
+                         $pos = strpos($campo,"_id");
+                        if($pos!==FALSE)
+                        {
+                            $len = strlen($campo);//die;
+                            //print_r($len);die;
+                            if(($len-$pos)!=3)
+                        $alias = $campo;       
+
+                        
+                        }
                         if ($alias != $campo)
                             $ref = $tabla_campo . ".nombre as " . $alias;
                         else
@@ -158,7 +194,7 @@ if (file_exists($existFile))
                         }
                      }
                      else{
-
+/*
                         $tabla_campo_id = $tabla_campo['model'] . '.id';                        
                         $igual = $tabla_campo['relacion'] . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
@@ -174,13 +210,50 @@ if (file_exists($existFile))
                             $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
                             $tbcampo= $tabla_campo['model'];
                             $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
+                        }*/
+
+                           $tabla_campo_id = $tabla_campo['model'] . '.id';   
+                        if(isset($tabla_campo['campo']))
+                        $tabla_campo_id = $tabla_campo['model'] . '.'.$tabla_campo['campo'];   
+
+                         $igual = $tb . '.' . $campo;
+                         if(isset($tabla_campo['relacion']))                         
+                        $igual = $tabla_campo['relacion'] . '.' . $campo;
+                    if(isset($tabla_campo['campo']))
+                        $igual = $tabla_campo['relacion'] . '.id';
+                    
+                        $alias = str_replace("_id", "", $campo);
+                        if ($alias != $campo)
+                            { 
+                                   $ref = $tabla_campo['model'] . ".nombre as " . $alias;
+                             if(!isset($tabla_campo['id'])) 
+                             $ref .=  "," .$tabla_campo['model'] . ".id"." as " . $campo;
+                            }
+                        else
+                            $ref = $tabla_campo['model'] . "." . $alias . " as " . $alias;
+                        if(!isset($tabla_campo['campo']))
+                        $this->db->select("$ref");
+                           
+                        if (!isset($tablas_relacion[$tabla_campo['model']])) {
+                            $tablas_relacion[$tabla_campo['model']] = $tabla_campo['model'];
+                            $tbcampo= $tabla_campo['model'];
+                            //if(isset($tabla_campo['relacion']))  
+                            $this->db->join(" $tbcampo", " $tabla_campo_id = $igual", " left");
                         }
+                        
+                        
 
 
                      }
                         }
                     }
                     $this->db->order_by("date_updated", "desc");//verificar bien
+                if ($this->db->field_exists("visible", "$tb") !== FALSE)
+                    $this->db->where('visible',1);
+if(isset($this->session->userdata['entidad_id']))
+                if(!$is_admin)
+                if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)
+                    $this->db->where('ownerentidad_id',$identity);
                     $q = $this->db->get("$tb");
 
 
@@ -198,6 +271,7 @@ if (file_exists($existFile))
                                 $idasociadoDos = $request['asociados'] . '_id';
                                 $this->db->where("$idasociadoUno", $total[$i]['id']);
                                 $this->db->where("$idasociadoDos", $request['id_asociado']);
+                               
                                 $r = $this->db->get("$tbDos");
 
                                 $total[$i]['checked'] = count($r->result_array()) > 0 ? TRUE : FALSE;
@@ -274,7 +348,21 @@ if (isset($request['gridasociado']))
                         if(count($tabla_campo)==1)
                         {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
+
+                        //$alias = str_replace("_id", "", $campo);
+                       
                         $alias = str_replace("_id", "", $campo);
+                         $pos = strpos($campo,"_id");
+                        if($pos!==FALSE)
+                        {
+                            $len = strlen($campo);//die;
+                            //print_r($len);die;
+                            if(($len-$pos)!=3)
+                        $alias = $campo;       
+
+                        
+                        }
+                        
                         if ($alias != $campo)
                             $ref = $tabla_campo . ".nombre as " . $alias;
                         else
@@ -327,7 +415,13 @@ if (isset($request['gridasociado']))
                //print_r($this->db);die; 
                 $this->db->order_by("date_updated", "desc");
                 //verificar bien
-                //print_r($this->db);die; 
+                if ($this->db->field_exists("visible", "$tb") !== FALSE)
+                    $this->db->where('visible',1);
+                if(isset($this->session->userdata['entidad_id']))
+                if(!$is_admin)
+                 if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)
+                    $this->db->where("$tb.ownerentidad_id",$identity);
+               // print_r($this->db);die; 
                 $q = $this->db->get("$tb", $limit, $offset);
 
             } else {
@@ -399,12 +493,26 @@ if (isset($request['gridasociado']))
                     }
                 }
 
-                $this->db->order_by("date_updated", "desc");//verificar bien
+                $this->db->order_by("date_updated", "desc");
+                if ($this->db->field_exists("visible", "$tb") === TRUE)
+                    $this->db->where('visible',1);
+                if(isset($this->session->userdata['entidad_id']))
+                if(!$is_admin)
+                 if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)
+                    $this->db->where('ownerentidad_id',$identity);
+                //verificar bien
                 $q = $this->db->get("$tb");
 
             }
 
             $this->db->order_by("date_updated", "desc");//verificar bien
+            if ($this->db->field_exists("visible", "$tb") === TRUE)
+                    $this->db->where('visible',1);
+                if(isset($this->session->userdata['entidad_id']))
+                if(!$is_admin)
+              if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)
+                    $this->db->where('ownerentidad_id',$identity);   
+                
             $q1 = $this->db->get("$tb");
 
             if (isset($q->row()->orden) && !isset($request['parent_id'])) {
@@ -463,6 +571,12 @@ if (isset($request['gridasociado']))
                 }
                 // $this->db->order_by("date_updated", "asc");//verificar bien
                 //  print_r($q->row());die;
+                 if ($this->db->field_exists("visible", "$tb") === TRUE)
+                    $this->db->where('visible',1);
+                if(isset($this->session->userdata['entidad_id']))
+                if(!$is_admin)
+                 if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)
+                    $this->db->where('ownerentidad_id',$identity);
                 if ($limit)
                     $q = $this->db->get("$tb", $limit, $offset);
                 else
@@ -524,7 +638,12 @@ if (isset($request['gridasociado']))
                     }
                 }
                 // $this->db->order_by("date_updated", "asc");//verificar bien
-                
+                 if ($this->db->field_exists("visible", "$tb") === TRUE)
+                    $this->db->where('visible',1);
+                if(isset($this->session->userdata['entidad_id']))
+                if(!$is_admin)
+                 if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)
+                    $this->db->where('ownerentidad_id',$identity);
                 if ($limit)
                     $q = $this->db->get("$tb", $limit, $offset);
                 else
@@ -621,6 +740,9 @@ if (isset($request['gridasociado']))
 
          //$esquema = $request['esquema'];
          //$esquema = str_replace('.',DS,$esquema);
+        //print_r($identity);die;
+// $is_admin = $this->ion_auth->is_admin();
+
          $request['esquema'] = str_replace('.','_',$request['esquema']);
         //$rsl = $this->row_existe($request);
 
@@ -628,7 +750,6 @@ if (isset($request['gridasociado']))
             $tb = $request['esquema'] . '_' . $request['model'];
 
             $dataArray = json_decode($request['data'], TRUE);
-
             foreach ($dataArray as $key => $nodo) {
                 if ($nodo === '' || $nodo === 'NULL') {
 
@@ -642,9 +763,13 @@ if (isset($request['gridasociado']))
                         $dataArray["$key"] = 1;
                 }
                 if ($this->db->field_exists("$key", "$tb") == FALSE)
-                    unset($dataArray["$key"]);
+                    {
+                        if ($key !== 'asociados' && $key !== 'updatecolumtable')
+                        unset($dataArray["$key"]);
+            }
 
             }
+ //print_r($dataArray);die;
 
 
             $this->load->model($request['esquema'].'/'.$request['model']);
@@ -660,15 +785,31 @@ if (isset($request['gridasociado']))
             unset($dataArray['checked']);
             unset($dataArray['model']);
             $asociados = FALSE;
-
+             
+            $dataArray2 = array();
             if (isset($dataArray['asociados'])) {
-
-                $dataArray2 = array();
+ 
                 $dataArray2 = $dataArray['asociados'];
                 $asociados = TRUE;
                 unset($dataArray['asociados']);
             }
 
+              $isupdatecolumtable = FALSE;
+             
+            $updatecolumtable = array();
+            if (isset($dataArray['updatecolumtable'])) {
+ 
+                $updatecolumtable = $dataArray['updatecolumtable'];
+                $isupdatecolumtable = TRUE;
+                unset($dataArray['updatecolumtable']);
+            }
+            if(isset($this->session->userdata['entidad_id']))
+                
+            {  if ($this->db->field_exists("owner_id", "$tb") === TRUE)     
+                $dataArray['owner_id'] = $this->session->userdata['user_id'];
+                if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)  
+                $dataArray['ownerentidad_id'] = $this->session->userdata['entidad_id'];
+            }
 
             $dataArray['date_created'] = $dataArray['date_updated'] = date('Y-m-d H:i:s');
             $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
@@ -702,7 +843,7 @@ if (isset($request['gridasociado']))
                     $this->db->where('id', $dataArray['parent_id']);
                     $dataArray1['leaf'] = 0;
                     $dataArray1['date_updated'] = date('Y-m-d H:i:s');
-                    $dataArray3['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
+                    $dataArray1['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
 
                     $this->db->update("$tb", $dataArray1);
 
@@ -735,14 +876,15 @@ if (isset($request['gridasociado']))
             if ($asociados) {
 
 
-                $modeloLogico = $dataArray2[0]['model'] . $request['model'];
-                $modelofisico = ucwords($dataArray2[0]['model']) . ucwords($request['model']);
+               
+                foreach ($dataArray2 as $nodo) {
+                     $modeloLogico = $nodo['model'] . $request['model'];
+                $modelofisico = ucwords($nodo['model']) . ucwords($request['model']);
                 $tb1 = $request['esquema'] . '_' . $modeloLogico;
 
                 $this->load->model($request['esquema'].'/'.$modelofisico);
 
                 $nameuuidUno = new $modelofisico;
-                foreach ($dataArray2 as $nodo) {
 
 
                     $rand = mt_rand(0, 0xffff);
@@ -750,19 +892,47 @@ if (isset($request['gridasociado']))
                     $this->db->set('id', $uuidUno);
                     $dataArray3 = array();
 
-                    $modeluno = $dataArray2[0]['model'] . '_id';
+                    $modeluno = $nodo['model'] . '_id';
                     $modeldos = $request['model'] . '_id';
                     $dataArray3["$modeluno"] = $nodo['id'];
                     $dataArray3["$modeldos"] = $uuid;
                     $escritura = 0;
-                    if ($nodo['escritura'])
+                    if(isset($nodo['escritura']))
+                    {if ($nodo['escritura'])
                         $escritura = 1;
                     $dataArray3['escritura'] = $escritura;
-
+                }
                     $dataArray3['date_created'] = $dataArray3['date_updated'] = date('Y-m-d H:i:s');
                     $dataArray3['created_from_ip'] = $dataArray3['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
 
                     $this->db->insert("$tb1", $dataArray3);
+                }
+
+
+            }
+
+             if ($isupdatecolumtable) {
+
+
+               
+                foreach ($updatecolumtable as $nodo) {
+                
+
+                     $tabla = $nodo['tabla'];
+                     $tabla_id = $nodo['tabla_id'];
+                     $campo = $nodo['campo'];
+                     $value = $nodo['value'];
+
+
+                      $dataArray = array();
+                      $dataArray["$campo"] = $value;
+                      $dataArray['date_updated'] = date('Y-m-d H:i:s');
+                      $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
+
+
+                      $this->db->where('id', $tabla_id);
+                      $sl = $this->db->update("$tabla", $dataArray);
+               
                 }
 
 
@@ -784,10 +954,36 @@ if (isset($request['gridasociado']))
 
          //$esquema = $request['esquema'];
          //$esquema = str_replace('.',DS,$esquema);
+
          $request['esquema'] = str_replace('.','_',$request['esquema']);
         $tb = $request['esquema'] . '_' . $request['model'];
         $this->db->where('id', $id);
+
+        //$this->db->where('id', $id);
+        $result = $this->db->get("$tb");
+        $salida = $result->result_array();
+       
+        if (isset($salida[0]['parent_id'])) {
+            # code...
+        $parent_id= $salida[0]['parent_id'];
+        if ($parent_id != '') {
+                    $dataArray1 = array();
+ 
+                    $this->db->where('id', $parent_id);
+                    $dataArray1['leaf'] = 1;
+                    $dataArray1['date_updated'] = date('Y-m-d H:i:s');
+                    $dataArray1['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
+
+                    $this->db->update("$tb", $dataArray1);
+
+        }
+    }
+
+        $this->db->where('id', $id);
+              
         $this->db->delete("$tb");
+
+      
         return $this->db->affected_rows();
 
     }
@@ -820,16 +1016,31 @@ if (isset($request['gridasociado']))
                 if ($nodo)
                     $dataArray["$key"] = 1;
             }
+             if ($this->db->field_exists("$key", "$tb") == FALSE)
+                    {
+                        if ($key !== 'asociados' && $key !== 'updatecolumtable')
+                        unset($dataArray["$key"]);
+            }
 
 
         }
 
         $this->load->model($esquema.'/'.$request['model']);
         $nameuuid = new $request['model'];
+       // print_r($nameuuid);die;
         if(isset($nameuuid->uuid2)) 
             $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"].$dataArray["$nameuuid->uuid2"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
             else  
+       {
+        if(isset($dataArray["$nameuuid->uuid"]))
         $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+        else
+        {
+            $rand = mt_rand(0, 0xffff);
+            $uuid = $this->uuid->v5($rand, '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+
+        }
+        }
         if ($id == 0)
             $id = $dataArray['id'];
         $dataArray['id'] = $uuid;
@@ -844,6 +1055,7 @@ if (isset($request['gridasociado']))
         unset($dataArray['expanded']);
         unset($dataArray['checked']);
         unset($dataArray['model']);
+       
 
         $asociados = FALSE;
         if (isset($dataArray['asociados'])) {
@@ -862,6 +1074,8 @@ if (isset($request['gridasociado']))
         
 
 
+     //if ($this->db->field_exists("owner_id", "$tb") === TRUE)    
+    //     unset($dataArray['owner_id']);
  //print_r($dataArray);die;
         $this->db->where('id', $id);
         $dataArray['date_updated'] = date('Y-m-d H:i:s');
@@ -947,6 +1161,8 @@ if (isset($request['gridasociado']))
         }
 
         if ($arbol) {
+             if ($this->db->field_exists("visible", "$tb") === TRUE)
+                    $this->db->where('visible',1);
             $q = $this->db->get("$tb");
             $arbol = $q->result_array();
 
@@ -981,7 +1197,7 @@ if (isset($request['gridasociado']))
         $dataArray = json_decode($request['data'], TRUE);
         //$existtable = $this->db->get($tb);
         //print_r($existtable);die;
-        
+       // print_r($dataArray);die;
         $subdireccion =  $esquema . DS . $request['model'];
         //$subdireccion =  /*$request['esquema'] . '/' .*/ $request['model'];
 $existFile = APPPATH . "models".DS."$subdireccion.php";
@@ -1052,6 +1268,8 @@ if(count($aux1)>0)
         }
         $this->db->where('id', $uuid);
 //print_r($this->db);die;
+         if ($this->db->field_exists("visible", "$tb") === TRUE)
+                    $this->db->where('visible',1);
         $result = $this->db->get("$tb");
 
         return count($result->result_array()) > 0 ? TRUE : FALSE;

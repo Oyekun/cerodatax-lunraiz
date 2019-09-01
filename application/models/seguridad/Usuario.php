@@ -24,6 +24,6 @@ class Usuario extends CI_Model {
                
 				 
 				$this->uuid = 'username';
-                $this->relacion = array('persona_id' =>'persona_persona','organismo_id' =>'nomenclador_organismo');
+                $this->relacion = array('persona_id' =>'persona_persona','organismo_id' =>'nomenclador_organismo','entidad_id' =>'estructura_entidad');
         }
 }

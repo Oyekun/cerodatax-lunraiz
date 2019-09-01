@@ -31,11 +31,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
         'Ext.form.field.Display',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
-        'Ext.form.field.Checkbox',
-        'Ext.tree.Panel',
-        'Ext.tree.View',
-        'Ext.tree.Column',
-        'Ext.grid.filters.filter.String'
+        'Ext.form.field.Checkbox'
     ],
 
     controller: 'seguridadusuario',
@@ -77,7 +73,7 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'organismo',
+                    dataIndex: 'entidad_id',
                     text: 'Entidad'
                 },
                 {
@@ -341,59 +337,41 @@ Ext.define('cerodatax.view.seguridad.Usuario', {
                         },
                         {
                             xtype: 'combobox',
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                            ],
                             fieldLabel: 'Organismo',
                             name: 'organismo_id',
-                            inputAttrTpl: [
-                                'Entidades:false'
-                            ],
+                            allowBlank: false,
                             emptyText: 'Seleccione',
-                            maxLength: 100,
+                            maxLength: 150,
                             displayField: 'nombre',
                             queryMode: 'local',
-                            queryParam: 'Entidades:false',
+                            queryParam: 'entidad_id:false',
                             store: 'nomenclador.Organismo',
                             valueField: 'id',
+                            bind: {
+                                value: '{personaaltaempleado.selection.organismo_id}'
+                            },
                             listeners: {
-                                select: 'onComboboxSelectEntidad'
+                                select: 'onComboboxSelect'
                             }
                         },
                         {
-                            xtype: 'treepanel',
+                            xtype: 'combobox',
                             disabled: true,
-                            height: 284,
-                            itemId: 'treePanel',
-                            margin: '10 0 0 0',
-                            scrollable: true,
-                            width: 400,
-                            title: 'Entidades',
-                            hideHeaders: false,
-                            store: 'seguridad.UsuarioEntidad',
-                            rootVisible: false,
-                            useArrows: true,
-                            viewConfig: {
-                                rootVisible: false
-                            },
-                            columns: [
-                                {
-                                    xtype: 'treecolumn',
-                                    dataIndex: 'nombre',
-                                    text: 'Nombre',
-                                    flex: 3,
-                                    filter: {
-                                        type: 'string',
-                                        emptyText: 'Ingrese el texto del filtro...'
-                                    }
-                                }
+                            afterLabelTextTpl: [
+                                '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                             ],
-                            listeners: {
-                                beforeitemexpand: 'onTreePanelBeforeItemExpand1'
-                            },
-                            plugins: [
-                                {
-                                    ptype: 'gridfilters',
-                                    menuFilterText: 'Buscar'
-                                }
-                            ]
+                            fieldLabel: 'Entidad',
+                            name: 'entidad_id',
+                            allowBlank: false,
+                            emptyText: 'Seleccione',
+                            maxLength: 150,
+                            displayField: 'nombre',
+                            queryMode: 'local',
+                            store: 'estructura.EntidadCombo',
+                            valueField: 'id'
                         }
                     ],
                     dockedItems: [

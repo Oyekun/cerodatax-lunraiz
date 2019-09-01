@@ -119,8 +119,27 @@ class Migration_create_table_crm extends CI_Migration {
                                 'constraint' => '100',
                                 'null' => FALSE,    
                         )
-        ));
+         ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+            ),
+
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
                 $this->dbforge->add_key('id', TRUE);
+             $this->dbforge->add_key('owner_id');
+            $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                
                  $this->dbforge->add_key('pais_id');
                 $this->dbforge->add_key('provincia_id'); 
                 $this->dbforge->add_key('municipio_id');
@@ -327,7 +346,27 @@ class Migration_create_table_crm extends CI_Migration {
                                 'null' => FALSE,    
                         )
 
-                ));
+                 ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+
+            ),
+
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
+             $this->dbforge->add_key('owner_id');
+            $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                
                 $this->dbforge->add_key('contacto_id');
                 $this->dbforge->add_field('CONSTRAINT crm_contacto_id FOREIGN KEY (contacto_id) REFERENCES crm_contacto (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
@@ -390,7 +429,28 @@ class Migration_create_table_crm extends CI_Migration {
                                 'null' => FALSE,    
                         )
 
-                ));
+                 ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+
+            ),
+             
+
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
+             $this->dbforge->add_key('owner_id');
+            $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                
                 $this->dbforge->add_key('id', TRUE);
                  $this->dbforge->add_key('banco_id');
                   $this->dbforge->add_key('moneda_id');
@@ -436,7 +496,27 @@ class Migration_create_table_crm extends CI_Migration {
                                 'null' => FALSE,    
                         )
 
-                ));
+                 ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+
+            ),
+
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
+             $this->dbforge->add_key('owner_id');
+            $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                
                 $this->dbforge->add_key('contacto_id');
                 $this->dbforge->add_field('CONSTRAINT crm_contacto_id FOREIGN KEY (contacto_id) REFERENCES crm_contacto (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  
@@ -479,7 +559,27 @@ class Migration_create_table_crm extends CI_Migration {
                                 'null' => FALSE,    
                         )
 
-                ));
+                 ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            ),
+
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
+             $this->dbforge->add_key('owner_id');
+            $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                
                 $this->dbforge->add_key('contacto_id');
                 $this->dbforge->add_field('CONSTRAINT crm_contacto_id FOREIGN KEY (contacto_id) REFERENCES crm_contacto (id) ON UPDATE CASCADE ON DELETE CASCADE');
                 $this->dbforge->add_key('id', TRUE);  

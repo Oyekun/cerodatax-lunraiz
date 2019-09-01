@@ -1097,122 +1097,7 @@ $this->dbforge->add_field(array(
                 $this->dbforge->create_table('nomenclador_nae',TRUE);
         
 
-                $this->dbforge->add_field(array(
-                        'id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => 100,
-                                'unsigned' => TRUE
-                        ),
-                        'version' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '30',
-                                'unique' => TRUE,
-                                'null' => FALSE,
-                        ),
-                        'fecha_actualizacion' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                       
-                        'usuario_id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '30',
-                                'null' => FALSE,
-                        ),
-                        'descripcion' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '255'
-                        ),
-                         'nombre_fichero' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '255'
-                   ),  
-                         'date_created' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                         'date_updated' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                          'created_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        ),
-                          'updated_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        )
-
-                ));
-                $this->dbforge->add_key('id', TRUE);
-                $this->dbforge->add_key('usuario_id');
-                //$this->dbforge->add_field('CONSTRAINT usuario_id FOREIGN KEY (seccionnae_id) REFERENCES nomenclador_seccionnae (id) ON UPDATE CASCADE');
-               
-                $this->dbforge->create_table('actualizacion_actualizacion',TRUE);
-
-
-                $this->dbforge->add_field(array(
-                        'id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => 100,
-                                'unsigned' => TRUE
-                        ),
-                        'codigo' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'unique' => TRUE,
-                                'null' => FALSE
-                        ),
-                         'nombre' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'unique' => TRUE,
-                                'null' => FALSE
-                        ),
-						'leaf' => array(
-                                'type' => 'INT',
-                                'constraint' => '1',
-                                'default' => '1'
-                        ),
-                        'orden' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => TRUE
-                        ), 
-                       
-                        'parent_id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => TRUE 
-                   ),  
-                         'date_created' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                         'date_updated' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                          'created_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        ),
-                          'updated_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        )
-
-                ));
-                $this->dbforge->add_key('id', TRUE);
-                $this->dbforge->add_key('parent_id');
-                $this->dbforge->add_field('CONSTRAINT parent_id FOREIGN KEY (parent_id) REFERENCES estructura_area (id) ON UPDATE CASCADE');
-               
-                $this->dbforge->create_table('estructura_area',TRUE);
+             
                 
 
                 $this->dbforge->add_field(array(
@@ -1371,8 +1256,9 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => FALSE,    
                         )
-
-                ));
+                 
+             ));
+               
                 $this->dbforge->add_key('id', TRUE);
                 $this->dbforge->add_key('tipo_id');
                 $this->dbforge->add_key('tipo_registro_id');
@@ -1399,48 +1285,6 @@ $this->dbforge->add_field(array(
                  
                 $this->dbforge->create_table('estructura_entidad',TRUE);
 
-                $this->dbforge->add_field(array(
-                                'id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => 100,
-                                'unsigned' => TRUE,
-                        ), 
-                                'entidad_id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => FALSE,
-                        ),  
-                                'area_id' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
-                                'null' => FALSE,
-                   ),  
-                         'date_created' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                         'date_updated' => array(
-                                'type' => 'TIMESTAMP',  
-                                'null' => FALSE,    
-                        ),
-                          'created_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        ),
-                          'updated_from_ip' => array(
-                                'type' => 'VARCHAR',  
-                                'constraint' => '100',
-                                'null' => FALSE,    
-                        )
-
-                ));
-                $this->dbforge->add_key('entidad_id');
-                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
-                $this->dbforge->add_key('area_id');
-                $this->dbforge->add_field('CONSTRAINT area_id FOREIGN KEY (area_id) REFERENCES estructura_area (id) ON UPDATE CASCADE');
-                $this->dbforge->add_key('id', TRUE);  
-                $this->dbforge->create_table('estructura_areaentidad',TRUE);
                 
                 $this->dbforge->add_field(array(
                         'id' => array(
@@ -1796,6 +1640,11 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => TRUE,
                         ),
+                           'entidad_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
                        
                         'pais_registro_civil_id' => array(
                                 'type' => 'VARCHAR',
@@ -1833,10 +1682,19 @@ $this->dbforge->add_field(array(
                                 'type' => 'VARCHAR',  
                                 'constraint' => '100',
                                 'null' => FALSE,    
-                        )
+                        ),
 
-                ));
-        
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
+           
                 $this->dbforge->add_key('sexo_id');
                 $this->dbforge->add_key('estado_civil_id');
                 $this->dbforge->add_key('color_piel_id');
@@ -1861,6 +1719,9 @@ $this->dbforge->add_field(array(
                 $this->dbforge->add_key('situacion_defensa_id'); 
                 $this->dbforge->add_key('grupo_sanguineo_id');
                 $this->dbforge->add_key('organismo_id'); 
+                 $this->dbforge->add_key('entidad_id');
+                $this->dbforge->add_field('CONSTRAINT   entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
+                
                 $this->dbforge->add_field('CONSTRAINT nivel_educacional_persona_id FOREIGN KEY (nivel_educacional_id) REFERENCES nomenclador_niveleducacional (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT situacion_defensa_id FOREIGN KEY (situacion_defensa_id) REFERENCES nomenclador_defensa (id) ON UPDATE CASCADE');
                 $this->dbforge->add_field('CONSTRAINT grupo_sanguineo_id FOREIGN KEY (grupo_sanguineo_id) REFERENCES nomenclador_gruposanguineo (id) ON UPDATE CASCADE');
@@ -2068,6 +1929,11 @@ $this->dbforge->add_field(array(
                                 'constraint' => '100',
                                 'null' => TRUE,
                         ),
+                                'entidad_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE,
+                        ),
                                  
                          'date_created' => array(
                                 'type' => 'TIMESTAMP',  
@@ -2088,8 +1954,31 @@ $this->dbforge->add_field(array(
                                 'null' => TRUE,    
                         )
 
-        ));
+                    ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+
+            ),
+
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
         $this->dbforge->add_key('id', TRUE);
+             $this->dbforge->add_key('owner_id');
+            $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                
+        $this->dbforge->add_key('entidad_id');
+        $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE ON DELETE CASCADE');
+
           $this->dbforge->add_key('persona_id');
                  $this->dbforge->add_key('organismo_id');
                 $this->dbforge->add_field('CONSTRAINT persona_id FOREIGN KEY (persona_id) REFERENCES persona_persona (id) ON UPDATE CASCADE');
@@ -2098,9 +1987,12 @@ $this->dbforge->add_field(array(
         $this->dbforge->create_table($this->tables['users']);
 
         // Dumping data for table 'users'
-        $user_id = $this->uuid->v5('administrator','8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+        $user_id = $this->uuid->v5('admin','8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
         $data = array(
             'id' => $user_id, 
+            'owner_id' => $user_id, 
+            'ownerentidad_id' => "58189f17-4a05-54c1-a803-f1a57a5fbd5c", 
+            'organismo_id' => "18af753c-4088-5bf1-bc27-cc0d0fc737da", 
             'ip_address'              => '127.0.0.1',
             'username'                => 'admin',
             'password'                => '$2y$08$1C46o3rAks.YYXilqxKrXugvfOwxizurRZNXl9tg6GNkWAHJqMpua',
@@ -2112,7 +2004,7 @@ $this->dbforge->add_field(array(
             'last_login'              => '1268889823',
             'active'                  => '1',
             'first_name'              => 'Admin',
-            'last_name'               => 'istrator',
+            'last_name'               => 'Admin',
             'company'                 => 'ADMIN',
             'phone'                   => '0',
         );
@@ -2159,6 +2051,11 @@ $this->dbforge->add_field(array(
                         )
         ));
         $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_key('rol_id');
+        $this->dbforge->add_field('CONSTRAINT rol_id FOREIGN KEY (rol_id) REFERENCES seguridad_rol (id) ON UPDATE CASCADE');
+        $this->dbforge->add_key('usuario_id');
+        $this->dbforge->add_field('CONSTRAINT usuario_id FOREIGN KEY (usuario_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                 
         $this->dbforge->create_table($this->tables['users_groups']);
 
         // Dumping data for table 'users_groups'
@@ -2174,6 +2071,196 @@ $this->dbforge->add_field(array(
         $this->db->insert_batch($this->tables['users_groups'], $data);
 
 
+
+   $this->dbforge->add_field(array(
+                        'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE
+                        ),
+                        'version' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '30',
+                                'unique' => TRUE,
+                                'null' => FALSE,
+                        ),
+                        'fecha_actualizacion' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                       
+                        'owner_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                        ),
+                        'descripcion' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255'
+                        ),
+                         'nombre_fichero' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255'
+                   ),  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        ),
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        ),
+
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->add_key('owner_id');
+              
+                 $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+        
+                $this->dbforge->create_table('actualizacion_actualizacion',TRUE);
+
+
+                $this->dbforge->add_field(array(
+                        'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE
+                        ),
+                        'codigo' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE
+                        ),
+                         'nombre' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'unique' => TRUE,
+                                'null' => FALSE
+                        ),
+                        'leaf' => array(
+                                'type' => 'INT',
+                                'constraint' => '1',
+                                'default' => '1'
+                        ),
+                        'orden' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE
+                        ), 
+                       
+                        'parent_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => TRUE 
+                   ),  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        ),
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        )
+
+                 ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            ),
+                     'ownerentidad_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+                'null' => TRUE,   
+                
+            )
+             ));
+              $this->dbforge->add_key('ownerentidad_id');
+              $this->dbforge->add_field('CONSTRAINT ownerentidad_id FOREIGN KEY (ownerentidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+             
+             $this->dbforge->add_key('owner_id');
+              $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                $this->dbforge->add_key('id', TRUE);
+        
+                $this->dbforge->add_key('parent_id');
+                $this->dbforge->add_field('CONSTRAINT parent_id FOREIGN KEY (parent_id) REFERENCES estructura_area (id) ON UPDATE CASCADE');
+               
+                $this->dbforge->create_table('estructura_area',TRUE);
+                $this->dbforge->add_field(array(
+                                'id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => 100,
+                                'unsigned' => TRUE,
+                        ), 
+                                'entidad_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                        ),  
+                                'area_id' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '100',
+                                'null' => FALSE,
+                   ),  
+                         'date_created' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                         'date_updated' => array(
+                                'type' => 'TIMESTAMP',  
+                                'null' => FALSE,    
+                        ),
+                          'created_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        ),
+                          'updated_from_ip' => array(
+                                'type' => 'VARCHAR',  
+                                'constraint' => '100',
+                                'null' => FALSE,    
+                        )
+
+                
+             ));
+                 
+                $this->dbforge->add_key('entidad_id');
+                $this->dbforge->add_field('CONSTRAINT entidad_id FOREIGN KEY (entidad_id) REFERENCES estructura_entidad (id) ON UPDATE CASCADE');
+                $this->dbforge->add_key('area_id');
+                $this->dbforge->add_field('CONSTRAINT area_id FOREIGN KEY (area_id) REFERENCES estructura_area (id) ON UPDATE CASCADE');
+                $this->dbforge->add_key('id', TRUE);  
+                $this->dbforge->create_table('estructura_areaentidad',TRUE);
         // Drop table 'login_attempts' if it exists
 
         // Table structure for table 'login_attempts'

@@ -153,8 +153,11 @@ REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
 		//$id = '';
         if($this->ion_auth->logged_in())
         if(!isset($this->_args['parent_id']))		
-        {$id =$this->Api_model->row_update($datos,$id);  
-        
+        { $id = 0;
+
+            if(!isset($this->_args['combo'])) 
+            $id =$this->Api_model->row_update($datos,$id);  
+        //print_r($id);die;
         }
         else{
 					//arbol

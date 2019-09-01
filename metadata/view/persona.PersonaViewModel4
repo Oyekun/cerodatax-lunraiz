@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "personamovimientoempleado",
+        "designer|userClassName": "persona.PersonaViewModel4"
+    },
+    "name": "persona.PersonaViewModel4",
+    "designerId": "edd561f2-8409-48a2-a8ce-87bb4e6b2be1"
+}

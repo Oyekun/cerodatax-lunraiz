@@ -1,0 +1,662 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "controller": [
+            "nomencladorcrud"
+        ],
+        "designer|userAlias": "bajaempleadoForm",
+        "designer|userClassName": "persona.BajaEmpleadoForm",
+        "height": 529,
+        "modal": true,
+        "resizable": [
+            "false"
+        ],
+        "title": "Baja Empleado",
+        "width": null
+    },
+    "name": "persona.AltaEmpleadoForm1",
+    "designerId": "8b319b94-5e7a-4c69-9358-e3ab4f39135b",
+    "viewControllerInstanceId": "64f358c9-c0c6-4147-90d8-5c6635f08378",
+    "viewModelInstanceId": "6ede7777-6d27-45cc-99d1-e5f51b5c509a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "alignTarget": "top",
+                "bodyPadding": 10,
+                "fieldDefaults": [
+                    "{padding: '0 10 0 0',maxLength: 50,",
+                    "        enforceMaxLength: true}"
+                ],
+                "height": 528,
+                "layout": null,
+                "reference": "form",
+                "title": null,
+                "width": 500
+            },
+            "name": "MyForm6",
+            "designerId": "a0499ab6-2f96-4dfa-aeb6-36a63a9df895",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "buttons",
+                        "dock": "bottom",
+                        "height": 99,
+                        "layout": "form",
+                        "padding": 10
+                    },
+                    "name": "MyContainer11",
+                    "designerId": "b207488d-ca6e-40c7-8089-4d137b455be0",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "saveButton",
+                                "margin": 5,
+                                "text": "Guardar"
+                            },
+                            "name": "MyButton29",
+                            "designerId": "b8a360d9-4ac5-4996-b438-b20b76e7c4ed",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "saveTreeWindows",
+                                        "implHandler": [
+                                            "var form = this.getReferences().form.getForm(),",
+                                            "    record = form.getRecord(),",
+                                            "    store = Ext.StoreManager.lookup('Personas');",
+                                            "",
+                                            " // Valid",
+                                            "if (form.isValid()) {",
+                                            "",
+                                            "    // Update associated record with values",
+                                            "    form.updateRecord();",
+                                            "",
+                                            "    // Add to store if new record",
+                                            "    if (record.phantom) {",
+                                            "",
+                                            "        // TODO: Assign the record's ID from data source",
+                                            "        // Normally, this value would be auto-generated,",
+                                            "        // or returned from the server",
+                                            "        var id = store.count() + 1;",
+                                            "        record.set('id', id);",
+                                            "",
+                                            "        // Add to store",
+                                            "        store.add(record);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "    // Commit changes",
+                                            "    store.commitChanges();",
+                                            "",
+                                            "    // Display record",
+                                            "    this.select(this, record);",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "saveTreeWindows",
+                                    "designerId": "c093b265-8325-417d-bf6f-2b3ecae1d70e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cancelButton",
+                                "margin": 5,
+                                "text": "Cancelar"
+                            },
+                            "name": "MyButton30",
+                            "designerId": "e67689ac-9637-43b2-a75e-91268850d229",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "cancelEdit",
+                                        "implHandler": [
+                                            "// Show details",
+                                            "this.showView('details');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "cancelEdit",
+                                    "designerId": "9ae70e97-85ae-4f06-ab1d-244c15c329b2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": null,
+                        "displayField": "nombre",
+                        "emptyText": "Seleccione",
+                        "fieldLabel": "Empleado",
+                        "itemId": null,
+                        "name": "altaempleado_id",
+                        "queryMode": "local",
+                        "queryParam": "visible=0",
+                        "reference": "altaempleadobajaempleado",
+                        "store": "persona.AltaEmpleado",
+                        "value": null,
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "90f96fe1-b4b6-4c68-a7c6-adb3832d3982",
+                    "cn": [
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemSelector": "span"
+                            },
+                            "name": "MyBoundList1",
+                            "designerId": "54445cf0-2d9b-4635-8195-5f8c84e62806",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            " ",
+                                            "<tpl for=\".\">",
+                                            "    ",
+                                            "    <tpl if=\"foto==''\">",
+                                            "         {nombre}",
+                                            "        </tpl> ",
+                                            "     <tpl if=\"foto!=''\">",
+                                            "        <img src=\"{foto}\" height=\"20px\" style=\"float:left;\"> {nombre}",
+                                            "        </tpl> ",
+                                            "    ",
+                                            "</tpl>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "5d1c0f66-0178-4b06-9690-71b0c8e7fa35"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processAltaempleadobajaempleado",
+                                "implHandler": [
+                                    "config.icono = 'address-card';",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processAltaempleadobajaempleado",
+                            "designerId": "dc3c3a10-c292-4b7c-8625-f5c3fb4f1b24"
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "afterLabelTextTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "afterLabelTextTpl",
+                                "implHandler": [
+                                    "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                ]
+                            },
+                            "name": "afterLabelTextTpl5",
+                            "designerId": "11da6f02-cae9-4393-b5de-56c0a83f41e6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "column",
+                        "width": 524
+                    },
+                    "name": "MyContainer",
+                    "designerId": "71b78bc2-2e8c-4678-925e-b8b89bd20676",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "alignTarget": "top",
+                                "defaults": null,
+                                "height": 218,
+                                "layout": "form",
+                                "margin": null,
+                                "padding": null,
+                                "title": "Información",
+                                "twoWayBindable": null,
+                                "width": 200
+                            },
+                            "name": "MyFieldSet1",
+                            "designerId": "aab4b120-e396-4920-b898-9e1d161b4f53",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Expediente",
+                                        "margin": null,
+                                        "name": "expediente",
+                                        "value": [
+                                            "{altaempleadobajaempleado.selection.expediente}"
+                                        ],
+                                        "width": null
+                                    },
+                                    "name": "MyDisplayField6",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "4d1625ab-c1c7-482a-8dc0-798e3fcf0a97"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Nombre(s)",
+                                        "margin": null,
+                                        "name": "nombre",
+                                        "value": [
+                                            "{altaempleadobajaempleado.selection.nombre}"
+                                        ],
+                                        "width": 220
+                                    },
+                                    "name": "MyDisplayField8",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "87eee7be-c0ac-4f65-aadc-d8d924864ff8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Apellidos",
+                                        "margin": null,
+                                        "name": "apellidos",
+                                        "value": [
+                                            "{altaempleadobajaempleado.selection.apellidos}"
+                                        ],
+                                        "width": 220
+                                    },
+                                    "name": "MyDisplayField16",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "deec7fef-7d7a-4037-9c04-02a1906d330f"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "CI",
+                                        "name": "carnet_identidad",
+                                        "value": [
+                                            "{altaempleadobajaempleado.selection.carnet_identidad}"
+                                        ]
+                                    },
+                                    "name": "MyDisplayField18",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "f8dfb612-4ad8-4d21-91ba-2d3e17abc8cc"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": null,
+                                        "fieldLabel": "Sexo",
+                                        "margin": null,
+                                        "name": "sexo_id",
+                                        "value": [
+                                            "{altaempleadobajaempleado.selection.sexo}"
+                                        ]
+                                    },
+                                    "name": "MyDisplayField19",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "5b446cbe-7dc2-449e-b7fa-6cd7be8b4315"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Edad",
+                                        "formBind": null,
+                                        "name": "edad",
+                                        "publishes": null,
+                                        "reference": "edad",
+                                        "twoWayBindable": null,
+                                        "value": [
+                                            "{altaempleadobajaempleado.selection.edad}"
+                                        ],
+                                        "width": null
+                                    },
+                                    "name": "MyDisplayField17",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "fe26a81a-fd36-4971-bbfb-e3f7dba3a5a4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "alignTarget": "top",
+                                "defaults": null,
+                                "height": 218,
+                                "layout": "auto",
+                                "margin": "0 0 0 10",
+                                "padding": null,
+                                "title": "Fecha y Causa de Baja",
+                                "twoWayBindable": null,
+                                "width": 280
+                            },
+                            "name": "MyFieldSet14",
+                            "designerId": "f71d77ce-c49e-4a26-bca2-1a70178e93d0",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "allowOnlyWhitespace": null,
+                                        "altFormats": "",
+                                        "fieldLabel": "Fecha de Baja",
+                                        "format": "Y-m-d",
+                                        "labelAlign": null,
+                                        "labelWidth": 80,
+                                        "name": "fecha_baja",
+                                        "submitFormat": "Y-m-d",
+                                        "width": 260
+                                    },
+                                    "name": "MyDateField4",
+                                    "designerId": "bad25c86-d4b3-4dbe-bc98-30acb3030aed",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "afterLabelTextTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "afterLabelTextTpl",
+                                                "implHandler": [
+                                                    "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                ]
+                                            },
+                                            "name": "afterLabelTextTpl2",
+                                            "designerId": "5b8b844e-3ab7-404a-87f2-488113214649"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "designer|displayName": null,
+                                        "displayField": "nombre",
+                                        "emptyText": "Seleccione",
+                                        "enableRegEx": false,
+                                        "fieldLabel": "Causa Baja",
+                                        "labelAlign": null,
+                                        "labelWidth": 80,
+                                        "maxLength": 250,
+                                        "name": "causa_id",
+                                        "queryMode": "local",
+                                        "queryParam": "tipocausa:Alta",
+                                        "store": "nomenclador.rh.Causa",
+                                        "valueField": "id",
+                                        "width": 260
+                                    },
+                                    "name": "MyComboBox11",
+                                    "designerId": "745c2a35-d5ff-468e-9a9b-450a22262bc5",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "afterLabelTextTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "afterLabelTextTpl",
+                                                "implHandler": [
+                                                    "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                                ]
+                                            },
+                                            "name": "afterLabelTextTpl4",
+                                            "designerId": "3e0678ca-e5a1-40e7-a5ba-2d7fdb9378b3"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 148,
+                        "layout": "form",
+                        "margin": null,
+                        "title": "Datos Plantilla",
+                        "width": 490
+                    },
+                    "name": "MyFieldSet4",
+                    "designerId": "51603c0b-3435-4845-b88d-f18f2162dc5e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "fieldLabel": "Organismo",
+                                "name": "organismo",
+                                "value": [
+                                    "{altaempleadobajaempleado.selection.organismo}"
+                                ]
+                            },
+                            "name": "MyDisplayField20",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "e891787f-a9e2-4311-8fcb-333371264397"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "fieldLabel": "Entidad",
+                                "name": "entidad",
+                                "value": [
+                                    "{altaempleadobajaempleado.selection.entidad}"
+                                ]
+                            },
+                            "name": "MyDisplayField23",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "428e5742-ae44-465f-a02d-d48d316634a3"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "fieldLabel": "Área",
+                                "name": "area",
+                                "value": [
+                                    "{altaempleadobajaempleado.selection.area}"
+                                ]
+                            },
+                            "name": "MyDisplayField24",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "e035c922-585e-46b5-b3a4-f2d8b98b405d"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "fieldLabel": "Plaza",
+                                "name": "cargo",
+                                "reference": null,
+                                "value": [
+                                    "{altaempleadobajaempleado.selection.cargo}"
+                                ]
+                            },
+                            "name": "MyDisplayField25",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "03e51c5f-6e27-4f4e-8b76-2dfcb8c79b74"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

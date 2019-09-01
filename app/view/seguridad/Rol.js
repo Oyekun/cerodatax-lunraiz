@@ -236,10 +236,7 @@ Ext.define('cerodatax.view.seguridad.Rol', {
                                 {
                                     xtype: 'checkcolumn',
                                     dataIndex: 'escritura',
-                                    text: 'Escritura',
-                                    listeners: {
-                                        beforecheckchange: 'onCheckcolumnBeforeCheckChange'
-                                    }
+                                    text: 'Escritura'
                                 }
                             ]
                         },

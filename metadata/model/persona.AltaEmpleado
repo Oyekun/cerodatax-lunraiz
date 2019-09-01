@@ -46,10 +46,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "persona"
+                "name": "expediente"
             },
             "name": "MyString54",
             "designerId": "4bed887b-01a6-4a3d-9a73-a31e3714ecde"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "persona"
+            },
+            "name": "MyString103",
+            "designerId": "332fcf76-2f17-4133-ab5e-9f6f200cc956"
         },
         {
             "type": "Ext.data.field.String",
@@ -634,8 +647,8 @@
             "userConfig": {
                 "name": "entidad_id"
             },
-            "name": "MyString2",
-            "designerId": "fbfe80b5-cb93-4665-9d96-2d06fb4abb3f"
+            "name": "MyString41",
+            "designerId": "f27848bd-7e7f-45bb-9722-5f775cbd560c"
         },
         {
             "type": "Ext.data.field.String",
@@ -866,6 +879,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "Y-m-d",
                 "name": "fecha_alta_cargo"
             },
             "name": "MyDate",
@@ -879,6 +893,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "Y-m-d",
                 "name": "fecha_alta_entidad"
             },
             "name": "MyDate1",
@@ -892,6 +907,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "Y-m-d",
                 "name": "fecha_firma_designado"
             },
             "name": "MyDate2",
@@ -905,6 +921,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "Y-m-d",
                 "name": "fecha_terminacion_cargo"
             },
             "name": "MyDate4",
@@ -1184,6 +1201,19 @@
             "designerId": "a88badd4-5099-484b-a8ed-86b1cf2f84ce"
         },
         {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "antiguedad_id"
+            },
+            "name": "MyString119",
+            "designerId": "a60da054-496b-4558-98b6-6c75b12a8692"
+        },
+        {
             "type": "Ext.data.field.Number",
             "reference": {
                 "name": "fields",
@@ -1390,6 +1420,32 @@
             },
             "name": "MyString126",
             "designerId": "ccf3bd10-d799-4de2-86bc-54c5c90106ef"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "centrocosto_id"
+            },
+            "name": "MyString164",
+            "designerId": "307983f9-e1a2-49b0-bfbf-aa82d696ca4f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "centrocosto"
+            },
+            "name": "MyString165",
+            "designerId": "763e6aaf-0b98-4bc1-9ac8-5957e3e152a5"
         },
         {
             "type": "Ext.data.field.String",

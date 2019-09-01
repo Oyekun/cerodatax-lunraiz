@@ -1,0 +1,150 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "movimientoempleadocetrocosto",
+        "designer|userClassName": "persona.MovimientoEmpleadoCetroCosto"
+    },
+    "name": "persona.AltaEmpleadoCetroCosto1",
+    "designerId": "20966e84-a406-4fd6-9929-5c2687e81eb6",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "id",
+                "name": "id"
+            },
+            "name": "MyString58",
+            "designerId": "84306316-0eb7-4ea7-8fd4-57aa1996a32d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "centrocosto_id",
+                "name": "centrocosto_id"
+            },
+            "name": "MyString27",
+            "designerId": "31fab67c-f958-46b7-bc2d-e250d2f28e95"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "altaempleado_id",
+                "name": "movimientoempleado_id"
+            },
+            "name": "MyString20",
+            "designerId": "1114f7a8-82c6-434a-8671-77b9404f8896"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "nombre",
+                "name": "nombre"
+            },
+            "name": "MyString32",
+            "designerId": "c6c8064d-6f8a-4856-a853-738a4f5b4d36"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "porciento_fondo_tiempo",
+                "name": "porciento_fondo_tiempo"
+            },
+            "name": "MyInteger12",
+            "designerId": "0f7bd6da-827c-4e95-9ca1-c147fd9012da"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "model",
+                "name": "model"
+            },
+            "name": "MyString65",
+            "designerId": "920e53ee-15c6-4293-8145-37968f86f5ad"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{add:{url: 'index.php/api/restserver/rests',method: 'POST'},show: {url: 'index.php/api/restserver/rests/',method: 'GET'},save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}}"
+                ],
+                "extraParams": [
+                    "{ model: 'movimientoempleado_centrocosto',",
+                    "esquema: 'persona',asociados: ''}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy4",
+            "designerId": "8f62455d-7560-4409-b873-ca862a93dce0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "44307833-e93f-45aa-81d1-32e98d2c3bc4"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "20c8c80c-121e-4d30-8def-085a884ebdd1"
+                }
+            ]
+        }
+    ]
+}

@@ -31,11 +31,6 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
         'Ext.form.field.ComboBox',
         'Ext.form.field.Number',
         'Ext.form.field.Checkbox',
-        'Ext.tree.Panel',
-        'Ext.tree.View',
-        'Ext.tree.Column',
-        'Ext.grid.filters.filter.String',
-        'Ext.grid.filters.Filters',
         'Ext.form.field.Date'
     ],
 
@@ -430,56 +425,31 @@ Ext.define('cerodatax.view.persona.PersonaForm', {
                                                 xtype: 'combobox',
                                                 fieldLabel: 'Organismo',
                                                 name: 'organismo_id',
-                                                inputAttrTpl: [
-                                                    'Entidades:false'
-                                                ],
                                                 emptyText: 'Seleccione',
+                                                maxLength: 150,
                                                 displayField: 'nombre',
                                                 queryMode: 'local',
-                                                queryParam: 'Entidades:false',
+                                                queryParam: 'entidad_id:false',
                                                 store: 'nomenclador.Organismo',
                                                 valueField: 'id',
+                                                bind: {
+                                                    value: '{personaaltaempleado.selection.organismo_id}'
+                                                },
                                                 listeners: {
-                                                    select: 'onComboboxSelectEntidad'
+                                                    select: 'onComboboxSelect1'
                                                 }
                                             },
                                             {
-                                                xtype: 'treepanel',
+                                                xtype: 'combobox',
                                                 disabled: true,
-                                                height: 300,
-                                                itemId: 'treePanel',
-                                                margin: '10 0 0 0',
-                                                scrollable: true,
-                                                width: 430,
-                                                title: 'Entidades',
-                                                hideHeaders: false,
-                                                store: 'persona.PersonaEntidad',
-                                                rootVisible: false,
-                                                useArrows: true,
-                                                viewConfig: {
-                                                    rootVisible: false
-                                                },
-                                                columns: [
-                                                    {
-                                                        xtype: 'treecolumn',
-                                                        dataIndex: 'nombre',
-                                                        text: 'Nombre',
-                                                        flex: 3,
-                                                        filter: {
-                                                            type: 'string',
-                                                            emptyText: 'Ingrese el texto del filtro...'
-                                                        }
-                                                    }
-                                                ],
-                                                listeners: {
-                                                    beforeitemexpand: 'onTreePanelBeforeItemExpand1'
-                                                },
-                                                plugins: [
-                                                    {
-                                                        ptype: 'gridfilters',
-                                                        menuFilterText: 'Buscar'
-                                                    }
-                                                ]
+                                                fieldLabel: 'Entidad',
+                                                name: 'entidad_id',
+                                                emptyText: 'Seleccione',
+                                                maxLength: 150,
+                                                displayField: 'nombre',
+                                                queryMode: 'local',
+                                                store: 'estructura.EntidadCombo',
+                                                valueField: 'id'
                                             }
                                         ]
                                     },

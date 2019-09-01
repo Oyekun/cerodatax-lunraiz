@@ -38,6 +38,7 @@ Ext.define('cerodatax.model.persona.Persona', {
             name: 'apellidos'
         },
         {
+            type: 'string',
             name: 'entidad'
         },
         {

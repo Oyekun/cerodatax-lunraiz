@@ -71,10 +71,36 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "organismo"
+                "name": "entidad"
             },
             "name": "MyString4",
             "designerId": "5e311497-417c-4066-80cc-7ef77a7fc134"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "entidad_id"
+            },
+            "name": "MyString100",
+            "designerId": "58b4eb60-3d0b-47e9-b439-3b90a946280e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "organismo"
+            },
+            "name": "MyString93",
+            "designerId": "7c3f489e-bd01-4e3f-91b0-dd12792d78db"
         },
         {
             "type": "Ext.data.field.String",

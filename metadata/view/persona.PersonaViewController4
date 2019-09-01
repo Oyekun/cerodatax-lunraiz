@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "personamovimientoempleado",
+        "designer|userClassName": "persona.PersonaViewController4"
+    },
+    "name": "persona.PersonaViewController4",
+    "designerId": "255bfd6c-00b6-491a-afe5-91ca31bd4414"
+}

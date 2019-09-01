@@ -235,7 +235,8 @@
                                 "itemId": "nombreentidad",
                                 "margin": null,
                                 "name": "nombre",
-                                "padding": null
+                                "padding": null,
+                                "width": 285
                             },
                             "name": "MyTextField6",
                             "designerId": "5a0e0342-e325-4140-9598-2d87878d4ba0",

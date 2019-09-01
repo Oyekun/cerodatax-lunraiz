@@ -1,0 +1,113 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "personamovimientoempleadoform",
+        "designer|userClassName": "persona.PersonaFormViewModel4"
+    },
+    "name": "persona.PersonaFormViewModel4",
+    "designerId": "36c4a65d-910d-4549-a637-89e014f090ce",
+    "cn": [
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "age"
+            },
+            "name": "MyFormula",
+            "designerId": "5f7411cc-1020-408d-a2c1-a297811ec673",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "       return this.getAge(get('birthDate'));",
+                            "         "
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "8cb7fda7-2e48-47ca-a771-0ed7323e897f"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value"
+                        ],
+                        "fn": "set",
+                        "implHandler": [
+                            " var date = this.getData().birthDate,",
+                            "                    now = new Date();",
+                            "",
+                            "                if (!date) {",
+                            "                    date = Ext.Date.add(now, Ext.Date.YEAR, -age);",
+                            "                } else {",
+                            "                    date = new Date(now.getFullYear() - age, date.getMonth(), date.getDate());",
+                            "                    if (this.getAge(date) !== age) {",
+                            "                        date = new Date(now.getFullYear() - age - 1, date.getMonth(), date.getDate());",
+                            "                    }",
+                            "                }",
+                            "",
+                            "                this.set('birthDate', date);",
+                            "           "
+                        ]
+                    },
+                    "name": "set",
+                    "designerId": "ed631d52-1ea6-4d10-917f-5ec8b70c6a86"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "date"
+                ],
+                "fn": "getAge",
+                "implHandler": [
+                    "    var now = new Date(),",
+                    "            age, birth;",
+                    "",
+                    "        if (date) {",
+                    "            age = now.getFullYear() - date.getFullYear();",
+                    "            now = now.getMonth() * 100 + now.getDate();",
+                    "            birth = date.getMonth() * 100 + date.getDate();",
+                    "            if (now < birth) {",
+                    "                --age;",
+                    "            }",
+                    "        }",
+                    "        return age || 0;"
+                ]
+            },
+            "name": "getAge",
+            "designerId": "86b20bc4-6fa9-42aa-b2f5-fc91ad19bf14"
+        }
+    ]
+}

@@ -1,0 +1,280 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "bajaempleado",
+        "designer|userClassName": "persona.BajaEmpleado"
+    },
+    "name": "crm.Cliente1",
+    "designerId": "754ae865-714a-4b6d-b417-04846c607dc4",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString26",
+            "designerId": "d39bc5ce-67c5-48f0-88df-ae0f6a9dd7a7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "altaempleado"
+            },
+            "name": "MyString15",
+            "designerId": "057c212c-026a-4b3f-9fbb-3d0972ca2194"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "altaempleado_id"
+            },
+            "name": "MyString39",
+            "designerId": "e8d6c9b3-b65e-4233-addc-409b8b8bd111"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "Y-m-d",
+                "name": "fecha_baja"
+            },
+            "name": "MyDate5",
+            "designerId": "bdd62a61-401d-4268-9f84-29a4bdf71ed5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "causa"
+            },
+            "name": "MyString109",
+            "designerId": "d5aa22ad-e561-40c9-8857-d7e0849d8ae0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "expediente"
+            },
+            "name": "MyString56",
+            "designerId": "4e21d877-26e9-4792-824f-c373647a223d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString89",
+            "designerId": "dcd1b332-dd0c-4af7-8c67-5d17359e6efd"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "apellidos"
+            },
+            "name": "MyString90",
+            "designerId": "7f60b8fb-95d4-4d0b-8cad-c264f08625c3"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "carnet_identidad"
+            },
+            "name": "MyString93",
+            "designerId": "bc77b188-61db-401e-ac81-9fdf6b7b9c22"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sexo"
+            },
+            "name": "MyString100",
+            "designerId": "215f3528-5bfa-44bc-82a1-06cc939a906c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "edad"
+            },
+            "name": "MyString102",
+            "designerId": "8129a991-b425-4b44-8042-4a82446687e5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "organismo"
+            },
+            "name": "MyString107",
+            "designerId": "ef885894-3f68-467e-bc52-102af790dcc6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "entidad"
+            },
+            "name": "MyString110",
+            "designerId": "b896e78b-28f9-428f-8c8f-e9b52227a394"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "area"
+            },
+            "name": "MyString114",
+            "designerId": "80c23e32-38aa-4f3d-97b4-143972e28ffd"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cargo"
+            },
+            "name": "MyString115",
+            "designerId": "06b0b7da-897a-424c-81bd-df2f539c6c87"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "causa_id"
+            },
+            "name": "MyString96",
+            "designerId": "1a8780cb-3416-4b64-96dc-d367cef44d1a"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "add:{url: 'index.php/api/restserver/rests',method: 'POST'},",
+                    "show: {url: 'index.php/api/restserver/rests/',method: 'GET'},",
+                    "save: {url: 'index.php/api/restserver/rests/id/{id}',method: 'PUT'},",
+                    "remove:{url: 'index.php/api/restserver/rests/id/{id}',method: 'DELETE'}",
+                    "}"
+                ],
+                "extraParams": [
+                    "{model: 'bajaempleado',",
+                    "            esquema: 'persona'}"
+                ],
+                "url": "index.php/api/restserver/rests/"
+            },
+            "name": "MyRestProxy4",
+            "designerId": "4509e948-0775-4c84-b615-5699701d1fbb",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "e0426d80-aad4-4104-ae7f-2c378dec2e73"
+                },
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "3950028f-c96c-4293-aab0-dcbc2b8f8503"
+                }
+            ]
+        }
+    ]
+}

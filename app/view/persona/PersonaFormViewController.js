@@ -73,11 +73,7 @@ Ext.define('cerodatax.view.persona.PersonaFormViewController', {
 
     },
 
-    onComboboxSelectEntidad: function(combo, record, eOpts) {
-
-    },
-
-    onTreePanelBeforeItemExpand1: function(nodeinterface, eOpts) {
+    onComboboxSelect1: function(combo, record, eOpts) {
 
     },
 

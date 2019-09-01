@@ -100,7 +100,6 @@ class Auth extends CI_Controller
 		 $identity = $this->session->userdata['user_id'];
 
 	
-
     $path ="resources/data/menu.json";
     $my_model = fopen($path, "w") or die("Unable to create model file!");
     
@@ -110,7 +109,9 @@ class Auth extends CI_Controller
          
 		$this->load->model('configuracion/menu');
 		if(!$this->ion_auth->is_admin())
-		{$this->db->select("configuracion_menu.*");
+		{
+			 
+			$this->db->select("configuracion_menu.*");
 		$this->db->distinct();
 	 	$this->db->join("seguridad_menurol","seguridad_menurol.menu_id=configuracion_menu.id"," right");
 	 	$this->db->join("seguridad_rolusuario","seguridad_rolusuario.rol_id=seguridad_menurol.rol_id"," right");
@@ -365,31 +366,7 @@ $this->load->model('nomenclador/menu');
 	// print_r($result->result_array());die;
     $nombre = '';
     $cantidad = '';
-    if($identity!='')
-    {   
-       $tb = 'seguridad_entidadusuario'; 
-         
-		$this->load->model('seguridad/entidadusuario');
-	 	
-    $this->db->where('usuario_id', $identity);   
-    $result = $this->db->get("$tb");
-    	
-    if(count($result->result_array())>0)
-    {	$entidades = $result->result_array()[0]; 
-    	
-	   $tb = 'estructura_entidad'; 
-         
-		$this->load->model('estructura/entidad');
-	 	
-    $this->db->where('id', $entidades['entidad_id']);   
-    $result = $this->db->get("$tb");
-     if( count($result->result_array())>0)
-	 {$entidad = $result->result_array()[0];
-     $nombre = $entidad['nombre'];
-     $cantidad = strlen($entidad['nombre']);
-
-     }
- }
+  
        $tb = 'seguridad_usuario'; 
          
 		$this->load->model('seguridad/usuario');
@@ -399,7 +376,25 @@ $this->load->model('nomenclador/menu');
     
     $usuarios=[];
 	 if(count($result->result_array()))
-	 $usuarios = $result->result_array()[0];
+	{ $usuarios = $result->result_array()[0];
+      if($identity!='')
+    {   
+   
+	   $tb = 'estructura_entidad'; 
+         
+		$this->load->model('estructura/entidad');
+	 	
+    $this->db->where('id', $usuarios['entidad_id']);   
+    $result = $this->db->get("$tb");
+     if( count($result->result_array())>0)
+	 {$entidad = $result->result_array()[0];
+     $nombre = $entidad['nombre'];
+     $cantidad = strlen($entidad['nombre']);
+     $this->session->userdata['entidad_id']=$usuarios['entidad_id'];
+//print_r($this->session);die;
+     }
+   
+    }
     $persona=''; 
      if(isset($usuarios['persona_id']))
      {$persona_id = $usuarios['persona_id'];

@@ -113,7 +113,15 @@ class Migration_create_table_nomenclador_contabilidad_cuentacontable extends CI_
                                 'constraint' => '100',
                                 'null' => FALSE,    
                         )
-        ));
+         ,
+                 'owner_id' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '100', 
+            ),
+             ));
+             $this->dbforge->add_key('owner_id');
+            $this->dbforge->add_field('CONSTRAINT owner_id FOREIGN KEY (owner_id) REFERENCES seguridad_usuario (id) ON UPDATE CASCADE');
+                
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->add_key('tipocuenta_id');
 $this->dbforge->add_field('CONSTRAINT tipocuenta_id FOREIGN KEY (tipocuenta_id) REFERENCES nomenclador_contabilidad_tipocuenta (id) ON UPDATE CASCADE ON DELETE CASCADE');

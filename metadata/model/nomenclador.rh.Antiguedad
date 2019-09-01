@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "antiguedad",
+        "designer|userClassName": "nomenclador.rh.Antiguedad"
+    },
+    "name": "nomenclador.rh.TipoPago1",
+    "designerId": "4f502708-c761-47c6-bc69-01f45c207b2d",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString27",
+            "designerId": "17ed1763-38e3-4a42-a475-db0f35b175a6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "name": "MyString40",
+            "designerId": "aa152045-4fdb-44d5-b556-7f2020185316"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "name": "MyString118",
+            "designerId": "3fe644f0-3cc3-4c65-b56e-52449049eca2"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "limiteinferior"
+            },
+            "name": "MyInteger6",
+            "designerId": "99b2764f-91bb-4e73-896d-d081fae334fb"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "limitesuperior"
+            },
+            "name": "MyInteger7",
+            "designerId": "b25b81a8-0ef1-4613-87e8-dd25b791d6f4"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "importe"
+            },
+            "name": "MyNumber9",
+            "designerId": "9c7e8142-6b8c-4c88-9c1e-5ec931c0faea"
+        }
+    ]
+}

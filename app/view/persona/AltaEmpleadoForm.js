@@ -32,15 +32,11 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
         'Ext.slider.Single',
         'Ext.form.field.Number',
         'Ext.form.field.Checkbox',
-        'Ext.tree.Panel',
-        'Ext.tree.View',
-        'Ext.tree.Column',
-        'Ext.grid.filters.filter.String',
-        'Ext.grid.filters.Filters',
         'Ext.form.field.Date',
         'Ext.form.field.Display',
         'Ext.view.MultiSelector',
         'Ext.view.MultiSelectorSearch',
+        'Ext.view.Table',
         'Ext.grid.column.Number'
     ],
 
@@ -298,6 +294,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                     },
                                                                     {
                                                                         xtype: 'textfield',
+                                                                        margin: '0 0 0 10',
                                                                         width: 100,
                                                                         fieldLabel: 'Saya',
                                                                         labelWidth: 50,
@@ -550,61 +547,43 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                             },
                                                             {
                                                                 xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
                                                                 fieldLabel: 'Organismo',
                                                                 name: 'organismo_id',
-                                                                inputAttrTpl: [
-                                                                    'Entidades:false'
-                                                                ],
+                                                                allowBlank: false,
                                                                 emptyText: 'Seleccione',
+                                                                maxLength: 150,
                                                                 displayField: 'nombre',
                                                                 queryMode: 'local',
-                                                                queryParam: 'Entidades:false',
+                                                                queryParam: 'entidad_id:false',
                                                                 store: 'nomenclador.Organismo',
                                                                 valueField: 'id',
                                                                 bind: {
                                                                     value: '{personaaltaempleado.selection.organismo_id}'
                                                                 },
                                                                 listeners: {
-                                                                    select: 'onComboboxSelectEntidad1'
+                                                                    select: 'onComboboxSelect'
                                                                 }
                                                             },
                                                             {
-                                                                xtype: 'treepanel',
-                                                                disabled: true,
-                                                                height: 300,
-                                                                itemId: 'treePanel',
-                                                                margin: '10 0 0 0',
-                                                                scrollable: true,
-                                                                width: 430,
-                                                                title: 'Entidades',
-                                                                hideHeaders: false,
-                                                                store: 'persona.PersonaEntidad',
-                                                                rootVisible: false,
-                                                                useArrows: true,
-                                                                viewConfig: {
-                                                                    rootVisible: false
-                                                                },
-                                                                columns: [
-                                                                    {
-                                                                        xtype: 'treecolumn',
-                                                                        dataIndex: 'nombre',
-                                                                        text: 'Nombre',
-                                                                        flex: 3,
-                                                                        filter: {
-                                                                            type: 'string',
-                                                                            emptyText: 'Ingrese el texto del filtro...'
-                                                                        }
-                                                                    }
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
                                                                 ],
-                                                                listeners: {
-                                                                    beforeitemexpand: 'onTreePanelBeforeItemExpand'
-                                                                },
-                                                                plugins: [
-                                                                    {
-                                                                        ptype: 'gridfilters',
-                                                                        menuFilterText: 'Buscar'
-                                                                    }
-                                                                ]
+                                                                fieldLabel: 'Entidad',
+                                                                name: 'entidad_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                maxLength: 150,
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'estructura.EntidadCombo',
+                                                                valueField: 'id',
+                                                                bind: {
+                                                                    value: '{personaaltaempleado.selection.entidad_id}'
+                                                                }
                                                             }
                                                         ]
                                                     },
@@ -759,6 +738,17 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                         title: 'Datos de la Plantilla',
                                                         items: [
                                                             {
+                                                                xtype: 'textfield',
+                                                                width: 180,
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Expediente',
+                                                                name: 'expediente',
+                                                                allowBlank: false,
+                                                                maxLength: 30
+                                                            },
+                                                            {
                                                                 xtype: 'numberfield',
                                                                 width: 180,
                                                                 afterLabelTextTpl: [
@@ -770,12 +760,8 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                             },
                                                             {
                                                                 xtype: 'numberfield',
-                                                                afterLabelTextTpl: [
-                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
-                                                                ],
                                                                 fieldLabel: 'No Tarjeta Asistencia',
-                                                                name: 'no_tarjeta_asistencia',
-                                                                allowBlank: false
+                                                                name: 'no_tarjeta_asistencia'
                                                             },
                                                             {
                                                                 xtype: 'combobox',
@@ -801,8 +787,9 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                 allowBlank: false,
                                                                 emptyText: 'Seleccione',
                                                                 displayField: 'nombre',
+                                                                enableRegEx: false,
                                                                 queryMode: 'local',
-                                                                queryParam: 'provincia_id:false,municipio_id:true',
+                                                                queryParam: 'tipocausa:Alta',
                                                                 store: 'nomenclador.rh.Causa',
                                                                 valueField: 'id'
                                                             },
@@ -817,7 +804,6 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                 emptyText: 'Seleccione',
                                                                 displayField: 'nombre',
                                                                 queryMode: 'local',
-                                                                queryParam: 'provincia_id:false,municipio_id:true',
                                                                 store: 'nomenclador.rh.FundamentacionAlta',
                                                                 valueField: 'id'
                                                             },
@@ -984,7 +970,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                 height: 200,
                                                                 title: 'Organizaciones',
                                                                 emptyText: 'No existen elementos que mostrar',
-                                                                store: 'nomenclador.rh.AltaEmpleadoOrganizacionPolitica',
+                                                                store: 'persona.AltaEmpleadoOrganizacionPolitica',
                                                                 addToolText: 'Busca un elemento para adicionar',
                                                                 fieldName: 'nombre',
                                                                 removeRowTip: 'Elimina este elemento',
@@ -1011,7 +997,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                 height: 200,
                                                                 title: 'Idiomas',
                                                                 emptyText: 'No existen elementos que mostrar',
-                                                                store: 'nomenclador.rh.AltaEmpleadoIdioma',
+                                                                store: 'persona.AltaEmpleadoIdioma',
                                                                 addToolText: 'Busca un elemento para adicionar',
                                                                 fieldName: 'nombre',
                                                                 removeRowTip: 'Elimina este elemento',
@@ -1050,7 +1036,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                 items: [
                                                     {
                                                         xtype: 'panel',
-                                                        height: 400,
+                                                        height: 415,
                                                         title: 'Datos Generales',
                                                         items: [
                                                             {
@@ -1081,6 +1067,22 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                 displayField: 'nombre',
                                                                 queryMode: 'local',
                                                                 store: 'nomenclador.rh.RegimenSalarial',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
+                                                                xtype: 'combobox',
+                                                                reference: 'personaantiguedad',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Antiguedad',
+                                                                labelWidth: 120,
+                                                                name: 'antiguedad_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.rh.Antiguedad',
                                                                 valueField: 'id'
                                                             },
                                                             {
@@ -1119,7 +1121,11 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                         width: 140,
                                                                         fieldLabel: 'Antiguedad',
                                                                         labelWidth: 70,
-                                                                        name: 'antiguedad'
+                                                                        name: 'antiguedad',
+                                                                        readOnly: true,
+                                                                        bind: {
+                                                                            value: '{personaantiguedad.selection.importe}'
+                                                                        }
                                                                     },
                                                                     {
                                                                         xtype: 'numberfield',
@@ -1304,7 +1310,7 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                                         xtype: 'checkboxfield',
                                                                         margin: '10 0 0 0',
                                                                         width: 120,
-                                                                        fieldLabel: 'Acumula Vacaciones',
+                                                                        fieldLabel: 'Descontar Sabados',
                                                                         labelWidth: 130,
                                                                         name: 'descontar_sabados',
                                                                         value: {
@@ -1436,11 +1442,26 @@ Ext.define('cerodatax.view.persona.AltaEmpleadoForm', {
                                                         title: 'Centros de Costo',
                                                         items: [
                                                             {
+                                                                xtype: 'combobox',
+                                                                afterLabelTextTpl: [
+                                                                    '<span style="color:#D94E37; font-weight:bold" data-qtip="Requerido"> * </span>'
+                                                                ],
+                                                                fieldLabel: 'Centro Costo',
+                                                                labelWidth: 120,
+                                                                name: 'centrocosto_id',
+                                                                allowBlank: false,
+                                                                emptyText: 'Seleccione',
+                                                                displayField: 'nombre',
+                                                                queryMode: 'local',
+                                                                store: 'nomenclador.CentroCosto',
+                                                                valueField: 'id'
+                                                            },
+                                                            {
                                                                 xtype: 'multiselector',
                                                                 height: 200,
-                                                                title: 'Centros de Costo',
+                                                                title: 'Otros Centros de Costo',
                                                                 emptyText: 'No existen elementos que mostrar',
-                                                                store: 'nomenclador.rh.AltaEmpleadoCentroCosto',
+                                                                store: 'persona.AltaEmpleadoCentroCosto',
                                                                 addToolText: 'Busca un elemento para adicionar',
                                                                 fieldName: 'nombre',
                                                                 removeRowTip: 'Elimina este elemento',

@@ -54,25 +54,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "continente",
+                        "dataIndex": "nombre",
                         "text": "Continente"
                     },
                     "name": "MyColumn32",
                     "designerId": "a1bd4f10-f005-4dd0-a825-5541a0b2f101"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "moneda",
-                        "text": "Moneda"
-                    },
-                    "name": "MyColumn66",
-                    "designerId": "60cb353c-bf7b-4431-9623-d143b812d9c0"
                 },
                 {
                     "type": "viewcontrollereventbinding",

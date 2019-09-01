@@ -1,24 +1,4 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.2.4
--- Dumped by pg_dump version 9.2.4
--- Started on 2019-07-24 23:23:11
-
-SET statement_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-
-SET search_path = public, pg_catalog;
-
---
--- TOC entry 2448 (class 0 OID 17034)
--- Dependencies: 208
--- Data for Name: nomenclador_tipomodulo; Type: TABLE DATA; Schema: public; Owner: cerodatax
---
+ 
 
 INSERT INTO nomenclador_tipomodulo (id, nombre, orden, activo, codigo, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('ee3caef1-49a7-5447-9552-008a56501ce7', 'Nomencladores', '1', 0, NULL, 'Se utiliza para gestionar todos los nomencladores del sistema.', '2018-10-21 00:25:09', '2018-10-21 00:25:09', '127.0.0.1', '127.0.0.1');
 INSERT INTO nomenclador_tipomodulo (id, nombre, orden, activo, codigo, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('21327d3a-c77d-56c7-9971-0121f3ed5768', 'Administración', '0', 1, 'ddd', 'Se utiliza para la administración de los módulos principales del marco de trabajo.', '2018-10-21 00:25:09', '2019-05-11 14:48:32', '127.0.0.1', '::1');
@@ -31,9 +11,9 @@ INSERT INTO nomenclador_tipomodulo (id, nombre, orden, activo, codigo, descripci
 
 
 --
--- TOC entry 2449 (class 0 OID 17047)
+-- TOC entry 2468 (class 0 OID 59208)
 -- Dependencies: 209
--- Data for Name: configuracion_modulo; Type: TABLE DATA; Schema: public; Owner: cerodatax
+-- Data for Name: configuracion_modulo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO configuracion_modulo (id, nombre, descripcion, icono_id, orden, tipo_modulo_id, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('8b4b13b3-7004-5afc-ba9f-3ce13e002a83', 'Generales', 'Este módulo tiene las funciones principales del sistema.', NULL, '0', '21327d3a-c77d-56c7-9971-0121f3ed5768', 1, '2018-10-21 00:25:09', '2018-10-21 00:25:09', '127.0.0.1', '127.0.0.1');
@@ -53,9 +33,9 @@ INSERT INTO configuracion_modulo (id, nombre, descripcion, icono_id, orden, tipo
 
 
 --
--- TOC entry 2450 (class 0 OID 17068)
+-- TOC entry 2469 (class 0 OID 59229)
 -- Dependencies: 210
--- Data for Name: configuracion_menu; Type: TABLE DATA; Schema: public; Owner: cerodatax
+-- Data for Name: configuracion_menu; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO configuracion_menu (id, nombre, descripcion, icono_id, orden, modulo_id, id_menu, color, tabpanel, escritorio, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('6406eff1-72f2-51ca-a2e4-a54166a15fbf', 'Escritorio', 'Para mostrar los accesos directos a los Módulos principales.', NULL, '4', '8b4b13b3-7004-5afc-ba9f-3ce13e002a83', 'Escritorio', NULL, 0, 0, 1, '2018-10-21 00:25:09', '2018-10-21 00:25:09', '127.0.0.1', '127.0.0.1');
@@ -126,9 +106,9 @@ INSERT INTO configuracion_menu (id, nombre, descripcion, icono_id, orden, modulo
 
 
 --
--- TOC entry 2451 (class 0 OID 17094)
+-- TOC entry 2470 (class 0 OID 59253)
 -- Dependencies: 211
--- Data for Name: nomenclador_alias; Type: TABLE DATA; Schema: public; Owner: cerodatax
+-- Data for Name: nomenclador_alias; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO nomenclador_alias (id, nombre, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('ebb8edcc-8848-5c47-982f-b82992a7d6e1', 'administracion', 'Para la gestión de administración', '2018-11-24 15:57:09', '2018-11-24 15:57:09', '::1', '::1');
@@ -147,9 +127,9 @@ INSERT INTO nomenclador_alias (id, nombre, descripcion, date_created, date_updat
 
 
 --
--- TOC entry 2452 (class 0 OID 17106)
+-- TOC entry 2471 (class 0 OID 59265)
 -- Dependencies: 212
--- Data for Name: configuracion_panel; Type: TABLE DATA; Schema: public; Owner: cerodatax
+-- Data for Name: configuracion_panel; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, menu_id, descripcion, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('58028f56-7ea1-5921-8a2a-b6b637d3dbee', 'Entidades', '0', 'Entidad', 'aa422a3d-b876-55e4-830c-399a9358fdf9', '88176fbe-aa72-5ddb-bc71-775fda9ac9e2', NULL, 1, '2018-10-21 00:25:09', '2018-10-21 00:25:09', '127.0.0.1', '127.0.0.1');
@@ -247,32 +227,35 @@ INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, men
 INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, menu_id, descripcion, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('f43f3284-2477-5ff6-b0c4-c87949ef35dd', 'Salario Adicional', '3', 'SalarioAdicional', '90efdca9-f7db-550e-b32b-6c9c297970fc', '59e5f8e9-e848-5f99-829a-0981cc573c87', 'Salario Adicionales', 1, '2019-07-24 23:06:28', '2019-07-24 23:06:28', '127.0.0.1', '127.0.0.1');
 INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, menu_id, descripcion, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('ab2929c3-95f4-5216-9b7a-0502ec5d80a0', 'Organización Política', '5', 'OrganizacionPolitica', '90efdca9-f7db-550e-b32b-6c9c297970fc', '05987b76-76c0-537d-a8bf-ad40d770c987', 'Organizaciones Politicas', 1, '2019-07-25 00:58:10', '2019-07-25 00:59:09', '127.0.0.1', '127.0.0.1');
 INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, menu_id, descripcion, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('196b674f-6221-59a2-8e1e-bce357bac857', 'Idioma', '0', 'Idioma', 'aff55306-ba8f-5cee-8c39-02b91a690605', '227d204e-76b3-5c0d-851f-678d4c5df820', 'Para la gestion de los Idiomas', 1, '2019-07-25 01:23:32', '2019-07-25 01:23:32', '127.0.0.1', '127.0.0.1');
+INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, menu_id, descripcion, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('b4b4b520-f309-59c0-8861-6108810d4c11', 'Fundamentación Alta', '7', 'FundamentacionAlta', '90efdca9-f7db-550e-b32b-6c9c297970fc', '05987b76-76c0-537d-a8bf-ad40d770c987', 'Fundamentación del Alta', 1, '2019-07-27 00:13:55', '2019-07-27 00:13:55', '127.0.0.1', '127.0.0.1');
+INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, menu_id, descripcion, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('7edddc15-2970-5bbc-adff-3130fff8115e', 'Causa de Movimiento', '8', 'CausaMovimiento', '90efdca9-f7db-550e-b32b-6c9c297970fc', '05987b76-76c0-537d-a8bf-ad40d770c987', 'Causa de Movimiento ', 1, '2019-07-27 00:14:39', '2019-07-27 00:14:39', '127.0.0.1', '127.0.0.1');
+INSERT INTO configuracion_panel (id, nombre, orden, id_contenedor, alias_id, menu_id, descripcion, activo, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('0e96ce94-b7f7-518f-939d-cc6432d17800', 'Baja de Empleado', '3', 'BajaEmpleado', 'ece97326-3294-5e23-9447-c8177233cdb5', 'b4f8b02d-3688-56d3-b418-762711a069a0', 'Baja de Empleados', 1, '2019-07-28 01:39:08', '2019-07-28 01:39:08', '127.0.0.1', '127.0.0.1');
 
 
 --
--- TOC entry 2447 (class 0 OID 16680)
+-- TOC entry 2466 (class 0 OID 58838)
 -- Dependencies: 193
--- Data for Name: estructura_area; Type: TABLE DATA; Schema: public; Owner: cerodatax
+-- Data for Name: estructura_area; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('c36ed01f-7cdc-54ac-a650-916a0999faf2', 'Economía', 1, NULL, NULL, '2019-07-11 04:42:04', '2019-07-11 04:42:04', '127.0.0.1', '127.0.0.1', '02');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('804508d4-bf52-5936-a08c-81923e09b865', 'Compras', 1, NULL, NULL, '2019-07-11 04:42:27', '2019-07-11 04:42:27', '127.0.0.1', '127.0.0.1', '03');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('1ab0e520-9432-5306-a10f-ae0b652a7d8f', 'Ventas', 1, NULL, NULL, '2019-07-11 04:42:41', '2019-07-11 04:42:41', '127.0.0.1', '127.0.0.1', '04');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('a94d1f17-4c1d-598f-b87c-fd75d90297e1', 'Distribuición', 1, NULL, NULL, '2019-07-11 04:43:06', '2019-07-11 04:43:06', '127.0.0.1', '127.0.0.1', '05');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('8763e36d-3f22-534f-aecf-dc2121a1020b', 'Operaciones', 1, NULL, NULL, '2019-07-11 04:43:18', '2019-07-11 04:43:18', '127.0.0.1', '127.0.0.1', '06');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('c7163e8c-531c-5116-be90-31ecbdf9ca11', 'Inversiones', 1, NULL, NULL, '2019-07-11 04:43:36', '2019-07-11 04:43:36', '127.0.0.1', '127.0.0.1', '07');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('55157dca-8d30-57a7-a217-1016200dac69', 'Explotación', 1, NULL, NULL, '2019-07-11 04:43:49', '2019-07-11 04:43:49', '127.0.0.1', '127.0.0.1', '08');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('7156e502-4639-5a96-b87f-5d5543eb68ed', 'Informática', 1, NULL, NULL, '2019-07-11 04:44:02', '2019-07-11 04:44:02', '127.0.0.1', '127.0.0.1', '09');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('495b97b1-8d5c-50ea-a63c-06e408bf559b', 'Almacenes', 1, NULL, NULL, '2019-07-11 04:44:16', '2019-07-11 04:44:16', '127.0.0.1', '127.0.0.1', '10');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('04930094-4c76-56b2-a33c-dce031ac5b21', 'Calidad', 1, NULL, NULL, '2019-07-11 04:44:24', '2019-07-11 04:44:24', '127.0.0.1', '127.0.0.1', '11');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('33341b49-4c01-5048-baeb-8f6b4d3f5497', 'Recursos Humanos', 1, NULL, NULL, '2019-07-11 04:44:35', '2019-07-11 04:44:35', '127.0.0.1', '127.0.0.1', '12');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('15290e7e-6c6a-5d8b-ba8c-17e3f9c8df32', 'Comercialización', 1, NULL, NULL, '2019-07-18 03:20:59', '2019-07-18 03:20:59', '127.0.0.1', '127.0.0.1', '01');
-INSERT INTO estructura_area (id, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip, codigo) VALUES ('35599f91-25ea-56d4-a819-ccb9f777b781', 'Dirección', 1, NULL, NULL, '2019-07-18 03:22:36', '2019-07-21 19:36:00', '127.0.0.1', '127.0.0.1', '13');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('c36ed01f-7cdc-54ac-a650-916a0999faf2', '02', 'Economía', 1, NULL, NULL, '2019-07-11 04:42:04', '2019-07-11 04:42:04', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('804508d4-bf52-5936-a08c-81923e09b865', '03', 'Compras', 1, NULL, NULL, '2019-07-11 04:42:27', '2019-07-11 04:42:27', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('1ab0e520-9432-5306-a10f-ae0b652a7d8f', '04', 'Ventas', 1, NULL, NULL, '2019-07-11 04:42:41', '2019-07-11 04:42:41', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('a94d1f17-4c1d-598f-b87c-fd75d90297e1', '05', 'Distribuición', 1, NULL, NULL, '2019-07-11 04:43:06', '2019-07-11 04:43:06', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('8763e36d-3f22-534f-aecf-dc2121a1020b', '06', 'Operaciones', 1, NULL, NULL, '2019-07-11 04:43:18', '2019-07-11 04:43:18', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('c7163e8c-531c-5116-be90-31ecbdf9ca11', '07', 'Inversiones', 1, NULL, NULL, '2019-07-11 04:43:36', '2019-07-11 04:43:36', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('55157dca-8d30-57a7-a217-1016200dac69', '08', 'Explotación', 1, NULL, NULL, '2019-07-11 04:43:49', '2019-07-11 04:43:49', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('7156e502-4639-5a96-b87f-5d5543eb68ed', '09', 'Informática', 1, NULL, NULL, '2019-07-11 04:44:02', '2019-07-11 04:44:02', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('495b97b1-8d5c-50ea-a63c-06e408bf559b', '10', 'Almacenes', 1, NULL, NULL, '2019-07-11 04:44:16', '2019-07-11 04:44:16', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('33341b49-4c01-5048-baeb-8f6b4d3f5497', '12', 'Recursos Humanos', 1, NULL, NULL, '2019-07-11 04:44:35', '2019-07-11 04:44:35', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('15290e7e-6c6a-5d8b-ba8c-17e3f9c8df32', '01', 'Comercialización', 1, NULL, NULL, '2019-07-18 03:20:59', '2019-07-25 20:37:13', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('04930094-4c76-56b2-a33c-dce031ac5b21', '11', 'Calidad', 1, NULL, NULL, '2019-07-11 04:44:24', '2019-07-11 04:44:24', '127.0.0.1', '127.0.0.1');
+INSERT INTO estructura_area (id, codigo, nombre, leaf, orden, parent_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('35599f91-25ea-56d4-a819-ccb9f777b781', '13', 'Dirección', 1, NULL, NULL, '2019-07-18 03:22:36', '2019-08-02 02:54:51', '127.0.0.1', '127.0.0.1');
 
 
 --
--- TOC entry 2459 (class 0 OID 40100)
--- Dependencies: 257
+-- TOC entry 2472 (class 0 OID 59288)
+-- Dependencies: 213
 -- Data for Name: nomenclador_apagarpor; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -285,8 +268,8 @@ INSERT INTO nomenclador_apagarpor (id, codigo, nombre, descripcion, date_created
 
 
 --
--- TOC entry 2472 (class 0 OID 49801)
--- Dependencies: 271
+-- TOC entry 2490 (class 0 OID 60311)
+-- Dependencies: 270
 -- Data for Name: nomenclador_categoriacientifica; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -296,8 +279,8 @@ INSERT INTO nomenclador_categoriacientifica (id, codigo, nombre, date_created, d
 
 
 --
--- TOC entry 2471 (class 0 OID 49793)
--- Dependencies: 270
+-- TOC entry 2489 (class 0 OID 60303)
+-- Dependencies: 269
 -- Data for Name: nomenclador_categoriadocente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -308,8 +291,8 @@ INSERT INTO nomenclador_categoriadocente (id, codigo, nombre, date_created, date
 
 
 --
--- TOC entry 2464 (class 0 OID 40229)
--- Dependencies: 262
+-- TOC entry 2483 (class 0 OID 60206)
+-- Dependencies: 261
 -- Data for Name: nomenclador_contabilidad_tipocuenta; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -323,8 +306,8 @@ INSERT INTO nomenclador_contabilidad_tipocuenta (id, nombre, date_created, date_
 
 
 --
--- TOC entry 2465 (class 0 OID 40317)
--- Dependencies: 263
+-- TOC entry 2484 (class 0 OID 60211)
+-- Dependencies: 262
 -- Data for Name: nomenclador_contabilidad_clasificaciontipocuenta; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -352,8 +335,8 @@ INSERT INTO nomenclador_contabilidad_clasificaciontipocuenta (id, nombre, tipocu
 
 
 --
--- TOC entry 2454 (class 0 OID 39842)
--- Dependencies: 249
+-- TOC entry 2475 (class 0 OID 59961)
+-- Dependencies: 248
 -- Data for Name: nomenclador_magnitud; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -372,8 +355,8 @@ INSERT INTO nomenclador_magnitud (id, nombre, descripcion, date_created, date_up
 
 
 --
--- TOC entry 2469 (class 0 OID 45558)
--- Dependencies: 268
+-- TOC entry 2487 (class 0 OID 60281)
+-- Dependencies: 267
 -- Data for Name: nomenclador_rh_tipocausa; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -386,8 +369,8 @@ INSERT INTO nomenclador_rh_tipocausa (id, codigo, nombre, date_created, date_upd
 
 
 --
--- TOC entry 2470 (class 0 OID 49776)
--- Dependencies: 269
+-- TOC entry 2488 (class 0 OID 60289)
+-- Dependencies: 268
 -- Data for Name: nomenclador_rh_causa; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -434,11 +417,10 @@ INSERT INTO nomenclador_rh_causa (id, codigo, nombre, tipocausa_id, date_created
 INSERT INTO nomenclador_rh_causa (id, codigo, nombre, tipocausa_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('d84376fa-0c2a-59ab-a92b-518ab223d1fe', '41', 'Otras', '0defe8e1-6024-51d1-bbd1-ecea040654e3', '2019-07-21 05:12:19', '2019-07-21 05:12:19', '127.0.0.1', '127.0.0.1');
 INSERT INTO nomenclador_rh_causa (id, codigo, nombre, tipocausa_id, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('7a6d712a-b6ad-5fed-89f7-3eb08cde47d8', '42', 'Por sanción laboral', '1f133314-6b3b-5f31-8355-d54a4ab7402c', '2019-07-21 05:12:48', '2019-07-21 05:12:48', '127.0.0.1', '127.0.0.1');
 
- 
 
 --
--- TOC entry 2479 (class 0 OID 49861)
--- Dependencies: 278
+-- TOC entry 2496 (class 0 OID 60364)
+-- Dependencies: 277
 -- Data for Name: nomenclador_rh_organizacionpolitica; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -449,8 +431,8 @@ INSERT INTO nomenclador_rh_organizacionpolitica (id, codigo, nombre, date_create
 
 
 --
--- TOC entry 2475 (class 0 OID 49826)
--- Dependencies: 274
+-- TOC entry 2492 (class 0 OID 60332)
+-- Dependencies: 273
 -- Data for Name: nomenclador_rh_pagoadicional; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -458,10 +440,10 @@ INSERT INTO nomenclador_rh_pagoadicional (id, nombre, abreviatura, date_created,
 INSERT INTO nomenclador_rh_pagoadicional (id, nombre, abreviatura, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('66be6a86-4e29-5a57-9f8a-48c8365d6931', 'Maestria', 'Msc', '2019-07-23 03:21:50', '2019-07-23 03:21:50', '127.0.0.1', '127.0.0.1');
 INSERT INTO nomenclador_rh_pagoadicional (id, nombre, abreviatura, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('9b9cbfbc-0115-515b-b3b7-7e7f0f796bd7', 'Perfeccionamiento', 'PE', '2019-07-23 03:22:18', '2019-07-23 03:22:18', '127.0.0.1', '127.0.0.1');
 
- 
+
 --
--- TOC entry 2477 (class 0 OID 49842)
--- Dependencies: 276
+-- TOC entry 2494 (class 0 OID 60348)
+-- Dependencies: 275
 -- Data for Name: nomenclador_rh_regimensalarial; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -471,8 +453,8 @@ INSERT INTO nomenclador_rh_regimensalarial (id, codigo, nombre, date_created, da
 
 
 --
--- TOC entry 2478 (class 0 OID 49853)
--- Dependencies: 277
+-- TOC entry 2495 (class 0 OID 60356)
+-- Dependencies: 276
 -- Data for Name: nomenclador_rh_salarioadicional; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -491,8 +473,8 @@ INSERT INTO nomenclador_rh_salarioadicional (id, codigo, nombre, idoneidad_fijo,
 
 
 --
--- TOC entry 2468 (class 0 OID 42137)
--- Dependencies: 267
+-- TOC entry 2486 (class 0 OID 60273)
+-- Dependencies: 266
 -- Data for Name: nomenclador_rh_tipocontrato; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -506,8 +488,16 @@ INSERT INTO nomenclador_rh_tipocontrato (id, codigo, nombre, identificacion, pla
 
 
 --
--- TOC entry 2473 (class 0 OID 49809)
--- Dependencies: 272
+-- TOC entry 2485 (class 0 OID 60245)
+-- Dependencies: 264
+-- Data for Name: nomenclador_rh_tipodeduccion; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 2491 (class 0 OID 60319)
+-- Dependencies: 271
 -- Data for Name: nomenclador_rh_tipojefe; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -520,8 +510,8 @@ INSERT INTO nomenclador_rh_tipojefe (id, codigo, nombre, abreviatura, date_creat
 
 
 --
--- TOC entry 2476 (class 0 OID 49834)
--- Dependencies: 275
+-- TOC entry 2493 (class 0 OID 60340)
+-- Dependencies: 274
 -- Data for Name: nomenclador_rh_tipopago; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -531,7 +521,14 @@ INSERT INTO nomenclador_rh_tipopago (id, codigo, nombre, date_created, date_upda
 
 
 --
--- TOC entry 2458 (class 0 OID 40092)
+-- TOC entry 2473 (class 0 OID 59456)
+-- Dependencies: 223
+-- Data for Name: nomenclador_tipobanco; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+--
+-- TOC entry 2479 (class 0 OID 60142)
 -- Dependencies: 256
 -- Data for Name: nomenclador_tipocausaausencia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -554,8 +551,8 @@ INSERT INTO nomenclador_tipocausaausencia (id, codigo, nombre, descripcion, date
 
 
 --
--- TOC entry 2460 (class 0 OID 40129)
--- Dependencies: 258
+-- TOC entry 2480 (class 0 OID 60150)
+-- Dependencies: 257
 -- Data for Name: nomenclador_tipocausasubsidio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -569,22 +566,29 @@ INSERT INTO nomenclador_tipocausasubsidio (id, codigo, nombre, descripcion, date
 INSERT INTO nomenclador_tipocausasubsidio (id, codigo, nombre, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('8bfc2e14-f7ab-550c-94c3-bde06722f0a9', '08', 'Otras Licencias', 'Otras Licencias', '2019-07-11 14:30:44', '2019-07-11 14:30:44', '127.0.0.1', '127.0.0.1');
 
 
- 
+--
+-- TOC entry 2474 (class 0 OID 59942)
+-- Dependencies: 246
+-- Data for Name: nomenclador_tipoclasificacioncontable; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
 
 --
--- TOC entry 2455 (class 0 OID 39878)
+-- TOC entry 2476 (class 0 OID 60019)
 -- Dependencies: 250
 -- Data for Name: nomenclador_unidadmedida; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO nomenclador_unidadmedida (id, nombre, simbolo, valor_si, magnitud_id, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('badd33d8-95af-581b-af17-e789954ae320', 'Unidad astronómica', 'UA', '149 597 870 700 m', 'd057a17f-bd63-509c-b6d3-0d02c8e5d580', 'Distancia media de la Tierra al Sol', '2019-07-08 03:28:48', '2019-07-08 03:28:48', '127.0.0.1', '127.0.0.1');
 INSERT INTO nomenclador_unidadmedida (id, nombre, simbolo, valor_si, magnitud_id, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('a8eb31fd-dcb8-5aa3-991d-2ae72cc06ddb', 'Metro', 'm', NULL, 'd057a17f-bd63-509c-b6d3-0d02c8e5d580', NULL, '2019-07-08 03:30:01', '2019-07-08 03:30:01', '127.0.0.1', '127.0.0.1');
 INSERT INTO nomenclador_unidadmedida (id, nombre, simbolo, valor_si, magnitud_id, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('77d4d5b9-d706-5b38-a32c-e261f9976d15', 'Kilogramo', 'Kg', NULL, 'f45c3466-b6f2-5e05-af60-f538cc9275c4', NULL, '2019-07-08 03:58:34', '2019-07-08 03:58:34', '127.0.0.1', '127.0.0.1');
 INSERT INTO nomenclador_unidadmedida (id, nombre, simbolo, valor_si, magnitud_id, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('c9499ead-1cbb-592b-8250-5ea1afc460c2', 'Segundo', 's', NULL, 'bf4d7003-3d20-5d84-be49-c68bbd3a6b26', NULL, '2019-07-08 03:58:57', '2019-07-08 03:58:57', '127.0.0.1', '127.0.0.1');
+INSERT INTO nomenclador_unidadmedida (id, nombre, simbolo, valor_si, magnitud_id, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('badd33d8-95af-581b-af17-e789954ae320', 'Unidad astronómica', 'UA', '149 597 870 700 m', 'd057a17f-bd63-509c-b6d3-0d02c8e5d580', 'Distancia media de la Tierra al Sol', '2019-07-08 03:28:48', '2019-07-08 03:28:48', '127.0.0.1', '127.0.0.1');
+INSERT INTO nomenclador_unidadmedida (id, nombre, simbolo, valor_si, magnitud_id, descripcion, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('cccde432-8fad-5388-adb4-5242d672a329', 'dsd', 'dsd', 'dsd', 'c8f70dd7-3df4-5f3f-8509-1c94853e21eb', 'dss', '2019-07-27 04:10:03', '2019-07-27 04:10:03', '127.0.0.1', '127.0.0.1');
 
 
 --
--- TOC entry 2456 (class 0 OID 40044)
+-- TOC entry 2477 (class 0 OID 60120)
 -- Dependencies: 254
 -- Data for Name: rh_tipocalendario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -594,7 +598,7 @@ INSERT INTO rh_tipocalendario (id, codigo, nombre, dias_laborables, fondo_tiempo
 
 
 --
--- TOC entry 2457 (class 0 OID 40070)
+-- TOC entry 2478 (class 0 OID 60128)
 -- Dependencies: 255
 -- Data for Name: rh_calendario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -603,8 +607,8 @@ INSERT INTO rh_calendario (id, tipocalendario_id, nombre, ano, descripcion, dias
 
 
 --
--- TOC entry 2461 (class 0 OID 40139)
--- Dependencies: 259
+-- TOC entry 2481 (class 0 OID 60158)
+-- Dependencies: 258
 -- Data for Name: rh_claveausencia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -613,8 +617,8 @@ INSERT INTO rh_claveausencia (id, tipocausaausencia_id, apagarpor_id, codigo, no
 
 
 --
--- TOC entry 2462 (class 0 OID 40159)
--- Dependencies: 260
+-- TOC entry 2482 (class 0 OID 60178)
+-- Dependencies: 259
 -- Data for Name: rh_claveimpuntualidad; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -622,5 +626,6 @@ INSERT INTO rh_claveimpuntualidad (id, codigo, nombre, justificada, date_created
 INSERT INTO rh_claveimpuntualidad (id, codigo, nombre, justificada, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('7102e012-94f6-5caf-bb39-14972ee2a2b7', '02', 'Salida antes de hora', 0, '2019-07-13 15:59:29', '2019-07-13 15:59:29', '127.0.0.1', '127.0.0.1');
 INSERT INTO rh_claveimpuntualidad (id, codigo, nombre, justificada, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('07ecedd5-d0d1-55a3-8375-07a69e781998', '03', 'Interrupción Trabajo', 1, '2019-07-13 16:00:20', '2019-07-13 16:00:20', '127.0.0.1', '127.0.0.1');
 
-
-  
+INSERT INTO nomenclador_rh_fundamentacionalta (id, codigo, nombre, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('c7163e8c-531c-5116-be90-31ecbdf9ca11', '01', 'Inversiones', '2019-07-27 00:19:55', '2019-07-27 00:19:55', '127.0.0.1', '127.0.0.1');
+INSERT INTO nomenclador_rh_fundamentacionalta (id, codigo, nombre, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('90f4f365-0276-59be-93c1-2130f310aae6', '02', 'Aseguramiento de la Producción', '2019-07-27 00:20:19', '2019-07-27 00:20:19', '127.0.0.1', '127.0.0.1');
+INSERT INTO nomenclador_rh_fundamentacionalta (id, codigo, nombre, date_created, date_updated, created_from_ip, updated_from_ip) VALUES ('a9c8cb76-c449-5363-b907-8f79d504933c', '03', 'Nuevos Turnos', '2019-07-27 00:20:34', '2019-07-27 00:20:34', '127.0.0.1', '127.0.0.1');

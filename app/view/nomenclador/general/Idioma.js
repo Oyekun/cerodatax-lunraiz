@@ -58,13 +58,8 @@ Ext.define('cerodatax.view.nomenclador.general.Idioma', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'continente',
+                    dataIndex: 'nombre',
                     text: 'Continente'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'moneda',
-                    text: 'Moneda'
                 }
             ],
             listeners: {

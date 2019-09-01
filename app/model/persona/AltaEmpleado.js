@@ -37,6 +37,10 @@ Ext.define('cerodatax.model.persona.AltaEmpleado', {
         },
         {
             type: 'string',
+            name: 'expediente'
+        },
+        {
+            type: 'string',
             name: 'persona'
         },
         {
@@ -274,19 +278,23 @@ Ext.define('cerodatax.model.persona.AltaEmpleado', {
         },
         {
             type: 'date',
-            name: 'fecha_alta_cargo'
+            name: 'fecha_alta_cargo',
+            dateFormat: 'Y-m-d'
         },
         {
             type: 'date',
-            name: 'fecha_alta_entidad'
+            name: 'fecha_alta_entidad',
+            dateFormat: 'Y-m-d'
         },
         {
             type: 'date',
-            name: 'fecha_firma_designado'
+            name: 'fecha_firma_designado',
+            dateFormat: 'Y-m-d'
         },
         {
             type: 'date',
-            name: 'fecha_terminacion_cargo'
+            name: 'fecha_terminacion_cargo',
+            dateFormat: 'Y-m-d'
         },
         {
             type: 'string',
@@ -373,6 +381,10 @@ Ext.define('cerodatax.model.persona.AltaEmpleado', {
             name: 'antiguedad'
         },
         {
+            type: 'string',
+            name: 'antiguedad_id'
+        },
+        {
             type: 'float',
             name: 'plus'
         },
@@ -435,6 +447,14 @@ Ext.define('cerodatax.model.persona.AltaEmpleado', {
         {
             type: 'string',
             name: 'salarioadicional_id'
+        },
+        {
+            type: 'string',
+            name: 'centrocosto_id'
+        },
+        {
+            type: 'string',
+            name: 'centrocosto'
         },
         {
             type: 'string',

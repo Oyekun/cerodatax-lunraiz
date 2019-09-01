@@ -51,7 +51,7 @@
             "designerId": "5227c0db-59bf-4355-9122-7cf83fadb39a"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -60,7 +60,7 @@
             "userConfig": {
                 "name": "entidad"
             },
-            "name": "MyField19",
+            "name": "MyString101",
             "designerId": "62c309ae-8c8e-47c3-8dd5-0e6cb97fd9e9"
         },
         {

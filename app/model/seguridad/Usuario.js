@@ -44,6 +44,14 @@ Ext.define('cerodatax.model.seguridad.Usuario', {
         },
         {
             type: 'string',
+            name: 'entidad'
+        },
+        {
+            type: 'string',
+            name: 'entidad_id'
+        },
+        {
+            type: 'string',
             name: 'organismo'
         },
         {

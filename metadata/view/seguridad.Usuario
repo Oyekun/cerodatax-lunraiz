@@ -100,7 +100,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "organismo",
+                        "dataIndex": "entidad_id",
                         "text": "Entidad"
                     },
                     "name": "MyColumn2",
@@ -924,20 +924,26 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "allowBlank": null,
+                                "allowBlank": false,
                                 "designer|displayName": null,
                                 "displayField": "nombre",
                                 "emptyText": "Seleccione",
                                 "fieldLabel": "Organismo",
-                                "maxLength": 100,
+                                "maxLength": 150,
                                 "name": "organismo_id",
                                 "queryMode": "local",
-                                "queryParam": "Entidades:false",
+                                "queryParam": "entidad_id:false",
                                 "store": "nomenclador.Organismo",
+                                "value": [
+                                    "{personaaltaempleado.selection.organismo_id}"
+                                ],
                                 "valueField": "id"
                             },
-                            "name": "MyComboBox5",
-                            "designerId": "2610ee3d-f905-48b1-9c56-955710c23a99",
+                            "name": "MyComboBox19",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "2eadd633-f128-4129-b4a2-7b32ee3db9cc",
                             "cn": [
                                 {
                                     "type": "viewcontrollereventbinding",
@@ -947,132 +953,74 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onComboboxSelectEntidad",
+                                        "fn": "onComboboxSelect",
                                         "name": "select",
                                         "scope": "me"
                                     },
-                                    "name": "onComboboxSelectEntidad",
-                                    "designerId": "433b0d92-49dc-4698-9dcc-221f351387f6"
+                                    "name": "onComboboxSelect",
+                                    "designerId": "e7b709e1-e5ec-4a88-9367-918c7ba43f48"
                                 },
                                 {
                                     "type": "Ext.XTemplate",
                                     "reference": {
-                                        "name": "inputAttrTpl",
+                                        "name": "afterLabelTextTpl",
                                         "type": "object"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|displayName": "inputAttrTpl",
+                                        "designer|displayName": "afterLabelTextTpl",
                                         "implHandler": [
-                                            "Entidades:false"
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
                                         ]
                                     },
-                                    "name": "inputAttrTpl",
-                                    "designerId": "675e8e27-a1b3-4ff2-891c-07ddd88a5790"
+                                    "name": "afterLabelTextTpl6",
+                                    "designerId": "25b5c49e-fa3a-42b8-be22-1a8f2bf8c43e"
                                 }
                             ]
                         },
                         {
-                            "type": "Ext.tree.Panel",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "controller": null,
-                                "designer|displayName": "treePanel",
+                                "allowBlank": false,
+                                "designer|displayName": null,
                                 "disabled": true,
-                                "height": 284,
-                                "hideHeaders": false,
-                                "itemId": "treePanel",
-                                "margin": "10 0 0 0",
-                                "reserveScrollbar": null,
-                                "rootVisible": false,
-                                "scrollable": true,
-                                "store": "seguridad.UsuarioEntidad",
-                                "title": "Entidades",
-                                "useArrows": true,
-                                "width": 400
+                                "displayField": "nombre",
+                                "emptyText": "Seleccione",
+                                "fieldLabel": "Entidad",
+                                "maxLength": 150,
+                                "name": "entidad_id",
+                                "queryMode": "local",
+                                "queryParam": null,
+                                "store": "estructura.EntidadCombo",
+                                "value": null,
+                                "valueField": "id"
                             },
-                            "name": "MyTreePanel",
+                            "name": "MyComboBox20",
                             "configAlternates": {
-                                "scrollable": "boolean"
+                                "value": "binding"
                             },
-                            "designerId": "a7ebe18f-ff84-480f-ac23-38af8a228b6b",
+                            "designerId": "895f43b9-b41d-4fab-90bd-1dd3f71481e2",
                             "cn": [
                                 {
-                                    "type": "Ext.tree.View",
+                                    "type": "Ext.XTemplate",
                                     "reference": {
-                                        "name": "viewConfig",
+                                        "name": "afterLabelTextTpl",
                                         "type": "object"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "preserveScrollOnRefresh": null,
-                                        "rootVisible": false
+                                        "designer|displayName": "afterLabelTextTpl",
+                                        "implHandler": [
+                                            "<span style=\"color:#D94E37; font-weight:bold\" data-qtip=\"Requerido\"> * </span>"
+                                        ]
                                     },
-                                    "name": "MyTreeView",
-                                    "designerId": "bf5e4cb8-52fb-419f-83a7-a472ea2e3f66"
-                                },
-                                {
-                                    "type": "Ext.tree.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "nombre",
-                                        "flex": 3,
-                                        "text": "Nombre",
-                                        "width": null
-                                    },
-                                    "name": "MyTreeColumn1",
-                                    "designerId": "fc5fe0a9-ab65-4874-8491-8b1811cc5dae",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.grid.filters.filter.String",
-                                            "reference": {
-                                                "name": "filter",
-                                                "type": "object"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "emptyText": "Ingrese el texto del filtro..."
-                                            },
-                                            "name": "MyStringFilter",
-                                            "designerId": "7e1911e5-e6f2-439f-b181-0980692f8731"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "viewcontrollereventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onTreePanelBeforeItemExpand1",
-                                        "name": "beforeitemexpand",
-                                        "scope": "me"
-                                    },
-                                    "name": "onTreePanelBeforeItemExpand1",
-                                    "designerId": "c388cb90-ccdf-454d-b5f4-aad2265c6661"
-                                },
-                                {
-                                    "type": "Ext.grid.filters.Filters",
-                                    "reference": {
-                                        "name": "plugins",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "menuFilterText": "Buscar"
-                                    },
-                                    "name": "MyGridFiltersPlugin",
-                                    "designerId": "cfcd5e36-7242-4727-99ed-e26ddbc3b01f"
+                                    "name": "afterLabelTextTpl7",
+                                    "designerId": "67ff495f-b1aa-4f40-a949-0039da37420a"
                                 }
                             ]
                         },

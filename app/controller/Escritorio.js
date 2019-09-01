@@ -28,9 +28,10 @@ Ext.define('cerodatax.controller.Escritorio', {
     onPanelActivate: function(component, eOpts) {
         //Funcion para recargar los grid y tree de los tabpanel
         //console.log(component)
-        if(component.tab)
+
+        if(component.tab && component.up('window')===undefined)
         {       var grid = component.down('grid');
-         var tree = component.down('treePanel');
+         var tree = component.down('treepanel');
          var callback = function(o, resp) {
              //debugger;
 

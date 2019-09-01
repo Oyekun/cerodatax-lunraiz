@@ -70,7 +70,8 @@ class Persona extends CI_Model {
         ,'color_piel_id' =>'nomenclador_colorpiel'
         ,'pais_id' =>'nomenclador_pais'
         ,'provincia_id' =>'nomenclador_provincia'
-        ,'municipio_id' =>'nomenclador_municipio'
+        ,'municipio_id' =>'nomenclador_municipio',
+        'entidad_id' =>'estructura_entidad'
          
         ,'nivel_educacional_id' =>'nomenclador_niveleducacional'
         ,'situacion_defensa_id' =>'nomenclador_defensa'
