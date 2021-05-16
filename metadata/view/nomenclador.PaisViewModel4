@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rhasistenciamarcaje",
+        "designer|userClassName": "nomenclador.PaisViewModel4"
+    },
+    "name": "nomenclador.PaisViewModel4",
+    "designerId": "8683a73a-ec0a-4c5f-bbe9-a44a4aa4be1b"
+}

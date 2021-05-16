@@ -334,7 +334,7 @@ class Migration_create_table_persona_altaempleado extends CI_Migration {
                                 'constraint' => '10',
                                 'null' => TRUE
                         ),
-                                ,
+                                
 
                      'antiguedad_id' => array(
                 'type'       => 'VARCHAR',

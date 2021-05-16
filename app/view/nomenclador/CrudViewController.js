@@ -177,7 +177,9 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             //Para quite la mascara despues de cargar todos los combox
             cantcombo=cantcombo-1;
             if(cantcombo===0)
-                mask.unmask();
+            {
+
+                mask.unmask();}
         };
 
         for(var comp in result)
@@ -211,6 +213,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
          objmulti.store.proxy.extraParams.detalles ='edit';
          objmulti.store.proxy.extraParams.combo ='combo';
          objmulti.store.load();
+
 
          var store = Ext.data.StoreManager.lookup(objmulti.config.search.store);
          if(store.proxy.extraParams!==undefined)
@@ -246,7 +249,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         var callbackfocus = function (){
             if(itemfocus)
                 itemfocus.focus('', 10);
-            var resulttabpanel = [];
+             /*var resulttabpanel = [];
             resulttabpanel = me.searchComponent('tabpanel',item,resulttabpanel);
             resulttabpanel.reverse();
             for(var comptabpanel in resulttabpanel)
@@ -255,28 +258,16 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
              itemtab.reverse();
              for(var comppanel in itemtab)
              {var objpanel = itemtab[comppanel];
+              console.log(objpanel.title)
               objtabpanel.setActiveItem(objpanel);
 
              }
-             /*if(resulttabpanel.length >0)
-         { var tabfirst= resulttabpanel[0];
-         tabfirst.setActiveTab(0);
-         }*/
-             console.log(objtabpanel)
-             // objtabpanel.setActiveTab(0);
-            }
+
+            }*/
+
         };
         vista.show(null,callbackfocus);
-        var resulttext = [];
-        resulttext = me.searchComponent('textfield',item,resulttext);
-        for(var comptext in resulttext)
-        {var objtext = resulttext[comptext];
 
-         if(objtext.config.value!==undefined)
-         {
-             objtext.setValue(objtext.config.value);
-         }
-        }
         mask.mask('Cargando...');
 
     },
@@ -295,6 +286,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         var vista = Ext.create('widget.'+win);
         vista.title = 'Editar '+vista.title;
         form = vista.down('form').getForm();
+        var mask= vista.down('form');
 
 
         var record = this.getViewModel().get('record');
@@ -302,10 +294,10 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
         // Load record model into form
         var focus=false;
         var itemfocus;
-         var item = form.owner.items.items;
+        var item = form.owner.items.items;
         //form.owner.items.items.forEach(function (item) {
 
-            /*if(item.xtype=='treepanel')
+        /*if(item.xtype=='treepanel')
             {
                 if(record!==null)
                     item.store.proxy.extraParams.id_asociado =record.data.id;
@@ -318,100 +310,104 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
             }*/
 
 
-            if(focus===false)
-            {var resulttext = [];
-             resulttext = me.searchComponent('textfield',item,resulttext);
+        if(focus===false)
+        {var resulttext = [];
+         resulttext = me.searchComponent('textfield',item,resulttext);
 
-             if(resulttext.length>0)
-             { resulttext[0].focus('',10);
-              itemfocus = resulttext[0];
-              focus = true;
-             }
-            }
-
-
-            var resulimage = [];
-            resulimage = me.searchComponent('image',item,resulimage);
-            var objimgold=null;
-            for(var compimg in resulimage)
-            {var objimg = resulimage[compimg];
-             //objimg.setVisible(false);
-             if(objimg.config.hidden)
-             {
-                 var img_value= '';
-                 if(record.data[objimg.itemId])
-                     img_value = record.data[objimg.itemId].toString();
+         if(resulttext.length>0)
+         { resulttext[0].focus('',10);
+          itemfocus = resulttext[0];
+          focus = true;
+         }
+        }
 
 
-                 if(img_value!=='')
-                 { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
-             }
-             else
-             {
-                 if(objimgold!==null)
-                 {objimg.setVisible(false); objimgold=null;}}
+        var resulimage = [];
+        resulimage = me.searchComponent('image',item,resulimage);
+        var objimgold=null;
+        for(var compimg in resulimage)
+        {var objimg = resulimage[compimg];
+         //objimg.setVisible(false);
+         if(objimg.config.hidden)
+         {
+             var img_value= '';
+             if(record.data[objimg.itemId])
+                 img_value = record.data[objimg.itemId].toString();
+
+
+             if(img_value!=='')
+             { objimg.setSrc(img_value); objimg.setVisible(true);objimgold = objimg;}
+         }
+         else
+         {
+             if(objimgold!==null)
+             {objimg.setVisible(false); objimgold=null;}}
 
 
 
-            }
-           var resultmulti=[];
-                                resultmulti = me.searchComponent('multiselector',item,resultmulti);
-                                 for(var compmulti in resultmulti)
-                            {var objmulti = resultmulti[compmulti];
+        }
+        var resultmulti=[];
+        resultmulti = me.searchComponent('multiselector',item,resultmulti);
+        for(var compmulti in resultmulti)
+        {var objmulti = resultmulti[compmulti];
 
-                             if(record!==null)
-                            objmulti.store.proxy.extraParams.id_asociado =record.data.id;
-                        else
-                            objmulti.store.proxy.extraParams.id_asociado ='';
-                        objmulti.store.proxy.extraParams.detalles ='edit';
-                        objmulti.store.proxy.extraParams.combo ='combo';
-                        // item.store.load();
+         if(record!==null)
+             objmulti.store.proxy.extraParams.id_asociado =record.data.id;
+         else
+             objmulti.store.proxy.extraParams.id_asociado ='';
+         objmulti.store.proxy.extraParams.detalles ='edit';
+         objmulti.store.proxy.extraParams.combo ='combo';
+         // item.store.load();
 
-                        var store = Ext.data.StoreManager.lookup(objmulti.config.search.store);
+         var store = Ext.data.StoreManager.lookup(objmulti.config.search.store);
+         if(store.proxy.extraParams!==undefined)
+         {
 
-                        store.proxy.extraParams.id_asociado ='';
+             store.proxy.extraParams.id_asociado ='';
 
-                        store.proxy.extraParams.detalles ='edit';
-                        store.proxy.extraParams.grid =false;
-                        store.proxy.extraParams.combo ='combo';
-                        var callbackmulti = function (records, operation, success) {
-                                             store.load();
-                                         };
+             store.proxy.extraParams.detalles ='edit';
+             store.proxy.extraParams.grid =false;
+             store.proxy.extraParams.combo ='combo';
+         }
+         var callbackmulti = function (records, operation, success) {
+             if(store.proxy.extraParams!==undefined)
+                 store.load();
+         };
 
-                        objmulti.store.load({   scope: this,
-                                         callback: callbackmulti});
-                            }
+         objmulti.store.load({   scope: this,
+                              callback: callbackmulti});
+        }
 
-         var resultree = [];
-                resultree = me.searchComponent('treepanel',item,resultree);
-                var callbacktree = function (records, operation, success) {
-                    objtree.setDisabled(false);
-                    if(objtree.clearFilters)
-                        objtree.clearFilters();
-                    objtree.store.proxy.extraParams.combo = '';
-                    objtree.store.proxy.extraParams.filter ='';
+        var resultree = [];
+        resultree = me.searchComponent('treepanel',item,resultree);
+        var callbacktree = function (records, operation, success) {
+            objtree.setDisabled(false);
+            if(objtree.clearFilters)
+                objtree.clearFilters();
+            objtree.store.proxy.extraParams.combo = '';
+            objtree.store.proxy.extraParams.filter ='';
 
-                };
-                for(var comptree in resultree)
-                {var objtree = resultree[comptree];
-                 if(objtree.xtype=='treepanel')
-                 {   // console.log(record)
-                     if(record!==null)
-                     {objtree.setDisabled(false);
-                      objtree.store.proxy.extraParams.id_asociado =record.data.id;
-                     }   else
-                         objtree.store.proxy.extraParams.id_asociado ='';
-                     objtree.store.proxy.extraParams.parent_id ='';
-                     objtree.store.proxy.extraParams.detalles ='edit';
+        };
+        for(var comptree in resultree)
+        {var objtree = resultree[comptree];
+         if(objtree.xtype=='treepanel')
+         {   // console.log(record)
+             if(record!==null)
+             {objtree.setDisabled(false);
+              objtree.store.proxy.extraParams.id_asociado =record.data.id;
+             }   else
+                 objtree.store.proxy.extraParams.id_asociado ='';
+             objtree.store.proxy.extraParams.parent_id ='';
+             objtree.store.proxy.extraParams.detalles ='edit';
 
-                     //objtree.store.load();
-                     objtree.store.load({   scope: this,
-                                         callback: callbacktree});
-                 }
-                }
+             //objtree.store.load();
+             objtree.store.load({   scope: this,
+                                 callback: callbacktree});
+         }
+        }
 
 
-            /*if(item.xtype=='tabpanel')
+        /*if(item.xtype=='tabpanel')
             {
                 var result = [];
                 result = me.searchComponent('combobox',item,result);
@@ -538,7 +534,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
 
 
 
-            /*if(item.xtype=='combobox')
+        /*if(item.xtype=='combobox')
             {if(record.data[item.name]!=='')
                 item.setDisabled(false);
              if(item.store.proxy.extraParams)
@@ -549,102 +545,110 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                                    item.store.proxy.extraParams.combo ='';
                                }});
              }}*/
-           // if(item.xtype=='fieldset')
-           // {
-                var resultcombo = [];
-         var resultcombodisable = [];
+        // if(item.xtype=='fieldset')
+        // {
+        var resultcombo = [];
+        var resultcombodisable = [];
 
-             resultcombo = me.searchComponent('combobox',item,resultcombo);
-             var callbackobjcombo =  function (records, operation, success) {
-                 if(objcombo.store!==null)
-        if(objcombo.store.proxy!==undefined)
-                 objcombo.store.proxy.extraParams.combo ='';
-                 //  itemtcombo.setDisabled(false);
+        resultcombo = me.searchComponent('combobox',item,resultcombo);
+        var cantcombo=resultcombo.length;
+        var callbackobjcombo =  function (records, operation, success) {
+            if(objcombo.store!==null)
+                if(objcombo.store.proxy!==undefined)
+                    objcombo.store.proxy.extraParams.combo ='';
+            //  itemtcombo.setDisabled(false);
 
-             };
-             for(var compcombo in resultcombo)
-             {var objcombo = resultcombo[compcombo];
-              if(objcombo.xtype=='combobox')
+            //Para quite la mascara despues de cargar todos los combox
+            cantcombo=cantcombo-1;
+            if(cantcombo===0)
+            {
+
+                mask.unmask();}
+
+        };
+        for(var compcombo in resultcombo)
+        {var objcombo = resultcombo[compcombo];
+         if(objcombo.xtype=='combobox')
+         {
+             if(objcombo.config.inputAttrTpl)
+             {  var formcombo =objcombo.up('form');
+              var accionescombo = objcombo.config.inputAttrTpl[0].split(',');
+              // console.log(obj.config.inputAttrTpl)
+              for(var accioncombo in accionescombo)
               {
-                  if(objcombo.config.inputAttrTpl)
-                  {  var formcombo =objcombo.up('form');
-                   var accionescombo = objcombo.config.inputAttrTpl[0].split(',');
-                   // console.log(obj.config.inputAttrTpl)
-                   for(var accioncombo in accionescombo)
-                   {
 
-                       var campocombo = accionescombo[accioncombo].split(':');
-        console.log(campocombo)
-                       var itemtcombo = formcombo.down('treepanel[title='+campocombo[0]+']');
+                  var campocombo = accionescombo[accioncombo].split(':');
+                  console.log(campocombo)
+                  var itemtcombo = formcombo.down('treepanel[title='+campocombo[0]+']');
 
 
-                       if(itemtcombo!==null)
-                       {      if(campocombo[1]==='false')
-                       {
-                           if(record!==null)
-                           {var filtercombo = [];
+                  if(itemtcombo!==null)
+                  {      if(campocombo[1]==='false')
+                  {
+                      if(record!==null)
+                      {var filtercombo = [];
 
-                            filtercombo.campo_id = record.data[objcombo.name].toString();
-                            //  console.log(record.data[obj.name])
-                            itemtcombo.store.proxy.extraParams.combo='combo';
-                            filtercombo.push({value:filtercombo.campo_id,name_id:objcombo.name});
-                            itemtcombo.store.proxy.extraParams.filter=Ext.JSON.encode(filtercombo);
+                       filtercombo.campo_id = record.data[objcombo.name].toString();
+                       //  console.log(record.data[obj.name])
+                       itemtcombo.store.proxy.extraParams.combo='combo';
+                       filtercombo.push({value:filtercombo.campo_id,name_id:objcombo.name});
+                       itemtcombo.store.proxy.extraParams.filter=Ext.JSON.encode(filtercombo);
 
-
-                           }
-                       }
-                        else {
-                            itemtcombo.setDisabled(true);
-                        }
-                        if(record.data[objcombo.name]!=='')
-                            itemtcombo.setDisabled(false);
-                        // itemtcombo.store.load()
-                       }
-
-
-                   }
-                  }
-        //Habilitar los combobox q tengan relacion con otros en el change
-                  //esto se cambio por la funcion change y si tiene valor nuevo se cambia el setdisabled
-                     if(objcombo.config.queryParam!==undefined)
-                              {var acciones = objcombo.queryParam.split(',');
-
-                for(var accion in acciones)
-                {
-
-                    var campo = acciones[accion].split(':');
-
-                    var valor = record.data[campo[0]];
-                    if(valor!==undefined)
-                             if(valor.toString().length>1)
-                             resultcombodisable.push({name:campo[0]});
-               // }
-
-                }
-                          }
-                  for(var objcomb in resultcombodisable)
-                      {
-                          if(objcombo.name===resultcombodisable[objcomb].name)
-                          {objcombo.setDisabled(false);
-                           delete(resultcombodisable[objcomb]);
-                          }
 
                       }
+                  }
+                   else {
+                       itemtcombo.setDisabled(true);
+                   }
+                   if(record.data[objcombo.name]!=='')
+                       itemtcombo.setDisabled(false);
+                   // itemtcombo.store.load()
+                  }
 
 
-                  if(objcombo.store.proxy.extraParams)
-                  { objcombo.store.proxy.extraParams.combo ='combo';
-                   objcombo.store.load({   scope: this,
-                                        callback: callbackobjcombo});
-                  }}
+              }
              }
-           // }
+             //Habilitar los combobox q tengan relacion con otros en el change
+             //esto se cambio por la funcion change y si tiene valor nuevo se cambia el setdisabled
+             if(objcombo.config.queryParam!==undefined)
+             {var acciones = objcombo.queryParam.split(',');
 
-            if(focus===false)
-                if(item.xtype==='combobox'||item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
-                {item.focus('', 10);
-                 focus = true;
-                }
+              for(var accion in acciones)
+              {
+
+                  var campo = acciones[accion].split(':');
+
+                  var valor = record.data[campo[0]];
+                  if(valor!==undefined)
+                      if(valor.toString().length>1)
+                          resultcombodisable.push({name:campo[0]});
+                  // }
+
+              }
+             }
+             for(var objcomb in resultcombodisable)
+             {
+                 if(objcombo.name===resultcombodisable[objcomb].name)
+                 {objcombo.setDisabled(false);
+                  delete(resultcombodisable[objcomb]);
+                 }
+
+             }
+
+
+             if(objcombo.store.proxy.extraParams)
+             { objcombo.store.proxy.extraParams.combo ='combo';
+              objcombo.store.load({   scope: this,
+                                   callback: callbackobjcombo});
+             }}
+        }
+        // }
+
+        if(focus===false)
+            if(item.xtype==='combobox'||item.xtype==='numberfield'||item.xtype==='textfield'||item.xtype==='textareafield')
+            {item.focus('', 10);
+             focus = true;
+            }
 
         //});
         // Show form
@@ -656,6 +660,7 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                 itemfocus.focus('', 10);
         };
         vista.show(null,callbackfocus);
+        mask.mask('Cargando...');
     },
 
     edit: function(target) {
@@ -2191,16 +2196,18 @@ Ext.define('cerodatax.view.nomenclador.CrudViewController', {
                    {// if(obj.readOnly)
                      //  if(obj.readOnly===false)
                      //{
-                         var valuesparent = obj.bind.value.stub.parentValue.data//split('.');
-                  var parentcombo = obj.bind.value.stub.path.split('.')[0];
+                       if(obj.bind.value.stub.parentValue!==undefined)
+                      { var valuesparent = obj.bind.value.stub.parentValue;//split('.');
+                       //  console.log(valuesparent)
+                  //var parentcombo = obj.bind.value.stub.path.split('.')[0];
                    // var parentcombo = obj.bind.value.stub.path.split('.')[0];
                    var lastvalue = obj.getValue();
-                   var tabla = obj.store.proxy.extraParams.esquema+"_"+parentcombo;
+                   var tabla = valuesparent.store.proxy.extraParams.esquema+"_"+valuesparent.store.proxy.extraParams.model;
                   // var objparent = Ext.ComponentQuery.query('#'+parentcombo)[0];
                    // var p = updatecolumtable.filter(obj.name);
-                    if(valuesparent.hasOwnProperty(obj.name))
+                    if(valuesparent.data.hasOwnProperty(obj.name))
                    updatecolumtable.push({tabla:tabla,tabla_id:valuesparent.id,campo:obj.name,value:lastvalue});
-                   //}
+                   }
 
                    /*for(var accion in acciones)
         {

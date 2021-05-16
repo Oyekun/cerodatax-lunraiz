@@ -167,7 +167,7 @@ if (file_exists($existFile))
                         $this->db->select("$tb.*");
                         $tablas_relacion = [];
                         foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                           if(count($tabla_campo)==1)
+                           if(!is_array($tabla_campo))
                         {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
 
@@ -345,7 +345,7 @@ if (isset($request['gridasociado']))
 
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
                         
-                        if(count($tabla_campo)==1)
+                        if(!is_array($tabla_campo))
                         {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
 
@@ -454,7 +454,7 @@ if (isset($request['gridasociado']))
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
                         
 
-                        if(count($tabla_campo)==1)
+                        if(!is_array($tabla_campo))
                         {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
@@ -531,7 +531,7 @@ if (isset($request['gridasociado']))
                     $this->db->select("$tb.*");
                     $tablas_relacion = [];
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                      if(count($tabla_campo)==1)
+                      if(!is_array($tabla_campo))
                         {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
@@ -599,7 +599,7 @@ if (isset($request['gridasociado']))
 
                     $this->db->select("$tb.*");
                     foreach ($nameuuid->relacion as $campo => $tabla_campo) {
-                          if(count($tabla_campo)==1)
+                          if(!is_array($tabla_campo))
                         {$tabla_campo_id = $tabla_campo . '.id';                        
                         $igual = $tb . '.' . $campo;
                         $alias = str_replace("_id", "", $campo);
@@ -1066,6 +1066,17 @@ if (isset($request['gridasociado']))
             unset($dataArray['asociados']);
         }
 
+          $isupdatecolumtable = FALSE;
+             
+            $updatecolumtable = array();
+            if (isset($dataArray['updatecolumtable'])) {
+ 
+                $updatecolumtable = $dataArray['updatecolumtable'];
+                $isupdatecolumtable = TRUE;
+                unset($dataArray['updatecolumtable']);
+            }
+
+
           if (isset($dataArray['migration'])) {
 
             
@@ -1086,7 +1097,7 @@ if (isset($request['gridasociado']))
             $sl = $this->ionAuthModel->update($id, $dataArray);
 
         } else {
-
+//print_r($dataArray);die;
             $sl = $this->db->update("$tb", $dataArray);
         }
 
@@ -1184,6 +1195,33 @@ if (isset($request['gridasociado']))
             return 1;
         }
         //print_r($this->db->affected_rows());die;
+         if ($isupdatecolumtable) {
+
+
+               
+                foreach ($updatecolumtable as $nodo) {
+                
+
+                     $tabla = $nodo['tabla'];
+                     $tabla_id = $nodo['tabla_id'];
+                     $campo = $nodo['campo'];
+                     $value = $nodo['value'];
+
+
+                      $dataArray = array();
+                      $dataArray["$campo"] = $value;
+                      $dataArray['date_updated'] = date('Y-m-d H:i:s');
+                      $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
+
+
+                      $this->db->where('id', $tabla_id);
+                      $sl = $this->db->update("$tabla", $dataArray);
+               
+                }
+
+
+            }
+
         return $this->db->affected_rows();
     }
 

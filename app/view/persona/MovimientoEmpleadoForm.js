@@ -193,7 +193,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                                 xtype: 'tabpanel',
                                                 items: [
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         height: 274,
                                                         title: 'Datos de la Plantilla Actual',
                                                         items: [
@@ -266,7 +266,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                                         ]
                                                     },
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         height: 274,
                                                         title: 'Datos de la Plantilla Movimiento',
                                                         items: [
@@ -383,10 +383,9 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                         items: [
                                             {
                                                 xtype: 'tabpanel',
-                                                activeTab: 0,
                                                 items: [
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         height: 429,
                                                         title: 'Datos Generales',
                                                         items: [
@@ -664,7 +663,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                                         ]
                                                     },
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         height: 400,
                                                         title: 'Horario y Estimulación',
                                                         items: [
@@ -860,7 +859,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                                         ]
                                                     },
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         title: 'Centros de Costo',
                                                         items: [
                                                             {
@@ -925,7 +924,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                                 activeTab: 0,
                                                 items: [
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         height: 429,
                                                         title: 'Datos Generales',
                                                         items: [
@@ -1194,7 +1193,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                                         ]
                                                     },
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         height: 400,
                                                         title: 'Horario y Estimulación',
                                                         items: [
@@ -1385,7 +1384,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
                                                         ]
                                                     },
                                                     {
-                                                        xtype: 'panel',
+                                                        xtype: 'form',
                                                         title: 'Centros de Costo',
                                                         items: [
                                                             {
@@ -1458,6 +1457,7 @@ Ext.define('cerodatax.view.persona.MovimientoEmpleadoForm', {
 
     processPersonaaltaempleado: function(config) {
         config.icono = 'address-card';
+        console.log(config)
         return config;
     }
 

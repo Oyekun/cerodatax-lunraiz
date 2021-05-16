@@ -1,13 +1,5 @@
 [
     	{
-    		name: 'Empleado',
-    		thumb: 'id-badge', 
-    		url: 'AltaEmpleado',
-    		systema:'true',
-    		color:'#0a8cc6',
-    		type: 'svg'
-    	},
-    	{
     		name: 'Contacto',
     		thumb: 'address-book-o', 
     		url: 'Contacto',
@@ -80,18 +72,18 @@
     		type: 'svg'
     	},
     	{
-    		name: 'Licencías',
-    		thumb: 'unlock-alt', 
-    		url: 'Licencia',
-    		systema:'true',
-    		color:'darkseagreen',
-    		type: 'svg'
-    	},
-    	{
     		name: 'Trazas',
     		thumb: 'server', 
     		url: 'Traza',
     		systema:'true',
     		color:'yellowgreen',
+    		type: 'svg'
+    	},
+    	{
+    		name: 'Licencías',
+    		thumb: 'unlock-alt', 
+    		url: 'Licencia',
+    		systema:'true',
+    		color:'darkseagreen',
     		type: 'svg'
     	},]

@@ -17,7 +17,7 @@ Ext.define('cerodatax.store.persona.MovimientoEmpleadoCentroCostoActual', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'cerodatax.model.persona.MovimientoEmpleadoCetroCostoActual',
+        'cerodatax.model.persona.MovimientoEmpleadoCentroCostoActual',
         'Ext.data.proxy.Rest',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json'
@@ -30,7 +30,7 @@ Ext.define('cerodatax.store.persona.MovimientoEmpleadoCentroCostoActual', {
             storeId: 'persona.MovimientoEmpleadoCentroCostoActual',
             autoLoad: false,
             autoSync: true,
-            model: 'cerodatax.model.persona.MovimientoEmpleadoCetroCostoActual',
+            model: 'cerodatax.model.persona.MovimientoEmpleadoCentroCostoActual',
             proxy: {
                 type: 'rest',
                 api: {

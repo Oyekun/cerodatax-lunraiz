@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "marcaje",
+        "designer|userClassName": "rh.asistencia.Marcaje"
+    },
+    "name": "rh.ClaveImpuntualidad1",
+    "designerId": "55f72ad9-e789-464a-8cd2-97c2cdf4ea5c",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyString22",
+            "designerId": "3726e0c2-4721-4962-a613-fec120b290fa"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tarjeta"
+            },
+            "name": "MyString71",
+            "designerId": "a9aedcec-6095-4360-b145-d91fea2f0ab6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "entidad"
+            },
+            "name": "MyString145",
+            "designerId": "5b4845a7-a9d2-42ff-85c9-2dbe10b942fc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "entidad_id"
+            },
+            "name": "MyString170",
+            "designerId": "0c869291-15cc-451d-85c7-635ff2616bb7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "marca"
+            },
+            "name": "MyString171",
+            "designerId": "324ca2c0-6674-45c3-aa08-935ec71b9718"
+        }
+    ]
+}

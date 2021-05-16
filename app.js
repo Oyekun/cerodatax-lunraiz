@@ -136,9 +136,10 @@ Ext.application({
         'activofijo.ActivoFijo',
         'nomenclador.rh.Antiguedad',
         'persona.MovimientoEmpleado',
-        'persona.MovimientoEmpleadoCetroCosto',
-        'persona.MovimientoEmpleadoCetroCostoActual',
-        'persona.AltaEmpleadoCombo'
+        'persona.MovimientoEmpleadoCentroCosto',
+        'persona.AltaEmpleadoCombo',
+        'persona.MovimientoEmpleadoCentroCostoActual',
+        'rh.asistencia.Marcaje'
     ],
     stores: [
         'seguridad.Usuario',
@@ -260,7 +261,8 @@ Ext.application({
         'persona.MovimientoEmpleado',
         'persona.MovimientoEmpleadoCentroCosto',
         'persona.MovimientoEmpleadoCentroCostoActual',
-        'persona.AltaEmpleadoCombo'
+        'persona.AltaEmpleadoCombo',
+        'rh.asistencia.Marcaje'
     ],
     views: [
         'seguridad.Rol',
@@ -384,7 +386,9 @@ Ext.application({
         'nomenclador.rh.Antiguedad',
         'persona.MovimientoEmpleado',
         'persona.MovimientoEmpleadoForm',
-        'nomenclador.GrupoCentroCosto'
+        'nomenclador.GrupoCentroCosto',
+        'rh.asistencia.Marcaje1',
+        'rh.asistencia.Marcaje'
     ],
     controllers: [
         'Escritorio',

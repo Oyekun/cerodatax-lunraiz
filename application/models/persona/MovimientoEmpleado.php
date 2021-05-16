@@ -7,7 +7,13 @@
             parent::__construct();
                 $this->uuid = 'altaempleado_id';
 $this->relacion = array(
+	
 'altaempleado_id'=> 'persona_altaempleado',
+'nombre'=> 'persona_altaempleado',
+'apellidos'=> 'persona_altaempleado',
+'edad'=> 'persona_altaempleado',
+'carnet_identidad'=> 'persona_altaempleado',
+'sexo_id'=> ['model'=>'nomenclador_sexo','relacion'=>'persona_altaempleado'],
 'tipocontrato_actual_id'=> 'nomenclador_rh_tipocontrato',
 //'area_actual_id'=> 'estructura_area',
 //'cargo_actual_id'=> 'estructura_plaza',

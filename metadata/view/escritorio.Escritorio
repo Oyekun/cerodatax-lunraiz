@@ -112,7 +112,22 @@
                                                 "implHandler": [
                                                     "",
                                                     "var escritorio = Ext.ComponentQuery.query('#Escritorio')[0];",
-                                                    "escritorio.fireEvent('click');",
+                                                    "if(escritorio!==undefined)",
+                                                    "    escritorio.fireEvent('click');",
+                                                    "else{",
+                                                    "    ",
+                                                    "       title = 'Información';",
+                                                    "                    icon = 'xf05a@FontAwesome';",
+                                                    "                     Ext.toast({",
+                                                    "                            html: 'El usuario no tiene permiso para esta acción.' ,",
+                                                    "                            glyph:icon,",
+                                                    "                            closable: false,",
+                                                    "                            align: 't',",
+                                                    "                            title:title,",
+                                                    "                            slideInDuration: 400,",
+                                                    "                            minWidth: 400",
+                                                    "                        });",
+                                                    "}",
                                                     ""
                                                 ],
                                                 "name": "click",
@@ -154,7 +169,7 @@
                     "userConfig": {
                         "layout": null
                     },
-                    "name": "escritorio.tablero1",
+                    "name": "escritorio.tablero",
                     "designerId": "0c21b4ba-f0af-4852-b58e-9cc820634882",
                     "masterInstanceId": "32e16573-c4f7-4db1-b1c4-e976b356c38b"
                 }
@@ -282,6 +297,19 @@
                                             "designerId": "1be528d0-62b7-4ab9-8e4f-abba86860f55"
                                         },
                                         {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "Acerca de"
+                                            },
+                                            "name": "MyMenuItem3",
+                                            "designerId": "dada26b7-cc88-4111-8956-ec41fd4c23aa"
+                                        },
+                                        {
                                             "type": "Ext.menu.Separator",
                                             "reference": {
                                                 "name": "items",
@@ -299,10 +327,112 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "text": "Acerca de"
+                                                "itemId": "marcartarjeta",
+                                                "text": "Marcar Tarjeta"
                                             },
-                                            "name": "MyMenuItem3",
-                                            "designerId": "dada26b7-cc88-4111-8956-ec41fd4c23aa"
+                                            "name": "MyMenuItem1",
+                                            "designerId": "73d5a524-4d14-415e-8b2a-cffc773ed8bb",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "item",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            " var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];",
+                                                            "                                            var myMask = new Ext.LoadMask({",
+                                                            "                                                msg    : 'Marcando Tarjeta...',",
+                                                            "                                                target : init",
+                                                            "                                            });",
+                                                            "                                            myMask.show();",
+                                                            "                                            var successCallback = function(resp, ops) {",
+                                                            "                                                //debugger;",
+                                                            "",
+                                                            "                                                var json = Ext.JSON.decode(resp.responseText);",
+                                                            "",
+                                                            "",
+                                                            "                                                myMask.destroy();",
+                                                            "                                                if(json.success===true) // cambiar cuando se creen usuario bien",
+                                                            "                                                {",
+                                                            "                                                    ",
+                                                            "                                                    //window.location = 'index.php?tools/marcar_tajeta';",
+                                                            "                                                    //window.location ='';",
+                                                            "                                                      title = 'Información';",
+                                                            "                    icon = 'xf05a@FontAwesome';",
+                                                            "                     Ext.toast({",
+                                                            "                            html: 'Marcado de Tarjeta satisfactoriamente.' ,",
+                                                            "                            glyph:icon,",
+                                                            "                            closable: false,",
+                                                            "                            align: 't',",
+                                                            "                            title:title,",
+                                                            "                            slideInDuration: 400,",
+                                                            "                            minWidth: 400",
+                                                            "                        });",
+                                                            "                                                    ",
+                                                            "                                                }",
+                                                            "                                                else{",
+                                                            "                                                    ",
+                                                            "                                                    var s='El usuario no pudo marcar tarjeta.';",
+                                                            "                                                    var title='Error';",
+                                                            "                                                    var icon = 'xf057@FontAwesome';",
+                                                            "",
+                                                            "                                                    Ext.toast({",
+                                                            "                                                        html: s ,",
+                                                            "                                                        glyph:icon,",
+                                                            "                                                        closable: false,",
+                                                            "                                                        align: 't',",
+                                                            "                                                        title:title,",
+                                                            "                                                        slideInDuration: 400,",
+                                                            "                                                        minWidth: 400",
+                                                            "                                                    });",
+                                                            "                                                }",
+                                                            "",
+                                                            "                                            };",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            "                                            // Failure",
+                                                            "                                            var failureCallback = function(resp, ops) {",
+                                                            "",
+                                                            "                                                myMask.unmask();",
+                                                            "                                                var s='El usuario no pudo marcar tarjeta.';",
+                                                            "                                                var title='Error';",
+                                                            "                                                var icon = 'xf057@FontAwesome';",
+                                                            "",
+                                                            "                                                Ext.toast({",
+                                                            "                                                    html: s ,",
+                                                            "                                                    glyph:icon,",
+                                                            "                                                    closable: false,",
+                                                            "                                                    align: 't',",
+                                                            "                                                    title:title,",
+                                                            "                                                    slideInDuration: 400,",
+                                                            "                                                    minWidth: 400",
+                                                            "                                                });",
+                                                            "",
+                                                            "",
+                                                            "                                            };",
+                                                            "                                            Ext.Ajax.request({",
+                                                            "                                                url: 'index.php/auth/marcar_tajeta',",
+                                                            "                                                method: 'POST',",
+                                                            "                                                success: successCallback,",
+                                                            "                                                failure: failureCallback",
+                                                            "",
+                                                            "                                            });"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "8bc6290c-4483-42f8-afdc-8d0f0ea42dec"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.menu.Separator",

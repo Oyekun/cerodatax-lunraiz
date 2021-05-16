@@ -139,11 +139,98 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
                                         text: 'Ayuda en linea'
                                     },
                                     {
+                                        xtype: 'menuitem',
+                                        text: 'Acerca de'
+                                    },
+                                    {
                                         xtype: 'menuseparator'
                                     },
                                     {
                                         xtype: 'menuitem',
-                                        text: 'Acerca de'
+                                        handler: function(item, e) {
+                                            var init = Ext.ComponentQuery.query('#viewportEscritorio')[0];
+                                            var myMask = new Ext.LoadMask({
+                                                msg    : 'Marcando Tarjeta...',
+                                                target : init
+                                            });
+                                            myMask.show();
+                                            var successCallback = function(resp, ops) {
+                                                //debugger;
+
+                                                var json = Ext.JSON.decode(resp.responseText);
+
+
+                                                myMask.destroy();
+                                                if(json.success===true) // cambiar cuando se creen usuario bien
+                                                {
+
+                                                    //window.location = 'index.php?tools/marcar_tajeta';
+                                                    //window.location ='';
+                                                    title = 'Información';
+                                                    icon = 'xf05a@FontAwesome';
+                                                    Ext.toast({
+                                                        html: 'Marcado de Tarjeta satisfactoriamente.' ,
+                                                        glyph:icon,
+                                                        closable: false,
+                                                        align: 't',
+                                                        title:title,
+                                                        slideInDuration: 400,
+                                                        minWidth: 400
+                                                    });
+
+                                                }
+                                                else{
+
+                                                    var s='El usuario no pudo marcar tarjeta.';
+                                                    var title='Error';
+                                                    var icon = 'xf057@FontAwesome';
+
+                                                    Ext.toast({
+                                                        html: s ,
+                                                        glyph:icon,
+                                                        closable: false,
+                                                        align: 't',
+                                                        title:title,
+                                                        slideInDuration: 400,
+                                                        minWidth: 400
+                                                    });
+                                                }
+
+                                            };
+
+
+
+
+                                            // Failure
+                                            var failureCallback = function(resp, ops) {
+
+                                                myMask.unmask();
+                                                var s='El usuario no pudo marcar tarjeta.';
+                                                var title='Error';
+                                                var icon = 'xf057@FontAwesome';
+
+                                                Ext.toast({
+                                                    html: s ,
+                                                    glyph:icon,
+                                                    closable: false,
+                                                    align: 't',
+                                                    title:title,
+                                                    slideInDuration: 400,
+                                                    minWidth: 400
+                                                });
+
+
+                                            };
+                                            Ext.Ajax.request({
+                                                url: 'index.php/auth/marcar_tajeta',
+                                                method: 'POST',
+                                                success: successCallback,
+                                                failure: failureCallback
+
+                                            });
+                                        },
+                                        itemId: 'marcartarjeta',
+                                        text: 'Marcar Tarjeta'
                                     },
                                     {
                                         xtype: 'menuseparator'
@@ -247,7 +334,22 @@ Ext.define('cerodatax.view.escritorio.Escritorio', {
     onButtonClick: function(button, e, eOpts) {
 
         var escritorio = Ext.ComponentQuery.query('#Escritorio')[0];
-        escritorio.fireEvent('click');
+        if(escritorio!==undefined)
+            escritorio.fireEvent('click');
+        else{
+
+               title = 'Información';
+                            icon = 'xf05a@FontAwesome';
+                             Ext.toast({
+                                    html: 'El usuario no tiene permiso para esta acción.' ,
+                                    glyph:icon,
+                                    closable: false,
+                                    align: 't',
+                                    title:title,
+                                    slideInDuration: 400,
+                                    minWidth: 400
+                                });
+        }
 
     }
 

@@ -10,6 +10,7 @@ class Auth extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		date_default_timezone_set('America/Havana');
 		$this->load->database();
 		$this->load->library(array('ion_auth'));
 		$this->load->helper(array('url', 'language'));
@@ -408,6 +409,8 @@ $this->load->model('nomenclador/menu');
     
     if( count($result->result_array())>0)
 	{ $persona = $result->result_array()[0];
+		$this->session->userdata['persona']=$persona;
+		
       //$persona['username'] = $usuarios['username'];
       }
     }
@@ -1169,5 +1172,82 @@ $this->load->model('nomenclador/menu');
 			return $view_html;
 		}
 	}
+
+	public function marcar_tajeta() {
+        
+$exit=0;
+$identity = $this->session->userdata;
+if(isset($identity['persona']))
+{
+	//print_r($identity);die;
+	$persona_id = $identity['persona']['id'];
+	 
+	 $tb = 'persona_altaempleado'; 
+         
+		$this->load->model('persona/altaempleado');
+	 	
+    $this->db->where('persona_id', $persona_id);   
+    $result = $this->db->get("$tb");
+    
+    if( count($result->result_array())===0)
+	{ $nombre = $identity['nombre'];
+		$apellidos = $identity['apellidos'];
+		$carnet_identidad = $identity['carnet_identidad'];
+		 $this->db->where('nombre', $nombre);   
+		 $this->db->where('apellidos', $apellidos);   
+		 $this->db->where('carnet_identidad', $carnet_identidad);   
+         $result = $this->db->get("$tb");
+    
+
+	} 
+
+	if( count($result->result_array())>0)
+	{ $altaempleado = $result->result_array()[0];
+	 $no_solapin = $altaempleado['no_solapin'];
+	if(isset($altaempleado['no_tarjeta_asistencia']))
+	{ $tarjeta = $altaempleado['no_tarjeta_asistencia'];
+	 
+ $this->load->model('rh/asistencia/marcaje');
+            $modelo = 'marcaje';
+            $nameuuid = new $modelo;
+             $dataArray = array();
+
+             $dataArray['marca'] = date('Y-m-d H:i:s');
+             $dataArray['tarjeta'] = $tarjeta;
+
+            if(isset($nameuuid->uuid2)) 
+            $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"].$dataArray["$nameuuid->uuid2"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+            else    
+            $uuid = $this->uuid->v5($dataArray["$nameuuid->uuid"], '8d3dc6d8-3a0d-4c03-8a04-1155445658f7');
+          
+          if(isset($this->session->userdata['entidad_id'])) 
+            {   
+                $dataArray['entidad_id'] = $this->session->userdata['entidad_id'];
+            }
+
+            $dataArray['date_created'] = $dataArray['date_updated'] = date('Y-m-d H:i:s');
+            $dataArray['created_from_ip'] = $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
+            $this->db->set('id', $uuid);
+			$tb = 'rh_asistencia_marcaje';
+
+            $exit = $this->db->insert("$tb", $dataArray);
+             
+	 }
+	 
+	 $this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>TRUE)));
+    
+	}
+	     
+}
+//print_r($exit);die;
+ if($exit===0)
+          $this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode(array('success'=>FALSE)));
+         
+        //echo "Hello {$to}!" . PHP_EOL;
+    }
 
 }

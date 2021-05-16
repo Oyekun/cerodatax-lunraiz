@@ -246,6 +246,7 @@
                                 "fn": "processPersonaaltaempleado",
                                 "implHandler": [
                                     "config.icono = 'address-card';",
+                                    "console.log(config)",
                                     "return config;"
                                 ]
                             },
@@ -449,7 +450,7 @@
                                     "designerId": "80fc49a0-a528-4e98-a100-5f31db95a453",
                                     "cn": [
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -459,7 +460,7 @@
                                                 "height": 274,
                                                 "title": "Datos de la Plantilla Actual"
                                             },
-                                            "name": "MyPanel7",
+                                            "name": "MyForm9",
                                             "designerId": "2d741fd3-8441-4461-9e8e-4f83ca377fe2",
                                             "cn": [
                                                 {
@@ -629,7 +630,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -639,7 +640,7 @@
                                                 "height": 274,
                                                 "title": "Datos de la Plantilla Movimiento"
                                             },
-                                            "name": "MyPanel17",
+                                            "name": "MyForm8",
                                             "designerId": "55e1be11-20b6-43b3-9e25-8a6b744f8d39",
                                             "cn": [
                                                 {
@@ -964,14 +965,11 @@
                                         "type": "array"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "activeTab": 0
-                                    },
                                     "name": "MyTabPanel1",
                                     "designerId": "8ae777fc-53c8-4d0b-8958-e7d0f1f4e2ec",
                                     "cn": [
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -981,7 +979,7 @@
                                                 "height": 429,
                                                 "title": "Datos Generales"
                                             },
-                                            "name": "MyPanel7",
+                                            "name": "MyForm7",
                                             "designerId": "af9b72b2-7757-4b0b-95c8-570c2fd87833",
                                             "cn": [
                                                 {
@@ -1568,7 +1566,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -1578,7 +1576,7 @@
                                                 "height": 400,
                                                 "title": "Horario y Estimulación"
                                             },
-                                            "name": "MyPanel4",
+                                            "name": "MyForm5",
                                             "designerId": "5a14aefd-edc7-4acf-b9dc-2b62d85572b0",
                                             "cn": [
                                                 {
@@ -1972,7 +1970,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -1981,7 +1979,7 @@
                                             "userConfig": {
                                                 "title": "Centros de Costo"
                                             },
-                                            "name": "MyPanel10",
+                                            "name": "MyForm4",
                                             "designerId": "4ad1f7aa-ab2c-408e-a893-792d9cf05111",
                                             "cn": [
                                                 {
@@ -2157,7 +2155,7 @@
                                     "designerId": "1b237dca-b4af-496b-bb6e-a43c2cfaf478",
                                     "cn": [
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -2167,7 +2165,7 @@
                                                 "height": 429,
                                                 "title": "Datos Generales"
                                             },
-                                            "name": "MyPanel7",
+                                            "name": "MyForm2",
                                             "designerId": "08428907-f046-4529-8445-f377b22dac4d",
                                             "cn": [
                                                 {
@@ -2747,7 +2745,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -2757,7 +2755,7 @@
                                                 "height": 400,
                                                 "title": "Horario y Estimulación"
                                             },
-                                            "name": "MyPanel4",
+                                            "name": "MyForm",
                                             "designerId": "5415443e-4fd4-4c46-9fb2-d79d5bcbd7d8",
                                             "cn": [
                                                 {
@@ -3146,7 +3144,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.panel.Panel",
+                                            "type": "Ext.form.Panel",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -3155,7 +3153,7 @@
                                             "userConfig": {
                                                 "title": "Centros de Costo"
                                             },
-                                            "name": "MyPanel10",
+                                            "name": "MyForm3",
                                             "designerId": "21ba6511-79e3-4725-aad8-06139c6aae0d",
                                             "cn": [
                                                 {

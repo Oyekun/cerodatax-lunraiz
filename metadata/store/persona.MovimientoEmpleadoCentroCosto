@@ -9,7 +9,7 @@
         "autoLoad": false,
         "autoSync": true,
         "designer|userClassName": "persona.MovimientoEmpleadoCentroCosto",
-        "model": "persona.MovimientoEmpleadoCetroCosto",
+        "model": "persona.MovimientoEmpleadoCentroCosto",
         "storeId": "persona.MovimientoEmpleadoCentroCosto"
     },
     "name": "persona.AltaEmpleadoCentroCosto1",

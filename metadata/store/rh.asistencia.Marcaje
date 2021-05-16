@@ -8,12 +8,12 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "designer|userClassName": "persona.MovimientoEmpleadoCentroCostoActual",
-        "model": "persona.MovimientoEmpleadoCentroCostoActual",
-        "storeId": "persona.MovimientoEmpleadoCentroCostoActual"
+        "designer|userClassName": "rh.asistencia.Marcaje",
+        "model": "rh.asistencia.Marcaje",
+        "storeId": "rh.asistencia.Marcaje"
     },
-    "name": "persona.MovimientoEmpleadoCentroCosto1",
-    "designerId": "dd7ce95a-05cc-4368-8d7c-d0de58e5aaf0",
+    "name": "persona.Cargo1",
+    "designerId": "170b4a52-373c-4bcb-b3d9-b79665b80bc7",
     "cn": [
         {
             "type": "Ext.data.proxy.Rest",
@@ -32,13 +32,13 @@
                     "}"
                 ],
                 "extraParams": [
-                    "{model:'centrocostoactual',esquema:'nomenclador',esquema_asociado:'persona',asociados:'movimientoempleado',id_asociado:'',grid:'true',detalles:''}"
+                    "{model:'marcaje',esquema:'rh.asistencia'}"
                 ],
                 "format": "",
                 "url": "index.php/api/restserver/rests/"
             },
             "name": "MyRestProxy",
-            "designerId": "73ff32c2-35b5-4942-a317-211ae47995ac",
+            "designerId": "053df03b-6186-4739-9161-d9d6b28cdf0b",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -51,7 +51,7 @@
                         "rootProperty": "data"
                     },
                     "name": "MyJsonReader",
-                    "designerId": "ae270b50-6464-4423-b6e7-fa1bae89f08c"
+                    "designerId": "dc4fb34c-9e4d-4e4e-8dcb-6d67556c8d17"
                 },
                 {
                     "type": "Ext.data.writer.Json",
@@ -66,7 +66,7 @@
                         "writeAllFields": true
                     },
                     "name": "MyJsonWriter",
-                    "designerId": "569d55b9-4258-496e-a31e-7ac009dc4df5"
+                    "designerId": "01c01c60-d6c6-4017-91ad-123f11c68f23"
                 }
             ]
         }

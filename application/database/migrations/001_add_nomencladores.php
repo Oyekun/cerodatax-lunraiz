@@ -1991,8 +1991,8 @@ $this->dbforge->add_field(array(
         $data = array(
             'id' => $user_id, 
             'owner_id' => $user_id, 
-            'ownerentidad_id' => "58189f17-4a05-54c1-a803-f1a57a5fbd5c", 
-            'organismo_id' => "18af753c-4088-5bf1-bc27-cc0d0fc737da", 
+            //'ownerentidad_id' => "58189f17-4a05-54c1-a803-f1a57a5fbd5c", 
+            //'organismo_id' => "18af753c-4088-5bf1-bc27-cc0d0fc737da", 
             'ip_address'              => '127.0.0.1',
             'username'                => 'admin',
             'password'                => '$2y$08$1C46o3rAks.YYXilqxKrXugvfOwxizurRZNXl9tg6GNkWAHJqMpua',

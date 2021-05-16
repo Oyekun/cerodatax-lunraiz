@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "movimientoempleadocentrocostoactual",
-        "designer|userClassName": "persona.MovimientoEmpleadoCetroCostoActual"
+        "designer|userClassName": "persona.MovimientoEmpleadoCentroCostoActual"
     },
     "name": "persona.MovimientoEmpleadoCetroCosto1",
     "designerId": "81301e0d-90ce-4825-bd10-05c25e880138",

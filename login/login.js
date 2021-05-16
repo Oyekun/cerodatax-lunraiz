@@ -2,10 +2,7 @@
      name: 'cerodatax',
       requires: [
         'cerodatax.controller.Seguridad',
-         'cerodatax.view.escritorio.FormAutenticacion'
-         
-         
-         
+         'cerodatax.view.escritorio.FormAutenticacion' 
     ],
  
      launch: function () {
@@ -15,12 +12,7 @@
       
    Ext.ComponentQuery.query('#identity')[0].focus('', 10);
    
-this.getController('Seguridad');
- 
- 
-
-
-
+   this.getController('Seguridad');
 
      }
  });

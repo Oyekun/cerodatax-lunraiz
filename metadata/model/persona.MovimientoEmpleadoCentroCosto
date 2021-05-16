@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "movimientoempleadocetrocosto",
-        "designer|userClassName": "persona.MovimientoEmpleadoCetroCosto"
+        "designer|userAlias": "movimientoempleadocentrocosto",
+        "designer|userClassName": "persona.MovimientoEmpleadoCentroCosto"
     },
     "name": "persona.AltaEmpleadoCetroCosto1",
     "designerId": "20966e84-a406-4fd6-9929-5c2687e81eb6",
