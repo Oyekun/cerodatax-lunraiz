@@ -122,7 +122,7 @@ if (file_exists($existFile))
              $tools->make_model_relation_file($request['esquema_asociado'], $modelClass,$dataMigration);
              $tools->make_migration_file($request['esquema_asociado'],$modelClass,$dataMigration);
             // print_r($dataMigration);die;
-            
+            //Aplicar si esta en dev ponerlo configurable
              $tools->migrate();
 
 }
@@ -250,7 +250,7 @@ if (file_exists($existFile))
                     $this->db->order_by("date_updated", "desc");//verificar bien
                 if ($this->db->field_exists("visible", "$tb") !== FALSE)
                     $this->db->where('visible',1);
-if(isset($this->session->userdata['entidad_id']))
+                if(isset($this->session->userdata['entidad_id']))
                 if(!$is_admin)
                 if ($this->db->field_exists("ownerentidad_id", "$tb") === TRUE)
                     $this->db->where('ownerentidad_id',$identity);
@@ -657,8 +657,72 @@ if (isset($request['gridasociado']))
             $total_actual = count($q->result_array());
 
             $total['total'] = count($q1->result_array());
-            
+            ////poner en otro lugar
+            //Generar codigo de licencia
+            $date = date('Y-m-d');
+            $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
 
+            if ($tb=='nomenclador_tipomodulo') { 
+            
+            for ($i=0; $i < $total['total']; $i++) { 
+                $mod = $total['data'][$i];
+                $nombre = $mod['nombre'];
+                $date_updated = $mod['date_updated'];
+              
+                if($mod['activo']=='0'){
+
+                    $cadena = $nombre."-".$ip."-".$date;
+                    $key = pack('H*','aaaaaaaaaaaaa');
+                    $method = 'aes-256-ecb';
+
+                    $llave = base64_encode($cadena);  
+
+                    $total['data'][$i]['codigo']=$llave;
+                }
+            }
+            
+            }
+            else{
+                //checkear si el modulo caduco
+                  $this->db->select("nomenclador_tipomodulo.*");
+                  $q = $this->db->get("nomenclador_tipomodulo");
+                   $modulos = $q->result_array();
+                   $total_modulos = count($q->result_array());
+
+                  for ($i=0; $i < $total_modulos; $i++) { 
+                                $mod = $modulos[$i];
+                                $nombre = $mod['nombre'];
+                                $date_updated = split(' ', $mod['date_updated']);
+                                $ip = $mod['updated_from_ip'];
+                                
+                                if($mod['activo']=='1'){
+                                    $llave = $mod['codigo'];
+
+                                    $key = pack('H*','aaaaaaaaaaaaa');
+                                    $method = 'aes-256-ecb';
+
+                                    $llave = $this->decrypt($llave, $key, $method);
+                                    $llave=base64_decode($llave);  
+                                    //$llave = base64_decode($llave);
+                                    $splitllave= split('-',$llave);
+                                    $ip_bd = $splitllave[0];
+                                    $date_bd= $splitllave[1];
+                                    $nombre_bd = $splitllave[2]; 
+                                    if(($nombre_bd."-".$ip_bd."-".$date_bd)!=($nombre."-".$ip."-".$date_updated)){
+                                        $dataArray = $mod;
+                                        $dataArray['activo'] = 0;
+                                        $dataArray['codigo'] = '';
+                                         $sl = $this->db->update("$tb", $dataArray);
+                                    }
+
+                                }
+
+                    }
+                
+
+            }
+           
+///
             if ($total['total'] > 0) {
 
                    //quite esto && $parent_id != '' estaba asi ((isset($total['data'][0]['parent_id']) && $parent_id != '')
@@ -1088,6 +1152,10 @@ if (isset($request['gridasociado']))
      //if ($this->db->field_exists("owner_id", "$tb") === TRUE)    
     //     unset($dataArray['owner_id']);
  //print_r($dataArray);die;
+    //    elseif($tb == 'nomenclador_tipomodulo') {
+  //          $codigo =  $dataArray['codigo'];
+//
+        //} 
         $this->db->where('id', $id);
         $dataArray['date_updated'] = date('Y-m-d H:i:s');
         $dataArray['updated_from_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
@@ -1095,9 +1163,38 @@ if (isset($request['gridasociado']))
         if ($tb == 'seguridad_usuario') {
             $this->load->model("Ion_auth_model", "ionAuthModel");
             $sl = $this->ionAuthModel->update($id, $dataArray);
+        
+        } elseif($tb == 'nomenclador_tipomodulo') {
+            
+            $encrypted = $dataArray['codigo'];
+
+            $key = pack('H*','aaaaaaaaaaaaa');
+            $method = 'aes-256-ecb';
+
+             $llave = $this->decrypt($encrypted, $key, $method);
+              $llave= base64_decode($llave);  
+           
+             
+            
+            $nombre = $dataArray['nombre']; 
+            $updated_from_ip = $dataArray['updated_from_ip']; 
+            $date_updated = $dataArray['date_updated']; 
+
+            if($llave!=$nombre."-".$updated_from_ip."-".$date_updated){
+               
+                $dataArray['activo'] = 0 ;
+                $dataArray['codigo'] = '';
+                  
+            }
+            else{
+                $dataArray['activo'] =1;
+            }
+
+            $sl = $this->db->update("$tb", $dataArray);
 
         } else {
-//print_r($dataArray);die;
+
+
             $sl = $this->db->update("$tb", $dataArray);
         }
 
@@ -1349,4 +1446,23 @@ if(count($aux1)>0)
       
 
     }
+
+    private function encrypt(string $data, string $key, string $method): string
+{
+    $ivSize = openssl_cipher_iv_length($method);
+        $iv = openssl_random_pseudo_bytes($ivSize);
+        $encrypted = openssl_encrypt($data, $method, $key, OPENSSL_RAW_DATA, $iv);
+    $encrypted = strtoupper(implode(null, unpack('H*', $encrypted)));
+    return $encrypted;
+}
+
+private function decrypt(string $data, string $key, string $method): string
+{
+
+    $data = pack('H*', $data);
+    $ivSize = openssl_cipher_iv_length($method);  
+        $iv = $iv = openssl_random_pseudo_bytes($ivSize);
+    $decrypted = openssl_decrypt($data, $method, $key, OPENSSL_RAW_DATA, $iv); 
+    return trim($decrypted);
+}
 }

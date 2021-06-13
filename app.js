@@ -408,7 +408,7 @@ Ext.application({
     launch: function() {
         Ext.create('cerodatax.view.escritorio.Escritorio');
 
-          this.getController('Seguridad').loadMain();
+        this.getController('Seguridad').loadMain();
     }
 
 });

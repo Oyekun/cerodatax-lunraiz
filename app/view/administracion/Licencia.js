@@ -176,7 +176,8 @@ Ext.define('cerodatax.view.administracion.Licencia', {
                         {
                             xtype: 'checkboxfield',
                             fieldLabel: 'Activo',
-                            name: 'activo'
+                            name: 'activo',
+                            readOnly: true
                         },
                         {
                             xtype: 'textareafield',

@@ -407,7 +407,8 @@
                             "userConfig": {
                                 "checked": null,
                                 "fieldLabel": "Activo",
-                                "name": "activo"
+                                "name": "activo",
+                                "readOnly": true
                             },
                             "name": "MyCheckbox2",
                             "designerId": "9b2a12bc-2070-47ef-9a40-d60243d8b922"
